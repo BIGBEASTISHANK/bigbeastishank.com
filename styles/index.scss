@@ -1,0 +1,279 @@
+// Variable
+$bg-color: #111827;
+$text-color: white;
+$primary-color: #2e94c5;
+$secondary-color: #287fca;
+
+// Everything
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $bg-color;
+    color: $text-color;
+}
+
+a {
+    text-decoration: none;
+    color: $text-color;
+}
+
+// Navbar
+.navbar {
+    background-color: black;
+    margin: 25px;
+    padding: 15px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+
+    .brand-name {
+        padding-left: 20px;
+
+        a {
+            font-size: 21px;
+        }
+    }
+
+    nav {
+        padding-top: 2px;
+        max-width: 80%;
+
+        a {
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+            font-size: 15px;
+            border-radius: 25px;
+        }
+
+        a:hover {
+            transition: 0.5s;
+            background-color: $primary-color;
+            cursor: pointer;
+        }
+    }
+}
+
+// Footer
+footer {
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    margin: 25px;
+    padding: 10px;
+    border-radius: 25px;
+    width: 80%;
+    font-weight: 900;
+
+    b {
+        color: #9d86e9;
+    }
+
+    strong {
+        color: #9d86e9;
+        padding-bottom: 1px;
+    }
+
+    strong:hover {
+        border-bottom: 2px solid #9d86e9;
+    }
+
+    .description {
+        display: none;
+    }
+
+    .social-media {
+        margin-top: 3px;
+        user-select: none;
+        align-items: center;
+
+        a{
+            cursor: pointer;
+            margin: 3px;
+        }
+    }
+
+    .rights {
+        margin-top: 8px;
+        font-weight: 800;
+    }
+}
+
+footer:hover {
+    .title {
+        display: none;
+    }
+    .description {
+        display: block;
+    }
+}
+
+// Errorpage
+.errorpage {
+    margin-top: 200px;
+    text-align: center;
+
+    strong {
+        color: red;
+    }
+
+    h1 {
+        font-size: 72px;
+        margin-bottom: 40px;
+    }
+
+    p {
+        max-width: 80%;
+        margin: auto;
+        font-weight: 500;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+
+    input[type="submit"] {
+        font-size: 25px;
+        padding: 10px;
+        border: none;
+        border-radius: 25px;
+        background-color: $secondary-color;
+        outline: none;
+        margin-bottom: 20px;
+    }
+
+    input[type="submit"]:hover {
+        transition: 0.5s;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+// Tab
+@media (max-width: 782px) {
+    // Navbar
+    .navbar {
+        nav {
+            overflow-x: scroll;
+            padding-top: 2.5px;
+            padding-bottom: 2.5px;
+
+            a {
+                padding-bottom: 2.5px;
+                padding-top: 2.5px;
+            }
+        }
+
+        nav::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    // Errorpage
+    .errorpage {
+        h1 {
+            font-size: 32px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        input[type="submit"] {
+            font-size: 20px;
+        }
+
+        input[type="submit"]:hover {
+            transition: 0.2s;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    }
+}
+
+// Mobile
+@media (max-width: 600px) {
+    // Navbar
+    .navbar {
+        .brand-name {
+            display: none;
+        }
+
+        nav {
+            margin: auto;
+        }
+    }
+
+    // Footer
+    footer {
+        font-size: 13px;
+        margin: 20px;
+        padding: 12px;
+    }
+
+    // Errorpage
+    .errorpage {
+        h1 {
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 17px;
+        }
+
+        input[type="submit"] {
+            font-size: 17px;
+        }
+
+        input[type="submit"]:hover {
+            transition: 0.2s;
+            font-size: 22px;
+            cursor: pointer;
+        }
+    }
+}
+
+// Small Mobile
+@media (max-width: 280px) {
+    // Navbar
+    .navbar {
+        nav {
+            a {
+                font-size: 13px;
+            }
+        }
+    }
+
+    // Footer
+    footer {
+        margin: 15px;
+        padding: 10px;
+    }
+    // Errorpage
+    .errorpage {
+        margin-top: 100px;
+
+        h1 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        input[type="submit"] {
+            font-size: 15px;
+        }
+
+        input[type="submit"]:hover {
+            transition: 0.2s;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+}
