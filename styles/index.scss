@@ -1,3 +1,7 @@
+// Import
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
+
 // Variable
 $bg-color: #111827;
 $text-color: white;
@@ -13,11 +17,17 @@ $secondary-color: #287fca;
 body {
     background-color: $bg-color;
     color: $text-color;
+    max-width: 850px;
+    margin: auto;
+    margin-top: 25px;
+    font-family: "Yusei Magic";
 }
 
-.container{
-    margin-left: 50px;
-    margin-right: 50px;
+.container {
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 25px;
+    overflow-wrap: break-word;
 }
 
 a {
@@ -28,12 +38,14 @@ a {
 // Navbar
 .navbar {
     background-color: black;
-    margin: 25px;
     padding: 15px;
     border-radius: 25px;
+    margin-bottom: 25px;
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: space-between;
-    max-width: 100%;
+    animation: navbar ease-in-out 2s;
 
     .brand-name {
         padding-left: 20px;
@@ -65,17 +77,56 @@ a {
     }
 }
 
+@keyframes navbar {
+    from{
+        max-width: 350px;
+        overflow: hidden;
+    }
+    to{
+        max-width: 100%;
+    }
+}
+
+// Index
+.index {
+    .hero {
+        display: flex;
+
+        .hero-img-hand-device {
+            user-select: none;
+            display: none;
+        }
+        .hero-img-pc{
+            user-select: none;
+        }
+
+        .hero-content {
+            max-width: 600px;
+
+            h1 {
+                margin-top: 20px;
+                font-size: 50px;
+                font-weight: 900;
+            }
+
+            p {
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
 // Footer
 footer {
     margin-top: 20px;
     align-items: center;
     text-align: center;
     background-color: black;
-    margin: 25px;
     padding: 10px;
     border-radius: 25px;
-    width: 80%;
     font-weight: 900;
+    font-family: "Potta One";
+    overflow-wrap: break-word;
 
     b {
         color: #9d86e9;
@@ -95,11 +146,11 @@ footer {
     }
 
     .social-media {
-        margin-top: 3px;
+        margin-top: 7.5px;
         user-select: none;
         align-items: center;
 
-        a{
+        a {
             cursor: pointer;
             margin: 3px;
         }
@@ -160,9 +211,13 @@ footer:hover {
 }
 
 // Tab
-@media (max-width: 782px) {
+@media (max-width: 900px) {
     // Everything
-    .container{
+    body {
+        margin: 25px;
+    }
+
+    .container {
         margin-left: 40px;
         margin-right: 40px;
     }
@@ -182,6 +237,36 @@ footer:hover {
 
         nav::-webkit-scrollbar {
             display: none;
+        }
+    }
+
+    // Index
+    .index {
+        .hero {
+            display: block;
+
+            .hero-img-hand-device {
+                display: block;
+            }
+
+            .hero-img-pc {
+                display: none;
+            }
+
+            .hero-content {
+                max-width: 580px;
+                margin: auto;
+                margin-left: 20px;
+
+                h1 {
+                    font-size: 40px;
+                }
+
+                p {
+                    font-size: 15px;
+                    margin: 0;
+                }
+            }
         }
     }
 
@@ -210,19 +295,46 @@ footer:hover {
 // Mobile
 @media (max-width: 600px) {
     // Everything
-    .container{
+    .container {
         margin-left: 30px;
         margin-right: 30px;
     }
 
     // Navbar
     .navbar {
+        animation: navbar ease-in-out 2s;
         .brand-name {
             display: none;
         }
 
         nav {
             margin: auto;
+        }
+    }
+
+    @keyframes navbar {
+        from{
+            max-width: 0;
+        }
+        to{
+            max-width: 100%;
+        }
+    }
+
+    // Index
+    // Index
+    .index {
+        .hero {
+            .hero-content {
+                h1 {
+                    font-size: 40px;
+                }
+
+                p {
+                    font-size: 15px;
+                    margin-top: -5px;
+                }
+            }
         }
     }
 
@@ -258,7 +370,7 @@ footer:hover {
 // Small Mobile
 @media (max-width: 280px) {
     // Everything
-    .container{
+    .container {
         margin-left: 15px;
         margin-right: 15px;
     }
@@ -266,8 +378,24 @@ footer:hover {
     // Navbar
     .navbar {
         nav {
+            padding-top: 0;
             a {
                 font-size: 13px;
+            }
+        }
+    }
+
+    // Index
+    .index {
+        .hero {
+            .hero-content {
+                h1 {
+                    font-size: 30px;
+                }
+
+                p {
+                    font-size: 13px;
+                }
             }
         }
     }
