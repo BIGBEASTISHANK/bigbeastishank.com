@@ -12,7 +12,7 @@ export default function Navbar() {
                 </div>
                 <nav>
                     <Link href="/"><a>Home</a></Link>
-                    <Link href="https://github.com/bigbeastishank.com"><a>GitHub</a></Link>
+                    <a href="https://github.com/bigbeastishank/bigbeastishank.com" target="_blank">GitHub</a>
                 </nav>
             </div>
         </>
