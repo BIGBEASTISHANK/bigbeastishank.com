@@ -1,20 +1,25 @@
-import { Flex, Box, Skeleton, Heading, Text, Center, Button, Progress } from "@chakra-ui/react";
+import { Flex, Box, Skeleton, Heading, Text, Center, Button, useColorModeValue } from "@chakra-ui/react";
 import Head from "next/head";
 import React from 'react'
-import Link from "next/link"
 
 export default function Index() {
 
-  const [skills_active, set_skills_active] = React.useState('')
+  const [python_skill_bar, setPython_skill_bar] = React.useState('')
+  const [html_skill_bar, setHtml_skill_bar] = React.useState('')
+  const [css_skill_bar, setCss_skill_bar] = React.useState('')
+  const [js_skill_bar, setJs_skill_bar] = React.useState('')
+  const [cs_skill_bar, setCs_skill_bar] = React.useState('')
 
   function show_skills() {
-    set_skills_active('')
-    alert('This is under construction! Please visit later')
+    setPython_skill_bar('python_skill_bar');
+    setHtml_skill_bar('html_skill_bar');
+    setCss_skill_bar('css_skill_bar');
+    setJs_skill_bar('js_skill_bar');
+    setCs_skill_bar('cs_skill_bar');
   }
 
   return (
     <>
-
       {/* Html section */}
       <Head>
         <title>HOME | BIG BEAST ISHANK</title>
@@ -38,7 +43,7 @@ export default function Index() {
         </Box>
 
         <Skeleton
-          startColor='pink.500' endColor='orange.500'
+
           ml={'-30px'} mr={'-30px'} w={'810'} h={'2px'} mb={4} mt={4} />
       </Box>
 
@@ -95,7 +100,7 @@ export default function Index() {
             </Box>
 
             <Flex>
-              <Skeleton startColor='#FF7300' endColor='#0565BA' h={'20px'} mt={1} w={'92%'} />
+              <Skeleton className={'default_lang_bar' + ' ' + python_skill_bar} h={'20px'} mt={1} />
             </Flex>
           </Box>
 
@@ -113,7 +118,7 @@ export default function Index() {
             </Box>
 
             <Flex>
-              <Skeleton startColor='#FF7300' endColor='#0565BA' h={'20px'} mt={1} w={'98%'} />
+              <Skeleton className={'default_lang_bar' + ' ' + html_skill_bar} h={'20px'} />
             </Flex>
           </Box>
 
@@ -131,7 +136,7 @@ export default function Index() {
             </Box>
 
             <Flex>
-              <Skeleton startColor='#FF7300' endColor='#0565BA' h={'20px'} mt={1} w={'95%'} />
+              <Skeleton className={'default_lang_bar' + ' ' + css_skill_bar} h={'20px'} mt={1} />
             </Flex>
           </Box>
 
@@ -149,7 +154,7 @@ export default function Index() {
             </Box>
 
             <Flex>
-              <Skeleton startColor='#FF7300' endColor='#0565BA' h={'20px'} mt={1} w={'52%'} />
+              <Skeleton className={'default_lang_bar' + ' ' + js_skill_bar} h={'20px'} mt={1} />
             </Flex>
           </Box>
 
@@ -162,12 +167,12 @@ export default function Index() {
               alignItems={'center'}>
               <Flex>
                 <Text mr={4}><a>C#</a></Text>
-                <Text>10%</Text>
+                <Text>11%</Text>
               </Flex>
             </Box>
 
             <Flex>
-              <Skeleton startColor='#FF7300' endColor='#0565BA' h={'20px'} mt={1} w={'10%'} />
+              <Skeleton className={'default_lang_bar' + ' ' + cs_skill_bar} h={'20px'} mt={1} />
             </Flex>
           </Box>
 
