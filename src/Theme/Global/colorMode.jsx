@@ -1,5 +1,5 @@
 const config = {
-    initialColorMode: 'dark',
+    initialColorMode: 'ssytem',
     useSystemColorMode: true,
     cssVarPrefix: "bbi",
 }

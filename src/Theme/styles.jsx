@@ -3,7 +3,7 @@ const styles = {
         primary: '#2e94c5',
         secondary: '#287fca',
         dark: '#1A202C',
-        light: 'white'
+        light: 'white',
     },
 
     fonts: {

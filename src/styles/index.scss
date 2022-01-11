@@ -30,7 +30,7 @@ $dark: #1a202c;
 
 .contact-header {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    animation: navbar-bg 8.5s ease infinite;
+    animation: nav 8.5s ease infinite;
     background-size: 1000% 1000%;
 }
 
@@ -50,17 +50,18 @@ $dark: #1a202c;
 // Main body
 .main-content {
     overflow-wrap: break-word;
+}
 
-    .hero {
-        .hero-heading {
-            a {
-                animation: hero-heading 8s ease infinite;
-            }
+// Hero Section
+.hero {
+    .hero-heading {
+        a {
+            animation: hero-heading 7s ease infinite;
         }
     }
 }
 
-// Main body Animation
+// Hero Animation
 @keyframes hero-heading {
     0% {
         color: #ee7752;
@@ -76,6 +77,82 @@ $dark: #1a202c;
     }
     100% {
         color: #ee7752;
+    }
+}
+
+// Skills section
+.skills {
+    .skills-heading {
+        a {
+            animation: skills-heading 6s ease infinite;
+        }
+    }
+
+    .skills-btn {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 200% 200%;
+    }
+
+    .skills-btn:hover {
+        animation: skills-btn 5s ease infinite;
+    }
+
+    .skills_lang {
+        a {
+            animation: skills_lang_name 4s ease infinite;
+        }
+    }
+}
+
+// skills Animation
+@keyframes skills-heading {
+    0% {
+        color: #25b378;
+    }
+    25% {
+        color: #ff00d4;
+    }
+    50% {
+        color: #00f7ff;
+    }
+    75% {
+        color: #e44e4e;
+    }
+    100% {
+        color: #25b378;
+    }
+}
+
+@keyframes skills-btn {
+    0% {
+        background-position: 0% 45%;
+    }
+    25% {
+        background-position: 45% 75%;
+    }
+    50% {
+        background-position: 75% 100%;
+    }
+    75% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+@keyframes skills_lang_name {
+    0% {
+        color: #ff00d4;
+    }
+    40% {
+        color: #00f7ff;
+    }
+    65%{
+        color: #e06614;
+    }
+    100% {
+        color: #ff00d4;
     }
 }
 
@@ -95,24 +172,6 @@ $dark: #1a202c;
     }
 }
 
-@keyframes gb-btn {
-    0% {
-        background-position: 0% 45%;
-    }
-    25% {
-        background-position: 45% 75%;
-    }
-    50% {
-        background-position: 75% 100%;
-    }
-    75% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 50% 0%;
-    }
-}
-
 // Error page Animation
 @keyframes error-heading {
     0% {
@@ -129,6 +188,24 @@ $dark: #1a202c;
     }
     100% {
         color: #ee7752;
+    }
+}
+
+@keyframes gb-btn {
+    0% {
+        background-position: 0% 45%;
+    }
+    25% {
+        background-position: 45% 75%;
+    }
+    50% {
+        background-position: 75% 100%;
+    }
+    75% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 50% 0%;
     }
 }
 
@@ -155,8 +232,8 @@ $dark: #1a202c;
 }
 
 // sm size
-@media (min-width: 280px) {
-}
+// @media (min-width: 280px) {
+// }
 
 // base size
 @media (min-width: 0px) {
