@@ -62,17 +62,73 @@ $dark: #1a202c;
 
 // Main body Animation
 @keyframes hero-heading {
-    28% {
+    0% {
         color: #ee7752;
     }
-    50% {
+    25% {
         color: #e73c7e;
     }
-    75% {
+    50% {
         color: #23a6d5;
     }
-    100% {
+    75% {
         color: #23d5ab;
+    }
+    100% {
+        color: #ee7752;
+    }
+}
+
+// Error Page
+.error-page {
+    .error-heading {
+        a {
+            user-select: none;
+            animation: error-heading 8s ease infinite;
+        }
+    }
+
+    .gb-btn {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: gb-btn 5s ease infinite;
+        background-size: 200% 200%;
+    }
+}
+
+@keyframes gb-btn {
+    0% {
+        background-position: 0% 45%;
+    }
+    25% {
+        background-position: 45% 75%;
+    }
+    50% {
+        background-position: 75% 100%;
+    }
+    75% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+// Error page Animation
+@keyframes error-heading {
+    0% {
+        color: #ee7752;
+    }
+    25% {
+        color: #e73c7e;
+    }
+    50% {
+        color: #23a6d5;
+    }
+    75% {
+        color: #23d5ab;
+    }
+    100% {
+        color: #ee7752;
     }
 }
 
