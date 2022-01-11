@@ -1,0 +1,111 @@
+// Import
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
+
+// Variables
+$primary: #2e94c5;
+$secondary: #287fca;
+$dark: #1a202c;
+
+// Navbar
+.navbar {
+    user-select: none;
+    overflow-wrap: break-word;
+    border-radius: 64px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    animation: nav 8.5s ease infinite;
+    background-size: 1000% 1000%;
+
+    .nav-item {
+        overflow-x: scroll;
+
+        #nav-item:hover {
+            transition: 0.5s;
+        }
+    }
+    .nav-item::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.contact-header {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    animation: navbar-bg 8.5s ease infinite;
+    background-size: 1000% 1000%;
+}
+
+// Navbar Animation
+@keyframes nav {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+// Main body
+.main-content {
+    overflow-wrap: break-word;
+
+    .hero {
+        .hero-heading {
+            a {
+                animation: hero-heading 8s ease infinite;
+            }
+        }
+    }
+}
+
+// Main body Animation
+@keyframes hero-heading {
+    28% {
+        color: #ee7752;
+    }
+    50% {
+        color: #e73c7e;
+    }
+    75% {
+        color: #23a6d5;
+    }
+    100% {
+        color: #23d5ab;
+    }
+}
+
+// xl size
+@media (min-width: 960px) {
+    .navbar {
+        margin: 20px;
+    }
+}
+
+// lg size
+@media (min-width: 768px) {
+    .navbar {
+        margin: 20px;
+    }
+}
+
+// md size
+@media (min-width: 600px) {
+    .navbar {
+        margin: 15px;
+        padding-left: 2.5px;
+    }
+}
+
+// sm size
+@media (min-width: 280px) {
+}
+
+// base size
+@media (min-width: 0px) {
+    .navbar {
+        margin: 13px;
+        padding-left: 20px;
+    }
+}
