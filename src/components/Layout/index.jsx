@@ -8,8 +8,8 @@ export default function Layout({ children }) {
         <>
             <Box alignItems={'center'}
                 m={'auto'}
-                marginTop={'20px'}
-                marginBottom={'20px'}
+                mt={'20px'}
+                mb={'20px'}
                 maxW={'810px'}>
                 <Head>
                     <meta charSet="UTF-8" />
@@ -19,12 +19,14 @@ export default function Layout({ children }) {
                     <title>BIG BEAST ISHANK</title>
                 </Head>
                 <Navbar />
-                <Box
-                    className={'main-content'}
-                    marginLeft={'30px'} marginTop={{ md: '0', sm: '20px' }} marginRight={'30px'}>
+                <Box className={'main-content'}
+                    ml={'30px'} mt={{ md: '0', sm: '20px' }} mr={'30px'}>
                     {children}
                 </Box>
-                <Footer />
+                <Box className={'footer'}
+                    ml={'30px'} mt={{ md: '0', sm: '20px' }} mr={'30px'}>
+                    <Footer />
+                </Box>
             </Box>
         </>
     )

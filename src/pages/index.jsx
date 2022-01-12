@@ -4,18 +4,47 @@ import React from 'react'
 
 export default function Index() {
 
+  // Skills part for python
   const [python_skill_bar, setPython_skill_bar] = React.useState('')
+  const [python_skill_bar_percent, setPython_skill_bar_percent] = React.useState('0%')
+
+  // Skills part for html
   const [html_skill_bar, setHtml_skill_bar] = React.useState('')
+  const [html_skill_bar_percent, setHtml_skill_bar_percent] = React.useState('0%')
+
+  // Skills part for css
   const [css_skill_bar, setCss_skill_bar] = React.useState('')
+  const [css_skill_bar_percent, setCss_skill_bar_percent] = React.useState('0%')
+
+  // Skills part for js
   const [js_skill_bar, setJs_skill_bar] = React.useState('')
+  const [js_skill_bar_percent, setJs_skill_bar_percent] = React.useState('0%')
+
+  // Skills part for c#
   const [cs_skill_bar, setCs_skill_bar] = React.useState('')
+  const [cs_skill_bar_percent, setCs_skill_bar_percent] = React.useState('0%')
 
   function show_skills() {
+    // Skills part for python
     setPython_skill_bar('python_skill_bar');
+    setPython_skill_bar_percent('92%');
+
+    // Skills part for html
     setHtml_skill_bar('html_skill_bar');
+    setHtml_skill_bar_percent('98%');
+
+    // Skills part for css
     setCss_skill_bar('css_skill_bar');
+    setCss_skill_bar_percent('95%');
+
+    // Skills part for js
     setJs_skill_bar('js_skill_bar');
+    setJs_skill_bar_percent('52%');
+
+    // Skills part for c#
     setCs_skill_bar('cs_skill_bar');
+    setCs_skill_bar_percent('11%');
+
   }
 
   return (
@@ -41,9 +70,9 @@ export default function Index() {
             Hello 👋. My name is Ishank as you know. I am a self-taught freelance developer. My prefered language is Python, JavaScript, CSS, SCSS, C#, HTML. To know more about me see about page.
           </Text>
         </Box>
-
+        
         <Skeleton
-
+          startColor='pink.500' endColor='orange.500'
           ml={'-30px'} mr={'-30px'} w={'810'} h={'2px'} mb={4} mt={4} />
       </Box>
 
@@ -95,7 +124,7 @@ export default function Index() {
               alignItems={'center'}>
               <Flex>
                 <Text mr={4}><a>Python</a></Text>
-                <Text>92%</Text>
+                <Text>{python_skill_bar_percent}</Text>
               </Flex>
             </Box>
 
@@ -113,7 +142,7 @@ export default function Index() {
               alignItems={'center'}>
               <Flex>
                 <Text mr={4}><a>HTML</a></Text>
-                <Text>98%</Text>
+                <Text>{html_skill_bar_percent}</Text>
               </Flex>
             </Box>
 
@@ -131,7 +160,7 @@ export default function Index() {
               alignItems={'center'}>
               <Flex>
                 <Text mr={4}><a>CSS</a></Text>
-                <Text>95%</Text>
+                <Text>{css_skill_bar_percent}</Text>
               </Flex>
             </Box>
 
@@ -149,7 +178,7 @@ export default function Index() {
               alignItems={'center'}>
               <Flex>
                 <Text mr={4}><a>JavaScript</a></Text>
-                <Text>52%</Text>
+                <Text>{js_skill_bar_percent}</Text>
               </Flex>
             </Box>
 
@@ -167,7 +196,7 @@ export default function Index() {
               alignItems={'center'}>
               <Flex>
                 <Text mr={4}><a>C#</a></Text>
-                <Text>11%</Text>
+                <Text>{cs_skill_bar_percent}</Text>
               </Flex>
             </Box>
 

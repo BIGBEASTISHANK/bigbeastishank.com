@@ -7,6 +7,22 @@ $primary: #2e94c5;
 $secondary: #287fca;
 $dark: #1a202c;
 
+// Scroll bar
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-image: linear-gradient(100deg, rgb(0, 0, 0) 11%, rgb(16, 44, 50) 92%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    border: 2px solid rgba(255, 255, 255, 0.78);
+    border-radius: 64px;
+}
+
 // Navbar
 .navbar {
     user-select: none;
@@ -24,7 +40,11 @@ $dark: #1a202c;
         }
     }
     .nav-item::-webkit-scrollbar {
-        display: none;
+        height: 2px;
+    }
+    .nav-item::-webkit-scrollbar-thumb {
+        background: white;
+        border-radius: 64px;
     }
 }
 
@@ -79,7 +99,6 @@ $dark: #1a202c;
         color: #ee7752;
     }
 }
-
 // Skills section
 .skills {
     .skills-heading {
@@ -102,34 +121,34 @@ $dark: #1a202c;
             animation: skills_lang_name 4s ease infinite;
         }
 
-        .default_lang_bar{
+        .default_lang_bar {
             width: 5%;
             background: linear-gradient(to bottom right, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             animation: default_lang_bar 1s ease infinite;
             background-size: 130% 130%;
         }
 
-        .python_skill_bar{
+        .python_skill_bar {
             animation: python_skill_bar 5s ease;
             width: 92%;
         }
 
-        .html_skill_bar{
+        .html_skill_bar {
             animation: html_skill_bar 6s ease;
             width: 98%;
         }
 
-        .css_skill_bar{
+        .css_skill_bar {
             animation: css_skill_bar 5.5s ease;
             width: 95%;
         }
 
-        .js_skill_bar{
+        .js_skill_bar {
             animation: js_skill_bar 4s ease;
             width: 52%;
         }
 
-        .cs_skill_bar{
+        .cs_skill_bar {
             animation: cs_skill_bar 3.5s ease;
             width: 11%;
         }
@@ -180,7 +199,7 @@ $dark: #1a202c;
     40% {
         color: #00f7ff;
     }
-    65%{
+    65% {
         color: #e06614;
     }
     100% {
@@ -189,62 +208,62 @@ $dark: #1a202c;
 }
 
 @keyframes python_skill_bar {
-    0%{
+    0% {
         width: 1%;
     }
-    50%{
+    50% {
         width: 100%;
     }
-    100%{
-        width: 92%
+    100% {
+        width: 92%;
     }
 }
 
 @keyframes html_skill_bar {
-    0%{
+    0% {
         width: 1%;
     }
-    50%{
+    50% {
         width: 100%;
     }
-    100%{
-        width: 98%
+    100% {
+        width: 98%;
     }
 }
 
 @keyframes css_skill_bar {
-    0%{
+    0% {
         width: 1%;
     }
-    50%{
+    50% {
         width: 100%;
     }
-    100%{
-        width: 95%
+    100% {
+        width: 95%;
     }
 }
 
 @keyframes js_skill_bar {
-    0%{
+    0% {
         width: 1%;
     }
-    50%{
+    50% {
         width: 100%;
     }
-    100%{
-        width: 52%
+    100% {
+        width: 52%;
     }
 }
 
 @keyframes cs_skill_bar {
-    0%{
+    0% {
         width: 1%;
     }
-    50%{
+    50% {
         width: 100%;
     }
-    100%{
-        width: 11%
+    100% {
+        width: 11%;
     }
 }
 
@@ -279,6 +298,13 @@ $dark: #1a202c;
         background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
         animation: gb-btn 5s ease infinite;
         background-size: 200% 200%;
+    }
+}
+
+// Footer
+.footer {
+    .img {
+        user-select: none;
     }
 }
 
@@ -320,21 +346,24 @@ $dark: #1a202c;
 }
 
 // xl size
-@media (min-width: 960px) {
+@media screen and (min-width: 960px) {
+    // Navbar
     .navbar {
         margin: 20px;
     }
 }
 
 // lg size
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
+    // Navbar
     .navbar {
         margin: 20px;
     }
 }
 
 // md size
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
+    // Navbar
     .navbar {
         margin: 15px;
         padding-left: 2.5px;
@@ -342,11 +371,12 @@ $dark: #1a202c;
 }
 
 // sm size
-// @media (min-width: 280px) {
+// @media screen and (min-width: 280px) {
 // }
 
 // base size
-@media (min-width: 0px) {
+@media screen and (min-width: 0px) {
+    // Navbar
     .navbar {
         margin: 13px;
         padding-left: 20px;
