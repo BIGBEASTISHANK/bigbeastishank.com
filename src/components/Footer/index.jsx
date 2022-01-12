@@ -2,14 +2,14 @@ import { Link, Box, Skeleton, Text, Center, Flex } from "@chakra-ui/react";
 import Image from 'next/image'
 
 export default function Footer() {
-    const s_media_path = '/images/social-media/'
+    const s_media_path = '/images/footer-link/'
     const icon_width = '30px';
     const icon_height = '30px'
     return (
         <>
             <Skeleton
                 startColor='pink.500' endColor='orange.500'
-                ml={'-30px'} mr={'-30px'} w={'810'} h={'2px'} mb={4} mt={4} />
+                ml={'-30px'} mr={'-30px'} w={'810'} h={'2px'} mb={4} mt={16} />
 
             <Center alignItems={'center'} textAlign={'center'}>
                 <Text>Made with 💖 by <Link href='https://github.com/bigbeastishank' isExternal><b>BIGBEASTISHANK</b></Link></Text>
@@ -29,6 +29,7 @@ export default function Footer() {
                     <Link className="links" href="https://steamcommunity.com/id/bigbeastishank" isExternal m={'2px'} mt={'8px'}><Image src={s_media_path + "steam.webp"} height={icon_height} width={icon_width}></Image></Link>
                     <Link className="links" href="https://twitter.com/opishank" isExternal m={'2px'} mt={'8px'}><Image src={s_media_path + "twitter.webp"} height={icon_height} width={icon_width}></Image></Link>
                     <Link className="links" href="https://www.youtube.com/channel/UCw6lNThNWxwz1cz5rvR1Rdw" isExternal m={'2px'} mt={'8px'}><Image src={s_media_path + "youtube.webp"} height={icon_height} width={icon_width}></Image></Link>
+                    <Link className="links" href="https://fiverr.com/bigbeastishank" isExternal m={'2px'} mt={'8px'}><Image src={s_media_path + "fiverr.webp"} height={icon_height} width={icon_width}></Image></Link>
                 </Flex>
             </Center>
         </>

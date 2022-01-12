@@ -1,4 +1,4 @@
-import { Flex, Box, Skeleton, Heading, Text, Center, Button, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Box, Skeleton, Heading, Text, Center, Button } from "@chakra-ui/react";
 import Head from "next/head";
 import React from 'react'
 
@@ -51,7 +51,7 @@ export default function Index() {
     <>
       {/* Html section */}
       <Head>
-        <title>HOME | BIG BEAST ISHANK</title>
+        <title>Home | BIG BEAST ISHANK</title>
       </Head>
 
       {/* Hero section */}

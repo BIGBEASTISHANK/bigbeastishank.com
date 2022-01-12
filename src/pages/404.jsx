@@ -1,10 +1,15 @@
 import { Box, Button, Center, Heading, Container } from "@chakra-ui/react";
 import Link from "next/link";
+import Head from 'next/head';
 
 export default function Errorpage() {
     return (
         <>
             <Box className="error-page">
+                <Head>
+                    <title>404 Page not Found</title>
+                </Head>
+
                 <Center>
                     <Heading className="error-heading"
                         fontSize={{ lg: '6xl', md: '5xl', sm: '39px', base: '25px' }} fontWeight='700'

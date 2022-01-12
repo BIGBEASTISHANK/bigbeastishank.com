@@ -48,6 +48,16 @@ export default function Navbar() {
                             color={'white'}
                             ml={{ md: '2.5px', base: '0px' }} mr={'2.5px'}
                             pl={'10px'} pr={'10px'}
+                            _hover={{ bg: '#D51B90', borderRadius: '25px' }}>
+                            <Link href="/about">About</Link>
+                        </Text>
+
+                        <Text
+                            id={'nav-item'}
+                            fontSize={{ xl: '18px', md: '15px' }}
+                            color={'white'}
+                            ml={{ md: '2.5px', base: '0px' }} mr={'2.5px'}
+                            pl={'10px'} pr={'10px'}
                             _hover={{ bg: '#D51B90', borderRadius: '25px' }} onClick={onOpen}
                             cursor={'pointer'}>
                             Contact
