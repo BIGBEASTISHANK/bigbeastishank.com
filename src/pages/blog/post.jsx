@@ -9,8 +9,8 @@ export default function Post({ post }) {
                 fontSize={{ lg: '4xl', md: '3xl', sm: '28px', base: '18px' }} fontWeight='700'
                 mb={{ lg: '10px', base: '5px' }} mt={'15px'}>
 
-                <Link href={`/blog/${post.slug}`}>
-                    <a>{post.frontmatter.title}</a>
+                <Link href={`/blog/${post?.slug}`}>
+                    <a>{post?.frontmatter.title}</a>
                 </Link>
 
             </Heading>
@@ -18,12 +18,12 @@ export default function Post({ post }) {
             <Text className="description"
                 fontSize={{ xl: '23px', lg: '18px', md: '16px', sm: '14px', base: '11px' }} fontWeight="700"
                 mb={{ lg: '15px', base: '10px' }}>
-                {post.frontmatter.description}
+                {post?.frontmatter.description}
             </Text>
 
             <Text className="date"
                 fontSize={{ xl: '19px', lg: '14px', md: '12px', sm: '10px', base: '7px' }}>
-                <i>{post.frontmatter.date}</i>
+                <i>{post?.frontmatter.date}</i>
             </Text>
         </Box>
     )
