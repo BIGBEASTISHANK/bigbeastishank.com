@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { Box, Center, Heading, Text, Skeleton } from '@chakra-ui/react'
 
 export default function BlogPost({
-    frontmatter: { title, date, author, read_time },
+    frontmatter: { title, date, description, author, read_time },
     slug,
     content,
 }) {
@@ -22,6 +22,12 @@ export default function BlogPost({
                 </Heading>
 
                 <Text className="description"
+                    fontSize={{ xl: '23px', lg: '18px', md: '16px', sm: '14px', base: '11px' }} fontWeight="700"
+                    mb={{ lg: '15px', base: '10px' }}>
+                    {description}
+                </Text>
+
+                <Text className="head-footer"
                     fontSize={{ xl: '19px', lg: '14px', md: '12px', sm: '10px', base: '7px' }}
                     mb={{ lg: '15px', base: '10px' }}>
                     {author} / {date} / {read_time} read
