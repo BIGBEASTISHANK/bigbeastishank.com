@@ -70,7 +70,7 @@ export default function Index() {
             Hello 👋. My name is Ishank as you know. I am a self-taught freelance developer. My prefered language is Python, JavaScript, CSS, SCSS, C#, HTML. To know more about me see about page.
           </Text>
         </Box>
-        
+
         <Skeleton
           startColor='pink.500' endColor='orange.500'
           ml={'-30px'} mr={'-30px'} w={'810'} h={'2px'} mb={4} mt={4} />
@@ -119,9 +119,7 @@ export default function Index() {
           {/* Python bar */}
           <Box className={'python'}>
             <Box
-              fontSize={{ xl: '25px', lg: '20px', md: '18px', sm: '16px', base: '13px' }} fontWeight="700"
-              alignContent={"center"}
-              alignItems={'center'}>
+              fontSize={{ xl: '25px', lg: '20px', md: '18px', sm: '16px', base: '13px' }} fontWeight="700">
               <Flex>
                 <Text mr={4}><a>Python</a></Text>
                 <Text>{python_skill_bar_percent}</Text>
@@ -137,9 +135,7 @@ export default function Index() {
           <Box className={'html'}>
             <Box
               fontSize={{ xl: '25px', lg: '20px', md: '18px', sm: '16px', base: '13px' }} fontWeight="700"
-              mt={4}
-              alignContent={"center"}
-              alignItems={'center'}>
+              mt={4}>
               <Flex>
                 <Text mr={4}><a>HTML</a></Text>
                 <Text>{html_skill_bar_percent}</Text>
@@ -155,9 +151,7 @@ export default function Index() {
           <Box className={'css'}>
             <Box
               fontSize={{ xl: '25px', lg: '20px', md: '18px', sm: '16px', base: '13px' }} fontWeight="700"
-              mt={4}
-              alignContent={"center"}
-              alignItems={'center'}>
+              mt={4}>
               <Flex>
                 <Text mr={4}><a>CSS</a></Text>
                 <Text>{css_skill_bar_percent}</Text>
@@ -173,9 +167,7 @@ export default function Index() {
           <Box className={'javascript'}>
             <Box
               fontSize={{ xl: '25px', lg: '20px', md: '18px', sm: '16px', base: '13px' }} fontWeight="700"
-              mt={4}
-              alignContent={"center"}
-              alignItems={'center'}>
+              mt={4}>
               <Flex>
                 <Text mr={4}><a>JavaScript</a></Text>
                 <Text>{js_skill_bar_percent}</Text>
@@ -191,9 +183,7 @@ export default function Index() {
           <Box className={'cs'}>
             <Box
               fontSize={{ xl: '25px', lg: '20px', md: '18px', sm: '16px', base: '13px' }} fontWeight="700"
-              mt={4}
-              alignContent={"center"}
-              alignItems={'center'}>
+              mt={4}>
               <Flex>
                 <Text mr={4}><a>C#</a></Text>
                 <Text>{cs_skill_bar_percent}</Text>
