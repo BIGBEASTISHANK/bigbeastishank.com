@@ -9,7 +9,7 @@ export default function Footer() {
         <>
             <Skeleton
                 startColor='pink.500' endColor='orange.500'
-                ml={'-30px'} mr={'-30px'} w={'810'} h={'2px'} mb={4} mt={16} />
+                ml={'-30px'} mr={'-30px'} w={'810'} h={'2px'} mb={4} mt={4} />
 
             <Center alignItems={'center'} textAlign={'center'}>
                 <Text>Made with 💖 by <Link href='https://github.com/bigbeastishank' isExternal><b>BIGBEASTISHANK</b></Link></Text>

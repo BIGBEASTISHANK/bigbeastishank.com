@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Post({ post }) {
     return (
-        <Box mb={12} className='posts'>
+        <Box mb={5} className='posts'>
 
             <Heading className="title"
                 fontSize={{ lg: '4xl', md: '3xl', sm: '28px', base: '18px' }} fontWeight='700'

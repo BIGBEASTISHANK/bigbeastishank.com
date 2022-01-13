@@ -32,12 +32,12 @@ export default function Errorpage() {
                 <Center>
 
                     {/* For Mobile and above */}
-                    <Button d={{ base: 'none', sm: 'flex' }} size={'lg'} className="gb-btn" _hover={"none"}>
+                    <Button d={{ base: 'none', sm: 'flex' }} size={'lg'} className="gb-btn" _hover={"none"} mb={7}>
                         <Link href="/">Home</Link>
                     </Button>
 
                     {/* For small mobile */}
-                    <Button d={{ base: 'flex', sm: 'none' }} size={'md'} className="gb-btn" _hover={"none"}>
+                    <Button d={{ base: 'flex', sm: 'none' }} size={'md'} className="gb-btn" _hover={"none"} mb={7}>
                         <Link href="/">Home</Link>
                     </Button>
                 </Center>
