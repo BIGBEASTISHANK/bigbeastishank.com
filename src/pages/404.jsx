@@ -37,7 +37,7 @@ export default function Errorpage() {
                     </Button>
 
                     {/* For small mobile */}
-                    <Button d={{ base: 'lex', sm: 'none' }} size={'md'} className="gb-btn" _hover={"none"}>
+                    <Button d={{ base: 'flex', sm: 'none' }} size={'md'} className="gb-btn" _hover={"none"}>
                         <Link href="/">Home</Link>
                     </Button>
                 </Center>

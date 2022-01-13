@@ -348,6 +348,12 @@ $dark: #1a202c;
             animation: title 7s ease infinite;
         }
     }
+
+    .gb-btn {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: gb-btn 5s ease infinite;
+        background-size: 200% 200%;
+    }
 }
 
 // Blog Animation

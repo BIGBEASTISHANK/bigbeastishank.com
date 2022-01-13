@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 import Link from 'next/link'
-import { Box, Center, Heading, Text, Skeleton } from '@chakra-ui/react'
+import { Box, Button, Heading, Text, Skeleton } from '@chakra-ui/react'
 
 export default function BlogPost({
     frontmatter: { title, date, description, author, read_time },
@@ -37,15 +37,20 @@ export default function BlogPost({
                     startColor='pink.500' endColor='orange.500'
                     ml={'-30px'} mr={'-30px'} w={'810'} h={'2px'} mb={6} mt={6} />
 
-                <Box className="content">
+                <Box className="content" mb={5}>
                     <Box dangerouslySetInnerHTML={{ __html: marked(content) }} />
                 </Box>
+
+                {/* For Mobile and above */}
+                <Button d={{ base: 'none', sm: 'flex' }} size={'lg'} className="gb-btn" _hover={"none"} mt={16} borderRadius='full'>
+                    <Link href="/blog">Go Back</Link>
+                </Button>
+
+                {/* For small mobile */}
+                <Button d={{ base: 'flex', sm: 'none' }} size={'md'} className="gb-btn" _hover={"none"} mt={16} borderRadius='full'>
+                    <Link href="/blog">Go Back</Link>
+                </Button>
             </Box>
-            {/* <div className="postpage">
-                title: {title}
-                date: {date}
-                <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
-            </div> */}
         </>
     )
 }
