@@ -66,7 +66,7 @@ export default function Credits() {
                       flex="1"
                       textAlign="left"
                       fontWeight={"1000"}
-                      fontSize={{md: "25px", sm: "19px", base: "15px" }}
+                      fontSize={{ md: "25px", sm: "19px", base: "15px" }}
                     >
                       Tanmay Sinha
                     </Box>
@@ -94,6 +94,7 @@ export default function Credits() {
                     <a
                       href="https://github.com/tanmaysinha14/"
                       target={"_blank"}
+                      rel="noreferrer"
                     >
                       Dev Profile
                     </a>
@@ -108,7 +109,7 @@ export default function Credits() {
                       flex="1"
                       textAlign="left"
                       fontWeight={"1000"}
-                      fontSize={{md: "25px", sm: "19px", base: "15px" }}
+                      fontSize={{ md: "25px", sm: "19px", base: "15px" }}
                     >
                       Kushagra Raj
                     </Box>
@@ -135,6 +136,7 @@ export default function Credits() {
                     <a
                       href="https://github.com/BruceMacGary/"
                       target={"_blank"}
+                      rel="noreferrer"
                     >
                       Dev Profile
                     </a>
