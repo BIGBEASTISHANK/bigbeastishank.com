@@ -70,7 +70,7 @@ export default function Index() {
             Hello 👋. My name is Ishank as you know. I am a self-taught freelance developer. My prefered language is Python, JavaScript, CSS, SCSS, C#, HTML. To know more about me see about page.
           </Text>
         </Box>
-
+        
         <Skeleton
           startColor='pink.500' endColor='orange.500'
           ml={'-30px'} mr={'-30px'} w={'810'} h={'2px'} mb={4} mt={4} />

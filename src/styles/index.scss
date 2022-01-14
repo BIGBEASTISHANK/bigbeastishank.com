@@ -293,89 +293,22 @@ $dark: #1a202c;
         }
     }
 
-    .about-content {
-        b {
-            background-color: #23b1cb;
+    .about-content{
+        b{
+            background-color:#23B1CB;
             padding-left: 3px;
             padding-right: 3px;
             border-radius: 10px;
         }
     }
 
-    .gears-item {
+    .gears-item{
         user-select: none;
     }
 }
 
 // About Animation
 @keyframes about-heading {
-    0% {
-        color: #ee7752;
-    }
-    25% {
-        color: #e73c7e;
-    }
-    50% {
-        color: #23a6d5;
-    }
-    75% {
-        color: #23d5ab;
-    }
-    100% {
-        color: #ee7752;
-    }
-}
-
-// Blog Page
-.blog {
-    .heading {
-        a {
-            animation: post-heading 7s ease infinite;
-        }
-    }
-    .posts {
-        .title {
-            a {
-                animation: title 7s ease infinite;
-            }
-        }
-    }
-}
-
-.blogpost {
-    .title {
-        a {
-            animation: title 7s ease infinite;
-        }
-    }
-
-    .gb-btn {
-        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-        animation: gb-btn 5s ease infinite;
-        background-size: 200% 200%;
-    }
-}
-
-// Blog Animation
-@keyframes title {
-    0% {
-        color: #ee7752;
-    }
-    25% {
-        color: #e73c7e;
-    }
-    50% {
-        color: #23a6d5;
-    }
-    75% {
-        color: #23d5ab;
-    }
-    100% {
-        color: #ee7752;
-    }
-}
-
-@keyframes post-heading {
     0% {
         color: #ee7752;
     }
