@@ -14,12 +14,16 @@ import {
   ModalCloseButton,
   ModalBody,
   Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
-
-import NextLink from "next/link";
 
 export default function Credits() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const modeBtnBg = useColorModeValue("white", "dark");
+  const modeBtnClr = useColorModeValue("dark", "white");
+  const modeBtnBgHov = useColorModeValue("dark", "white");
+  const modeBtnClrHov = useColorModeValue("white", "dark");
+
   return (
     <>
       <Text
@@ -46,6 +50,7 @@ export default function Credits() {
             fontWeight={"1000"}
             p="12px"
             borderTopRadius={"20px"}
+            color={"white"}
           >
             Credit
           </ModalHeader>
@@ -67,6 +72,7 @@ export default function Credits() {
                       textAlign="left"
                       fontWeight={"1000"}
                       fontSize={{ md: "25px", sm: "19px", base: "15px" }}
+                      color={"white"}
                     >
                       Tanmay Sinha
                     </Box>
@@ -77,6 +83,7 @@ export default function Credits() {
                   className="c-item-content"
                   pb={4}
                   borderBottomRadius={"20px"}
+                  color={"white"}
                 >
                   You see this guy, number one... CSS expert guy, CSS expert guy
                   🤣. He helped me in making this website animations and
@@ -87,9 +94,10 @@ export default function Credits() {
                     <br />
                   </Text>
                   <Button
-                    bg="#1A202C"
-                    _hover={{ bg: "black" }}
+                    bg={modeBtnBg}
+                    _hover={{ bg: modeBtnBgHov, color: modeBtnClrHov }}
                     borderRadius={"full"}
+                    color={modeBtnClr}
                   >
                     <a
                       href="https://github.com/tanmaysinha14/"
@@ -110,6 +118,7 @@ export default function Credits() {
                       textAlign="left"
                       fontWeight={"1000"}
                       fontSize={{ md: "25px", sm: "19px", base: "15px" }}
+                      color={"white"}
                     >
                       Kushagra Raj
                     </Box>
@@ -120,6 +129,7 @@ export default function Credits() {
                   className="c-item-content"
                   pb={4}
                   borderBottomRadius={"20px"}
+                  color={"white"}
                 >
                   His nickname is Bruce Mac Gary. He is the person who helped in
                   my web development career, he introduced me to GitHub,
@@ -129,9 +139,10 @@ export default function Credits() {
                     <br />
                   </Text>
                   <Button
-                    bg="#1A202C"
-                    _hover={{ bg: "black" }}
+                    bg={modeBtnBg}
+                    _hover={{ bg: modeBtnBgHov, color: modeBtnClrHov }}
                     borderRadius={"full"}
+                    color={modeBtnClr}
                   >
                     <a
                       href="https://github.com/BruceMacGary/"

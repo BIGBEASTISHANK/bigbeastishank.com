@@ -18,7 +18,7 @@ import {
 
 export default function Contact() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const contact_bg = useColorModeValue("light", "dark");
+  const contact_bg = useColorModeValue("lightMBg", "dark");
   return (
     <>
       <Text
@@ -89,7 +89,7 @@ export default function Contact() {
 
           <Skeleton startColor="pink.500" endColor="orange.500" h={"4px"} />
 
-          <DrawerFooter>
+          <DrawerFooter bg={"lightMBg"}>
             <Button
               variant="outline"
               mr={3}
