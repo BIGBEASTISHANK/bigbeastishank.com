@@ -25,7 +25,7 @@ export default function Credits() {
       <Text
         id={"nav-item"}
         fontSize={{ xl: "18px", md: "15px" }}
-        color={"white"}
+        color={"light"}
         ml={{ md: "2.5px", base: "0px" }}
         mr={"2.5px"}
         pl={"10px"}

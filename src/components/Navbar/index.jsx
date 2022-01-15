@@ -14,8 +14,8 @@ import Credit from "./Credits";
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const icon_color = useColorModeValue("dark", "white");
-  const icon_bg = useColorModeValue("white", "dark");
+  const icon_color = useColorModeValue("dark", "light");
+  const icon_bg = useColorModeValue("light", "dark");
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function Navbar() {
         <Flex alignItems={"center"} textAlign={"center"}>
           <Text
             p={{ xl: "20px", md: "15px" }}
-            color={"white"}
+            color={"light"}
             as="b"
             fontSize={{ xl: "25px", md: "20px" }}
             d={{ md: "flex", base: "none" }}
@@ -43,7 +43,7 @@ export default function Navbar() {
             <Text
               id={"nav-item"}
               fontSize={{ xl: "18px", md: "15px" }}
-              color={"white"}
+              color={"light"}
               ml={{ md: "2.5px", base: "0px" }}
               mr={"2.5px"}
               pl={"10px"}
@@ -56,7 +56,7 @@ export default function Navbar() {
             <Text
               id={"nav-item"}
               fontSize={{ xl: "18px", md: "15px" }}
-              color={"white"}
+              color={"light"}
               ml={{ md: "2.5px", base: "0px" }}
               mr={"2.5px"}
               pl={"10px"}

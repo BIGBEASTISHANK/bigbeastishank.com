@@ -18,13 +18,13 @@ import {
 
 export default function Contact() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const contact_bg = useColorModeValue("white", "dark");
+  const contact_bg = useColorModeValue("light", "dark");
   return (
     <>
       <Text
         id={"nav-item"}
         fontSize={{ xl: "18px", md: "15px" }}
-        color={"white"}
+        color={"light"}
         ml={{ md: "2.5px", base: "0px" }}
         mr={"2.5px"}
         pl={"10px"}
@@ -43,7 +43,7 @@ export default function Contact() {
             className="contact-header"
             fontSize={"29px"}
             fontWeight={"1000"}
-            color={"white"}
+            color={"light"}
           >
             Contact Me
           </DrawerHeader>
@@ -95,8 +95,8 @@ export default function Contact() {
               mr={3}
               onClick={onClose}
               bg={"black"}
-              color={"white"}
-              _hover={{ bg: "white", color: "dark" }}
+              color={"light"}
+              _hover={{ bg: "light", color: "dark" }}
               outline={"2px solid"}
             >
               Cancel
