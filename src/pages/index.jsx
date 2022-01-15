@@ -11,6 +11,7 @@ import Head from "next/head";
 import React from "react";
 
 export default function Index() {
+
   // Skills part for python
   const [python_skill_bar, setPython_skill_bar] = React.useState("");
   const [python_skill_bar_percent, setPython_skill_bar_percent] =

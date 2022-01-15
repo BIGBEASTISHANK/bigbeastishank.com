@@ -13,10 +13,12 @@ import {
   DrawerBody,
   Button,
   useDisclosure,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 export default function Contact() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const contact_bg = useColorModeValue("white", "dark");
   return (
     <>
       <Text
@@ -41,23 +43,42 @@ export default function Contact() {
             className="contact-header"
             fontSize={"29px"}
             fontWeight={"1000"}
+            color={"white"}
           >
             Contact Me
           </DrawerHeader>
 
           <Skeleton startColor="pink.500" endColor="orange.500" h={"4px"} />
 
-          <DrawerBody bg={"dark"}>
+          <DrawerBody bg={contact_bg}>
             <FormControl isRequired>
               <form action="https://formspree.io/f/mrgravyr" method="POST">
                 <FormLabel htmlFor="name">Full Name</FormLabel>
-                <Input id="name" type="name" name="Name" mb={"10px"} />
+                <Input
+                  id="name"
+                  type="name"
+                  name="Name"
+                  mb={"10px"}
+                  outline={"2px solid"}
+                />
 
                 <FormLabel htmlFor="email">Email Address</FormLabel>
-                <Input id="email" type="email" name="E-Mail" mb={"10px"} />
+                <Input
+                  id="email"
+                  type="email"
+                  name="E-Mail"
+                  mb={"10px"}
+                  outline={"2px solid"}
+                />
 
                 <FormLabel htmlFor="message">Message</FormLabel>
-                <Textarea id="message" type="text" name="Message" mb={"10px"} />
+                <Textarea
+                  id="message"
+                  type="text"
+                  name="Message"
+                  mb={"10px"}
+                  outline={"2px solid"}
+                />
 
                 <Button colorScheme="blue" mt={"10px"} type="submit">
                   Submit
@@ -69,7 +90,15 @@ export default function Contact() {
           <Skeleton startColor="pink.500" endColor="orange.500" h={"4px"} />
 
           <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
+            <Button
+              variant="outline"
+              mr={3}
+              onClick={onClose}
+              bg={"black"}
+              color={"white"}
+              _hover={{ bg: "white", color: "dark" }}
+              outline={"2px solid"}
+            >
               Cancel
             </Button>
           </DrawerFooter>
