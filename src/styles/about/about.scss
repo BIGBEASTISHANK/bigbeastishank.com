@@ -1,0 +1,40 @@
+// About Section
+.about {
+  .about-heading {
+    a {
+      animation: about-heading 7s ease infinite;
+    }
+  }
+
+  .about-content {
+    b {
+      background-color: #23b1cb;
+      padding-left: 3px;
+      padding-right: 3px;
+      border-radius: 10px;
+    }
+  }
+
+  .gears-item {
+    user-select: none;
+  }
+}
+
+// About Animation
+@keyframes about-heading {
+  0% {
+    color: #ee7752;
+  }
+  25% {
+    color: #e73c7e;
+  }
+  50% {
+    color: #23a6d5;
+  }
+  75% {
+    color: #23d5ab;
+  }
+  100% {
+    color: #ee7752;
+  }
+}

@@ -9,7 +9,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head title="BIG BEAST ISHANK"/>
+        <Head/>
         <body>
           <Main />
           <NextScript />

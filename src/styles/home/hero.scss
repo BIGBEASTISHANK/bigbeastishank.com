@@ -1,0 +1,27 @@
+// Hero Section
+.hero {
+  .hero-heading {
+    a {
+      animation: hero-heading 7s ease infinite;
+    }
+  }
+}
+
+// Hero Animation
+@keyframes hero-heading {
+  0% {
+    color: #ee7752;
+  }
+  25% {
+    color: #e73c7e;
+  }
+  50% {
+    color: #23a6d5;
+  }
+  75% {
+    color: #23d5ab;
+  }
+  100% {
+    color: #ee7752;
+  }
+}

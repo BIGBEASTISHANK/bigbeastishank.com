@@ -66,6 +66,19 @@ export default function Navbar() {
               <NextLink href="/about">About</NextLink>
             </Text>
 
+            <Text
+              id={"nav-item"}
+              fontSize={{ xl: "18px", md: "15px" }}
+              color={"light"}
+              ml={{ md: "2.5px", base: "0px" }}
+              mr={"2.5px"}
+              pl={"10px"}
+              pr={"10px"}
+              _hover={{ bg: "#D51B90", borderRadius: "25px" }}
+            >
+              <NextLink href="/blog">Blog</NextLink>
+            </Text>
+
             <Credit />
 
             <Contact />
