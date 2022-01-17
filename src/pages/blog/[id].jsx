@@ -14,38 +14,26 @@ export default function Post({ postData }) {
 
         <Heading
           className="title"
-          fontSize={{ lg: "4xl", md: "3xl", sm: "28px", base: "18px" }}
+          fontSize={"32px"}
           fontWeight="700"
-          mb={{ lg: "10px", base: "5px" }}
+          mb={"35px"}
           mt={"25px"}
         >
-          <a>{postData.title}</a>
+          {postData.title}
         </Heading>
 
         <Text
           className="description"
-          fontSize={{
-            xl: "23px",
-            lg: "18px",
-            md: "16px",
-            sm: "14px",
-            base: "11px",
-          }}
+          fontSize={"20px"}
           fontWeight="700"
-          mb={{ lg: "15px", base: "10px" }}
+          mb={"35px"}
         >
           {postData.description}
         </Text>
 
         <Text
           className="head-footer"
-          fontSize={{
-            xl: "19px",
-            lg: "14px",
-            md: "12px",
-            sm: "10px",
-            base: "7px",
-          }}
+          fontSize={"16px"}
           mb={{ lg: "15px", base: "10px" }}
         >
           <Link href="https://github.com/bigbeastishank" isExternal>

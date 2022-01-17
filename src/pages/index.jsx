@@ -11,7 +11,6 @@ import Head from "next/head";
 import React from "react";
 
 export default function Index() {
-
   // Skills part for python
   const [python_skill_bar, setPython_skill_bar] = React.useState("");
   const [python_skill_bar_percent, setPython_skill_bar_percent] =
@@ -67,12 +66,11 @@ export default function Index() {
       {/* Hero section */}
       <Box className="hero">
         <Heading
-          className="hero-heading"
           fontSize={{ lg: "6xl", md: "5xl", sm: "39px", base: "25px" }}
           fontWeight="700"
           mb={{ lg: "20px", md: "15px" }}
         >
-          <a>I am Ishank</a>
+          <Text className="hero-heading">I am Ishank</Text>
         </Heading>
 
         <Box
@@ -109,13 +107,12 @@ export default function Index() {
       <Box className="skills">
         <Center>
           <Heading
-            className="skills-heading"
             fontSize={{ lg: "5xl", md: "4xl", sm: "32px", base: "22px" }}
             fontWeight="700"
             mb={{ lg: "20px", base: "15px" }}
             mt={"15px"}
           >
-            <a>Skills</a>
+            <Text className="skills-heading">Skills</Text>
           </Heading>
         </Center>
 
@@ -160,7 +157,7 @@ export default function Index() {
             >
               <Flex>
                 <Text mr={4}>
-                  <a>Python</a>
+                  <Text className='language-name'>Python</Text>
                 </Text>
                 <Text>{python_skill_bar_percent}</Text>
               </Flex>
@@ -190,7 +187,7 @@ export default function Index() {
             >
               <Flex>
                 <Text mr={4}>
-                  <a>HTML</a>
+                  <Text className='language-name'>HTML</Text>
                 </Text>
                 <Text>{html_skill_bar_percent}</Text>
               </Flex>
@@ -219,7 +216,7 @@ export default function Index() {
             >
               <Flex>
                 <Text mr={4}>
-                  <a>CSS</a>
+                  <Text className='language-name'>CSS</Text>
                 </Text>
                 <Text>{css_skill_bar_percent}</Text>
               </Flex>
@@ -249,7 +246,7 @@ export default function Index() {
             >
               <Flex>
                 <Text mr={4}>
-                  <a>JavaScript</a>
+                  <Text className='language-name'>JavaScript</Text>
                 </Text>
                 <Text>{js_skill_bar_percent}</Text>
               </Flex>
@@ -279,7 +276,7 @@ export default function Index() {
             >
               <Flex>
                 <Text mr={4}>
-                  <a>C#</a>
+                  <Text className='language-name'>C#</Text>
                 </Text>
                 <Text>{cs_skill_bar_percent}</Text>
               </Flex>

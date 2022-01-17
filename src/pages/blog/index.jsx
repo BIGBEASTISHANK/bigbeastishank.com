@@ -11,9 +11,9 @@ export default function Blog({ allPostsData }) {
         <title>Blog | BIG BEAST ISHANK</title>
       </Head>
 
-      {allPostsData.map(({ id, date, title, description }) => (
-        <>
-          <Box className="blog">
+      <Box className="blog">
+        {allPostsData.map(({ id, date, title, description }) => (
+          <li key={id}>
             <Heading
               className="heading"
               fontSize={{ lg: "6xl", md: "5xl", sm: "39px", base: "25px" }}
@@ -21,9 +21,7 @@ export default function Blog({ allPostsData }) {
               textAlign={"center"}
               mb={{ lg: "20px", md: "15px" }}
             >
-              <Text className="head">
-                My Blog
-              </Text>
+              <Text className="head">My Blog</Text>
             </Heading>
 
             <Box
@@ -59,14 +57,13 @@ export default function Blog({ allPostsData }) {
 
             <Box mb={5} className="posts">
               <Heading
-                className="title"
                 fontSize={{ lg: "4xl", md: "3xl", sm: "28px", base: "18px" }}
                 fontWeight="700"
                 mb={{ lg: "10px", base: "5px" }}
                 mt={"15px"}
               >
                 <NextLink href={`/blog/${id}`}>
-                  <a>{title}</a>
+                  <Text className='title' cursor={'pointer'}>{title}</Text>
                 </NextLink>
               </Heading>
 
@@ -104,9 +101,9 @@ export default function Blog({ allPostsData }) {
             </Box>
 
             {/********************************/}
-          </Box>
-        </>
-      ))}
+          </li>
+        ))}
+      </Box>
     </>
   );
 }

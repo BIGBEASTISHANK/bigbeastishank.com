@@ -1,9 +1,7 @@
 // Skills section
 .skills {
   .skills-heading {
-    a {
       animation: skills-heading 6s ease infinite;
-    }
   }
 
   .skills-btn {
@@ -16,7 +14,7 @@
   }
 
   .skills_lang {
-    a {
+    .language-name {
       animation: skills_lang_name 4s ease infinite;
     }
 

@@ -1,4 +1,11 @@
-import { Box, Button, Center, Heading, Container } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  Heading,
+  Container,
+  Text,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 import Head from "next/head";
 
@@ -12,14 +19,13 @@ export default function Errorpage() {
 
         <Center>
           <Heading
-            className="error-heading"
             fontSize={{ lg: "6xl", md: "5xl", sm: "39px", base: "25px" }}
             fontWeight="700"
             mb={{ sm: "50px", base: "25px" }}
             mt={{ sm: "100px", base: "25px" }}
             textAlign={"center"}
           >
-            <a> 404 Page Not Found</a>
+            <Text className="error-heading"> 404 Page Not Found</Text>
           </Heading>
         </Center>
 

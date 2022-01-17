@@ -7,6 +7,7 @@ import {
   UnorderedList,
   ListItem,
   Link,
+  Text
 } from "@chakra-ui/react";
 import Head from "next/head";
 
@@ -25,7 +26,7 @@ export default function About() {
             fontWeight="700"
             mb={{ lg: "20px", md: "15px" }}
           >
-            <a>About Me</a>
+            <Text className={'about-head'}>About Me</Text>
           </Heading>
         </Center>
 

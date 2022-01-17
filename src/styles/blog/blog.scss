@@ -1,5 +1,9 @@
 // Blog Page
 .blog {
+  li {
+    list-style: none;
+  }
+
   .heading {
     .head {
       animation: post-heading 7s ease infinite;
@@ -7,24 +11,8 @@
   }
   .posts {
     .title {
-      a {
-        animation: title 7s ease infinite;
-      }
-    }
-  }
-}
-
-.blogpost {
-  .title {
-    a {
       animation: title 7s ease infinite;
     }
-  }
-
-  .gb-btn {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    animation: gb-btn 5s ease infinite;
-    background-size: 200% 200%;
   }
 }
 

@@ -1,10 +1,8 @@
 // Error Page
 .error-page {
   .error-heading {
-    a {
-      user-select: none;
-      animation: error-heading 8s ease infinite;
-    }
+    user-select: none;
+    animation: error-heading 8s ease infinite;
   }
 
   .gb-btn {

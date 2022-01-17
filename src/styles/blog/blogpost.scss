@@ -1,0 +1,60 @@
+.blogpost {
+  .title {
+    animation: title 7s ease infinite;
+  }
+
+  .gb-btn {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    animation: gb-btn 5s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  .content {
+    code {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+    h1 {
+      font-size: 35px;
+      font-weight: 1000;
+      animation: title 7s ease infinite;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 1000;
+      animation: title 7s ease infinite;
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    li {
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 18px;
+    }
+
+    ul {
+      margin-bottom: 20px;
+    }
+
+    a {
+      font-size: 18px;
+      color: rgb(27, 118, 238);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
