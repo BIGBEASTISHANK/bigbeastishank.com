@@ -34,7 +34,7 @@ I started my journey in AI development as my [fuffa ji (uncle)](https://twitter.
 In this long break I left IT field as everyone needs a break and I took my break due to studies and all those stuffs but my BFFs **[Divya Rani Soni](https://instagram.com/divyarani9464)** and **[Sahil Singh Rajput](https://www.instagram.com/_sahil__singh__rajput_/)** encouraged me again towards IT field
 \
 \
-I started [fiverr](https://fiverr.com/bigbeastishank). My gig was of making website for others, but it didn't succeded. I got my only client and he is my friend only [Himanshu Sekhar](https://www.instagram.com/himanxhhu/).
+I started [fiverr](https://fiverr.com/bigbeastishank). My gig was of making website for others, but it didn't succeded. I got my only client and he is my friend only [Himanshu Shekhar](https://www.instagram.com/himanxhhu/).
 \
 \
 I took a break from coding after **fiverr** and came on **hacking**. I switched from windows to linux. After sticking to **[Parrot Linux](https://parrotsec.org)** for about 1 month, I started distro hoping and I came across **[Arch Linux](https://archlinux.org)**. I used some window manager like **[Xmonad](https://github.com/BIGBEASTISHANK/xmonad-dotfiles-1.0)**, **[Qtile](https://github.com/BIGBEASTISHANK/qtile-dotfiles-3.0)** (this was the WM on which I stayed longest), **[BSPWM](https://github.com/BIGBEASTISHANK/bspwm-dotfiles-1.0)**. By clicking on the name of WM you can see my configuration. Then I switched to gnome, which does not required any configuration.
@@ -48,7 +48,7 @@ Around october 2021 I saw Bruce **main** website and it was made on [Next Js](ht
 - [Dr Sindhu Bhaskar](https://twitter.com/sinrkb)
 - [Divya Rani Soni](https://instagram.com/divyarani9464)
 - [Sahil Singh Rajput](https://www.instagram.com/_sahil__singh__rajput_/)
-- [Himanshu Sekhar](https://www.instagram.com/himanxhhu/)
+- [Himanshu Shekhar](https://www.instagram.com/himanxhhu/)
 - [Tanmay Sinha](https://github.com/tanmaysinha14)
 
 ## Sources
