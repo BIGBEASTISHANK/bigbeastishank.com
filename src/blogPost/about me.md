@@ -41,6 +41,9 @@ I took a break from coding after **Fiverr** and came on **Hacking**. I switched 
 \
 \
 Around October 2021, I saw Bruce's **main** website and it was made on [Next Js](https://nextjs.org). heard about NextJS when I made my react website, but I ignored it because I didn't want to make a website and **I left coding** like 4-5 months ago. Suddenly, from somewhere, I started coding again in December. I started working on this website. This website is made on **Next Js** customised on **Chakra-Ui** and hosted on **Vercel**. **[Tanmay Sinha](https://github.com/tanmaysinha14)** helped me a lot in the design of this website. He is a **UI Desiginer**.
+\
+\
+I previously use to learn from **YouTube** (till my React website), now I learn from **Documentation** and **Articles**. Youtube surely helped but that is not real learning, you will become programmer but just to show off not to learn. I was that neard only, but now I am actually a programmer. If you want to become a real developer prefer **Documentation** and **Articles** over **YouTube**.
 
 ## Persons In my Journey
 
