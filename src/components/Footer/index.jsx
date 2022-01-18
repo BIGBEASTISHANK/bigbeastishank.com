@@ -1,12 +1,17 @@
+// Importing  Stuffs
 import { Link, Skeleton, Text, Center, Flex } from "@chakra-ui/react";
 import Image from "next/image";
 
 export default function Footer() {
+  // Variables
   const s_media_path = "/images/footer-link/";
   const icon_width = "30px";
   const icon_height = "30px";
+
+  // Return Html
   return (
     <>
+      {/* Footer Divider Line */}
       <Skeleton
         startColor="pink.500"
         endColor="orange.500"
@@ -18,6 +23,7 @@ export default function Footer() {
         mt={4}
       />
 
+      {/* Made By text */}
       <Center alignItems={"center"} textAlign={"center"}>
         <Text>
           Made with 💖 by{" "}
@@ -27,8 +33,10 @@ export default function Footer() {
         </Text>
       </Center>
 
+      {/* Social Media Link */}
       <Center alignItems={"center"} textAlign={"center"} className="img">
         <Flex>
+          {/* Github */}
           <Link
             className="links"
             href="https://github.com/bigbeastishank"
@@ -43,6 +51,8 @@ export default function Footer() {
               width={icon_width}
             ></Image>
           </Link>
+
+          {/* Email */}
           <Link
             className="links"
             href="mailto:pranjal3211p@gmail.com"
@@ -57,6 +67,8 @@ export default function Footer() {
               width={icon_width}
             ></Image>
           </Link>
+
+          {/* Instagram */}
           <Link
             className="links"
             href="https://instagram.com/opishank"
@@ -71,6 +83,8 @@ export default function Footer() {
               width={icon_width}
             ></Image>
           </Link>
+
+          {/* Spotify */}
           <Link
             className="links"
             href="https://open.spotify.com/user/n37h63t5acey8z9kqu3dwjp1l"
@@ -85,6 +99,8 @@ export default function Footer() {
               width={icon_width}
             ></Image>
           </Link>
+
+          {/* Discord */}
           <Link
             className="links"
             href="https://discord.gg/WdeHDmwKFn"
@@ -99,6 +115,8 @@ export default function Footer() {
               width={icon_width}
             ></Image>
           </Link>
+
+          {/* SnapChat */}
           <Link
             className="links"
             href="https://snapchat.com/add/opishank"
@@ -113,6 +131,8 @@ export default function Footer() {
               width={icon_width}
             ></Image>
           </Link>
+
+          {/* Steam */}
           <Link
             className="links"
             href="https://steamcommunity.com/id/bigbeastishank"
@@ -127,6 +147,8 @@ export default function Footer() {
               width={icon_width}
             ></Image>
           </Link>
+
+          {/* Twitter */}
           <Link
             className="links"
             href="https://twitter.com/opishank"
@@ -148,6 +170,7 @@ export default function Footer() {
             m={"2px"}
             mt={"8px"}
           >
+            {/* Youtube */}
             <Image
               alt=""
               src={s_media_path + "youtube.webp"}
@@ -155,6 +178,8 @@ export default function Footer() {
               width={icon_width}
             ></Image>
           </Link>
+
+          {/* Fiverr */}
           <Link
             className="links"
             href="https://fiverr.com/bigbeastishank"

@@ -1,3 +1,4 @@
+// Importing Stuffs
 import {
   Accordion,
   AccordionItem,
@@ -18,14 +19,17 @@ import {
 } from "@chakra-ui/react";
 
 export default function Credits() {
+  // Variables
   const { isOpen, onOpen, onClose } = useDisclosure();
   const modeBtnBg = useColorModeValue("white", "dark");
   const modeBtnClr = useColorModeValue("dark", "white");
   const modeBtnBgHov = useColorModeValue("dark", "white");
   const modeBtnClrHov = useColorModeValue("white", "dark");
 
+  // Returning Html
   return (
     <>
+      {/* Name in navbar */}
       <Text
         id={"nav-item"}
         fontSize={{ xl: "18px", md: "15px" }}
@@ -41,9 +45,11 @@ export default function Credits() {
         Credits
       </Text>
 
+      {/* Credit Popup */}
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent ml="19px" mr="19px" bg="transparent">
+          {/* Credit Header */}
           <ModalHeader
             className="credit-header"
             fontSize={"29px"}
@@ -54,7 +60,11 @@ export default function Credits() {
           >
             Credit
           </ModalHeader>
+
+          {/* Close Button */}
           <ModalCloseButton />
+
+          {/* Credit Body */}
           <ModalBody
             bg="#1A202C"
             pt={7}
@@ -63,10 +73,13 @@ export default function Credits() {
             fontWeight="700"
             borderBottomRadius={"20px"}
           >
+            {/* Accordions */}
             <Accordion allowToggle>
+              {/* Tanmay Sinha Accordion */}
               <AccordionItem mb={5}>
                 <h1 className="c-item-header">
                   <AccordionButton>
+                    {/* Title */}
                     <Box
                       flex="1"
                       textAlign="left"
@@ -79,6 +92,8 @@ export default function Credits() {
                     <AccordionIcon />
                   </AccordionButton>
                 </h1>
+
+                {/* Credit text */}
                 <AccordionPanel
                   className="c-item-content"
                   pb={4}
@@ -93,6 +108,7 @@ export default function Credits() {
                   <Text userSelect={"none"}>
                     <br />
                   </Text>
+                  {/* Dev Profile button */}
                   <Button
                     bg={modeBtnBg}
                     _hover={{ bg: modeBtnBgHov, color: modeBtnClrHov }}
@@ -110,9 +126,11 @@ export default function Credits() {
                 </AccordionPanel>
               </AccordionItem>
 
+              {/* Kushagra Raj Accordian */}
               <AccordionItem>
                 <h1 className="c-item-header">
                   <AccordionButton>
+                    {/* Title */}
                     <Box
                       flex="1"
                       textAlign="left"
@@ -125,6 +143,8 @@ export default function Credits() {
                     <AccordionIcon />
                   </AccordionButton>
                 </h1>
+
+                {/* Credit Text */}
                 <AccordionPanel
                   className="c-item-content"
                   pb={4}
@@ -138,6 +158,7 @@ export default function Credits() {
                   <Text userSelect={"none"}>
                     <br />
                   </Text>
+                  {/* Dev Profile button */}
                   <Button
                     bg={modeBtnBg}
                     _hover={{ bg: modeBtnBgHov, color: modeBtnClrHov }}

@@ -1,8 +1,10 @@
+// Importing stuffs
 import "../styles/global.scss";
 import Layout from "../components/Layout";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../Theme";
 
+// Importing for google analytics
 import { useEffect } from "react";
 import Script from "next/script";
 import { useRouter } from "next/router";
@@ -10,20 +12,28 @@ import * as gtag from "../lib/gtag";
 
 export default function MyApp({ Component, pageProps }) {
   // Google analytics
+  //
+  // Variable
   const router = useRouter();
+
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url);
     };
+
     router.events.on("routeChangeComplete", handleRouteChange);
+
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+  //
+  /////////////////
 
+  // Returning all pages
   return (
     <>
-      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      {/* Google Analytics */}
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
@@ -42,9 +52,13 @@ export default function MyApp({ Component, pageProps }) {
           `,
         }}
       />
+      {/* Over Google analytics */}
 
+      {/* Using Chakra-UI and its custome theme */}
       <ChakraProvider theme={theme}>
+        {/* Adding all page layout */}
         <Layout>
+          {/* Returning all page body */}
           <Component {...pageProps} />
         </Layout>
       </ChakraProvider>

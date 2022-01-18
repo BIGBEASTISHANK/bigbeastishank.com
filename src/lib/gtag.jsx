@@ -1,3 +1,4 @@
+// Gtag variable
 export const GA_TRACKING_ID = process.env.gtag;
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages

@@ -1,3 +1,4 @@
+// Importing stuffs
 import {
   Box,
   Button,
@@ -10,6 +11,7 @@ import NextLink from "next/link";
 import Head from "next/head";
 
 export default function Errorpage() {
+  // Returning Html
   return (
     <>
       <Box className="error-page">
@@ -18,6 +20,7 @@ export default function Errorpage() {
         </Head>
 
         <Center>
+          {/* 404 Heading */}
           <Heading
             fontSize={{ lg: "6xl", md: "5xl", sm: "39px", base: "25px" }}
             fontWeight="700"
@@ -30,6 +33,7 @@ export default function Errorpage() {
         </Center>
 
         <Center>
+          {/* 404 page explanation */}
           <Box
             className="error-para"
             fontSize={{
@@ -50,6 +54,7 @@ export default function Errorpage() {
           </Box>
         </Center>
 
+        {/* Go Back button */}
         <Center>
           {/* For Mobile and above */}
           <Button
@@ -59,7 +64,7 @@ export default function Errorpage() {
             _hover={"none"}
             mb={7}
           >
-            <NextLink href="/">Home</NextLink>
+            <NextLink href="/">Go Back To Home</NextLink>
           </Button>
 
           {/* For small mobile */}
@@ -70,7 +75,7 @@ export default function Errorpage() {
             _hover={"none"}
             mb={7}
           >
-            <NextLink href="/">Home</NextLink>
+            <NextLink href="/">Go Back To Home</NextLink>
           </Button>
         </Center>
       </Box>

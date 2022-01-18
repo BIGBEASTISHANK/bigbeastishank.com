@@ -1,3 +1,4 @@
+// Importing Stuffs
 import {
   Text,
   Skeleton,
@@ -17,10 +18,14 @@ import {
 } from "@chakra-ui/react";
 
 export default function Contact() {
+  // Variable
   const { isOpen, onOpen, onClose } = useDisclosure();
   const contact_bg = useColorModeValue("lightMBg", "dark");
+
+  // Return Html
   return (
     <>
+      {/* Name in navbar */}
       <Text
         id={"nav-item"}
         fontSize={{ xl: "18px", md: "15px" }}
@@ -36,9 +41,11 @@ export default function Contact() {
         Contact
       </Text>
 
+      {/* Contact slide thinggy */}
       <Drawer placement={"left"} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
+          {/* Contact Header */}
           <DrawerHeader
             className="contact-header"
             fontSize={"29px"}
@@ -48,11 +55,14 @@ export default function Contact() {
             Contact Me
           </DrawerHeader>
 
+          {/* Sperate line */}
           <Skeleton startColor="pink.500" endColor="orange.500" h={"4px"} />
 
+          {/* Place to fill details */}
           <DrawerBody bg={contact_bg}>
             <FormControl isRequired>
               <form action="https://formspree.io/f/mrgravyr" method="POST">
+                {/* Name */}
                 <FormLabel htmlFor="name">Full Name</FormLabel>
                 <Input
                   id="name"
@@ -62,6 +72,7 @@ export default function Contact() {
                   outline={"2px solid"}
                 />
 
+                {/* Email */}
                 <FormLabel htmlFor="email">Email Address</FormLabel>
                 <Input
                   id="email"
@@ -71,6 +82,7 @@ export default function Contact() {
                   outline={"2px solid"}
                 />
 
+                {/* Messages */}
                 <FormLabel htmlFor="message">Message</FormLabel>
                 <Textarea
                   id="message"
@@ -80,6 +92,7 @@ export default function Contact() {
                   outline={"2px solid"}
                 />
 
+                {/* Submit Button */}
                 <Button colorScheme="blue" mt={"10px"} type="submit">
                   Submit
                 </Button>
@@ -87,8 +100,10 @@ export default function Contact() {
             </FormControl>
           </DrawerBody>
 
+          {/* Footer Line */}
           <Skeleton startColor="pink.500" endColor="orange.500" h={"4px"} />
 
+          {/* Close buton */}
           <DrawerFooter bg={"lightMBg"}>
             <Button
               variant="outline"

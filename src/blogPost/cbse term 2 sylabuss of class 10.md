@@ -3,6 +3,7 @@ title: "CBSE term 2 syllabus of class 10"
 description: "As you know term 2 is comming in end or march or start of april. So here is the syllabus of term 2 class 10."
 date: "2022-01-17"
 author: "BIGBEASTISHANK"
+authlink: "https://github.com/bigbeastishank"
 read_time: "5 min"
 ---
 

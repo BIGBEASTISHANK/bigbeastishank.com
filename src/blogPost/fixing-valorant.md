@@ -3,7 +3,8 @@ title: "Fixing Valorant Lags, Stuttering, FPS drops on Intel UHD integrated grap
 description: "Valorant is a light weight game playable on almost any hardware that are manufactured nowadays, you can play it without having 
 a dedicated gpu. Sometimes it becomes very irritating when the game lags or random fps drops while crucial game moments, which ultimately leads to uninstalling the game or not playing it. I've addressed a similar issue while playing on the Intel UHD 630 gpu. In this blog, I'll be telling you how I fixed the issue in 10 minutes."
 date: "2022-01-16"
-author: "BIGBEASTISHANK"
+author: "Kushagra Raj"
+authlink: "https://kushagraraj.me/"
 read_time: "2 min"
 ---
 

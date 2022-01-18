@@ -1,3 +1,4 @@
+// Importing Stufs
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Flex,
@@ -13,15 +14,17 @@ import Contact from "./Contact";
 import Credit from "./Credits";
 
 export default function Navbar() {
+  // Variable
   const { colorMode, toggleColorMode } = useColorMode();
   const icon_color = useColorModeValue("dark", "light");
   const icon_bg = useColorModeValue("light", "dark");
 
+  // Returning Html
   return (
     <>
-      {/* Navbar box */}
       <Box className="navbar">
         <Flex alignItems={"center"} textAlign={"center"}>
+          {/* Brand Name */}
           <Text
             p={{ xl: "20px", md: "15px" }}
             color={"light"}
@@ -35,11 +38,13 @@ export default function Navbar() {
 
           <Spacer d={{ md: "flex", base: "none" }} />
 
+          {/* Navbar Items */}
           <Flex
             className="nav-item"
             mt={{ xl: "25px", md: "20px", sm: "15px" }}
             mb={{ xl: "25px", md: "20px", sm: "15px" }}
           >
+            {/* Home */}
             <Text
               id={"nav-item"}
               fontSize={{ xl: "18px", md: "15px" }}
@@ -53,6 +58,7 @@ export default function Navbar() {
               <NextLink href="/">Home</NextLink>
             </Text>
 
+            {/* About */}
             <Text
               id={"nav-item"}
               fontSize={{ xl: "18px", md: "15px" }}
@@ -66,6 +72,7 @@ export default function Navbar() {
               <NextLink href="/about">About</NextLink>
             </Text>
 
+            {/* Blog */}
             <Text
               id={"nav-item"}
               fontSize={{ xl: "18px", md: "15px" }}
@@ -79,13 +86,16 @@ export default function Navbar() {
               <NextLink href="/blog">Blog</NextLink>
             </Text>
 
+            {/* Credit function and template import */}
             <Credit />
 
+            {/* Contact funciton and template import */}
             <Contact />
           </Flex>
 
           <Spacer d={{ md: "none", base: "flex" }} />
 
+          {/* Dark Mode Switch */}
           {/* For Pc and Tabs */}
           <IconButton
             d={{ md: "flex", base: "none" }}
