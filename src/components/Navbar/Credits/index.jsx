@@ -101,7 +101,7 @@ export default function Credits() {
                   color={"white"}
                 >
                   You see this guy, number one... CSS expert guy, CSS expert
-                  guy🤣 He helped me with making this website's animations and
+                  guy🤣 He helped me with making this website`s animations and
                   designs. A huge shout out to him. I request that you all check
                   his developer profile. If you have any CSS work, he is a
                   freelancer, so he can help you😃

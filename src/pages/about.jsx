@@ -46,18 +46,20 @@ export default function About() {
           fontWeight="700"
         >
           <Container textAlign={"justify"}>
-            Hmm... so you are here because you want to know about me, right? So
-            let's talk about me. My real name is Pranjal. In the year 20018, I
-            was first introduced to hacking, and then I learned about
-            programming and other technological concepts. My interest in
-            technology was sparked by many people and watching YouTube. I
-            learned the majority of what I know from YouTube, and then I learned
-            how to do web research. And now I am a game developer, an AI
-            developer, and a web developer. To know everything about me and my
-            journey, see my blog{" "}
-            <b>
-              <NextLink href="/blog/about%20me">Here</NextLink>
-            </b>
+            <Text>
+              Hmm... so you are here because you want to know about me, right?
+              So let`s talk about me. My real name is Pranjal. In the year
+              20018, I was first introduced to hacking, and then I learned about
+              programming and other technological concepts. My interest in
+              technology was sparked by many people and watching YouTube. I
+              learned the majority of what I know from YouTube, and then I
+              learned how to do web research. And now I am a game developer, an
+              AI developer, and a web developer. To know everything about me and
+              my journey, see my blog{" "}
+              <b>
+                <NextLink href="/blog/about%20me">Here</NextLink>
+              </b>
+            </Text>
           </Container>
         </Box>
 

@@ -41,7 +41,7 @@ export default function Contact() {
         Contact
       </Text>
 
-      {/* Contact slide thinggy */}
+      {/* Contact slide thingy */}
       <Drawer placement={"left"} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
