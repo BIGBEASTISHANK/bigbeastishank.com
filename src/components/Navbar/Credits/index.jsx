@@ -100,11 +100,11 @@ export default function Credits() {
                   borderBottomRadius={"20px"}
                   color={"white"}
                 >
-                  You see this guy, number one... CSS expert guy, CSS expert guy
-                  🤣. He helped me in making this website animations and
-                  designs. A huge shout out to him. I request you all to check
-                  his developer profile if youu have any CSS work he is a
-                  freelancer so he can help you 😃
+                  You see this guy, number one... CSS expert guy, CSS expert
+                  guy🤣 He helped me with making this website's animations and
+                  designs. A huge shout out to him. I request that you all check
+                  his developer profile. If you have any CSS work, he is a
+                  freelancer, so he can help you😃
                   <Text userSelect={"none"}>
                     <br />
                   </Text>
@@ -151,10 +151,10 @@ export default function Credits() {
                   borderBottomRadius={"20px"}
                   color={"white"}
                 >
-                  His nickname is Bruce Mac Gary. He is the person who helped in
-                  my web development career, he introduced me to GitHub,
-                  Javacript, React, Next.js and many more thing he is a great
-                  guy. Surely check his profile 😃
+                  His nickname is Bruce Mac Gary. He is the person who helped in
+                  my web development career. He introduced me to GitHub,
+                  Javacript, React, Next.js, and many more things. He is a great
+                  guy. Check out his profile, for sure😃
                   <Text userSelect={"none"}>
                     <br />
                   </Text>

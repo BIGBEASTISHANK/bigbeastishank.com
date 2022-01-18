@@ -39,9 +39,9 @@ export default function Blog({ allPostsData }) {
         >
           {/* Something about blog */}
           <Text>
-            I write my blogs over here so every one can learn new stuffs and be
-            up-to-date about concurrent topic. You can see all the post by just
-            clicking on title of the blogs. I hope you enjoy ✌️
+            I write my blogs over here so everyone can learn new things and be
+            up-to-date about concurrent topics. You can see all the posts by
+            just clicking on the title of the blog. I hope you enjoy it.
           </Text>
         </Box>
 
