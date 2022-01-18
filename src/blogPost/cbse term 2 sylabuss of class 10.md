@@ -4,10 +4,11 @@ description: "As you know term 2 is comming in end or march or start of april. S
 date: "2022-01-17"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
-read_time: "5 min"
+readtime: "5 min"
 ---
 
 # Maths
+
 - Chapter 4
 - Chapter 5
 - Chapter 9
@@ -17,6 +18,7 @@ read_time: "5 min"
 - Chapter 14
 
 # Science
+
 - Chapter 4
 - Chapter 5
 - Chapter 8
@@ -28,13 +30,16 @@ read_time: "5 min"
 # Social Science
 
 - History
+
   - Chapter 2
 
 - Geography
+
   - Chapter 5
   - Chapter 6
 
 - Civice
+
   - Chapter 6
   - Chapter 7
 
@@ -45,10 +50,12 @@ read_time: "5 min"
 # English
 
 - First Flight
+
   - Chapter 7
   - Chapter 9
 
 - Poem
+
   - Porm 4
   - Poem 6
   - Poem 9
@@ -59,9 +66,10 @@ read_time: "5 min"
   - Chapter 8
   - Chapter 9
 
-# Computer (Code 402)
+# IT (Code 402)
 
 - Employblity Skills
+
   - Unit 4
   - Unit 5
 
@@ -70,6 +78,7 @@ read_time: "5 min"
   - Unit 4
 
 ##
+
 ##
 
 **Note: I don't have notes of Hindi B**

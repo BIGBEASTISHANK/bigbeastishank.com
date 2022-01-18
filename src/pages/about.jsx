@@ -5,12 +5,10 @@ import {
   Container,
   Heading,
   Skeleton,
-  UnorderedList,
-  ListItem,
-  Link,
   Text,
 } from "@chakra-ui/react";
 import Head from "next/head";
+import NextLink from "next/link";
 import Gears from "../components/about/gears";
 import Softwares from "../components/about/softwares";
 
@@ -49,20 +47,17 @@ export default function About() {
         >
           <Container textAlign={"justify"}>
             Hmm... so you are here because you want to know about me right? So
-            lets talk about me. I am Ishank, my school name is Pranjal. In year{" "}
-            <b>2018</b>
-            one of my friend said that he know hacking. At that time I was not
-            having any talent in my life. When he told about hacking, I got very
-            excited about that I also want to try it. So one day their was{" "}
-            <b>Olympiads</b> of ICT in my school. I participated and got{" "}
-            <b>Gold</b> medal. So my father purchased me a laptop from that
-            laptop I start knowing about <b>HTML</b> and its fundamentals.
-            Sooner I started doing Front-End Web Development. Then I came across
-            many programming languages, I started learning them. Then I made my
-            first Github page. In late <b>2019</b> I started woking on projects
-            and uploading it to github. Then in mid <b>2020</b> I became a
-            Fullstack Web Developer, Game Developer, AI Developer and
-            Free-Lancer. And I am an advance Linux user too!
+            lets talk about me. My real name is Pranjal. In the year 20018 I was
+            first exposed to hacking and then I came to know about programming
+            and all that technology stuffs. My intrest in technology got lifted
+            up by many people and watching youtube. I learned most of the things
+            from youtube then I learned how to research stuffs on web. After
+            that I started my freelance service and now I am a game developer,
+            AI developer, and web developer. To know complete about me and my
+            journey see my my blog{" "}
+            <b>
+              <NextLink href="/blog/about%20me">Here</NextLink>
+            </b>
           </Container>
         </Box>
 

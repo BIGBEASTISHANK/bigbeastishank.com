@@ -5,7 +5,7 @@ import Head from "next/head";
 import { Box } from "@chakra-ui/react";
 
 export default function Layout({ children }) {
-  // Returning Htmlo
+  // Returning Html
   return (
     <>
       <Box
@@ -18,15 +18,25 @@ export default function Layout({ children }) {
         {/* Head Tag to put Title and meta tags */}
         <Head>
           <meta charSet="UTF-8" />
+
           <meta
             name="description"
-            content="This is BIG BEAST ISHANK website. Here you can know about his qualification and how much he knows in coding."
+            content="This me Ishank. This is my portfolio wesite, I post blogs and you can see my projects over here."
           />
+
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+
+          <meta
+            name="keywords"
+            content="Portfolio, Projects, Blogs, HTML, CSS, Python, C#, JavaScript, Next js"
+          />
+
+          <meta name="author" content="BIG BEAST ISHANK" />
 
           {/* Title */}
           <title>BIG BEAST ISHANK</title>

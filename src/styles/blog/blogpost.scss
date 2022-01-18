@@ -34,6 +34,13 @@
       font-size: 20px;
     }
 
+    h6{
+      font-size: 40px;
+      font-weight: 1000;
+      animation: title 7s ease infinite;
+      text-align: center;
+    }
+
     p {
       font-size: 18px;
     }
@@ -42,6 +49,7 @@
       margin-left: 50px;
       margin-right: 50px;
       font-size: 18px;
+      text-align: left;
     }
 
     ul {
@@ -57,7 +65,7 @@
       text-decoration: underline;
     }
 
-    hr{
+    hr {
       margin-top: 30px;
       margin-bottom: 30px;
     }

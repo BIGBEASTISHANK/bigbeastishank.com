@@ -47,7 +47,7 @@ export default function Post({ postData }) {
           <Link href={postData.authlink} isExternal>
             {postData.author}
           </Link>{" "}
-          / <Date dateString={postData.date} /> / {postData.read_time} read
+          / <Date dateString={postData.date} /> / {postData.readtime} read
         </Text>
 
         {/* Line to divide content */}
