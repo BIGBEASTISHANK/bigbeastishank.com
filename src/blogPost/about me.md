@@ -1,10 +1,10 @@
 ---
-title: 'My complete journey in IT field till 2022'
+title: "My complete journey in IT field till 2022"
 description: 'This is the exteded version of "About Me." You will get to know every single detail about my IT field journey till 2022'
-date: '2022-01-18'
-author: 'BIGBEASTISHANK'
-authlink: 'https://github.com/bigbeastishank'
-readtime: '45 min'
+date: "2022-01-18"
+author: "BIGBEASTISHANK"
+authlink: "https://github.com/bigbeastishank"
+readtime: "45 min"
 ---
 
 # Hmm... lets start
@@ -43,7 +43,7 @@ I took a break from coding after **Fiverr** and came on **Hacking**. I switched 
 Around October 2021, I saw Bruce's **main** website and it was made on [Next Js](https://nextjs.org). heard about NextJS when I made my react website, but I ignored it because I didn't want to make a website and **I left coding** like 4-5 months ago. Suddenly, from somewhere, I started coding again in December. I started working on this website. This website is made on **Next Js** customised on **Chakra-Ui** and hosted on **Vercel**. **[Tanmay Sinha](https://github.com/tanmaysinha14)** helped me a lot in the design of this website. He is a **UI Desiginer**.
 \
 \
-I previously used to learn from **YouTube** (till my React website), but now I learn from **documentation** and **articles**. Youtube surely helps, but as we are teenagers, we just get distracted, so we skip the learning part from YouTube and just copy the codes. We call them[script kids](https://en.wikipedia.org/wiki/Script_kiddie), and I admit I was also a script kiddie, but I learned from my mistakes and switched to docs and articles. In those, you learn more than just how to be a script kiddie. If coding is just your passion, then learn from YouTube (I did that for like 2.5 years), but if you want to make a career in programming, learn from **documentation** and **articles** and take help from **YouTube** when you get stuck in the middle or don't know where to go from that point. I still use YouTube to get a quick start on a new project, then I start reading docs. Directly reading docs is like diving into water without knowing how to swim. I hope you understand.
+I previously used to learn from **YouTube** (till my React website), but now I learn from **documentation** and **articles**. Youtube surely helps, but as we are teenagers, we just get distracted, so we skip the learning part from YouTube and just copy the codes. We call them [Script kiddie](https://en.wikipedia.org/wiki/Script_kiddie), and I admit I was also a script kiddie, but I learned from my mistakes and switched to docs and articles. In those, you learn more than just how to be a script kiddie. If coding is just your passion, then learn from YouTube (I did that for like 2.5 years), but if you want to make a career in programming, learn from **documentation** and **articles** and take help from **YouTube** when you get stuck in the middle or don't know where to go from that point. I still use YouTube to get a quick start on a new project, then I start reading docs. Directly reading docs is like diving into water without knowing how to swim. I hope you understand.
 
 ## Persons In my Journey
 
@@ -67,5 +67,6 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 - [My Qtile config](https://github.com/BIGBEASTISHANK/qtile-dotfiles-3.0)
 - [My BSPWM config](https://github.com/BIGBEASTISHANK/bspwm-dotfiles-1.0)
 - [Next Js](https://nextjs.org)
+- [Script kiddie](https://en.wikipedia.org/wiki/Script_kiddie)
 
 ###### Thanks For reading
