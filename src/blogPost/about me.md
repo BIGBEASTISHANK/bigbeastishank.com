@@ -28,15 +28,22 @@ After uploading my game, I told Bruce (which is the nick name of Kushagra) to co
 \
 \
 I started my journey in AI development as my [fuffa ji (uncle)](https://twitter.com/sinrkb) game project. He is **Co-Chairman and CEO of [EST Group and the global headquarter of his enterprise](https://www.estglobalinc.com/) which is located at CIC-MIT, USA**. For my AI, I began using **python**. I successfully completed it, and then they told me to make a website. which is private. I was half way through, but due to exams and all that, I stopped working on that project and never started again. But I have completed the login page. I made that website in Python, so I got familiar with Python web development. I started another Python project with **My Sql** as the backend but abandoned it because I did not have enough resources to host a fully functional Python backend website. But I made a personal [python website](https://bigbeastishank.herokuapp.com) which became a project, before making this website and after making my first react website that was my official website.
-
-## After a long break....
-
-In this long break, I left the IT field as everyone needs a break and I took my break due to studies and all that stuff, but my BFFs **[Divya Rani Soni](https://instagram.com/divyarani9464)** and **[Sahil Singh Rajput](https://www.instagram.com/_sahil__singh__rajput_/)** encouraged me again towards the IT field.
 \
 \
+Before taking a break, Bruce made a website for his Discord bot. Which was made on [docusaurus](https://docusaurus.io/), I also tried to make my prsonal website but faield because I was not having enough knowladge od javascript
+
+## In a long break....
+
 I started [fiverr](https://fiverr.com/bigbeastishank). My gig was to make websites for others, but it didn't succeed. I got only one client, and he is my friend [Himanshu Shekhar](https://www.instagram.com/himanxhhu/).
 \
 \
+In this long break, I left the IT field as everyone needs a break and I took my break due to studies and all that stuff, but my BFFs **[Divya Rani Soni](https://instagram.com/divyarani9464)** and **[Sahil Singh Rajput](https://www.instagram.com/_sahil__singh__rajput_/)** encouraged me again towards the IT field.
+\
+\
+In this break I downloaded Parrot OS as my main OS.
+
+## After a long break....
+
 I took a break from coding after **Fiverr** and came on **Hacking**. I switched from Windows to Linux. After sticking to **[Parrot Linux](https://parrotsec.org)** for about 1 month, I started distro hoping and I came across **[Arch Linux](https://archlinux.org)**. I used some window manager like **[Xmonad](https://github.com/BIGBEASTISHANK/xmonad-dotfiles-1.0)**, **[Qtile](https://github.com/BIGBEASTISHANK/qtile-dotfiles-3.0)** (this was the WM on which I stayed longest), **[BSPWM](https://github.com/BIGBEASTISHANK/bspwm-dotfiles-1.0)**. By clicking on the name of WM, you can see my configuration. Then I switched to GNOME, which does not require any configuration.
 \
 \
@@ -49,9 +56,9 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 
 - [Bruce Mac Gary](https://kushagraraj.me)
 - [Dr Sindhu Bhaskar](https://twitter.com/sinrkb)
+- [Himanshu Shekhar](https://www.instagram.com/himanxhhu/)
 - [Divya Rani Soni](https://instagram.com/divyarani9464)
 - [Sahil Singh Rajput](https://www.instagram.com/_sahil__singh__rajput_/)
-- [Himanshu Shekhar](https://www.instagram.com/himanxhhu/)
 - [Tanmay Sinha](https://github.com/tanmaysinha14)
 
 ## Sources
