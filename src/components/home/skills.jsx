@@ -58,6 +58,39 @@ export default function Skills() {
     setCs_skill_bar_percent("11%");
   }
 
+  const lang_name = [
+    {
+      name: "Python",
+      class: "python",
+      percent: python_skill_bar_percent,
+      skillBar: python_skill_bar,
+    },
+    {
+      name: "HTML",
+      class: "html",
+      percent: html_skill_bar_percent,
+      skillBar: html_skill_bar,
+    },
+    {
+      name: "CSS",
+      class: "css",
+      percent: css_skill_bar_percent,
+      skillBar: css_skill_bar,
+    },
+    {
+      name: "JavaScript",
+      class: "js",
+      percent: js_skill_bar_percent,
+      skillBar: js_skill_bar,
+    },
+    {
+      name: "C#",
+      class: "cs",
+      percent: cs_skill_bar_percent,
+      skillBar: cs_skill_bar,
+    },
+  ];
+
   // Returning Html
   return (
     <>
@@ -103,161 +136,36 @@ export default function Skills() {
 
         {/* My Language Bar */}
         <Box className={"skills_lang"} mt={7}>
-          {/* Python skill bar */}
-          <Box className={"python"}>
-            <Box
-              fontSize={{
-                xl: "25px",
-                lg: "20px",
-                md: "18px",
-                sm: "16px",
-                base: "13px",
-              }}
-              fontWeight="700"
-            >
+          {lang_name.map((item) => (
+            <Box className={item.class}>
+              <Box
+                fontSize={{
+                  xl: "25px",
+                  lg: "20px",
+                  md: "18px",
+                  sm: "16px",
+                  base: "13px",
+                }}
+                fontWeight="700"
+                mt={5}
+              >
+                <Flex>
+                  <Text mr={4}>
+                    <Text className="language-name">{item.name}</Text>
+                  </Text>
+                  <Text>{item.percent}</Text>
+                </Flex>
+              </Box>
+
               <Flex>
-                <Text mr={4}>
-                  <Text className="language-name">Python</Text>
-                </Text>
-                <Text>{python_skill_bar_percent}</Text>
+                <Skeleton
+                  className={"default_lang_bar" + " " + item.skillBar}
+                  h={"20px"}
+                  mt={1}
+                />
               </Flex>
             </Box>
-
-            <Flex>
-              <Skeleton
-                className={"default_lang_bar" + " " + python_skill_bar}
-                h={"20px"}
-                mt={1}
-              />
-            </Flex>
-          </Box>
-
-          {/* HTML Skill Title */}
-          <Box className={"html"}>
-            <Box
-              fontSize={{
-                xl: "25px",
-                lg: "20px",
-                md: "18px",
-                sm: "16px",
-                base: "13px",
-              }}
-              fontWeight="700"
-              mt={4}
-            >
-              {/* HTML Skill Percentage */}
-              <Flex>
-                <Text mr={4}>
-                  <Text className="language-name">HTML</Text>
-                </Text>
-                <Text>{html_skill_bar_percent}</Text>
-              </Flex>
-            </Box>
-
-            {/* HTML Skill Bar */}
-            <Flex>
-              <Skeleton
-                className={"default_lang_bar" + " " + html_skill_bar}
-                h={"20px"}
-              />
-            </Flex>
-          </Box>
-
-          {/* CSS Skill Title */}
-          <Box className={"css"}>
-            <Box
-              fontSize={{
-                xl: "25px",
-                lg: "20px",
-                md: "18px",
-                sm: "16px",
-                base: "13px",
-              }}
-              fontWeight="700"
-              mt={4}
-            >
-              {/* CSS Skill Percentage */}
-              <Flex>
-                <Text mr={4}>
-                  <Text className="language-name">CSS</Text>
-                </Text>
-                <Text>{css_skill_bar_percent}</Text>
-              </Flex>
-            </Box>
-
-            {/* CSS Skill Bar */}
-            <Flex>
-              <Skeleton
-                className={"default_lang_bar" + " " + css_skill_bar}
-                h={"20px"}
-                mt={1}
-              />
-            </Flex>
-          </Box>
-
-          {/* JavaScript Skill Title */}
-          <Box className={"javascript"}>
-            <Box
-              fontSize={{
-                xl: "25px",
-                lg: "20px",
-                md: "18px",
-                sm: "16px",
-                base: "13px",
-              }}
-              fontWeight="700"
-              mt={4}
-            >
-              {/* JavaScript Skill Percentage */}
-              <Flex>
-                <Text mr={4}>
-                  <Text className="language-name">JavaScript</Text>
-                </Text>
-                <Text>{js_skill_bar_percent}</Text>
-              </Flex>
-            </Box>
-
-            {/* JavaScript Skill Bar */}
-            <Flex>
-              <Skeleton
-                className={"default_lang_bar" + " " + js_skill_bar}
-                h={"20px"}
-                mt={1}
-              />
-            </Flex>
-          </Box>
-
-          {/* C# Skill Title */}
-          <Box className={"cs"}>
-            <Box
-              fontSize={{
-                xl: "25px",
-                lg: "20px",
-                md: "18px",
-                sm: "16px",
-                base: "13px",
-              }}
-              fontWeight="700"
-              mt={4}
-            >
-              {/* C# Skill Percentage */}
-              <Flex>
-                <Text mr={4}>
-                  <Text className="language-name">C#</Text>
-                </Text>
-                <Text>{cs_skill_bar_percent}</Text>
-              </Flex>
-            </Box>
-
-            {/* C# Skill Bar */}
-            <Flex>
-              <Skeleton
-                className={"default_lang_bar" + " " + cs_skill_bar}
-                h={"20px"}
-                mt={1}
-              />
-            </Flex>
-          </Box>
+          ))}
         </Box>
       </Box>
     </>

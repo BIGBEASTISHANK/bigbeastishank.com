@@ -19,6 +19,22 @@ export default function Navbar() {
   const icon_color = useColorModeValue("dark", "light");
   const icon_bg = useColorModeValue("light", "dark");
 
+  const navItem = [
+    { name: "Home", link: "/" },
+    {
+      name: "About",
+      link: "/about",
+    },
+    {
+      name: "Projects",
+      link: "/projects",
+    },
+    {
+      name: "Blog",
+      link: "/blog",
+    },
+  ];
+
   // Returning Html
   return (
     <>
@@ -45,76 +61,25 @@ export default function Navbar() {
             mb={{ xl: "25px", md: "20px", sm: "15px" }}
           >
             {/* Home */}
-            <Flex cursor={'pointer'}>
-            <NextLink href="/">
-              <Text
-                id={"nav-item"}
-                fontSize={{ xl: "18px", md: "15px" }}
-                color={"light"}
-                ml={{ md: "2.5px", base: "0px" }}
-                mr={"2.5px"}
-                pl={"10px"}
-                pr={"10px"}
-                _hover={{ bg: "#D51B90", borderRadius: "25px" }}
-              >
-                Home
-              </Text>
-            </NextLink>
-            </Flex>
-
-            {/* About */}
-            <Flex cursor={'pointer'}>
-            <NextLink href="/about">
-              <Text
-                id={"nav-item"}
-                fontSize={{ xl: "18px", md: "15px" }}
-                color={"light"}
-                ml={{ md: "2.5px", base: "0px" }}
-                mr={"2.5px"}
-                pl={"10px"}
-                pr={"10px"}
-                _hover={{ bg: "#D51B90", borderRadius: "25px" }}
-              >
-                About
-              </Text>
-            </NextLink>
-            </Flex>
-
-            {/* Projects */}
-            <Flex cursor={'pointer'}>
-            <NextLink href="/projects">
-              <Text
-                id={"nav-item"}
-                fontSize={{ xl: "18px", md: "15px" }}
-                color={"light"}
-                ml={{ md: "2.5px", base: "0px" }}
-                mr={"2.5px"}
-                pl={"10px"}
-                pr={"10px"}
-                _hover={{ bg: "#D51B90", borderRadius: "25px" }}
-              >
-                Projects
-              </Text>
-            </NextLink>
-            </Flex>
-
-            {/* Blog */}
-            <Flex cursor={'pointer'}>
-            <NextLink href="/blog">
-              <Text
-                id={"nav-item"}
-                fontSize={{ xl: "18px", md: "15px" }}
-                color={"light"}
-                ml={{ md: "2.5px", base: "0px" }}
-                mr={"2.5px"}
-                pl={"10px"}
-                pr={"10px"}
-                _hover={{ bg: "#D51B90", borderRadius: "25px" }}
-              >
-                Blog
-              </Text>
-            </NextLink>
-            </Flex>
+            {navItem.map((item) => (
+              <Flex cursor={"pointer"}>
+                <NextLink href={item.link}>
+                  <Text
+                    id={"nav-item"}
+                    aria-label={item.name}
+                    fontSize={{ xl: "18px", md: "15px" }}
+                    color={"light"}
+                    ml={{ md: "2.5px", base: "0px" }}
+                    mr={"2.5px"}
+                    pl={"10px"}
+                    pr={"10px"}
+                    _hover={{ bg: "#D51B90", borderRadius: "25px" }}
+                  >
+                    {item.name}
+                  </Text>
+                </NextLink>
+              </Flex>
+            ))}
 
             {/* Credit function and template import */}
             <Credit />
@@ -138,6 +103,7 @@ export default function Navbar() {
             isRound={"true"}
             _hover={{ bg: icon_color, color: icon_bg }}
             onClick={toggleColorMode}
+            aria-label="color mode toggle button"
           />
 
           {/* For Mobiles */}
@@ -168,6 +134,7 @@ export default function Navbar() {
             isRound={"true"}
             _hover={{ bg: icon_color, color: icon_bg }}
             onClick={toggleColorMode}
+            aria-label="color mode toggle button"
           />
         </Flex>
       </Box>

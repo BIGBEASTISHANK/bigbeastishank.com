@@ -2,6 +2,26 @@
 import { Heading, Box, UnorderedList, ListItem, Link } from "@chakra-ui/react";
 
 export default function Softwares() {
+  // Variable
+  const softwares = [
+    {
+      name: "VS Code",
+      link: "https://code.visualstudio.com/",
+    },
+    {
+      name: "Arch Linux",
+      link: "https://archlinux.org/",
+    },
+    {
+      name: "Opera",
+      link: "https://www.opera.com/",
+    },
+    {
+      name: "Spotify",
+      link: "https://spotify.com/",
+    },
+  ];
+
   // Returning Html
   return (
     <>
@@ -16,7 +36,7 @@ export default function Softwares() {
         <a>Software</a>
       </Heading>
 
-      <Box className="gears-item">
+      <Box className="software-item">
         <UnorderedList
           fontSize={{
             xl: "25px",
@@ -29,37 +49,13 @@ export default function Softwares() {
           ml={"50px"}
           mr={"50px"}
         >
-          {/* Visual Studio Code [VSC] */}
-          <ListItem>
-            📝{" "}
-            <Link isExternal href="https://code.visualstudio.com/">
-              VS Codes
-            </Link>
-          </ListItem>
-
-          {/* Operating Software */}
-          <ListItem>
-            🅰️{" "}
-            <Link isExternal href="https://archlinux.org">
-              Arch Linux
-            </Link>
-          </ListItem>
-
-          {/* Web Browser */}
-          <ListItem>
-            🌐{" "}
-            <Link isExternal href="https://www.opera.com/">
-              Opera
-            </Link>
-          </ListItem>
-
-          {/* Music App */}
-          <ListItem>
-            🎵{" "}
-            <Link isExternal href="https://spotify.com">
-              Spotify
-            </Link>
-          </ListItem>
+          {softwares.map((item) => (
+            <ListItem>
+              <Link isExternal href={item.link} _focus={{ outline: "none" }}>
+                {item.name}
+              </Link>
+            </ListItem>
+          ))}
         </UnorderedList>
       </Box>
     </>

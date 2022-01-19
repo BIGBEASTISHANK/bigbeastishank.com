@@ -66,7 +66,7 @@ export default function Projects({ allProjectsData }) {
                 mt={"15px"}
               >
                 <Text className="title" textAlign={"justify"}>
-                  <Link href={link} cursor={"pointer"} isExternal>
+                  <Link href={link} cursor={"pointer"} isExternal _focus={{ outline: "none" }}>
                     {name}
                   </Link>
                 </Text>
