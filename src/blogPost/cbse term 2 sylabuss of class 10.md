@@ -1,10 +1,10 @@
 ---
-title: 'CBSE term 2 syllabus of class 10'
-description: 'As you know, term 2 is coming at the end of March or start of April. So here is the syllabus for Term 2 Class 10.'
-date: '2022-01-17'
-author: 'BIGBEASTISHANK'
-authlink: 'https://github.com/bigbeastishank'
-readtime: '5 min'
+title: "CBSE term 2 syllabus of class 10"
+description: "As you know, term 2 is coming at the end of March or start of April. So here is the syllabus for Term 2 Class 10."
+date: "2022-01-17"
+author: "BIGBEASTISHANK"
+authlink: "https://github.com/bigbeastishank"
+readtime: "5 min"
 ---
 
 # Maths

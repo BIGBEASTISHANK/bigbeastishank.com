@@ -1,27 +1,26 @@
 // Importing Stuffs
-import { getSortedPostsData } from "../../lib/posts";
-import NextLink from "next/link";
-import Date from "../../components/date";
+import { getSortedProjectsData } from "../lib/projects";
+import Date from "../components/date";
 import { Box, Heading, Text, Skeleton, Link } from "@chakra-ui/react";
 import Head from "next/head";
 
-export default function Blog({ allPostsData }) {
+export default function Projects({ allProjectsData }) {
   // Returning Html
   return (
     <>
       <Head>
-        <title>Blog | BIG BEAST ISHANK</title>
+        <title>Project | BIG BEAST ISHANK</title>
       </Head>
 
-      <Box className="blog">
-        {/* Blog Heading */}
+      <Box className="project">
+        {/* Project Heading */}
         <Heading
           fontSize={{ lg: "6xl", md: "5xl", sm: "39px", base: "25px" }}
           fontWeight="700"
           textAlign={"center"}
           mb={{ lg: "20px", md: "15px" }}
         >
-          <Text className="heading">My Blog</Text>
+          <Text className="heading">My Project</Text>
         </Heading>
 
         <Box
@@ -36,11 +35,11 @@ export default function Blog({ allPostsData }) {
           fontWeight="700"
           textAlign={"justify"}
         >
-          {/* Something about blog */}
+          {/* Something about project */}
           <Text>
-            I write my blogs over here so everyone can learn new things and be
-            up-to-date about concurrent topics. You can see all the posts by
-            just clicking on the title of the blog. I hope you enjoy it.
+            This is my project page. Here you can find my projects. You can
+            click on the title to go to the cross-ponding link, and below the
+            title you can read about the project!
           </Text>
         </Box>
 
@@ -55,11 +54,11 @@ export default function Blog({ allPostsData }) {
           mt={6}
         />
 
-        {/* Blog Frontmatter data */}
-        {allPostsData.map(({ id, date, title, description }) => (
+        {/* Project Frontmatter data */}
+        {allProjectsData.map(({ id, name, description, date, link }) => (
           <li key={id}>
-            <Box mb={50} className="posts">
-              {/* Blog TItle */}
+            <Box mb={50} className="projects">
+              {/* Project TItle */}
               <Heading
                 fontSize={{ lg: "3xl", md: "2xl", sm: "24px", base: "16px" }}
                 fontWeight="700"
@@ -67,13 +66,13 @@ export default function Blog({ allPostsData }) {
                 mt={"15px"}
               >
                 <Text className="title" textAlign={"justify"}>
-                  <NextLink href={`/blog/${id}`} cursor={"pointer"}>
-                    <Link>{title}</Link>
-                  </NextLink>
+                  <Link href={link} cursor={"pointer"} isExternal>
+                    {name}
+                  </Link>
                 </Text>
               </Heading>
 
-              {/* Blog Description */}
+              {/* Project Description */}
               <Text
                 className="description"
                 fontSize={{
@@ -110,15 +109,15 @@ export default function Blog({ allPostsData }) {
   );
 }
 
-// Function to get posts data
+// Function to get projects data
 export async function getStaticProps() {
-  // Getting posts data
-  const allPostsData = getSortedPostsData();
+  // Getting projects data
+  const allProjectsData = getSortedProjectsData();
 
-  // Returning posts data
+  // Returning projects data
   return {
     props: {
-      allPostsData,
+      allProjectsData,
     },
   };
 }

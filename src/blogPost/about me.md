@@ -1,6 +1,6 @@
 ---
 title: "My complete journey in IT field till 2022"
-description: 'This is the exteded version of "About Me." You will get to know every single detail about my IT field journey till 2022'
+description: "This is the exteded version of 'About Me.' You will get to know every single detail about my IT field journey till 2022"
 date: "2022-01-18"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"

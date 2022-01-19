@@ -1,5 +1,5 @@
-// Blog Page
-.blog {
+// Project Page
+.project {
   li {
     list-style: none;
   }
@@ -7,14 +7,14 @@
   .heading {
     animation: post-heading 7s ease infinite;
   }
-  .posts {
+  .projects {
     .title {
       animation: title 7s ease infinite;
     }
   }
 }
 
-// Blog Animation
+// Project Animation
 @keyframes title {
   0% {
     color: #ee7752;

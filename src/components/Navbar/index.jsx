@@ -45,46 +45,76 @@ export default function Navbar() {
             mb={{ xl: "25px", md: "20px", sm: "15px" }}
           >
             {/* Home */}
-            <Text
-              id={"nav-item"}
-              fontSize={{ xl: "18px", md: "15px" }}
-              color={"light"}
-              ml={{ md: "2.5px", base: "0px" }}
-              mr={"2.5px"}
-              pl={"10px"}
-              pr={"10px"}
-              _hover={{ bg: "#D51B90", borderRadius: "25px" }}
-            >
-              <NextLink href="/">Home</NextLink>
-            </Text>
+            <Flex cursor={'pointer'}>
+            <NextLink href="/">
+              <Text
+                id={"nav-item"}
+                fontSize={{ xl: "18px", md: "15px" }}
+                color={"light"}
+                ml={{ md: "2.5px", base: "0px" }}
+                mr={"2.5px"}
+                pl={"10px"}
+                pr={"10px"}
+                _hover={{ bg: "#D51B90", borderRadius: "25px" }}
+              >
+                Home
+              </Text>
+            </NextLink>
+            </Flex>
 
             {/* About */}
-            <Text
-              id={"nav-item"}
-              fontSize={{ xl: "18px", md: "15px" }}
-              color={"light"}
-              ml={{ md: "2.5px", base: "0px" }}
-              mr={"2.5px"}
-              pl={"10px"}
-              pr={"10px"}
-              _hover={{ bg: "#D51B90", borderRadius: "25px" }}
-            >
-              <NextLink href="/about">About</NextLink>
-            </Text>
+            <Flex cursor={'pointer'}>
+            <NextLink href="/about">
+              <Text
+                id={"nav-item"}
+                fontSize={{ xl: "18px", md: "15px" }}
+                color={"light"}
+                ml={{ md: "2.5px", base: "0px" }}
+                mr={"2.5px"}
+                pl={"10px"}
+                pr={"10px"}
+                _hover={{ bg: "#D51B90", borderRadius: "25px" }}
+              >
+                About
+              </Text>
+            </NextLink>
+            </Flex>
+
+            {/* Projects */}
+            <Flex cursor={'pointer'}>
+            <NextLink href="/projects">
+              <Text
+                id={"nav-item"}
+                fontSize={{ xl: "18px", md: "15px" }}
+                color={"light"}
+                ml={{ md: "2.5px", base: "0px" }}
+                mr={"2.5px"}
+                pl={"10px"}
+                pr={"10px"}
+                _hover={{ bg: "#D51B90", borderRadius: "25px" }}
+              >
+                Projects
+              </Text>
+            </NextLink>
+            </Flex>
 
             {/* Blog */}
-            <Text
-              id={"nav-item"}
-              fontSize={{ xl: "18px", md: "15px" }}
-              color={"light"}
-              ml={{ md: "2.5px", base: "0px" }}
-              mr={"2.5px"}
-              pl={"10px"}
-              pr={"10px"}
-              _hover={{ bg: "#D51B90", borderRadius: "25px" }}
-            >
-              <NextLink href="/blog">Blog</NextLink>
-            </Text>
+            <Flex cursor={'pointer'}>
+            <NextLink href="/blog">
+              <Text
+                id={"nav-item"}
+                fontSize={{ xl: "18px", md: "15px" }}
+                color={"light"}
+                ml={{ md: "2.5px", base: "0px" }}
+                mr={"2.5px"}
+                pl={"10px"}
+                pr={"10px"}
+                _hover={{ bg: "#D51B90", borderRadius: "25px" }}
+              >
+                Blog
+              </Text>
+            </NextLink>
+            </Flex>
 
             {/* Credit function and template import */}
             <Credit />
