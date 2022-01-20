@@ -1,9 +1,13 @@
 // Footer
 .footer {
+  li {
+    list-style: none;
+  }
+
   .links {
     user-select: none;
 
-    .icon{
+    .icon {
       animation: icon-color 5s ease infinite;
     }
   }

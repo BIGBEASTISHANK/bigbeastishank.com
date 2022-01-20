@@ -137,34 +137,36 @@ export default function Skills() {
         {/* My Language Bar */}
         <Box className={"skills_lang"} mt={7}>
           {lang_name.map((item) => (
-            <Box className={item.class}>
-              <Box
-                fontSize={{
-                  xl: "25px",
-                  lg: "20px",
-                  md: "18px",
-                  sm: "16px",
-                  base: "13px",
-                }}
-                fontWeight="700"
-                mt={5}
-              >
+            <li key={item.class}>
+              <Box className={item.class}>
+                <Box
+                  fontSize={{
+                    xl: "25px",
+                    lg: "20px",
+                    md: "18px",
+                    sm: "16px",
+                    base: "13px",
+                  }}
+                  fontWeight="700"
+                  mt={5}
+                >
+                  <Flex>
+                    <Text mr={4}>
+                      <Text className="language-name">{item.name}</Text>
+                    </Text>
+                    <Text>{item.percent}</Text>
+                  </Flex>
+                </Box>
+
                 <Flex>
-                  <Text mr={4}>
-                    <Text className="language-name">{item.name}</Text>
-                  </Text>
-                  <Text>{item.percent}</Text>
+                  <Skeleton
+                    className={"default_lang_bar" + " " + item.skillBar}
+                    h={"20px"}
+                    mt={1}
+                  />
                 </Flex>
               </Box>
-
-              <Flex>
-                <Skeleton
-                  className={"default_lang_bar" + " " + item.skillBar}
-                  h={"20px"}
-                  mt={1}
-                />
-              </Flex>
-            </Box>
+            </li>
           ))}
         </Box>
       </Box>

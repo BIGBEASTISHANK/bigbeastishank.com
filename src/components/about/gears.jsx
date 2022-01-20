@@ -50,11 +50,13 @@ export default function Gears() {
           mr={"50px"}
         >
           {gears.map((item) => (
-            <ListItem>
-              <Link isExternal href={item.link} _focus={{ outline: "none" }}>
-                {item.name}
-              </Link>
-            </ListItem>
+            <li key={item.name}>
+              <ListItem>
+                <Link isExternal href={item.link} _focus={{ outline: "none" }}>
+                  {item.name}
+                </Link>
+              </ListItem>
+            </li>
           ))}
         </UnorderedList>
       </Box>

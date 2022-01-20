@@ -83,24 +83,26 @@ export default function Footer() {
       {/* Social Media Link */}
       <Center alignItems={"center"} textAlign={"center"} className="img">
         {icon.map((item) => (
-          <Flex>
-            {/* Github */}
-            <Link
-              className="links"
-              _focus={{ outline: "none" }}
-              href={item.link}
-              isExternal
-              m={"2px"}
-              mt={"8px"}
-            >
-              <Image
-                alt={item.name}
-                src={s_media_path + item.name + ".webp"}
-                height={icon_height}
-                width={icon_width}
-              ></Image>
-            </Link>
-          </Flex>
+          <li key={item.name}>
+            <Flex>
+              {/* Github */}
+              <Link
+                className="links"
+                _focus={{ outline: "none" }}
+                href={item.link}
+                isExternal
+                m={"2px"}
+                mt={"8px"}
+              >
+                <Image
+                  alt={item.name}
+                  src={s_media_path + item.name + ".webp"}
+                  height={icon_height}
+                  width={icon_width}
+                ></Image>
+              </Link>
+            </Flex>
+          </li>
         ))}
       </Center>
     </>

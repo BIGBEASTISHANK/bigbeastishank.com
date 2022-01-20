@@ -1,7 +1,11 @@
 // Skills section
 .skills {
+  li {
+    list-style: none;
+  }
+
   .skills-heading {
-      animation: skills-heading 6s ease infinite;
+    animation: skills-heading 6s ease infinite;
   }
 
   .skills-btn {

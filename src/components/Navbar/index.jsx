@@ -62,23 +62,25 @@ export default function Navbar() {
           >
             {/* Home */}
             {navItem.map((item) => (
-              <Flex cursor={"pointer"}>
-                <NextLink href={item.link}>
-                  <Text
-                    id={"nav-item"}
-                    aria-label={item.name}
-                    fontSize={{ xl: "18px", md: "15px" }}
-                    color={"light"}
-                    ml={{ md: "2.5px", base: "0px" }}
-                    mr={"2.5px"}
-                    pl={"10px"}
-                    pr={"10px"}
-                    _hover={{ bg: "#D51B90", borderRadius: "25px" }}
-                  >
-                    {item.name}
-                  </Text>
-                </NextLink>
-              </Flex>
+              <li key={item.name}>
+                <Flex cursor={"pointer"}>
+                  <NextLink href={item.link}>
+                    <Text
+                      id={"nav-item"}
+                      aria-label={item.name}
+                      fontSize={{ xl: "18px", md: "15px" }}
+                      color={"light"}
+                      ml={{ md: "2.5px", base: "0px" }}
+                      mr={"2.5px"}
+                      pl={"10px"}
+                      pr={"10px"}
+                      _hover={{ bg: "#D51B90", borderRadius: "25px" }}
+                    >
+                      {item.name}
+                    </Text>
+                  </NextLink>
+                </Flex>
+              </li>
             ))}
 
             {/* Credit function and template import */}

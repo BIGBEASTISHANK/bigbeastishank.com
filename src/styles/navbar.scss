@@ -7,6 +7,10 @@
   animation: nav 8.5s ease infinite;
   background-size: 1000% 1000%;
 
+  li {
+    list-style: none;
+  }
+
   .nav-item {
     overflow-x: scroll;
 
