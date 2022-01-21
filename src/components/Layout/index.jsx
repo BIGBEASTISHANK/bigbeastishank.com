@@ -25,10 +25,10 @@ export default function Layout({ children }) {
           <meta property="og:locale" content="en_IN" />
 
           <meta
-            property="og:viewport"
+            name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <meta property="og:type" content="portfolio" />
+          <meta property="og:type" content="website" />
 
           <meta property="og:author" content="BIG BEAST ISHANK" />
 
