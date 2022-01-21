@@ -17,12 +17,14 @@ export default function Errorpage() {
       <Box className="error-page">
         <Head>
           <meta
+            property="og:description"
             name="description"
             content="404 Error page, please check the link properly!"
           />
 
           <meta
             property="og:keywords"
+            name="keywords"
             content="error page, 404, error"
           />
 

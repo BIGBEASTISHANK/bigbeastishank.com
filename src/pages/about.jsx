@@ -20,11 +20,13 @@ export default function About() {
         <Head>
           <meta
             property="og:description"
+            name="description"
             content="This is about page, you can know about me alot on this page. Hope you enjoy!😉"
           />
 
           <meta
             property="og:keywords"
+            name="keywords"
             content="about, gears, software, bigbeastishank, ishank, pranjal"
           />
 
@@ -67,7 +69,7 @@ export default function About() {
               AI developer, and a web developer. To know everything about me and
               my journey, see my blog{" "}
               <b>
-                <NextLink href="/blog/about%20me">Here</NextLink>
+                <NextLink href="/blog/about-me">Here</NextLink>
               </b>
             </Text>
           </Container>

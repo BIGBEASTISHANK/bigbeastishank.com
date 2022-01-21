@@ -12,11 +12,13 @@ export default function Blog({ allPostsData }) {
       <Head>
         <meta
           property="og:description"
+          name="description"
           content="This is a blog page, you can see daily post over here and learn new stuffs!"
         />
 
         <meta
           property="og:keywords"
+          name="keywords"
           content="articles, blog, news, up-to-date"
         />
 

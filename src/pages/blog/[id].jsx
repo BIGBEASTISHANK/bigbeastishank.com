@@ -11,10 +11,15 @@ export default function Post({ postData }) {
     <>
       <Box className="blogpost">
         <Head>
-          <meta name="description" content={postData.description} />
+          <meta
+            property="og:description"
+            name="description"
+            content={postData.description}
+          />
 
           <meta
             property="og:keywords"
+            name="keywords"
             content="blog, content, gaming, coding, programming, ishank, pranjal, sucessfull, fail, pass, website, article, blog"
           />
 

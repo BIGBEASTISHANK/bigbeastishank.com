@@ -10,11 +10,13 @@ export default function Projects({ allProjectsData }) {
     <>
       <Head>
         <meta
+          name="description"
           property="og:description"
           content="This is BIGBEASTISHANK's project page, you can check out his projects over here!"
         />
 
         <meta
+          name="keywords"
           property="og:keywords"
           content="projects, react, python, javascript, html, unity, game"
         />
