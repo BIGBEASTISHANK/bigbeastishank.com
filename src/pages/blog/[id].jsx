@@ -11,6 +11,10 @@ export default function Post({ postData }) {
     <>
       <Box className="blogpost">
         <Head>
+          <meta
+            name="description"
+            content={postData.description}
+          />
           <title>{postData.title} | BIG BEAST ISHANK</title>
         </Head>
 
