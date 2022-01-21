@@ -4,7 +4,7 @@ description: "This is the exteded version of 'About Me.' You will get to know ev
 date: "2022-01-18"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
-readtime: "45 min"
+readtime: "18 min"
 ---
 
 # Hmm... lets start

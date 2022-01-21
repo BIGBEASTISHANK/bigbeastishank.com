@@ -1,4 +1,8 @@
 .blogpost {
+  hr {
+    animation: hr_line 3s ease-in-out infinite;
+  }
+
   .title {
     animation: title 7s ease infinite;
   }
@@ -11,8 +15,13 @@
 
   .content {
     code {
-      background-color: rgba(0, 0, 0, 0.25);
+      font-weight: 900;
+      background-color: rgba(0,0,0,0.35);
+      padding-top: 2px;
+      padding-left: 2px;
+      padding-right: 2px;
     }
+    
     h1 {
       font-size: 35px;
       font-weight: 1000;
@@ -34,7 +43,7 @@
       font-size: 20px;
     }
 
-    h6{
+    h6 {
       font-size: 40px;
       font-weight: 1000;
       animation: title 7s ease infinite;
@@ -46,6 +55,8 @@
     }
 
     li {
+      margin-top: 20px;
+      margin-bottom: 20px;
       margin-left: 50px;
       margin-right: 50px;
       font-size: 18px;
@@ -69,5 +80,18 @@
       margin-top: 30px;
       margin-bottom: 30px;
     }
+  }
+}
+
+// BlogPost animation
+@keyframes hr_line {
+  0% {
+    background-color: #d53f8c;
+  }
+  50% {
+    background-color: #dd6b20;
+  }
+  100% {
+    background-color: #d53f8c;
   }
 }
