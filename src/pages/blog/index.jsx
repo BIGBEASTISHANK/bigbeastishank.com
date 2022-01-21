@@ -10,6 +10,10 @@ export default function Blog({ allPostsData }) {
   return (
     <>
       <Head>
+        <meta
+          name="description"
+          content="This is a blog page, you can see daily post over here and learn new stuffs!"
+        />
         <title>Blog | BIG BEAST ISHANK</title>
       </Head>
 

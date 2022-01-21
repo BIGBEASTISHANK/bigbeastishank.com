@@ -9,6 +9,11 @@ export default function Projects({ allProjectsData }) {
   return (
     <>
       <Head>
+        <meta
+          name="description"
+          content="This is BIGBEASTISHANK's project page, you can check out his projects over here!"
+        />
+
         <title>Project | BIG BEAST ISHANK</title>
       </Head>
 
@@ -66,7 +71,12 @@ export default function Projects({ allProjectsData }) {
                 mt={"15px"}
               >
                 <Text className="title" textAlign={"justify"}>
-                  <Link href={link} cursor={"pointer"} isExternal _focus={{ outline: "none" }}>
+                  <Link
+                    href={link}
+                    cursor={"pointer"}
+                    isExternal
+                    _focus={{ outline: "none" }}
+                  >
                     {name}
                   </Link>
                 </Text>

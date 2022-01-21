@@ -18,6 +18,10 @@ export default function About() {
     <>
       <Box className="about">
         <Head>
+          <meta
+            name="description"
+            content="This is about page, you can know about me alot on this page. Hope you enjoy!😉"
+          />
           <title>About | BIG BEAST ISHANK</title>
         </Head>
 
@@ -48,8 +52,8 @@ export default function About() {
           <Container textAlign={"justify"}>
             <Text>
               Hmm... so you are here because you want to know about me, right?
-              So let`s talk about me. My real name is Pranjal. In the year
-              2018, I was first introduced to hacking, and then I learned about
+              So let`s talk about me. My real name is Pranjal. In the year 2018,
+              I was first introduced to hacking, and then I learned about
               programming and other technological concepts. My interest in
               technology was sparked by many people and watching YouTube. I
               learned the majority of what I know from YouTube, and then I

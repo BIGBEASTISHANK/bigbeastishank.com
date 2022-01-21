@@ -16,6 +16,10 @@ export default function Errorpage() {
     <>
       <Box className="error-page">
         <Head>
+          <meta
+            name="description"
+            content="404 Error page, please check the link properly!"
+          />
           <title>404 Page not Found</title>
         </Head>
 
