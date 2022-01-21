@@ -14,6 +14,12 @@ export default function Blog({ allPostsData }) {
           name="description"
           content="This is a blog page, you can see daily post over here and learn new stuffs!"
         />
+
+        <meta
+          property="og:keywords"
+          content="articles, blog, news, up-to-date"
+        />
+
         <title>Blog | BIG BEAST ISHANK</title>
       </Head>
 

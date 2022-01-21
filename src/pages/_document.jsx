@@ -13,7 +13,7 @@ class MyDocument extends Document {
     return (
 
       // Rendring basic html format, if not then I don't know💀
-      <Html lang="en">
+      <Html lang="en_IN">
         <Head />
 
         <body>

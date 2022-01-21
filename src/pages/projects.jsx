@@ -14,6 +14,11 @@ export default function Projects({ allProjectsData }) {
           content="This is BIGBEASTISHANK's project page, you can check out his projects over here!"
         />
 
+        <meta
+          property="og:keywords"
+          content="projects, react, python, javascript, html, unity, game"
+        />
+
         <title>Project | BIG BEAST ISHANK</title>
       </Head>
 

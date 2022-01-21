@@ -16,6 +16,10 @@ export default function Index() {
   return (
     <>
       <Head>
+        <meta
+          property="og:keywords"
+          content="home, landing page, header, hero, ishank, pranjal"
+        />
         <title>Home | BIG BEAST ISHANK</title>
       </Head>
 

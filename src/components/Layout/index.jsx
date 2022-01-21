@@ -17,26 +17,33 @@ export default function Layout({ children }) {
       >
         {/* Head Tag to put Title and meta tags */}
         <Head>
+          {/* common meta data */}
           <meta charSet="UTF-8" />
-
-          <meta
-            name="description"
-            content="This me Ishank. This is my portfolio wesite, I post blogs and you can see my projects over here."
-          />
 
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
+          <meta property="og:locale" content="en_IN" />
+
           <meta
-            name="viewport"
+            property="og:viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          <meta property="og:type" content="portfolio" />
 
+          <meta property="og:author" content="BIG BEAST ISHANK" />
+
+          <meta property="og:image" content="/favicon.ico" />
+
+          {/* Each for different page */}
           <meta
-            name="keywords"
-            content="Portfolio, Projects, Blogs, HTML, CSS, Python, C#, JavaScript, Next js"
+            property="og:description"
+            content="This me Ishank. This is my portfolio wesite, I post blogs and you can see my projects over here."
           />
 
-          <meta name="author" content="BIG BEAST ISHANK" />
+          <meta
+            property="og:keywords"
+            content="Portfolio, Projects, Blogs, HTML, CSS, Python, C#, JavaScript, Next js"
+          />
 
           {/* Title */}
           <title>BIG BEAST ISHANK</title>
@@ -63,7 +70,7 @@ export default function Layout({ children }) {
           mt={{ md: "0", sm: "20px" }}
           mr={"30px"}
         >
-          {/* <Footer /> */}
+          <Footer />
         </Box>
       </Box>
     </>

@@ -20,6 +20,12 @@ export default function Errorpage() {
             name="description"
             content="404 Error page, please check the link properly!"
           />
+
+          <meta
+            property="og:keywords"
+            content="error page, 404, error"
+          />
+
           <title>404 Page not Found</title>
         </Head>
 
