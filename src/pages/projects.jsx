@@ -10,7 +10,7 @@ export default function Projects({ allProjectsData }) {
     <>
       <Head>
         <meta
-          name="description"
+          property="og:description"
           content="This is BIGBEASTISHANK's project page, you can check out his projects over here!"
         />
 

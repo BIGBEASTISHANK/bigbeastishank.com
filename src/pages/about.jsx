@@ -19,7 +19,7 @@ export default function About() {
       <Box className="about">
         <Head>
           <meta
-            name="description"
+            property="og:description"
             content="This is about page, you can know about me alot on this page. Hope you enjoy!😉"
           />
 

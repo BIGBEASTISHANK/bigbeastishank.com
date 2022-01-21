@@ -11,7 +11,7 @@ export default function Blog({ allPostsData }) {
     <>
       <Head>
         <meta
-          name="description"
+          property="og:description"
           content="This is a blog page, you can see daily post over here and learn new stuffs!"
         />
 

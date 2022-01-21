@@ -28,11 +28,11 @@ export default function Layout({ children }) {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <meta property="og:type" content="website" />
+          <meta name="type" property="og:type" content="website" />
 
-          <meta property="og:author" content="BIG BEAST ISHANK" />
+          <meta name="author" property="og:author" content="BIG BEAST ISHANK" />
 
-          <meta property="og:image" content="/favicon.ico" />
+          <meta name="image" property="og:image" content="/favicon.ico" />
 
           {/* Each for different page */}
           <meta
