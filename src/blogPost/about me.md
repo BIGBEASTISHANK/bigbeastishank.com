@@ -24,7 +24,7 @@ I meet my friend **[Kushagra Raj](https://kushagraraj.me)** he said that he woul
 After completing my bot, I was distracted by game development. I learned a lot of new things as well as a new language, **C # in unity**. I followed many youtube tutorials and then made my first (copied) game, Beast Doge. It was a clone of [Brackey](https://youtube.com/c/Brackeys)'s Doge Game, but I added my UI. I published it but then removed it because of copyright issues. I made another **OG** game. **[Beast Race](https://github.com/BIGBEASTISHANK/Beast-Race)** and this was the first game where I actually learned something in game development. Then I uploaded this game at my first website.
 \
 \
-After uploading my game, I told Bruce (which is the nick name of Kushagra) to collab with me and make a website, and I would make a game. We started, but that didn't wake him up because he was already working on his bot. But at the time, he stated that we would create a website using **React**, so as you are all aware, I do everything that I see, so I started learning to react. Then I made a [website again](https://github.com/bigbeastishank.github.io) but that is shut down for many reasons.
+After uploading my game, I told Bruce (which is the nick name of Kushagra) to collab with me and make a website, and I would make a game. We started, but that didn't wake him up because he was already working on his bot. But at the time, he stated that we would create a website using **React**, so as you are all aware, I do everything that I see, so I started learning to react. Then I made a [website again](https://github.com/bigbeastishank/bigbeastishank-react-website-sc) but that is shut down for many reasons.
 \
 \
 I started my journey in AI development as my [fuffa ji (uncle)](https://twitter.com/sinrkb) game project. He is **Co-Chairman and CEO of [EST Group and the global headquarter of his enterprise](https://www.estglobalinc.com/) which is located at CIC-MIT, USA**. For my AI, I began using **python**. I successfully completed it, and then they told me to make a website. which is private. I was half way through, but due to exams and all that, I stopped working on that project and never started again. But I have completed the login page. I made that website in Python, so I got familiar with Python web development. I started another Python project with **My Sql** as the backend but abandoned it because I did not have enough resources to host a fully functional Python backend website. But I made a personal [python website](https://bigbeastishank.herokuapp.com) which became a project, before making this website and after making my first react website that was my official website.
@@ -67,7 +67,7 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 - [BEAST BOT](https://top.gg/bot/709984874924081174)
 - [Brackey](https://youtube.com/c/Brackeys)
 - [Beast Race](https://github.com/BIGBEASTISHANK/Beast-Race)
-- [React Website](https://github.com/bigbeastishank.github.io)
+- [React Website](https://github.com/bigbeastishank/bigbeastishank-react-website-sc)
 - [EST-Global Inc](https://www.estglobalinc.com/)
 - [Parrot Linux](https://parrotsec.org)
 - [Arch Linux](https://archlinux.org)
