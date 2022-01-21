@@ -67,10 +67,11 @@ export default function About() {
               learned the majority of what I know from YouTube, and then I
               learned how to do web research. And now I am a game developer, an
               AI developer, and a web developer. To know everything about me and
-              my journey, see my blog{" "}
+              my journey, see{" "}
               <b>
-                <NextLink href="/blog/about-me">Here</NextLink>
+                <NextLink href="/blog/about-me">my blog</NextLink>
               </b>
+              .
             </Text>
           </Container>
         </Box>

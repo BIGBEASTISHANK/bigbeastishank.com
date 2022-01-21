@@ -27,13 +27,13 @@ export default function Softwares() {
     <>
       {/* Software Heading */}
       <Heading
-        className="about-heading"
+        className="software-heading"
         fontSize={{ lg: "5xl", md: "4xl", sm: "32px", base: "22px" }}
         fontWeight="700"
         mb={{ lg: "20px", base: "15px" }}
         mt={"30px"}
       >
-        <a>Software</a>
+        Software
       </Heading>
 
       <Box className="software-item">
@@ -51,7 +51,7 @@ export default function Softwares() {
         >
           {softwares.map((item) => (
             <li key={item.name}>
-              <ListItem>
+              <ListItem p={'5px'}>
                 <Link isExternal href={item.link} _focus={{ outline: "none" }}>
                   {item.name}
                 </Link>

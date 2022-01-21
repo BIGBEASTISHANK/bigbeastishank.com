@@ -79,9 +79,11 @@ export default function Blog({ allPostsData }) {
                 mt={"15px"}
               >
                 <Text className="title" textAlign={"justify"}>
-                  <NextLink href={`/blog/${id}`} cursor={"pointer"}>
-                    <Link>{title}</Link>
-                  </NextLink>
+                  <Link>
+                    <NextLink href={`/blog/${id}`} cursor={"pointer"}>
+                      {title}
+                    </NextLink>
+                  </Link>
                 </Text>
               </Heading>
 

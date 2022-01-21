@@ -27,13 +27,13 @@ export default function Gears() {
     <>
       {/* Gears Heading */}
       <Heading
-        className="about-heading"
+        className="gears-heading"
         fontSize={{ lg: "5xl", md: "4xl", sm: "32px", base: "22px" }}
         fontWeight="700"
         mb={{ lg: "20px", base: "15px" }}
         mt={"15px"}
       >
-        <a>Gears</a>
+        Gears
       </Heading>
 
       <Box className="gears-item">
@@ -51,7 +51,7 @@ export default function Gears() {
         >
           {gears.map((item) => (
             <li key={item.name}>
-              <ListItem>
+              <ListItem p={'5px'}>
                 <Link isExternal href={item.link} _focus={{ outline: "none" }}>
                   {item.name}
                 </Link>
