@@ -27,30 +27,6 @@
   }
 }
 
-.credit-header {
-  background: linear-gradient(-45deg, #e65f35, #9c2452, #0c7da7, #04ff64);
-  animation: nav 8.5s ease infinite;
-  background-size: 1000% 1000%;
-}
-
-.c-item-header {
-  background: linear-gradient(45deg, #0c7da7, #04ff64, #e65f35, #9c2452);
-  animation: nav 8.5s ease infinite;
-  background-size: 1000% 1000%;
-}
-
-.c-item-content {
-  background: linear-gradient(-45deg, #04ff64, #0c7da7, #e73c7e, #ee7752);
-  animation: nav 8.5s ease infinite;
-  background-size: 1000% 1000%;
-}
-
-.contact-header {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  animation: nav 8.5s ease infinite;
-  background-size: 1000% 1000%;
-}
-
 // Navbar Animation
 @keyframes nav {
   0% {

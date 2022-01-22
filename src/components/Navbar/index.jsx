@@ -11,8 +11,6 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import Contact from "./Contact";
-import Credit from "./Credits";
-
 export default function Navbar() {
   // Variable
   const { colorMode, toggleColorMode } = useColorMode();
@@ -84,9 +82,6 @@ export default function Navbar() {
                 </li>
               </ul>
             ))}
-
-            {/* Credit function and template import */}
-            <Credit />
 
             {/* Contact funciton and template import */}
             <Contact />
