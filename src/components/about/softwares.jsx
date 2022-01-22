@@ -1,22 +1,29 @@
 // Importing stuffs
 import { Heading, Box, UnorderedList, ListItem, Link } from "@chakra-ui/react";
+import { faLinux, faOpera, faSpotify } from "@fortawesome/free-brands-svg-icons";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Softwares() {
   // Variable
   const softwares = [
     {
+      icon: faCode,
       name: "VS Code",
       link: "https://code.visualstudio.com/",
     },
     {
+      icon: faLinux,
       name: "Arch Linux",
       link: "https://archlinux.org/",
     },
     {
+      icon: faOpera,
       name: "Opera",
       link: "https://www.opera.com/",
     },
     {
+      icon: faSpotify,
       name: "Spotify",
       link: "https://spotify.com/",
     },
@@ -27,7 +34,7 @@ export default function Softwares() {
     <>
       {/* Software Heading */}
       <Heading
-        className="software-heading"
+        className="software-head"
         fontSize={{ lg: "5xl", md: "4xl", sm: "32px", base: "22px" }}
         fontWeight="700"
         mb={{ lg: "20px", base: "15px" }}
@@ -53,6 +60,7 @@ export default function Softwares() {
             <ul key={item.name}>
               <li>
                 <ListItem p={"5px"}>
+                  <FontAwesomeIcon icon={item.icon} />{" "}
                   <Link
                     isExternal
                     href={item.link}

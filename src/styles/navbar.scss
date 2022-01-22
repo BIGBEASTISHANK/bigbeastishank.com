@@ -27,6 +27,13 @@
   }
 }
 
+// Contact slider header
+.contact-header {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  animation: nav 8.5s ease infinite;
+  background-size: 1000% 1000%;
+}
+
 // Navbar Animation
 @keyframes nav {
   0% {

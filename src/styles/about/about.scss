@@ -15,11 +15,14 @@
     }
   }
 
-  .gears-item {
-    user-select: none;
+  .gear-head,
+  .software-head {
+    animation: about-heading 5s ease infinite;
   }
 
+  .gears-item,
   .software-item {
+    animation: about-item 10s ease-in-out infinite;
     user-select: none;
   }
 }
@@ -40,5 +43,23 @@
   }
   100% {
     color: #ee7752;
+  }
+}
+
+@keyframes about-item {
+  0% {
+    color: #00bbff;
+  }
+  25% {
+    color: #56d6b8;
+  }
+  50% {
+    color: #05ff6d;
+  }
+  75% {
+    color: #df5f90;
+  }
+  100% {
+    color: #00bbff;
   }
 }
