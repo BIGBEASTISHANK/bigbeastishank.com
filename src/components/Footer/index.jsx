@@ -95,21 +95,22 @@ export default function Footer() {
       </Center>
 
       {/* Social Media Link */}
-      <Wrap className="links" fontSize={iconSize} justify={"center"}>
+      <Wrap
+        className="links"
+        fontSize={iconSize}
+        justify={"center"}
+        key={item.name}
+      >
         {icon.map((item) => (
-          <ul key={item.name}>
-            <li>
-              <WrapItem>
-                <Link href={item.link} isExternal _focus={{ outline: "none" }}>
-                  <FontAwesomeIcon
-                    icon={item.icon}
-                    className="icon"
-                    aria-label={item.name}
-                  />
-                </Link>
-              </WrapItem>
-            </li>
-          </ul>
+          <WrapItem key={item.name}>
+            <Link href={item.link} isExternal _focus={{ outline: "none" }}>
+              <FontAwesomeIcon
+                icon={item.icon}
+                className="icon"
+                aria-label={item.name}
+              />
+            </Link>
+          </WrapItem>
         ))}
       </Wrap>
     </>
