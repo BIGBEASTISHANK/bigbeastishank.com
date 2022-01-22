@@ -19,47 +19,47 @@ export default function Footer() {
 
   const icon = [
     {
-      name: "my github link",
+      name: "this is my github page",
       icon: faGithub,
       link: "https://github.com/bigbeastishank",
     },
     {
-      name: "my mail link",
+      name: "you can mail me here",
       icon: faMailBulk,
       link: "mailto:pranjal3211p@gmail.com",
     },
     {
-      name: "my instagram link",
+      name: "this is my instagram account",
       icon: faInstagram,
       link: "https://instagram.com/opishank",
     },
     {
-      name: "my spotify link",
+      name: "this is my spotify account",
       icon: faSpotify,
       link: "https://open.spotify.com/user/n37h63t5acey8z9kqu3dwjp1l",
     },
     {
-      name: "my discord link",
+      name: "this is my discord server",
       icon: faDiscord,
       link: "https://discord.gg/WdeHDmwKFn",
     },
     {
-      name: "my snapchat link",
+      name: "this is my snapchat account",
       icon: faSnapchat,
       link: "https://snapchat.com/add/opishank",
     },
     {
-      name: "my steam link",
+      name: "this is my steam account",
       icon: faSteam,
       link: "https://steamcommunity.com/id/bigbeastishank",
     },
     {
-      name: "my twitter link",
+      name: "this is my twitter handle",
       icon: faTwitter,
       link: "https://twitter.com/opishank",
     },
     {
-      name: "my youtube link",
+      name: "this is my youtube channel",
       icon: faYoutube,
       link: "https://www.youtube.com/channel/UCw6lNThNWxwz1cz5rvR1Rdw",
     },
