@@ -69,55 +69,57 @@ export default function Blog({ allPostsData }) {
 
         {/* Blog Frontmatter data */}
         {allPostsData.map(({ id, date, title, description }) => (
-          <li key={id}>
-            <Box mb={50} className="posts">
-              {/* Blog TItle */}
-              <Heading
-                fontSize={{ lg: "3xl", md: "2xl", sm: "24px", base: "16px" }}
-                fontWeight="700"
-                mb={{ lg: "10px", base: "5px" }}
-                mt={"15px"}
-              >
-                <Text className="title" textAlign={"justify"}>
-                  <Link href={`/blog/${id}`}>
-                    <NextLink href={`/blog/${id}`} cursor={"pointer"}>
-                      {title}
-                    </NextLink>
-                  </Link>
+          <ul key={id}>
+            <li>
+              <Box mb={50} className="posts">
+                {/* Blog TItle */}
+                <Heading
+                  fontSize={{ lg: "3xl", md: "2xl", sm: "24px", base: "16px" }}
+                  fontWeight="700"
+                  mb={{ lg: "10px", base: "5px" }}
+                  mt={"15px"}
+                >
+                  <Text className="title" textAlign={"justify"}>
+                    <Link href={`/blog/${id}`}>
+                      <NextLink href={`/blog/${id}`} cursor={"pointer"}>
+                        {title}
+                      </NextLink>
+                    </Link>
+                  </Text>
+                </Heading>
+
+                {/* Blog Description */}
+                <Text
+                  className="description"
+                  fontSize={{
+                    xl: "20px",
+                    md: "17px",
+                    sm: "16px",
+                    base: "11px",
+                  }}
+                  fontWeight="700"
+                  mb={{ lg: "15px", base: "10px" }}
+                  textAlign={"justify"}
+                >
+                  {description}
                 </Text>
-              </Heading>
 
-              {/* Blog Description */}
-              <Text
-                className="description"
-                fontSize={{
-                  xl: "20px",
-                  md: "17px",
-                  sm: "16px",
-                  base: "11px",
-                }}
-                fontWeight="700"
-                mb={{ lg: "15px", base: "10px" }}
-                textAlign={"justify"}
-              >
-                {description}
-              </Text>
-
-              {/* Date on which blog is posted */}
-              <Text
-                textAlign={"justify"}
-                className="date"
-                fontSize={{
-                  xl: "19px",
-                  md: "16px",
-                  sm: "15px",
-                  base: "10px",
-                }}
-              >
-                <Date dateString={date} />
-              </Text>
-            </Box>
-          </li>
+                {/* Date on which blog is posted */}
+                <Text
+                  textAlign={"justify"}
+                  className="date"
+                  fontSize={{
+                    xl: "19px",
+                    md: "16px",
+                    sm: "15px",
+                    base: "10px",
+                  }}
+                >
+                  <Date dateString={date} />
+                </Text>
+              </Box>
+            </li>
+          </ul>
         ))}
       </Box>
     </>

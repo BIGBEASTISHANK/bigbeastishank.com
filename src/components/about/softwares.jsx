@@ -50,7 +50,7 @@ export default function Softwares() {
           mr={"50px"}
         >
           {softwares.map((item) => (
-            <ol key={item.name}>
+            <ul key={item.name}>
               <li>
                 <ListItem p={"5px"}>
                   <Link
@@ -62,7 +62,7 @@ export default function Softwares() {
                   </Link>
                 </ListItem>
               </li>
-            </ol>
+            </ul>
           ))}
         </UnorderedList>
       </Box>

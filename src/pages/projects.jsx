@@ -68,7 +68,7 @@ export default function Projects({ allProjectsData }) {
 
         {/* Project Frontmatter data */}
         {allProjectsData.map(({ id, name, description, date, link }) => (
-          <ol key={id}>
+          <ul key={id}>
             <li>
               <Box mb={50} className="projects">
                 {/* Project TItle */}
@@ -121,7 +121,7 @@ export default function Projects({ allProjectsData }) {
                 </Text>
               </Box>
             </li>
-          </ol>
+          </ul>
         ))}
       </Box>
     </>

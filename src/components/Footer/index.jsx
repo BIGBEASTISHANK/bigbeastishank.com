@@ -19,47 +19,47 @@ export default function Footer() {
 
   const icon = [
     {
-      name: "github",
+      name: "github link",
       icon: faGithub,
       link: "https://github.com/bigbeastishank",
     },
     {
-      name: "mail",
+      name: "mail link",
       icon: faMailBulk,
       link: "mailto:pranjal3211p@gmail.com",
     },
     {
-      name: "instagram",
+      name: "instagram link",
       icon: faInstagram,
       link: "https://instagram.com/opishank",
     },
     {
-      name: "spotify",
+      name: "spotify link",
       icon: faSpotify,
       link: "https://open.spotify.com/user/n37h63t5acey8z9kqu3dwjp1l",
     },
     {
-      name: "discord",
+      name: "discord link",
       icon: faDiscord,
       link: "https://discord.gg/WdeHDmwKFn",
     },
     {
-      name: "snapchat",
+      name: "snapchat link",
       icon: faSnapchat,
       link: "https://snapchat.com/add/opishank",
     },
     {
-      name: "steam",
+      name: "steam link",
       icon: faSteam,
       link: "https://steamcommunity.com/id/bigbeastishank",
     },
     {
-      name: "twitter",
+      name: "twitter link",
       icon: faTwitter,
       link: "https://twitter.com/opishank",
     },
     {
-      name: "youtube",
+      name: "youtube link",
       icon: faYoutube,
       link: "https://www.youtube.com/channel/UCw6lNThNWxwz1cz5rvR1Rdw",
     },
@@ -98,15 +98,17 @@ export default function Footer() {
       <Wrap className="links" fontSize={iconSize} justify={"center"}>
         {icon.map((item) => (
           <ul key={item.name}>
-            <WrapItem>
-              <Link href={item.link} isExternal _focus={{ outline: "none" }}>
-                <FontAwesomeIcon
-                  icon={item.icon}
-                  className="icon"
-                  aria-label={item.name}
-                />
-              </Link>
-            </WrapItem>
+            <li>
+              <WrapItem>
+                <Link href={item.link} isExternal _focus={{ outline: "none" }}>
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    className="icon"
+                    aria-label={item.name}
+                  />
+                </Link>
+              </WrapItem>
+            </li>
           </ul>
         ))}
       </Wrap>
