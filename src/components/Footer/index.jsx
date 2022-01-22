@@ -95,12 +95,7 @@ export default function Footer() {
       </Center>
 
       {/* Social Media Link */}
-      <Wrap
-        className="links"
-        fontSize={iconSize}
-        justify={"center"}
-        key={item.name}
-      >
+      <Wrap className="links" fontSize={iconSize} justify={"center"}>
         {icon.map((item) => (
           <WrapItem key={item.name}>
             <Link href={item.link} isExternal _focus={{ outline: "none" }}>
