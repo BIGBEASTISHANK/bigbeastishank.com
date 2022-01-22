@@ -38,6 +38,6 @@ This should fix all the lags in-game.
 \
 \
 \
-**Originsl: [Here](https://kushagraraj.me/blog/fixing-valorant)**
+**[Original Post](https://kushagraraj.me/blog/fixing-valorant)**
 
 **Full Credit: [Bruce Mac Gary](https://github.com/brucemacgary)**
