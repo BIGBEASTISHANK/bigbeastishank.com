@@ -72,7 +72,7 @@ export default function Layout({ children }) {
           mt={{ md: "0", sm: "20px" }}
           mr={"30px"}
         >
-          {/* <Footer /> */}
+          <Footer />
         </Box>
       </Box>
     </>

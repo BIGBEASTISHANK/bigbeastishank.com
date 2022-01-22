@@ -1,53 +1,67 @@
 // Importing  Stuffs
-import { Link, Skeleton, Text, Center, Flex } from "@chakra-ui/react";
-import Image from "next/image";
+import { Link, Skeleton, Text, Center, Wrap, WrapItem } from "@chakra-ui/react";
+import {
+  faDiscord,
+  faGithub,
+  faInstagram,
+  faSnapchat,
+  faSpotify,
+  faSteam,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Footer() {
   // Variables
-  const s_media_path = "/images/footer-link/";
-  const icon_width = "30px";
-  const icon_height = "30px";
+  const iconSize = { lg: "30px", sm: "25px", base: "20px" };
 
   const icon = [
     {
       name: "github",
+      icon: faGithub,
       link: "https://github.com/bigbeastishank",
     },
     {
-      name: "email",
+      name: "mail",
+      icon: faMailBulk,
       link: "mailto:pranjal3211p@gmail.com",
     },
     {
       name: "instagram",
+      icon: faInstagram,
       link: "https://instagram.com/opishank",
     },
     {
       name: "spotify",
+      icon: faSpotify,
       link: "https://open.spotify.com/user/n37h63t5acey8z9kqu3dwjp1l",
     },
     {
       name: "discord",
+      icon: faDiscord,
       link: "https://discord.gg/WdeHDmwKFn",
     },
     {
       name: "snapchat",
+      icon: faSnapchat,
       link: "https://snapchat.com/add/opishank",
     },
     {
       name: "steam",
+      icon: faSteam,
       link: "https://steamcommunity.com/id/bigbeastishank",
     },
     {
       name: "twitter",
+      icon: faTwitter,
       link: "https://twitter.com/opishank",
     },
     {
       name: "youtube",
+      icon: faYoutube,
       link: "https://www.youtube.com/channel/UCw6lNThNWxwz1cz5rvR1Rdw",
-    },
-    {
-      name: "fiverr",
-      link: "https://fiverr.com/bigbeastishank",
     },
   ];
 
@@ -67,7 +81,7 @@ export default function Footer() {
       />
 
       {/* Made By text */}
-      <Center alignItems={"center"} textAlign={"center"}>
+      <Center alignItems={"center"} textAlign={"center"} mb={"2"}>
         <Text>
           Made with 💖 by{" "}
           <Link
@@ -81,32 +95,19 @@ export default function Footer() {
       </Center>
 
       {/* Social Media Link */}
-      <Center alignItems={"center"} textAlign={"center"} className="img">
+      <Wrap className="links" fontSize={iconSize} justify={"center"}>
         {icon.map((item) => (
-          <ul key={item.name}>
-            <li>
-              <Flex>
-                {/* Github */}
-                <Link
-                  className="links"
-                  _focus={{ outline: "none" }}
-                  href={item.link}
-                  isExternal
-                  m={"2px"}
-                  mt={"8px"}
-                >
-                  <Image
-                    alt={item.name}
-                    src={s_media_path + item.name + ".webp"}
-                    height={icon_height}
-                    width={icon_width}
-                  ></Image>
-                </Link>
-              </Flex>
-            </li>
-          </ul>
+          <WrapItem>
+            <Link href={item.link} isExternal _focus={{ outline: "none" }}>
+              <FontAwesomeIcon
+                icon={item.icon}
+                className="icon"
+                aria-label={item.name}
+              />
+            </Link>
+          </WrapItem>
         ))}
-      </Center>
+      </Wrap>
     </>
   );
 }
