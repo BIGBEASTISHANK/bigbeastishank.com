@@ -1,10 +1,68 @@
 // Importing Stuffs
-import { getSortedProjectsData } from "../lib/projects";
 import Date from "../components/date";
 import { Box, Heading, Text, Skeleton, Link } from "@chakra-ui/react";
 import Head from "next/head";
 
-export default function Projects({ allProjectsData }) {
+export default function Projects() {
+  // Variables
+  const projectData = [
+    {
+      name: "My React Webste",
+      description:
+        "This is my ReactJS website, which has been shut down for some reason. The link is not to the website, but its source code. The website is no longer deployed. You can still use it for your personal website.",
+      date: "2022-01-20",
+      link: "https://github.com/bigbeastishank/bigbeastishank-react-website-sc",
+    },
+
+    {
+      name: "Python website using flask",
+      description:
+        "I was working on a project with a backend, so I created this personal website in Python but without a backend. This is based on the flask. It is basic HTML and CSS with python logic.",
+      date: "2022-01-19",
+      link: "https://bigbeastishank.herokuapp.com",
+    },
+
+    {
+      name: "My Discord Bot",
+      description:
+        "This is my Discord bot, 'beast bot'. You can get this on top.gg. It is a multi-purpose bot. If you want to go to its support server, you can check the footer link or use top.gg.",
+      date: "2022-01-19",
+      link: "https://top.gg/bot/709984874924081174/",
+    },
+
+    {
+      name: "Game using Unity",
+      description:
+        "I tried making a game on Unity. This is my first original game. It has many bugs because I didn't work on it properly, but it is playable a lot. It only works on Windows.",
+      date: "2022-01-19",
+      link: "https://github.com/BIGBEASTISHANK/Beast-Race",
+    },
+
+    {
+      name: "Python Voice search AI",
+      description:
+        "When you run this python file, it will ask you to speak, and then whatever you say will be searched specifically on Google.",
+      date: "2022-01-18",
+      link: "https://github.com/BIGBEASTISHANK/voice-search-ai-python",
+    },
+
+    {
+      name: "Python text to audio AI",
+      description:
+        "This is an AI that converts anything you write in a terminal to an mp3 format, so you can play it on any device. It is in Python. You can also control the speed of your voice.",
+      date: "2022-01-18",
+      link: "https://github.com/BIGBEASTISHANK/text-to-speech-python",
+    },
+
+    {
+      name: "Python speak to text AI",
+      description:
+        "When you run this file, it will tell you to speak, and then whatever you speak will be converted into a 'txt' file and you can read it. By this process, only voice search AI is made.",
+      date: "2022-01-18",
+      link: "https://github.com/BIGBEASTISHANK/speech-to-text-python",
+    },
+  ];
+
   // Returning Html
   return (
     <>
@@ -66,9 +124,9 @@ export default function Projects({ allProjectsData }) {
           mt={6}
         />
 
-        {/* Project Frontmatter data */}
-        {allProjectsData.map(({ id, name, description, date, link }) => (
-          <ul key={id}>
+        {/* Project data */}
+        {projectData.map((data) => (
+          <ul key={data.name}>
             <li>
               <Box
                 mb={50}
@@ -86,12 +144,12 @@ export default function Projects({ allProjectsData }) {
                 >
                   <Text className="title" textAlign={"justify"}>
                     <Link
-                      href={link}
+                      href={data.link}
                       cursor={"pointer"}
                       isExternal
                       _focus={{ outline: "none" }}
                     >
-                      {name}
+                      {data.name}
                     </Link>
                   </Text>
                 </Heading>
@@ -109,7 +167,7 @@ export default function Projects({ allProjectsData }) {
                   mb={{ lg: "15px", base: "10px" }}
                   textAlign={"justify"}
                 >
-                  {description}
+                  {data.description}
                 </Text>
 
                 {/* Date on which blog is posted */}
@@ -123,7 +181,7 @@ export default function Projects({ allProjectsData }) {
                     base: "10px",
                   }}
                 >
-                  <Date dateString={date} />
+                  <Date dateString={data.date} />
                 </Text>
               </Box>
             </li>
@@ -132,17 +190,4 @@ export default function Projects({ allProjectsData }) {
       </Box>
     </>
   );
-}
-
-// Function to get projects data
-export async function getStaticProps() {
-  // Getting projects data
-  const allProjectsData = getSortedProjectsData();
-
-  // Returning projects data
-  return {
-    props: {
-      allProjectsData,
-    },
-  };
 }
