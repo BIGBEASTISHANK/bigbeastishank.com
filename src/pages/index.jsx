@@ -1,13 +1,5 @@
 // Importing Stuffs
-import {
-  Flex,
-  Box,
-  Skeleton,
-  Heading,
-  Text,
-  Center,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Skeleton, Heading, Text } from "@chakra-ui/react";
 import Head from "next/head";
 import Skills from "../components/home/skills";
 
