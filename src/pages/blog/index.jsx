@@ -71,7 +71,13 @@ export default function Blog({ allPostsData }) {
         {allPostsData.map(({ id, date, title, description }) => (
           <ul key={id}>
             <li>
-              <Box mb={50} className="posts">
+              <Box
+                mb={50}
+                className="posts"
+                bg={"rgba( 0, 0, 0, 0.15 )"}
+                p={"10px"}
+                borderRadius={"25px"}
+              >
                 {/* Blog TItle */}
                 <Heading
                   fontSize={{ lg: "3xl", md: "2xl", sm: "24px", base: "16px" }}
