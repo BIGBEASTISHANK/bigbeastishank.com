@@ -70,7 +70,13 @@ export default function Projects({ allProjectsData }) {
         {allProjectsData.map(({ id, name, description, date, link }) => (
           <ul key={id}>
             <li>
-              <Box mb={50} className="projects">
+              <Box
+                mb={50}
+                className="projects"
+                bg={"rgba( 0, 0, 0, 0.15 )"}
+                p={"10px"}
+                borderRadius={"25px"}
+              >
                 {/* Project TItle */}
                 <Heading
                   fontSize={{ lg: "3xl", md: "2xl", sm: "24px", base: "16px" }}
