@@ -56,7 +56,11 @@ export default function Post({ postData }) {
           mb={{ lg: "15px", base: "10px" }}
           textAlign={"justify"}
         >
-          <Link href={postData.authlink} isExternal>
+          <Link
+            href={postData.authlink}
+            isExternal
+            _focus={{ outline: "none" }}
+          >
             {postData.author}
           </Link>{" "}
           / <Date dateString={postData.date} /> / {postData.readtime} read
