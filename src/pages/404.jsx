@@ -69,26 +69,30 @@ export default function Errorpage() {
         {/* Go Back button */}
         <Center>
           {/* For Mobile and above */}
-          <Button
-            d={{ base: "none", sm: "flex" }}
-            size={"lg"}
-            className="gb-btn"
-            _hover={"none"}
-            mb={7}
-          >
-            <NextLink href="/">Go Back To Home</NextLink>
-          </Button>
+          <NextLink href="/">
+            <Button
+              d={{ base: "none", sm: "flex" }}
+              size={"lg"}
+              className="gb-btn"
+              _hover={"none"}
+              mb={7}
+            >
+              Go Back To Home
+            </Button>
+          </NextLink>
 
           {/* For small mobile */}
-          <Button
-            d={{ base: "flex", sm: "none" }}
-            size={"md"}
-            className="gb-btn"
-            _hover={"none"}
-            mb={7}
-          >
-            <NextLink href="/">Go Back To Home</NextLink>
-          </Button>
+          <NextLink href="/">
+            <Button
+              d={{ base: "flex", sm: "none" }}
+              size={"md"}
+              className="gb-btn"
+              _hover={"none"}
+              mb={7}
+            >
+              Go Back To Home
+            </Button>
+          </NextLink>
         </Center>
       </Box>
     </>
