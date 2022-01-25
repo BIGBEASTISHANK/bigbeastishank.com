@@ -32,17 +32,18 @@ In server-side rendering the contents of the webpage, be it HTML, CSS or Javascr
 ## How to get started??
 
 ### 1. Pre-requisites
+
 - [React Js](https://reactjs.org) basic knowladge is must.
 - [Node](https://nodejs.org) and [Yarn](https://yarnpkg.com/)/[Npm](https://npmjs.org) should be installed.
 
 ### 2. Creating a project
+
 NextJS recommends creating a new Next.js app using `create-next-app`, which sets up everything automatically for you. To create a project, run in the terminal after navigating to the desired directory:
-\
-\
-`cwd$ npx create-next-app app_name`
 
-or
-
-`cwd$ yarn create next-app app_name`
+```s
+$ npx create-next-app app_name
+   #or
+$ yarn create next-app app_name
+```
 
 ## You successfully created your first next js website.

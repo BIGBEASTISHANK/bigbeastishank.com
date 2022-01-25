@@ -28,7 +28,7 @@ For better understanding refer the [discord.py](https://discordpy.readthedocs.io
 
 - Download necessary **packages**.
 
-  Execute: `cwd$ python3 -m pip install -U discord.py`
+  Execute: `$ python3 -m pip install -U discord.py`
 
 - Go to [Discord Developer Portal](https://discord.com/developers/applications)
   \
@@ -63,28 +63,28 @@ For better understanding refer the [discord.py](https://discordpy.readthedocs.io
   Enter these lines
 
   ```py
-   import discord
+  import discord
 
-   client = discord.Client()
+  client = discord.Client()
 
-    @client.event
-   async def on_ready():
-      print('We have logged in as {0.user}'.format(client))
+  @client.event
+  async def on_ready():
+     print('We have logged in as {0.user}'.format(client))
 
-   @client.event
-   async def on_message(message):
-      if message.author == client.user:
-          return
+  @client.event
+  async def on_message(message):
+     if message.author == client.user:
+         return
 
-      if message.content.startswith('$hello'):
-          await message.channel.send('Hello!')
+     if message.content.startswith('$hello'):
+         await message.channel.send('Hello!')
 
-   client.run('paste_your_token_here')
+  client.run('paste_your_token_here')
   ```
 
 - Now execute python file by typing this command in terminal
 
-  `cwd$ python main.py`
+  `$ python main.py`
 
 - Now add your bot in your server
 

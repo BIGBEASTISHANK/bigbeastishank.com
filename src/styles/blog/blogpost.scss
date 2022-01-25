@@ -14,14 +14,34 @@
   }
 
   .content {
+    pre {
+      font-weight: 1000;
+      background-color: rgba(0, 0, 0, 0.35);
+      border-radius: 15px;
+      padding: 10px;
+      overflow: auto;
+      margin-top: 10px;
+
+      code {
+        font-weight: 900;
+        background-color: transparent;
+        border-radius: 0;
+        padding: 0x;
+      }
+    }
+
+    pre::-webkit-scrollbar {
+      height: 10px;
+    }
+
     code {
       font-weight: 900;
-      background-color: rgba(0,0,0,0.35);
-      padding-top: 5px;
-      padding-left: 2px;
-      padding-right: 2px;
+      background-color: rgba(0, 0, 0, 0.35);
+      border-radius: 8px;
+      padding: 2px;
+      padding-top: 6px;
     }
-    
+
     h1 {
       font-size: 35px;
       font-weight: 1000;
