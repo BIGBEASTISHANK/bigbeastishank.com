@@ -4,7 +4,7 @@ description: "NextJS is a framework and it is based on React. It is much better 
 date: "2022-01-21"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
-readtime: "min"
+readtime: "5 min"
 ---
 
 # First let's talk about "What is NextJs?"
