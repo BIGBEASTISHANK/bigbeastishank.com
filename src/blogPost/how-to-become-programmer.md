@@ -9,11 +9,11 @@ readtime: "10 min"
 
 # How we become a script kiddie??
 
-When we start entering the programming world, we look up at YouTube tutorials and follow each and every single step that is shown in the video. By doing this, they do the work and then forget it. It is because new generetions need results really quickly. I won't lie, I am also like that, but if we need to become programmers, we need to learn things, not just do things.
+When we start entering the programming world, we look up at YouTube tutorials and follow each and every single step that is shown in the video. By doing this, we do the work and then forget it. It is because new generetions need results really quickly. I won't lie, I am also like that, but if we need to become programmers, we need to learn things, not just do things.
 
 ## What are demerits of just using youtube??
 
-When we search for some tutorial on youtube and follow it step by step, it won't help us a lot. Because of our subconcious mind, we simply copy and paste things without understanding. You just need to show people that you know stuff, but in reality you don't. Youtube will be helpful if you do it slowl and stady and not picking up the speed of a rocket while being a beginner.
+When we search for some tutorial on youtube and follow it step by step, it won't help us a lot. Because of our subconcious mind, we simply copy and paste things without understanding. You just need to show people that you know stuff, but in reality you don't. Youtube will be helpful if you do it slow and stady and not picking up the speed of a rocket while being a beginner.
 
 ## How do I learn from my mistake??
 
