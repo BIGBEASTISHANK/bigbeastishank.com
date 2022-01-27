@@ -2,10 +2,24 @@
 import { getSortedPostsData } from "../../lib/posts";
 import NextLink from "next/link";
 import Date from "../../components/date";
-import { Box, Heading, Text, Skeleton, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Text,
+  Skeleton,
+  Link,
+  Input,
+  InputGroup,
+  InputRightElement,
+} from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
 import Head from "next/head";
+import React from "react";
 
 export default function Blog({ allPostsData }) {
+  // Variable
+  const [searchTerm, setSearchTerm] = React.useState("");
+
   // Returning Html
   return (
     <>
@@ -67,66 +81,97 @@ export default function Blog({ allPostsData }) {
           mt={6}
         />
 
+        <InputGroup m="auto" mb="40px" mt="40px">
+          <InputRightElement
+            pointerEvents="none"
+            children={<SearchIcon color="gray.300" />}
+          />
+          <Input
+            className="search-bar"
+            type="text"
+            placeholder="Search..."
+            _focus={{outline: "none"}}
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+          />
+        </InputGroup>
+
         {/* Blog Frontmatter data */}
-        {allPostsData.map(({ id, date, title, description }) => (
-          <ul key={id}>
-            <li>
-              <Box
-                mb={50}
-                className="posts"
-                bg={"rgba( 0, 0, 0, 0.15 )"}
-                p={"10px"}
-                borderRadius={"25px"}
-              >
-                {/* Blog TItle */}
-                <Heading
-                  fontSize={{ lg: "3xl", md: "2xl", sm: "24px", base: "16px" }}
-                  fontWeight="700"
-                  mb={{ lg: "10px", base: "5px" }}
-                  mt={"15px"}
+        {allPostsData
+          .filter((item) => {
+            if (searchTerm == "") {
+              return item;
+            } else if (
+              item.title.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+              return item;
+            }
+          })
+          .map((item) => (
+            <ul key={item.id}>
+              <li>
+                <Box
+                  mb={50}
+                  className="posts"
+                  bg={"rgba( 0, 0, 0, 0.15 )"}
+                  p={"10px"}
+                  borderRadius={"25px"}
                 >
-                  <Text className="title" textAlign={"justify"}>
-                    <Link href={`/blog/${id}`}>
-                      <NextLink href={`/blog/${id}`} cursor={"pointer"}>
-                        {title}
-                      </NextLink>
-                    </Link>
+                  {/* Blog TItle */}
+                  <Heading
+                    fontSize={{
+                      lg: "3xl",
+                      md: "2xl",
+                      sm: "24px",
+                      base: "16px",
+                    }}
+                    fontWeight="700"
+                    mb={{ lg: "10px", base: "5px" }}
+                    mt={"15px"}
+                  >
+                    <Text className="title" textAlign={"justify"}>
+                      <Link href={`/blog/${item.id}`}>
+                        <NextLink href={`/blog/${item.id}`} cursor={"pointer"}>
+                          {item.title}
+                        </NextLink>
+                      </Link>
+                    </Text>
+                  </Heading>
+
+                  {/* Blog Description */}
+                  <Text
+                    className="description"
+                    fontSize={{
+                      xl: "20px",
+                      md: "17px",
+                      sm: "16px",
+                      base: "11px",
+                    }}
+                    fontWeight="700"
+                    mb={{ lg: "15px", base: "10px" }}
+                    textAlign={"justify"}
+                  >
+                    {item.description}
                   </Text>
-                </Heading>
 
-                {/* Blog Description */}
-                <Text
-                  className="description"
-                  fontSize={{
-                    xl: "20px",
-                    md: "17px",
-                    sm: "16px",
-                    base: "11px",
-                  }}
-                  fontWeight="700"
-                  mb={{ lg: "15px", base: "10px" }}
-                  textAlign={"justify"}
-                >
-                  {description}
-                </Text>
-
-                {/* Date on which blog is posted */}
-                <Text
-                  textAlign={"justify"}
-                  className="date"
-                  fontSize={{
-                    xl: "19px",
-                    md: "16px",
-                    sm: "15px",
-                    base: "10px",
-                  }}
-                >
-                  <Date dateString={date} />
-                </Text>
-              </Box>
-            </li>
-          </ul>
-        ))}
+                  {/* Date on which blog is posted */}
+                  <Text
+                    textAlign={"justify"}
+                    className="date"
+                    fontSize={{
+                      xl: "19px",
+                      md: "16px",
+                      sm: "15px",
+                      base: "10px",
+                    }}
+                  >
+                    <Date dateString={item.date} />
+                  </Text>
+                </Box>
+              </li>
+            </ul>
+          ))}
       </Box>
     </>
   );

@@ -1,7 +1,18 @@
 // Importing Stuffs
 import Date from "../components/date";
-import { Box, Heading, Text, Skeleton, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Text,
+  Skeleton,
+  Link,
+  Input,
+  InputGroup,
+  InputRightElement,
+} from "@chakra-ui/react";
 import Head from "next/head";
+import React from "react";
+import { SearchIcon } from "@chakra-ui/icons";
 
 export default function Projects() {
   // Variables
@@ -62,6 +73,8 @@ export default function Projects() {
       link: "https://github.com/BIGBEASTISHANK/speech-to-text-python",
     },
   ];
+
+  const [searchTerm, setSearchTerm] = React.useState("");
 
   // Returning Html
   return (
@@ -124,8 +137,33 @@ export default function Projects() {
           mt={6}
         />
 
+        <InputGroup m="auto" mb="40px" mt="40px">
+          <InputRightElement
+            pointerEvents="none"
+            children={<SearchIcon color="gray.300" />}
+          />
+          <Input
+            className="search-bar"
+            type="text"
+            placeholder="Search..."
+            _focus={{ outline: "none" }}
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+          />
+        </InputGroup>
+
         {/* Project data */}
-        {projectData.map((data) => (
+        {projectData.filter((data) => {
+            if (searchTerm == "") {
+              return data;
+            } else if (
+              data.name.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+              return data;
+            }
+          })
+          .map((data) => (
           <ul key={data.name}>
             <li>
               <Box
