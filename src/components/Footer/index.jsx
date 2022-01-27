@@ -89,7 +89,7 @@ export default function Footer() {
       <Wrap className="links" fontSize={iconSize} justify={"center"}>
         {icon.map((item) => (
           <WrapItem key={item.name}>
-            <Link href={`/${item.link}`} isExternal _focus={{ outline: "none" }}>
+            <Link href={`/${item.name}`} isExternal _focus={{ outline: "none" }}>
               <FontAwesomeIcon
                 icon={item.icon}
                 className="icon"
