@@ -14,22 +14,22 @@ export default function Gears() {
     {
       icon: faLaptop,
       name: "Asus X507UF",
-      link: "/laptop"
+      link: "/laptop",
     },
     {
       icon: faMouse,
       name: "Dell Wireless",
-      link: "/keyboard&mouse"
+      link: "/keyboard&mouse",
     },
     {
       icon: faHeadphones,
       name: "Eksa E3000",
-      link: "/headphone"
+      link: "/headphone",
     },
     {
       icon: faMobileAlt,
       name: "Redmi Note 9 Pro Max",
-      link: "/mobile"
+      link: "/mobile",
     },
   ];
 
@@ -62,18 +62,12 @@ export default function Gears() {
         >
           {gears.map((item) => (
             <ul key={item.name}>
-              <li>
-                <ListItem p={"5px"}>
-                  <FontAwesomeIcon icon={item.icon} />{" "}
-                  <Link
-                    isExternal
-                    href={item.link}
-                    _focus={{ outline: "none" }}
-                  >
-                    {item.name}
-                  </Link>
-                </ListItem>
-              </li>
+              <ListItem p={"5px"}>
+                <FontAwesomeIcon icon={item.icon} />{" "}
+                <Link isExternal href={item.link} _focus={{ outline: "none" }}>
+                  {item.name}
+                </Link>
+              </ListItem>
             </ul>
           ))}
         </UnorderedList>

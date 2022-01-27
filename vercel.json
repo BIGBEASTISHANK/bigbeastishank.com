@@ -55,6 +55,10 @@
     {
       "source": "/fiverr",
       "destination": "https://fiverr.com/bigbeastishank"
+    },
+    {
+      "source": "/sourcecode",
+      "destination": "https://github.com/bigbeastishank/ishank.dev"
     }
   ]
 }

@@ -72,8 +72,15 @@ export default function Footer() {
       />
 
       {/* Made By text */}
-      <Center alignItems={"center"} textAlign={"center"} mb={"2"}>
-        <Text>
+      <Center
+        alignItems={"center"}
+        textAlign={"center"}
+        mb={"2"}
+        d={"block"}
+        className="credits"
+      >
+        {/* My name */}
+        <Text mb="3px">
           Made with 💖 by{" "}
           <Link
             href="https://github.com/bigbeastishank"
@@ -83,13 +90,69 @@ export default function Footer() {
             <b>BIGBEASTISHANK</b>
           </Link>
         </Text>
+
+        {/* Helper */}
+        <Text>
+          Helped by{" "}
+          <Link
+            href="https://tanmaysinha.host/"
+            isExternal
+            _focus={{ outline: "none" }}
+          >
+            <b>Tanmay Sinha</b>
+          </Link>{" "}
+          &{" "}
+          <Link
+            href="https://github.com/brucemacgary"
+            isExternal
+            _focus={{ outline: "none" }}
+          >
+            <b>BruceMacGary</b>
+          </Link>
+        </Text>
+        <br />
+        {/* Hosting */}
+        <Text>
+          Made with
+          <Link
+            href="https://nextjs.org"
+            isExternal
+            _focus={{ outline: "none" }}
+          >
+            <b> Next-JS</b>
+          </Link>
+          , Hosted on
+          <Link
+            href="https://vercel.com/"
+            isExternal
+            _focus={{ outline: "none" }}
+          >
+            <b> Vercel</b>
+          </Link>
+          , Designed with
+          <Link
+            href="https://chakra-ui.com/"
+            isExternal
+            _focus={{ outline: "none" }}
+          >
+            <b> Chakra-UI</b>
+          </Link>
+          , Code is
+          <Link href="/sourcecode" isExternal _focus={{ outline: "none" }}>
+            <b> Open Source</b>
+          </Link>
+        </Text>
       </Center>
 
       {/* Social Media Link */}
       <Wrap className="links" fontSize={iconSize} justify={"center"}>
         {icon.map((item) => (
           <WrapItem key={item.name}>
-            <Link href={`/${item.name}`} isExternal _focus={{ outline: "none" }}>
+            <Link
+              href={`/${item.name}`}
+              isExternal
+              _focus={{ outline: "none" }}
+            >
               <FontAwesomeIcon
                 icon={item.icon}
                 className="icon"

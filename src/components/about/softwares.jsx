@@ -1,6 +1,10 @@
 // Importing stuffs
 import { Heading, Box, UnorderedList, ListItem, Link } from "@chakra-ui/react";
-import { faLinux, faOpera, faSpotify } from "@fortawesome/free-brands-svg-icons";
+import {
+  faLinux,
+  faOpera,
+  faSpotify,
+} from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -58,18 +62,12 @@ export default function Softwares() {
         >
           {softwares.map((item) => (
             <ul key={item.name}>
-              <li>
-                <ListItem p={"5px"}>
-                  <FontAwesomeIcon icon={item.icon} />{" "}
-                  <Link
-                    isExternal
-                    href={item.link}
-                    _focus={{ outline: "none" }}
-                  >
-                    {item.name}
-                  </Link>
-                </ListItem>
-              </li>
+              <ListItem p={"5px"}>
+                <FontAwesomeIcon icon={item.icon} />{" "}
+                <Link isExternal href={item.link} _focus={{ outline: "none" }}>
+                  {item.name}
+                </Link>
+              </ListItem>
             </ul>
           ))}
         </UnorderedList>
