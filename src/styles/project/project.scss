@@ -11,6 +11,7 @@
   .search-bar {
     animation: search-bar 5s ease infinite;
     border: 2px solid;
+    user-select: none;
   }
 
   .searchIcon {
