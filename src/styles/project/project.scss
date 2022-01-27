@@ -8,9 +8,13 @@
     animation: post-heading 7s ease infinite;
   }
 
-  .search-bar:focus {
+  .search-bar {
     animation: search-bar 5s ease infinite;
     border: 2px solid;
+  }
+
+  .searchIcon {
+    animation: searchIcon 5s ease infinite;
   }
 
   .projects {
@@ -60,17 +64,40 @@
 @keyframes search-bar {
   0% {
     border-color: #ee7752;
+    outline: #ee7752;
   }
   25% {
     border-color: #e73c7e;
+    outline: #e73c7e;
   }
   50% {
     border-color: #23a6d5;
+    outline: #23a6d5;
   }
   75% {
     border-color: #23d5ab;
+    outline: #23d5ab;
   }
   100% {
     border-color: #ee7752;
+    outline: #ee7752;
+  }
+}
+
+@keyframes searchIcon {
+  0% {
+    color: #ee7752;
+  }
+  25% {
+    color: #e73c7e;
+  }
+  50% {
+    color: #23a6d5;
+  }
+  75% {
+    color: #23d5ab;
+  }
+  100% {
+    color: #ee7752;
   }
 }

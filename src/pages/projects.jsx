@@ -9,6 +9,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import React from "react";
@@ -75,6 +76,7 @@ export default function Projects() {
   ];
 
   const [searchTerm, setSearchTerm] = React.useState("");
+  const [searchIconColor, setSearchIconColor] = React.useState("");
 
   // Returning Html
   return (
@@ -140,7 +142,7 @@ export default function Projects() {
         <InputGroup m="auto" mb="40px" mt="40px">
           <InputRightElement
             pointerEvents="none"
-            children={<SearchIcon color="gray.300" />}
+            children={<SearchIcon className="searchIcon" boxSize="5" />}
           />
           <Input
             className="search-bar"
@@ -154,7 +156,8 @@ export default function Projects() {
         </InputGroup>
 
         {/* Project data */}
-        {projectData.filter((data) => {
+        {projectData
+          .filter((data) => {
             if (searchTerm == "") {
               return data;
             } else if (
@@ -164,67 +167,72 @@ export default function Projects() {
             }
           })
           .map((data) => (
-          <ul key={data.name}>
-            <li>
-              <Box
-                mb={50}
-                className="projects"
-                bg={"rgba( 0, 0, 0, 0.15 )"}
-                p={"10px"}
-                borderRadius={"25px"}
-              >
-                {/* Project TItle */}
-                <Heading
-                  fontSize={{ lg: "3xl", md: "2xl", sm: "24px", base: "16px" }}
-                  fontWeight="700"
-                  mb={{ lg: "10px", base: "5px" }}
-                  mt={"15px"}
+            <ul key={data.name}>
+              <li>
+                <Box
+                  mb={50}
+                  className="projects"
+                  bg={"rgba( 0, 0, 0, 0.15 )"}
+                  p={"10px"}
+                  borderRadius={"25px"}
                 >
-                  <Text className="title" textAlign={"justify"}>
-                    <Link
-                      href={data.link}
-                      cursor={"pointer"}
-                      isExternal
-                      _focus={{ outline: "none" }}
-                    >
-                      {data.name}
-                    </Link>
+                  {/* Project TItle */}
+                  <Heading
+                    fontSize={{
+                      lg: "3xl",
+                      md: "2xl",
+                      sm: "24px",
+                      base: "16px",
+                    }}
+                    fontWeight="700"
+                    mb={{ lg: "10px", base: "5px" }}
+                    mt={"15px"}
+                  >
+                    <Text className="title" textAlign={"justify"}>
+                      <Link
+                        href={data.link}
+                        cursor={"pointer"}
+                        isExternal
+                        _focus={{ outline: "none" }}
+                      >
+                        {data.name}
+                      </Link>
+                    </Text>
+                  </Heading>
+
+                  {/* Project Description */}
+                  <Text
+                    className="description"
+                    fontSize={{
+                      xl: "20px",
+                      md: "17px",
+                      sm: "16px",
+                      base: "11px",
+                    }}
+                    fontWeight="700"
+                    mb={{ lg: "15px", base: "10px" }}
+                    textAlign={"justify"}
+                  >
+                    {data.description}
                   </Text>
-                </Heading>
 
-                {/* Project Description */}
-                <Text
-                  className="description"
-                  fontSize={{
-                    xl: "20px",
-                    md: "17px",
-                    sm: "16px",
-                    base: "11px",
-                  }}
-                  fontWeight="700"
-                  mb={{ lg: "15px", base: "10px" }}
-                  textAlign={"justify"}
-                >
-                  {data.description}
-                </Text>
-
-                {/* Date on which blog is posted */}
-                <Text
-                  textAlign={"justify"}
-                  className="date"
-                  fontSize={{
-                    xl: "19px",
-                    md: "16px",
-                    sm: "15px",
-                    base: "10px",
-                  }}
-                >
-                  <Date dateString={data.date} />
-                </Text>
-              </Box>
-            </li>
-          </ul>
-        ))}
+                  {/* Date on which blog is posted */}
+                  <Text
+                    textAlign={"justify"}
+                    className="date"
+                    fontSize={{
+                      xl: "19px",
+                      md: "16px",
+                      sm: "15px",
+                      base: "10px",
+                    }}
+                  >
+                    <Date dateString={data.date} />
+                  </Text>
+                </Box>
+              </li>
+            </ul>
+          ))}
       </Box>
     </>
   );

@@ -84,13 +84,13 @@ export default function Blog({ allPostsData }) {
         <InputGroup m="auto" mb="40px" mt="40px">
           <InputRightElement
             pointerEvents="none"
-            children={<SearchIcon color="gray.300" />}
+            children={<SearchIcon className="searchIcon" boxSize="5" />}
           />
           <Input
             className="search-bar"
             type="text"
             placeholder="Search..."
-            _focus={{outline: "none"}}
+            _focus={{ outline: "none" }}
             onChange={(event) => {
               setSearchTerm(event.target.value);
             }}
