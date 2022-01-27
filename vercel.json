@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    {
+      "source": "/github",
+      "destination": "https://github.com/bigbeastishank"
+    },
+    {
+      "source": "/email",
+      "destination": "mailto:pranjal3211p@gmail.com"
+    }
+  ]
+}
