@@ -21,47 +21,38 @@ export default function Footer() {
     {
       name: "github",
       icon: faGithub,
-      link: "https://github.com/bigbeastishank",
     },
     {
       name: "email",
       icon: faMailBulk,
-      link: "mailto:pranjal3211p@gmail.com",
     },
     {
       name: "instagram",
       icon: faInstagram,
-      link: "https://instagram.com/opishank",
     },
     {
       name: "spotify",
       icon: faSpotify,
-      link: "https://open.spotify.com/user/n37h63t5acey8z9kqu3dwjp1l",
     },
     {
       name: "discord",
       icon: faDiscord,
-      link: "https://discord.gg/WdeHDmwKFn",
     },
     {
       name: "snapchat",
       icon: faSnapchat,
-      link: "https://snapchat.com/add/opishank",
     },
     {
       name: "steam",
       icon: faSteam,
-      link: "https://steamcommunity.com/id/bigbeastishank",
     },
     {
       name: "twitter",
       icon: faTwitter,
-      link: "https://twitter.com/opishank",
     },
     {
       name: "youtube",
       icon: faYoutube,
-      link: "https://www.youtube.com/channel/UCw6lNThNWxwz1cz5rvR1Rdw",
     },
   ];
 
@@ -98,7 +89,7 @@ export default function Footer() {
       <Wrap className="links" fontSize={iconSize} justify={"center"}>
         {icon.map((item) => (
           <WrapItem key={item.name}>
-            <Link href={item.link} isExternal _focus={{ outline: "none" }}>
+            <Link href={`/${item.link}`} isExternal _focus={{ outline: "none" }}>
               <FontAwesomeIcon
                 icon={item.icon}
                 className="icon"

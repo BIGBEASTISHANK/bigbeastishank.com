@@ -7,6 +7,34 @@
     {
       "source": "/email",
       "destination": "mailto:pranjal3211p@gmail.com"
+    },
+    {
+      "source": "/instagram",
+      "destination": "https://instagram.com/opishank"
+    },
+    {
+      "source": "/spotify",
+      "destination": "https://open.spotify.com/user/n37h63t5acey8z9kqu3dwjp1l"
+    },
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/WdeHDmwKFn"
+    },
+    {
+      "source": "/snapchat",
+      "destination": "https://snapchat.com/add/opishank"
+    },
+    {
+      "source": "/steam",
+      "destination": "https://steamcommunity.com/id/bigbeastishank"
+    },
+    {
+      "source": "/twitter",
+      "destination": "https://twitter.com/opishank"
+    },
+    {
+      "source": "/youtube",
+      "destination": "https://www.youtube.com/channel/UCw6lNThNWxwz1cz5rvR1Rdw"
     }
   ]
 }
