@@ -39,7 +39,7 @@ export default function Index() {
           fontWeight="700"
         >
           <Text textAlign={"justify"}>
-            Hello👋 My name is Ishank. I am a self-taught freelance developer.
+            Hello👋My name is Ishank. I am a self-taught freelance developer.
             My preferred languages are Python, JavaScript, CSS, SCSS, C#, and
             HTML. To know more about me, see the about page. Or if you want to
             see my projects see projects page.
