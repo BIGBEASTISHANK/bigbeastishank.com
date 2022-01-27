@@ -34,7 +34,7 @@ Before taking a break, Bruce made a website for his Discord bot. Which was made 
 
 ## In a long break....
 
-I started [fiverr](https://fiverr.com/bigbeastishank). My gig was to make websites for others, but it didn't succeed. I got only one client, and he is my friend [Himanshu Shekhar](https://www.instagram.com/himanxhhu/).
+I started [fiverr](/fiverr). My gig was to make websites for others, but it didn't succeed. I got only one client, and he is my friend [Himanshu Shekhar](https://www.instagram.com/himanxhhu/).
 \
 \
 In this long break, I left the IT field as everyone needs a break and I took my break due to studies and all that stuff, but my BFFs **[Divya Rani Soni](https://instagram.com/divyarani9464)** and **[Sahil Singh Rajput](https://www.instagram.com/_sahil__singh__rajput_/)** encouraged me again towards the IT field.
@@ -69,6 +69,7 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 - [Beast Race](https://github.com/BIGBEASTISHANK/Beast-Race)
 - [React Website](https://github.com/bigbeastishank/bigbeastishank-react-website-sc)
 - [EST-Global Inc](https://www.estglobalinc.com/)
+- [Fiverr](/fiverr)
 - [Parrot Linux](https://parrotsec.org)
 - [Arch Linux](https://archlinux.org)
 - [My Xmonad config](https://github.com/BIGBEASTISHANK/xmonad-dotfiles-1.0)

@@ -40,7 +40,7 @@ In server-side rendering the contents of the webpage, be it HTML, CSS or Javascr
 
 NextJS recommends creating a new Next.js app using `create-next-app`, which sets up everything automatically for you. To create a project, run in the terminal after navigating to the desired directory:
 
-```s
+```
 $ npx create-next-app app_name
    #or
 $ yarn create next-app app_name

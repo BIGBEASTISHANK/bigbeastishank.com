@@ -25,7 +25,7 @@ export default function Softwares() {
     {
       icon: faSpotify,
       name: "Spotify",
-      link: "https://spotify.com/",
+      link: "/spotify",
     },
   ];
 
