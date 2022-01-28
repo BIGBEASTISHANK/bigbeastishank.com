@@ -11,10 +11,8 @@
   .skills-btn {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 200% 200%;
-  }
-
-  .skills-btn {
     animation: skills-btn 5s ease infinite;
+    overflow: hidden;
   }
 
   .skills_lang {
