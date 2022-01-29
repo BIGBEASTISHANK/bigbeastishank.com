@@ -241,6 +241,7 @@ export default function Projects() {
                     </Text>
                     {data.tags.map((tags) => (
                       <Tag
+                      key={tags}
                         className="projects-tags"
                         borderRadius={"full"}
                         m="1"

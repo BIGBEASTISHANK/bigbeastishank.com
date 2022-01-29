@@ -174,6 +174,7 @@ export default function Blog({ allPostsData }) {
                     </Text>
                     {item.tags.map((tags) => (
                       <Tag
+                        key={tags}
                         className="blog-tags"
                         borderRadius={"full"}
                         m="1"

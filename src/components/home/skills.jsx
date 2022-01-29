@@ -151,12 +151,9 @@ export default function Skills() {
                     fontWeight="700"
                     mt={5}
                   >
-                    <Flex>
-                      <Text mr={4}>
-                        <Text className="language-name">{item.name}</Text>
-                      </Text>
-                      <Text>{item.percent}</Text>
-                    </Flex>
+                    <Text className="language-name">
+                      {item.name} {item.percent}
+                    </Text>
                   </Box>
 
                   <Flex>
