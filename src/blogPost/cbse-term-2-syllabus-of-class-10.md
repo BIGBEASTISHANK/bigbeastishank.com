@@ -5,6 +5,7 @@ date: "2022-01-17"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
 readtime: "5 min"
+tags: ["CBSE", "Class 10", "SYllabus"]
 ---
 
 # Maths

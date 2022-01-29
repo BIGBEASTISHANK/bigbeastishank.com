@@ -9,7 +9,8 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  useColorModeValue,
+  Flex,
+  Tag,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import React from "react";
@@ -24,6 +25,7 @@ export default function Projects() {
         "This is my ReactJS website, which has been shut down for some reason. The link is not to the website, but its source code. The website is no longer deployed. You can still use it for your personal website.",
       date: "2022-01-20",
       link: "https://github.com/bigbeastishank/bigbeastishank-react-website-sc",
+      tags: ["React Js"],
     },
 
     {
@@ -32,6 +34,7 @@ export default function Projects() {
         "I was working on a project with a backend, so I created this personal website in Python but without a backend. This is based on the flask. It is basic HTML and CSS with python logic.",
       date: "2022-01-19",
       link: "https://bigbeastishank.herokuapp.com",
+      tags: ["Python", "Flask"],
     },
 
     {
@@ -40,6 +43,7 @@ export default function Projects() {
         "This is my Discord bot, 'beast bot'. You can get this on top.gg. It is a multi-purpose bot. If you want to go to its support server, you can check the footer link or use top.gg.",
       date: "2022-01-19",
       link: "https://top.gg/bot/709984874924081174/",
+      tags: ["Python", "Discord", "AI", "Bot"],
     },
 
     {
@@ -48,6 +52,7 @@ export default function Projects() {
         "I tried making a game on Unity. This is my first original game. It has many bugs because I didn't work on it properly, but it is playable a lot. It only works on Windows.",
       date: "2022-01-19",
       link: "https://github.com/BIGBEASTISHANK/Beast-Race",
+      tags: ["Unity", "Game dev"],
     },
 
     {
@@ -56,6 +61,7 @@ export default function Projects() {
         "When you run this python file, it will ask you to speak, and then whatever you say will be searched specifically on Google.",
       date: "2022-01-18",
       link: "https://github.com/BIGBEASTISHANK/voice-search-ai-python",
+      tags: ["Python", "AI"],
     },
 
     {
@@ -64,6 +70,7 @@ export default function Projects() {
         "This is an AI that converts anything you write in a terminal to an mp3 format, so you can play it on any device. It is in Python. You can also control the speed of your voice.",
       date: "2022-01-18",
       link: "https://github.com/BIGBEASTISHANK/text-to-speech-python",
+      tags: ["Python", "AI"],
     },
 
     {
@@ -72,11 +79,11 @@ export default function Projects() {
         "When you run this file, it will tell you to speak, and then whatever you speak will be converted into a 'txt' file and you can read it. By this process, only voice search AI is made.",
       date: "2022-01-18",
       link: "https://github.com/BIGBEASTISHANK/speech-to-text-python",
+      tags: ["Python", "AI"],
     },
   ];
 
   const [searchTerm, setSearchTerm] = React.useState("");
-  const [searchIconColor, setSearchIconColor] = React.useState("");
 
   // Returning Html
   return (
@@ -190,6 +197,7 @@ export default function Projects() {
                   >
                     <Text className="title" textAlign={"justify"}>
                       <Link
+                        userSelect="none"
                         href={data.link}
                         cursor={"pointer"}
                         isExternal
@@ -215,6 +223,42 @@ export default function Projects() {
                   >
                     {data.description}
                   </Text>
+
+                  {/* Tags */}
+                  <Flex mt="5" mb="5">
+                    <Text
+                      p="3px"
+                      pr="10px"
+                      fontWeight={"800"}
+                      fontSize={{
+                        xl: "19px",
+                        md: "16px",
+                        sm: "15px",
+                        base: "10px",
+                      }}
+                    >
+                      Tags:{" "}
+                    </Text>
+                    {data.tags.map((tags) => (
+                      <Tag
+                        className="projects-tags"
+                        borderRadius={"full"}
+                        m="1"
+                        p="3px"
+                        pl="10px"
+                        pr="10px"
+                        fontWeight={"800"}
+                        fontSize={{
+                          xl: "19px",
+                          md: "16px",
+                          sm: "15px",
+                          base: "10px",
+                        }}
+                      >
+                        {tags}
+                      </Tag>
+                    ))}
+                  </Flex>
 
                   {/* Date on which blog is posted */}
                   <Text

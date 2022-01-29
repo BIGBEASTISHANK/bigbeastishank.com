@@ -5,6 +5,7 @@ date: "2022-01-24"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
 readtime: "5 min"
+tags: ["Discord", "Python", "discord.py", "AI", "Bot"]
 ---
 
 # Why we need bot in discord

@@ -11,6 +11,8 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Tag,
+  Flex,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import Head from "next/head";
@@ -131,7 +133,7 @@ export default function Blog({ allPostsData }) {
                     mt={"15px"}
                   >
                     <Text className="title" textAlign={"justify"}>
-                      <Link href={`/blog/${item.id}`}>
+                      <Link href={`/blog/${item.id}`} userSelect="none">
                         <NextLink href={`/blog/${item.id}`} cursor={"pointer"}>
                           {item.title}
                         </NextLink>
@@ -154,6 +156,42 @@ export default function Blog({ allPostsData }) {
                   >
                     {item.description}
                   </Text>
+
+                  {/* Tags */}
+                  <Flex mt="5" mb="5">
+                    <Text
+                      p="3px"
+                      pr="10px"
+                      fontWeight={"800"}
+                      fontSize={{
+                        xl: "19px",
+                        md: "16px",
+                        sm: "15px",
+                        base: "10px",
+                      }}
+                    >
+                      Tags:{" "}
+                    </Text>
+                    {item.tags.map((tags) => (
+                      <Tag
+                        className="blog-tags"
+                        borderRadius={"full"}
+                        m="1"
+                        p="3px"
+                        pl="10px"
+                        pr="10px"
+                        fontWeight={"800"}
+                        fontSize={{
+                          xl: "19px",
+                          md: "16px",
+                          sm: "15px",
+                          base: "10px",
+                        }}
+                      >
+                        {tags}
+                      </Tag>
+                    ))}
+                  </Flex>
 
                   {/* Date on which blog is posted */}
                   <Text

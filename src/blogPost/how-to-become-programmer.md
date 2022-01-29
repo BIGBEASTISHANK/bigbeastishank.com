@@ -5,6 +5,7 @@ date: "2022-01-25"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
 readtime: "10 min"
+tags: ["Programmer", "Professional", "YouTube"]
 ---
 
 # How we become a script kiddie??

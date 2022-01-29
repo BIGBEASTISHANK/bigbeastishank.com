@@ -5,6 +5,7 @@ date: "2022-01-21"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
 readtime: "5 min"
+tags: ["Next Js", "HTML", "JavaScript", "React Js", "Node", "Yarn"]
 ---
 
 # First let's talk about "What is NextJs?"

@@ -22,6 +22,14 @@
     .title {
       animation: title 7s ease infinite;
     }
+
+    .blog-tags {
+      user-select: none;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 200% 200%;
+      overflow: hidden;
+      animation: blog-tag 4s ease-in-out infinite;
+    }
   }
 }
 
@@ -100,5 +108,23 @@
   }
   100% {
     color: #ee7752;
+  }
+}
+
+@keyframes blog-tag {
+  0% {
+    background-position: 0% 45%;
+  }
+  25% {
+    background-position: 45% 75%;
+  }
+  50% {
+    background-position: 75% 100%;
+  }
+  75% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 50% 0%;
   }
 }
