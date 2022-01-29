@@ -225,9 +225,28 @@ export default function Projects() {
                   </Text>
 
                   {/* Tags */}
-                  <Flex mt="5" mb="5">
-                    <Text
+                  <Text
+                    mt="5"
+                    p="3px"
+                    pr="10px"
+                    fontWeight={"800"}
+                    fontSize={{
+                      xl: "19px",
+                      md: "16px",
+                      sm: "15px",
+                      base: "10px",
+                    }}
+                  >
+                    Tags:{" "}
+                  </Text>
+                  {data.tags.map((tags) => (
+                    <Tag
+                      key={tags}
+                      className="projects-tags"
+                      borderRadius={"full"}
+                      m="1"
                       p="3px"
+                      pl="10px"
                       pr="10px"
                       fontWeight={"800"}
                       fontSize={{
@@ -237,29 +256,10 @@ export default function Projects() {
                         base: "10px",
                       }}
                     >
-                      Tags:{" "}
-                    </Text>
-                    {data.tags.map((tags) => (
-                      <Tag
-                      key={tags}
-                        className="projects-tags"
-                        borderRadius={"full"}
-                        m="1"
-                        p="3px"
-                        pl="10px"
-                        pr="10px"
-                        fontWeight={"800"}
-                        fontSize={{
-                          xl: "19px",
-                          md: "16px",
-                          sm: "15px",
-                          base: "10px",
-                        }}
-                      >
-                        {tags}
-                      </Tag>
-                    ))}
-                  </Flex>
+                      {tags}
+                    </Tag>
+                  ))}
+                  <Box mb="5"></Box>
 
                   {/* Date on which blog is posted */}
                   <Text
