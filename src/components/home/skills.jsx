@@ -102,8 +102,9 @@ export default function Skills() {
             fontWeight="700"
             mb={{ lg: "20px", base: "15px" }}
             mt={"15px"}
+            className="skills-heading"
           >
-            <Text className="skills-heading">Skills</Text>
+            Skills
           </Heading>
         </Center>
 
