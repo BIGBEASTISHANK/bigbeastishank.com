@@ -20,7 +20,15 @@ export default function Projects() {
   // Variables
   const projectData = [
     {
-      name: "My React Webste",
+      name: "Basic Platformer 2D Game",
+      description:
+        "If you see my blog, you must know that to become good at something, you need to do small versions of it. So I made a basic 2D platformer game in Unity and it is only for Linux.",
+      date: "2022-01-31",
+      link: "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D",
+      tags: ["Unity", "Game", "C#"]
+    },
+    {
+      name: "My React Website",
       description:
         "This is my ReactJS website, which has been shut down for some reason. The link is not to the website, but its source code. The website is no longer deployed. You can still use it for your personal website.",
       date: "2022-01-20",
@@ -182,6 +190,7 @@ export default function Projects() {
                   bg={"rgba( 0, 0, 0, 0.15 )"}
                   p={"10px"}
                   borderRadius={"25px"}
+                  id={data.name}
                 >
                   {/* Project TItle */}
                   <Heading

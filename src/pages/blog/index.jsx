@@ -119,6 +119,7 @@ export default function Blog({ allPostsData }) {
                   bg={"rgba( 0, 0, 0, 0.15 )"}
                   p={"10px"}
                   borderRadius={"25px"}
+                  id={item.id}
                 >
                   {/* Blog TItle */}
                   <Heading
