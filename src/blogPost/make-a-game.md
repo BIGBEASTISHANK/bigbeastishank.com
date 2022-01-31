@@ -35,7 +35,7 @@ To make a game, you need a game engine, so it can do all the boring stuff like s
 
    Arch
 
-   `$ sudo apt install unityhub`
+   `$ sudo pacman -S unityhub`
    \
     \
     Debian
