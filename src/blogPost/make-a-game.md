@@ -4,7 +4,7 @@ description: "If you are bored of playing games and want to make a new one, just
 date: "2022-01-31"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
-readtime: "18 min"
+readtime: "5 min"
 tags: ["Game Development", "Unity", "C#", "Programmer"]
 ---
 
@@ -14,16 +14,17 @@ To make a game, you need a game engine, so it can do all the boring stuff like s
 
 ### Game Engines!
 
-1. Popular Game Engines
+### 1 Popular Game Engines
 
-   - [Unity](https://unity.com/download)
-   - [Godot](https://godotengine.org/)
-   - [Unreal Engine](https://www.unrealengine.com/)
-   - [Cosco 2D](http://www.cocos2d.org/)
-   - [Cry Engine](https://www.cryengine.com/)
+- [Unity](https://unity.com/download)
+- [Godot](https://godotengine.org/)
+- [Unreal Engine](https://www.unrealengine.com/)
+- [Cosco 2D](http://www.cocos2d.org/)
+- [Cry Engine](https://www.cryengine.com/)
 
-2. What we are going to use??
-   - [Unity](https://unity.com/download)
+### 2 What we are going to use??
+
+- [Unity](https://unity.com/download)
 
 # Steps
 
@@ -66,3 +67,11 @@ To make a game, you need a game engine, so it can do all the boring stuff like s
    ![unity editor](/img/blog/make-a-game/unity-editor.webp)
 
 ### Note: This is simple tutorial on how to make game and not on how to use unity editor, so I am not going to explain unity UI and scripting.
+
+## Source
+
+- [Unity](https://unity.com/download)
+- [Godot](https://godotengine.org/)
+- [Unreal Engine](https://www.unrealengine.com/)
+- [Cosco 2D](http://www.cocos2d.org/)
+- [Cry Engine](https://www.cryengine.com/)
