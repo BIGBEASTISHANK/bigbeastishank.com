@@ -30,56 +30,59 @@ tags: ["CBSE", "Class 10", "SYllabus"]
 
 # Social Science
 
-- History
+### History
 
-  - Chapter 2
+- Chapter 2
 
-- Geography
+### Geography
 
-  - Chapter 5
-  - Chapter 6
+- Chapter 5
+- Chapter 6
 
-- Civice
+### Civice
 
-  - Chapter 6
-  - Chapter 7
+- Chapter 6
+- Chapter 7
 
-- Economics
-  - Chapter 3
-  - Chapter 4
+### Economics
+
+- Chapter 3
+- Chapter 4
 
 # English
 
-- First Flight
+### First Flight
 
-  - Chapter 7
-  - Chapter 9
+- Chapter 7
+- Chapter 9
 
-- Poem
+### Poem
 
-  - Porm 4
-  - Poem 6
-  - Poem 9
+- Porm 4
+- Poem 6
+- Poem 9
 
-- Footprints Without Feet
-  - Chapter 6
-  - Chapter 7
-  - Chapter 8
-  - Chapter 9
+### Footprints Without Feet
+
+- Chapter 6
+- Chapter 7
+- Chapter 8
+- Chapter 9
 
 # IT (Code 402)
 
-- Employblity Skills
+### Employblity Skills
 
-  - Unit 4
-  - Unit 5
+- Unit 4
+- Unit 5
 
-- Subject Specific Skills
-  - Unit 3
-  - Unit 4
+### Subject Specific Skills
+
+- Unit 3
+- Unit 4
 
 ##
 
 ##
 
-**Note: I don't have notes of Hindi B**
+### **Note: I don't have notes of Hindi B**

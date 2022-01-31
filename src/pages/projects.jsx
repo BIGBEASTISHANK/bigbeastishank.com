@@ -20,14 +20,16 @@ export default function Projects() {
   // Variables
   const projectData = [
     {
+      id: "basic-platformer",
       name: "Basic Platformer 2D Game",
       description:
         "If you see my blog, you must know that to become good at something, you need to do small versions of it. So I made a basic 2D platformer game in Unity and it is only for Linux.",
       date: "2022-01-31",
       link: "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D",
-      tags: ["Unity", "Game", "C#"]
+      tags: ["Unity", "Game", "C#", "Game Dev"]
     },
     {
+      id: "my-react-website",
       name: "My React Website",
       description:
         "This is my ReactJS website, which has been shut down for some reason. The link is not to the website, but its source code. The website is no longer deployed. You can still use it for your personal website.",
@@ -37,6 +39,7 @@ export default function Projects() {
     },
 
     {
+      id: "python-website",
       name: "Python website using flask",
       description:
         "I was working on a project with a backend, so I created this personal website in Python but without a backend. This is based on the flask. It is basic HTML and CSS with python logic.",
@@ -46,6 +49,7 @@ export default function Projects() {
     },
 
     {
+      id: "discord-bot",
       name: "My Discord Bot",
       description:
         "This is my Discord bot, 'beast bot'. You can get this on top.gg. It is a multi-purpose bot. If you want to go to its support server, you can check the footer link or use top.gg.",
@@ -55,7 +59,8 @@ export default function Projects() {
     },
 
     {
-      name: "Game using Unity",
+      id: "beast-race",
+      name: "Beast Race 3D",
       description:
         "I tried making a game on Unity. This is my first original game. It has many bugs because I didn't work on it properly, but it is playable a lot. It only works on Windows.",
       date: "2022-01-19",
@@ -64,6 +69,7 @@ export default function Projects() {
     },
 
     {
+      id: "vc-search-ai",
       name: "Python Voice search AI",
       description:
         "When you run this python file, it will ask you to speak, and then whatever you say will be searched specifically on Google.",
@@ -73,6 +79,7 @@ export default function Projects() {
     },
 
     {
+      id: "txt-mp4-ai",
       name: "Python text to audio AI",
       description:
         "This is an AI that converts anything you write in a terminal to an mp3 format, so you can play it on any device. It is in Python. You can also control the speed of your voice.",
@@ -82,6 +89,7 @@ export default function Projects() {
     },
 
     {
+      id: "voice-txt-ai",
       name: "Python speak to text AI",
       description:
         "When you run this file, it will tell you to speak, and then whatever you speak will be converted into a 'txt' file and you can read it. By this process, only voice search AI is made.",
@@ -182,7 +190,7 @@ export default function Projects() {
             }
           })
           .map((data) => (
-            <ul key={data.name}>
+            <ul key={data.id}>
               <li>
                 <Box
                   mb={50}
@@ -190,7 +198,7 @@ export default function Projects() {
                   bg={"rgba( 0, 0, 0, 0.15 )"}
                   p={"10px"}
                   borderRadius={"25px"}
-                  id={data.name}
+                  id={data.id}
                 >
                   {/* Project TItle */}
                   <Heading
