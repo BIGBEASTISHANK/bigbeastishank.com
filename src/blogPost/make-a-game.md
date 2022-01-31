@@ -37,8 +37,8 @@ To make a game, you need a game engine, so it can do all the boring stuff like s
 
    `$ sudo pacman -S unityhub`
    \
-    \
-    Debian
+   \
+   Debian
 
    `$ sudo apt install ubuntu-unity-desktop `
    \
