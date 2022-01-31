@@ -32,28 +32,18 @@ For better understanding refer the [discord.py](https://discordpy.readthedocs.io
   Execute: `$ python3 -m pip install -U discord.py`
 
 - Go to [Discord Developer Portal](https://discord.com/developers/applications)
-  \
-  \
   ![discord developer portal](/img/blog/make-dicord-bot-python/discord-developer-portal.webp)
 
 - Click on **New Applications** then set the name of your bot
-  \
-  \
   ![create a bot](/img/blog/make-dicord-bot-python/create-a-bot.webp)
 
 - On far left click on **bot**
-  \
-  \
   ![bot panel](/img/blog/make-dicord-bot-python/bot-panel.webp)
 
 - Click on **_add bot_** then **_yes do it_**
-  \
-  \
   ![add bot](/img/blog/make-dicord-bot-python/add-bot.webp)
 
 - Click on copy token
-  \
-  \
   ![copy token](/img/blog/make-dicord-bot-python/copy-token.webp)
 
 - Now go in your project folder
@@ -90,13 +80,9 @@ For better understanding refer the [discord.py](https://discordpy.readthedocs.io
 - Now add your bot in your server
 
   - Click on **O Auth2 > URL Generator**
-    \
-    \
     ![add bot in server](/img/blog/make-dicord-bot-python/add-bot-in-server.webp)
 
   - Now click on **bot > (select permission)** (for this tutorial I am choosing admin permission)
-    \
-    \
     ![bot link](/img/blog/make-dicord-bot-python/bot-link.webp)
 
   - Open link and add bot in your server, like you add other bots.

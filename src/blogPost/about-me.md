@@ -5,7 +5,7 @@ date: "2022-01-18"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
 readtime: "18 min"
-tags: ["About me", "Life Journey"]
+tags: ["About me", "Life Journey", "Fiverr", "Free Lancing"]
 ---
 
 # Hmm... lets start
