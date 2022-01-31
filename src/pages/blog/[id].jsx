@@ -3,9 +3,12 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/date";
 import NextLink from "next/link";
-import { Box, Button, Heading, Text, Skeleton, Link } from "@chakra-ui/react";
+import { Box, Button, Heading, Text, Skeleton, Link, useMediaQuery } from "@chakra-ui/react";
 
 export default function Post({ postData }) {
+  // Variable
+  const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
+
   // Returning Html
   return (
     <>
@@ -33,7 +36,7 @@ export default function Post({ postData }) {
           fontWeight="700"
           mb={"35px"}
           mt={"25px"}
-          textAlign={"justify"}
+          textAlign={isLargerThan480 ? 'justify' : 'left'}
         >
           {postData.title}
         </Heading>
@@ -81,7 +84,7 @@ export default function Post({ postData }) {
         {/* Main post data */}
         <Box className="content" mb={5}>
           <Box
-            textAlign={"justify"}
+            textAlign={isLargerThan480 ? 'justify' : 'left'}
             dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
         </Box>

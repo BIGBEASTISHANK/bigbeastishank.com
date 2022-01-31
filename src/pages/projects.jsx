@@ -9,7 +9,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Flex,
+  useMediaQuery,
   Tag,
 } from "@chakra-ui/react";
 import Head from "next/head";
@@ -18,6 +18,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 
 export default function Projects() {
   // Variables
+  const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
   const projectData = [
     {
       id: "basic-platformer",
@@ -212,7 +213,7 @@ export default function Projects() {
                     mb={{ lg: "10px", base: "5px" }}
                     mt={"15px"}
                   >
-                    <Text className="title" textAlign={"justify"}>
+                    <Text className="title" textAlign={isLargerThan480 ? 'justify' : 'left'}>
                       <Link
                         userSelect="none"
                         href={data.link}

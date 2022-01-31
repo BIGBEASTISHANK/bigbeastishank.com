@@ -48,7 +48,7 @@ In this break I downloaded Parrot OS as my main OS.
 I took a break from coding after **Fiverr** and came on **Hacking**. I switched from Windows to Linux. After sticking to **[Parrot Linux](https://parrotsec.org)** for about 1 month, I started distro hoping and I came across **[Arch Linux](https://archlinux.org)**. I used some window manager like **[Xmonad](https://github.com/BIGBEASTISHANK/xmonad-dotfiles-1.0)**, **[Qtile](https://github.com/BIGBEASTISHANK/qtile-dotfiles-3.0)** (this was the WM on which I stayed longest), **[BSPWM](https://github.com/BIGBEASTISHANK/bspwm-dotfiles-1.0)**. By clicking on the name of WM, you can see my configuration. Then I switched to GNOME, which does not require any configuration.
 \
 \
-Around October 2021, I saw Bruce's **main** website and it was made on [Next Js](https://nextjs.org). heard about NextJS when I made my react website, but I ignored it because I didn't want to make a website and **I left coding** like 4-5 months ago. Suddenly, from somewhere, I started coding again in December. I started working on this website. This website is made on **Next Js** customised on **Chakra-Ui** and hosted on **Vercel**. **[Tanmay Sinha](https://github.com/tanmaysinha14)** helped me a lot in the design of this website. He is a **UI Desiginer**.
+Around October 2021, I saw Bruce's **main** website and it was made on [Next Js](https://nextjs.org). heard about NextJS when I made my react website, but I ignored it because I didn't want to make a website and **I left coding** like 4-5 months ago. Suddenly, from somewhere, I started coding again in December. I started working on this website. This website is made on **Next Js** customised on **Chakra-Ui** and hosted on **Vercel**. **[Tanmay Sinha](https://tanmaysinha.host)** helped me a lot in the design of this website. He is a **UI Desiginer**.
 \
 \
 I previously used to learn from **YouTube** (till my React website), but now I learn from **documentation** and **articles**. Youtube surely helps, but as we are teenagers, we just get distracted, so we skip the learning part from YouTube and just copy the codes. We call them [Script kiddie](https://en.wikipedia.org/wiki/Script_kiddie), and I admit I was also a script kiddie, but I learned from my mistakes and switched to docs and articles. In those, you learn more than just how to be a script kiddie. If coding is just your passion, then learn from YouTube (I did that for like two and a half years), but if you want to make a career in programming, learn from **documentation** and **articles** and then take help from **YouTube** when you get stuck in the middle or don't know where to go from that point. I still use YouTube to get a quick start on a new project, then I start reading docs. Directly reading docs is like diving into water without knowing how to swim. I hope you understand.
@@ -60,7 +60,7 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 - [Himanshu Shekhar](https://www.instagram.com/himanxhhu/)
 - [Divya Rani Soni](https://instagram.com/divyarani9464)
 - [Sahil Singh Rajput](https://www.instagram.com/_sahil__singh__rajput_/)
-- [Tanmay Sinha](https://github.com/tanmaysinha14)
+- [Tanmay Sinha](https://tanmaysinha.host)
 
 ## Sources
 

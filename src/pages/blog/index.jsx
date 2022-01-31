@@ -12,7 +12,7 @@ import {
   InputGroup,
   InputRightElement,
   Tag,
-  Flex,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import Head from "next/head";
@@ -21,6 +21,7 @@ import React from "react";
 export default function Blog({ allPostsData }) {
   // Variable
   const [searchTerm, setSearchTerm] = React.useState("");
+  const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
 
   // Returning Html
   return (
@@ -133,7 +134,7 @@ export default function Blog({ allPostsData }) {
                     mb={{ lg: "10px", base: "5px" }}
                     mt={"15px"}
                   >
-                    <Text className="title" textAlign={"justify"}>
+                    <Text className="title" textAlign={isLargerThan480 ? 'justify' : 'left'}>
                       <Link href={`/blog/${item.id}`} userSelect="none">
                         <NextLink href={`/blog/${item.id}`} cursor={"pointer"}>
                           {item.title}
