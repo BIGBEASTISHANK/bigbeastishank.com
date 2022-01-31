@@ -75,7 +75,7 @@ export default function Navbar() {
                         pr={"10px"}
                         _hover={{ bg: "#D51B90", borderRadius: "25px" }}
                       >
-                        {item.name}
+                        <NextLink href={item.link}>{item.name}</NextLink>
                       </Text>
                     </NextLink>
                   </Flex>
