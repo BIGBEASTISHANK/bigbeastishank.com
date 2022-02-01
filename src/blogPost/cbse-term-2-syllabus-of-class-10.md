@@ -55,6 +55,8 @@ tags: ["CBSE", "Class 10", "SYllabus"]
 
 - Chapter 7
 - Chapter 9
+- Chapter 10
+- Chapter 11
 
 ### Poem
 
