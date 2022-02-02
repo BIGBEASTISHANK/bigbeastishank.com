@@ -24,7 +24,7 @@ export default function Projects() {
       id: "basic-platformer",
       name: "Basic Platformer 2D Game",
       description:
-        "If you see my blog, you must know that to become good at something, you need to do small versions of it. So I made a basic 2D platformer game in Unity and it is only for Linux.",
+        "If you see my blog, you must know that to become good at something, you need to do small versions of it. So I made a basic 2D platformer game in Unity and it is available for Windows, Linux.",
       date: "2022-01-31",
       link: "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D",
       tags: ["Unity", "Game", "C#", "Game Dev"]
