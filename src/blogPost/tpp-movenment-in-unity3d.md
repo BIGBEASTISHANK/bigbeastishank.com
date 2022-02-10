@@ -4,7 +4,7 @@ description: "In my game development experience, the basic thing is player movem
 date: "2022-02-10"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
-readtime: "min"
+readtime: "2 min"
 tags: ["Unity 3D", "Game Development", "C#"]
 ---
 
@@ -35,9 +35,6 @@ private void Update()
 
     // MOVENMENT FUNCTION
     Move();
-
-    // Moving Player
-    controller.Move(move * Time.deltaTime);
 }
 
 private void Move()
@@ -57,6 +54,9 @@ private void Move()
     {
         move *= runSpeed;
     }
+    
+    // Moving Player
+    controller.Move(move * Time.deltaTime);
 }
 ```
 
