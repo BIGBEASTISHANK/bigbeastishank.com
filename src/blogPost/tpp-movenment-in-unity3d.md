@@ -1,5 +1,5 @@
 ---
-title: "TPP Movenment in Untiy 3D"
+title: "TPP Movenment in Unity 3D"
 description: "In my game development experience, the basic thing is player movement in Unity 3D. So I thought I should to teach you also. Feat: Character Controller."
 date: "2022-02-10"
 author: "BIGBEASTISHANK"
