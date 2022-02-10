@@ -31,8 +31,7 @@ private void Start()
 
 // UPDATE EVERY FRAME
 private void Update()
-{        
-
+{
     // MOVENMENT FUNCTION
     Move();
 }
