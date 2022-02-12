@@ -18,6 +18,14 @@ There are many ways to create player movement in Unity 3D, such as rigidbody and
 // VARIABLES
 [SerializeField] private float walkSpeed;
 [SerializeField] private float runSpeed;
+
+[SerializeField] private float gravity;
+[SerializeField] private float groundCheckSize;
+[SerializeField] private LayerMask groundLayer;
+[SerializeField] private Transform groundCheck;
+private bool isGrounded;
+public Vector3 velocity;
+
 private CharacterController controller;
 
 // REFFFERNCE
@@ -38,6 +46,16 @@ private void Update()
 
 private void Move()
 {
+    // Checking if player is grounded.
+    isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckSize, groundLayer);
+    
+    // If player is grounded then stop applying gravity.
+    if (isGrounded && velocity.y < 0)
+    {
+        // Setting velocity to -2 for being on safe side.
+        velocity.y = -2;
+    }
+
     // VARIABLE
     float moveX = Input.GetAxis("Horizontal");
     float moveZ = Input.GetAxis("Vertical");
@@ -61,8 +79,25 @@ private void Move()
 
     // Moving Player
     controller.Move(move * Time.deltaTime);
+
+    // Increasing velocity with respect of gravity.
+    velocity.y -= gravity * Time.deltaTime;
+    // Applying gravity on player.
+    controller.Move(velocity * Time.deltaTime);
 }
 ```
+
+#
+
+##
+
+###
+
+####
+
+#####
+
+**_Note:_** Make an empty gameObject(ground check) and put it on player feet or in other tearms put it below player object. Then drag and drop that object inside player then again drag that ground check object in inspector and insert it in the place of **Ground Check**.
 
 #
 
