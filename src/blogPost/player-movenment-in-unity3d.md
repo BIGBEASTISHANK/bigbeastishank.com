@@ -47,10 +47,12 @@ private void Move()
     // Condition for walking and running speed
     if (move != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
     {
+        // Make player move with walk speed.
         move *= walkSpeed;
     }
     else if (move != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
     {
+        // Make player move with run speed.
         move *= runSpeed;
     }
     
