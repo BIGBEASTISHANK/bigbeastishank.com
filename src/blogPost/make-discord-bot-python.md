@@ -93,3 +93,16 @@ For better understanding refer the [discord.py](https://discordpy.readthedocs.io
 
 - [discord.py docs](https://discordpy.readthedocs.io/en/stable/index.html)
 - [Discord Developer Portal](https://discord.com/developers/applications)
+
+#
+
+##
+
+###
+
+####
+
+#####
+
+###### Thank You
+w

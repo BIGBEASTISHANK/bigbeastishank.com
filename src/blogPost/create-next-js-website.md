@@ -48,3 +48,15 @@ $ yarn create next-app app_name
 ```
 
 ## You successfully created your first next js website.
+
+#
+
+##
+
+###
+
+####
+
+#####
+
+###### Thank You

@@ -52,6 +52,16 @@ void Update()
 }
 ```
 
-***Note:*** Make sure that when you set up your camera, you get the **X rotation value of the camera** and put it in the **xRotation** variable either in the inspector or in code by giving `[SerializeField] private float xRotation = 15;` (I have taken 15 as an example).
+**_Note:_** Make sure that when you set up your camera, you get the **X rotation value of the camera** and put it in the **xRotation** variable either in the inspector or in code by giving `[SerializeField] private float xRotation = 15;` (I have taken 15 as an example).
+
+#
+
+##
+
+###
+
+####
+
+#####
 
 ###### Thank You
