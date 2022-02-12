@@ -24,7 +24,7 @@ There are many ways to create player movement in Unity 3D, such as rigidbody and
 [SerializeField] private LayerMask groundLayer;
 [SerializeField] private Transform groundCheck;
 private bool isGrounded;
-public Vector3 velocity;
+private Vector3 velocity;
 
 private CharacterController controller;
 
@@ -97,7 +97,7 @@ private void Move()
 
 #####
 
-**_Note:_** Make an empty gameObject(ground check) and put it on player feet or in other tearms put it below player object. Then drag and drop that object inside player then again drag that ground check object in inspector and insert it in the place of **Ground Check**.
+**_Note:_** Make an empty gameObject(ground check) and put it on player feet or in other tearms put it below player object. Then drag and drop that object inside player then again drag that ground check object in inspector and insert it in the place of **Ground Check**. Now click on your ground and them select layer as **Ground**. Now set groundCheckSize to 0.2. Now set ground layer to ground in player. You are ready to go.
 
 #
 
