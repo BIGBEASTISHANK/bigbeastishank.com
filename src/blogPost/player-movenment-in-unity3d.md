@@ -42,7 +42,10 @@ private void Move()
     float moveX = Input.GetAxis("Horizontal");
     float moveZ = Input.GetAxis("Vertical");
 
+    // Getting where to move the player.
     Vector3 move = new Vector3(moveX, 0, moveZ);
+    // Making it so it move on player's X and Z axis insted of global axis.
+    move = transform.TransformDirection(move);
 
     // Condition for walking and running speed
     if (move != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
@@ -55,7 +58,7 @@ private void Move()
         // Make player move with run speed.
         move *= runSpeed;
     }
-    
+
     // Moving Player
     controller.Move(move * Time.deltaTime);
 }
