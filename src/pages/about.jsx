@@ -6,6 +6,7 @@ import {
   Heading,
   Skeleton,
   Text,
+  chakra,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import NextLink from "next/link";
@@ -33,12 +34,13 @@ export default function About() {
           <title>About | BIG BEAST ISHANK</title>
         </Head>
 
+        {/* About me heading */}
         <Center>
-          {/* About me heading */}
           <Heading
             className="about-heading"
             fontSize={{ lg: "6xl", md: "5xl", sm: "39px", base: "25px" }}
             fontWeight="700"
+            textAlign={"center"}
             mb={{ lg: "20px", md: "15px" }}
           >
             <Text className={"about-head"}>About Me</Text>
@@ -75,6 +77,49 @@ export default function About() {
             </Text>
           </Container>
         </Box>
+
+        {/* Seprator Line */}
+        <Skeleton
+          startColor="pink.500"
+          endColor="orange.500"
+          ml={"-30px"}
+          mr={"-30px"}
+          w={"810"}
+          h={"2px"}
+          mb={4}
+          mt={4}
+        />
+
+        {/* Github stats heading */}
+        <Center>
+          <Heading
+            className="about-heading"
+            fontSize={{ lg: "6xl", md: "5xl", sm: "39px", base: "25px" }}
+            fontWeight="700"
+            textAlign={"center"}
+            mb={{ lg: "20px", md: "15px" }}
+          >
+            <Text className={"about-head"}>My GitHub Stats</Text>
+          </Heading>
+        </Center>
+
+        <br />
+
+        <Center>
+          <chakra.img
+            w="100%"
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=BIGBEASTISHANK&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&langs_count=10&layout=compact"
+          />
+        </Center>
+
+        <br />
+
+        <Center>
+          <chakra.img
+            w="100%"
+            src="https://github-readme-stats.vercel.app/api?username=BIGBEASTISHANK&count_private=true&bg_color=30,e96443,904e95&title_color=fff&text_color=fff"
+          />
+        </Center>
 
         {/* Seprator Line */}
         <Skeleton

@@ -53,6 +53,10 @@ Around October 2021, I saw Bruce's **main** website and it was made on [Next Js]
 \
 I previously used to learn from **YouTube** (till my React website), but now I learn from **documentation** and **articles**. Youtube surely helps, but as we are teenagers, we just get distracted, so we skip the learning part from YouTube and just copy the codes. We call them [Script kiddie](https://en.wikipedia.org/wiki/Script_kiddie), and I admit I was also a script kiddie, but I learned from my mistakes and switched to docs and articles. In those, you learn more than just how to be a script kiddie. If coding is just your passion, then learn from YouTube (I did that for like two and a half years), but if you want to make a career in programming, learn from **documentation** and **articles** and then take help from **YouTube** when you get stuck in the middle or don't know where to go from that point. I still use YouTube to get a quick start on a new project, then I start reading docs. Directly reading docs is like diving into water without knowing how to swim. I hope you understand.
 
+## Most Used Languages & Overall Stats
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=BIGBEASTISHANK&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&langs_count=10&layout=compact) ![BIGBEASTISHANK's github stats](https://github-readme-stats.vercel.app/api?username=BIGBEASTISHANK&count_private=true&bg_color=30,e96443,904e95&title_color=fff&text_color=fff)
+
 ## Persons In my Journey
 
 - [Bruce Mac Gary](https://kushagraraj.me)
@@ -80,8 +84,13 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 - [Script kiddie](https://en.wikipedia.org/wiki/Script_kiddie)
 
 #
+
 ##
+
 ###
+
 ####
+
 #####
+
 ###### Thanks For reading
