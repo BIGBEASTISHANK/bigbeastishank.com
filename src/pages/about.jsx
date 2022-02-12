@@ -91,39 +91,37 @@ export default function About() {
         />
 
         {/* Github stats heading */}
-        <Box className="github-stats">
-          <Center>
-            <Heading
-              className="about-heading"
-              fontSize={{ lg: "6xl", md: "5xl", sm: "39px", base: "25px" }}
-              fontWeight="700"
-              textAlign={"center"}
-              mb={{ lg: "20px", md: "15px" }}
-            >
-              <Text className={"about-head"}>My GitHub Stats</Text>
-            </Heading>
-          </Center>
+        <Center>
+          <Heading
+            className="about-heading"
+            fontSize={{ lg: "6xl", md: "5xl", sm: "39px", base: "25px" }}
+            fontWeight="700"
+            textAlign={"center"}
+            mb={{ lg: "20px", md: "15px" }}
+          >
+            <Text className={"about-head"}>My GitHub Stats</Text>
+          </Heading>
+        </Center>
 
-          <chakra.br userSelect="none" />
+        <br userSelect="none" />
 
-          <Center>
-            <chakra.img
-              userSelect="none"
-              w="100%"
-              src="https://github-readme-stats.vercel.app/api/top-langs/?username=BIGBEASTISHANK&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&langs_count=10&layout=compact"
-            />
-          </Center>
+        <Center>
+          <chakra.img
+            userSelect="none"
+            w="100%"
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=BIGBEASTISHANK&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&langs_count=10&layout=compact"
+          />
+        </Center>
 
-          <chakra.br userSelect="none" />
+        <br userSelect="none" />
 
-          <Center>
-            <chakra.img
-              userSelect="none"
-              w="100%"
-              src="https://github-readme-stats.vercel.app/api?username=BIGBEASTISHANK&count_private=true&bg_color=30,e96443,904e95&title_color=fff&text_color=fff"
-            />
-          </Center>
-        </Box>
+        <Center>
+          <chakra.img
+            userSelect="none"
+            w="100%"
+            src="https://github-readme-stats.vercel.app/api?username=BIGBEASTISHANK&count_private=true&bg_color=30,e96443,904e95&title_color=fff&text_color=fff"
+          />
+        </Center>
 
         {/* Seprator Line */}
         <Skeleton
