@@ -10,7 +10,7 @@ tags: ["Unity 3D", "Game Development", "C#"]
 
 # Movenments
 
-There are many ways to create player movement in Unity 3D, such as rigidbody and character controller. I am going to tell you how you can do it in the character controller. I'm just going to tell you basic movenment with **W**, **A**, **S**, **D**.
+There are many ways to create player movement in Unity 3D, such as rigidbody and character controller. I am going to tell you how you can do it in the character controller. I'm just going to tell you basic movenment with **W**, **A**, **S**, **D** and **Jump**.
 
 ## Code
 
@@ -25,6 +25,8 @@ There are many ways to create player movement in Unity 3D, such as rigidbody and
 [SerializeField] private Transform groundCheck;
 private bool isGrounded;
 private Vector3 velocity;
+
+[SerializeField] private float jump;
 
 private CharacterController controller;
 
@@ -48,7 +50,7 @@ private void Move()
 {
     // Checking if player is grounded.
     isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckSize, groundLayer);
-    
+
     // If player is grounded then stop applying gravity.
     if (isGrounded && velocity.y < 0)
     {
@@ -75,6 +77,17 @@ private void Move()
     {
         // Make player move with run speed.
         move *= runSpeed;
+    }
+
+    // Checking if player is on ground.
+    if (isGrounded)
+    {
+        // If player use jump button.
+        if (Input.GetButtonDown("Jump"))
+        {
+            // Changing velocity to make player jump
+            velocity.y = Mathf.Sqrt(jump * -2 * gravity);
+        }
     }
 
     // Moving Player
