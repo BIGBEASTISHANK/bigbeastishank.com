@@ -18,16 +18,25 @@ import { SearchIcon } from "@chakra-ui/icons";
 
 export default function Projects() {
   // Variables
-  const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
+  const [isLargerThan480] = useMediaQuery("(min-width: 480px)");
   const projectData = [
     {
-      id: "basic-platformer",
+      id: "suspicious-runner-3d",
+      name: "Suspicious Runner 3D",
+      description:
+        "I made my first kind of original game. I have posted a devlog on this game too. If you want to see my blog, you can get the link from my GitHub repository. This game is my first step towards becoming a game developer and a developer. I hope you like it. This game is not good at all, but surely I will improve over time.",
+      date: "2022-01-15",
+      link: "https://github.com/BIGBEASTISHANK/Suspicious-Runner-3D",
+      tags: ["Unity", "Game", "C#", "Game Dev", "Devlog"],
+    },
+    {
+      id: "basic-platformer-2d",
       name: "Basic Platformer 2D Game",
       description:
         "If you see my blog, you must know that to become good at something, you need to do small versions of it. So I made a basic 2D platformer game in Unity and it is available for Windows, Linux.",
       date: "2022-01-31",
       link: "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D",
-      tags: ["Unity", "Game", "C#", "Game Dev"]
+      tags: ["Unity", "Game", "C#", "Game Dev"],
     },
     {
       id: "my-react-website",
@@ -213,7 +222,10 @@ export default function Projects() {
                     mb={{ lg: "10px", base: "5px" }}
                     mt={"15px"}
                   >
-                    <Text className="title" textAlign={isLargerThan480 ? 'justify' : 'left'}>
+                    <Text
+                      className="title"
+                      textAlign={isLargerThan480 ? "justify" : "left"}
+                    >
                       <Link
                         userSelect="none"
                         href={data.link}
