@@ -24,7 +24,7 @@ export default function Projects() {
       id: "suspicious-runner-3d",
       name: "Suspicious Runner 3D",
       description:
-        "I made my first kind of original game. I have posted a devlog on this game too. If you want to see my blog, you can get the link from my GitHub repository. This game is my first step towards becoming a game developer and a developer. I hope you like it. This game is not good at all, but surely I will improve over time.",
+        "I made my first (kind of) original game. I have posted a devlog on this game too. If you want to see my blog, you can get the link from my GitHub repository. This game is my first step towards becoming a game developer and a developer. I hope you like it. This game is not good at all, but surely I will improve over time.",
       date: "2022-01-15",
       link: "https://github.com/BIGBEASTISHANK/Suspicious-Runner-3D",
       tags: ["Unity", "Game", "C#", "Game Dev", "Devlog"],
