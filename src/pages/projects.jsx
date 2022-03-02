@@ -21,6 +21,15 @@ export default function Projects() {
   const [isLargerThan480] = useMediaQuery("(min-width: 480px)");
   const projectData = [
     {
+      id: "sussy-shooter-3d",
+      name: "Sussy Shooter 3D",
+      description:
+        "This is my first fps game. This is made on unity. Devlog is posted on youtube, to get link see repo of this project. Hope you like it",
+      date: "2022-03-02",
+      link: "https://github.com/BIGBEASTISHANK/Sussy-Runner-3D",
+      tags: ["Unity", "Game", "C#", "Game Dev", "Devlog"],
+    },
+    {
       id: "suspicious-runner-3d",
       name: "Suspicious Runner 3D",
       description:
