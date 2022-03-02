@@ -26,7 +26,7 @@ export default function Projects() {
       description:
         "This is my first fps game. This is made on unity. Devlog is posted on youtube, to get link see repo of this project. Hope you like it",
       date: "2022-03-02",
-      link: "https://github.com/BIGBEASTISHANK/Sussy-Runner-3D",
+      link: "https://github.com/BIGBEASTISHANK/Sussy-Shooter-3D",
       tags: ["Unity", "Game", "C#", "Game Dev", "Devlog"],
     },
     {
