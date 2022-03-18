@@ -48,14 +48,19 @@
       width: 95%;
     }
 
+    .scss_skill_bar {
+      animation: scss_skill_bar 5s ease;
+      width: 52%;
+    }
+
     .js_skill_bar {
       animation: js_skill_bar 4s ease;
-      width: 52%;
+      width: 68%;
     }
 
     .cs_skill_bar {
       animation: cs_skill_bar 3.5s ease;
-      width: 11%;
+      width: 50%;
     }
   }
 }
@@ -148,7 +153,7 @@
   }
 }
 
-@keyframes js_skill_bar {
+@keyframes scss_skill_bar {
   0% {
     width: 1%;
   }
@@ -160,6 +165,18 @@
   }
 }
 
+@keyframes js_skill_bar {
+  0% {
+    width: 1%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 68%;
+  }
+}
+
 @keyframes cs_skill_bar {
   0% {
     width: 1%;
@@ -168,7 +185,7 @@
     width: 100%;
   }
   100% {
-    width: 11%;
+    width: 50%;
   }
 }
 

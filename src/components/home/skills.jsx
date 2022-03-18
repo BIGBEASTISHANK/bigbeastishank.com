@@ -28,6 +28,11 @@ export default function Skills() {
   const [css_skill_bar_percent, setCss_skill_bar_percent] =
     React.useState("0%");
 
+  // Skills part for css
+  const [scss_skill_bar, setScss_skill_bar] = React.useState("");
+  const [scss_skill_bar_percent, setScss_skill_bar_percent] =
+    React.useState("0%");
+
   // Skills part for js
   const [js_skill_bar, setJs_skill_bar] = React.useState("");
   const [js_skill_bar_percent, setJs_skill_bar_percent] = React.useState("0%");
@@ -49,13 +54,17 @@ export default function Skills() {
     setCss_skill_bar("css_skill_bar");
     setCss_skill_bar_percent("95%");
 
+    // Skills part for scss
+    setScss_skill_bar("scss_skill_bar");
+    setScss_skill_bar_percent("52%");
+
     // Skills part for js
     setJs_skill_bar("js_skill_bar");
-    setJs_skill_bar_percent("52%");
+    setJs_skill_bar_percent("68%");
 
     // Skills part for c#
     setCs_skill_bar("cs_skill_bar");
-    setCs_skill_bar_percent("11%");
+    setCs_skill_bar_percent("50%");
   }
 
   const lang_name = [
@@ -76,6 +85,12 @@ export default function Skills() {
       class: "css",
       percent: css_skill_bar_percent,
       skillBar: css_skill_bar,
+    },
+    {
+      name: "SCSS",
+      class: "scss",
+      percent: scss_skill_bar_percent,
+      skillBar: scss_skill_bar,
     },
     {
       name: "JavaScript",
