@@ -105,4 +105,3 @@ For better understanding refer the [discord.py](https://discordpy.readthedocs.io
 #####
 
 ###### Thank You
-w

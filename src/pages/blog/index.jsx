@@ -36,7 +36,7 @@ export default function Blog({ allPostsData }) {
         <meta
           property="og:keywords"
           name="keywords"
-          content="articles, blog, news, up-to-date"
+          content="articles, blog, news, up-to-date, coding, hacking, linux, programming, developing, coder, hacker, game developer, anonymous"
         />
 
         <title>Blog | BIG BEAST ISHANK</title>
