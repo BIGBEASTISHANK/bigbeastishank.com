@@ -44,27 +44,27 @@ export default function Skills() {
   function show_skills() {
     // Skills part for python
     setPython_skill_bar("python_skill_bar");
-    setPython_skill_bar_percent("92%");
+    setPython_skill_bar_percent("20.2%");
 
     // Skills part for html
     setHtml_skill_bar("html_skill_bar");
-    setHtml_skill_bar_percent("98%");
+    setHtml_skill_bar_percent("21.5%");
 
     // Skills part for css
     setCss_skill_bar("css_skill_bar");
-    setCss_skill_bar_percent("95%");
+    setCss_skill_bar_percent("20.9%");
 
     // Skills part for scss
     setScss_skill_bar("scss_skill_bar");
-    setScss_skill_bar_percent("52%");
+    setScss_skill_bar_percent("11.4%");
 
     // Skills part for js
     setJs_skill_bar("js_skill_bar");
-    setJs_skill_bar_percent("68%");
+    setJs_skill_bar_percent("14.9%");
 
     // Skills part for c#
     setCs_skill_bar("cs_skill_bar");
-    setCs_skill_bar_percent("50%");
+    setCs_skill_bar_percent("11%");
   }
 
   const lang_name = [
