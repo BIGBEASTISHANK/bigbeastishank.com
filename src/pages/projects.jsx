@@ -47,15 +47,6 @@ export default function Projects() {
       link: "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D",
       tags: ["Unity", "Game", "C#", "Game Dev"],
     },
-    {
-      id: "my-react-website",
-      name: "My React Website",
-      description:
-        "This is my ReactJS website, which has been shut down for some reason. The link is not to the website, but its source code. The website is no longer deployed. You can still use it for your personal website.",
-      date: "2022-01-20",
-      link: "https://github.com/bigbeastishank/bigbeastishank-react-website-sc",
-      tags: ["React Js"],
-    },
 
     {
       id: "python-website",
@@ -85,36 +76,6 @@ export default function Projects() {
       date: "2022-01-19",
       link: "https://github.com/BIGBEASTISHANK/Beast-Race",
       tags: ["Unity", "Game dev"],
-    },
-
-    {
-      id: "vc-search-ai",
-      name: "Python Voice search AI",
-      description:
-        "When you run this python file, it will ask you to speak, and then whatever you say will be searched specifically on Google.",
-      date: "2022-01-18",
-      link: "https://github.com/BIGBEASTISHANK/voice-search-ai-python",
-      tags: ["Python", "AI"],
-    },
-
-    {
-      id: "txt-mp4-ai",
-      name: "Python text to audio AI",
-      description:
-        "This is an AI that converts anything you write in a terminal to an mp3 format, so you can play it on any device. It is in Python. You can also control the speed of your voice.",
-      date: "2022-01-18",
-      link: "https://github.com/BIGBEASTISHANK/text-to-speech-python",
-      tags: ["Python", "AI"],
-    },
-
-    {
-      id: "voice-txt-ai",
-      name: "Python speak to text AI",
-      description:
-        "When you run this file, it will tell you to speak, and then whatever you speak will be converted into a 'txt' file and you can read it. By this process, only voice search AI is made.",
-      date: "2022-01-18",
-      link: "https://github.com/BIGBEASTISHANK/speech-to-text-python",
-      tags: ["Python", "AI"],
     },
   ];
 
