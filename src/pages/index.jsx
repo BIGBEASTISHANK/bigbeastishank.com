@@ -41,7 +41,7 @@ export default function Index() {
           <Text textAlign={"justify"}>
             Hello Goiz👋, My name is Ishank. I am a 16-year-old developer who
             loves open source. I am not an expert in any language; I am just
-            good at every language. I just don't like sticking to one thing,
+            good at every language. I just don`t like sticking to one thing,
             like always doing web or AI. I always change steam after one
             project. I go from the web to the game to the AI to the
             app, and so on. My theory is very weak, but my practical
