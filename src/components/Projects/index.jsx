@@ -15,7 +15,13 @@ import projectData from "../../Data/Projects/data";
 
 export default function Projects() {
   const [isSmallerThen590] = useMediaQuery("(max-width: 590px)");
+
   const { colorMode } = useColorMode();
+
+  const ucmv1 = useColorModeValue("white", "gray.800");
+  const ucmv2 = useColorModeValue("gray.600", "gray.400");
+  const ucmv3 = useColorModeValue("gray.700", "white");
+  const ucmv4 = useColorModeValue("gray.600", "gray.300");
 
   return (
     <>
@@ -44,14 +50,14 @@ export default function Projects() {
             py={4}
             rounded="lg"
             shadow="lg"
-            bg={useColorModeValue("white", "gray.800")}
+            bg={ucmv1}
             maxW="5xl"
             mb={"20px"}
           >
             <Flex justifyContent="space-between" alignItems="center">
               <chakra.span
                 fontSize={isSmallerThen590 ? "14px" : "sm"}
-                color={useColorModeValue("gray.600", "gray.400")}
+                color={ucmv2}
               >
                 <Date dateString={item.date} />
               </chakra.span>
@@ -76,14 +82,14 @@ export default function Projects() {
               <ChakraLink
                 fontSize={isSmallerThen590 ? "20px" : "2xl"}
                 textAlign={"justify"}
-                color={useColorModeValue("gray.700", "white")}
+                color={ucmv3}
                 fontWeight="700"
               >
                 {item.name}
               </ChakraLink>
               <chakra.p
                 mt={2}
-                color={useColorModeValue("gray.600", "gray.300")}
+                color={ucmv4}
                 textAlign={"justify"}
                 fontSize={isSmallerThen590 ? "12px" : ""}
               >
