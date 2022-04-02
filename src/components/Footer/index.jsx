@@ -9,6 +9,7 @@ import {
   Box,
   chakra,
   useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import {
   faDiscord,
@@ -76,10 +77,9 @@ export default function Footer() {
         h={"2px"}
         endColor={colorMode === "dark" ? "light" : "dark"}
         startColor={colorMode === "dark" ? "light" : "dark"}
-        mb="20px"
       />
 
-      <Box maxW="2xl" mx={"auto"}>
+      <Box bg={useColorModeValue("lightBG", "dark")} mx={"auto"} pt={"20px"}>
         {/* Made By text */}
         <Center
           alignItems={"center"}
@@ -95,8 +95,10 @@ export default function Footer() {
               href="https://github.com/bigbeastishank"
               isExternal
               _focus={{ outline: "none" }}
+              fontWeight={"bold"}
+              color="primary"
             >
-              <chakra.b color="primary">BIGBEASTISHANK</chakra.b>
+              BIGBEASTISHANK
             </Link>
           </Text>
 
@@ -107,48 +109,64 @@ export default function Footer() {
               href="https://tanmaysinha.host/"
               isExternal
               _focus={{ outline: "none" }}
+              fontWeight={"bold"}
+              color="primary"
             >
-              <chakra.b color="primary">Tanmay Sinha</chakra.b>
+              Tanmay Sinha
             </Link>{" "}
             &{" "}
             <Link
               href="https://github.com/brucemacgary"
               isExternal
               _focus={{ outline: "none" }}
+              fontWeight={"bold"}
+              color="primary"
             >
-              <chakra.b color="primary">BruceMacGary</chakra.b>
+              BruceMacGary
             </Link>
           </Text>
           <br />
           {/* Hosting */}
           <Text>
-            Made with
+            Made with{" "}
             <Link
               href="https://nextjs.org"
               isExternal
               _focus={{ outline: "none" }}
+              fontWeight={"bold"}
+              color="primary"
             >
-              <chakra.b color="primary"> Next-JS</chakra.b>
+              Next-JS
             </Link>
-            , Hosted on
+            , Hosted on{" "}
             <Link
               href="https://vercel.com/"
               isExternal
               _focus={{ outline: "none" }}
+              fontWeight={"bold"}
+              color="primary"
             >
-              <chakra.b color="primary"> Vercel</chakra.b>
+              Vercel
             </Link>
-            , Designed with
+            , Designed with{" "}
             <Link
               href="https://chakra-ui.com/"
               isExternal
               _focus={{ outline: "none" }}
+              fontWeight={"bold"}
+              color="primary"
             >
-              <chakra.b color="primary"> Chakra-UI</chakra.b>
+              Chakra-UI
             </Link>
-            , Code is
-            <Link href="/sourcecode" isExternal _focus={{ outline: "none" }}>
-              <chakra.b color="primary"> Open Source</chakra.b>
+            , Code is{" "}
+            <Link
+              href="/sourcecode"
+              isExternal
+              _focus={{ outline: "none" }}
+              fontWeight={"bold"}
+              color="primary"
+            >
+              Open Source
             </Link>
           </Text>
         </Center>
@@ -161,6 +179,8 @@ export default function Footer() {
                 href={`/${item.name}`}
                 isExternal
                 _focus={{ outline: "none" }}
+                fontWeight={"bold"}
+                color="primary"
               >
                 <FontAwesomeIcon
                   icon={item.icon}

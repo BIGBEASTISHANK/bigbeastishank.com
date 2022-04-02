@@ -8,6 +8,7 @@ import {
   Heading,
   useMediaQuery,
   Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -16,13 +17,14 @@ export default function Contact() {
 
   return (
     <>
+    <Box bg={useColorModeValue("lightBG", "dark")}>
       <Box p={5} pt={10} maxW="7xl" mx={"auto"} id={"contact"}>
         <Heading
           pt="20px"
           fontSize={isSmallerThen590 ? "30px" : "45px"}
           textAlign="center"
           mb="30px"
-        >
+          >
           Contact Me
         </Heading>
         <FormControl isRequired>
@@ -86,6 +88,7 @@ export default function Contact() {
           </form>
         </FormControl>
       </Box>
+          </Box>
     </>
   );
 }
