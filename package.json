@@ -1,5 +1,6 @@
 {
   "name": "bigbeastishank",
+  "version" : "1.0'
   "private": false,
   "scripts": {
     "dev": "next dev",
