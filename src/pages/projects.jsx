@@ -88,7 +88,7 @@ export default function Projects() {
         <meta
           name="description"
           property="og:description"
-          content="This is BIGBEASTISHANK's project page, you can check out his projects over here!"
+          content="V1.0: This is BIGBEASTISHANK's project page, you can check out his projects over here!"
         />
 
         <meta

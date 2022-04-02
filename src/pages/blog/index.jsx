@@ -30,7 +30,7 @@ export default function Blog({ allPostsData }) {
         <meta
           property="og:description"
           name="description"
-          content="This is a blog page, you can see daily post over here and learn new stuffs!"
+          content="V1.0: This is a blog page, you can see daily post over here and learn new stuffs!"
         />
 
         <meta

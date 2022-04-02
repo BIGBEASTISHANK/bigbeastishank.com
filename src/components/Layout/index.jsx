@@ -38,7 +38,7 @@ export default function Layout({ children }) {
           <meta
             property="og:description"
             name="description"
-            content="This me Ishank. This is my portfolio wesite, I post blogs and you can see my projects over here."
+            content="V1.0: This me Ishank. This is my portfolio wesite, I post blogs and you can see my projects over here."
           />
 
           <meta

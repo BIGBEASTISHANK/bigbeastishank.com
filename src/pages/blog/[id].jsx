@@ -17,7 +17,7 @@ export default function Post({ postData }) {
           <meta
             property="og:description"
             name="description"
-            content={postData.description}
+            content={"V1.0: "+postData.description}
           />
 
           <meta

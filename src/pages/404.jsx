@@ -19,7 +19,7 @@ export default function Errorpage() {
           <meta
             property="og:description"
             name="description"
-            content="404 Error page, please check the link properly!"
+            content="V1.0: 404 Error page, please check the link properly!"
           />
 
           <meta
