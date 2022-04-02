@@ -102,30 +102,6 @@ export default function Footer() {
             </Link>
           </Text>
 
-          {/* Helper */}
-          <Text>
-            Helped by{" "}
-            <Link
-              href="https://tanmaysinha.host/"
-              isExternal
-              _focus={{ outline: "none" }}
-              fontWeight={"bold"}
-              color="primary"
-            >
-              Tanmay Sinha
-            </Link>{" "}
-            &{" "}
-            <Link
-              href="https://github.com/brucemacgary"
-              isExternal
-              _focus={{ outline: "none" }}
-              fontWeight={"bold"}
-              color="primary"
-            >
-              BruceMacGary
-            </Link>
-          </Text>
-          <br />
           {/* Hosting */}
           <Text>
             Made with{" "}
