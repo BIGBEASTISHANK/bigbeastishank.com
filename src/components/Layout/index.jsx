@@ -28,13 +28,13 @@ export default function Layout({ children }) {
         <meta
           property="og:description"
           name="description"
-          content="This me Ishank. This is my portfolio wesite, I post blogs and you can see my projects over here."
+          content="This me Ishank. This is my portfolio wesite, You can see my projects over here."
         />
 
         <meta
           property="og:keywords"
           name="keywords"
-          content="Portfolio, Projects, Blogs, HTML, CSS, Python, C#, JavaScript, Next js"
+          content="Portfolio, Projects, HTML, CSS, Python, C#, JavaScript, Next js"
         />
 
         {/* Title */}
