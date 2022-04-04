@@ -62,7 +62,7 @@ export default function Projects() {
       id: "discord-bot",
       name: "My Discord Bot",
       description:
-        "This is my Discord bot, 'beast bot'. You can get this on top.gg. It is a multi-purpose bot. If you want to go to its support server. Update(31/03/2022): This bot has been discontinued",
+        "This is my Discord bot, 'beast bot'. You can get this on top.gg. It is a multi-purpose bot. If you want to go to its support server",
       date: "2022-01-19",
       link: "https://top.gg/bot/709984874924081174/",
       tags: ["Python", "Discord", "AI", "Bot"],
