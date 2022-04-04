@@ -79,7 +79,7 @@ export default function Footer() {
         startColor={colorMode === "dark" ? "light" : "dark"}
       />
 
-      <Box bg={useColorModeValue("lightBG", "dark")} mx={"auto"} pt={"20px"}>
+      <Box bg={useColorModeValue("lightBG", "dark")} mx={"auto"} pt={"20px"} userSelect="none">
         {/* Made By text */}
         <Center
           alignItems={"center"}
@@ -102,6 +102,7 @@ export default function Footer() {
             </Link>
           </Text>
 
+          <br />
           {/* Hosting */}
           <Text>
             Made with{" "}

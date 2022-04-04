@@ -4,6 +4,7 @@ import {
   Box,
   Heading,
   Flex,
+  Text,
   useColorModeValue,
   useMediaQuery,
   useColorMode,
@@ -79,14 +80,14 @@ export default function Projects() {
             </Flex>
 
             <Box mt={2}>
-              <ChakraLink
+              <Text
                 fontSize={isSmallerThen590 ? "20px" : "2xl"}
                 textAlign={"justify"}
                 color={ucmv3}
                 fontWeight="700"
               >
                 {item.name}
-              </ChakraLink>
+              </Text>
               <chakra.p
                 mt={2}
                 color={ucmv4}

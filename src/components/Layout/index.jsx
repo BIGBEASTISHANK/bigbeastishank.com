@@ -40,18 +40,16 @@ export default function Layout({ children }) {
         {/* Title */}
         <title>BIG BEAST ISHANK</title>
       </Head>
+      <Box maxW="99%">
+        {/* Navbar Component */}
+        <Navbar />
 
-      {/* Navbar Component */}
-      <Navbar />
-
-      {/* Main Body */}
-      <Box>
-        {/* Body Of every page */}
+        {/* Main Body */}
         {children}
-      </Box>
 
-      {/* Footer */}
-      <Footer />
+        {/* Footer */}
+        <Footer />
+      </Box>
     </>
   );
 }

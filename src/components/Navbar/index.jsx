@@ -37,8 +37,8 @@ export default function Navbar() {
       link: "/#projects",
     },
     {
-      name: "Blogs",
-      link: "/blogs",
+      name: "V1.0",
+      link: "https://v1.bigbeastishank.com",
     },
     {
       name: "Contact",

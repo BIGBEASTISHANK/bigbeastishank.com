@@ -48,7 +48,7 @@ const projectData = [
     id: "discord-bot",
     name: "My Discord Bot",
     description:
-      "This is my Discord bot, 'Beast bot'. You can get this on top.gg. It is a multi-purpose bot. If you want to go to its support server. This bot is has been temporarily discontinued.",
+      "This is my Discord bot, 'Beast bot'. You can get this on top.gg. It is a multi-purpose bot. If you want to go to its support server.",
     date: "2022-01-19",
     sourcecode: "https://github.com/bigbeastishank/discord.py",
     sBtnStr: "Add To Server",
