@@ -40,7 +40,7 @@ export default function Layout({ children }) {
         {/* Title */}
         <title>BIG BEAST ISHANK</title>
       </Head>
-      <Box maxW="99%">
+      <Box maxW="99%" mx="auto">
         {/* Navbar Component */}
         <Navbar />
 
