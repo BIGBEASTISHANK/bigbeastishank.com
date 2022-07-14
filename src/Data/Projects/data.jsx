@@ -1,5 +1,16 @@
 const projectData = [
   {
+    id: "shimrun-dash-2d",
+    name: "Shimrun Dash 2D",
+    description:
+      "This is a speedrun game. In this, the ball will automatically go forward. You can only control its speed (slow or fast) and you can also jump and anti-jump.",
+    date: "2022-07-14",
+    sourcecode: "https://github.com/BIGBEASTISHANK/Shimrun-Dash-2D",
+    sBtnStr: "Download",
+    sBtnLink:
+      "https://github.com/BIGBEASTISHANK/Shimrun-Dash-2D/archive/refs/heads/main.zip",
+  },
+  {
     id: "sussy-shooter-3d",
     name: "Sussy Shooter 3D",
     description:
