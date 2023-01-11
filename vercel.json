@@ -1,0 +1,48 @@
+{
+    "redirects": [
+      {
+        "source": "/github",
+        "destination": "https://github.com/bigbeastishank"
+      },
+      {
+        "source": "/email",
+        "destination": "mailto:ishank@bigbeastishank.com"
+      },
+      {
+        "source": "/instagram",
+        "destination": "https://instagram.com/opishank"
+      },
+      {
+        "source": "/spotify",
+        "destination": "https://open.spotify.com/user/n37h63t5acey8z9kqu3dwjp1l"
+      },
+      {
+        "source": "/discord",
+        "destination": "https://discord.gg/WdeHDmwKFn"
+      },
+      {
+        "source": "/snapchat",
+        "destination": "https://snapchat.com/add/opishank"
+      },
+      {
+        "source": "/steam",
+        "destination": "https://steamcommunity.com/id/bigbeastishank"
+      },
+      {
+        "source": "/twitter",
+        "destination": "https://twitter.com/opishank"
+      },
+      {
+        "source": "/youtube",
+        "destination": "https://www.youtube.com/c/BIGBEASTISHANK"
+      },
+      {
+        "source": "/fiverr",
+        "destination": "https://fiverr.com/bigbeastishank"
+      },
+      {
+        "source": "/sourcecode",
+        "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V2.0"
+      }
+    ]
+  }
