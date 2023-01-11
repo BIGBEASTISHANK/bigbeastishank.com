@@ -91,11 +91,7 @@ export default function Home() {
                   color="gray.500"
                   textAlign={"justify"}
                 >
-<<<<<<< HEAD
-                  Hello Goiz👋, My name is Ishank. I am a 16-year-old developer
-=======
                   Hello Goiz👋, My name is Ishank. I am a 17-year-old developer
->>>>>>> 1460628 (MY Stuffs changes)
                   who loves open source. I am not an expert in any language; I
                   am just good at every language(I Know). I just don`t like
                   sticking to one thing, like always doing web or AI. I always

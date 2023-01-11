@@ -17,23 +17,15 @@ import {
   faHtml5,
   faJs,
   faLinux,
-<<<<<<< HEAD
   faOpera,
-=======
->>>>>>> 1460628 (MY Stuffs changes)
   faPython,
   faSass,
   faSpotify,
   faUnity,
   faWindows,
-<<<<<<< HEAD
+  faAndroid,
 } from "@fortawesome/free-brands-svg-icons";
-import { faC, faCode } from "@fortawesome/free-solid-svg-icons";
-=======
-  faAndroid
-} from "@fortawesome/free-brands-svg-icons";
-import { faC, faGlobe, faCode } from "@fortawesome/free-solid-svg-icons";
->>>>>>> 1460628 (MY Stuffs changes)
+import { faC, faCode, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function MySkills() {
@@ -73,11 +65,7 @@ export default function MySkills() {
   // Software
   const software = [
     {
-<<<<<<< HEAD
-      name: "VSC",
-=======
       name: "VSCodium",
->>>>>>> 1460628 (MY Stuffs changes)
       icon: faCode,
     },
     {
@@ -85,13 +73,8 @@ export default function MySkills() {
       icon: faSpotify,
     },
     {
-<<<<<<< HEAD
-      name: "Opera",
-      icon: faOpera,
-=======
       name: "Brave",
       icon: faGlobe,
->>>>>>> 1460628 (MY Stuffs changes)
     },
     {
       name: "Unity",
@@ -110,13 +93,8 @@ export default function MySkills() {
       icon: faLinux,
     },
     {
-<<<<<<< HEAD
-      name: "Windows",
-      icon: faWindows,
-=======
       name: "Android",
       icon: faAndroid,
->>>>>>> 1460628 (MY Stuffs changes)
     },
   ];
 
