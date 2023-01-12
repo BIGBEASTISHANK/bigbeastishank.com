@@ -59,6 +59,10 @@
     {
       "source": "/sourcecode",
       "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V1.0"
+    },
+    {
+      "source": "/v2",
+      "destination": "https://bigbeastishank.com"
     }
   ]
 }
