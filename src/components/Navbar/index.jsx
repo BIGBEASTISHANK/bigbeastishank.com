@@ -31,6 +31,10 @@ export default function Navbar() {
       name: "Blog",
       link: "/blog",
     },
+    {
+      name: "V2",
+      link: "/v2",
+    },
   ];
 
   // Returning Html
