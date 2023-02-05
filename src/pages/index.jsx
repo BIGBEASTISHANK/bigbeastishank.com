@@ -30,7 +30,7 @@ export default function Index({ allPostsData }) {
         <meta
           property="og:description"
           name="description"
-          content="V3.0: This is a blog page, you can see daily post over here and learn new stuffs!"
+          content="V3.0: This me Ishank. This is my portfolio wesite, I post blogs and you can see my projects over here."
         />
 
         <meta
