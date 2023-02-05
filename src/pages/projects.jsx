@@ -31,7 +31,8 @@ export default function Projects() {
       date: "2022-07-14",
       link: "https://github.com/BIGBEASTISHANK/Shimrun-Dash-2D",
       altbtnttl: "Download",
-      altbtnlink: "https://github.com/BIGBEASTISHANK/Shimrun-Dash-2D/archive/refs/heads/main.zip",
+      altbtnlink:
+        "https://github.com/BIGBEASTISHANK/Shimrun-Dash-2D/archive/refs/heads/main.zip",
       htags: "Unity Game C# Game Dev",
       tags: ["Unity", "Game", "C#", "Game Dev"],
     },
@@ -43,7 +44,8 @@ export default function Projects() {
       date: "2022-03-02",
       link: "https://github.com/BIGBEASTISHANK/Sussy-Shooter-3D",
       altbtnttl: "Download",
-      altbtnlink: "https://github.com/BIGBEASTISHANK/Sussy-Shooter-3D/archive/refs/heads/main.zip",
+      altbtnlink:
+        "https://github.com/BIGBEASTISHANK/Sussy-Shooter-3D/archive/refs/heads/main.zip",
       htags: "Unity Game C# Game Dev Devlog",
       tags: ["Unity", "Game", "C#", "Game Dev", "Devlog"],
     },
@@ -55,7 +57,8 @@ export default function Projects() {
       date: "2022-01-15",
       link: "https://github.com/BIGBEASTISHANK/Suspicious-Runner-3D",
       altbtnttl: "Download",
-      altbtnlink: "https://github.com/BIGBEASTISHANK/Suspicious-Runner-3D/archive/refs/heads/main.zip",
+      altbtnlink:
+        "https://github.com/BIGBEASTISHANK/Suspicious-Runner-3D/archive/refs/heads/main.zip",
       htags: "Unity Game C# Game Dev Devlog",
       tags: ["Unity", "Game", "C#", "Game Dev", "Devlog"],
     },
@@ -67,7 +70,8 @@ export default function Projects() {
       date: "2022-01-31",
       link: "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D",
       altbtnttl: "Download",
-      altbtnlink: "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D/archive/refs/heads/main.zip",
+      altbtnlink:
+        "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D/archive/refs/heads/main.zip",
       htags: "Unity Game C# Game Dev",
       tags: ["Unity", "Game", "C#", "Game Dev"],
     },
@@ -106,7 +110,8 @@ export default function Projects() {
       date: "2022-01-19",
       link: "https://github.com/BIGBEASTISHANK/Beast-Race",
       altbtnttl: "Download",
-      altbtnlink: "https://github.com/BIGBEASTISHANK/Beast-Race/archive/refs/heads/main.zip",
+      altbtnlink:
+        "https://github.com/BIGBEASTISHANK/Beast-Race/archive/refs/heads/main.zip",
       htags: "Unity Game C# Game Dev",
       tags: ["Unity", "Game", "C#", "Game Dev"],
     },
@@ -141,7 +146,9 @@ export default function Projects() {
           textAlign={"center"}
           mb={{ lg: "20px", md: "15px" }}
         >
-          <Text className="heading" color={"primary"}>My Project</Text>
+          <Text className="heading" color={"primary"}>
+            My Project
+          </Text>
         </Heading>
 
         <Box
@@ -159,16 +166,16 @@ export default function Projects() {
           {/* Something about project */}
           <Text>
             Welcome to my project page! This is where I showcase the fruits of
-            my labor and highlight the exciting projects I&apos;ve been working on.
-            From web applications to mobile games and beyond, I take pride in
-            delivering high-quality solutions that meet the needs of my clients
-            and users. On this page, you&apos;ll find an overview of each project,
-            along with descriptions that provide a deeper understanding of my
-            work. Whether you&apos;re a potential client looking for a talented
-            developer, or simply interested in the latest technology trends, I
-            invite you to browse my projects and discover what I&apos;m capable of.
-            You can click on title to open source code or you can check the
-            alternate button. Enjoy!
+            my labor and highlight the exciting projects I&apos;ve been working
+            on. From web applications to mobile games and beyond, I take pride
+            in delivering high-quality solutions that meet the needs of my
+            clients and users. On this page, you&apos;ll find an overview of
+            each project, along with descriptions that provide a deeper
+            understanding of my work. Whether you&apos;re a potential client
+            looking for a talented developer, or simply interested in the latest
+            technology trends, I invite you to browse my projects and discover
+            what I&apos;m capable of. You can click on title to open source code
+            or you can check the alternate button. Enjoy!
           </Text>
         </Box>
 
@@ -225,6 +232,9 @@ export default function Projects() {
                   >
                     <Flex>
                       <Text
+                        mt={"auto"}
+                        mb={"auto"}
+                        mr="5%"
                         className="title"
                         color={"primary"}
                         textAlign={isLargerThan480 ? "justify" : "left"}
@@ -248,7 +258,6 @@ export default function Projects() {
                         <Button
                           d={{ base: "none", sm: "flex" }}
                           size={"md"}
-                          ml={"2%"}
                           _hover={"none"}
                           borderRadius="full"
                         >
@@ -261,7 +270,6 @@ export default function Projects() {
                         <Button
                           d={{ base: "flex", sm: "none" }}
                           size={"xs"}
-                          ml={"2%"}
                           _hover={"none"}
                           borderRadius="full"
                         >
