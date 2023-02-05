@@ -1,0 +1,13 @@
+// Navbar
+.navbar {
+  #nav-item:hover {
+    transition: 0.5s;
+  }
+  .nav-item::-webkit-scrollbar {
+    height: 4px;
+  }
+  .nav-item::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 64px;
+  }
+}

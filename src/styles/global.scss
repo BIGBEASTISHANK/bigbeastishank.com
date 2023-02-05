@@ -1,0 +1,39 @@
+// Import Fonts
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+
+// Import Pages Style
+@import "./blog/blogpost.scss";
+
+// Import Component Style
+@import "./navbar.scss";
+@import "./responsive.scss";
+
+// Variables
+$primary: #2e94c5;
+$secondary: #287fca;
+$dark: #1a202c;
+
+// Scroll bar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-image: linear-gradient(
+    100deg,
+    rgb(0, 0, 0) 11%,
+    rgb(16, 44, 50) 92%
+  );
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+  border: 2px solid rgba(255, 255, 255, 0.78);
+  border-radius: 64px;
+}
+
+// Main body
+.main-content {
+  overflow-wrap: break-word;
+}

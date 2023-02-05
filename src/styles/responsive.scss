@@ -1,0 +1,37 @@
+// xl size
+@media screen and (min-width: 960px) {
+  // Navbar
+  .navbar {
+    margin: 20px;
+  }
+}
+
+// lg size
+@media screen and (min-width: 768px) {
+  // Navbar
+  .navbar {
+    margin: 20px;
+  }
+}
+
+// md size
+@media screen and (min-width: 600px) {
+  // Navbar
+  .navbar {
+    margin: 15px;
+    padding-left: 2.5px;
+  }
+}
+
+// sm size
+// @media screen and (min-width: 280px) {
+// }
+
+// base size
+@media screen and (min-width: 0px) {
+  // Navbar
+  .navbar {
+    margin: 13px;
+    padding-left: 20px;
+  }
+}
