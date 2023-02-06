@@ -71,6 +71,7 @@ export default function Post({ postData }) {
           <Link
             href={postData.authlink}
             isExternal
+            textDecoration={"underline"}
             _focus={{ outline: "none" }}
           >
             {postData.author}
@@ -84,7 +85,7 @@ export default function Post({ postData }) {
         {/* Main post data */}
         <Box className="content" mb={5}>
           <Box
-            textAlign={isLargerThan480 ? "justify" : "left"}
+            textAlign={'justify'}
             dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
         </Box>

@@ -13,7 +13,6 @@ export default function Layout({ children }) {
         m={"auto"}
         mt={"20px"}
         mb={"20px"}
-        maxW={"95%"}
       >
         {/* Head Tag to put Title and meta tags */}
         <Head>
