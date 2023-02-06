@@ -62,6 +62,10 @@
     },
     {
       "source": "/v2",
+      "destination": "https://v2.bigbeastishank.com"
+    },
+    {
+      "source": "/v3",
       "destination": "https://bigbeastishank.com"
     }
   ]
