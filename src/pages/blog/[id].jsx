@@ -3,11 +3,19 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/date";
 import NextLink from "next/link";
-import { Box, Button, Heading, Text, chakra, Link, useMediaQuery } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Heading,
+  Text,
+  chakra,
+  Link,
+  useMediaQuery,
+} from "@chakra-ui/react";
 
 export default function Post({ postData }) {
   // Variable
-  const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
+  const [isLargerThan480] = useMediaQuery("(min-width: 480px)");
 
   // Returning Html
   return (
@@ -17,7 +25,7 @@ export default function Post({ postData }) {
           <meta
             property="og:description"
             name="description"
-            content={"V3.0: "+postData.description}
+            content={"V3.0: " + postData.description}
           />
 
           <meta
@@ -37,7 +45,7 @@ export default function Post({ postData }) {
           fontWeight="700"
           mb={"35px"}
           mt={"25px"}
-          textAlign={isLargerThan480 ? 'justify' : 'left'}
+          textAlign={isLargerThan480 ? "justify" : "left"}
         >
           {postData.title}
         </Heading>
@@ -71,18 +79,12 @@ export default function Post({ postData }) {
         </Text>
 
         {/* Line to divide content */}
-        <chakra.hr
-          ml={"-30px"}
-          mr={"-30px"}
-          h={"2px"}
-          mb={6}
-          mt={6}
-        />
+        <chakra.hr ml={"-30px"} mr={"-30px"} h={"2px"} mb={6} mt={6} />
 
         {/* Main post data */}
         <Box className="content" mb={5}>
           <Box
-            textAlign={isLargerThan480 ? 'justify' : 'left'}
+            textAlign={isLargerThan480 ? "justify" : "left"}
             dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
         </Box>
@@ -91,6 +93,8 @@ export default function Post({ postData }) {
         {/* For Mobile and above */}
         <NextLink href="/">
           <Button
+            colorScheme="blue"
+            _focus={{ outline: "none" }}
             d={{ base: "none", sm: "flex" }}
             size={"lg"}
             className="gb-btn"
@@ -105,6 +109,8 @@ export default function Post({ postData }) {
         {/* For small mobile */}
         <NextLink href="/">
           <Button
+            colorScheme="blue"
+            _focus={{ outline: "none" }}
             d={{ base: "flex", sm: "none" }}
             size={"md"}
             className="gb-btn"

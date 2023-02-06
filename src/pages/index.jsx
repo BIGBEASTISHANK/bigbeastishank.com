@@ -1,7 +1,4 @@
 // Importing Stuffs
-import { getSortedPostsData } from "../lib/posts";
-import NextLink from "next/link";
-import Date from "../components/date";
 import {
   Box,
   Heading,
@@ -14,9 +11,13 @@ import {
   useMediaQuery,
   chakra,
 } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
-import Head from "next/head";
 import React from "react";
+import Head from "next/head";
+import NextLink from "next/link";
+import Date from "../components/date";
+import Hero from "../components/Hero";
+import { SearchIcon } from "@chakra-ui/icons";
+import { getSortedPostsData } from "../lib/posts";
 
 export default function Index({ allPostsData }) {
   // Variable
@@ -42,51 +43,8 @@ export default function Index({ allPostsData }) {
       </Head>
 
       {/* Hero Header */}
-      <Box className="hero">
-        <Heading
-          fontSize={{ lg: "6xl", md: "5xl", sm: "39px", base: "25px" }}
-          fontWeight="700"
-          textAlign={"center"}
-          mb={{ lg: "20px", md: "15px" }}
-        >
-          <Text className="hero-heading" color={"primary"}>
-            Welcome To my Blog-Portfolio Site
-          </Text>
-        </Heading>
-
-        {/* Small summery about me */}
-        <Box
-          className="hero-content"
-          fontSize={{
-            xl: "25px",
-            lg: "20px",
-            md: "18px",
-            sm: "16px",
-            base: "13px",
-          }}
-          fontWeight="700"
-        >
-          <Text textAlign={"justify"}>
-            Welcome to my personal portfolio and blog website! My name is
-            Ishank, but you can call me BIGBEASTISHANK. I am a 17-year-old
-            developer with a passion for creating innovative and impactful
-            technology solutions. On this site, you&apos;ll find a showcase of my
-            work, including my latest projects and contributions to the tech
-            community. My blog will give you a glimpse into my thoughts and
-            experiences as a young developer, covering everything from the
-            latest developments in the tech world to tips and tricks for
-            aspiring developers. Thank you for visiting and I hope you enjoy
-            exploring my website!
-          </Text>
-        </Box>
-
-        <chakra.hr
-          ml={"-30px"}
-          mr={"-30px"}
-          h={"20px"}
-          mb={4}
-          mt={4}
-        />
+      <Box>
+        <Hero />
 
         {/* Blog */}
         <Box className="blog">
@@ -97,7 +55,9 @@ export default function Index({ allPostsData }) {
             textAlign={"center"}
             mb={{ lg: "20px", md: "15px" }}
           >
-            <Text className="heading" color={"primary"}>My Blog</Text>
+            <Text className="heading" color={"primary"}>
+              My Blog
+            </Text>
           </Heading>
 
           <Box
@@ -116,13 +76,14 @@ export default function Index({ allPostsData }) {
             <Text>
               Welcome to my technology blog! This is where I share my knowledge
               and expertise on the ever-evolving world of coding and the IT
-              industry. Whether you&apos;re a seasoned programmer or just starting to
-              explore the field, you&apos;ll find something of interest here. I delve
-              into the latest technologies, programming languages, and software
-              development trends, offering insights and tips for anyone looking
-              to improve their skills and advance their career in the tech
-              sector. So grab a cup of coffee and join me on this journey
-              through the fascinating world of coding and technology!
+              industry. Whether you&apos;re a seasoned programmer or just
+              starting to explore the field, you&apos;ll find something of
+              interest here. I delve into the latest technologies, programming
+              languages, and software development trends, offering insights and
+              tips for anyone looking to improve their skills and advance their
+              career in the tech sector. So grab a cup of coffee and join me on
+              this journey through the fascinating world of coding and
+              technology!
             </Text>
           </Box>
 
@@ -137,7 +98,7 @@ export default function Index({ allPostsData }) {
               placeholder="Search..."
               _focus={{ outline: "none" }}
               userSelect={"none"}
-              border={"2px solid"}
+              border={"3px solid"}
               onChange={(event) => {
                 setSearchTerm(event.target.value);
               }}
@@ -162,7 +123,7 @@ export default function Index({ allPostsData }) {
                   <Box
                     mb={50}
                     className="posts"
-                    bg={"rgba( 0, 0, 0, 0.15 )"}
+                    bg={"rgba( 0, 0, 0, 0.085 )"}
                     p={"10px"}
                     borderRadius={"25px"}
                     id={item.id}
@@ -233,6 +194,7 @@ export default function Index({ allPostsData }) {
                         overflow={"hidden"}
                         userSelect={"none"}
                         borderRadius={"full"}
+                        color={"light"}
                         m="1"
                         p="3px"
                         pl="10px"

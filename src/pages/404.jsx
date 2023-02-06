@@ -67,13 +67,13 @@ export default function Errorpage() {
             mb={{ sm: "80px", base: "40px" }}
           >
             <Container textAlign={"justify"}>
-              We&apos;re sorry, but it seems like you&apos;ve stumbled upon a 404 error
-              page. The page you were trying to access cannot be found on our
-              server. Don&apos;t worry, this happens from time to time. You can try
-              checking the URL for typos or mistakes and try again, use the
-              search bar to find the information you&apos;re looking for, return to
-              the homepage and navigate from there, or contact us if you
-              continue to experience difficulties. We apologize for any
+              We&apos;re sorry, but it seems like you&apos;ve stumbled upon a
+              404 error page. The page you were trying to access cannot be found
+              on our server. Don&apos;t worry, this happens from time to time.
+              You can try checking the URL for typos or mistakes and try again,
+              use the search bar to find the information you&apos;re looking
+              for, return to the homepage and navigate from there, or contact us
+              if you continue to experience difficulties. We apologize for any
               inconvenience and thank you for visiting our website!
             </Container>
           </Box>
@@ -84,8 +84,10 @@ export default function Errorpage() {
           {/* For Mobile and above */}
           <NextLink href="/">
             <Button
+              colorScheme="blue"
               d={{ base: "none", sm: "flex" }}
               size={"lg"}
+              _focus={{ outline: "none" }}
               className="gb-btn"
               overflow={"hidden"}
               _hover={"none"}
@@ -98,9 +100,11 @@ export default function Errorpage() {
           {/* For small mobile */}
           <NextLink href="/">
             <Button
+              colorScheme="blue"
               d={{ base: "flex", sm: "none" }}
               size={"md"}
               className="gb-btn"
+              _focus={{ outline: "none" }}
               overflow={"hidden"}
               _hover={"none"}
               mb={7}

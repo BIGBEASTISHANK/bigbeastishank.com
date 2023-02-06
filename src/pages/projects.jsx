@@ -213,9 +213,10 @@ export default function Projects() {
                 <Box
                   mb={50}
                   className="projects"
-                  bg={"rgba( 0, 0, 0, 0.15 )"}
+                  bg={"rgba( 0, 0, 0, 0.085 )"}
                   p={"10px"}
                   borderRadius={"25px"}
+                  overflowX={"auto"}
                   id={data.id}
                 >
                   {/* Project Title */}
@@ -256,6 +257,8 @@ export default function Projects() {
                       {/* For Mobile and above */}
                       <Link href={data.altbtnlink} isExternal _hover={"none"}>
                         <Button
+                          _focus={{ outline: "none" }}
+                          colorScheme="blue"
                           d={{ base: "none", sm: "flex" }}
                           size={"md"}
                           _hover={"none"}
@@ -268,6 +271,8 @@ export default function Projects() {
                       {/* For small mobile */}
                       <Link href={data.altbtnlink} isExternal _hover={"none"}>
                         <Button
+                          _focus={{ outline: "none" }}
+                          colorScheme="blue"
                           d={{ base: "flex", sm: "none" }}
                           size={"xs"}
                           _hover={"none"}
@@ -318,6 +323,7 @@ export default function Projects() {
                       overflow={"hidden"}
                       bg={"secondary"}
                       borderRadius={"full"}
+                      color={"light"}
                       m="1"
                       p="3px"
                       pl="10px"
