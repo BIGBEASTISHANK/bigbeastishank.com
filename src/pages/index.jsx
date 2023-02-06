@@ -95,7 +95,7 @@ export default function Index({ allPostsData }) {
             <Input
               className="search-bar"
               type="text"
-              placeholder="Search..."
+              placeholder="Search with title or tags..."
               _focus={{ outline: "none" }}
               userSelect={"none"}
               border={"3px solid"}

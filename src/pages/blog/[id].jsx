@@ -85,7 +85,6 @@ export default function Post({ postData }) {
         {/* Main post data */}
         <Box className="content" mb={5}>
           <Box
-            textAlign={'justify'}
             dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
         </Box>
@@ -100,7 +99,7 @@ export default function Post({ postData }) {
             size={"lg"}
             className="gb-btn"
             _hover={"none"}
-            mt={16}
+            m={'auto'}
             borderRadius="full"
           >
             Go Back
@@ -116,7 +115,7 @@ export default function Post({ postData }) {
             size={"md"}
             className="gb-btn"
             _hover={"none"}
-            mt={16}
+            m={'auto'}
             borderRadius="full"
           >
             Go Back

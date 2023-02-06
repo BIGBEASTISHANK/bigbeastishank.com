@@ -58,6 +58,8 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=BIGBEASTISHANK&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&langs_count=10&layout=compact) ![BIGBEASTISHANK's github stats](https://github-readme-stats.vercel.app/api?username=BIGBEASTISHANK&count_private=true&bg_color=30,e96443,904e95&title_color=fff&text_color=fff)
 
+---
+
 ## Persons In my Journey
 
 - [Bruce Mac Gary](https://kushagraraj.me)
@@ -66,6 +68,8 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 - [Divya Rani Soni](https://instagram.com/divyarani9464)
 - [Sahil Singh Rajput](https://www.instagram.com/_sahil__singh__rajput_/)
 - [Tanmay Sinha](https://tanmaysinha.host)
+
+---
 
 ## Sources
 
@@ -83,6 +87,8 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 - [My BSPWM config](https://github.com/BIGBEASTISHANK/bspwm-dotfiles-1.0)
 - [Next Js](https://nextjs.org)
 - [Script kiddie](https://en.wikipedia.org/wiki/Script_kiddie)
+
+---
 
 #
 

@@ -187,7 +187,7 @@ export default function Projects() {
           <Input
             className="search-bar"
             type="text"
-            placeholder="Search..."
+            placeholder="Search with title or tags..."
             _focus={{ outline: "none" }}
             onChange={(event) => {
               setSearchTerm(event.target.value);

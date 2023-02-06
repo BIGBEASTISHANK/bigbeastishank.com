@@ -10,7 +10,7 @@ $dark: #1a202c;
       font-weight: 1000;
       background-color: rgba(0, 0, 0, 0.35);
       border-radius: 15px;
-      padding: 10px;
+      padding: 1%;
       overflow: auto;
       margin-top: 10px;
 
@@ -37,23 +37,26 @@ $dark: #1a202c;
     h1 {
       font-size: 35px;
       font-weight: 1000;
-      color: $primary;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      color: $secondary;
+      margin-top: 2%;
+      margin-bottom: 1px;
     }
 
     h2 {
       font-size: 30px;
       font-weight: 1000;
       color: $primary;
-      margin-top: 60px;
-      margin-bottom: 20px;
+      margin-top: 2%;
+      margin-bottom: 2px;
+      margin-left: 2%;
     }
 
     h3 {
-      margin-top: 50px;
+      margin-top: 1%;
+      margin-bottom: 1%;
       font-weight: 700;
       font-size: 25px;
+      margin-left: 2.5%;
     }
 
     h6 {
@@ -65,19 +68,21 @@ $dark: #1a202c;
 
     p {
       font-size: 18px;
+      text-align: justify;
+      margin-left: 3%;
     }
 
     li {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-left: 50px;
-      margin-right: 50px;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      margin-left: 5%;
+      margin-right: 5%;
       font-size: 18px;
       text-align: left;
     }
 
     ul {
-      margin-bottom: 20px;
+      margin-bottom: 2%;
     }
 
     a {
@@ -89,9 +94,9 @@ $dark: #1a202c;
       text-decoration: underline;
     }
 
-    hr {
-      margin-top: 30px;
-      margin-bottom: 30px;
+    hr{
+      margin-top: 2%;
+      margin-bottom: 2%;
     }
 
     img{
@@ -100,18 +105,5 @@ $dark: #1a202c;
       margin-left: auto;
       margin-right: auto;
     }
-  }
-}
-
-// BlogPost animation
-@keyframes hr_line {
-  0% {
-    background-color: #d53f8c;
-  }
-  50% {
-    background-color: #dd6b20;
-  }
-  100% {
-    background-color: #d53f8c;
   }
 }
