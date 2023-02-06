@@ -32,8 +32,12 @@ export default function Navbar() {
       link: "/blog",
     },
     {
-      name: "V2",
+      name: "V2.0",
       link: "/v2",
+    },
+    {
+      name: "V3.0",
+      link: "/v3",
     },
   ];
 
