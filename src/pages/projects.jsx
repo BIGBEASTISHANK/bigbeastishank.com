@@ -190,7 +190,7 @@ export default function Projects() {
             className="search-bar"
             type="text"
             placeholder="Search with title or tags..."
-            _placeholder={{color: colorMode === "dark" ? "light" : "dark"}}
+            _placeholder={{ color: colorMode === "dark" ? "light" : "dark" }}
             _focus={{ outline: "none" }}
             userSelect={"none"}
             border={"2px solid"}
@@ -261,8 +261,15 @@ export default function Projects() {
 
                       {/* Alternet Button */}
                       {/* For Mobile and above */}
-                      <Link href={data.altbtnlink} isExternal _hover={"none"}>
+                      <Link
+                        href={data.altbtnlink}
+                        isExternal
+                        _hover={"none"}
+                        _focus={{ outline: "none" }}
+                      >
                         <Button
+                          mr="10px"
+                          ml="10px"
                           _focus={{ outline: "none" }}
                           colorScheme="blue"
                           d={{ base: "none", sm: "flex" }}
@@ -275,8 +282,15 @@ export default function Projects() {
                       </Link>
 
                       {/* For small mobile */}
-                      <Link href={data.altbtnlink} isExternal _hover={"none"}>
+                      <Link
+                        href={data.altbtnlink}
+                        isExternal
+                        _hover={"none"}
+                        _focus={{ outline: "none" }}
+                      >
                         <Button
+                          mr="10px"
+                          ml="10px"
                           _focus={{ outline: "none" }}
                           colorScheme="blue"
                           d={{ base: "flex", sm: "none" }}
