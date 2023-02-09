@@ -10,6 +10,7 @@ import {
   Tag,
   useMediaQuery,
   chakra,
+  useColorMode
 } from "@chakra-ui/react";
 import React from "react";
 import Head from "next/head";
@@ -23,6 +24,7 @@ export default function Index({ allPostsData }) {
   // Variable
   const [searchTerm, setSearchTerm] = React.useState("");
   const [isLargerThan480] = useMediaQuery("(min-width: 480px)");
+  const { colorMode } = useColorMode();
 
   // Returning Html
   return (
@@ -96,9 +98,11 @@ export default function Index({ allPostsData }) {
               className="search-bar"
               type="text"
               placeholder="Search with title or tags..."
+              _placeholder={{color: colorMode === "dark" ? "light" : "dark"}}
               _focus={{ outline: "none" }}
               userSelect={"none"}
-              border={"3px solid"}
+              border={"2px solid"}
+              borderColor={colorMode === "dark" ? "light" : "dark"}
               onChange={(event) => {
                 setSearchTerm(event.target.value);
               }}

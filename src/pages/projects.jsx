@@ -14,6 +14,7 @@ import {
   Flex,
   chakra,
   Spacer,
+  useColorMode,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import React from "react";
@@ -22,6 +23,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 export default function Projects() {
   // Variables
   const [isLargerThan480] = useMediaQuery("(min-width: 480px)");
+  const { colorMode } = useColorMode();
   const projectData = [
     {
       id: "shimrun-dash-2d",
@@ -188,7 +190,11 @@ export default function Projects() {
             className="search-bar"
             type="text"
             placeholder="Search with title or tags..."
+            _placeholder={{color: colorMode === "dark" ? "light" : "dark"}}
             _focus={{ outline: "none" }}
+            userSelect={"none"}
+            border={"2px solid"}
+            borderColor={colorMode === "dark" ? "light" : "dark"}
             onChange={(event) => {
               setSearchTerm(event.target.value);
             }}

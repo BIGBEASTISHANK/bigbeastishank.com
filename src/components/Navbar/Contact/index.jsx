@@ -15,12 +15,15 @@ import {
   useDisclosure,
   useColorModeValue,
   Flex,
+  Skeleton,
+  useColorMode,
 } from "@chakra-ui/react";
 
 export default function Contact() {
   // Variable
   const { isOpen, onOpen, onClose } = useDisclosure();
   const contact_bg = useColorModeValue("lightMBg", "dark");
+  const { colorMode } = useColorMode();
 
   // Return Html
   return (
@@ -57,7 +60,14 @@ export default function Contact() {
           </DrawerHeader>
 
           {/* Sperate line */}
-          <hr />
+          <Skeleton
+            h={"2px"}
+            endColor={colorMode === "dark" ? "light" : "dark"}
+            startColor={colorMode === "dark" ? "light" : "dark"}
+            mb={"1%"}
+            mt={"1%"}
+          />
+
           {/* Place to fill details */}
           <DrawerBody bg={contact_bg}>
             <FormControl isRequired>
@@ -101,7 +111,14 @@ export default function Contact() {
           </DrawerBody>
 
           {/* Footer Line */}
-          <hr/>
+          <Skeleton
+            h={"2px"}
+            endColor={colorMode === "dark" ? "light" : "dark"}
+            startColor={colorMode === "dark" ? "light" : "dark"}
+            mb={"1%"}
+            mt={"1%"}
+          />
+
           {/* Close buton */}
           <DrawerFooter bg={"lightMBg"}>
             <Button

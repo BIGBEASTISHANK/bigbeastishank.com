@@ -8,14 +8,16 @@ import {
   Button,
   Heading,
   Text,
-  chakra,
+  Skeleton,
   Link,
   useMediaQuery,
+  useColorMode,
 } from "@chakra-ui/react";
 
 export default function Post({ postData }) {
   // Variable
   const [isLargerThan480] = useMediaQuery("(min-width: 480px)");
+  const { colorMode } = useColorMode();
 
   // Returning Html
   return (
@@ -80,13 +82,17 @@ export default function Post({ postData }) {
         </Text>
 
         {/* Line to divide content */}
-        <chakra.hr ml={"-30px"} mr={"-30px"} h={"2px"} mb={6} mt={6} />
+        <Skeleton
+          h={"2px"}
+          endColor={colorMode === "dark" ? "light" : "dark"}
+          startColor={colorMode === "dark" ? "light" : "dark"}
+          mb={"1%"}
+          mt={"1%"}
+        />
 
         {/* Main post data */}
         <Box className="content" mb={5}>
-          <Box
-            dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-          />
+          <Box dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </Box>
 
         {/* Go Back Button */}
@@ -99,7 +105,7 @@ export default function Post({ postData }) {
             size={"lg"}
             className="gb-btn"
             _hover={"none"}
-            m={'auto'}
+            m={"auto"}
             borderRadius="full"
           >
             Go Back
@@ -115,7 +121,7 @@ export default function Post({ postData }) {
             size={"md"}
             className="gb-btn"
             _hover={"none"}
-            m={'auto'}
+            m={"auto"}
             borderRadius="full"
           >
             Go Back

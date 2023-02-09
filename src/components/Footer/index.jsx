@@ -1,5 +1,14 @@
 // Importing  Stuffs
-import { Link, Text, Center, Wrap, WrapItem, chakra } from "@chakra-ui/react";
+import {
+  Link,
+  Text,
+  Center,
+  Wrap,
+  WrapItem,
+  chakra,
+  Skeleton,
+  useColorMode,
+} from "@chakra-ui/react";
 import {
   faDiscord,
   faGithub,
@@ -16,6 +25,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Footer() {
   // Variables
   const iconSize = { lg: "30px", sm: "25px", base: "20px" };
+  const { colorMode } = useColorMode();
 
   const icon = [
     {
@@ -60,12 +70,12 @@ export default function Footer() {
   return (
     <>
       {/* Footer Divider Line */}
-      <chakra.hr
-        ml={"-30px"}
-        mr={"-30px"}
+      <Skeleton
         h={"2px"}
-        mb={4}
-        mt={4}
+        endColor={colorMode === "dark" ? "light" : "dark"}
+        startColor={colorMode === "dark" ? "light" : "dark"}
+        mb={"1%"}
+        mt={"1%"}
       />
 
       {/* Made By text */}

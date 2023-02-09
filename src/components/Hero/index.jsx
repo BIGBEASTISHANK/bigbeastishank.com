@@ -1,8 +1,11 @@
 // Importing Stuffs
-import { Box, Heading, Text, chakra } from "@chakra-ui/react";
+import { Box, Heading, Text, Skeleton, useColorMode } from "@chakra-ui/react";
 import React from "react";
 
 export default function Hero() {
+  // Variables
+  const { colorMode } = useColorMode();
+  
   // Returning Html
   return (
     <>
@@ -45,7 +48,13 @@ export default function Hero() {
           </Text>
         </Box>
 
-        <chakra.hr ml={"-30px"} mr={"-30px"} h={"20px"} mb={4} mt={4} />
+        <Skeleton
+          h={"2px"}
+          endColor={colorMode === "dark" ? "light" : "dark"}
+          startColor={colorMode === "dark" ? "light" : "dark"}
+          mb={"1%"}
+          mt={"1%"}
+        />
       </Box>
     </>
   );
