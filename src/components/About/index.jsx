@@ -38,7 +38,7 @@ export default function About() {
             The programming languages I know are: HTML, CSS, JavaScript, Python, Sass, C#.
           </Text>
           <Text textAlign={"center"}>
-            The Softwares I use in my daily projects are: VS Codium, Unity, Brave, Spotify, Discord.
+            The Softwares I use in my daily projects are: VS Codium, Unity, Godot, Brave, Kdenlive, Krita, Spotify, Discord.
           </Text>
         </Box>
       </Box>
