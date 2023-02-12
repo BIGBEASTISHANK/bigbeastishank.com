@@ -87,8 +87,8 @@ export default function Projects() {
       link: "https://github.com/BIGBEASTISHANK/flask-website",
       altbtnttl: "View Website",
       altbtnlink: "https://bigbeastishank.herokuapp.com/",
-      htags: "Python Flask",
-      tags: ["Python", "Flask"],
+      htags: "Python Flask Website",
+      tags: ["Python", "Flask", "Website"],
     },
 
     {

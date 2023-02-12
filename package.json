@@ -1,6 +1,6 @@
 {
   "name": "bigbeastishank",
-  "version": "1.0",
+  "version": "3.0",
   "private": false,
   "scripts": {
     "dev": "next dev",
@@ -16,10 +16,10 @@
     "@chakra-ui/system": "^1.9.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/free-regular-svg-icons": "^5.15.4",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.1.16",
     "date-fns": "^2.28.0",
     "framer-motion": "^5",

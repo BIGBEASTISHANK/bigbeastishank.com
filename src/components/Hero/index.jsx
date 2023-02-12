@@ -18,7 +18,7 @@ export default function Hero() {
           mb={{ lg: "20px", md: "15px" }}
         >
           <Text className="hero-heading" color={"primary"}>
-            Welcome To my Blog-Portfolio Site
+            Welcome To My Blog & Portfolio Site
           </Text>
         </Heading>
 
