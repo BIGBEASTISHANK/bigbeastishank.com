@@ -5,7 +5,7 @@ import React from "react";
 export default function Hero() {
   // Variables
   const { colorMode } = useColorMode();
-  
+
   // Returning Html
   return (
     <>
@@ -36,15 +36,15 @@ export default function Hero() {
         >
           <Text textAlign={"justify"}>
             Welcome to my personal portfolio and blog website! My name is
-            Ishank, but you can call me BIGBEASTISHANK. I am a 17-year-old
-            developer with a passion for creating innovative and impactful
-            technology solutions. On this site, you&apos;ll find a showcase of
-            my work, including my latest projects and contributions to the tech
-            community. My blog will give you a glimpse into my thoughts and
-            experiences as a young developer, covering everything from the
-            latest developments in the tech world to tips and tricks for
-            aspiring developers. Thank you for visiting and I hope you enjoy
-            exploring my website!
+            Pranjal aka Ishank S/O Mr. Manish Kumar, but you can call me
+            BIGBEASTISHANK. I am a 17-year-old developer with a passion for
+            creating innovative and impactful technology solutions. On this
+            site, you&apos;ll find a showcase of my work, including my latest
+            projects and contributions to the tech community. My blog will give
+            you a glimpse into my thoughts and experiences as a young developer,
+            covering everything from the latest developments in the tech world
+            to tips and tricks for aspiring developers. Thank you for visiting
+            and I hope you enjoy exploring my website!
           </Text>
         </Box>
 
