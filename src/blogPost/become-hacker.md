@@ -4,7 +4,7 @@ description: "Hacking has been a hot topic in recent years and has caught the at
 date: "2023-02-06"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
-readtime: "7 min"
+readtime: "3 min"
 htags: "Hacker Hacking Cyber Security Ethical Hacker"
 tags: ["Hacker", "Hacking", "Cyber Security", "Ethical Hacker"]
 ---
