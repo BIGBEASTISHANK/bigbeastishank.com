@@ -1,17 +1,17 @@
 ---
-title: "How to become a hacker!!!"
+title: "How to become a hacker?"
 description: "Hacking has been a hot topic in recent years and has caught the attention of many aspiring tech enthusiasts. Hacking requires a combination of technical skills and a deep understanding of computer systems and networks. Whether you want to become a professional ethical hacker or just want to expand your knowledge, this blog will provide you with a roadmap to help you achieve your goals. So, let's dive into the exciting world of hacking and learn how to become a successful hacker."
 date: "2023-02-06"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
-readtime: "3 min"
+readtime: "5 min"
 htags: "Hacker Hacking Cyber Security Ethical Hacker"
 tags: ["Hacker", "Hacking", "Cyber Security", "Ethical Hacker"]
 ---
 
 # ## Learning Part...
 
-## Level-1: RESEARCH AND RESOURCES
+## # Level-1: RESEARCH AND RESOURCES
 
 - The Art of Googling
 - Never give up Attitude, Patience and Consistency.
@@ -20,7 +20,7 @@ tags: ["Hacker", "Hacking", "Cyber Security", "Ethical Hacker"]
 - Keep up with News and Updates in Cybersec field, what type of new attacks are happening.
 - Find Courses and Books that will teach you specific topics in-depth.
 
-## Level-2: FUNDAMENTALS
+## # Level-2: FUNDAMENTALS
 
 ### 1. LINUX BASICS
 
@@ -79,7 +79,7 @@ tags: ["Hacker", "Hacking", "Cyber Security", "Ethical Hacker"]
 - Tunneling
 - Network Sevice Vulnerabilities
 
-## Level-3: TOOLS
+## # Level-3: TOOLS
 
 - Metasploit
 - Nmap
@@ -92,7 +92,7 @@ tags: ["Hacker", "Hacking", "Cyber Security", "Ethical Hacker"]
 - OWASP ZAP
 - theHarvester
 
-## Level-4: VULNERABLE MACHINE
+## # Level-4: VULNERABLE MACHINE
 
 - OverTheWire
 - DVWA
@@ -135,17 +135,18 @@ The second path allows applicants with at least 2 years of previous information 
 the course and go directly to taking the certification exam. Applicants must first submit evidence of their previous
 experience and should have knowledge in the following fields:
 
-* Information security and ethical hacking
-* Reconnaissance techniques
-* System hacking phases and attack techniques
-* Network and perimeter hacking
-* Web application hacking
-* Wireless network hacking
-* Mobile platform, IoT, and operational technology (OT) hacking
-* Cloud computing
-* Cryptography
+- Information security and ethical hacking
+- Reconnaissance techniques
+- System hacking phases and attack techniques
+- Network and perimeter hacking
+- Web application hacking
+- Wireless network hacking
+- Mobile platform, IoT, and operational technology (OT) hacking
+- Cloud computing
+- Cryptography
 
 ### 2) Course Duration:
+
 EC-Council has designed this course as a bootcamp to accelerate your journey to becoming a C|EH.
 \
 The 5-day, 40-hour program is designed to maximize learning and get you ready for action as soon as possible.
@@ -157,6 +158,7 @@ Once you pass the C|EH exam, you'll have the opportunity to continue sharpening 
 in the field of ethical hacking with the C|EH (Master) credential.
 
 ### 3) The Certified Ethical Hacker (Master) Credential:
+
 The C|EH (Master) certification is the next step for top C|EHs.
 \
 Those who earn the C|EH (Master) credential have proven their proficiency, confidence, and in-depth comprehension
@@ -172,22 +174,13 @@ In order to earn the C|EH (Master) certification, participants must pass both th
 
 ---
 
-## Sources
+## # Sources
+
 - [Practical Ethical Hacking Resources](https://github.com/TCM-Course-Resources/Practical-Ethical-Hacking-Resources)
 - [Hacking Cource Playlist](https://www.youtube.com/playlist?list=PLLKT__MCUeixqHJ1TRqrHsEd6_EdEvo47)
 - [Awsome Red Teaming](https://github.com/yeyintminthuhtut/Awesome-Red-Teaming)
 - [Roadmap](https://youtu.be/u4VWQZ8KLmI?t=504)
 
 ---
-
-#
-
-##
-
-###
-
-####
-
-#####
 
 ###### Thanks For reading

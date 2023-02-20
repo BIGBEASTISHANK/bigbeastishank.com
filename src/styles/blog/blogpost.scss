@@ -14,25 +14,27 @@ $dark: #1a202c;
       overflow: auto;
       margin-top: 10px;
       margin-left: 3%;
+      margin-right: 3%;
 
       code {
         font-weight: 900;
         background-color: transparent;
         border-radius: 0;
-        padding: 0x;
+        padding-left: 10px;
+        padding-right: 10px;
       }
     }
 
     pre::-webkit-scrollbar {
-      height: 10px;
+      height: 5px;
     }
 
     code {
       font-weight: 900;
       background-color: rgba(0, 0, 0, 0.35);
       border-radius: 8px;
-      padding: 2px;
-      padding-top: 6px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
     h1 {
@@ -49,6 +51,7 @@ $dark: #1a202c;
       color: $primary;
       margin-top: 2%;
       margin-bottom: 2px;
+      margin-right: 2%;
       margin-left: 2%;
     }
 
@@ -58,6 +61,7 @@ $dark: #1a202c;
       font-weight: 700;
       font-size: 25px;
       margin-left: 2.5%;
+      margin-right: 2.5%;
     }
 
     h6 {
@@ -70,6 +74,7 @@ $dark: #1a202c;
     p {
       font-size: 18px;
       text-align: justify;
+      margin-right: 3%;
       margin-left: 3%;
     }
 
@@ -101,10 +106,7 @@ $dark: #1a202c;
     }
 
     img{
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 1%;
     }
   }
 }

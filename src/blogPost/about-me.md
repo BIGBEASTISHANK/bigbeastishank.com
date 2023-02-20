@@ -4,12 +4,12 @@ description: "Here, I'll be sharing my experiences and insights on how I got sta
 date: "2022-01-18"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
-readtime: "7 min"
+readtime: "10 min"
 htags: "About me Life Journey Fiverr Free Lancing"
 tags: ["About me", "Life Journey", "Fiverr", "Free Lancing"]
 ---
 
-# Hmm... lets start
+# # Hmm... lets start
 
 My real name is Pranjal, and my nickname is Ishank. In the year 2018, I was exposed to hacking and coding. That was one of my friends in grade 7th, and he was like a hacker-thinggy. I thought that I could also do those things.
 \
@@ -34,7 +34,7 @@ I started my journey in AI development as my [fuffa ji (uncle)](https://twitter.
 \
 Before taking a break, Bruce made a website for his Discord bot. Which was made on [docusaurus](https://docusaurus.io/), I also tried to make my prsonal website but faield because I was not having enough knowladge od javascript
 
-## In a long break....
+## # In a long break....
 
 I started [fiverr](/fiverr). My gig was to make websites for others, but it didn't succeed. I got only one client, and he is my friend [Himanshu Shekhar](https://www.instagram.com/himanxhhu/).
 \
@@ -44,7 +44,7 @@ In this long break, I left the IT field as everyone needs a break and I took my 
 \
 In this break I downloaded Parrot OS as my main OS.
 
-## After a long break....
+## # After a long break....
 
 I took a break from coding after **Fiverr** and came on **Hacking**. I switched from Windows to Linux. After sticking to **[Parrot Linux](https://parrotsec.org)** for about 1 month, I started distro hoping and I came across **[Arch Linux](https://archlinux.org)**. I used some window manager like **[Xmonad](https://github.com/BIGBEASTISHANK/xmonad-dotfiles-1.0)**, **[Qtile](https://github.com/BIGBEASTISHANK/qtile-dotfiles-3.0)** (this was the WM on which I stayed longest), **[BSPWM](https://github.com/BIGBEASTISHANK/bspwm-dotfiles-1.0)**. By clicking on the name of WM, you can see my configuration. Then I switched to GNOME, which does not require any configuration.
 \
@@ -54,13 +54,13 @@ Around October 2021, I saw Bruce's **main** website and it was made on [Next Js]
 \
 I previously used to learn from **YouTube** (till my React website), but now I learn from **documentation** and **articles**. Youtube surely helps, but as we are teenagers, we just get distracted, so we skip the learning part from YouTube and just copy the codes. We call them [Script kiddie](https://en.wikipedia.org/wiki/Script_kiddie), and I admit I was also a script kiddie, but I learned from my mistakes and switched to docs and articles. In those, you learn more than just how to be a script kiddie. If coding is just your passion, then learn from YouTube (I did that for like two and a half years), but if you want to make a career in programming, learn from **documentation** and **articles** and then take help from **YouTube** when you get stuck in the middle or don't know where to go from that point. I still use YouTube to get a quick start on a new project, then I start reading docs. Directly reading docs is like diving into water without knowing how to swim. I hope you understand.
 
-## Most Used Languages & Overall Stats
+## # Most Used Languages & Overall Stats
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=BIGBEASTISHANK&bg_color=30,e96443,904e95&title_color=fff&text_color=fff&langs_count=10&layout=compact) ![BIGBEASTISHANK's github stats](https://github-readme-stats.vercel.app/api?username=BIGBEASTISHANK&count_private=true&bg_color=30,e96443,904e95&title_color=fff&text_color=fff)
 
 ---
 
-## Persons In my Journey
+## # Persons In my Journey
 
 - [Bruce Mac Gary](https://kushagraraj.me)
 - [Dr Sindhu Bhaskar](https://twitter.com/sinrkb)
@@ -71,7 +71,7 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 
 ---
 
-## Sources
+## # Sources
 
 - [My first website](https://bigbeastishank.github.io/Website-first-try/)
 - [BEAST BOT](https://top.gg/bot/709984874924081174)
@@ -89,15 +89,5 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 - [Script kiddie](https://en.wikipedia.org/wiki/Script_kiddie)
 
 ---
-
-#
-
-##
-
-###
-
-####
-
-#####
 
 ###### Thanks For reading

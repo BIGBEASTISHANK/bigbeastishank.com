@@ -9,43 +9,35 @@ htags: "Unity Game Development Code Snippet"
 tags: ["Unity", "Game Development", "Code Snippet"]
 ---
 
-# Get Started
+# # Get Started
 
 Their is nothing much to tell you can just understand what is written in the code with comments.
 
 ```cs
 // Variables
-/////////////
+ /////////////
 
-private float nextFire;
+ private float nextFire;
 
-[Header("Values")]
-[SerializeField] private float fireRate;
+ [Header("Values")]
+ [SerializeField] private float fireRate;
 
-// References
-//////////////
+ // References
+ //////////////
 
-private void Update()
-{
-    // Executing the command according to fireRate;
-    if (Time.time >= nextFire)
-    {
-        // Your Code here
+ private void Update()
+ {
+     // Executing the command according to fireRate;
+     if (Time.time >= nextFire)
+     {
+         // Your Code here
 
-        // Changing nextFire with fireRate
-        nextFire = Time.time + 1f / fireRate;
-    }
-}
+         // Changing nextFire with fireRate
+         nextFire = Time.time + 1f / fireRate;
+     }
+ }
 ```
 
-#
-
-##
-
-###
-
-####
-
-#####
+---
 
 ###### Thanks For reading
