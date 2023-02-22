@@ -14,13 +14,6 @@ class MyDocument extends Document {
       // Rendring basic html format, if not then I don't know💀
       <Html lang="en">
         <Head>
-          {/* Twitter Start */}
-          <script
-            async
-            src="https://platform.twitter.com/widgets.js"
-            charset="utf-8"
-          ></script>
-          {/* Twitter end */}
 
           {/* Google ads start */}
           <script

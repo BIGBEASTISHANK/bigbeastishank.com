@@ -57,6 +57,11 @@ export default function Updates() {
                 February 22, 2023
               </a>
             </blockquote>{" "}
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
           </Box>
         </Center>
       </Box>
