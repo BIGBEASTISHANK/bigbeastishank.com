@@ -18,7 +18,6 @@ import Head from "next/head";
 import NextLink from "next/link";
 import Date from "../components/date";
 import Hero from "../components/Hero";
-import About from "../components/About";
 import Updates from "../components/Updates";
 import { SearchIcon } from "@chakra-ui/icons";
 import { getSortedPostsData } from "../lib/posts";
@@ -50,18 +49,6 @@ export default function Index({ allPostsData }) {
       <Box>
         {/* Hero section */}
         <Hero />
-
-        {/* About section */}
-        <About />
-
-        {/* Divider */}
-        <Skeleton
-          h={"2px"}
-          endColor={colorMode === "dark" ? "light" : "dark"}
-          startColor={colorMode === "dark" ? "light" : "dark"}
-          mb={"1%"}
-          mt={"1%"}
-        />
 
         {/* Updates section */}
         <Updates />
