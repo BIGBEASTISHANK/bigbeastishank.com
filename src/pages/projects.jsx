@@ -97,7 +97,7 @@ export default function Projects() {
           content="projects, react, python, javascript, html, unity, game"
         />
 
-        <title>Project | BIG BEAST ISHANK</title>
+        <title>V1:Project | BIG BEAST ISHANK</title>
       </Head>
 
       <Box className="project">
