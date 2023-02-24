@@ -31,7 +31,7 @@ export default function About() {
             content="about, gears, software, bigbeastishank, ishank, pranjal"
           />
 
-          <title>About | BIG BEAST ISHANK</title>
+          <title>V1:About | BIG BEAST ISHANK</title>
         </Head>
 
         {/* About me heading */}
