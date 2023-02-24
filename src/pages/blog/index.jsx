@@ -39,7 +39,7 @@ export default function Blog({ allPostsData }) {
           content="articles, blog, news, up-to-date, coding, hacking, linux, programming, developing, coder, hacker, game developer, anonymous"
         />
 
-        <title>Blog | BIG BEAST ISHANK</title>
+        <title>V1:Blog | BIG BEAST ISHANK</title>
       </Head>
 
       <Box className="blog">
