@@ -41,9 +41,9 @@ export default function Index({ allPostsData }) {
         <meta
           property="og:keywords"
           name="keywords"
-          content="home, landing page, header, hero, ishank, pranjal"
+          content="home, landing page, header, hero, ishank, pranjal, bigbeastishank, big beast ishank, BIGBEASTISHANK"
         />
-        <title>Home | BIG BEAST ISHANK</title>
+        <title>V3:Home | BIG BEAST ISHANK</title>
       </Head>
 
       <Box>
@@ -53,8 +53,12 @@ export default function Index({ allPostsData }) {
         {/* Updates section */}
         <Updates />
 
+        {/*################################################################*/}
+        {/*################################################################*/}
+        {/*################################################################*/}
+
         {/* Blog */}
-        <Box className="blog">
+        <Box className="blog" id="blogs">
           {/* Divider */}
           <Skeleton
             h={"2px"}
@@ -185,6 +189,7 @@ export default function Index({ allPostsData }) {
                       fontWeight="700"
                       mb={{ lg: "15px", base: "10px" }}
                       textAlign={"justify"}
+                      pr={"1.5%"}
                     >
                       {item.description}
                     </Text>
@@ -248,6 +253,10 @@ export default function Index({ allPostsData }) {
               </ul>
             ))}
         </Box>
+
+        {/*################################################################*/}
+        {/*################################################################*/}
+        {/*################################################################*/}
       </Box>
     </>
   );

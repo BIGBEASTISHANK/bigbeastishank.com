@@ -5,7 +5,7 @@ date: "2023-02-21"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
 readtime: "3 min"
-htags: "Hacking Wifite Hacker Hack Wifi"
+htags: "Hacking, Wifite, Hacker, Hack, Wifi, "
 tags: ["Hacking", "Wifite", "Hacker", "Hack", "Wifi"]
 ---
 

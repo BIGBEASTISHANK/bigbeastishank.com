@@ -47,7 +47,7 @@ export default function Layout({ children }) {
           />
 
           {/* Title */}
-          <title>BIG BEAST ISHANK</title>
+          <title>V3:BIG BEAST ISHANK</title>
         </Head>
 
         {/* Navbar Component */}

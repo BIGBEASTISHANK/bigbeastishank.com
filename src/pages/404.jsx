@@ -29,7 +29,7 @@ export default function Errorpage() {
             content="error page, 404, error"
           />
 
-          <title>404 Page not Found</title>
+          <title>V3:404 Page not Found</title>
         </Head>
 
         <Center>

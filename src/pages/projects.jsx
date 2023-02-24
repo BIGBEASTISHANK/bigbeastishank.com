@@ -35,8 +35,8 @@ export default function Projects() {
       altbtnttl: "Download",
       altbtnlink:
         "https://github.com/BIGBEASTISHANK/Shimrun-Dash-2D/archive/refs/heads/main.zip",
-      htags: "Unity Game C# Game Dev",
-      tags: ["Unity", "Game", "C#", "Game Dev"],
+      htags: "Unity Game C# Game Development",
+      tags: ["Unity", "Game", "C#", "Game Development"],
     },
     {
       id: "sussy-shooter-3d",
@@ -48,21 +48,21 @@ export default function Projects() {
       altbtnttl: "Download",
       altbtnlink:
         "https://github.com/BIGBEASTISHANK/Sussy-Shooter-3D/archive/refs/heads/main.zip",
-      htags: "Unity Game C# Game Dev Devlog",
-      tags: ["Unity", "Game", "C#", "Game Dev", "Devlog"],
+      htags: "Unity Game C# Game Development Devlog",
+      tags: ["Unity", "Game", "C#", "Game Development", "Devlog"],
     },
     {
       id: "suspicious-runner-3d",
       name: "Suspicious Runner 3D",
       description:
-        "I made my first (kind of) original game. I have posted a devlog on this game too. If you want to see my blog, you can get the link from my GitHub repository. This game is my first step towards becoming a game developer and a developer. I hope you like it. This game is not good at all, but surely I will improve over time.",
+        "I made my first (kind of) original game. I have posted a devlog on this game too. If you want to see my blog, you can get the link from my GitHub repository. This game is my first step towards becoming a Game Developmenteloper and a developer. I hope you like it. This game is not good at all, but surely I will improve over time.",
       date: "2022-01-15",
       link: "https://github.com/BIGBEASTISHANK/Suspicious-Runner-3D",
       altbtnttl: "Download",
       altbtnlink:
         "https://github.com/BIGBEASTISHANK/Suspicious-Runner-3D/archive/refs/heads/main.zip",
-      htags: "Unity Game C# Game Dev Devlog",
-      tags: ["Unity", "Game", "C#", "Game Dev", "Devlog"],
+      htags: "Unity Game C# Game Development Devlog",
+      tags: ["Unity", "Game", "C#", "Game Development", "Devlog"],
     },
     {
       id: "basic-platformer-2d",
@@ -74,8 +74,8 @@ export default function Projects() {
       altbtnttl: "Download",
       altbtnlink:
         "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D/archive/refs/heads/main.zip",
-      htags: "Unity Game C# Game Dev",
-      tags: ["Unity", "Game", "C#", "Game Dev"],
+      htags: "Unity Game C# Game Development",
+      tags: ["Unity", "Game", "C#", "Game Development"],
     },
 
     {
@@ -114,8 +114,8 @@ export default function Projects() {
       altbtnttl: "Download",
       altbtnlink:
         "https://github.com/BIGBEASTISHANK/Beast-Race/archive/refs/heads/main.zip",
-      htags: "Unity Game C# Game Dev",
-      tags: ["Unity", "Game", "C#", "Game Dev"],
+      htags: "Unity Game C# Game Development",
+      tags: ["Unity", "Game", "C#", "Game Development"],
     },
   ];
 
@@ -134,13 +134,13 @@ export default function Projects() {
         <meta
           name="keywords"
           property="og:keywords"
-          content="projects, react, python, javascript, html, unity, game"
+          content="projects, react, python, javascript, html, unity, game, bigbeastishank, big beast ishank, BIGBEASTISHANK"
         />
 
-        <title>Project | BIG BEAST ISHANK</title>
+        <title>V3:Project | BIG BEAST ISHANK</title>
       </Head>
 
-      <Box className="project">
+      <Box className="project" id={"projects"}>
         {/* Project Heading */}
         <Heading
           fontSize={{ lg: "6xl", md: "5xl", sm: "39px", base: "25px" }}

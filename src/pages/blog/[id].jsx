@@ -33,10 +33,10 @@ export default function Post({ postData }) {
           <meta
             property="og:keywords"
             name="keywords"
-            content="blog, content, gaming, coding, programming, ishank, pranjal, sucessfull, fail, pass, website, article, blog"
+            content={"blog, content, gaming, coding, programming, ishank, pranjal, sucessfull, fail, pass, website, article, bigbeastishank, big beast ishank, BIGBEASTISHANK, " + postData.tags}
           />
 
-          <title>{postData.title} | BIG BEAST ISHANK</title>
+          <title>V3:{postData.title} | BIG BEAST ISHANK</title>
         </Head>
 
         {/* Post Title */}

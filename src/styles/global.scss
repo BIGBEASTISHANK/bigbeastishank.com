@@ -14,6 +14,11 @@ $primary: #2e94c5;
 $secondary: #287fca;
 $dark: #1a202c;
 
+// Global
+html {
+  scroll-behavior: smooth;
+}
+
 // Scroll bar
 ::-webkit-scrollbar {
   width: 10px;

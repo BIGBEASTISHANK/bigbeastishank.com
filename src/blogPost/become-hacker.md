@@ -5,7 +5,7 @@ date: "2023-02-06"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
 readtime: "5 min"
-htags: "Hacker Hacking Cyber Security Ethical Hacker"
+htags: "Hacker, Hacking, Cyber Security, Ethical Hacker, "
 tags: ["Hacker", "Hacking", "Cyber Security", "Ethical Hacker"]
 ---
 
