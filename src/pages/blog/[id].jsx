@@ -26,7 +26,7 @@ export default function Post({ postData }) {
             content="blog, content, gaming, coding, programming, ishank, pranjal, sucessfull, fail, pass, website, article, blog"
           />
 
-          <title>{postData.title} | BIG BEAST ISHANK</title>
+          <title>V1:{postData.title} | BIG BEAST ISHANK</title>
         </Head>
 
         {/* Post Title */}
