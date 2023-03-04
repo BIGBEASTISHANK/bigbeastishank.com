@@ -42,22 +42,15 @@ export default function Updates() {
           fontWeight="700"
           textAlign={"center"}
         >
-          If you are exhausted from changing the weights in your home workout
-          equipment and getting demotivated but still have to workout and want
-          to win a street fight, the only 3 things you need are a heavy weight
-          barbell, a boxing bag, and a skipping rope.
+          Currently I am working on a new game that might be completed in a week
+          or so, and I am also learning C++ for the switch I am going to make
+          from Unity to Unreal. Unity uses C#, while Unreal uses C++, and C++
+          will help me more to get a job; almost all the game development
+          companies find C++ coders instead of C#.
           <br />
           <br />
           <Text fontWeight={"1000"} textDecoration={"underline"}>
-            <Link
-            _focus={{ outline: "none" }}
-              href={
-                "https://twitter.com/opishank/status/1629056868256735233?s=20"
-              }
-              target={"_blank"}
-            >
-              -/BIGBEASTISHAK/Twitter@opishank
-            </Link>
+            Date: 5th March 2023
           </Text>
         </Box>
       </Box>
