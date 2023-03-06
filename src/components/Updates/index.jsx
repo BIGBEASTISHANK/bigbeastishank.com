@@ -42,15 +42,12 @@ export default function Updates() {
           fontWeight="700"
           textAlign={"center"}
         >
-          Currently I am working on a new game that might be completed in a week
-          or so, and I am also learning C++ for the switch I am going to make
-          from Unity to Unreal. Unity uses C#, while Unreal uses C++, and C++
-          will help me more to get a job; almost all the game development
-          companies find C++ coders instead of C#.
+          At this point I want to change my name from BIGBEASTISHANK to "Project
+          Abandoneding Ishank", litrally I abandoned one more project.
           <br />
           <br />
           <Text fontWeight={"1000"} textDecoration={"underline"}>
-            Date: 5th March 2023
+            Date: 6th March 2023
           </Text>
         </Box>
       </Box>
