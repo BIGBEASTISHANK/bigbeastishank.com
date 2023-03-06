@@ -35,16 +35,13 @@ export default function Hero() {
           fontWeight="700"
         >
           <Text textAlign={"justify"}>
-            Welcome to my personal portfolio and blog website! My name is
-            Pranjal A.K.A Ishank S/O Mr. Manish Kumar, but you can call me
-            BIGBEASTISHANK. I am a 17-year-old developer with a passion for
-            creating innovative and impactful technology solutions. On this
-            site, you&apos;ll find a showcase of my work, including my latest
-            projects and contributions to the tech community. My blog will give
-            you a glimpse into my thoughts and experiences as a young developer,
-            covering everything from the latest developments in the tech world
-            to tips and tricks for aspiring developers. Thank you for visiting
-            and I hope you enjoy exploring my website!
+            Hello Guys👋, My name is Pranjal A.K.A Ishank S/O Mr. Manish Kumar.
+            I am a 17-year-old developer who loves open source. I am not an
+            expert in any language; I am just good at every language(I Know). I
+            just don&apos;t like sticking to one thing, like always doing web or AI.
+            I always change steam after one project. I go from the web to the
+            game to the AI to the app, and so on. My theory is very weak, but my
+            practical knowledge is much better than yours.
           </Text>
         </Box>
 

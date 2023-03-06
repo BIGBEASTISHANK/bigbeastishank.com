@@ -42,8 +42,8 @@ export default function Updates() {
           fontWeight="700"
           textAlign={"center"}
         >
-          At this point I want to change my name from BIGBEASTISHANK to "Project
-          Abandoneding Ishank", litrally I abandoned one more project.
+          At this point I want to change my name from BIGBEASTISHANK to &quot;Project
+          Abandoneding Ishank&quot;, litrally I abandoned one more project.
           <br />
           <br />
           <Text fontWeight={"1000"} textDecoration={"underline"}>
