@@ -6,7 +6,7 @@ author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
 readtime: "1 min"
 htags: "Unity, Game Development, Code Snippet, "
-tags: ["Unity", "Game Developmentelopment", "Code Snippet"]
+tags: ["Unity", "Game Development", "Code Snippet"]
 ---
 
 # # Get Started

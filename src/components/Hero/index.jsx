@@ -36,12 +36,13 @@ export default function Hero() {
         >
           <Text textAlign={"justify"}>
             Hello Guys👋, My name is Pranjal A.K.A Ishank S/O Mr. Manish Kumar.
-            I am a 17-year-old developer who loves open source. I am not an
-            expert in any language; I am just good at every language(I Know). I
-            just don&apos;t like sticking to one thing, like always doing web or AI.
-            I always change steam after one project. I go from the web to the
-            game to the AI to the app, and so on. My theory is very weak, but my
-            practical knowledge is much better than yours.
+            I am a 17-year-old developer who loves open source & very concerned
+            about privacy.Previously, I was hopping from web development to AI
+            to apps and every other field, but now I am stuck on game
+            development, and I will pursue my career in game development only. I
+            am not an expert in any language, I am just good at every language I
+            Know. My theory is very weak, but my practical knowledge is much
+            better than yours😏(JK).
           </Text>
         </Box>
 
