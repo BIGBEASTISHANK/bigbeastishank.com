@@ -46,7 +46,7 @@ export default function Updates() {
           <br />
           <br />
           <Text fontWeight={"1000"} textDecoration={"underline"}>
-            Date: 6th March 2023
+            Date: 11th March 2023
           </Text>
         </Box>
       </Box>
