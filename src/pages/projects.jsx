@@ -26,6 +26,19 @@ export default function Projects() {
   const { colorMode } = useColorMode();
   const projectData = [
     {
+      id: "drag-your-tires",
+      name: "Drag Your Tires",
+      description:
+        "This is a very simple game in which you can enjoy drifting car on 2 maps.",
+      date: "2023-03-15",
+      link: "https://github.com/BIGBEASTISHANK/Drag-Your-Tires-Project-C23",
+      altbtnttl: "Download",
+      altbtnlink:
+        "https://github.com/BIGBEASTISHANK/Drag-Your-Tires-Project-C23/archive/refs/heads/main.zip",
+      htags: "Unity Game C# Game Development",
+      tags: ["Unity", "Game", "C#", "Game Development"],
+    },
+    {
       id: "shimrun-dash-2d",
       name: "Shimrun Dash 2D",
       description:

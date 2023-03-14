@@ -42,11 +42,23 @@ export default function Updates() {
           fontWeight="700"
           textAlign={"center"}
         >
-          Started a new project, it is realated to cars, I guess I will complete this game!
+          New Devlog Out!!!
+          <br />
+          <Center>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/oyjLm1sqIwc"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </Center>
           <br />
           <br />
           <Text fontWeight={"1000"} textDecoration={"underline"}>
-            Date: 11th March 2023
+            Date: 15th March 2023
           </Text>
         </Box>
       </Box>
