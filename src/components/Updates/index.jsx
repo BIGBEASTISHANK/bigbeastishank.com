@@ -3,7 +3,7 @@ import {
   Box,
   Center,
   Heading,
-  Link,
+  chakra,
   Text,
   useColorMode,
 } from "@chakra-ui/react";
@@ -55,8 +55,8 @@ export default function Updates() {
               allowfullscreen
             ></iframe>
           </Center>
-          <br />
-          <br />
+          <chakra.br userSelect={"none"} />
+          <chakra.br userSelect={"none"} />
           <Text fontWeight={"1000"} textDecoration={"underline"}>
             Date: 15th March 2023
           </Text>

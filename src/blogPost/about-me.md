@@ -6,7 +6,7 @@ author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"
 readtime: "10 min"
 htags: "About me, Life Journey, Fiverr, Freelancing, "
-tags: ["About me", "Life Journey", "Fiverr", "Freelancing,"]
+tags: ["About me", "Life Journey", "Fiverr", "Freelancing"]
 ---
 
 # # Hmm... lets start
