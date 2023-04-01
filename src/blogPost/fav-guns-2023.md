@@ -30,37 +30,19 @@ tags: ["Guns", "Pistols", "Rifles"]
 
 # # Full Length Rifle
 
-## ## HK416 16.5"
+## ## Daniel Defense M4A1
 
-- **Price:** $2,500 - $2,800
-- **Modes of fire:** Semi-Auto, Full-Auto
-- **Caliber:** 5.56 mm x 45
-- **Total Length:** 33.66(in)
-- **Total Width:** 3.07(in)
-- **Total Height:** 9.45(in)
-- **Barrel Length:** 16.5(in)
-- **Sight Radius:** 14.61(in)
-- **Magazine:** 30 + 1
-- **Weapon Weight (w/o magazine):** 7.83(lb)
-- **Magazine Weigt (empty):** 0.56(lb)
-- **Rate of Fire:** 700 - 900
-- [View HK416 16.5(in)](https://hk-usa.com/hk-models/hk416-16-5/)
-
-![hk416-16.5-inch](/img/blog/fav-guns-2023/hk416-16.5-inch.jpg)
-
-## ## Daniel Defense M4A1 RIII
-
-- **Price:** $2,400
+- **Price:** $2,250
 - **Mode of fire:** Semi-Auto
 - **Caliber:** 5.56mm NATO
 - **Muzzle Thread:** 1 ⁄ 2 × 28 TPI (Threads Per Inch)
 - **Barrel Length:** 14.5(in)
-- **Product Weight:** 6.39(lbs)
+- **Product Weight:** 6.74(lbs)
 - **Length:** 31 1/2” – 34 ¾”
 - **Magazine:** 30 + 1 (DD Magazine)
-- [View Daniel Defense M4A1 RIII](https://danieldefense.com/m4a1-riii.html)
+- [View Daniel Defense M4A1 RIII](https://danieldefense.com/m4a1.html)
 
-![ddm4a1riii](/img/blog/fav-guns-2023/ddm4a1riii.jpg)
+![ddm4a1riii](/img/blog/fav-guns-2023/ddm4a1.jpg)
 
 # # Short Barrel Rifle (SBR)
 
@@ -136,7 +118,6 @@ tags: ["Guns", "Pistols", "Rifles"]
 ## # Sources
 
 - [Beretta M9A1](https://www.beretta.com/en-us/m9a1/)
-- [HK416 16.5(in)](https://hk-usa.com/hk-models/hk416-16-5/)
 - [Daniel Defense M4A1 RIII](https://danieldefense.com/m4a1-riii.html)
 - [Daniel Defense MK18](https://danieldefense.com/mk18-sbr.html)
 - [IWI Tavor X95](https://iwi.us/product/tavor-x95-5-56-nato-w16-barrel/)
