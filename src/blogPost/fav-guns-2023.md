@@ -40,9 +40,9 @@ tags: ["Guns", "Pistols", "Rifles"]
 - **Product Weight:** 6.74(lbs)
 - **Length:** 31 1/2” – 34 ¾”
 - **Magazine:** 30 + 1 (DD Magazine)
-- [View Daniel Defense M4A1 RIII](https://danieldefense.com/m4a1.html)
+- [View Daniel Defense M4A1](https://danieldefense.com/m4a1.html)
 
-![ddm4a1riii](/img/blog/fav-guns-2023/ddm4a1.jpg)
+![ddm4a1](/img/blog/fav-guns-2023/ddm4a1.jpg)
 
 # # Short Barrel Rifle (SBR)
 
