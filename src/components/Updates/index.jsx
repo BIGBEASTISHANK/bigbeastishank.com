@@ -1,7 +1,7 @@
 // Importing Stuffs
 import {
   Box,
-  Center,
+  Link,
   Heading,
   chakra,
   Text,
@@ -42,23 +42,25 @@ export default function Updates() {
           fontWeight="700"
           textAlign={"center"}
         >
-          New Devlog Out!!!
+          Please update your Android devices. Currently, all Androids are
+          vulnerable to an attack called "BrutePrint", It is a "Man in the
+          Middle", It makes your finger print unlock useless, although it takes
+          around 2 to 14 hours depending on the number of finger prints you put
+          on your phone. Android doesn't protect your biometric data properly.
+          The hardware required to perform this attack is worth 2300 INR (15
+          dollars). It was tested on the following devices: Xiaomi MI 11 Ultra,
+          Vivo X60 Pro, OnePlus 7 Pro, Oppo Reno Ace, Samsung Galaxy S10+, and
+          OnePlus 5T
           <br />
-          <Center>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/oyjLm1sqIwc"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </Center>
-          <chakra.br userSelect={"none"} />
-          <chakra.br userSelect={"none"} />
+          <br />
           <Text fontWeight={"1000"} textDecoration={"underline"}>
-            Date: 15th March 2023
+            <Link
+              _focus={{ outline: "none" }}
+              href={"/github"}
+              target={"_blank"}
+            >
+              -/BIGBEASTISHAK (28th May, 2023)
+            </Link>
           </Text>
         </Box>
       </Box>

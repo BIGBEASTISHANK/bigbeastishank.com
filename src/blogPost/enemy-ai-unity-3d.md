@@ -1,6 +1,6 @@
 ---
-title: "Making FPS Enemy AI in Unity 3D (2021.3.XXXX)"
-description: "We will explore how to create an FPS (First Person Shooter) Enemy AI (Artificial Intelligence) using Unity 3D game engine. We will cover the implementation of different AI behaviors such as patrol, chase, and attack."
+title: "Making FPS Enemy AI in Unity 3D"
+description: "We will explore how to create an FPS (First Person Shooter) Enemy AI (Artificial Intelligence) using Unity 3D game engine (2021.3.XXXX). We will cover the implementation of different AI behaviors such as patrol, chase, and attack."
 date: "2023-02-24"
 author: "BIGBEASTISHANK"
 authlink: "https://github.com/bigbeastishank"

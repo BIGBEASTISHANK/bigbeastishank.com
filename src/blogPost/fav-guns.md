@@ -1,5 +1,5 @@
 ---
-title: "My Favorite Guns in 2023!"
+title: "My Favorite Guns!"
 description: "In this blog, I will show you the list of guns I like. I have different guns in different categories like bullpups, rifles, pistols, etc. You will get to know all the details of that gun in the blog itself."
 date: "2023-03-30"
 author: "BIGBEASTISHANK"
