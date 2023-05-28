@@ -44,6 +44,9 @@ Game development on Linux is becoming increasingly popular, thanks to the wealth
 In short use **Windows** for Unity or Unreal Engine as they have their best gpu and other support on it & use **Linux** for Godot and other **FOSS** engines as they are tested on Linux and has much better support on it.
 
 ## # PS
+
 Don't even think of MAC, if you do please get some help.
+
+---
 
 ###### Thanks For reading
