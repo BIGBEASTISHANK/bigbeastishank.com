@@ -42,15 +42,7 @@ export default function Updates() {
           fontWeight="700"
           textAlign={"center"}
         >
-          Please update your Android devices. Currently, all Androids are
-          vulnerable to an attack called &quot;BrutePrint&quot;, It is a &quot;Man in the
-          Middle&quot;, It makes your finger print unlock useless, although it takes
-          around 2 to 14 hours depending on the number of finger prints you put
-          on your phone. Android doesn&apos;t protect your biometric data properly.
-          The hardware required to perform this attack is worth 2300 INR (15
-          dollars). It was tested on the following devices: Xiaomi MI 11 Ultra,
-          Vivo X60 Pro, OnePlus 7 Pro, Oppo Reno Ace, Samsung Galaxy S10+, and
-          OnePlus 5T
+          I dont know why but Unity is acting bit werid on Linux and I recently discoverd that my pc can run Unreal Engine. So I am learning unreal engine, I will be making the video of how I learned it and publish my first game from that.
           <br />
           <br />
           <Text fontWeight={"1000"} textDecoration={"underline"}>
@@ -59,7 +51,7 @@ export default function Updates() {
               href={"/github"}
               target={"_blank"}
             >
-              -/BIGBEASTISHAK (28th May, 2023)
+              -/BIGBEASTISHAK (31th Oct, 2023)
             </Link>
           </Text>
         </Box>
