@@ -34,7 +34,3 @@ It is important to note that using Wifite or any other wireless network auditing
 1. You can add your custom password file you can use this command: `$sudo wifite --kill --dict [file_location]`
 2. To turn on your network see this steps when you close the wifite program.
    ![startNM](/img/blog/hack-wifi-wifite/startNM.png)
-
----
-
-###### Thanks For reading

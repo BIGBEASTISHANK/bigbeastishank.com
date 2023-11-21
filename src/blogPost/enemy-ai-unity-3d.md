@@ -212,7 +212,3 @@ private void AttackPlayer()
  // Resetting attack
  private void ResetAttack() { alreadyAttacked = false; }
 ```
-
----
-
-###### Thanks For reading

@@ -87,7 +87,3 @@ I previously used to learn from **YouTube** (till my React website), but now I l
 - [My BSPWM config](https://github.com/BIGBEASTISHANK/bspwm-dotfiles-1.0)
 - [Next Js](https://nextjs.org)
 - [Script kiddie](https://en.wikipedia.org/wiki/Script_kiddie)
-
----
-
-###### Thanks For reading

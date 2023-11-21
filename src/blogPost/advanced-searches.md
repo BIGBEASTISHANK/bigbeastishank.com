@@ -43,7 +43,3 @@ You can use these websites for advance searches
 
 1. [Google advanced search](https://www.google.com/advanced_search)
 2. [Duck Duck Go advanced search](https://search.mediasova.com/en/duckduckgo)
-
----
-
-###### Thanks For reading

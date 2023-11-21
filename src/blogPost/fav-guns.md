@@ -123,7 +123,3 @@ tags: ["Guns", "Pistols", "Rifles"]
 - [IWI Tavor X95](https://iwi.us/product/tavor-x95-5-56-nato-w16-barrel/)
 - [Barrett M82A1](https://barrett.net/products/firearms/model-82a1/)
 - [IWI Tavor TS12](https://iwi.us/product/tavor-ts12/)
-
----
-
-###### Thanks For reading

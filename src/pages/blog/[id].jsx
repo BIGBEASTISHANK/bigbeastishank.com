@@ -2,6 +2,7 @@
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/date";
+import CommentSection from "../../components/CommentSection";
 import NextLink from "next/link";
 import {
   Box,
@@ -10,6 +11,7 @@ import {
   Text,
   Skeleton,
   Link,
+  chakra,
   useMediaQuery,
   useColorMode,
 } from "@chakra-ui/react";
@@ -94,6 +96,54 @@ export default function Post({ postData }) {
         <Box className="content" mb={5}>
           <Box dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </Box>
+
+        {/* Line Change */}
+        <Skeleton
+          h={"2px"}
+          endColor={colorMode === "dark" ? "light" : "dark"}
+          startColor={colorMode === "dark" ? "light" : "dark"}
+          mb={"1%"}
+          mt={"1%"}
+        />
+
+        {/* Comment Section */}
+        <Heading
+          fontSize="40px"
+          fontWeight="1000"
+          textAlign={"center"}
+          mb={{ lg: "20px", md: "15px" }}
+        >
+          <Text className="hero-heading" color={"primary"}>
+            Comments
+          </Text>
+        </Heading>
+
+        <chakra.br userSelect={"none"} />
+
+        <CommentSection post={postData} />
+
+        {/* Line Change */}
+        <Skeleton
+          h={"2px"}
+          endColor={colorMode === "dark" ? "light" : "dark"}
+          startColor={colorMode === "dark" ? "light" : "dark"}
+          mb={"1%"}
+          mt={"1%"}
+        />
+
+        {/* Thanks For reading */}
+        <chakra.br userSelect={"none"} />
+        
+        <Heading
+          fontSize="40px"
+          fontWeight="1000"
+          textAlign={"center"}
+          mb={{ lg: "20px", md: "15px" }}
+        >
+          <Text className="hero-heading" color={"primary"}>
+            Thanks For Reading
+          </Text>
+        </Heading>
 
         {/* Go Back Button */}
         {/* For Mobile and above */}

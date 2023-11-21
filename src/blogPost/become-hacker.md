@@ -180,7 +180,3 @@ In order to earn the C|EH (Master) certification, participants must pass both th
 - [Hacking Cource Playlist](https://www.youtube.com/playlist?list=PLLKT__MCUeixqHJ1TRqrHsEd6_EdEvo47)
 - [Awsome Red Teaming](https://github.com/yeyintminthuhtut/Awesome-Red-Teaming)
 - [Roadmap](https://youtu.be/u4VWQZ8KLmI?t=504)
-
----
-
-###### Thanks For reading

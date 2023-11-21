@@ -37,7 +37,3 @@ Their is nothing much to tell you can just understand what is written in the cod
      }
  }
 ```
-
----
-
-###### Thanks For reading

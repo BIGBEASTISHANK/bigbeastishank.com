@@ -46,7 +46,3 @@ In short use **Windows** for Unity or Unreal Engine as they have their best gpu 
 ## # PS
 
 Don't even think of MAC, if you do please get some help.
-
----
-
-###### Thanks For reading

@@ -18,7 +18,3 @@ Open terminal and enter this command
 then
 
 `$sudo modeprobe vboxdrv`
-
----
-
-###### Thanks For reading
