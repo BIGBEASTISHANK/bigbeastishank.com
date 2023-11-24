@@ -34,7 +34,7 @@ export default function Projects() {
       link: "https://github.com/BIGBEASTISHANK/Drag-Your-Tires-Project-C23",
       altbtnttl: "Download",
       altbtnlink:
-        "https://github.com/BIGBEASTISHANK/Drag-Your-Tires-Project-C23/archive/refs/heads/main.zip",
+        "https://github.com/BIGBEASTISHANK/Drag-Your-Tires/releases/tag/v1.0",
       htags: "Unity Game C# Game Development",
       tags: ["Unity", "Game", "C#", "Game Development"],
     },
@@ -47,7 +47,7 @@ export default function Projects() {
       link: "https://github.com/BIGBEASTISHANK/Shimrun-Dash-2D",
       altbtnttl: "Download",
       altbtnlink:
-        "https://github.com/BIGBEASTISHANK/Shimrun-Dash-2D/archive/refs/heads/main.zip",
+        "https://github.com/BIGBEASTISHANK/Shimrun-Dash-2D/releases/tag/v1.0",
       htags: "Unity Game C# Game Development",
       tags: ["Unity", "Game", "C#", "Game Development"],
     },
@@ -60,7 +60,7 @@ export default function Projects() {
       link: "https://github.com/BIGBEASTISHANK/Sussy-Shooter-3D",
       altbtnttl: "Download",
       altbtnlink:
-        "https://github.com/BIGBEASTISHANK/Sussy-Shooter-3D/archive/refs/heads/main.zip",
+        "https://github.com/BIGBEASTISHANK/Sussy-Shooter-3D/releases/tag/v1.0",
       htags: "Unity Game C# Game Development Devlog",
       tags: ["Unity", "Game", "C#", "Game Development", "Devlog"],
     },
@@ -73,7 +73,7 @@ export default function Projects() {
       link: "https://github.com/BIGBEASTISHANK/Suspicious-Runner-3D",
       altbtnttl: "Download",
       altbtnlink:
-        "https://github.com/BIGBEASTISHANK/Suspicious-Runner-3D/archive/refs/heads/main.zip",
+        "https://github.com/BIGBEASTISHANK/Suspicious-Runner-3D/releases/tag/v1.0",
       htags: "Unity Game C# Game Development Devlog",
       tags: ["Unity", "Game", "C#", "Game Development", "Devlog"],
     },
@@ -86,18 +86,18 @@ export default function Projects() {
       link: "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D",
       altbtnttl: "Download",
       altbtnlink:
-        "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D/archive/refs/heads/main.zip",
+        "https://github.com/BIGBEASTISHANK/Basic-Platformer-2D/releases/tag/v1.0",
       htags: "Unity Game C# Game Development",
       tags: ["Unity", "Game", "C#", "Game Development"],
     },
 
     {
       id: "python-website",
-      name: "Python website using flask",
+      name: "Python website",
       description:
         "I was working on a project with a backend, so I created this personal website in Python but without a backend. This is based on the flask. It is basic HTML and CSS with python logic.",
       date: "2022-01-19",
-      link: "https://github.com/BIGBEASTISHANK/flask-website",
+      link: "https://github.com/BIGBEASTISHANK/python-website",
       altbtnttl: "View Website",
       altbtnlink: "https://bigbeastishank.herokuapp.com/",
       htags: "Python Flask Website",
@@ -110,7 +110,7 @@ export default function Projects() {
       description:
         "This is my Discord bot, 'beast bot'. You can get this on top.gg. It is a multi-purpose bot. If you want to go to its support server",
       date: "2022-01-19",
-      link: "https://github.com/bigbeastishank/discord.py",
+      link: "https://github.com/BIGBEASTISHANK/BBeast-Discord-Bot",
       altbtnttl: "Add To Server",
       altbtnlink: "https://top.gg/bot/709984874924081174/",
       htags: "Python Discord AI Bot",
@@ -126,7 +126,7 @@ export default function Projects() {
       link: "https://github.com/BIGBEASTISHANK/Beast-Race",
       altbtnttl: "Download",
       altbtnlink:
-        "https://github.com/BIGBEASTISHANK/Beast-Race/archive/refs/heads/main.zip",
+        "https://github.com/BIGBEASTISHANK/Beast-Race/releases/tag/v0.0.3",
       htags: "Unity Game C# Game Development",
       tags: ["Unity", "Game", "C#", "Game Development"],
     },
