@@ -26,6 +26,9 @@
     "react-icon": "^1.0.0",
     "sass": "^1.49.10"
   },
+  "engine": {
+	  "node": "18.x"
+  },
   "devDependencies": {
     "eslint": "8.12.0",
     "eslint-config-next": "12.1.3"
