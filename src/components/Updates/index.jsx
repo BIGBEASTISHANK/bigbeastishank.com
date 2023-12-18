@@ -42,7 +42,7 @@ export default function Updates() {
           fontWeight="700"
           textAlign={"center"}
         >
-          I dont know why but Unity is acting bit werid on Linux and I recently discoverd that my pc can run Unreal Engine. So I am learning unreal engine, I will be making the video of how I learned it and publish my first game from that.
+          I am working on a new website, that will be more easy to use and much more beautiful then this one. You can track progress on my <Link _focus={{outline: "none"}} color={"secondary"} href={"/sourcecode"} target={"_blank"}>GitHub</Link>.
           <br />
           <br />
           <Text fontWeight={"1000"} textDecoration={"underline"}>
@@ -51,7 +51,7 @@ export default function Updates() {
               href={"/github"}
               target={"_blank"}
             >
-              -/BIGBEASTISHAK (31th Oct, 2023)
+              -/BIGBEASTISHAK (19th Dec, 2023)
             </Link>
           </Text>
         </Box>
