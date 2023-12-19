@@ -42,7 +42,7 @@ export default function Updates() {
           fontWeight="700"
           textAlign={"center"}
         >
-          I am working on a new website, that will be more easy to use and much more beautiful then this one. You can track progress on my <Link _focus={{outline: "none"}} color={"secondary"} href={"/sourcecode"} target={"_blank"}>GitHub</Link>.
+          I am working on a new website, that will be more easy to use and much more beautiful then this one. You can track progress on my <Link _focus={{ outline: "none" }} color={"secondary"} href={"https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V4"} target={"_blank"}>GitHub</Link>.
           <br />
           <br />
           <Text fontWeight={"1000"} textDecoration={"underline"}>
