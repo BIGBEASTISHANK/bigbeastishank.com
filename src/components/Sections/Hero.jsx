@@ -57,7 +57,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <strong>Hi, I'm Ishank.</strong> A self-taught <strong>Frontend</strong>{" "}
+        <strong>Hi, I'm Ishank.</strong> A self-taught <strong>Frontend Web</strong>{" "}
         & <strong>Game developer.</strong>
       </motion.h1>
 
