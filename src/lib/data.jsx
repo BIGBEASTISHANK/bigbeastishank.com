@@ -7,27 +7,11 @@ import websiteV3 from "@@/public/img/projects/websiteV3.png"
 export const links = [
     {
         name: "Home",
-        hash: "/",
+        urlLink: "#home",
     },
     {
         name: "About",
-        hash: "#about",
-    },
-    {
-        name: "Projects",
-        hash: "#projects",
-    },
-    {
-        name: "Skills",
-        hash: "#skills",
-    },
-    {
-        name: "Experience",
-        hash: "#experience",
-    },
-    {
-        name: "Contact",
-        hash: "#contact",
+        urlLink: "#about",
     },
 ];
 
