@@ -22,6 +22,10 @@ export const navLinks = [
     urlLink: "/#aboutMe",
   },
   {
+    name: "Status",
+    urlLink: "/#status",
+  },
+  {
     name: "Projects",
     urlLink: "/#projects",
   },
