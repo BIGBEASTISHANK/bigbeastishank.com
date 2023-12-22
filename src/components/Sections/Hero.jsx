@@ -4,11 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { BsEye, BsGithub } from "react-icons/bs";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Hero() {
+  // Variable
+
+  // Navbar scroll animation but now working
+  // const { ref } = useSectionInView("Hero", 0.5);
+
+  // Component
   return (
     <section
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-28"
+      // ref={ref}
+      className="max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
       id="home"
     >
       {/* Logo section */}
@@ -30,7 +38,7 @@ export default function Hero() {
               height={"192"}
               quality={"100"}
               priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-[#23A55A] shadow-xl"
             />
           </motion.div>
 
@@ -53,17 +61,17 @@ export default function Hero() {
 
       {/* Intro section */}
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5]"
+        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <strong>Hi, I'm Ishank.</strong> A self-taught <strong>Frontend Web</strong>{" "}
-        & <strong>Game developer.</strong>
+        <strong>Hi, I'm Ishank.</strong> A self-taught{" "}
+        <strong>Frontend Web</strong> & <strong>Game developer.</strong>
       </motion.h1>
 
       {/* Buttons */}
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium select-none"
+        className="flex flex-col sm:flex-row items-center justify-center gap-4 px-3 text-lg font-medium select-none"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{

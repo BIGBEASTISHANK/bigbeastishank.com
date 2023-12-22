@@ -1,15 +1,24 @@
 "use client";
+// Imports
 import { motion } from "framer-motion";
 import SectionHeading from "../Subs/SectionHeading";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
+  // Variables
+
+  // Navbar scroll animation but now working
+  // const { ref } = useSectionInView("About");
+
+  // Component
   return (
     <motion.section
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
+      // ref={ref}
+      className="max-w-[45rem] text-center leading-8 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
-      id="about"
+      id="aboutMe"
     >
       {/* Heading */}
       <SectionHeading>About Me</SectionHeading>
@@ -19,7 +28,7 @@ export default function About() {
         <strong>Frontend Web </strong>&<strong> Game Developer</strong> with a
         passion to create immersive experiences. Skilled in{" "}
         <a
-          className="font-bold hover:text-xl italic"
+          className="font-bold hover:text-xl italic transition-all"
           href="https://unity.com"
           target="_blank"
         >
@@ -27,7 +36,7 @@ export default function About() {
         </a>{" "}
         and currently expanding knowledge with{" "}
         <a
-          className="font-bold hover:text-xl italic"
+          className="font-bold hover:text-xl italic transition-all"
           href="https://unrealengine.com/"
           target="_blank"
         >
