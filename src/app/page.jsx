@@ -7,7 +7,7 @@ import Projects from "@/components/Sections/Projects";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4 h-[5000px]">
+    <main className="flex flex-col items-center px-4">
       <Hero />
       <SectionDivider />
       <About />

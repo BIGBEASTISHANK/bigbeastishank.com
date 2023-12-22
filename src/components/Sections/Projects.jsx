@@ -23,8 +23,8 @@ export default function Projects() {
     >
       {/* Heading */}
       <motion.div
-        initial={{ opacity: 0, x: -500 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.05 }}
         viewport={{ once: true }}
       >
