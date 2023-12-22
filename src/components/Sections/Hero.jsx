@@ -92,7 +92,7 @@ export default function Hero() {
         <Link
           target="_blank"
           href="/sourcecode"
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none hover:scale-110 active:scale-[.9] transition"
+          className="group bg-white dark:bg-white/10 px-7 py-3 flex items-center gap-2 rounded-full border dark:border-white/40 border-gray-400/40 outline-none hover:scale-110 active:scale-[.9] transition"
         >
           View Source{" "}
           <BsEye className="opacity-60 group-hover:translate-x-1 transition" />

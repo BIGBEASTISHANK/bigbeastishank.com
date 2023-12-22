@@ -19,7 +19,7 @@ export default function Contact() {
     <motion.section
       // ref={ref}
       id="contact"
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+      className="mb-10 sm:mb-12 w-[min(100%,38rem)] text-center"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -31,7 +31,7 @@ export default function Contact() {
       </div>
 
       {/* Direct contact */}
-      <p className="text-gray-700 -mt-6">
+      <p className="text-gray-700 dark:text-gray-300 -mt-6">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:ishank@bigbeastishank.com">
           ishank@bigbeastishank.com
@@ -49,15 +49,21 @@ function Form() {
   // On submit
   const [state, handleSubmit] = useForm("mrgravyr");
   if (state.succeeded) {
-    toast.success("Email sent successfully!");
+    toast.success("Email sent successfully!", {
+      style: {
+        borderRadius: "10px",
+        background: "#090E17",
+        color: "#D3D4D5",
+      },
+    });
   }
 
   // Default
   return (
-    <form className="mt-10 flex flex-col" onSubmit={handleSubmit}>
+    <form className="mt-10 flex flex-col dark:text-black" onSubmit={handleSubmit}>
       {/* Name */}
       <input
-        className="h-14 px-4 rounded-lg border border-black/10 transition-all"
+        className="h-14 px-4 rounded-lg border border-black/20 transition-all"
         name="Name:"
         type="name"
         id="Name:"
@@ -69,7 +75,7 @@ function Form() {
 
       {/* Email */}
       <input
-        className="h-14 mt-3 px-4 rounded-lg border border-black/10 transition-all"
+        className="h-14 mt-3 px-4 rounded-lg border border-black/20 transition-all"
         name="Email"
         type="email"
         id="Email"
@@ -81,7 +87,7 @@ function Form() {
 
       {/* Message */}
       <textarea
-        className="h-52 my-3 rounded-lg border border-black/10 p-4 transition-all outline-none"
+        className="h-52 my-3 rounded-lg border border-black/20 p-4 transition-all"
         name="Message"
         id="Message"
         placeholder="Your message"
@@ -93,17 +99,17 @@ function Form() {
       {/* Submit btn */}
       <button
         type="submit"
-        className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 disabled:scale-100 disabled:bg-opacity-65"
+        className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 dark:bg-white/10 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 dark:hover:bg-white/20 active:scale-105 disabled:scale-100"
         disabled={state.submitting}
       >
         {state.submitting ? (
-        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
-      ) : (
-        <>
-          Submit{" "}
-          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
-        </>
-      )}
+          <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+        ) : (
+          <>
+            Submit{" "}
+            <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
+          </>
+        )}
       </button>
     </form>
   );
