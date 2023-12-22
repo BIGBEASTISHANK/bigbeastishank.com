@@ -4,11 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { BsEye, BsGithub } from "react-icons/bs";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Hero() {
+  // Variable
+
+  // Navbar scroll animation but now working
+  // const { ref } = useSectionInView("Hero", 0.5);
+
+  // Component
   return (
     <section
-      className="mb max-w-[50rem] text-center sm:mb-0 scroll-mt-28"
+      // ref={ref}
+      className="max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
       id="home"
     >
       {/* Logo section */}
@@ -57,8 +65,8 @@ export default function Hero() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <strong>Hi, I'm Ishank.</strong> A self-taught <strong>Frontend</strong>{" "}
-        & <strong>Game developer.</strong>
+        <strong>Hi, I'm Ishank.</strong> A self-taught{" "}
+        <strong>Frontend Web</strong> & <strong>Game developer.</strong>
       </motion.h1>
 
       {/* Buttons */}
