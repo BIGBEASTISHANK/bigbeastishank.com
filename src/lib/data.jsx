@@ -15,20 +15,24 @@ import beastRace3D from "@@/public/img/projects/beastRace3D.png";
 export const navLinks = [
   {
     name: "Home",
-    urlLink: "#home",
+    urlLink: "/#home",
   },
   {
     name: "About",
-    urlLink: "#aboutMe",
+    urlLink: "/#aboutMe",
   },
   {
     name: "Projects",
-    urlLink: "#projects",
+    urlLink: "/#projects",
   },
 
   {
     name: "Skills",
-    urlLink: "#skills",
+    urlLink: "/#skills",
+  },
+  {
+    name: "Contact",
+    urlLink: "/#contact",
   },
 ];
 

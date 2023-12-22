@@ -1,7 +1,9 @@
 // Import
 import "@/style/globals.css";
+import { Toaster } from "react-hot-toast";
 import NavBar from "@/components/Sections/NavBar";
 import ActiveSectionProvider from "@/components/Context/ActiveSection";
+import Footer from "@/components/Sections/Footer";
 
 export const metadata = {
   title: "Welcome to BIGBEASTISHANK's Portfolio website",
@@ -20,6 +22,9 @@ export default function RootLayout({ children }) {
         <ActiveSectionProvider>
           <NavBar />
           {children}
+          <Footer />
+
+          <Toaster position="top-right" reverseOrder={false} />
         </ActiveSectionProvider>
       </body>
     </html>

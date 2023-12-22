@@ -54,12 +54,6 @@ export default function About() {
         <br />I not only work on creating websites or games, but I also explore
         the complexity of networking and penetration testing. I find joy in
         securing computer systems. <strong>I use Arch BTW!</strong>
-        <br />
-        <br />
-        <strong>
-          This website is under construction and will be completed soon. View
-          the source code for updates.
-        </strong>
       </p>
     </motion.section>
   );
