@@ -58,9 +58,9 @@ function Form() {
       {/* Name */}
       <input
         className="h-14 px-4 rounded-lg border border-black/10 transition-all"
-        name="name"
+        name="Name:"
         type="name"
-        id="name"
+        id="Name:"
         required
         maxLength={500}
         placeholder="Your full name"
@@ -70,9 +70,9 @@ function Form() {
       {/* Email */}
       <input
         className="h-14 mt-3 px-4 rounded-lg border border-black/10 transition-all"
-        name="email"
+        name="Email"
         type="email"
-        id="email"
+        id="Email"
         required
         maxLength={500}
         placeholder="Your email"
@@ -82,8 +82,8 @@ function Form() {
       {/* Message */}
       <textarea
         className="h-52 my-3 rounded-lg border border-black/10 p-4 transition-all outline-none"
-        name="message"
-        id="message"
+        name="Message"
+        id="Message"
         placeholder="Your message"
         required
         maxLength={5000}
