@@ -21,7 +21,9 @@ export default function About() {
       id="aboutMe"
     >
       {/* Heading */}
-      <SectionHeading>About Me</SectionHeading>
+      <div className="mb-8">
+        <SectionHeading>About Me</SectionHeading>
+      </div>
 
       {/* About me */}
       <p className="mb-3">

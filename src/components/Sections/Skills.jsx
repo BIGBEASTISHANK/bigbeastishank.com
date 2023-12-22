@@ -34,9 +34,21 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.05 }}
         viewport={{ once: true }}
+        className="mb-[1rem]"
       >
-        <SectionHeading>My Skills</SectionHeading>
+        <SectionHeading>Skills</SectionHeading>
       </motion.div>
+
+      {/* Section desc */}
+      <motion.p
+        className="sm:mb-[2.5rem] max-w-[45rem] mx-auto mb-[2rem] text-center"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+          Here are some examples of what I'm capable of.
+      </motion.p>
 
       {/* Skills */}
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">

@@ -27,8 +27,27 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.05 }}
         viewport={{ once: true }}
+        className="mb-[1rem]"
       >
         <SectionHeading>Projects</SectionHeading>
+      </motion.div>
+
+      {/* Section desc */}
+      <motion.div
+        className="sm:mb-[2.5rem] max-w-[45rem] mx-auto mb-[2rem] text-center"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        <p className="block sm:hidden">
+          Explore my projects by clicking on the titles to view detailed project
+          pages.
+        </p>
+        <p className="sm:block hidden">
+          Explore my projects by clicking on the titles to view detailed project
+          pages. For a closer look at project visuals, click on the images.
+        </p>
       </motion.div>
 
       <div>
