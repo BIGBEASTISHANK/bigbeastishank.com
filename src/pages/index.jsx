@@ -13,7 +13,7 @@ export default function index() {
           name="keywords"
           content="home, landing page, header, hero, ishank, pranjal"
         />
-        <title>V2:Home | BIG BEAST ISHANK</title>
+        <title>Home | BIG BEAST ISHANK</title>
       </Head>
       {/* Hero Section */}
       <Hero />

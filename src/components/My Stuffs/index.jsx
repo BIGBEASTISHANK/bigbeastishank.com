@@ -23,9 +23,8 @@ import {
   faSpotify,
   faUnity,
   faWindows,
-  faAndroid,
 } from "@fortawesome/free-brands-svg-icons";
-import { faC, faCode, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { faC, faCode } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function MySkills() {
@@ -65,7 +64,7 @@ export default function MySkills() {
   // Software
   const software = [
     {
-      name: "VSCodium",
+      name: "VSC",
       icon: faCode,
     },
     {
@@ -73,8 +72,8 @@ export default function MySkills() {
       icon: faSpotify,
     },
     {
-      name: "Brave",
-      icon: faGlobe,
+      name: "Opera",
+      icon: faOpera,
     },
     {
       name: "Unity",
@@ -93,8 +92,8 @@ export default function MySkills() {
       icon: faLinux,
     },
     {
-      name: "Android",
-      icon: faAndroid,
+      name: "Windows",
+      icon: faWindows,
     },
   ];
 
