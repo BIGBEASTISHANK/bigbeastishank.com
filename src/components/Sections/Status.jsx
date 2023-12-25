@@ -25,7 +25,7 @@ export default function Status() {
         viewport={{ once: true }}
         className="mb-[1rem]"
       >
-        <SectionHeading>Skills</SectionHeading>
+        <SectionHeading>Status</SectionHeading>
       </motion.div>
 
       {/* Status */}
