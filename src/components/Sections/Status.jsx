@@ -37,18 +37,16 @@ export default function Status() {
         viewport={{ once: true }}
       >
         <p>
-          I made this website and it is completed with the help of{" "}
-          <a
-            href="https://www.youtube.com/@ByteGrad/videos"
-            target="_blank"
-            className="underline"
-          >
-            Byte Grad
-          </a>{" "}
-          but I am not satisfied with it, I will change this website in future.
+          Playing Minecraft and learning networking.
+          <br />
+          IP: <strong>local.bigbeastishank.com</strong>
+          <br />
+          Java port: <strong>50403</strong> | Bedrock port: <strong>3807</strong>
+          <br />
+          Java version: <strong>1.20.4</strong> | Bedrock version: <strong>1.20.40 - 1.20.51</strong>
           <br />
           <br />
-          Current Date: 23 December 2023
+          Current Date: 26 December 2023
         </p>
       </motion.div>
     </section>
