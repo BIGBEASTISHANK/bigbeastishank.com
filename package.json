@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",
+    "@next/third-parties": "^14.0.4",
     "clsx": "^2.0.0",
+    "dotenv": "^16.3.1",
     "framer-motion": "^10.16.16",
     "next": "^14.0.4",
     "react": "^18",
