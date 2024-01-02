@@ -20,10 +20,11 @@ export default function RootLayout({ children }) {
       lang="en"
       className="bg-gray-900 text-gray-100 scroll-smooth h-[1000rem]"
     >
-      <body className={`${inUseFont.className} lg:mx-20 mx-10`}>
+      <body className={`${inUseFont.className}`}>
         {/* Navbar */}
         <Navbar />
-        {children}
+
+        <div className="px-[4%] mt-[8rem]">{children}</div>
       </body>
     </html>
   );

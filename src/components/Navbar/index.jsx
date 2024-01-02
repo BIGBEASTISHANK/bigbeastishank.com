@@ -2,7 +2,7 @@ import { navlinks } from "@/lib/data";
 
 export default function Navbar() {
   return (
-    <div className="my-7 select-none navbar">
+    <div className="my-7 select-none navbar fixed top-0 w-full px-[2%]">
       {/* Navbar background */}
       <div className="bg-gray-800 rounded-full flex py-5 px-7">
         {/* Name */}
