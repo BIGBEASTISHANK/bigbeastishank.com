@@ -1,26 +1,26 @@
 export const navlinks = [
   {
     title: "Home",
-    url: "#",
+    url: "/#",
   },
   {
     title: "About",
-    url: "#about",
+    url: "/#about",
   },
   {
     title: "Games",
-    url: "#games",
+    url: "/#games",
   },
   {
     title: "Websites",
-    url: "#websites",
+    url: "/#websites",
   },
 //   {
 //     title: "Projects",
-//     url: "#projects",
+//     url: "/#projects",
 //   },
   {
     title: "Contacts",
-    url: "#contact",
+    url: "/#contact",
   },
 ];

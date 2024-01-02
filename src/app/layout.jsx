@@ -1,7 +1,7 @@
-import { Patrick_Hand } from "next/font/google";
-import "@/styles/tailwindImport.css";
 import "@/styles/global.scss";
+import "@/styles/tailwindImport.css";
 import Navbar from "@/components/Navbar";
+import { Patrick_Hand } from "next/font/google";
 
 const inUseFont = Patrick_Hand({
   weight: ["400"],
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         {/* Navbar */}
         <Navbar />
 
-        <div className="px-[4%] mt-[8rem]">{children}</div>
+        <div className="px-[4%]">{children}</div>
       </body>
     </html>
   );

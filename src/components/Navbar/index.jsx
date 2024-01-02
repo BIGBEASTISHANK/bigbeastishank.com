@@ -1,13 +1,21 @@
+"use client";
+
 import { navlinks } from "@/lib/data";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   return (
-    <div className="my-7 select-none navbar fixed top-0 w-full px-[2%]">
+    <motion.div
+      className="my-7 select-none navbar fixed top-0 w-full px-[2%] z-[999]"
+      initial={{ y: -110 }}
+      animate={{ y: 1 }}
+      transition={{ delay: 0.2, duration: 0.3, type: "spring", stiffness: 200 }}
+    >
       {/* Navbar background */}
-      <div className="bg-gray-800 rounded-full flex py-5 px-7">
+      <div className="bg-gray-950/60 rounded-full flex py-5 px-7 backdrop-blur-sm">
         {/* Name */}
         <h1 className="md:flex hidden">
-          <a href="/" className="flex text-3xl font-bold pr-7">
+          <a href="/" className="flex text-3xl font-bold mr-7">
             BIGBEASTISHANK
           </a>
         </h1>
@@ -27,6 +35,6 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 }
