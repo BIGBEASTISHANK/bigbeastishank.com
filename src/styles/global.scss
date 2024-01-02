@@ -1,0 +1,21 @@
+/* changing scroll bar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(31 41 55);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+.navitems::-webkit-scrollbar {
+  height: 2px;
+}
+
+.navitems::-webkit-scrollbar-thumb {
+  background-color: rgb(17 24 39);
+}
