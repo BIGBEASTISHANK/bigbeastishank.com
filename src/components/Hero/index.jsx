@@ -39,7 +39,7 @@ export default function Hero() {
         </h1>
 
         <h2 className="xl:text-6xl lg:text-5xl sm:text-4xl text-3xl font-semibold xl:mb-7 lg:mb-6 mb-0">
-          I'm <strong className="text-blue-400 hero_text_stroke">Ishank</strong>
+          I&apos;m <strong className="text-blue-400 hero_text_stroke">Ishank</strong>
         </h2>
 
         <h2 className="xl:text-6xl lg:text-5xl sm:text-4xl text-3xl font-semibold xl:mb-8 lg:mb-7 mb-6">
