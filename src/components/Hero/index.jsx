@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="md:flex xl:pt-10 lg:pt-5 sm:pt-10 mt-16">
+    <div className="md:flex xl:pt-10 lg:pt-5 sm:pt-10 mt-16" id="home">
       {/* Top Image */}
       {/* Images */}
       <motion.div
@@ -18,10 +18,11 @@ export default function Hero() {
       >
         <Image
           src={logo}
+          alt={"logo"}
           className="rounded-full border-2 border-blue-500 sm:h-[16.32rem] sm:w-[16.32rem] h-[15rem] w-[15rem] md:hidden mx-auto mb-10"
         />
       </motion.div>
-      
+
       {/* Texts */}
       <motion.div
         className="my-auto mx-auto text-center md:text-left"
@@ -39,7 +40,8 @@ export default function Hero() {
         </h1>
 
         <h2 className="xl:text-6xl lg:text-5xl sm:text-4xl text-3xl font-semibold xl:mb-7 lg:mb-6 mb-0">
-          I&apos;m <strong className="text-blue-400 hero_text_stroke">Ishank</strong>
+          I&apos;m{" "}
+          <strong className="text-blue-400 hero_text_stroke">Ishank</strong>
         </h2>
 
         <h2 className="xl:text-6xl lg:text-5xl sm:text-4xl text-3xl font-semibold xl:mb-8 lg:mb-7 mb-6">
@@ -81,6 +83,7 @@ export default function Hero() {
       >
         <Image
           src={logo}
+          alt={"logo"}
           className="rounded-full border-2 border-blue-500 xl:h-[30.54rem] xl:w-[30.54rem] lg:h-[23.43rem] lg:w-[23.43rem] md:h-[16.32rem] md:w-[16.32rem] md:flex hidden shadow-2xl"
         />
       </motion.div>
