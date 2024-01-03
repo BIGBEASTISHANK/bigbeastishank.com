@@ -1,9 +1,9 @@
 import "@/styles/global.scss";
 import "@/styles/tailwindImport.css";
 import Navbar from "@/components/Navbar";
-import { Patrick_Hand } from "next/font/google";
+import { Comic_Neue } from "next/font/google";
 
-const inUseFont = Patrick_Hand({
+const inUseFont = Comic_Neue({
   weight: ["400"],
   subsets: ["latin"],
 });

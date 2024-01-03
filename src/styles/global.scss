@@ -12,10 +12,17 @@
   background-color: black;
 }
 
+// Navbar
 .navitems::-webkit-scrollbar {
   height: 2px;
 }
 
 .navitems::-webkit-scrollbar-thumb {
   background-color: rgb(17 24 39);
+}
+
+// Hero section
+.hero_text_stroke {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color:black;
 }
