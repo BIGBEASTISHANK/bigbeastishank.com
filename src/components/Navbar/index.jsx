@@ -18,10 +18,10 @@ export default function Navbar() {
       transition={{ delay: 0.1, duration: 0.3, type: "spring", stiffness: 200 }}
     >
       {/* Navbar background */}
-      <div className="bg-gray-950/60 rounded-full flex py-5 px-7 backdrop-blur-sm shadow-2xl">
+      <div className="bg-gray-950/60 rounded-full flex py-5 px-10 backdrop-blur-sm shadow-2xl">
         {/* Name */}
         <h1 className="md:flex hidden">
-          <a href="/" className="flex text-3xl font-bold mr-7">
+          <a href="/" className="flex text-3xl hover:scale-[1.1] font-bold mr-7 transition-all">
             BIGBEASTISHANK
           </a>
         </h1>

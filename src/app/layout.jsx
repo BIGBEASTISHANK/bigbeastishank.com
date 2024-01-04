@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         {/* Navbar */}
         <Navbar />
 
-        <div className="px-[4%]">{children}</div>
+        {children}
       </body>
     </html>
   );
