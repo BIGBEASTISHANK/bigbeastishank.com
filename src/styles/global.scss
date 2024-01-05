@@ -24,5 +24,15 @@
 // Hero section
 .hero_text_stroke {
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color:black;
+  -webkit-text-stroke-color: black;
+}
+
+.BBILogo {
+  border-radius: 20%;
+  transition: border-radius 0.2s ease-in-out;
+
+  &:hover {
+    scale: 1.2;
+    border-radius: 50%;
+  }
 }

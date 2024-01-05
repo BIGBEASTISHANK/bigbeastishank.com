@@ -12,25 +12,28 @@ const navlinksFont = Patrick_Hand({
 export default function Navbar() {
   return (
     <motion.div
-      className="my-7 select-none navbar fixed top-0 w-full px-[2%] z-[999]"
+      className={`${navlinksFont.className} my-7 select-none navbar fixed top-0 w-full px-[2%] z-[999]`}
       initial={{ y: -110 }}
       animate={{ y: 1 }}
-      transition={{ delay: 0.1, duration: 0.3, type: "spring", stiffness: 200 }}
+      transition={{ delay: 0.2, duration: 0.2, type: "spring", stiffness: 200 }}
     >
       {/* Navbar background */}
       <div className="bg-gray-950/60 rounded-full flex py-5 px-10 backdrop-blur-sm shadow-2xl">
         {/* Name */}
-        <h1 className="md:flex hidden">
-          <a href="/" className="flex text-3xl hover:scale-[1.1] font-bold mr-7 transition-all">
+        <h1 className="md:flex hidden transition-all">
+          <a
+            href="/"
+            className="flex text-3xl hover:scale-[1.1] font-bold mr-7 transition-all"
+          >
             BIGBEASTISHANK
           </a>
         </h1>
 
         {/* Middle space */}
-        <div className="m-auto md:flex hidden" />
+        <div className="m-auto md:flex hidden transition-all" />
 
         {/* Navlinks */}
-        <ul className={`${navlinksFont.className} flex my-auto mx-auto md:mx-0 overflow-hidden overflow-x-auto navitems`}>
+        <ul className="transition-all flex my-auto mx-auto md:mx-0 overflow-hidden overflow-x-auto navitems">
           {navlinks.map((data) => (
             <li
               key={data.title}
