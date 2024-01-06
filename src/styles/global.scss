@@ -22,7 +22,7 @@
 }
 
 // Hero section
-.hero_text_stroke {
+.text-stroke {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
@@ -34,5 +34,21 @@
   &:hover {
     scale: 1.2;
     border-radius: 50%;
+  }
+}
+
+// About
+.text-stroke-sm {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.pfp {
+  border-radius: 50% 50% 50% 50% / 30% 30% 30% 30%;
+  transition: border-radius 0.2s ease-in-out;
+
+  &:hover {
+    scale: 1.1;
+    border-radius: 80% 80% 80% 80% / 30% 30% 30% 30%;
   }
 }
