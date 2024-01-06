@@ -61,9 +61,9 @@ export default function About({
               with Unreal Engine.
             </p>
             <p>
-              I not only work on creating websites or games, but I also explore
+              I not only work on creating websites & games, but I also explore
               the complexity of networking and penetration testing. I find joy
-              in securing computer systems. I use Arch BTW!
+              in securing computer systems & networks. I use Arch BTW!
             </p>
           </motion.div>
 
@@ -82,8 +82,8 @@ export default function About({
             </a>
 
             {/* Websites */}
-            <a href="/#websites">
-              <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-10 px-6 py-1 rounded-full bg-gray-900/80 outline-none transition-all">
+            <a href="/#websites" className="backdrop-blur-sm">
+              <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-10 px-6 py-1 rounded-full bg-gray-900/30 outline-none transition-all">
                 Websites
               </button>
             </a>
