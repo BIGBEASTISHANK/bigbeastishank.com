@@ -1,3 +1,3 @@
 export function HorizontalSeprator({ customTWClass = "" }) {
-  return <div className={`bg-gray-600 py-[0.01rem] ${customTWClass}`} />;
+  return <div className={`bg-gray-900 py-[0.02rem] ${customTWClass}`} />;
 }

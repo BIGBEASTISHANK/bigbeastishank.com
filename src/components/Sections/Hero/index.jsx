@@ -35,7 +35,7 @@ export default function Hero({ customTWClass = "" }) {
           <Image
             src={BBILogo}
             alt={"BBILogo"}
-            className="BBILogo select-none mx-auto mb-5 border-2 border-blue-500 sm:h-[16rem] sm:w-[16rem] h-[13rem] w-[13rem] shadow-2xl  transition-all"
+            className="BBILogo select-none mx-auto mb-5 border-2 border-blue-500 sm:h-[16rem] sm:w-[16rem] h-[13rem] w-[13rem] shadow-2xl"
           />
         </motion.div>
 
@@ -92,7 +92,7 @@ export default function Hero({ customTWClass = "" }) {
         <Image
           src={BBILogo}
           alt={"BBILogo"}
-          className="BBILogo select-none border-2 border-blue-500 xl:h-[30.54rem] xl:w-[30.54rem] lg:h-[23.43rem] lg:w-[23.43rem] md:h-[16rem] md:w-[16rem] shadow-2xl  transition-all"
+          className="BBILogo select-none border-2 border-blue-500 xl:h-[30.54rem] xl:w-[30.54rem] lg:h-[23.43rem] lg:w-[23.43rem] md:h-[16rem] md:w-[16rem] shadow-2xl"
         />
       </motion.div>
     </div>

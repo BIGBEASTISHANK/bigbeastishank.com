@@ -28,8 +28,9 @@
 }
 
 .BBILogo {
+  scale: 1;
   border-radius: 20%;
-  transition: border-radius 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     scale: 1.2;
@@ -45,7 +46,7 @@
 
 .pfp {
   border-radius: 50% 50% 50% 50% / 30% 30% 30% 30%;
-  transition: border-radius 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     scale: 1.1;
