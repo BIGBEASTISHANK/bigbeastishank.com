@@ -2,17 +2,18 @@ import { Inter } from "next/font/google";
 import {
   FaSteam,
   FaGithub,
+  FaReddit,
+  FaTwitch,
   FaTwitter,
   FaYoutube,
   FaDiscord,
   FaSpotify,
   FaSnapchat,
+  FaFacebook,
   FaInstagram,
   FaLinkedinIn,
-  FaFacebook,
-  FaReddit,
-  FaTwitch,
 } from "react-icons/fa";
+import { TbBrandFiverr } from "react-icons/tb";
 
 const inUseFont = Inter({
   weight: ["400"],
@@ -30,11 +31,11 @@ export default function Footer() {
     <footer
       className={`${inUseFont.className} flex flex-col bg-gray-900/70 backdrop-blur-sm py-5 justify-center items-center text-center`}
     >
-      <small className="mb-2 block md:text-base text-sm">
+      <small className="mb-2 block md:text-base text-sm mx-5">
         &copy; 2023 Ishank. All rights reserved.
       </small>
 
-      <p className="md:text-lg text-base mb-4 text-center">
+      <p className="md:text-lg text-base mb-4 text-center mx-5">
         This website built by{" "}
         <a href="/github" target="_blank" className="underline">
           Ishank
@@ -47,7 +48,7 @@ export default function Footer() {
       </p>
 
       {/* Links */}
-      <div className="md:text-2xl text-xl grid grid-flow-col gap-3">
+      <div className="md:text-2xl text-xl flex flex-wrap gap-3 justify-center mx-10">
         {/* Github */}
         <a href="/github" target="_blank">
           <FaGithub />
@@ -56,6 +57,11 @@ export default function Footer() {
         {/* Linkedin */}
         <a href="/linkedin" target="_blank">
           <FaLinkedinIn />
+        </a>
+
+        {/* Fiverr */}
+        <a href="/fiverr" target="_blank">
+          <TbBrandFiverr />
         </a>
 
         {/* Spotify */}
@@ -74,7 +80,7 @@ export default function Footer() {
         </a>
 
         {/* Snapchat */}
-        <a href="/Snapchat" target="_blank">
+        <a href="/snapchat" target="_blank">
           <FaSnapchat />
         </a>
 
