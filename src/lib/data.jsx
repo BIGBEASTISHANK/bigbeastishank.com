@@ -12,6 +12,7 @@ import beastRace3D from "@@/public/img/projects/games/beastRace3D.png";
 import bbiDotComV3 from "@@/public/img/projects/websites/bbiDotComV3.png";
 import bbiDotComV2 from "@@/public/img/projects/websites/bbiDotComV2.png";
 import bbiDotComV1 from "@@/public/img/projects/websites/bbiDotComV1.png";
+import bbiDotComV4 from "@@/public/img/projects/websites/bbiDotComV4.png";
 import pythonWebsiteFlask from "@@/public/img/projects/websites/pythonWebsiteFlask.png";
 
 // Others Projects
@@ -108,6 +109,15 @@ export const gameProjects = [
 
 // Websites
 export const websiteProjects = [
+  // bigbeastishank.com v4
+  {
+    title: "BBI Portfolio Site V4",
+    description:
+      "The website where I showcased my projects in center format.",
+    imageUrl: bbiDotComV4,
+    projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V4",
+  },
+
   // bigbeastishank.com v3
   {
     title: "BBI Blog Site",
