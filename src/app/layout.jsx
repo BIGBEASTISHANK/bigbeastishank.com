@@ -17,6 +17,34 @@ export const metadata = {
   title: "BIGBEASTISAHNK portfolio",
   description:
     "On this website, you will find blogs and projects made by Ishank.",
+  keywords: [
+    "Next.js",
+    "React",
+    "JavaScript",
+    "Web Development",
+    "Game development",
+    "C++",
+    "Unreal Engine",
+    "Unity",
+  ],
+  images: "/img/pfp.png",
+
+  openGraph: {
+    title: "BIGBEASTISAHNK portfolio",
+    description:
+      "On this website, you will find blogs and projects made by Ishank.",
+    keywords: [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Web Development",
+      "Game development",
+      "C++",
+      "Unreal Engine",
+      "Unity",
+    ],
+    images: "/img/pfp.png",
+  },
 };
 
 export default function RootLayout({ children }) {
