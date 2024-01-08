@@ -91,7 +91,7 @@ export default function About({ customTWClass = "" }) {
 
             {/* Websites */}
             <a href="/#websites" className="backdrop-blur-sm">
-              <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-10 px-6 py-1 rounded-full bg-gray-900/30 outline-none transition-all drop-shadow-xl">
+              <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-10 px-[1.65rem] py-1 rounded-full bg-gray-900/30 outline-none transition-all drop-shadow-xl">
                 Websites{" "}
                 <CgWebsite className="my-auto ml-3 group-hover:scale-[1.1] group-active:scale-[0.8] transition-all text-white" />
               </button>

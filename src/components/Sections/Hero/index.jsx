@@ -63,7 +63,7 @@ export default function Hero({ customTWClass = "" }) {
 
           {/* Linkedin */}
           <a href="/linkedin" className="backdrop-blur-sm" target="_blank">
-            <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-9 px-8 py-1 rounded-full bg-gray-900/30 outline-none transition-all drop-shadow-xl">
+            <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-9 px-[1.625rem] py-1 rounded-full bg-gray-900/30 outline-none transition-all drop-shadow-xl">
               Linkedin{" "}
               <FaLinkedin className="my-auto ml-3 group-hover:scale-[1.1] group-active:scale-[0.8] transition-all text-white" />
             </button>
