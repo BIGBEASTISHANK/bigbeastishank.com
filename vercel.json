@@ -1,0 +1,64 @@
+{
+  "redirects": [
+    {
+      "source": "/email",
+      "destination": "mailto:ishank@bigbeastishank.com"
+    },
+    {
+      "source": "/github",
+      "destination": "https://github.com/bigbeastishank"
+    },
+    {
+      "source": "/linkedin",
+      "destination": "https://linkedin.com/in/bigbeastishank"
+    },
+    {
+      "source": "/spotify",
+      "destination": "https://open.spotify.com/user/n37h63t5acey8z9kqu3dwjp1l"
+    },
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/WdeHDmwKFn"
+    },
+    {
+      "source": "/instagram",
+      "destination": "https://instagram.com/bigbeastishank"
+    },
+    {
+      "source": "/snapchat",
+      "destination": "https://snapchat.com/add/bigbeastishank"
+    },
+    {
+      "source": "/steam",
+      "destination": "https://steamcommunity.com/id/bigbeastishank"
+    },
+    {
+      "source": "/twitter",
+      "destination": "https://twitter.com/bigbeastishank"
+    },
+    {
+      "source": "/facebook",
+      "destination": "https://www.facebook.com/bigbeastishank"
+    },
+    {
+      "source": "/youtube",
+      "destination": "https://www.youtube.com/c/BIGBEASTISHANK"
+    },
+    {
+      "source": "/reddit",
+      "destination": "https://www.reddit.com/user/bigbeastishank"
+    },
+    {
+      "source": "/twitch",
+      "destination": "https://www.twitch.tv/bigbeastishank/"
+    },
+    {
+      "source": "/sourcecode",
+      "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V5"
+    },
+    {
+      "source": "/sc",
+      "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V5"
+    }
+  ]
+}

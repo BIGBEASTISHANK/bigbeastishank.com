@@ -6,7 +6,7 @@ export default function ScrollProgressBar({ customTWClass = "" }) {
 
   return (
     <motion.div
-      className={`${customTWClass}`}
+      className={`${customTWClass} z-[10]`}
       style={{ scaleX: scrollYProgress }}
     />
   );

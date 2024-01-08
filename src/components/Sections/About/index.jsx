@@ -10,14 +10,14 @@ export default function About({ customTWClass = "" }) {
     <div className={`flex flex-col ${customTWClass}`} id="about">
       {/* Title */}
       <motion.a
-        className="mx-auto flex text-center md:mb-[3rem] mb-[1.5rem] lg:text-8xl md:text-7xl sm:text-6xl text-5xl text-stroke drop-shadow-2xl font-black"
+        className="mx-auto flex text-center md:mb-[3rem] mb-[1.5rem] lg:text-8xl md:text-7xl sm:text-6xl text-5xl text-stroke drop-shadow-3xl font-black"
         href="/#about"
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.4 }}
         viewport={{ once: true }}
       >
-        About Me
+        About me
       </motion.a>
 
       {/* Main Context */}
@@ -83,7 +83,7 @@ export default function About({ customTWClass = "" }) {
           >
             {/* About */}
             <a href="/#games">
-              <button className="group flex text-black border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] lg:px-12 px-8  active:scale-[0.9] py-1 rounded-full outline-none bg-blue-600 transition-all">
+              <button className="group flex text-black border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] lg:px-12 px-8  active:scale-[0.9] py-1 rounded-full outline-none bg-blue-600 transition-all drop-shadow-xl">
                 Games{" "}
                 <IoGameController className="my-auto ml-3 group-hover:scale-[1.1] group-active:scale-[0.8] transition-all" />
               </button>
@@ -91,7 +91,7 @@ export default function About({ customTWClass = "" }) {
 
             {/* Websites */}
             <a href="/#websites" className="backdrop-blur-sm">
-              <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-10 px-6 py-1 rounded-full bg-gray-900/30 outline-none transition-all">
+              <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-10 px-6 py-1 rounded-full bg-gray-900/30 outline-none transition-all drop-shadow-xl">
                 Websites{" "}
                 <CgWebsite className="my-auto ml-3 group-hover:scale-[1.1] group-active:scale-[0.8] transition-all text-white" />
               </button>

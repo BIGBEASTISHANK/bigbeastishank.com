@@ -2,8 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import BBILogo from "@@/public/img/BBILogo.png";
-import { IoMdContact } from "react-icons/io";
-import { FaArrowAltCircleDown } from "react-icons/fa";
+import { FaArrowAltCircleDown, FaLinkedin } from "react-icons/fa";
 
 export default function Hero({ customTWClass = "" }) {
   return (
@@ -39,36 +38,34 @@ export default function Hero({ customTWClass = "" }) {
           />
         </motion.div>
 
-        <h1 className="xl:text-8xl lg:text-7xl md:text-6xl sm:text-[3.5rem] text-[3rem] xl:mb-7 sm:mb-6 mb-3 font-black drop-shadow-2xl text-stroke transition-all">
+        <h1 className="xl:text-8xl lg:text-7xl md:text-6xl sm:text-[3.5rem] text-[3rem] xl:mb-7 sm:mb-6 mb-3 font-black drop-shadow-3xl text-stroke transition-all">
           HI👋
         </h1>
 
         <h2 className="xl:text-6xl lg:text-5xl sm:text-4xl text-3xl font-semibold xl:mb-7 lg:mb-6 mb-0 transition-all">
-          I&apos;m{" "}
-          <strong className="text-blue-400 text-stroke">Ishank</strong>
+          I&apos;m <strong className="text-blue-400 text-stroke">Ishank</strong>
         </h2>
 
         <h2 className="xl:text-6xl lg:text-5xl sm:text-4xl text-3xl font-semibold xl:mb-8 lg:mb-7 mb-6 transition-all">
           <strong className="text-blue-400 text-stroke">Web</strong> &{" "}
-          <strong className="text-blue-400 text-stroke">Game</strong>{" "}
-          developer
+          <strong className="text-blue-400 text-stroke">Game</strong> developer
         </h2>
 
         {/* Buttons */}
         <div className="select-none lg:gap-6 gap-3 flex sm:flex-row flex-col md:justify-normal justify-center items-center">
           {/* About */}
           <a href="/#about">
-            <button className="group flex text-black border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] lg:px-8 px-5  active:scale-[0.9] py-1 rounded-full outline-none bg-blue-600 transition-all">
+            <button className="group flex text-black border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] lg:px-5 px-5  active:scale-[0.9] py-1 rounded-full outline-none bg-blue-600 transition-all drop-shadow-xl">
               About Me{" "}
               <FaArrowAltCircleDown className="my-auto ml-3 group-hover:scale-[1.1] group-active:scale-[0.8] transition-all" />
             </button>
           </a>
 
-          {/* Contact me */}
-          <a href="/#contact" className="backdrop-blur-sm">
-            <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-6 px-3 py-1 rounded-full bg-gray-900/30 outline-none transition-all">
-              Contact Me{" "}
-              <IoMdContact className="my-auto ml-3 group-hover:scale-[1.1] group-active:scale-[0.8] transition-all text-white" />
+          {/* Linkedin */}
+          <a href="/linkedin" className="backdrop-blur-sm" target="_blank">
+            <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-9 px-8 py-1 rounded-full bg-gray-900/30 outline-none transition-all drop-shadow-xl">
+              Linkedin{" "}
+              <FaLinkedin className="my-auto ml-3 group-hover:scale-[1.1] group-active:scale-[0.8] transition-all text-white" />
             </button>
           </a>
         </div>

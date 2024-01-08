@@ -15,8 +15,14 @@ module.exports = {
       },
 
       screens: {
-        'projectW': "834px",
+        projectW: "834px",
         // => @media (min-width: 834px) { ... }
+      },
+
+      dropShadow: {
+        "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
+        whiteGlow: "0px 0px 45px rgba(255, 255, 255, 0.5)",
+        blueGlow: "0px 0px 30px rgba(0, 255, 255, 0.8)",
       },
     },
   },

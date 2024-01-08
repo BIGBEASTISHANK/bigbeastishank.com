@@ -135,7 +135,7 @@ export const websiteProjects = [
     title: "Python website",
     description: "Python-powered website for a seamless online experience.",
     imageUrl: pythonWebsiteFlask,
-    projectUrl: "https://github.com/BIGBEASTISHANK/Website.py-Flask1`",
+    projectUrl: "https://github.com/BIGBEASTISHANK/Website.py-Flask",
   },
 ];
 

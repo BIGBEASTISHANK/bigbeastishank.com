@@ -8,7 +8,7 @@ export default function Projects({ customTWClass = "" }) {
     <div className={`flex flex-col ${customTWClass}`} id="projects">
       {/* Title */}
       <motion.a
-        className="mx-auto block text-center lg:text-8xl mb-3 md:text-7xl sm:text-6xl text-5xl text-stroke drop-shadow-2xl font-black"
+        className="mx-auto block text-center lg:text-8xl mb-3 md:text-7xl sm:text-6xl text-5xl text-stroke drop-shadow-3xl font-black"
         href="/#projects"
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
