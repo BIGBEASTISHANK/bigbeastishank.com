@@ -28,6 +28,10 @@ export const navlinks = [
     url: "/#about",
   },
   {
+    title: "Hire",
+    url: "/fiverr",
+  },
+  {
     title: "Games",
     url: "/#games",
   },
