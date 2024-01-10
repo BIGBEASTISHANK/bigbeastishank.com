@@ -12,21 +12,30 @@
   background-color: black;
 }
 
-// Navbar
-.navitems::-webkit-scrollbar {
+::-webkit-scrollbar {
   height: 3.5px;
 }
 
-.navitems::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: rgb(17 24 39);
 }
 
-// Hero section
+.text-stroke-min {
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+}
+
 .text-stroke {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
 
+.text-stroke-sm {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+// Hero Section
 .BBILogo {
   scale: 1;
   border-radius: 20%;
@@ -39,10 +48,6 @@
 }
 
 // About
-.text-stroke-sm {
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
-}
 
 .pfp {
   border-radius: 50% 50% 50% 50% / 30% 30% 30% 30%;

@@ -1,4 +1,6 @@
 "use client";
+
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import BBILogo from "@@/public/img/BBILogo.png";
@@ -54,20 +56,20 @@ export default function Hero({ customTWClass = "" }) {
         {/* Buttons */}
         <div className="select-none lg:gap-6 gap-3 flex sm:flex-row flex-col md:justify-normal justify-center items-center">
           {/* About */}
-          <a href="/#about">
+          <Link href="/#about">
             <button className="group flex text-black border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] lg:px-5 px-5  active:scale-[0.9] py-1 rounded-full outline-none bg-blue-600 transition-all drop-shadow-xl">
               About Me{" "}
               <FaArrowAltCircleDown className="my-auto ml-3 group-hover:scale-[1.1] group-active:scale-[0.8] transition-all" />
             </button>
-          </a>
+          </Link>
 
           {/* Linkedin */}
-          <a href="/linkedin" className="backdrop-blur-sm" target="_blank">
+          <Link href="/linkedin" className="backdrop-blur-sm" target="_blank">
             <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-9 px-[1.625rem] py-1 rounded-full bg-gray-900/30 outline-none transition-all drop-shadow-xl">
               Linkedin{" "}
               <FaLinkedin className="my-auto ml-3 group-hover:scale-[1.1] group-active:scale-[0.8] transition-all text-white" />
             </button>
-          </a>
+          </Link>
         </div>
       </motion.div>
 

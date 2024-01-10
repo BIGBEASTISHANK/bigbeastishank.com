@@ -1,10 +1,10 @@
-import Hero from "@/components/Sections/Hero";
-import Games from "@/components/Sections/Games";
-import About from "@/components/Sections/About";
-import Contact from "@/components/Sections/Contact";
-import Websites from "@/components/Sections/Websites";
-import Projects from "@/components/Sections/Projects";
-import { HorizontalSeprator } from "@/components/Others/Separator";
+import Hero from "@/components/Hero";
+import Games from "@/components/Games";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Websites from "@/components/Websites";
+import Projects from "@/components/Projects";
+import { HorizontalSeprator } from "@/utils/Separator";
 
 export default function Home() {
   return (

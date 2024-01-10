@@ -1,24 +1,17 @@
 "use client";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import pfp from "@@/public/img/pfp.png";
 import { CgWebsite } from "react-icons/cg";
 import { IoGameController } from "react-icons/io5";
+import SectionBasics from "@/utils/SectionBasics";
 
 export default function About({ customTWClass = "" }) {
   return (
     <div className={`flex flex-col ${customTWClass}`} id="about">
-      {/* Title */}
-      <motion.a
-        className="mx-auto flex text-center md:mb-[3rem] mb-[1.5rem] lg:text-8xl md:text-7xl sm:text-6xl text-5xl text-stroke drop-shadow-3xl font-black"
-        href="/#about"
-        initial={{ opacity: 0, y: -100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.4 }}
-        viewport={{ once: true }}
-      >
-        About me
-      </motion.a>
+      {/* Heading */}
+      <SectionBasics title="About me" url="/#about" />
 
       {/* Main Context */}
       <div className="my-auto md:flex justify-center items-center">
@@ -82,20 +75,20 @@ export default function About({ customTWClass = "" }) {
             viewport={{ once: true }}
           >
             {/* About */}
-            <a href="/#games">
+            <Link href="/#games">
               <button className="group flex text-black border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] lg:px-12 px-8  active:scale-[0.9] py-1 rounded-full outline-none bg-blue-600 transition-all drop-shadow-xl">
                 Games{" "}
                 <IoGameController className="my-auto ml-3 group-hover:scale-[1.1] group-active:scale-[0.8] transition-all" />
               </button>
-            </a>
+            </Link>
 
             {/* Websites */}
-            <a href="/#websites" className="backdrop-blur-sm">
+            <Link href="/#websites" className="backdrop-blur-sm">
               <button className="group flex border xl:text-3xl lg:text-2xl text-xl hover:scale-[1.1] active:scale-[0.9] lg:px-10 px-[1.65rem] py-1 rounded-full bg-gray-900/30 outline-none transition-all drop-shadow-xl">
                 Websites{" "}
                 <CgWebsite className="my-auto ml-3 group-hover:scale-[1.1] group-active:scale-[0.8] transition-all text-white" />
               </button>
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

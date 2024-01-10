@@ -1,12 +1,12 @@
 // Importing
 //
 // Games Projects
-import dragYourTires3D from "@@/public/img/projects/games/dragYourTires3D.png";
+import beastRace3D from "@@/public/img/projects/games/beastRace3D.png";
 import shimrunDash2D from "@@/public/img/projects/games/shimrunDash2D.png";
 import sussyShooter3D from "@@/public/img/projects/games/sussyShooter3D.png";
-import suspiciousRunner3D from "@@/public/img/projects/games/suspiciousRunner3D.png";
+import dragYourTires3D from "@@/public/img/projects/games/dragYourTires3D.png";
 import basicPlatformer2d from "@@/public/img/projects/games/basicPlatformer2D.png";
-import beastRace3D from "@@/public/img/projects/games/beastRace3D.png";
+import suspiciousRunner3D from "@@/public/img/projects/games/suspiciousRunner3D.png";
 
 // Website Projects
 import bbiDotComV3 from "@@/public/img/projects/websites/bbiDotComV3.png";
@@ -29,16 +29,16 @@ export const navlinks = [
     url: "/#about",
   },
   {
-    title: "Hire",
-    url: "/fiverr",
-  },
-  {
     title: "Games",
     url: "/#games",
   },
   {
     title: "Websites",
     url: "/#websites",
+  },
+  {
+    title: "Hire",
+    url: "/hire",
   },
   {
     title: "Projects",
@@ -112,8 +112,7 @@ export const websiteProjects = [
   // bigbeastishank.com v4
   {
     title: "BBI Portfolio Site V4",
-    description:
-      "The website where I showcased my projects in center format.",
+    description: "The website where I showcased my projects in center format.",
     imageUrl: bbiDotComV4,
     projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V4",
   },
@@ -162,5 +161,96 @@ export const otherProjects = [
       "This is my Discord bot, 'BIG BEAST'. You can get this on top.gg. It is a multi-purpose bot. If you want to go to its support server",
     imageUrl: discordBot,
     projectUrl: "https://github.com/BIGBEASTISHANK/BBeast-Discord-Bot",
+  },
+];
+
+// Hire me for
+export const hireMeFor = [
+  // Website
+  {
+    service: "Websites",
+    description:
+      "Revolutionize your online presence with a bespoke website! 🌐 Tailored to your brand, our design is user-friendly, visually stunning, and optimized for success. Let's launch your digital identity - the key to unlocking your online potential starts here! 🚀",
+    priceLink: "/hire/forWebsite",
+    comingSoon: false,
+  },
+  {
+    service: "Games",
+    description:
+      "Level up your brand experience with custom games! 🎮 Immerse your audience in interactive fun with personalized game development. From engaging concepts to seamless execution, let's create games that elevate your brand to new heights. Ready to play? Let's start crafting your gaming journey! 🚀",
+    priceLink: "#",
+    comingSoon: true,
+  },
+];
+
+// Hire me for website
+export const hireMeForWebsite = [
+  // Basic Plan
+  {
+    planName: "Basic",
+    planPrice: "6,000",
+    features: [
+      { name: "1 Pages", available: true },
+      { name: "Dynamic", available: false },
+      { name: "Backend", available: false },
+      { name: "Animation", available: false },
+      { name: "Responsive", available: true },
+      { name: "Source Code", available: false },
+      { name: "Contact Form", available: false },
+      { name: "Hosting setup", available: true },
+      { name: "Custom Domain", available: false },
+      { name: "Delivery in 5 Days", available: true },
+      { name: "Frameworks Used", available: false },
+      { name: "Social media icons", available: true },
+      { name: "Speed optimization", available: true },
+    ],
+    contactSubject: "",
+    note: "Before I start making a website, you have to give 50% of the payment. The completed website will be shown through a video in the mail, and after the full payment, you will receive your product.",
+  },
+
+  // Standard
+  {
+    planName: "Standard",
+    planPrice: "23,000",
+    features: [
+      { name: "6 Pages", available: true },
+      { name: "Dynamic", available: true },
+      { name: "Backend", available: false },
+      { name: "Animation", available: true },
+      { name: "Responsive", available: true },
+      { name: "Source Code", available: true },
+      { name: "Contact Form", available: true },
+      { name: "Hosting setup", available: true },
+      { name: "Custom Domain", available: false },
+      { name: "Delivery in 15 Days", available: true },
+      { name: "Frameworks Used", available: true },
+      { name: "Social media icons", available: true },
+      { name: "Speed optimization", available: true },
+    ],
+    contactSubject: "",
+    note: "Before I start making a website, you have to give 50% of the payment. The completed website will be shown through a video in the mail, and after the full payment, you will receive your product.",
+  },
+
+  // Premium
+  {
+    planName: "Premium",
+    planPrice: "40,000",
+    features: [
+      { name: "10 Pages", available: true },
+      { name: "Dynamic", available: true },
+      { name: "Backend", available: true },
+      { name: "Animation", available: true },
+      { name: "Responsive", available: true },
+      { name: "Source Code", available: true },
+      { name: "Contact Form", available: true },
+      { name: "Hosting setup", available: true },
+      { name: "Custom Domain", available: true },
+      { name: "Delivery in 35 Days", available: true },
+      { name: "Frameworks Used", available: true },
+      { name: "Social media icons", available: true },
+      { name: "Speed optimization", available: true },
+    ],
+    contactSubject: "",
+    note: "Before I start making a website, you have to give 50% of the payment. The completed website will be shown through a video in the mail, and after the full payment, you will receive your product.",
   },
 ];

@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import {
   FaSteam,
   FaGithub,
@@ -13,23 +12,21 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
+import Link from "next/link";
+import { Inter } from "next/font/google";
 import { TbBrandFiverr } from "react-icons/tb";
 
+// Variables
 const inUseFont = Inter({
   weight: ["400"],
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "BIGBEASTISAHNK portfolio",
-  description:
-    "On this website, you will find blogs and projects made by Ishank.",
-};
-
+// Function
 export default function Footer() {
   return (
     <footer
-      className={`${inUseFont.className} flex flex-col bg-gray-900/70 backdrop-blur-sm py-5 justify-center items-center text-center`}
+      className={`${inUseFont.className} flex flex-col bg-gray-900/70 backdrop-blur-sm py-5 justify-center items-center text-center mt-10`}
     >
       <small className="mb-2 block md:text-base text-sm mx-5">
         &copy; 2023 Ishank. All rights reserved.
@@ -37,82 +34,82 @@ export default function Footer() {
 
       <p className="md:text-lg text-base mb-4 text-center mx-5">
         This website built by{" "}
-        <a href="/github" target="_blank" className="underline">
+        <Link href="/github" target="_blank" className="underline">
           Ishank
-        </a>{" "}
+        </Link>{" "}
         & it is{" "}
-        <a href="/sourcecode" target="_blank" className="underline">
+        <Link href="/sourcecode" target="_blank" className="underline">
           open source
-        </a>
+        </Link>
         .
       </p>
 
       {/* Links */}
       <div className="md:text-2xl text-xl flex flex-wrap gap-3 justify-center mx-10">
         {/* Github */}
-        <a href="/github" target="_blank">
+        <Link href="/github" target="_blank">
           <FaGithub />
-        </a>
+        </Link>
 
         {/* Linkedin */}
-        <a href="/linkedin" target="_blank">
+        <Link href="/linkedin" target="_blank">
           <FaLinkedinIn />
-        </a>
+        </Link>
 
         {/* Fiverr */}
-        <a href="/fiverr" target="_blank">
+        <Link href="/fiverr" target="_blank">
           <TbBrandFiverr />
-        </a>
+        </Link>
 
         {/* Spotify */}
-        <a href="/spotify" target="_blank">
+        <Link href="/spotify" target="_blank">
           <FaSpotify />
-        </a>
+        </Link>
 
         {/* Discord */}
-        <a href="/discord" target="_blank">
+        <Link href="/discord" target="_blank">
           <FaDiscord />
-        </a>
+        </Link>
 
         {/* Instagram */}
-        <a href="/instagram" target="_blank">
+        <Link href="/instagram" target="_blank">
           <FaInstagram />
-        </a>
+        </Link>
 
         {/* Snapchat */}
-        <a href="/snapchat" target="_blank">
+        <Link href="/snapchat" target="_blank">
           <FaSnapchat />
-        </a>
+        </Link>
 
         {/* Steam */}
-        <a href="/steam" target="_blank">
+        <Link href="/steam" target="_blank">
           <FaSteam />
-        </a>
+        </Link>
 
         {/* Twitter */}
-        <a href="/twitter" target="_blank">
+        <Link href="/twitter" target="_blank">
           <FaTwitter />
-        </a>
+        </Link>
 
         {/* Facebook */}
-        <a href="/facebook" target="_blank">
+        <Link href="/facebook" target="_blank">
           <FaFacebook />
-        </a>
+        </Link>
 
         {/* Reddit */}
-        <a href="/reddit" target="_blank">
+        <Link href="/reddit" target="_blank">
           <FaReddit />
-        </a>
+        </Link>
 
         {/* Twitch */}
-        <a href="/twitch" target="_blank">
+        <Link href="/twitch" target="_blank">
           <FaTwitch />
-        </a>
+        </Link>
 
         {/* Youtube */}
-        <a href="/youtube" target="_blank">
+        <Link href="/youtube" target="_blank">
           <FaYoutube />
-        </a>
+        </Link>
       </div>
     </footer>
   );

@@ -5,21 +5,13 @@ import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import { FaPaperPlane } from "react-icons/fa";
 import { useForm, ValidationError } from "@formspree/react";
+import SectionBasics from "@/utils/SectionBasics";
 
 export default function Contact({ customTWClass = "" }) {
   return (
     <div className={`flex flex-col ${customTWClass}`} id="contact">
-      {/* Title */}
-      <motion.a
-        className="mx-auto block text-center lg:text-8xl mb-3 md:text-7xl sm:text-6xl text-5xl text-stroke drop-shadow-3xl font-black"
-        href="/#contact"
-        initial={{ opacity: 0, y: -100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.4 }}
-        viewport={{ once: true }}
-      >
-        Contact me
-      </motion.a>
+      {/* Heading */}
+      <SectionBasics title="Contact me" url="/#contact" />
 
       <div className="flex justify-center my-auto">
         <div className="max-w-[60rem] w-full">
@@ -34,24 +26,20 @@ function Form() {
   // On submit
   const [state, handleSubmit] = useForm("mrgravyr");
   if (state.succeeded) {
-    toast.success("Email sent successfully!", {
-      style: {
-        borderRadius: "10px",
-        background: "#090E17",
-        color: "#D3D4D5",
-      },
-    });
+    toast.success("Email sent successfully!");
+  } else {
+    toast.error("Email didn't sent, Internal error");
   }
 
   // Default
   return (
     <motion.form
-      className="flex flex-col text-white"
       onSubmit={handleSubmit}
+      viewport={{ once: true }}
+      className="flex flex-col text-white"
       initial={{ opacity: 0, scale: 0.5, y: 100 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.3, type: "spring", stiffness: 100 }}
-      viewport={{ once: true }}
     >
       {/* Name */}
       <input
@@ -64,6 +52,21 @@ function Form() {
         placeholder="Your full name"
       />
       <ValidationError prefix="Name" field="name" errors={state.errors} />
+
+      {/* Subject */}
+      <select
+        className="h-14 mt-3 px-4 rounded-lg border border-black/20 transition-all bg-gray-900/70 backdrop-blur-md"
+        name="Subject"
+        id="Subject"
+        required
+      >
+        <option value={"For general contact purpose"}>
+          For general contact purpose
+        </option>
+        {/*  */}
+        <option value={"Others"}>Others</option>
+      </select>
+      <ValidationError prefix="Subject" field="subject" errors={state.errors} />
 
       {/* Email */}
       <input

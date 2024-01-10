@@ -1,12 +1,12 @@
 import "@/styles/global.scss";
 import Script from "next/script";
 import "@/styles/tailwindImport.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 import { Comic_Neue } from "next/font/google";
-import Navbar from "@/components/Sections/Navbar";
-import Footer from "@/components/Sections/Footer";
-import ScrollProgressBar from "@/components/Others/ScrollProgressBar";
-import InitialBackground from "@/components/Others/InitialBackground";
+import ScrollProgressBar from "@/utils/ScrollProgressBar";
+import InitialBackground from "@/utils/InitialBackground";
 
 const inUseFont = Comic_Neue({
   weight: ["400"],
@@ -32,7 +32,7 @@ export const metadata = {
   locale: "en_US",
 
   openGraph: {
-    title: "BIGBEASTISAHNK portfolio",
+    title: "Ishank's work showcase | BIGBEASTISHANK",
     description:
       "Frontend Web & Game Developer with a passion to create immersive experiences. Skilled in Unity and currently expanding knowledge with Unreal Engine. I not only work on creating websites & games, but I also explore the complexity of networking and penetration testing. I find joy in securing computer systems & networks. I use Arch BTW!",
     metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
@@ -69,12 +69,24 @@ export default function RootLayout({ children }) {
         <Navbar />
 
         {/* Main content */}
-        {children}
+        <div className="min-h-[65.4vh]">{children}</div>
 
         {/* Footer */}
         <Footer />
 
-        <Toaster position="top-right" reverseOrder={false} />
+        {/* Toster setting */}
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+          toastOptions={{
+            style: {
+              borderRadius: "25px",
+              background: "rgba(0, 0, 0, 0.5)",
+              backdropFilter: "blur(16px)",
+              color: "#D3D4D5",
+            },
+          }}
+        />
       </body>
 
       {/* Currently Google analytics is not working for me (https://github.com/vercel/next.js/discussions/59962)! */}

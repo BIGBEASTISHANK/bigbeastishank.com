@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { navlinks } from "@/lib/data";
 import { motion } from "framer-motion";
 import { Patrick_Hand } from "next/font/google";
@@ -21,12 +22,12 @@ export default function Navbar() {
       <div className="bg-gray-950/60 rounded-full flex py-5 px-10 backdrop-blur-sm shadow-2xl">
         {/* Name */}
         <h1 className="md:flex hidden transition-all">
-          <a
+          <Link
             href="/"
             className="flex text-3xl hover:scale-[1.1] font-bold mr-7 transition-all"
           >
             BIGBEASTISHANK
-          </a>
+          </Link>
         </h1>
 
         {/* Middle space */}
@@ -34,12 +35,12 @@ export default function Navbar() {
 
         {/* Navlinks */}
         <ul className="transition-all flex my-auto mx-auto md:mx-0 overflow-hidden overflow-x-auto navitems">
-          {navlinks.map((data) => (
+          {navlinks.map((data, index) => (
             <li
-              key={data.title}
+              key={index}
               className="md:px-2 sm:px-[1.2rem] px-3 sm:text-2xl text-[1.35rem] md:hover:text-[1.875rem] hover:underline transition-all"
             >
-              <a href={data.url}>{data.title}</a>
+              <Link href={data.url}>{data.title}</Link>
             </li>
           ))}
         </ul>
