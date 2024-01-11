@@ -181,6 +181,13 @@ export const hireMeFor = [
     priceLink: "#",
     comingSoon: true,
   },
+  {
+    service: "Minecraft Events",
+    description:
+      "Ignite the excitement with personalized Minecraft events! 🎉 From epic challenges to virtual gatherings, I'll host experiences that resonate with your audience. Ready to make your mark in the pixelated realm? Let's create unforgettable Minecraft moments together! 🔥🕹️",
+    priceLink: "/hireMe/forMinecraftEvents",
+    comingSoon: false,
+  },
 ];
 
 // Hire me for website
@@ -198,11 +205,11 @@ export const hireMeForWebsite = [
       { name: "Source Code", available: false },
       { name: "Contact Form", available: false },
       { name: "Hosting setup", available: true },
-      { name: "Custom Domain", available: false },
       { name: "Delivery in 5 Days", available: true },
       { name: "Frameworks Used", available: false },
       { name: "Social media icons", available: true },
       { name: "Speed optimization", available: true },
+      { name: "Custom Domain for 1 year", available: false },
     ],
     contactSubject: "Website Development Inquiry - Basic Plan",
     note: "Before I start making a website, you have to give 50% of the payment. The completed website will be shown through a video in the mail, and after the full payment, you will receive your product.",
@@ -214,18 +221,18 @@ export const hireMeForWebsite = [
     planPrice: "23,000",
     features: [
       { name: "6 Pages", available: true },
-      { name: "Dynamic", available: true },
+      { name: "Dynamic", available: false },
       { name: "Backend", available: false },
       { name: "Animation", available: true },
       { name: "Responsive", available: true },
       { name: "Source Code", available: true },
       { name: "Contact Form", available: true },
       { name: "Hosting setup", available: true },
-      { name: "Custom Domain", available: false },
       { name: "Delivery in 15 Days", available: true },
       { name: "Frameworks Used", available: true },
       { name: "Social media icons", available: true },
       { name: "Speed optimization", available: true },
+      { name: "Custom Domain for 1 year", available: false },
     ],
     contactSubject: "Website Development Inquiry - Standard Plan",
     note: "Before I start making a website, you have to give 50% of the payment. The completed website will be shown through a video in the mail, and after the full payment, you will receive your product.",
@@ -244,13 +251,54 @@ export const hireMeForWebsite = [
       { name: "Source Code", available: true },
       { name: "Contact Form", available: true },
       { name: "Hosting setup", available: true },
-      { name: "Custom Domain", available: true },
       { name: "Delivery in 35 Days", available: true },
       { name: "Frameworks Used", available: true },
       { name: "Social media icons", available: true },
       { name: "Speed optimization", available: true },
+      { name: "Custom Domain for 1 year", available: true },
     ],
     contactSubject: "Website Development Inquiry - Premium Plan",
     note: "Before I start making a website, you have to give 50% of the payment. The completed website will be shown through a video in the mail, and after the full payment, you will receive your product.",
+  },
+];
+
+// Hire me for minecraft events
+export const hireMeForMinecraftEvents = [
+  // Basic Plan
+  {
+    planName: "Basic",
+    planPrice: "300",
+    features: [
+      { name: "3 Hours", available: true },
+      { name: "5 Members", available: true },
+      { name: "KitPVP", available: true },
+      { name: "Skywars", available: true },
+      { name: "Bedwars", available: true },
+      { name: "UHC Run", available: true },
+      { name: "Build Battle", available: true },
+      { name: "Speedrunner VS Hunters", available: true },
+      { name: "Custom events", available: false },
+    ],
+    contactSubject: "Minecraft Event Inquiry - Basic Plan",
+    note: "In the event of server downtime or closure, any lost time will be added to the service period for compensation. Additionally, clients are limited to hosting one event at a time to ensure optimal resource allocation.",
+  },
+
+  // Standard Plan
+  {
+    planName: "Standard",
+    planPrice: "700",
+    features: [
+      { name: "6 Hours", available: true },
+      { name: "10 Members", available: true },
+      { name: "KitPVP", available: true },
+      { name: "Skywars", available: true },
+      { name: "Bedwars", available: true },
+      { name: "UHC Run", available: true },
+      { name: "Build Battle", available: true },
+      { name: "Speedrunner VS Hunters", available: true },
+      { name: "Custom events", available: true },
+    ],
+    contactSubject: "Minecraft Event Inquiry - Standard Plan",
+    note: "In the event of server downtime or closure, any lost time will be added to the service period for compensation. Additionally, clients are limited to hosting one event at a time to ensure optimal resource allocation.",
   },
 ];

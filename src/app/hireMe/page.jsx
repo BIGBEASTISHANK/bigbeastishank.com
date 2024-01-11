@@ -43,16 +43,15 @@ export default function Hire() {
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeInAnimationVariants}
-            className="2xl:w-[25.6rem] projectW:w-[20.8rem]"
           >
-            <div className="bg-gray-800/70 backdrop-blur-xl p-5 rounded-2xl transition-all 2xl:max-w-[26.85rem] projectW:max-w-[22.05rem] projectW:mb-0 mb-8 drop-shadow-3xl hover:drop-shadow-blueGlow hover:bg-gray-900/85 hover:scale-[1.05] group/card overflow-auto">
+            <div className="bg-gray-800/70 backdrop-blur-xl p-5 rounded-2xl transition-all max-w-[32rem] projectW:mb-0 mb-8 drop-shadow-3xl hover:drop-shadow-blueGlow hover:bg-gray-900/85 hover:scale-[1.05] group/card overflow-auto">
               {/* Title */}
               <h2 className="mt-3 mb-2 xl:text-6xl projectW:text-4xl sm:text-6xl text-4xl font-bold text-center text-stroke">
                 {data.service}
               </h2>
 
               {/* Description */}
-              <p className="min-h-[10rem] projectW:text-base sm:text-lg text-base group-hover/card:font-medium">
+              <p className="min-h-[9rem] projectW:text-base sm:text-lg text-base group-hover/card:font-medium">
                 {data.description}
               </p>
 
