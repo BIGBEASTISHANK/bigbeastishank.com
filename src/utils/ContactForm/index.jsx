@@ -50,7 +50,7 @@ export function ContactForm({
             defaultValue={defaultNameValue}
           />
         </div>
-        <ValidationError prefix="Name" field="name" errors={state.errors} />
+        <ValidationError className="mt-1 ml-[4.2rem] text-red-700" prefix="Name" field="name" errors={state.errors} />
       </div>
 
       {/* Subject */}
@@ -96,7 +96,7 @@ export function ContactForm({
             defaultValue={defaultEmailValue}
           />
         </div>
-        <ValidationError prefix="Email" field="email" errors={state.errors} />
+        <ValidationError className="mt-1 ml-[4.2rem] text-red-700" prefix="Email" field="email" errors={state.errors} />
       </div>
 
       {/* Message */}
