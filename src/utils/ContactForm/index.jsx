@@ -20,8 +20,6 @@ export function ContactForm({
   const [state, handleSubmit] = useForm("mrgravyr");
   if (state.succeeded) {
     toast.success("Email sent successfully!");
-  } else {
-    toast.error("Email didn't sent, Internal error");
   }
 
   // Default
@@ -42,7 +40,7 @@ export function ContactForm({
           </label>
           <input
             className="bg-transparent outline-none w-full"
-            name="fname"
+            name="Name"
             type="text"
             id="Name"
             required
@@ -88,7 +86,7 @@ export function ContactForm({
           </label>
           <input
             className="bg-transparent outline-none w-full"
-            name="email"
+            name="Email"
             type="email"
             id="Email"
             required
@@ -109,7 +107,7 @@ export function ContactForm({
           </label>
           <textarea
             className={`bg-transparent outline-none w-full min-h-52 text-justify ${customMessageClass}`}
-            name="message"
+            name="Message"
             id="Message"
             placeholder="Type your message..."
             required
