@@ -63,13 +63,11 @@ export default function RootLayout({ children }) {
         <ScrollProgressBar customTWClass="fixed top-0 left-0 right-0 h-[0.25rem] bg-blue-500 origin-[0%]" />
         {/* Initial background */}
         <InitialBackground />
-        {/* Top Margin */}
-        <div className="min-h-[8rem]" />
         {/* Navbar */}
         <Navbar />
 
         {/* Main content */}
-        <div className="min-h-[65.4vh]">{children}</div>
+        <div className="mt-[8rem] min-h-[65.4vh]">{children}</div>
 
         {/* Footer */}
         <Footer />

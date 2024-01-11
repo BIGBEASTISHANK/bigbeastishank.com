@@ -11,8 +11,6 @@ export default function SectionBasics({
   return (
     <div className={customTWClass}>
       {/* Title */}
-
-      {/* Description */}
       {title && (
         <motion.div
           viewport={{ once: true }}
@@ -34,7 +32,8 @@ export default function SectionBasics({
         </motion.div>
       )}
 
-{desc && (
+      {/* Description */}
+      {desc && (
         <motion.div
           className="xl:text-2xl sm:text-xl text-lg md:mb-[3rem] mb-[1.5rem] justify-center text-center"
           initial={{ opacity: 0, y: 100 }}

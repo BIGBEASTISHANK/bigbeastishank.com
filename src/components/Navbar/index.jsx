@@ -13,7 +13,7 @@ const navlinksFont = Patrick_Hand({
 export default function Navbar() {
   return (
     <motion.div
-      className={`${navlinksFont.className} my-7 select-none navbar fixed top-0 w-full px-[2%] z-[999]`}
+      className={`${navlinksFont.className} my-7 select-none navbar fixed top-0 w-full px-[2%] z-[10]`}
       initial={{ y: -110 }}
       animate={{ y: 1 }}
       transition={{ delay: 0.2, duration: 0.2, type: "spring", stiffness: 200 }}

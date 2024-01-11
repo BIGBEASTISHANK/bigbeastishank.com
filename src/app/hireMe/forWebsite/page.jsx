@@ -1,12 +1,13 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaPaperPlane } from "react-icons/fa";
 import { hireMeForWebsite } from "@/lib/data";
-import ComingSoonToast from "@/utils/ComingSoon";
 import SectionBasics from "@/utils/SectionBasics";
 import { RxCheck, RxCross2 } from "react-icons/rx";
 import { HorizontalSeprator } from "@/utils/Separator";
+import { Dialog } from "@headlessui/react";
+import { ContactForm } from "@/utils/ContactForm";
 
 // Variables
 const fadeInAnimationVariants = {
@@ -24,7 +25,13 @@ const fadeInAnimationVariants = {
   }),
 };
 
+let contactSubjectRef = "";
+
 export default function ForWebsite() {
+  // Variables
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  // Main content
   return (
     <div className="projectW:px-12 sm:px-[6rem] px-12">
       {/* Title */}
@@ -94,7 +101,10 @@ export default function ForWebsite() {
               {/* Button */}
               <button
                 className="backdrop-blur-sm w-[11.1rem] select-none flex bg-gray-950/30 mt-4 text-white border text-xl px-4 py-1 rounded-full outline-none bg-blue-600 text-center hover:font-medium hover:scale-[1.05] active:scale-[.9] transition-all"
-                onClick={ComingSoonToast}
+                onClick={() => {
+                  setIsFormOpen(true);
+                  contactSubjectRef = data.contactSubject;
+                }}
               >
                 Send request{" "}
                 <FaPaperPlane className="my-auto ml-[12px] group-hover:scale-[1.1] group-active:scale-[0.8] transition-all" />
@@ -103,6 +113,38 @@ export default function ForWebsite() {
           </motion.div>
         ))}
       </div>
+
+      {/* Modal */}
+      <Dialog
+        open={isFormOpen}
+        onClose={() => setIsFormOpen(false)}
+        className={"relative z-50"}
+      >
+        {/* Background */}
+        <div
+          className="fixed inset-0 bg-gray-900/50 backdrop-blur-xl"
+          aria-hidden="true"
+        />
+
+        {/* Panel */}
+        <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <Dialog.Panel className="w-full max-w-[60rem] rounded">
+            {/* Title */}
+            <SectionBasics title="Send Requst" />
+
+            {/* Form */}
+            <ContactForm
+              subjectReadOnly={true}
+              defaultSubjectValue={contactSubjectRef}
+              messageReadOnly={true}
+              customMessageClass={"resize-none"}
+              defaultMessageValue={
+                "I trust this message finds you well. I am reaching out to you with an exciting opportunity that aligns with your expertise in web development. We are in the early stages of planning a significant project and believe that your skills could be instrumental in bringing our vision to life. Without delving into exhaustive details at this moment, we are eager to gauge your interest and availability for this project. The website we envision will be a dynamic platform, requiring creativity, technical prowess, and an understanding of user experience. If you are open to exploring this opportunity further, kindly respond to this email, expressing your interest. Following that, we will share more comprehensive details about the project, including scope, timelines, and compensation. We understand the importance of your time, and we appreciate your consideration of this invitation. We look forward to the possibility of collaborating with someone of your caliber."
+              }
+            />
+          </Dialog.Panel>
+        </div>
+      </Dialog>
     </div>
   );
 }

@@ -1,10 +1,11 @@
 /* changing scroll bar */
 ::-webkit-scrollbar {
   width: 7px;
+  height: 3.5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(31 41 55);
+  background-color: rgb(31, 41, 55);
   border-radius: 6px;
 }
 
@@ -12,14 +13,7 @@
   background-color: black;
 }
 
-::-webkit-scrollbar {
-  height: 3.5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgb(17 24 39);
-}
-
+// General Global css
 .text-stroke-min {
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: black;

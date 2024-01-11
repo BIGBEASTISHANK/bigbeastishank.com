@@ -29,16 +29,16 @@ export const navlinks = [
     url: "/#about",
   },
   {
+    title: "HireMe",
+    url: "/hireMe",
+  },
+  {
     title: "Games",
     url: "/#games",
   },
   {
     title: "Websites",
     url: "/#websites",
-  },
-  {
-    title: "Hire",
-    url: "/hire",
   },
   {
     title: "Projects",
@@ -171,7 +171,7 @@ export const hireMeFor = [
     service: "Websites",
     description:
       "Revolutionize your online presence with a bespoke website! 🌐 Tailored to your brand, our design is user-friendly, visually stunning, and optimized for success. Let's launch your digital identity - the key to unlocking your online potential starts here! 🚀",
-    priceLink: "/hire/forWebsite",
+    priceLink: "/hireMe/forWebsite",
     comingSoon: false,
   },
   {
@@ -204,7 +204,7 @@ export const hireMeForWebsite = [
       { name: "Social media icons", available: true },
       { name: "Speed optimization", available: true },
     ],
-    contactSubject: "",
+    contactSubject: "Website Development Inquiry - Basic Plan",
     note: "Before I start making a website, you have to give 50% of the payment. The completed website will be shown through a video in the mail, and after the full payment, you will receive your product.",
   },
 
@@ -227,7 +227,7 @@ export const hireMeForWebsite = [
       { name: "Social media icons", available: true },
       { name: "Speed optimization", available: true },
     ],
-    contactSubject: "",
+    contactSubject: "Website Development Inquiry - Standard Plan",
     note: "Before I start making a website, you have to give 50% of the payment. The completed website will be shown through a video in the mail, and after the full payment, you will receive your product.",
   },
 
@@ -250,7 +250,7 @@ export const hireMeForWebsite = [
       { name: "Social media icons", available: true },
       { name: "Speed optimization", available: true },
     ],
-    contactSubject: "",
+    contactSubject: "Website Development Inquiry - Premium Plan",
     note: "Before I start making a website, you have to give 50% of the payment. The completed website will be shown through a video in the mail, and after the full payment, you will receive your product.",
   },
 ];
