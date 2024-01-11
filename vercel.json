@@ -57,6 +57,10 @@
       "destination": "https://www.twitch.tv/bigbeastishank/"
     },
     {
+      "source": "/replit",
+      "destination": "https://replit.com/@BIGBEASTISHANK"
+    },
+    {
       "source": "/sourcecode",
       "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V5"
     },

@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import { Inter } from "next/font/google";
+import { SiReplit } from "react-icons/si";
 import { TbBrandFiverr } from "react-icons/tb";
 
 // Variables
@@ -109,6 +110,11 @@ export default function Footer() {
         {/* Youtube */}
         <Link href="/youtube" target="_blank">
           <FaYoutube />
+        </Link>
+
+        {/* Replit */}
+        <Link href="/replit" target="_blank">
+          <SiReplit />
         </Link>
       </div>
     </footer>
