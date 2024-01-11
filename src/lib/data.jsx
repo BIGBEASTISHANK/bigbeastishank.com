@@ -188,7 +188,7 @@ export const hireMeForWebsite = [
   // Basic Plan
   {
     planName: "Basic",
-    planPrice: "6,000",
+    planPrice: "7,500",
     features: [
       { name: "1 Pages", available: true },
       { name: "Dynamic", available: false },
