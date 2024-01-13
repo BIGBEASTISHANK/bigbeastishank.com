@@ -12,9 +12,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth text-white bg-[#171717]">
+    <html lang="en" className="scroll-smooth">
       <body
-  className={`${inter.className} md:max-w-[45rem] max-w-[35rem] transition-all m-auto pt-32`}
+  className={`${inter.className} md:max-w-[45rem] max-w-[35rem] transition-all mx-auto pt-32 text-white bg-[#171717] backdrop-blur-sm`}
 >
         {/* Navbar */}
         <Navbar />

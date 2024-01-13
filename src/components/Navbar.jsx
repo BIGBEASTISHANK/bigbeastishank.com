@@ -1,12 +1,17 @@
 "use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { navLinks } from "@/libs/data";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const pathName = usePathname();
   return (
-    <nav className=" fixed top-0 left-0 right-0 flex justify-center items-center my-10 z-50">
+    <motion.nav
+      initial={{ y: -100, opacity: 0, scale: 0.7 }}
+      animate={{ y: 0, opacity: 1, scale: 1 }}
+      className=" fixed top-0 left-0 right-0 flex justify-center items-center my-10 z-50"
+    >
       <div className="border border-neutral-800 bg-black/60 backdrop-blur-lg rounded-full p-1">
         <ul className="flex md:gap-2 gap-1">
           {navLinks.map((data, index) => (
@@ -21,6 +26,6 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
