@@ -38,7 +38,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          Frontend Web & Game Developer with a passion to create immersive
+          A Web & Game Developer with a passion to create immersive
           experiences. Skilled in Unity and currently expanding knowledge with
           Unreal Engine.
         </motion.p>

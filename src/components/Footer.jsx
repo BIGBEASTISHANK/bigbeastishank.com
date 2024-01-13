@@ -20,9 +20,9 @@ export default function Footer() {
   return (
     <footer className="text-center justify-center items-center my-5">
       {/* Thanking */}
-      <a className="md:text-base text-sm">
-        Made with ❤️ by <strong>BIGBEASTISHANK</strong>
-      </a>
+      <p className="md:text-base text-sm">
+        Made with ❤️ by <strong><a href="/github" target="_blank" className="text-blue-500 hover:underline">BIGBEASTISHANK</a></strong>
+      </p>
 
       {/* Social Media Icons */}
       <div className="mt-5 md:text-xl text-lg flex flex-wrap gap-3 justify-center mx-10">
