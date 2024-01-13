@@ -1,6 +1,7 @@
 import "@/styles/tailwindImport.css";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,12 +12,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.className} md:max-w-[45rem] max-w-[35rem] m-auto text-white bg-black/95 pt-32 h-[5000px]`}
+        className={`${inter.className} md:max-w-[45rem] max-w-[35rem] transition-all m-auto text-white bg-black/95 pt-32 `}
       >
+        {/* Navbar */}
         <Navbar />
+
+        {/* Main Content */}
         {children}
+
+        {/* Footer */}
+        <div className="w-full h-[.125rem] mt-12 bg-neutral-700" />
+        <Footer/>
       </body>
     </html>
   );

@@ -1,11 +1,13 @@
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 
 export default function Home() {
   return (
     <>
       <Hero />
-
-      <div className="w-full h-[.125rem] my-5 bg-neutral-700"/>
+      {/* Divider */}
+      <div className="w-full h-[.125rem] my-12 bg-neutral-700" />
+      <About />
     </>
   );
 }
