@@ -27,73 +27,73 @@ export default function Footer() {
       {/* Social Media Icons */}
       <div className="mt-5 md:text-xl text-lg flex flex-wrap gap-3 justify-center mx-10">
         {/* Github */}
-        <Link href="/github" target="_blank">
+        <Link aria-label="GitHub" href="/github" target="_blank">
           <FaGithub />
         </Link>
 
         {/* Linkedin */}
-        <Link href="/linkedin" target="_blank">
+        <Link aria-label="Linkedin" href="/linkedin" target="_blank">
           <FaLinkedinIn />
         </Link>
 
+        {/* Replit */}
+        <Link aria-label="Replit" href="/replit" target="_blank">
+          <SiReplit />
+        </Link>
+
         {/* Fiverr */}
-        <Link href="/fiverr" target="_blank">
+        <Link aria-label="Fiverr" href="/fiverr" target="_blank">
           <TbBrandFiverr />
         </Link>
 
         {/* Spotify */}
-        <Link href="/spotify" target="_blank">
+        <Link aria-label="Spotify" href="/spotify" target="_blank">
           <FaSpotify />
         </Link>
 
+        {/* Youtube */}
+        <Link aria-label="YouTube" href="/youtube" target="_blank">
+          <FaYoutube />
+        </Link>
+
         {/* Discord */}
-        <Link href="/discord" target="_blank">
+        <Link aria-label="Discord" href="/discord" target="_blank">
           <FaDiscord />
         </Link>
 
         {/* Instagram */}
-        <Link href="/instagram" target="_blank">
+        <Link aria-label="Instagram" href="/instagram" target="_blank">
           <FaInstagram />
         </Link>
 
-        {/* Snapchat */}
-        <Link href="/snapchat" target="_blank">
-          <FaSnapchat />
-        </Link>
-
-        {/* Steam */}
-        <Link href="/steam" target="_blank">
-          <FaSteam />
-        </Link>
-
         {/* Twitter */}
-        <Link href="/twitter" target="_blank">
+        <Link aria-label="Twitter" href="/twitter" target="_blank">
           <FaTwitter />
         </Link>
 
-        {/* Facebook */}
-        <Link href="/facebook" target="_blank">
-          <FaFacebook />
+        {/* Snapchat */}
+        <Link aria-label="Snapchat" href="/snapchat" target="_blank">
+          <FaSnapchat />
         </Link>
 
         {/* Reddit */}
-        <Link href="/reddit" target="_blank">
+        <Link aria-label="Reddit" href="/reddit" target="_blank">
           <FaReddit />
         </Link>
 
+        {/* Steam */}
+        <Link aria-label="Steam" href="/steam" target="_blank">
+          <FaSteam />
+        </Link>
+
+        {/* Facebook */}
+        <Link aria-label="Facebook" href="/facebook" target="_blank">
+          <FaFacebook />
+        </Link>
+
         {/* Twitch */}
-        <Link href="/twitch" target="_blank">
+        <Link aria-label="Twitch" href="/twitch" target="_blank">
           <FaTwitch />
-        </Link>
-
-        {/* Youtube */}
-        <Link href="/youtube" target="_blank">
-          <FaYoutube />
-        </Link>
-
-        {/* Replit */}
-        <Link href="/replit" target="_blank">
-          <SiReplit />
         </Link>
       </div>
     </footer>
