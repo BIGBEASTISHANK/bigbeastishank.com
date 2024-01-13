@@ -32,7 +32,7 @@ export default function About() {
           barriers with pentesting—yeah, that&apos;s my jam! 💻✨
         </p>
         <p>
-          Wondering about the &quot;BIG BEAST ISHANK&quot; title? Well, it's not just a
+          Wondering about the &quot;BIG BEAST ISHANK&quot; title? Well, it&apos;s not just a
           name; it&apos;s a journey. I&apos;m on the path to becoming a{" "}
           <strong>Beast</strong> in the realms of Web and Game Development,
           along with conquering the vast landscapes of Network Engineering &
