@@ -8,11 +8,13 @@ export default function Hero() {
       {/* Image */}
       <Image
         src={logo}
-        className="h-[100px] w-[100px] select-none rounded-2xl border-2 border-neutral-800 mb-7 md:block hidden transition-all"
+        alt={"logo"}
+        className="h-[120px] w-[120px] select-none rounded-2xl border-2 border-neutral-800 mb-7 md:block hidden transition-all"
       />
       <Image
         src={logo}
-        className="h-[80px] w-[80px] select-none rounded-2xl border-2 border-neutral-800 mb-5 md:hidden transition-all"
+        alt={"logo"}
+        className="h-[100px] w-[100px] select-none rounded-2xl border-2 border-neutral-800 mb-5 md:hidden transition-all"
       />
 
       {/* Heading */}
@@ -23,15 +25,14 @@ export default function Hero() {
       {/* Text */}
       <div className="md:text-base text-sm md:text-left text-justify flex flex-col md:gap-3 gap-2 transition-all">
         <p>
-          👨‍💻 Self-taught developer on a mission to craft immersive digital
-          experiences. Proficient in Unity and currently broadening my horizons
-          with Unreal Engine.
+          Frontend Web & Game Developer with a passion to create immersive
+          experiences. Skilled in Unity and currently expanding knowledge with
+          Unreal Engine.
         </p>
         <p>
-          💼 Beyond creating websites and games, I delve into the intricacies of
-          networking and penetration testing. Discovering the thrill in
-          fortifying computer systems and networks is my forte. Oh, and by the
-          way, I'm an Arch enthusiast!
+          I not only work on creating websites & games, but I also explore the
+          complexity of networking and penetration testing. I find joy in
+          securing computer systems & networks. I use Arch BTW!
         </p>
       </div>
 

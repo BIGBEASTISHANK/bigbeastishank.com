@@ -13,25 +13,27 @@ export default function About() {
       {/* Image */}
       <Image
         src={pfp}
-        className="h-[100px] w-[100px] select-none rounded-full border-2 border-neutral-800 mb-7 md:block hidden mx-auto transition-all"
+        alt={"pfp"}
+        className="h-[120px] w-[120px] select-none rounded-full border-2 border-neutral-800 mb-7 md:block hidden mx-auto transition-all"
       />
       <Image
         src={pfp}
-        className="h-[80px] w-[80px] select-none rounded-full border-2 border-neutral-800 mb-5 md:hidden mx-auto transition-all"
+        alt={"pfp"}
+        className="h-[100px] w-[100px] select-none rounded-full border-2 border-neutral-800 mb-5 md:hidden mx-auto transition-all"
       />
 
       {/* About me */}
       <div className="text-center md:text-base text-sm flex flex-col md:gap-4 gap-3 transition-all">
         <p>
-          🚀 Hey there, I'm Ishank, but you can call me the BIG BEAST ISHANK! 👹
+          🚀 Hey there, I&apos;m Ishank, but you can call me the BIG BEAST ISHANK! 👹
         </p>
         <p>
           🎮 Crafting games, coding websites, diving into networks, and breaking
-          barriers with pentesting—yeah, that's my jam! 💻✨
+          barriers with pentesting—yeah, that&apos;s my jam! 💻✨
         </p>
         <p>
-          Wondering about the "BIG BEAST ISHANK" title? Well, it's not just a
-          name; it's a journey. I'm on the path to becoming a{" "}
+          Wondering about the &quot;BIG BEAST ISHANK&quot; title? Well, it's not just a
+          name; it&apos;s a journey. I&apos;m on the path to becoming a{" "}
           <strong>Beast</strong> in the realms of Web and Game Development,
           along with conquering the vast landscapes of Network Engineering &
           Pentesting.
@@ -46,7 +48,7 @@ export default function About() {
           >
             <strong>YouTube</strong>
           </a>{" "}
-          channel. Join the ride, hit that subscribe button, and let's turn the
+          channel. Join the ride, hit that subscribe button, and let&apos;s turn the
           ordinary into extraordinary! 🚀👾
         </p>
       </div>

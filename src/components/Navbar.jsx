@@ -7,7 +7,7 @@ export default function Navbar() {
   const pathName = usePathname();
   return (
     <nav className=" fixed top-0 left-0 right-0 flex justify-center items-center my-10 z-50">
-      <div className="border border-neutral-800 bg-black/30 backdrop-blur-lg rounded-full p-1">
+      <div className="border border-neutral-800 bg-black/60 backdrop-blur-lg rounded-full p-1">
         <ul className="flex md:gap-2 gap-1">
           {navLinks.map((data, index) => (
             <li
