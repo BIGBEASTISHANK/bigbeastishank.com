@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} md:max-w-[45rem] max-w-[35rem] transition-all mx-auto md:pt-[8rem] pt-[5rem] text-white bg-[#171717]`}
+        className={`${inter.className} md:max-w-[45rem] max-w-[35rem] transition-all mx-auto md:pt-[9rem] pt-[6rem] text-white bg-[#171717]`}
       >
         <ScrollProgressBar />
         {/* Navbar */}
