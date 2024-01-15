@@ -72,7 +72,7 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
       opacity: 1,
 
       transition: {
-        delay: ((titleDelay + 0.5) * (index + 2.5)) / 3,
+        delay: (titleDelay * (index  +  4)) / 3,
       },
     }),
   };
