@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Hero />
       {/* Divider */}
-      <div className="w-full h-[.125rem] my-12 bg-neutral-700" />
+      <div className="w-full h-[.125rem] my-12 bg-[#4e4e4e]" />
       <About />
     </>
   );

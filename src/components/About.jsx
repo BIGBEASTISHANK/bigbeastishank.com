@@ -6,7 +6,7 @@ import pfp from "@@/public/img/pfp.png";
 
 export default function About() {
   return (
-    <div id="about" className="px-5 scroll-mt-24">
+    <div id="about" className="px-5 scroll-mt-24 flex flex-col">
       {/* Title */}
       <motion.h1
         initial={{ y: -50, opacity: 0 }}
@@ -27,12 +27,12 @@ export default function About() {
         <Image
           src={pfp}
           alt={"pfp"}
-          className="select-none rounded-full border-2 border-neutral-800"
+          className="select-none rounded-full border-2 border-[#4e4e4e]"
         />
       </motion.div>
 
       {/* About me */}
-      <div className="text-center md:text-base text-sm flex flex-col md:gap-4 gap-3 ">
+      <div className="text-center md:text-base text-sm flex flex-col md:gap-4 gap-3 text-[#adadad]">
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -78,6 +78,18 @@ export default function About() {
           the ordinary into extraordinary! 🚀👾
         </motion.p>
       </div>
+
+      {/* Button */}
+      <Link href={"/"} className="mx-auto hover:scale-[1.1] transition-all select-none">
+        <motion.button
+          initial={{ opacity: 0, scale: 0.4, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ delay: 2.4 }}
+          className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border rounded-full bg-neutral-800/50"
+        >
+          Contact Me
+        </motion.button>
+      </Link>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import logo from "@@/public/img/BBILogo.png";
 
 export default function Hero() {
   return (
-    <div id="#" className="px-5">
+    <div className="px-5 flex flex-col scroll-mt-96">
       {/* Image */}
       <motion.div
         initial={{ opacity: 0, scale: 0.4 }}
@@ -17,7 +17,7 @@ export default function Hero() {
         <Image
           src={logo}
           alt={"logo"}
-          className="select-none rounded-2xl border-2 border-neutral-800"
+          className="select-none rounded-2xl border-2 border-[#4e4e4e]"
         />
       </motion.div>
 
@@ -32,15 +32,14 @@ export default function Hero() {
       </motion.h1>
 
       {/* Text */}
-      <div className="md:text-base text-sm md:text-left text-justify flex flex-col md:gap-3 gap-2">
+      <div className="md:text-base text-sm md:text-left text-justify flex flex-col md:gap-3 gap-2 text-[#adadad]">
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          A Web & Game Developer with a passion to create immersive
-          experiences. Skilled in Unity and currently expanding knowledge with
-          Unreal Engine.
+          A Web & Game Developer with a passion to create immersive experiences.
+          Skilled in Unity and currently expanding knowledge with Unreal Engine.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 100 }}
@@ -54,14 +53,14 @@ export default function Hero() {
       </div>
 
       {/* Button */}
-      <Link href={"/"}>
+      <Link href={"/"} className="mr-auto hover:scale-[1.1] transition-all select-none">
         <motion.button
           initial={{ opacity: 0, scale: 0.4, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 1 }}
-          className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border rounded-full bg-neutral-800/50 hover:scale-[1.1]"
+          className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border rounded-full bg-neutral-800/50"
         >
-          Contact Me
+          Hire Me
         </motion.button>
       </Link>
     </div>
