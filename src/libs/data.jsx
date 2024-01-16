@@ -8,10 +8,6 @@ export const navLinks = [
     name: "Works",
     url: "/works",
   },
-  {
-    name: "Blogs",
-    url: "/blogs",
-  },
 ];
 
 export const gameProjects = [

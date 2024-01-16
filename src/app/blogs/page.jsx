@@ -57,11 +57,6 @@ export default function Blog() {
 
       {/* Short Divider */}
       <div className="w-[50%] h-[.125rem] my-7 bg-[#4e4e4e] z-10" />
-
-      {/* Coming soon */}
-      <h1 className="font-bold md:text-4xl text-3xl m-auto">
-        !!!!Coming Soon!!!!
-      </h1>
     </div>
   );
 }
