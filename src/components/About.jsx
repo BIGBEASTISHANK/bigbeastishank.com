@@ -1,21 +1,14 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import pfp from "@@/public/img/pfp.png";
+import HeadingBasic from "@/utility/HeadingBasic";
 
 export default function About() {
   return (
     <div id="about" className="px-5 scroll-mt-24 flex flex-col">
       {/* Title */}
-      <motion.h1
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="font-bold md:text-3xl text-2xl md:mb-8 mb-5"
-      >
-        <Link href="/#about">~/About</Link>
-      </motion.h1>
+      <HeadingBasic heading="About" url="/#about" animationDelay={1.2} />
 
       {/* Image */}
       <motion.div
@@ -78,18 +71,6 @@ export default function About() {
           the ordinary into extraordinary! 🚀👾
         </motion.p>
       </div>
-
-      {/* Button */}
-      <Link href={"/"} className="mx-auto hover:scale-[1.1] transition-all select-none">
-        <motion.button
-          initial={{ opacity: 0, scale: 0.4, y: 50 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ delay: 2.4 }}
-          className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border rounded-full bg-neutral-800/50"
-        >
-          Contact Me
-        </motion.button>
-      </Link>
     </div>
   );
 }

@@ -3,38 +3,30 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { gameProjects, otherProjects, websiteProjects } from "@/libs/data";
+import HeadingBasic from "@/utility/HeadingBasic";
 
 export default function WorksComponent() {
   return (
-    <div id="about" className="px-5">
+    <div id="works" className="px-5">
       {/* Title */}
-      <motion.h1
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className="font-bold md:text-3xl text-2xl md:mb-8 mb-5"
-      >
-        <Link href="/works">~/My Works</Link>
-      </motion.h1>
-
-      {/* Description */}
-      <motion.p
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="text-[#adadad] md:text-base text-sm"
-      >
-        🌐 Explore a collection of my standout projects right here. For a
-        comprehensive look at all my endeavors, visit my{" "}
-        <a
-          href="/github"
-          target="_blank"
-          className="text-blue-500 hover:underline"
-        >
-          <strong>GitHub</strong>
-        </a>
-        .
-      </motion.p>
+      <HeadingBasic
+        heading="Works"
+        url="/works"
+        description={
+          <>
+            🌐 Explore a collection of my standout projects right here. For a
+            comprehensive look at all my endeavors, visit my{" "}
+            <a
+              href="/github"
+              target="_blank"
+              className="text-blue-500 hover:underline"
+            >
+              <strong>GitHub</strong>
+            </a>
+            .
+          </>
+        }
+      />
 
       {/* Game Project */}
       <ProjectList
@@ -72,7 +64,7 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
       opacity: 1,
 
       transition: {
-        delay: (titleDelay * (index  +  4)) / 3,
+        delay: (titleDelay * (index + 4)) / 3,
       },
     }),
   };
@@ -120,8 +112,9 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
               target="_blank"
               className="text-semibold hover:scale-[1.05] transition-all md:text-base text-sm mr-auto"
             >
-              <button className="flex py-[0.15rem] px-[0.55rem] border rounded-full bg-neutral-800/50">
-                Read More <FaLongArrowAltRight className="my-auto ml-2" />
+              <button className="flex group/readMore py-[0.15rem] px-[0.55rem] border rounded-full bg-neutral-800/50">
+                Read More{" "}
+                <FaLongArrowAltRight className="my-auto group-hover/readMore:ml-3 ml-2 transition-all" />
               </button>
             </a>
           </motion.li>

@@ -8,6 +8,10 @@ export const navLinks = [
     name: "Works",
     url: "/works",
   },
+  {
+    name: "Blogs",
+    url: "/blogs",
+  },
 ];
 
 export const gameProjects = [
@@ -62,6 +66,14 @@ export const gameProjects = [
 
 // Websites
 export const websiteProjects = [
+  // bigbeastishank.com V5
+  {
+    title: "BBI Portfolio Site V5",
+    description:
+      "This portfolio site was created just for fun and learning. It is one of my fav websites I have ever build.",
+    projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V5",
+  },
+
   // bigbeastishank.com v4
   {
     title: "BBI Portfolio Site V4",

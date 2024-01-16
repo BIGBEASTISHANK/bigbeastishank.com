@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.backdrop-blur-spread {
+  backdrop-filter: blur(10px); /* Adjust blur radius as needed */
+  -webkit-backdrop-filter: blur(10px); /* For compatibility */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 70%); /* Adjust colors and transparency */
+}

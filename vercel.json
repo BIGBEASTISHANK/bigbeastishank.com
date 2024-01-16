@@ -50,7 +50,7 @@
       },
       {
         "source": "/reddit",
-        "destination": "https://www.reddit.com/user/bigbeastishank"
+        "destination": "https://www.reddit.com/r/bigbeastishank"
       },
       {
         "source": "/twitch",
