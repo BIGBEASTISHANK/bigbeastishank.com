@@ -7,7 +7,7 @@ import HeadingBasic from "@/utility/HeadingBasic";
 
 export default function WorksComponent() {
   return (
-    <div id="works" className="px-5">
+    <div id="works" className="px-5 scroll-mt-24">
       {/* Title */}
       <HeadingBasic
         heading="Works"
