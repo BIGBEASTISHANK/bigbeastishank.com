@@ -8,6 +8,10 @@ export const navLinks = [
     name: "Works",
     url: "/works",
   },
+  // {
+  //   name: "Blogs",
+  //   url: "/blogs",
+  // },
 ];
 
 export const gameProjects = [
@@ -64,7 +68,7 @@ export const gameProjects = [
 export const websiteProjects = [
   // bigbeastishank.com V5
   {
-    title: "BBI Portfolio Site V5",
+    title: "bigbeastishank.com V5",
     description:
       "This portfolio site was created just for fun and learning. It is one of my fav websites I have ever build.",
     projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V5",
@@ -72,14 +76,14 @@ export const websiteProjects = [
 
   // bigbeastishank.com v4
   {
-    title: "BBI Portfolio Site V4",
+    title: "bigbeastishank.com V4",
     description: "The website where I showcased my projects in center format.",
     projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V4",
   },
 
   // bigbeastishank.com v3
   {
-    title: "BBI Blog Site",
+    title: "bigbeastishank.com V3",
     description:
       "This was the website I created before this one, it was mainly for blogs but also contain my projects.",
     projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V3",
@@ -87,7 +91,7 @@ export const websiteProjects = [
 
   // bigbeastishank.com v2
   {
-    title: "BBI Project Site",
+    title: "bigbeastishank.com V2",
     description:
       "I created this site very long ago, it was only consisting of my projects & skills.",
     projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V2",
@@ -95,7 +99,7 @@ export const websiteProjects = [
 
   // bigbeastishank.com v1
   {
-    title: "BBI First Portfolio site",
+    title: "bigbeastishank.com V1",
     description: "My First proper portfolio site with my blogs and skills.",
     projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V1",
   },
@@ -105,6 +109,13 @@ export const websiteProjects = [
     title: "Python website",
     description: "Python-powered website for a seamless online experience.",
     projectUrl: "https://github.com/BIGBEASTISHANK/Website.py-Flask",
+  },
+  // Python website flask
+  {
+    title: "Newbie website",
+    description:
+      "With this website, I got into Web-Development. All thanks to this site that sparked the curiosity in me.",
+    projectUrl: "https://github.com/BIGBEASTISHANK/First-website`",
   },
 ];
 

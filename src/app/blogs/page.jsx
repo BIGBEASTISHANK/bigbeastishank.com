@@ -1,4 +1,4 @@
-import HeadingBasic from "@/utility/HeadingBasic";
+import BlogsHome from "@/components/BlogsHome";
 
 // Meta data
 export const metadata = {
@@ -39,24 +39,23 @@ export const metadata = {
   },
 };
 
+const blogData = [
+  {
+    title: "Mota Mota",
+    author: "Piyush",
+    dateOfBlog: "18/01/2024",
+  },
+  {
+    title: "Toma Toma",
+    author: "bigbeastishank",
+    dateOfBlog: "19/01/2024",
+  },
+];
+
 export default function Blog() {
   return (
-    <div className="px-5 flex flex-col min-h-[60vh]">
-      {/* Heading */}
-      <HeadingBasic
-        heading="Blogs"
-        url="/blogs"
-        description={
-          <>
-            ✨ Dive into the realm of insights and knowledge on my blogs.
-            Whether you&apos;re into tech, development, or just the curious mind,
-            there&apos;s something for everyone.
-          </>
-        }
-      />
-
-      {/* Short Divider */}
-      <div className="w-[50%] h-[.125rem] my-7 bg-[#4e4e4e] z-10" />
-    </div>
+    <>
+      <BlogsHome blogData={blogData} />
+    </>
   );
 }
