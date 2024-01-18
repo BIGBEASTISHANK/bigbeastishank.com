@@ -42,8 +42,8 @@ export const metadata = {
 
 export default function Works() {
   return (
-    <div>
+    <>
       <WorksComponent />
-    </div>
+    </>
   );
 }
