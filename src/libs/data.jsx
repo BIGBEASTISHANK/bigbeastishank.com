@@ -338,7 +338,7 @@ export const websiteProjects = [
     title: "Newbie website",
     description:
       "With this website, I got into Web-Development. All thanks to this site that sparked the curiosity in me.",
-    projectUrl: "https://github.com/BIGBEASTISHANK/First-website`",
+    projectUrl: "https://github.com/BIGBEASTISHANK/First-website",
   },
 ];
 
