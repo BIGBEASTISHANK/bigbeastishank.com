@@ -8,18 +8,20 @@ export default function Hero() {
   return (
     <div className="px-5 flex flex-col scroll-mt-96">
       {/* Image */}
-      <motion.div
+      <motion.a
         initial={{ opacity: 0, scale: 0.4 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.3 }}
+        href={"/img/BBILogo.png"}
+        target="_blank"
         className="md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10"
       >
         <Image
           src={logo}
           alt={"logo"}
-          className="select-none rounded-2xl border-2 border-[#4e4e4e]"
+          className="select-none rounded-2xl border-2 border-[#4e4e4e] hover:scale-[1.1] transition-all"
         />
-      </motion.div>
+      </motion.a>
 
       {/* Heading */}
       <motion.h1

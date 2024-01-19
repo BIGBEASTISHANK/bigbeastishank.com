@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollProgressBar from "../utility/ScrollProgressBar";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -63,6 +64,9 @@ export default function RootLayout({ children }) {
         <div className="w-full h-[.125rem] mt-12 bg-[#4e4e4e]" />
         <Footer />
       </body>
+
+      {/* Google Analytics */}
+      <GoogleAnalytics gaId={process.env.gtag} />
     </html>
   );
 }

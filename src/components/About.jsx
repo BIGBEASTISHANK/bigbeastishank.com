@@ -11,18 +11,20 @@ export default function About() {
       <HeadingBasic heading="About" url="/#about" animationDelay={1.2} />
 
       {/* Image */}
-      <motion.div
+      <motion.a
         initial={{ opacity: 0, scale: 0.4 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.4 }}
+        href={"/img/pfp.png"}
+        target="_blank"
         className="md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10 mx-auto"
       >
         <Image
           src={pfp}
           alt={"pfp"}
-          className="select-none rounded-full border-2 border-[#4e4e4e]"
+          className="select-none rounded-full border-2 border-[#4e4e4e] hover:scale-[1.1] transition-all"
         />
-      </motion.div>
+      </motion.a>
 
       {/* About me */}
       <div className="text-center md:text-base text-sm flex flex-col md:gap-4 gap-3 text-[#adadad]">

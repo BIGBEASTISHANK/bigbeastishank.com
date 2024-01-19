@@ -115,29 +115,30 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: listAnimationDelay + (index * 0.3) / 2 }}
-              className="mb-5 flex flex-col"
             >
-              {/* Project title */}
-              <h2 className="md:text-lg text-base font-semibold mr-auto">
-                {data.title}
-              </h2>
+              <div className="mb-5 flex flex-col bg-black/50 p-5 rounded-3xl hover:scale-[1.03] transition-all">
+                {/* Project title */}
+                <h2 className="md:text-lg text-base font-semibold mr-auto">
+                  {data.title}
+                </h2>
 
-              {/* Project Description */}
-              <p className="md:text-base text-sm mb-3 text-[#adadad]">
-                {data.description}
-              </p>
+                {/* Project Description */}
+                <p className="md:text-base text-sm mb-3 text-[#adadad]">
+                  {data.description}
+                </p>
 
-              {/* Read more txt */}
-              <a
-                href={data.projectUrl}
-                target="_blank"
-                className="text-semibold hover:scale-[1.05] transition-all md:text-base text-sm mr-auto"
-              >
-                <span className="flex group/readMore py-[0.15rem] px-[1rem] border rounded-full bg-neutral-800/50">
-                  View Project
-                  <FaEye className="my-auto ml-2 group-hover/readMore:scale-[1.1] transition-all" />
-                </span>
-              </a>
+                {/* Read more txt */}
+                <a
+                  href={data.projectUrl}
+                  target="_blank"
+                  className="text-semibold hover:scale-[1.05] transition-all md:text-base text-sm mr-auto"
+                >
+                  <span className="flex group/readMore py-[0.15rem] px-[1rem] border rounded-full bg-neutral-800/50">
+                    View Project
+                    <FaEye className="my-auto ml-2 group-hover/readMore:scale-[1.1] transition-all" />
+                  </span>
+                </a>
+              </div>
             </motion.li>
           ))}
 

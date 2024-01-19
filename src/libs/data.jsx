@@ -1,3 +1,45 @@
+// Icons
+import {
+  FaSteam,
+  FaGithub,
+  FaReddit,
+  FaTwitch,
+  FaTwitter,
+  FaYoutube,
+  FaDiscord,
+  FaSpotify,
+  FaSnapchat,
+  FaFacebook,
+  FaLinkedin,
+  FaInstagram,
+} from "react-icons/fa";
+import {
+  SiGit,
+  SiSass,
+  SiCss3,
+  SiHtml5,
+  SiLinux,
+  SiMysql,
+  SiReact,
+  SiUnity,
+  SiCsharp,
+  SiGithub,
+  SiReplit,
+  SiPython,
+  SiBlender,
+  SiMongodb,
+  SiDiscord,
+  SiGnubash,
+  SiCplusplus,
+  SiNextdotjs,
+  SiJavascript,
+  SiTailwindcss,
+  SiUnrealengine,
+  SiVisualstudiocode,
+  SiKrita,
+} from "react-icons/si";
+import { TbBrandFramerMotion, TbBrandFiverr } from "react-icons/tb";
+
 // Navbar links
 export const navLinks = [
   {
@@ -10,6 +52,191 @@ export const navLinks = [
   },
 ];
 
+// Skills
+export const skills = [
+  // Programming Languages
+  {
+    name: "C++",
+    icon: SiCplusplus,
+  },
+  {
+    name: "C#",
+    icon: SiCsharp,
+  },
+  {
+    name: "Python",
+    icon: SiPython,
+  },
+  {
+    name: "HTML",
+    icon: SiHtml5,
+  },
+  {
+    name: "CSS",
+    icon: SiCss3,
+  },
+  {
+    name: "Sass",
+    icon: SiSass,
+  },
+  {
+    name: "TailWind CSS",
+    icon: SiTailwindcss,
+  },
+  {
+    name: "Java Script",
+    icon: SiJavascript,
+  },
+  {
+    name: "React",
+    icon: SiReact,
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+  },
+  {
+    name: "Framer Motion",
+    icon: TbBrandFramerMotion,
+  },
+  {
+    name: "Bash",
+    icon: SiGnubash,
+  },
+  {
+    name: "MySQL",
+    icon: SiMysql,
+  },
+
+  // Tools I use
+  {
+    name: "Linux",
+    icon: SiLinux,
+  },
+  {
+    name: "VS Code",
+    icon: SiVisualstudiocode,
+  },
+  {
+    name: "Unity",
+    icon: SiUnity,
+  },
+  {
+    name: "Unreal Engine",
+    icon: SiUnrealengine,
+  },
+  {
+    name: "GitHub",
+    icon: SiGithub,
+  },
+  {
+    name: "Discord",
+    icon: SiDiscord,
+  },
+  {
+    name: "Blender",
+    icon: SiBlender,
+  },
+  {
+    name: "Krita",
+    icon: SiKrita,
+  },
+  {
+    name: "Git",
+    icon: SiGit,
+  },
+  {
+    name: "Mongo DB",
+    icon: SiMongodb,
+  },
+  {
+    name: "Replit",
+    icon: SiReplit,
+  },
+];
+
+// Social Media
+export const socialMedia = [
+  {
+    label: "GitHub",
+    icon: FaGithub,
+    link: "/github",
+  },
+  {
+    label: "Linkedin",
+    icon: FaLinkedin,
+    link: "/linkedin",
+  },
+  {
+    label: "Replit",
+    icon: SiReplit,
+    link: "/replit",
+  },
+  {
+    label: "Fiverr",
+    icon: TbBrandFiverr,
+    link: "/fiverr",
+  },
+  {
+    label: "Spotify",
+    icon: FaSpotify,
+    link: "/spotify",
+  },
+  {
+    label: "YouTube",
+    icon: FaYoutube,
+    link: "/youtube",
+  },
+  {
+    label: "Discord",
+    icon: FaDiscord,
+    link: "/discord",
+  },
+  {
+    label: "Instagram",
+    icon: FaInstagram,
+    link: "/instagram",
+  },
+  {
+    label: "Twitter",
+    icon: FaTwitter,
+    link: "/twitter",
+  },
+  {
+    label: "Snapchat",
+    icon: FaSnapchat,
+    link: "/snapchat",
+  },
+  {
+    label: "Reddit",
+    icon: FaReddit,
+    link: "/reddit",
+  },
+  {
+    label: "Steam",
+    icon: FaSteam,
+    link: "/steam",
+  },
+  {
+    label: "Facebook",
+    icon: FaFacebook,
+    link: "/facebook",
+  },
+  {
+    label: "Twitch",
+    icon: FaTwitch,
+    link: "/twitch",
+  },
+];
+
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//////////////////////          ///////////////////
+////////////////////// Projects ///////////////////
+//////////////////////          ///////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+// Game Projects
 export const gameProjects = [
   // Drag your tires game
   {
