@@ -43,7 +43,7 @@ const blogData = [
   {
     title: "Mota Mota",
     author: "Piyush",
-    dateOfBlog: "18/01/2024",
+    dateOfBlog: "18/02/2023",
   },
   {
     title: "Toma Toma",

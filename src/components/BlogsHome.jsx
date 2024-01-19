@@ -7,9 +7,23 @@ import HeadingBasic from "@/utility/HeadingBasic";
 
 export default function BlogsHome({ blogData = [] }) {
   // Searchbar variables
-  const [sortedData, sortData] = useState("");
+  const [sortedData, setSortedData] = useState("");
   // List variable
   const [listAnimationDelay, setListAnimationDelay] = useState(0.9);
+
+  // Converting blog date string to js date
+  const parseDate = (dateString) => {
+    const [day, month, year] = dateString.split("/");
+    return new Date(`${year}-${month}-${day}`);
+  };
+
+  // Comparing 2 date and sorting data accordingly
+  const compareDates = (a, b) => {
+    const dateA = parseDate(a.dateOfBlog);
+    const dateB = parseDate(b.dateOfBlog);
+
+    return dateB - dateA;
+  };
 
   return (
     <div className="px-5 flex flex-col min-h-[60vh]">
@@ -43,7 +57,7 @@ export default function BlogsHome({ blogData = [] }) {
           placeholder="Search..."
           onChange={(event) => {
             setListAnimationDelay(0);
-            sortData(event.target.value);
+            setSortedData(event.target.value);
           }}
         />
       </motion.div>
@@ -55,7 +69,7 @@ export default function BlogsHome({ blogData = [] }) {
       <ul>
         {blogData
           .filter((data) => {
-            if (sortedData == "") {
+            if (sortedData === "") {
               return data;
             } else if (
               data.title.toLowerCase().includes(sortedData.toLowerCase())
@@ -63,6 +77,7 @@ export default function BlogsHome({ blogData = [] }) {
               return data;
             }
           })
+          .sort(compareDates)
           .map((data, index) => (
             <motion.li
               key={index}
@@ -77,7 +92,7 @@ export default function BlogsHome({ blogData = [] }) {
               </Link>
 
               {/* Date */}
-              <p className="text-[#adadad] md:text-sm text-xs mt-3 flex">
+              <p className="text-[#adadad] md:text-sm text-xs mt-1 flex">
                 <span className="mr-auto">Author: {data.author}</span>
                 {data.dateOfBlog}
               </p>
@@ -85,20 +100,19 @@ export default function BlogsHome({ blogData = [] }) {
           ))}
 
         {/* Not found data */}
-        {blogData.length > 0 &&
-          blogData.filter((data) =>
-            data.title.toLowerCase().includes(sortedData.toLowerCase())
-          ).length === 0 && (
-            <div className="flex">
-              <motion.li
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                className="px-5 py-2 bg-black/50 rounded-full text-red-500 md:text-base text-sm mx-auto text-center"
-              >
-                Oops! No blogs with that name. Check for mistake in your input.
-              </motion.li>
-            </div>
-          )}
+        {blogData.filter((data) =>
+          data.title.toLowerCase().includes(sortedData.toLowerCase())
+        ).length === 0 && (
+          <div className="flex">
+            <motion.li
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              className="px-5 py-2 bg-black/50 rounded-full text-red-500 md:text-base text-sm mx-auto text-center"
+            >
+              Oops! No blogs with that name. Check for a mistake in your input.
+            </motion.li>
+          </div>
+        )}
       </ul>
     </div>
   );

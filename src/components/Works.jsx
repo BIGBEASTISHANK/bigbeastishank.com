@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import HeadingBasic from "@/utility/HeadingBasic";
-import { FaLongArrowAltRight, FaSearch } from "react-icons/fa";
+import { FaEye, FaLongArrowAltRight, FaSearch } from "react-icons/fa";
 import { gameProjects, otherProjects, websiteProjects } from "@/libs/data";
 import { useState } from "react";
 
@@ -133,29 +133,28 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
                 target="_blank"
                 className="text-semibold hover:scale-[1.05] transition-all md:text-base text-sm mr-auto"
               >
-                <button className="flex group/readMore py-[0.15rem] px-[0.55rem] border rounded-full bg-neutral-800/50">
-                  Read More{" "}
-                  <FaLongArrowAltRight className="my-auto group-hover/readMore:ml-3 ml-2 transition-all" />
-                </button>
+                <span className="flex group/readMore py-[0.15rem] px-[1rem] border rounded-full bg-neutral-800/50">
+                  View Project
+                  <FaEye className="my-auto ml-2 group-hover/readMore:scale-[1.1] transition-all" />
+                </span>
               </a>
             </motion.li>
           ))}
 
-          {/* Not found data */}
-        {projectData.length > 0 &&
-          projectData.filter((data) =>
-            data.title.toLowerCase().includes(sortedData.toLowerCase())
-          ).length === 0 && (
-            <div className="flex">
-              <motion.li
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                className="px-5 py-2 bg-black/50 rounded-full text-red-500 md:text-base text-sm mx-auto text-center"
-              >
-                Oops! No projects with that name. Check for mistake in your input.
-              </motion.li>
-            </div>
-          )}
+        {/* Not found data */}
+        {projectData.filter((data) =>
+          data.title.toLowerCase().includes(sortedData.toLowerCase())
+        ).length === 0 && (
+          <div className="flex">
+            <motion.li
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              className="px-5 py-2 bg-black/50 rounded-full text-red-500 md:text-base text-sm mx-auto text-center"
+            >
+              Oops! No projects with that name. Check for mistake in your input.
+            </motion.li>
+          </div>
+        )}
       </motion.ul>
     </>
   );
