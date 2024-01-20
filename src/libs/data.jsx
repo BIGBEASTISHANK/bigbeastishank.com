@@ -21,6 +21,7 @@ import {
   SiLinux,
   SiMysql,
   SiReact,
+  SiKrita,
   SiUnity,
   SiCsharp,
   SiGithub,
@@ -29,13 +30,12 @@ import {
   SiBlender,
   SiMongodb,
   SiGnubash,
+  SiVscodium,
   SiCplusplus,
   SiNextdotjs,
   SiJavascript,
   SiTailwindcss,
   SiUnrealengine,
-  SiVisualstudiocode,
-  SiKrita,
 } from "react-icons/si";
 import { TbBrandFramerMotion, TbBrandFiverr } from "react-icons/tb";
 
@@ -113,8 +113,8 @@ export const skills = [
     icon: SiLinux,
   },
   {
-    name: "VS Code",
-    icon: SiVisualstudiocode,
+    name: "VS Codium",
+    icon: SiVscodium,
   },
   {
     name: "Unity",
