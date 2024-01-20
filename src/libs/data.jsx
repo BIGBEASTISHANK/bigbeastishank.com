@@ -28,7 +28,6 @@ import {
   SiPython,
   SiBlender,
   SiMongodb,
-  SiDiscord,
   SiGnubash,
   SiCplusplus,
   SiNextdotjs,
@@ -128,10 +127,6 @@ export const skills = [
   {
     name: "GitHub",
     icon: SiGithub,
-  },
-  {
-    name: "Discord",
-    icon: SiDiscord,
   },
   {
     name: "Blender",
