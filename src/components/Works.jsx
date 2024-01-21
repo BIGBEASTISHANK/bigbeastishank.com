@@ -111,34 +111,38 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
           })
           .map((data, index) => (
             <motion.li
+              id={data.title}
               key={index}
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: listAnimationDelay + (index * 0.3) / 2 }}
+              className="scroll-mt-24"
             >
-              <div className="mb-5 flex flex-col bg-[#1E2028] border border-[#444D7E]/20 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50">
-                {/* Project title */}
-                <h2 className="md:text-lg text-base font-semibold mr-auto">
-                  {data.title}
-                </h2>
+              <Link href={`#${data.title}`}>
+                <div className="mb-5 flex flex-col bg-[#1E2028] border border-[#444D7E]/20 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50">
+                  {/* Project title */}
+                  <h2 className="md:text-lg text-base font-semibold mr-auto">
+                    {data.title}
+                  </h2>
 
-                {/* Project Description */}
-                <p className="md:text-base text-sm mb-3 text-[#AFB3C1]">
-                  {data.description}
-                </p>
+                  {/* Project Description */}
+                  <p className="md:text-base text-sm mb-3 text-[#AFB3C1]">
+                    {data.description}
+                  </p>
 
-                {/* Read more txt */}
-                <a
-                  href={data.projectUrl}
-                  target="_blank"
-                  className="text-semibold hover:scale-[1.1] transition-all md:text-base text-sm mr-auto"
-                >
-                  <span className="flex group/readMore py-[0.15rem] px-[1rem] border border-[#444D7E]/20 rounded-full bg-[#30343D] hover:shadow-md shadow-sm hover:shadow-[#444D7E]/30 transition-all shadow-[#444D7E]/30">
-                    View Project
-                    <FaEye className="my-auto ml-2 group-hover/readMore:scale-[1.1] transition-all" />
-                  </span>
-                </a>
-              </div>
+                  {/* Read more txt */}
+                  <a
+                    href={data.projectUrl}
+                    target="_blank"
+                    className="text-semibold hover:scale-[1.1] transition-all md:text-base text-sm mr-auto"
+                  >
+                    <span className="flex group/readMore py-[0.15rem] px-[1rem] border border-[#444D7E]/20 rounded-full bg-[#30343D] hover:shadow-md shadow-sm hover:shadow-[#444D7E]/30 transition-all shadow-[#444D7E]/30">
+                      View Project
+                      <FaEye className="my-auto ml-2 group-hover/readMore:scale-[1.1] transition-all" />
+                    </span>
+                  </a>
+                </div>
+              </Link>
             </motion.li>
           ))}
 
