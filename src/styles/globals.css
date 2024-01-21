@@ -1,0 +1,19 @@
+/* Tailwinds import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* changing scroll bar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 3.5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #444D7E;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+}

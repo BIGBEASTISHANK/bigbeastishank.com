@@ -22,12 +22,12 @@ export default function About() {
         <Image
           src={pfp}
           alt={"pfp"}
-          className="select-none rounded-full border-2 border-[#4e4e4e] hover:scale-[1.1] transition-all"
+          className="select-none rounded-full border-2 border-[#444D7E] hover:scale-[1.1] transition-all hover:shadow-xl shadow-lg hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50"
         />
       </motion.a>
 
       {/* About me */}
-      <div className="text-center md:text-base text-sm flex flex-col md:gap-4 gap-3 text-[#adadad]">
+      <div className="text-center md:text-base text-sm flex flex-col md:gap-4 gap-3 text-[#AFB3C1]">
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}

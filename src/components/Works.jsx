@@ -28,7 +28,7 @@ export default function WorksComponent() {
           </>
         }
       />
-
+      {/* If You add 1 item in any section then increaase titleDelay by 1.5 in all section below */}
       {/* Game Project */}
       <ProjectList
         id="gameProjects"
@@ -67,7 +67,7 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
   return (
     <>
       {/* Short Divider */}
-      <div className="w-[50%] h-[.125rem] my-7 bg-[#4e4e4e] z-10" />
+      <div className="w-[50%] h-[.125rem] my-7 bg-[#444D7E] z-10" />
 
       {/* Project Heading */}
       <motion.h1
@@ -75,7 +75,7 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: titleDelay }}
-        className="font-bold md:text-xl text-lg md:mb-7 mb-5 scroll-mt-24 flex"
+        className="font-bold md:text-2xl text-xl md:mb-7 mb-5 scroll-mt-24 flex"
       >
         {/* Heading */}
         <Link href={`/works#${id}`} className="mr-auto">
@@ -83,11 +83,11 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
         </Link>
 
         {/* Search bar */}
-        <div className="flex bg-black/10 border border-white/20 rounded-full px-4 select-none font-normal md:text-base text-sm my-auto">
+        <div className="flex bg-[#242731] border border-[#444D7E] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto">
           <FaSearch className="my-auto mr-2" />
           {/* Input area */}
           <input
-            className="bg-transparent outline-none md:w-auto w-[5.5rem]"
+            className="bg-transparent outline-none md:w-auto w-[5.5rem] h-6"
             placeholder="Search..."
             onChange={(event) => {
               setListAnimationDelay(0.2);
@@ -116,14 +116,14 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: listAnimationDelay + (index * 0.3) / 2 }}
             >
-              <div className="mb-5 flex flex-col bg-black/50 p-5 rounded-3xl hover:scale-[1.03] transition-all">
+              <div className="mb-5 flex flex-col bg-[#1E2028] border border-[#444D7E]/20 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50">
                 {/* Project title */}
                 <h2 className="md:text-lg text-base font-semibold mr-auto">
                   {data.title}
                 </h2>
 
                 {/* Project Description */}
-                <p className="md:text-base text-sm mb-3 text-[#adadad]">
+                <p className="md:text-base text-sm mb-3 text-[#AFB3C1]">
                   {data.description}
                 </p>
 
@@ -131,9 +131,9 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
                 <a
                   href={data.projectUrl}
                   target="_blank"
-                  className="text-semibold hover:scale-[1.05] transition-all md:text-base text-sm mr-auto"
+                  className="text-semibold hover:scale-[1.1] transition-all md:text-base text-sm mr-auto"
                 >
-                  <span className="flex group/readMore py-[0.15rem] px-[1rem] border rounded-full bg-neutral-800/50">
+                  <span className="flex group/readMore py-[0.15rem] px-[1rem] border border-[#444D7E]/20 rounded-full bg-[#30343D] hover:shadow-md shadow-sm hover:shadow-[#444D7E]/30 transition-all shadow-[#444D7E]/30">
                     View Project
                     <FaEye className="my-auto ml-2 group-hover/readMore:scale-[1.1] transition-all" />
                   </span>
@@ -150,7 +150,7 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
             <motion.li
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              className="px-5 py-2 bg-black/50 rounded-full text-red-500 md:text-base text-sm mx-auto text-center"
+              className="px-5 py-2 bg-[#1E2028] border border-[#444D7E]/20 rounded-full text-red-500 md:text-base text-sm mx-auto text-center"
             >
               Oops! No projects with that name. Check for mistake in your input.
             </motion.li>

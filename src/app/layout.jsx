@@ -1,4 +1,4 @@
-import "@/styles/tailwindImport.css";
+import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} md:max-w-[45rem] max-w-[35rem] transition-all mx-auto md:pt-[7.5rem] pt-[5.5rem] text-white bg-[#171717]`}
+        className={`${inter.className} md:max-w-[45rem] max-w-[35rem] transition-all mx-auto md:pt-[7.5rem] pt-[5.5rem] text-white bg-[#17191E]`}
       >
         <ScrollProgressBar />
         {/* Navbar */}
@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
         {children}
 
         {/* Footer */}
-        <div className="w-full h-[.125rem] mt-12 bg-[#4e4e4e]" />
+        <div className="w-full h-[.125rem] mt-12 bg-[#444D7E]" />
         <Footer />
       </body>
 

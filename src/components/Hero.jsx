@@ -19,7 +19,7 @@ export default function Hero() {
         <Image
           src={logo}
           alt={"logo"}
-          className="select-none rounded-2xl border-2 border-[#4e4e4e] hover:scale-[1.1] transition-all"
+          className="select-none rounded-2xl border-2 border-[#444D7E] hover:scale-[1.1] transition-all hover:shadow-xl shadow-lg hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50"
         />
       </motion.a>
 
@@ -34,7 +34,7 @@ export default function Hero() {
       </motion.h1>
 
       {/* Text */}
-      <div className="md:text-base text-sm md:text-left text-justify flex flex-col md:gap-3 gap-2 text-[#adadad]">
+      <div className="md:text-base text-sm md:text-left text-justify flex flex-col md:gap-3 gap-2 text-[#AFB3C1]">
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,15 +60,16 @@ export default function Hero() {
           "mailto:business@bigbeastishank.com?subject=Contact%20from%3A%20bigbeastishank.com%3B%20Regarding%3A%20%5BYour%20Issue%5D&body=Hey%20Ishank%2C%0AI'm%20%5Byour%20name%5D.%20%5Byour%20request%5D"
         }
         target="_blank"
-        className="mr-auto hover:scale-[1.1] transition-all select-none"
+        className="mr-auto group/chm hover:scale-[1.1] transition-all select-none"
       >
         <motion.button
           initial={{ opacity: 0, scale: 0.4, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 1 }}
-          className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border rounded-full bg-neutral-800/50"
         >
-          Contact/Hire Me
+          <p className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border border-[#444D7E] rounded-full bg-[#1E2028] group-hover/chm:shadow-lg shadow-md group-hover/chm:shadow-[#444D7E]/50 shadow-[#444D7E]/50 transition-all">
+            Contact/Hire Me
+          </p>
         </motion.button>
       </Link>
     </div>
