@@ -65,7 +65,7 @@ export default function About() {
           <a
             href="/youtube"
             target="_blank"
-            className="text-blue-500 hover:underline"
+            className="text-[#7799E5] hover:underline"
           >
             <strong>YouTube</strong>
           </a>{" "}

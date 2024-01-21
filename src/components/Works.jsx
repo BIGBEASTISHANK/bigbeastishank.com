@@ -20,7 +20,7 @@ export default function WorksComponent() {
             <a
               href="/github"
               target="_blank"
-              className="text-blue-500 hover:underline"
+              className="text-[#7799E5] hover:underline"
             >
               <strong>GitHub</strong>
             </a>
