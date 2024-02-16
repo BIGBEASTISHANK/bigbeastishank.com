@@ -23,6 +23,7 @@ import {
   SiReact,
   SiKrita,
   SiUnity,
+  SiNeovim,
   SiCsharp,
   SiGithub,
   SiReplit,
@@ -115,6 +116,10 @@ export const skills = [
   {
     name: "VS Codium",
     icon: SiVscodium,
+  },
+  {
+    name: "NeoVim",
+    icon: SiNeovim,
   },
   {
     name: "Unity",
@@ -339,6 +344,13 @@ export const websiteProjects = [
 
 // Other Projects
 export const otherProjects = [
+  // Dotfiles
+  {
+    title: "Dotfiles",
+    description: 
+      "This is my dotfiles (config) for my Arch Linux window managers, mainly BSPWM, Polybar, Rofi, etc.",
+    projectUrl: "https://github.com/BIGBEASTISHANK/dotfile",
+  },
   // BIG BEAST Bot
   {
     title: "Discord Bot",

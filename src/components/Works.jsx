@@ -120,11 +120,13 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
             >
               <div className="mb-5 flex flex-col bg-[#1E2028] border border-[#444D7E]/20 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50">
                 {/* Project title */}
+                <div className="flex">
                 <Link href={`#${data.title}`}>
-                  <h2 className="md:text-lg text-base font-semibold mr-auto">
+                  <h2 className="md:text-lg text-base font-semibold">
                     {data.title}
                   </h2>
                 </Link>
+                </div>
 
                 {/* Project Description */}
                 <p className="md:text-base text-sm mb-3 text-[#AFB3C1]">
