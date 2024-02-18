@@ -10,7 +10,7 @@ export default function Skills() {
       <HeadingBasic
         heading="Skills"
         url="#skills"
-        animationDelay={2.4}
+        animationDelay={3.8}
         description={
           <>
             Versatile skills for digital excellence, spanning web development,
@@ -27,7 +27,7 @@ export default function Skills() {
             key={index}
             initial={{ y: 50, scale: 0.4, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
-            transition={{ delay: 2.9 + (index * 0.3) / 2 }}
+            transition={{ delay: 4.3 + (index * 0.3) / 2 }}
             className="select-none"
           >
             <div className="bg-[#1E2028] border border-[#444D7E]/20 flex flex-col overflow-auto md:h-[8rem] md:w-[8rem] h-[7rem] w-[5rem] rounded-2xl hover:scale-[1.1] transition-all hover:shadow-xl shadow-md hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50">
