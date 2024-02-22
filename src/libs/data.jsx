@@ -3,7 +3,6 @@ import {
   FaSteam,
   FaGithub,
   FaReddit,
-  FaTwitch,
   FaTwitter,
   FaYoutube,
   FaDiscord,
@@ -221,11 +220,6 @@ export const socialMedia = [
     label: "Facebook",
     icon: FaFacebook,
     link: "/facebook",
-  },
-  {
-    label: "Twitch",
-    icon: FaTwitch,
-    link: "/twitch",
   },
 ];
 

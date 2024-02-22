@@ -53,10 +53,6 @@
         "destination": "https://www.reddit.com/r/bigbeastishank"
       },
       {
-        "source": "/twitch",
-        "destination": "https://www.twitch.tv/bigbeastishank/"
-      },
-      {
         "source": "/replit",
         "destination": "https://replit.com/@BIGBEASTISHANK"
       },
