@@ -57,6 +57,10 @@
         "destination": "https://replit.com/@BIGBEASTISHANK"
       },
       {
+        "source": "/elementchat",
+        "destination": "https://matrix.to/#/#bigbeastishank:matrix.org",
+      },
+      {
         "source": "/sourcecode",
         "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V6"
       },
