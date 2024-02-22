@@ -1,14 +1,11 @@
 // Icons
 import {
-  FaSteam,
   FaGithub,
   FaReddit,
   FaTwitter,
   FaYoutube,
   FaDiscord,
   FaSpotify,
-  FaSnapchat,
-  FaFacebook,
   FaLinkedin,
   FaInstagram,
 } from "react-icons/fa";
@@ -30,6 +27,7 @@ import {
   SiBlender,
   SiMongodb,
   SiGnubash,
+  SiElement,
   SiVscodium,
   SiCplusplus,
   SiNextdotjs,
@@ -165,6 +163,11 @@ export const socialMedia = [
     label: "Linkedin",
     icon: FaLinkedin,
     link: "/linkedin",
+  },
+  {
+    label: "Element",
+    icon: SiElement,
+    link: "/elementchat",
   },
   {
     label: "Fiverr",
