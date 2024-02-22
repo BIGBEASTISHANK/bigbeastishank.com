@@ -58,7 +58,7 @@
       },
       {
         "source": "/elementchat",
-        "destination": "https://matrix.to/#/#bigbeastishank:matrix.org",
+        "destination": "https://matrix.to/#/#bigbeastishank:matrix.org"
       },
       {
         "source": "/sourcecode",
