@@ -167,11 +167,6 @@ export const socialMedia = [
     link: "/linkedin",
   },
   {
-    label: "Replit",
-    icon: SiReplit,
-    link: "/replit",
-  },
-  {
     label: "Fiverr",
     icon: TbBrandFiverr,
     link: "/fiverr",
@@ -202,24 +197,9 @@ export const socialMedia = [
     link: "/twitter",
   },
   {
-    label: "Snapchat",
-    icon: FaSnapchat,
-    link: "/snapchat",
-  },
-  {
     label: "Reddit",
     icon: FaReddit,
     link: "/reddit",
-  },
-  {
-    label: "Steam",
-    icon: FaSteam,
-    link: "/steam",
-  },
-  {
-    label: "Facebook",
-    icon: FaFacebook,
-    link: "/facebook",
   },
 ];
 
