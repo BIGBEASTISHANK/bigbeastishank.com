@@ -30,7 +30,7 @@ export default function Hero() {
         transition={{ delay: 0.5 }}
         className="font-bold md:text-xl text-lg md:mb-7 mb-4"
       >
-        I&apos;m Ishank ~ Web & Game Developer
+        I&apos;m Ishank ~ OSS Game & Web Developer
       </motion.h1>
 
       {/* Text */}
@@ -40,7 +40,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          A Web & Game Developer with a passion to create immersive experiences.
+          An Open Source Game & Web Developer with a passion to create immersive experiences.
           Skilled in Unity and currently expanding knowledge with Unreal Engine.
         </motion.p>
         <motion.p
