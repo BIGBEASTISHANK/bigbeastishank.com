@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Working from "@@/public/img/Working.png";
+import Working from "@@/public/img/working.png";
 import HeadingBasic from "@/utility/HeadingBasic";
-import HomeShowCase from "@@/public/img/Home show case.png";
+import Idle from "@@/public/img/idle.png";
 import Link from "next/link";
 
 export default function Dotfile() {
@@ -30,8 +30,8 @@ export default function Dotfile() {
         transition={{ delay: 2.9 }}
         className="select-none my-5"
       >
-        <Link href={"/img/Home show case.png"} target="_blank">
-          <Image src={HomeShowCase} alt="HomeShowCase" />
+        <Link href={"/img/idle.png"} target="_blank">
+          <Image src={Idle} alt="Idle" />
         </Link>
       </motion.div>
 
@@ -42,7 +42,7 @@ export default function Dotfile() {
         transition={{ delay: 3.1 }}
         className="select-none"
       >
-        <Link href={"/img/Working.png"} target="_blank">
+        <Link href={"/img/working.png"} target="_blank">
           <Image src={Working} alt="Working" />
         </Link>
       </motion.div>
