@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import logo from "@@/public/img/BBILogo.png";
+import logo from "@@/public/img/main/BBILogo.png";
 
 export default function Hero() {
   return (
@@ -12,7 +12,7 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.4 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.3 }}
-        href={"/img/BBILogo.png"}
+        href={"/img/main/BBILogo.png"}
         target="_blank"
         className="md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10"
       >

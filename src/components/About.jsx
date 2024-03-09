@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import pfp from "@@/public/img/pfp.png";
+import pfp from "@@/public/img/main/pfp.png";
 import HeadingBasic from "@/utility/HeadingBasic";
 
 export default function About() {
@@ -15,7 +15,7 @@ export default function About() {
         initial={{ opacity: 0, scale: 0.4 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.4 }}
-        href={"/img/pfp.png"}
+        href={"/img/main/pfp.png"}
         target="_blank"
         className="md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10 mx-auto"
       >

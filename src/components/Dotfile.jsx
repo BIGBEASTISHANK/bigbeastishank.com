@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Working from "@@/public/img/working.png";
 import HeadingBasic from "@/utility/HeadingBasic";
-import Idle from "@@/public/img/idle.png";
+import Idle from "@@/public/img/dotfile/idle.png";
 import Link from "next/link";
 
 export default function Dotfile() {
@@ -30,7 +30,7 @@ export default function Dotfile() {
         transition={{ delay: 2.9 }}
         className="select-none my-5"
       >
-        <Link href={"/img/idle.png"} target="_blank">
+        <Link href={"/img/dotfile/idle.png"} target="_blank">
           <Image src={Idle} alt="Idle" />
         </Link>
       </motion.div>
