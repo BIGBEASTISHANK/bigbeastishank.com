@@ -5,8 +5,8 @@
 > You can check my website here: [bigbeastishank.com](https://bigbeastishank.com/)
 
 ## Previews
-![hero](/public/preview/webhero.png)
+![hero](/public/img/preview/webhero.png)
 
-![skills](/public/preview/webskills.png)
+![skills](/public/img/preview/webskills.png)
 
-![work](/public/preview/webworks.png)
+![work](/public/img/preview/webworks.png)
