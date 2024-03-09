@@ -7,6 +7,6 @@
 ## Previews
 ![hero](/public/preview/webhero.png)
 
-![skills](/public/preview/webskill.png)
+![skills](/public/preview/webskills.png)
 
 ![work](/public/preview/webworks.png)
