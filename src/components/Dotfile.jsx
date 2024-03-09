@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Working from "@@/public/img/working.png";
+import Working from "@@/public/img/dotfile/working.png";
 import HeadingBasic from "@/utility/HeadingBasic";
 import Idle from "@@/public/img/dotfile/idle.png";
 import Link from "next/link";
