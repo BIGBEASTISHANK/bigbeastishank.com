@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import HeadingBasic from "@/utility/HeadingBasic";
 import {
-    barPercentage,
+  barPercentage,
   goalReached,
   sponsorAmount,
   sponsorGoalAmount,
@@ -21,14 +21,14 @@ export default function SponsorComponent() {
         description={
           <>
             <p>
-              Hello everyone, My name is Ishank. I&apos;m developing websites and
-              video games. I&apos;m currently attempting to learn Unreal Engine, but
-              I used to make games with Unity. I use NextJS to create websites.
-              Every project I work on, no matter how big or small, is open
-              source because I get really excited when I create something and
-              other people use it. In addition, I will only create open-source
-              games going forward, which means that my revenue stream will be
-              extremely constrained.
+              Hello everyone, My name is Ishank. I&apos;m developing websites
+              and video games. I&apos;m currently attempting to learn Unreal
+              Engine, but I used to make games with Unity. I use NextJS to
+              create websites. Every project I work on, no matter how big or
+              small, is open source because I get really excited when I create
+              something and other people use it. In addition, I will only create
+              open-source games going forward, which means that my revenue
+              stream will be extremely constrained.
             </p>
 
             <br className={"select-none"} />
@@ -37,10 +37,11 @@ export default function SponsorComponent() {
               I will also make multiplayer games in the future, and to keep
               servers running, I need money, which will come from sponsors. I
               will take some security measures for in-app purchases so it can be
-              opensource and I don&apos;t have a heavy loss, but still, it won&apos;t make
-              enough revenue as I can&apos;t add in-app purchases in offline or
-              Single player games. I will be happy and motivated to work on
-              amazing projects and develop my skills if you sponsor me.
+              opensource and I don&apos;t have a heavy loss, but still, it
+              won&apos;t make enough revenue as I can&apos;t add in-app
+              purchases in offline or Single player games. I will be happy and
+              motivated to work on amazing projects and develop my skills if you
+              sponsor me.
             </p>
           </>
         }
@@ -101,11 +102,35 @@ export default function SponsorComponent() {
       {/* Divider */}
       <div className="w-full h-[.125rem] my-12 bg-[#444D7E]" />
 
+      {/* Non UPI Transaction */}
       <motion.div
         className={"px-8 flex flex-col"}
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.6 }}
+        id={"nonUPITransaction"}
+      >
+        {/* Text */}
+        <p className="text-white md:text-3xl text-2xl font-semibold mb-2 mx-auto">
+          Non UPI Trasaction
+        </p>
+
+        {/* Coming soon Note */}
+        <p className={"font-bold"}>
+          Currently, you can only sponsor with UPI (in India). Non-UPI
+          transactions like netbanking (for domestic and international currency)
+          & crypto are coming soon.
+        </p>
+      </motion.div>
+
+      {/* Divider */}
+      <div className="w-full h-[.125rem] my-12 bg-[#444D7E]" />
+
+      <motion.div
+        className={"px-8 flex flex-col"}
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1.9 }}
         id={"sponsorGoal"}
       >
         {/* Text */}
@@ -120,9 +145,7 @@ export default function SponsorComponent() {
             "w-full border-4 border-[#444D7E] rounded-full shadow-[#444D7E]/50 shadow-md"
           }
         >
-          <div
-            className={`p-1 bg-white rounded-full ${barPercentage}`}
-          />
+          <div className={`p-1 bg-white rounded-full ${barPercentage}`} />
         </div>
       </motion.div>
     </div>
