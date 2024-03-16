@@ -47,6 +47,17 @@ export default function SponsorComponent() {
         }
       />
 
+      {/* Short Divider */}
+      <div className="w-[50%] h-[.125rem] my-7 bg-[#444D7E] z-10" />
+
+      {/* UPI Transaction */}
+      <HeadingBasic
+        animationDelay={1.6}
+        heading="UPI Trasaction"
+        id={"upiTransaction"}
+        url="#upiTransaction"
+      />
+
       {/* Payment img */}
       <ul className="justify-center items-center text-center mt-5 flex flex-wrap md:gap-9 gap-y-10">
         {/* Card */}

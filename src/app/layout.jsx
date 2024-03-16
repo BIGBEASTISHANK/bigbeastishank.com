@@ -23,7 +23,7 @@ export const metadata = {
     "Unreal Engine",
     "Unity",
   ],
-  images: "/img/main/pfp.png",
+  images: "/img/metadata/home.png",
   locale: "en_US",
 
   openGraph: {
@@ -41,7 +41,7 @@ export const metadata = {
       "Unreal Engine",
       "Unity",
     ],
-    images: "/img/main/pfp.png",
+    images: "/img/metadata/home.png",
     locale: "en_US",
   },
 };
