@@ -52,7 +52,7 @@ export default function SponsorComponent() {
 
       {/* UPI Transaction */}
       <HeadingBasic
-        animationDelay={1.6}
+        animationDelay={0.9}
         heading="UPI Trasaction"
         id={"upiTransaction"}
         url="#upiTransaction"
@@ -66,7 +66,7 @@ export default function SponsorComponent() {
             key={index}
             initial={{ y: 50, scale: 0.4, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
-            transition={{ delay: 0.7 + (index * 0.3) / 2 }}
+            transition={{ delay: 1.2 + (index * 0.3) / 2 }}
             className="select-none"
           >
             <div className="bg-[#1E2028] border border-[#444D7E]/20 flex flex-col overflow-auto rounded-2xl hover:scale-[1.1] transition-all hover:shadow-xl shadow-md hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50">
@@ -115,7 +115,7 @@ export default function SponsorComponent() {
 
       {/* Non UPI Transaction */}
       <HeadingBasic
-        animationDelay={1.6}
+        animationDelay={2.1}
         heading="Non UPI Trasaction"
         id={"nonUPITransaction"}
         url="#nonUPITransaction"
@@ -137,7 +137,7 @@ export default function SponsorComponent() {
         className={"px-8 flex flex-col"}
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 2.2 }}
+        transition={{ delay: 2.7 }}
         id={"sponsorGoal"}
       >
         {/* Text */}
