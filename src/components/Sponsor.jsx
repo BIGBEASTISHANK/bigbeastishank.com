@@ -41,10 +41,17 @@ export default function SponsorComponent() {
             <br className={"select-none"} />
 
             <p>
-              If you sponsor me, you can join my Discord server and share
-              screenshots in the sponsor channel. It&apos;s a great way for us
-              to chat and for me to show appreciation to all my sponsors. Thanks
-              for considering teaming up with me!
+              If you sponsor me, you can join my{" "}
+              <a
+                href="/discord"
+                target="_blank"
+                className="text-[#7799E5] hover:underline outline-none"
+              >
+                <strong>Discord server</strong>
+              </a>{" "}
+              and share screenshots in the sponsor channel. It&apos;s a great
+              way for us to chat and for me to show appreciation to all my
+              sponsors. Thanks for considering teaming up with me!
             </p>
           </>
         }
