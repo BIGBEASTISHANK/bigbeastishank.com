@@ -103,25 +103,21 @@ export default function SponsorComponent() {
       <div className="w-full h-[.125rem] my-12 bg-[#444D7E]" />
 
       {/* Non UPI Transaction */}
-      <motion.div
-        className={"px-8 flex flex-col"}
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 1.6 }}
+      <HeadingBasic
+        animationDelay={1.6}
+        heading="Non UPI Trasaction"
         id={"nonUPITransaction"}
-      >
-        {/* Text */}
-        <p className="text-white md:text-3xl text-2xl font-semibold mb-2 mx-auto">
-          Non UPI Trasaction
-        </p>
-
-        {/* Coming soon Note */}
-        <p className={"font-bold"}>
-          Currently, you can only sponsor with UPI (in India). Non-UPI
-          transactions like netbanking (for domestic and international currency)
-          & crypto are coming soon.
-        </p>
-      </motion.div>
+        url="#nonUPITransaction"
+        description={
+          <>
+            <p className={"font-bold"}>
+              Currently, you can only sponsor with UPI (in India). Non-UPI
+              transactions like netbanking (for domestic and international
+              currency) & crypto are coming soon.
+            </p>
+          </>
+        }
+      />
 
       {/* Divider */}
       <div className="w-full h-[.125rem] my-12 bg-[#444D7E]" />
@@ -130,7 +126,7 @@ export default function SponsorComponent() {
         className={"px-8 flex flex-col"}
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 1.9 }}
+        transition={{ delay: 2.2 }}
         id={"sponsorGoal"}
       >
         {/* Text */}
