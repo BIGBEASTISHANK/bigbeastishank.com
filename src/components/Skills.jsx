@@ -1,6 +1,6 @@
 "use client";
-import { skills } from "@/data/SkillsData";
 import { motion } from "framer-motion";
+import { skills } from "@/data/SkillsData";
 import HeadingBasic from "@/utility/HeadingBasic";
 
 export default function Skills() {
@@ -13,8 +13,10 @@ export default function Skills() {
         animationDelay={3.8}
         description={
           <>
-            Versatile skills for digital excellence, spanning web development,
-            programming, graphic design, and creative content.
+            <p>
+              Versatile skills for digital excellence, spanning web development,
+              programming, graphic design, and creative content.
+            </p>
           </>
         }
       />
@@ -27,8 +29,7 @@ export default function Skills() {
             key={index}
             initial={{ y: 50, scale: 0.4, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
-            // transition={{ delay: 4.3 + (index * 0.3) / 2 }}
-            transition={{ delay: 0 + (index * 0.3) / 2 }}
+            transition={{ delay: 4.3 + (index * 0.3) / 2 }}
             className="select-none"
           >
             <div className="bg-[#1E2028] border border-[#444D7E]/20 flex flex-col overflow-auto h-[8rem] md:w-[8rem] w-[6rem] rounded-2xl hover:scale-[1.1] transition-all hover:shadow-xl shadow-md hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50">

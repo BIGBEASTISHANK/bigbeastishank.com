@@ -17,7 +17,7 @@ export default function About() {
         transition={{ delay: 1.4 }}
         href={pfp.src}
         target="_blank"
-        className="md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10 mx-auto"
+        className="md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10 mx-auto outline-none"
       >
         <Image
           src={pfp}
@@ -65,7 +65,7 @@ export default function About() {
           <a
             href="/youtube"
             target="_blank"
-            className="text-[#7799E5] hover:underline"
+            className="text-[#7799E5] hover:underline outline-none"
           >
             <strong>YouTube</strong>
           </a>{" "}

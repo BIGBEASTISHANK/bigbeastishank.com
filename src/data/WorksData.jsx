@@ -127,7 +127,7 @@ export const websiteProjects = [
 export const otherProjects = [
   // Dotfiles
   {
-    title: "Dotfiles",
+    title: "Linux Dotfiles",
     description:
       "This is my dotfiles (config) for my Arch Linux window managers, mainly BSPWM, Polybar, Rofi, etc.",
     projectUrl: "https://github.com/BIGBEASTISHANK/dotfile",

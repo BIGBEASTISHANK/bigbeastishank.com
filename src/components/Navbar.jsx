@@ -29,7 +29,7 @@ export default function Navbar() {
                   data.url != pathName
                     ? "hover:text-[#8b8b8b]"
                     : ""
-                } transition-all`}
+                } transition-all outline-none`}
               >
                 {data.name}
               </Link>

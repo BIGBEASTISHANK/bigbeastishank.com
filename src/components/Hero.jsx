@@ -14,7 +14,7 @@ export default function Hero() {
         transition={{ delay: 0.3 }}
         href={logo.src}
         target="_blank"
-        className="md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10"
+        className="md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10 outline-none"
       >
         <Image
           src={logo}
@@ -60,12 +60,13 @@ export default function Hero() {
           "mailto:business@bigbeastishank.com?subject=Contact%20from%3A%20bigbeastishank.com%3B%20Regarding%3A%20%5BYour%20Issue%5D&body=Hey%20Ishank%2C%0AI'm%20%5Byour%20name%5D.%20%5Byour%20request%5D"
         }
         target="_blank"
-        className="mr-auto group/chm hover:scale-[1.1] transition-all select-none"
+        className="mr-auto group/chm hover:scale-[1.1] transition-all select-none outline-none"
       >
         <motion.button
           initial={{ opacity: 0, scale: 0.4, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 1 }}
+          className={"outline-none"}
         >
           <p className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border border-[#444D7E] rounded-full bg-[#1E2028] group-hover/chm:shadow-lg shadow-md group-hover/chm:shadow-[#444D7E]/50 shadow-[#444D7E]/50 transition-all">
             Contact/Hire Me

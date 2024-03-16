@@ -11,7 +11,7 @@ export default function Footer() {
           <a
             href="/github"
             target="_blank"
-            className="text-[#7799E5] hover:underline"
+            className="text-[#7799E5] hover:underline outline-none"
           >
             BIGBEASTISHANK
           </a>
@@ -27,6 +27,7 @@ export default function Footer() {
             aria-label={data.label}
             href={data.link}
             target="_blank"
+            className={"outline-none"}
           >
             <data.icon />
           </Link>

@@ -50,14 +50,16 @@ export default function NotFound() {
           heading="404 Not Found"
           description={
             <>
-              Lost in the digital maze! It appears you&apos;ve stumbled upon a 404
-              Not Found - the elusive page seems to have slipped through the
-              cracks. Fear not, intrepid explorer! While this page may be off
-              the grid, our virtual compass is recalibrating to guide you back.
-              Feel free to hit the back button, check the URL for typos, or
-              visit our homepage to embark on a new adventure. We apologize for
-              the inconvenience and appreciate your patience as we tidy up the
-              virtual trail. Safe travels!
+              <p>
+                Lost in the digital maze! It appears you&apos;ve stumbled upon a
+                404 Not Found - the elusive page seems to have slipped through
+                the cracks. Fear not, intrepid explorer! While this page may be
+                off the grid, our virtual compass is recalibrating to guide you
+                back. Feel free to hit the back button, check the URL for typos,
+                or visit our homepage to embark on a new adventure. We apologize
+                for the inconvenience and appreciate your patience as we tidy up
+                the virtual trail. Safe travels!
+              </p>
             </>
           }
         />

@@ -15,16 +15,18 @@ export default function WorksComponent() {
         url="/works"
         description={
           <>
-            🌐 Explore a collection of my standout projects right here. For a
-            comprehensive look at all my endeavors, visit my{" "}
-            <a
-              href="/github"
-              target="_blank"
-              className="text-[#7799E5] hover:underline"
-            >
-              <strong>GitHub</strong>
-            </a>
-            .
+            <p>
+              🌐 Explore a collection of my standout projects right here. For a
+              comprehensive look at all my endeavors, visit my{" "}
+              <a
+                href="/github"
+                target="_blank"
+                className="text-[#7799E5] hover:underline outline-none"
+              >
+                <strong>GitHub</strong>
+              </a>
+              .
+            </p>
           </>
         }
       />
@@ -75,10 +77,10 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: titleDelay }}
-        className="font-bold md:text-2xl text-xl md:mb-7 mb-5 scroll-mt-24 flex"
+        className="font-bold md:text-2xl text-xl md:mb-7 mb-5 scroll-mt-24 flex outline-none"
       >
         {/* Heading */}
-        <Link href={`/works#${id}`} className="mr-auto">
+        <Link href={`/works#${id}`} className="mr-auto outline-none">
           ~/{name}
         </Link>
 
@@ -121,11 +123,11 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
               <div className="mb-5 flex flex-col bg-[#1E2028] border border-[#444D7E]/20 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50">
                 {/* Project title */}
                 <div className="flex">
-                <Link href={`#${data.title}`}>
-                  <h2 className="md:text-lg text-base font-semibold">
-                    {data.title}
-                  </h2>
-                </Link>
+                  <Link href={`#${data.title}`} className={"outline-none"}>
+                    <h2 className="md:text-lg text-base font-semibold">
+                      {data.title}
+                    </h2>
+                  </Link>
                 </div>
 
                 {/* Project Description */}
@@ -137,7 +139,7 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
                 <a
                   href={data.projectUrl}
                   target="_blank"
-                  className="text-semibold hover:scale-[1.1] transition-all md:text-base text-sm mr-auto"
+                  className="text-semibold hover:scale-[1.1] transition-all md:text-base text-sm mr-auto outline-none"
                 >
                   <span className="flex group/readMore py-[0.15rem] px-[1rem] border border-[#444D7E]/20 rounded-full bg-[#30343D] hover:shadow-md shadow-sm hover:shadow-[#444D7E]/30 transition-all shadow-[#444D7E]/30">
                     View Project
