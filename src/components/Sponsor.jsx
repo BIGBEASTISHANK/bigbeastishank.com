@@ -21,27 +21,30 @@ export default function SponsorComponent() {
         description={
           <>
             <p>
-              Hello everyone, My name is Ishank. I&apos;m developing websites
-              and video games. I&apos;m currently attempting to learn Unreal
-              Engine, but I used to make games with Unity. I use NextJS to
-              create websites. Every project I work on, no matter how big or
-              small, is open source because I get really excited when I create
-              something and other people use it. In addition, I will only create
-              open-source games going forward, which means that my revenue
-              stream will be extremely constrained.
+              Hey there, I&apos;m Ishank, a developer who loves making websites
+              and video games. Right now, I&apos;m exploring Unreal Engine after
+              working with Unity. I use NextJS for websites, and I always share
+              my projects for free because I love helping others.
             </p>
 
             <br className={"select-none"} />
 
             <p>
-              I will also make multiplayer games in the future, and to keep
-              servers running, I need money, which will come from sponsors. I
-              will take some security measures for in-app purchases so it can be
-              opensource and I don&apos;t have a heavy loss, but still, it
-              won&apos;t make enough revenue as I can&apos;t add in-app
-              purchases in offline or Single player games. I will be happy and
-              motivated to work on amazing projects and develop my skills if you
-              sponsor me.
+              I&apos;m excited about creating more awesome stuff, and
+              sponsorship would really help me out. Whether it&apos;s financial
+              support or working together on projects, your help would let me
+              focus on making cool things and getting better at what I do. Your
+              support means a lot to me as I keep growing in this creative
+              journey.
+            </p>
+
+            <br className={"select-none"} />
+
+            <p>
+              If you sponsor me, you can join my Discord server and share
+              screenshots in the sponsor channel. It&apos;s a great way for us
+              to chat and for me to show appreciation to all my sponsors. Thanks
+              for considering teaming up with me!
             </p>
           </>
         }
