@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { navLinks } from "@/libs/data";
+import { navLinks } from "@/data/NavbarData";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {

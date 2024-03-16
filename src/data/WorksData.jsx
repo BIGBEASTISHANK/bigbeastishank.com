@@ -1,218 +1,3 @@
-// Icons
-import {
-  FaGithub,
-  FaReddit,
-  FaTwitter,
-  FaYoutube,
-  FaDiscord,
-  FaSpotify,
-  FaLinkedin,
-  FaInstagram,
-} from "react-icons/fa";
-import {
-  SiGit,
-  SiSass,
-  SiCss3,
-  SiHtml5,
-  SiLinux,
-  SiMysql,
-  SiReact,
-  SiKrita,
-  SiUnity,
-  SiNeovim,
-  SiCsharp,
-  SiGithub,
-  SiReplit,
-  SiPython,
-  SiMatrix,
-  SiBlender,
-  SiMongodb,
-  SiGnubash,
-  SiVscodium,
-  SiCplusplus,
-  SiNextdotjs,
-  SiJavascript,
-  SiTailwindcss,
-  SiUnrealengine,
-} from "react-icons/si";
-import { TbBrandFramerMotion, TbBrandFiverr } from "react-icons/tb";
-
-// Navbar links
-export const navLinks = [
-  {
-    name: "Home",
-    url: "/",
-  },
-  {
-    name: "Works",
-    url: "/works",
-  },
-];
-
-// Skills
-export const skills = [
-  // Programming Languages
-  {
-    name: "C++",
-    icon: SiCplusplus,
-  },
-  {
-    name: "C#",
-    icon: SiCsharp,
-  },
-  {
-    name: "Python",
-    icon: SiPython,
-  },
-  {
-    name: "HTML",
-    icon: SiHtml5,
-  },
-  {
-    name: "CSS",
-    icon: SiCss3,
-  },
-  {
-    name: "Sass",
-    icon: SiSass,
-  },
-  {
-    name: "TailWind CSS",
-    icon: SiTailwindcss,
-  },
-  {
-    name: "Java Script",
-    icon: SiJavascript,
-  },
-  {
-    name: "React",
-    icon: SiReact,
-  },
-  {
-    name: "Next.js",
-    icon: SiNextdotjs,
-  },
-  {
-    name: "Framer Motion",
-    icon: TbBrandFramerMotion,
-  },
-  {
-    name: "Bash",
-    icon: SiGnubash,
-  },
-  {
-    name: "MySQL",
-    icon: SiMysql,
-  },
-
-  // Tools I use
-  {
-    name: "Linux",
-    icon: SiLinux,
-  },
-  {
-    name: "VS Codium",
-    icon: SiVscodium,
-  },
-  {
-    name: "NeoVim",
-    icon: SiNeovim,
-  },
-  {
-    name: "Unity",
-    icon: SiUnity,
-  },
-  {
-    name: "Unreal Engine",
-    icon: SiUnrealengine,
-  },
-  {
-    name: "GitHub",
-    icon: SiGithub,
-  },
-  {
-    name: "Blender",
-    icon: SiBlender,
-  },
-  {
-    name: "Krita",
-    icon: SiKrita,
-  },
-  {
-    name: "Git",
-    icon: SiGit,
-  },
-  {
-    name: "Mongo DB",
-    icon: SiMongodb,
-  },
-  {
-    name: "Replit",
-    icon: SiReplit,
-  },
-];
-
-// Social Media
-export const socialMedia = [
-  {
-    label: "GitHub",
-    icon: FaGithub,
-    link: "/github",
-  },
-  {
-    label: "Linkedin",
-    icon: FaLinkedin,
-    link: "/linkedin",
-  },
-  {
-    label: "Matrix",
-    icon: SiMatrix,
-    link: "/matrix",
-  },
-  {
-    label: "Fiverr",
-    icon: TbBrandFiverr,
-    link: "/fiverr",
-  },
-  {
-    label: "Spotify",
-    icon: FaSpotify,
-    link: "/spotify",
-  },
-  {
-    label: "YouTube",
-    icon: FaYoutube,
-    link: "/youtube",
-  },
-  {
-    label: "Discord",
-    icon: FaDiscord,
-    link: "/discord",
-  },
-  {
-    label: "Instagram",
-    icon: FaInstagram,
-    link: "/instagram",
-  },
-  {
-    label: "Twitter",
-    icon: FaTwitter,
-    link: "/twitter",
-  },
-  {
-    label: "Reddit",
-    icon: FaReddit,
-    link: "/reddit",
-  },
-];
-
-///////////////////////////////////////////////////
-///////////////////////////////////////////////////
-//////////////////////          ///////////////////
-////////////////////// Projects ///////////////////
-//////////////////////          ///////////////////
-///////////////////////////////////////////////////
-///////////////////////////////////////////////////
 // Game Projects
 export const gameProjects = [
   // Drag your tires game
@@ -263,6 +48,15 @@ export const gameProjects = [
     projectUrl: "https://github.com/BIGBEASTISHANK/Beast-Race",
   },
 ];
+
+
+
+
+
+
+
+
+
 
 // Websites
 export const websiteProjects = [
@@ -319,12 +113,22 @@ export const websiteProjects = [
   },
 ];
 
+
+
+
+
+
+
+
+
+
+
 // Other Projects
 export const otherProjects = [
   // Dotfiles
   {
     title: "Dotfiles",
-    description: 
+    description:
       "This is my dotfiles (config) for my Arch Linux window managers, mainly BSPWM, Polybar, Rofi, etc.",
     projectUrl: "https://github.com/BIGBEASTISHANK/dotfile",
   },

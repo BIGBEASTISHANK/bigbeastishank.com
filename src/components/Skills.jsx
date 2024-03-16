@@ -1,5 +1,5 @@
 "use client";
-import { skills } from "@/libs/data";
+import { skills } from "@/data/SkillsData";
 import { motion } from "framer-motion";
 import HeadingBasic from "@/utility/HeadingBasic";
 
