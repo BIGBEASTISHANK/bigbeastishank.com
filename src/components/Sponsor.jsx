@@ -20,8 +20,8 @@ export default function SponsorComponent() {
         description={
           <>
             <p>
-              Hello everyone, My name is Ishank. I'm developing websites and
-              video games. I'm currently attempting to learn Unreal Engine, but
+              Hello everyone, My name is Ishank. I&apos;m developing websites and
+              video games. I&apos;m currently attempting to learn Unreal Engine, but
               I used to make games with Unity. I use NextJS to create websites.
               Every project I work on, no matter how big or small, is open
               source because I get really excited when I create something and
@@ -36,8 +36,8 @@ export default function SponsorComponent() {
               I will also make multiplayer games in the future, and to keep
               servers running, I need money, which will come from sponsors. I
               will take some security measures for in-app purchases so it can be
-              opensource and I don't have a heavy loss, but still, it won't make
-              enough revenue as I can't add in-app purchases in offline or
+              opensource and I don&apos;t have a heavy loss, but still, it won&apos;t make
+              enough revenue as I can&apos;t add in-app purchases in offline or
               Single player games. I will be happy and motivated to work on
               amazing projects and develop my skills if you sponsor me.
             </p>
