@@ -113,7 +113,7 @@ export default function SponsorComponent() {
             <p className={"font-bold"}>
               Currently, you can only sponsor with UPI (in India). Non-UPI
               transactions like netbanking (for domestic and international
-              currency) & crypto are coming soon.
+              currency) & crypto are coming soon. Thanks for waiting :)
             </p>
           </>
         }
