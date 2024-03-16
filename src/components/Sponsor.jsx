@@ -9,6 +9,7 @@ import {
   sponsorAmount,
   sponsorGoalAmount,
 } from "@/data/SponsorData";
+import Image from "next/image";
 
 export default function SponsorComponent() {
   return (
@@ -58,8 +59,8 @@ export default function SponsorComponent() {
           >
             <div className="bg-[#1E2028] border border-[#444D7E]/20 flex flex-col overflow-auto rounded-2xl hover:scale-[1.1] transition-all hover:shadow-xl shadow-md hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50">
               {/* Image */}
-              <img
-                src={data.imageUrl.src}
+              <Image
+                src={data.imageUrl}
                 alt={data.amount}
                 className="p-5 md:w-[320px] md:h-[413.5px] w-[373.3px] h-[482.5px]"
               />
@@ -120,7 +121,7 @@ export default function SponsorComponent() {
           }
         >
           <div
-            className={`p-1 bg-white rounded-full w-[${barPercentage}%]`}
+            className={`p-1 bg-white rounded-full ${barPercentage}`}
           />
         </div>
       </motion.div>
