@@ -27,13 +27,14 @@ export default function Skills() {
             key={index}
             initial={{ y: 50, scale: 0.4, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
-            transition={{ delay: 4.3 + (index * 0.3) / 2 }}
+            // transition={{ delay: 4.3 + (index * 0.3) / 2 }}
+            transition={{ delay: 0 + (index * 0.3) / 2 }}
             className="select-none"
           >
-            <div className="bg-[#1E2028] border border-[#444D7E]/20 flex flex-col overflow-auto md:h-[8rem] md:w-[8rem] h-[7rem] w-[5rem] rounded-2xl hover:scale-[1.1] transition-all hover:shadow-xl shadow-md hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50">
+            <div className="bg-[#1E2028] border border-[#444D7E]/20 flex flex-col overflow-auto h-[8rem] md:w-[8rem] w-[6rem] rounded-2xl hover:scale-[1.1] transition-all hover:shadow-xl shadow-md hover:shadow-[#444D7E]/50 shadow-[#444D7E]/50">
               {/* Icons */}
               <div className="p-5">
-                <data.icon className="m-auto md:text-5xl text-3xl" />
+                <data.icon className="m-auto md:text-5xl text-4xl" />
               </div>
 
               {/* Divider */}

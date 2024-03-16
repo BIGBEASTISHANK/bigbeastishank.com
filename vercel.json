@@ -67,6 +67,10 @@
       {
         "source": "/sc",
         "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V6"
+      },
+      {
+        "source": "/patreon",
+        "destination": "https://www.patreon.com/bigbeastishank"
       }
     ]
   }

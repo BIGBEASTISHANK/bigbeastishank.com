@@ -30,7 +30,7 @@ export default function Dotfile() {
         transition={{ delay: 2.9 }}
         className="select-none my-5"
       >
-        <Link href={"/img/dotfile/idle.png"} target="_blank">
+        <Link href={Idle.src} target="_blank">
           <Image src={Idle} alt="Idle" />
         </Link>
       </motion.div>
@@ -42,7 +42,7 @@ export default function Dotfile() {
         transition={{ delay: 3.1 }}
         className="select-none"
       >
-        <Link href={"/img/working.png"} target="_blank">
+        <Link href={Working.src} target="_blank">
           <Image src={Working} alt="Working" />
         </Link>
       </motion.div>
