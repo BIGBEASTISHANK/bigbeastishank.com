@@ -88,8 +88,16 @@ export default function SponsorComponent() {
               />
 
               <div className="flex mb-5">
+                
+                
+                
+                {/*
+
+                Currently This button is not working due to some upi encoding. (Not my problem its UPI Problem)
+                
+                */}
                 {/* Open UPI */}
-                <Link
+                {/* <Link
                   href={data.upiLink}
                   target="_blank"
                   className="m-auto group/chm hover:scale-[1.1] transition-all select-none outline-none"
@@ -99,7 +107,9 @@ export default function SponsorComponent() {
                       Open UPI
                     </p>
                   </button>
-                </Link>
+                </Link> */}
+
+
 
                 {/* Download qrcode */}
                 <Link

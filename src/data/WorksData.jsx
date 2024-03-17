@@ -125,6 +125,13 @@ export const websiteProjects = [
 
 // Other Projects
 export const otherProjects = [
+  // BBI License
+  {
+    title: "BBI License",
+    description:
+      "This is a FOSS license created by me. It contains two licenses. One is foss, and another is more restrictive, and that is for open-source games.",
+    projectUrl: "/license",
+  },
   // Dotfiles
   {
     title: "Linux Dotfiles",
