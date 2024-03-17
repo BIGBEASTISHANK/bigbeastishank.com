@@ -103,7 +103,7 @@ export default function About() {
           </Heading>
         </Center>
 
-        <br userSelect="none" />
+        <br unselectable="on" />
 
         <Center>
           <chakra.img
@@ -113,7 +113,7 @@ export default function About() {
           />
         </Center>
 
-        <br userSelect="none" />
+        <br unselectable="on" />
 
         <Center>
           <chakra.img
