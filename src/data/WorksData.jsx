@@ -125,14 +125,6 @@ export const websiteProjects = [
 
 // Other Projects
 export const otherProjects = [
-  // BBI Distribution Lisence
-  {
-    title: "BBI FOSS Distribution License",
-    description:
-      "It's my custom license, which prevents a code from becoming closed source or being used in proprietary software, as well as preventing significant loss of money in the project.",
-    projectUrl: "/lisence",
-  },
-
   // Dotfiles
   {
     title: "Linux Dotfiles",
