@@ -88,12 +88,9 @@ export default function SponsorComponent() {
               />
 
               <div className="flex mb-5">
-                
-                
-                
                 {/*
 
-                Currently This button is not working due to some upi encoding. (Not my problem its UPI Problem)
+                Currently This button is not working due to some upi encoding. (Not my problem it's UPI Problem)
                 
                 */}
                 {/* Open UPI */}
@@ -108,8 +105,6 @@ export default function SponsorComponent() {
                     </p>
                   </button>
                 </Link> */}
-
-
 
                 {/* Download qrcode */}
                 <Link

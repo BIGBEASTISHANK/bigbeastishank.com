@@ -48,16 +48,16 @@ export const gameProjects = [
     projectUrl: "https://github.com/BIGBEASTISHANK/Beast-Race",
   },
 ];
-
-
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // Websites
 export const websiteProjects = [
   // bigbeastishank.com V5
@@ -112,17 +112,16 @@ export const websiteProjects = [
     projectUrl: "https://github.com/BIGBEASTISHANK/First-website",
   },
 ];
-
-
-
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // Other Projects
 export const otherProjects = [
   // BBI License
