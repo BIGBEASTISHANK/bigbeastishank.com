@@ -1,10 +1,10 @@
-BBI Distribution License (BBI DL)
+BBI FOSS Distribution License (BBIFDL)
 
-Version 1.6, March 2024
+Version 1.7, March 2024
 
 Preamble
 
-The BBI Distribution License (hereinafter referred to as "BBI DL") is a Free and Open Source Software license designed to ensure that modifications made to the original code are made available to the public for free of cost. This license governs the distribution, modification, and use of software covered by this license.
+The BBI FOSS Distribution License (hereinafter referred to as "BBIFDL") is a Free and Open Source Software license designed to ensure that modifications made to the original code are made available to the public for free of cost. This license governs the distribution, modification, and use of software covered by this license.
 
 Terms and Conditions
 
@@ -18,16 +18,16 @@ Terms and Conditions
 
 5. Calculation of Profit: The profit to be shared is calculated as the total revenue generated from the distributed code minus the cost incurred to make the modifications.
 
-6. Uniform License: All copies of the original code must be distributed under the same BBI Distribution License.
+6. Uniform License: All copies of the original code must be distributed under the same BBI FOSS Distribution License.
 
-7. Non-Proprietary Usage: The code covered by BBI DL cannot be used in any proprietary manner.
+7. Non-Proprietary Usage: The code covered by BBIFDL cannot be used in any proprietary manner.
 
 8. Profit Sharing Chain: If a modified version of the code is further redistributed, the profit sharing obligation extends to the immediate previous distributor. Each subsequent distributor is responsible for sharing 1% of the profit with the distributor from whom they obtained the code. The profit sharing chain does not extend to the original code owner beyond the first distribution. Therefore, any profit generated from subsequent distributions is shared only with the distributor from whom the code was directly obtained.
 
 Conclusion
 
-The BBI Distribution License aims to foster a collaborative and open environment for software development while ensuring fair compensation for original creators. By adhering to the principles outlined in this license, users can freely modify, distribute, and use software covered by BBI DL while upholding the values of transparency and fairness.
+The BBI FOSS Distribution License aims to foster a collaborative and open environment for software development while ensuring fair compensation for original creators. By adhering to the principles outlined in this license, users can freely modify, distribute, and use software covered by BBIFDL while upholding the values of transparency and fairness.
 
 This license is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-For more details/example about the BBI Distribution License, please visit: github.com/BIGBEASTISHANK/BBI-Distribution-License
+For more details/example about the BBI FOSS Distribution License, please visit: github.com/BIGBEASTISHANK/BBI-Distribution-License
