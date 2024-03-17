@@ -1,76 +1,80 @@
 {
-    "redirects": [
-      {
-        "source": "/email",
-        "destination": "mailto:ishank@bigbeastishank.com"
-      },
-      {
-        "source": "/github",
-        "destination": "https://github.com/bigbeastishank"
-      },
-      {
-        "source": "/linkedin",
-        "destination": "https://linkedin.com/in/bigbeastishank"
-      },
-      {
-        "source": "/fiverr",
-        "destination": "https://www.fiverr.com/bbeastishank"
-      },
-      {
-        "source": "/spotify",
-        "destination": "https://open.spotify.com/user/n37h63t5acey8z9kqu3dwjp1l"
-      },
-      {
-        "source": "/discord",
-        "destination": "https://discord.gg/WdeHDmwKFn"
-      },
-      {
-        "source": "/instagram",
-        "destination": "https://instagram.com/bigbeastishank"
-      },
-      {
-        "source": "/snapchat",
-        "destination": "https://snapchat.com/add/bigbeastishank"
-      },
-      {
-        "source": "/steam",
-        "destination": "https://steamcommunity.com/id/bigbeastishank"
-      },
-      {
-        "source": "/twitter",
-        "destination": "https://twitter.com/bigbeastishank"
-      },
-      {
-        "source": "/facebook",
-        "destination": "https://www.facebook.com/bigbeastishank"
-      },
-      {
-        "source": "/youtube",
-        "destination": "https://www.youtube.com/c/BIGBEASTISHANK"
-      },
-      {
-        "source": "/reddit",
-        "destination": "https://www.reddit.com/r/bigbeastishank"
-      },
-      {
-        "source": "/replit",
-        "destination": "https://replit.com/@BIGBEASTISHANK"
-      },
-      {
-        "source": "/matrix",
-        "destination": "https://matrix.to/#/#bigbeastishank:matrix.org"
-      },
-      {
-        "source": "/sourcecode",
-        "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V6"
-      },
-      {
-        "source": "/sc",
-        "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V6"
-      },
-      {
-        "source": "/patreon",
-        "destination": "https://www.patreon.com/bigbeastishank"
-      }
-    ]
-  }
+  "redirects": [
+    {
+      "source": "/email",
+      "destination": "mailto:ishank@bigbeastishank.com"
+    },
+    {
+      "source": "/github",
+      "destination": "https://github.com/bigbeastishank"
+    },
+    {
+      "source": "/linkedin",
+      "destination": "https://linkedin.com/in/bigbeastishank"
+    },
+    {
+      "source": "/fiverr",
+      "destination": "https://www.fiverr.com/bbeastishank"
+    },
+    {
+      "source": "/spotify",
+      "destination": "https://open.spotify.com/user/n37h63t5acey8z9kqu3dwjp1l"
+    },
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/WdeHDmwKFn"
+    },
+    {
+      "source": "/instagram",
+      "destination": "https://instagram.com/bigbeastishank"
+    },
+    {
+      "source": "/snapchat",
+      "destination": "https://snapchat.com/add/bigbeastishank"
+    },
+    {
+      "source": "/steam",
+      "destination": "https://steamcommunity.com/id/bigbeastishank"
+    },
+    {
+      "source": "/twitter",
+      "destination": "https://twitter.com/bigbeastishank"
+    },
+    {
+      "source": "/facebook",
+      "destination": "https://www.facebook.com/bigbeastishank"
+    },
+    {
+      "source": "/youtube",
+      "destination": "https://www.youtube.com/c/BIGBEASTISHANK"
+    },
+    {
+      "source": "/reddit",
+      "destination": "https://www.reddit.com/r/bigbeastishank"
+    },
+    {
+      "source": "/replit",
+      "destination": "https://replit.com/@BIGBEASTISHANK"
+    },
+    {
+      "source": "/matrix",
+      "destination": "https://matrix.to/#/#bigbeastishank:matrix.org"
+    },
+    {
+      "source": "/sourcecode",
+      "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V6"
+    },
+    {
+      "source": "/sc",
+      "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V6"
+    },
+    {
+      "source": "/patreon",
+      "destination": "https://www.patreon.com/bigbeastishank"
+    },
+    {
+      "source": "/lisence",
+      "destination": "https://github.com/BIGBEASTISHANK/BBI-Distribution-License"
+    }
+  ]
+}

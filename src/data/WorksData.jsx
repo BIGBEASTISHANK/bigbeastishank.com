@@ -130,7 +130,7 @@ export const otherProjects = [
     title: "BBI Distribution License",
     description:
       "It's my custom license, which prevents a code from becoming closed source or being used in proprietary software, as well as preventing significant loss of money in the project.",
-    projectUrl: "https://github.com/BIGBEASTISHANK/BBI-Distribution-License",
+    projectUrl: "/lisence",
   },
 
   // Dotfiles
