@@ -7,9 +7,9 @@ import sponsor700 from "@@/public/img/sponsor/sponsor700.png";
 import sponsor1000 from "@@/public/img/sponsor/sponsor1000.png";
 
 // Varibale
-export const goalReached = 500;
+export const goalReached = 550;
 export const sponsorGoalAmount = 5000;
-export const barPercentage = 'w-[10%]'
+export const barPercentage = 'w-[11%]'
 // export const barPercentage = (goalReached / sponsorGoalAmount) * 100; // Not working for some reason
 
 export const sponsorAmount = [
