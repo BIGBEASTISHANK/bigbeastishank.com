@@ -73,7 +73,7 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0 }) {
 
       {/* Project Heading */}
       <motion.h1
-        id={id}
+        id={id.toLowerCase()}
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: titleDelay }}
