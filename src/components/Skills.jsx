@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { skills } from "@/data/SkillsData";
+import { skills } from "@@/data/SkillsData";
 import HeadingBasic from "@/utility/HeadingBasic";
 
 export default function Skills() {

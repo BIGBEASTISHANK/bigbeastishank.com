@@ -4,11 +4,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import HeadingBasic from "@/utility/HeadingBasic";
 import {
-  barPercentage,
   goalReached,
   sponsorAmount,
+  barPercentage,
   sponsorGoalAmount,
-} from "@/data/SponsorData";
+} from "@@/data/SponsorData";
 import Image from "next/image";
 
 export default function SponsorComponent() {
@@ -167,7 +167,7 @@ export default function SponsorComponent() {
             "w-full border-4 border-[#444D7E] rounded-full shadow-[#444D7E]/50 shadow-md"
           }
         >
-          <div className={`p-1 bg-white rounded-full ${barPercentage}`} />
+          <div className={`p-1 bg-white rounded-full w-[${barPercentage}%]`} />
         </div>
       </motion.div>
     </div>
