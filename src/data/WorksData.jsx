@@ -117,7 +117,7 @@ export const websiteProjects = [
     title: "Initial HTML Website",
     description:
       "With this website, I got into Web-Development. All thanks to this site that sparked the curiosity in me.",
-    projectUrl: "https://github.com/BIGBEASTISHANK/Initial-Websites/tree/flask",
+    projectUrl: "https://github.com/BIGBEASTISHANK/Initial-Websites/tree/html",
   },
 ];
 //
