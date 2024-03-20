@@ -167,7 +167,7 @@ export default function SponsorComponent() {
             "w-full border-4 border-[#444D7E] rounded-full shadow-[#444D7E]/50 shadow-md"
           }
         >
-          <div className={`p-1 bg-white rounded-full w-[${barPercentage}%]`} />
+          <div className={`p-1 bg-white rounded-full`} style={{width: `${barPercentage}%`}} />
         </div>
       </motion.div>
     </div>
