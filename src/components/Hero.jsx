@@ -30,7 +30,7 @@ export default function Hero() {
         transition={{ delay: 0.5 }}
         className="font-bold md:text-xl text-lg md:mb-7 mb-4"
       >
-        I'm Ishank ~ Game & Web Developer
+        I'm Ishank ~ OSS Game & Web Developer
       </motion.h1>
 
       {/* Text */}
@@ -40,7 +40,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          I'm a web and foss game developer that also occasionally creates
+          An open-source game and web developer who also occasionally creates
           exclusive games. I used to produce games on Unity, but I'm also
           learning about the Unreal Engine. I create my website using NextJS.
         </motion.p>
