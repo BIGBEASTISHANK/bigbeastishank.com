@@ -51,7 +51,7 @@ export default function NotFound() {
           description={
             <>
               <p>
-                Lost in the digital maze! It appears you&apos;ve stumbled upon a
+                Lost in the digital maze! It appears you've stumbled upon a
                 404 Not Found - the elusive page seems to have slipped through
                 the cracks. Fear not, intrepid explorer! While this page may be
                 off the grid, our virtual compass is recalibrating to guide you

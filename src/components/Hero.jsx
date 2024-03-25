@@ -30,7 +30,7 @@ export default function Hero() {
         transition={{ delay: 0.5 }}
         className="font-bold md:text-xl text-lg md:mb-7 mb-4"
       >
-        I&apos;m Ishank ~ Game & Web Developer
+        I'm Ishank ~ Game & Web Developer
       </motion.h1>
 
       {/* Text */}

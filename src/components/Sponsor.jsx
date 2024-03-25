@@ -21,17 +21,19 @@ export default function SponsorComponent() {
         description={
           <>
             <p>
-              Hey there, I&apos;m Ishank, a developer who loves making websites
-              and video games. Right now, I&apos;m exploring Unreal Engine after
+              Hey there, I'm Ishank, a developer who loves making websites
+              and video games. Right now, I'm exploring Unreal Engine after
               working with Unity. I use NextJS for websites, and I always share
-              my projects for free because I love helping others.
+              my projects for free because I love helping others but sometimes I
+              make proprietary games, that's mostly for the safety of the
+              players and some in-app purchases.
             </p>
 
             <br className={"select-none"} />
 
             <p>
-              I&apos;m excited about creating more awesome stuff, and
-              sponsorship would really help me out. Whether it&apos;s financial
+              I'm excited about creating more awesome stuff, and
+              sponsorship would really help me out. Whether it's financial
               support or working together on projects, your help would let me
               focus on making cool things and getting better at what I do. Your
               support means a lot to me as I keep growing in this creative
@@ -49,7 +51,7 @@ export default function SponsorComponent() {
               >
                 <strong>Discord server</strong>
               </a>{" "}
-              and share screenshots in the sponsor channel. It&apos;s a great
+              and share screenshots in the sponsor channel. It's a great
               way for us to chat and for me to show appreciation to all my
               sponsors. Thanks for considering teaming up with me!
             </p>
@@ -167,7 +169,10 @@ export default function SponsorComponent() {
             "w-full border-4 border-[#444D7E] rounded-full shadow-[#444D7E]/50 shadow-md"
           }
         >
-          <div className={`p-1 bg-white rounded-full`} style={{width: `${barPercentage}%`}} />
+          <div
+            className={`p-1 bg-white rounded-full`}
+            style={{ width: `${barPercentage}%` }}
+          />
         </div>
       </motion.div>
     </div>
