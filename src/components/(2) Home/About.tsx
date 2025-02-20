@@ -1,10 +1,11 @@
 "use client";
+import { JSX } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import pfp from "@@/public/img/main/pfp.png";
 import HeadingBasic from "@/utility/HeadingBasic";
+import { motion, HTMLMotionProps } from "framer-motion";
 
-export default function About() {
+export default function About(): JSX.Element {
   return (
     <div id="about" className="px-5 scroll-mt-24 flex flex-col">
       {/* Title */}
@@ -15,9 +16,11 @@ export default function About() {
         initial={{ opacity: 0, scale: 0.4 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.4 }}
-        href={pfp.src}
-        target="_blank"
-        className="md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10 mx-auto outline-none"
+        {...({ href: pfp.src, target: "_blank" } as HTMLMotionProps<"a">)}
+        {...({
+          className:
+            "md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10 mx-auto outline-none",
+        } as HTMLMotionProps<"a">)}
       >
         <Image
           src={pfp}
@@ -33,8 +36,7 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.6 }}
         >
-          🚀 Hey there, I'm Ishank, but you can call me the BIG BEAST
-          ISHANK! 👹
+          🚀 Hey there, I'm Ishank, but you can call me the BIG BEAST ISHANK! 👹
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 100 }}
@@ -49,11 +51,11 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2 }}
         >
-          Wondering about the "BIG BEAST ISHANK" title? Well,
-          it's not just a name; it's a journey. I'm on the path
-          to becoming a <strong>Beast</strong> in the realms of Web and Game
-          Development, along with conquering the vast landscapes of Network
-          Engineering & Pentesting.
+          Wondering about the "BIG BEAST ISHANK" title? Well, it's not just a
+          name; it's a journey. I'm on the path to becoming a{" "}
+          <strong>Beast</strong> in the realms of Web and Game Development,
+          along with conquering the vast landscapes of Network Engineering &
+          Pentesting.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 100 }}
@@ -69,8 +71,8 @@ export default function About() {
           >
             <strong>YouTube</strong>
           </a>{" "}
-          channel and I also play games LIVE there. Join the ride, hit that subscribe button, and let's turn
-          the ordinary into extraordinary! 🚀👾
+          channel and I also play games LIVE there. Join the ride, hit that
+          subscribe button, and let's turn the ordinary into extraordinary! 🚀👾
         </motion.p>
       </div>
     </div>

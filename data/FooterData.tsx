@@ -8,8 +8,14 @@ import {
 } from "react-icons/fa";
 import { SiSignal } from "react-icons/si";
 
+interface SocialMedia {
+  label: string;
+  icon: React.ComponentType;
+  link: string;
+}
+
 // Social Media
-export const socialMedia = [
+export const socialMedia: SocialMedia[] = [
   {
     label: "GitHub",
     icon: FaGithub,

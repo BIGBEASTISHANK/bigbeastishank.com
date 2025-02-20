@@ -1,5 +1,10 @@
 // Navbar links
-export const navLinks = [
+interface NavLinks {
+  name: string;
+  url: string;
+}
+
+export const navLinks: NavLinks[] = [
   {
     name: "Home",
     url: "/",

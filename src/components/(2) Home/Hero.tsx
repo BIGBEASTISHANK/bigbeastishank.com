@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import logo from "@@/public/img/main/BBILogo.png";
 import { ReactTyped } from "react-typed";
+import { HTMLMotionProps, motion } from "framer-motion";
+import logo from "@@/public/img/main/BBILogo.png";
 
 export default function Hero() {
   return (
@@ -13,8 +13,7 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.4 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.3 }}
-        href={logo.src}
-        target="_blank"
+        {...({ href: logo.src, target: "_blank" } as any)}
         className="md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10 outline-none"
       >
         <Image
@@ -29,11 +28,19 @@ export default function Hero() {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
-        className="font-bold md:text-xl text-lg md:mb-7 mb-4"
+        {...({
+          className: "font-bold md:text-xl text-lg md:mb-7 mb-4",
+        } as HTMLMotionProps<"h1">)}
       >
-        I'm Ishank ~ {" "}
+        I'm Ishank ~{" "}
         <ReactTyped
-          strings={["Web Developer", "Game Developer", "Networking Enthusiast", "Pentester", "Server Administrator"]}
+          strings={[
+            "Web Developer",
+            "Game Developer",
+            "Networking Enthusiast",
+            "Pentester",
+            "Server Administrator",
+          ]}
           typeSpeed={60}
           backSpeed={40}
           startDelay={600}
@@ -59,8 +66,8 @@ export default function Hero() {
           transition={{ delay: 0.8 }}
         >
           I not only work on creating websites & games, but I also explore the
-          complexity of networking, servers & pentesting. I find joy in
-          securing computer systems & networks. I use Arch BTW!
+          complexity of networking, servers & pentesting. I find joy in securing
+          computer systems & networks. I use Arch BTW!
         </motion.p>
       </div>
 
@@ -76,7 +83,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.4, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 1 }}
-          className={"outline-none"}
+          {...({ className: "outline-none" } as HTMLMotionProps<"button">)}
         >
           <p className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border border-[#1793D1] rounded-full bg-[#0A0C0E] group-hover/chm:shadow-lg shadow-md group-hover/chm:shadow-[#1793D1]/50 shadow-[#1793D1]/50 transition-all">
             Contact/Hire Me

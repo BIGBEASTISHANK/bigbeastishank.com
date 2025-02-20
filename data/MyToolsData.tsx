@@ -4,32 +4,41 @@ import {
   SiGit,
   SiDart,
   SiSass,
+  SiRust,
   SiCss3,
   SiHtml5,
-  SiLinux,
   SiMysql,
+  SiCmake,
+  SiLinux,
   SiReact,
   SiUnity,
   SiNeovim,
-  SiCsharp,
   SiGithub,
   SiPython,
+  SiAnytype,
   SiFlutter,
   SiMongodb,
   SiGnubash,
+  SiMarkdown,
   SiVscodium,
   SiCplusplus,
   SiNextdotjs,
+  SiExcalidraw,
   SiJavascript,
+  SiTypescript,
   SiTailwindcss,
   SiUnrealengine,
 } from "react-icons/si";
+import { IconType } from "react-icons";
+import { TbBrandFramerMotion, TbBrandCSharp } from "react-icons/tb";
 
-import { TbBrandFramerMotion } from "react-icons/tb";
+interface ToolsLayout {
+  name: string;
+  icon: IconType;
+  learningLink: string;
+}
 
-// Skills
-export const myTools = [
-  // Programming Languages
+export const myLangs: ToolsLayout[] = [
   {
     name: "C++",
     icon: SiCplusplus,
@@ -37,13 +46,18 @@ export const myTools = [
   },
   {
     name: "C#",
-    icon: SiCsharp,
+    icon: TbBrandCSharp,
     learningLink: "https://www.w3schools.com/cs",
   },
   {
     name: "C",
     icon: SiC,
     learningLink: "https://www.w3schools.com/c",
+  },
+  {
+    name: "Rust",
+    icon: SiRust,
+    learningLink: "https://doc.rust-lang.org/beta/",
   },
   {
     name: "Python",
@@ -66,19 +80,48 @@ export const myTools = [
     learningLink: "https://www.w3schools.com/sass/",
   },
   {
-    name: "TailWind CSS",
-    icon: SiTailwindcss,
-    learningLink: "https://tailwindcss.com/docs",
-  },
-  {
     name: "Dart",
     icon: SiDart,
     learningLink: "https://dart.dev/guides",
   },
   {
-    name: "Java Script",
+    name: "JavaScript",
     icon: SiJavascript,
     learningLink: "https://www.w3schools.com/js",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    learningLink: "https://www.typescriptlang.org/docs",
+  },
+  {
+    name: "Bash",
+    icon: SiGnubash,
+    learningLink: "https://www.javatpoint.com/bash",
+  },
+  {
+    name: "MySQL",
+    icon: SiMysql,
+    learningLink: "https://www.w3schools.com/mysql/default.asp",
+  },
+  {
+    name: "Markdown",
+    icon: SiMarkdown,
+    learningLink: "https://www.markdownguide.org/getting-started/",
+  },
+  {
+    name: "CMake",
+    icon: SiCmake,
+    learningLink: "https://cmake.org/documentation/",
+  },
+];
+
+// Skills
+export const myTools: ToolsLayout[] = [
+  {
+    name: "TailWind CSS",
+    icon: SiTailwindcss,
+    learningLink: "https://tailwindcss.com/docs",
   },
   {
     name: "Flutter",
@@ -100,18 +143,6 @@ export const myTools = [
     icon: TbBrandFramerMotion,
     learningLink: "https://motion.dev/docs",
   },
-  {
-    name: "Bash",
-    icon: SiGnubash,
-    learningLink: "https://www.javatpoint.com/bash",
-  },
-  {
-    name: "MySQL",
-    icon: SiMysql,
-    learningLink: "https://dev.mysql.com/doc/",
-  },
-
-  // Tools I use
   {
     name: "Linux",
     icon: SiLinux,
@@ -135,7 +166,8 @@ export const myTools = [
   {
     name: "Unreal Engine",
     icon: SiUnrealengine,
-    learningLink: "https://docs.unrealengine.com/en-US/Engine/Basics/index.html",
+    learningLink:
+      "https://docs.unrealengine.com/en-US/Engine/Basics/index.html",
   },
   {
     name: "GitHub",
@@ -151,5 +183,15 @@ export const myTools = [
     name: "Mongo DB",
     icon: SiMongodb,
     learningLink: "https://www.mongodb.com/docs",
+  },
+  {
+    name: "Anytype",
+    icon: SiAnytype,
+    learningLink: "https://doc.anytype.io/anytype-docs",
+  },
+  {
+    name: "Excalidraw",
+    icon: SiExcalidraw,
+    learningLink: "https://excalidraw.com/",
   },
 ];

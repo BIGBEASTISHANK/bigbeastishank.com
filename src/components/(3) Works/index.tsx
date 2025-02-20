@@ -1,12 +1,16 @@
 "use client";
+import {
+  gameProjects,
+  otherProjects,
+  websiteProjects,
+} from "@@/data/WorksData";
 import Link from "next/link";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { JSX, useState } from "react";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { FaEye, FaSearch } from "react-icons/fa";
-import { gameProjects, otherProjects, websiteProjects } from "@@/data/WorksData";
+import { motion, HTMLMotionProps } from "framer-motion";
 
-export default function WorksComponent() {
+export default function WorksComponent(): JSX.Element {
   return (
     <div id="works" className="px-5 scroll-mt-24">
       {/* Title */}
@@ -55,13 +59,25 @@ export default function WorksComponent() {
   );
 }
 
-function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0.7 }) {
+function ProjectList({
+  id = "",
+  name = "",
+  projectData = [],
+  titleDelay = 0.7,
+}: {
+  id?: string;
+  name?: string;
+  projectData?: any[];
+  titleDelay?: number;
+}): JSX.Element {
   // Searchbar variables
-  const [sortedData, sortData] = useState("");
+  const [sortedData, sortData]: [storedData: string, setData: any] =
+    useState("");
   // List variable
-  const [listAnimationDelay, setListAnimationDelay] = useState(
-    titleDelay + 0.3
-  );
+  const [listAnimationDelay, setListAnimationDelay]: [
+    storedData: number,
+    setData: any
+  ] = useState(titleDelay + 0.3);
 
   return (
     <>
@@ -70,11 +86,14 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0.7 })
 
       {/* Project Heading */}
       <motion.h1
-        id={id}
+        {...({ id } as HTMLMotionProps<"h1">)}
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: titleDelay }}
-        className="font-bold md:text-2xl text-xl md:mb-7 mb-5 scroll-mt-24 flex outline-none"
+        {...({
+          className:
+            "font-bold md:text-2xl text-xl md:mb-7 mb-5 scroll-mt-24 flex outline-none",
+        } as HTMLMotionProps<"h1">)}
       >
         {/* Heading */}
         <Link href={`/works#${id}`} className="mr-auto outline-none">
@@ -97,7 +116,7 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0.7 })
       </motion.h1>
 
       {/* Project List */}
-      <motion.ul className="px-6">
+      <motion.ul {...({ className: "px-6" } as HTMLMotionProps<"ul">)}>
         {projectData
           .filter((data) => {
             if (sortedData == "") {
@@ -110,12 +129,12 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0.7 })
           })
           .map((data, index) => (
             <motion.li
-              id={data.title}
+              {...({ id: data.title } as HTMLMotionProps<"li">)}
               key={index}
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: listAnimationDelay + (index * 0.3) / 2 }}
-              className="scroll-mt-24"
+              {...({ className: "scroll-mt-24" } as HTMLMotionProps<"li">)}
             >
               <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#FF3333]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#FF3333]/80 shadow-[#1793D1]/50">
                 {/* Project title */}
@@ -155,7 +174,10 @@ function ProjectList({ id = "", name = "", projectData = [], titleDelay = 0.7 })
             <motion.li
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              className="px-5 py-2 bg-[#0A0C0E] border border-[#1793D1]/20 rounded-full text-red-500 md:text-base text-sm mx-auto text-center"
+              {...({
+                className:
+                  "px-5 py-2 bg-[#0A0C0E] border border-[#1793D1]/20 rounded-full text-red-500 md:text-base text-sm mx-auto text-center",
+              } as HTMLMotionProps<"li">)}
             >
               Oops! No projects with that name. Check for mistake in your input.
             </motion.li>

@@ -1,21 +1,26 @@
 "use client";
 // Imports
-import Link from "next/link";
-import { motion } from "framer-motion";
-import HeadingBasic from "@/utility/HeadingBasic";
 import {
   goalReached,
   barPercentage,
   sponsorGoalAmount,
 } from "@@/data/SponsorData";
+import { JSX } from "react";
+import HeadingBasic from "@/utility/HeadingBasic";
+import { motion, HTMLMotionProps } from "framer-motion";
 
-export default function SponsorComponent() {
-  const currencyFormatter = new Intl.NumberFormat("en-IN", {
+export default function SponsorComponent(): JSX.Element {
+  const currencyFormatterOptions: Intl.NumberFormatOptions = {
     style: "currency",
     currency: "INR",
     minimumFractionDigits: 0,
-    maximumFractionDigits: 0
-});
+    maximumFractionDigits: 0,
+  };
+
+  const currencyFormatter: Intl.NumberFormat = new Intl.NumberFormat(
+    "en-IN",
+    currencyFormatterOptions
+  );
 
   return (
     <div id="sponsorme" className="px-5 scroll-mt-24">
@@ -126,15 +131,18 @@ export default function SponsorComponent() {
 
       {/* Monthly goal */}
       <motion.div
-        className={"px-8 flex flex-col"}
+        {...({ className: "px-8 flex flex-col" } as HTMLMotionProps<"div">)}
         // initial={{ y: -50, opacity: 0 }}
         // animate={{ y: 0, opacity: 1 }}
         // transition={{ delay: 2.7 }}
-        id={"sponsorGoal"}
+        {...({ id: "sponsorGoal" } as HTMLMotionProps<"div">)}
       >
         {/* Text */}
         <p className="text-[#F6F9FC] md:text-3xl text-2xl font-semibold mb-2 mx-auto">
-          Monthly Goal: <span className={"text-[#0088CC]"}>{currencyFormatter.format(goalReached)}</span>
+          Monthly Goal:{" "}
+          <span className={"text-[#0088CC]"}>
+            {currencyFormatter.format(goalReached)}
+          </span>
           &nbsp;/&nbsp;
           <span className={"text-[#FF3333]"}>
             {currencyFormatter.format(sponsorGoalAmount)}

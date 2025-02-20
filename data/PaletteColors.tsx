@@ -1,4 +1,9 @@
-export const paletteColors = [
+interface PaletteColors {
+  name: string;
+  hex: string;
+}
+
+export const paletteColors: PaletteColors[] = [
   {
     name: "Midnight Black",
     hex: "#050607",

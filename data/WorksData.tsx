@@ -1,5 +1,11 @@
+interface ProjectData {
+  title: string;
+  description: string;
+  projectUrl: string;
+}
+
 // Game Projects
-export const gameProjects = [
+export const gameProjects: ProjectData[] = [
   // Drag your tires game
   {
     title: "Drag Your Tires",
@@ -43,7 +49,7 @@ export const gameProjects = [
 //
 //
 // Websites
-export const websiteProjects = [
+export const websiteProjects: ProjectData[] = [
   // bigbeastishank.com V5
   {
     title: "bigbeastishank.com V5",
@@ -116,7 +122,7 @@ export const websiteProjects = [
 //
 //
 // Other Projects
-export const otherProjects = [
+export const otherProjects: ProjectData[] = [
   // Rescue Relay
   {
     title: "Rescue Relay",

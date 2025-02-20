@@ -1,9 +1,10 @@
 "use client";
-import { motion } from "framer-motion";
+import { JSX } from "react";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { paletteColors } from "@@/data/PaletteColors";
+import { HTMLMotionProps, motion } from "framer-motion";
 
-export default function ColorPalette() {
+export default function ColorPalette():JSX.Element {
   return (
     <div id="colorPalette" className="px-5 flex flex-col scroll-mt-24">
       {/* Heading */}
@@ -21,7 +22,7 @@ export default function ColorPalette() {
             animate={{ y: 0, scale: 1, opacity: 1 }}
             transition={{ delay: 0.6 + (index * 0.3) / 2 }}
             key={index}
-            className="flex border-2 border-[#1793D1] rounded-xl my-1 p-2"
+            {...({ className: "my-auto md:w-[45%] w-[80%] md:text-xl text-base flex flex-col" } as HTMLMotionProps<"div">)}
           >
             {/* Name */}
             <p className="my-auto pr-3 md:w-[45%] w-[80%] md:font-bold md:text-xl select-none">

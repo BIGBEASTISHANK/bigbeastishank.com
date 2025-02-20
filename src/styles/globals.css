@@ -5,15 +5,15 @@
 
 /* changing scroll bar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 3.5px;
+    width: 7px;
+    height: 3.5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #1793D1;
-  border-radius: 6px;
+    background-color: #1793D1;
+    border-radius: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: black;
+    background-color: black;
 }

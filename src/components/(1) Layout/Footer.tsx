@@ -1,5 +1,5 @@
-import { socialMedia } from "@@/data/FooterData";
 import Link from "next/link";
+import { socialMedia } from "@@/data/FooterData";
 
 export default function Footer() {
   return (
