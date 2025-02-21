@@ -34,7 +34,6 @@ export default function WorksComponent(): JSX.Element {
           </>
         }
       />
-      {/* If You add 1 item in any section then increaase titleDelay by 1.5 in all section below */}
       {/* Game Project */}
       <ProjectList
         id="gameProjects"
@@ -60,15 +59,13 @@ export default function WorksComponent(): JSX.Element {
 }
 
 function ProjectList({
-  id = "",
-  name = "",
-  projectData = [],
-  titleDelay = 0.7,
+  id,
+  name,
+  projectData,
 }: {
   id?: string;
   name?: string;
   projectData?: any[];
-  titleDelay?: number;
 }): JSX.Element {
   // Searchbar variables
   const [sortedData, sortData]: [storedData: string, setData: any] =
@@ -77,7 +74,7 @@ function ProjectList({
   const [listAnimationDelay, setListAnimationDelay]: [
     storedData: number,
     setData: any
-  ] = useState(titleDelay + 0.3);
+  ] = useState(1);
 
   return (
     <>
@@ -89,7 +86,7 @@ function ProjectList({
         {...({ id } as HTMLMotionProps<"h1">)}
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: titleDelay }}
+        transition={{ delay: 0.7 }}
         {...({
           className:
             "font-bold md:text-2xl text-xl md:mb-7 mb-5 scroll-mt-24 flex outline-none",

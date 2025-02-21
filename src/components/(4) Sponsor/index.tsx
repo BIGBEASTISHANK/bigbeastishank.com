@@ -8,20 +8,9 @@ import {
 import { JSX } from "react";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { motion, HTMLMotionProps } from "framer-motion";
+import { currencyFormatter } from "@/utility/CurrencyFormatter";
 
 export default function SponsorComponent(): JSX.Element {
-  const currencyFormatterOptions: Intl.NumberFormatOptions = {
-    style: "currency",
-    currency: "INR",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  };
-
-  const currencyFormatter: Intl.NumberFormat = new Intl.NumberFormat(
-    "en-IN",
-    currencyFormatterOptions
-  );
-
   return (
     <div id="sponsorme" className="px-5 scroll-mt-24">
       {/* Main Heading */}

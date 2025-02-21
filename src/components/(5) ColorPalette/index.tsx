@@ -22,7 +22,7 @@ export default function ColorPalette():JSX.Element {
             animate={{ y: 0, scale: 1, opacity: 1 }}
             transition={{ delay: 0.6 + (index * 0.3) / 2 }}
             key={index}
-            {...({ className: "my-auto md:w-[45%] w-[80%] md:text-xl text-base flex flex-col" } as HTMLMotionProps<"div">)}
+            {...({ className: "flex border-2 border-[#1793D1] rounded-xl my-1 p-2" } as HTMLMotionProps<"div">)}
           >
             {/* Name */}
             <p className="my-auto pr-3 md:w-[45%] w-[80%] md:font-bold md:text-xl select-none">
