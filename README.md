@@ -7,8 +7,8 @@
 ## Previews
 ![hero](/public/img/preview/webhero.png)
 
-![skills](/public/img/preview/webskills.png)
+![langs](/public/img/preview/weblangs.png)
 
 ![work](/public/img/preview/webworks.png)
 
-![Hire](/public/img/preview/hireme.png)
+![Hire](/public/img/preview/webhireme.png)
