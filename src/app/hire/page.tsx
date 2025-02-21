@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Hire | BIGBEASTISHANK",
     description:
       "Find top freelance talent for your projects on our platform. Hire skilled professionals across various industries for flexible, high-quality work.",
-    images: "/img/metadata/work.png",
+    images: "/img/metadata/hire.png",
   },
 };
 /////////////////////////////

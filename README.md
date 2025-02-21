@@ -10,3 +10,5 @@
 ![skills](/public/img/preview/webskills.png)
 
 ![work](/public/img/preview/webworks.png)
+
+![Hire](/public/img/preview/hireme.png)
