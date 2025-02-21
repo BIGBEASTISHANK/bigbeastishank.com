@@ -117,16 +117,11 @@ export const myLangs: ToolsLayout[] = [
 ];
 
 // Skills
-export const myTools: ToolsLayout[] = [
+export const myToolsAndFramework: ToolsLayout[] = [
   {
-    name: "TailWind CSS",
-    icon: SiTailwindcss,
-    learningLink: "https://tailwindcss.com/docs",
-  },
-  {
-    name: "Flutter",
-    icon: SiFlutter,
-    learningLink: "https://flutter.dev/docs",
+    name: "Next.js",
+    icon: SiNextdotjs,
+    learningLink: "https://nextjs.org/docs",
   },
   {
     name: "React.js",
@@ -134,9 +129,14 @@ export const myTools: ToolsLayout[] = [
     learningLink: "https://reactjs.org/docs/getting-started.html",
   },
   {
-    name: "Next.js",
-    icon: SiNextdotjs,
-    learningLink: "https://nextjs.org/docs",
+    name: "Flutter",
+    icon: SiFlutter,
+    learningLink: "https://flutter.dev/docs",
+  },
+  {
+    name: "TailWind CSS",
+    icon: SiTailwindcss,
+    learningLink: "https://tailwindcss.com/docs",
   },
   {
     name: "Framer Motion",

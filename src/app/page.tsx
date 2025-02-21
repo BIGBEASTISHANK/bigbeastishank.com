@@ -1,6 +1,7 @@
 import Hero from "@/components/(2) Home/Hero";
 import About from "@/components/(2) Home/About";
-import MyTools from "@/components/(2) Home/MyTools";
+import MyLangs from "@/components/(2) Home/MyLangs";
+import MyToolsAndFramework from "@/components/(2) Home/MyToolsAndFrameworks";
 
 export default function Home() {
   return (
@@ -15,7 +16,11 @@ export default function Home() {
       {/* Divider */}
       <div className="w-full h-[.125rem] my-12 bg-[#1793D1]" />
 
-      <MyTools />
+      <MyLangs />
+
+      <div className="w-full h-[.125rem] my-12 bg-[#1793D1]" />
+
+      <MyToolsAndFramework />
     </>
   );
 }
