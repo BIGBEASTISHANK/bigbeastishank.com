@@ -12,7 +12,7 @@ export default function HireComponent(): JSX.Element {
       {/* Title */}
       <HeadingBasic
         heading="Hire Me"
-        url="/hire"
+        url="#hire"
         description={
           <>
             <p>
@@ -49,7 +49,7 @@ export default function HireComponent(): JSX.Element {
               {/* Features */}
               {planFeatures.map((planFeaturesData, index) => (
                 <>
-                  <span className="flex">
+                  <span className="flex" key={index}>
                     {Array.isArray(mainPlanData.hasFeatures) &&
                     mainPlanData.hasFeatures.includes(planFeaturesData) ? (
                       <RxCheck
@@ -84,6 +84,7 @@ export default function HireComponent(): JSX.Element {
               {/* Plan Price */}
               <Link
                 href={mainPlanData.purchaseMail}
+                target="_blank"
                 className="mr-auto group/chm hover:scale-[1.1] transition-all select-none outline-none"
               >
                 <button
@@ -98,6 +99,26 @@ export default function HireComponent(): JSX.Element {
           </motion.li>
         ))}
       </ul>
+
+      {/* Divider */}
+      <div className="w-full h-[.125rem] mb-8 bg-[#1793D1]" />
+
+      {/* Custom Order */}
+      <div id={"customorder"} />
+      <HeadingBasic
+        heading="Custom Order"
+        url="#customorder"
+        animationDelay={1.6}
+        description={
+          <>
+            <p>
+              Looking for something specific? I'm always open to custom orders.
+              You can contact me through the contact form on the main page. We
+              can come up with a plan that suits your needs.
+            </p>
+          </>
+        }
+      />
     </div>
   );
 }

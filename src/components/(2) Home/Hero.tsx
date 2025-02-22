@@ -74,9 +74,10 @@ export default function Hero() {
       {/* Button */}
       <Link
         href={
-          "/sponsor"
+          "mailto:business@bigbeastishank.com?subject=Contact%20from%3A%20bigbeastishank.com%3B%20Regarding%3A%20%5BYour%20Issue%5D&body=Hey%20Ishank%2C%0AI'm%20%5Byour%20name%5D.%20%5Byour%20request%5D"
         }
         className="mr-auto group/chm hover:scale-[1.1] transition-all select-none outline-none"
+        target="_blank"
       >
         <motion.button
           initial={{ opacity: 0, scale: 0.4, y: 50 }}
@@ -85,7 +86,7 @@ export default function Hero() {
           {...({ className: "outline-none" } as HTMLMotionProps<"button">)}
         >
           <p className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border border-[#1793D1] rounded-full bg-[#0A0C0E] group-hover/chm:shadow-lg shadow-md group-hover/chm:shadow-[#1793D1]/50 shadow-[#1793D1]/50 transition-all">
-            Sponsor Me
+            Contact Me
           </p>
         </motion.button>
       </Link>
