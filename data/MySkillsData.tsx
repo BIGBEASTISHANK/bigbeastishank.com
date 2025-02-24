@@ -8,7 +8,6 @@ import {
   SiCss3,
   SiHtml5,
   SiMysql,
-  SiCmake,
   SiLinux,
   SiReact,
   SiUnity,
@@ -108,11 +107,6 @@ export const myLangs: ToolsLayout[] = [
     name: "Markdown",
     icon: SiMarkdown,
     learningLink: "https://www.markdownguide.org/getting-started/",
-  },
-  {
-    name: "CMake",
-    icon: SiCmake,
-    learningLink: "https://cmake.org/documentation/",
   },
 ];
 
