@@ -11,7 +11,7 @@ export default function MyToolsAndFramework(): JSX.Element {
       <HeadingBasic
         heading="My Tools & Framework"
         url="#myToolsAndFramework"
-        animationDelay={5.4}
+        animationDelay={5.15}
         description={
           <>
             <p>
@@ -30,7 +30,7 @@ export default function MyToolsAndFramework(): JSX.Element {
             key={index}
             initial={{ y: 50, scale: 0.4, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
-            transition={{ delay: 5.8 + (index * 0.3) / 2 }}
+            transition={{ delay: 5.55 + (index * 0.3) / 2 }}
             {...({ className: "group/chm" } as HTMLMotionProps<"li">)}
           >
             <div className="group bg-[#050607] border border-[#1793D1]/70 hover:border-[#00FF00]/70 flex flex-col overflow-auto h-[8rem] md:w-[8rem] w-[6rem] rounded-2xl hover:scale-[1.1] transition-all hover:shadow-xl shadow-md hover:shadow-[#00FF00]/80 shadow-[#1793D1]/50">
