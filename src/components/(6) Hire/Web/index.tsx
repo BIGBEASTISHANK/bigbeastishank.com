@@ -1,24 +1,27 @@
 "use client";
 import { JSX } from "react";
-import { hireData, planFeatures } from "@@/data/HireData";
-import { HTMLMotionProps, motion } from "framer-motion";
-import HeadingBasic from "@/utility/HeadingBasic";
 import Link from "next/link";
+import HeadingBasic from "@/utility/HeadingBasic";
 import { RxCheck, RxCross2 } from "react-icons/rx";
+import { HTMLMotionProps, motion } from "framer-motion";
+import { webHire, webPlanFeatures } from "@@/data/HireData";
 
-export default function HireComponent(): JSX.Element {
+export default function WebHireComponent(): JSX.Element {
   return (
-    <div id="hire" className="px-5 scroll-mt-24">
+    <div id="webHire" className="px-5 scroll-mt-24">
       {/* Title */}
       <HeadingBasic
-        heading="Hire Me"
-        url="#hire"
+        heading="Web Development"
+        url="#webHire"
         description={
           <>
             <p>
-              Have work to do? I'm always open to new opportunities. Hire me to
-              do your work for you. I'm a freelancer with a passion for creating
-              innovative solutions that make a difference.
+              Looking for top-notch web development? As a freelance web
+              developer, I specialize in crafting custom, high-performance
+              websites tailored to your needs. Whether you're building from
+              scratch or improving an existing site, I offer expert solutions
+              with a focus on clean code, responsive design, and seamless user
+              experiences.
             </p>
           </>
         }
@@ -26,7 +29,7 @@ export default function HireComponent(): JSX.Element {
 
       {/* Hire me card */}
       <ul className="px-2 my-10">
-        {hireData.map((mainPlanData, index) => (
+        {webHire.map((mainPlanData, index) => (
           <motion.li
             key={index}
             {...({ id: mainPlanData.id } as HTMLMotionProps<"li">)}
@@ -47,7 +50,7 @@ export default function HireComponent(): JSX.Element {
               </p>
 
               {/* Features */}
-              {planFeatures.map((planFeaturesData, index) => (
+              {webPlanFeatures.map((planFeaturesData, index) => (
                 <>
                   <span className="flex" key={index}>
                     {Array.isArray(mainPlanData.hasFeatures) &&

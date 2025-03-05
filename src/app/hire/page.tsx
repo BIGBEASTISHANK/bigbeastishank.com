@@ -1,6 +1,6 @@
 import { JSX } from "react";
 import { Metadata } from "next";
-import HireComponent from "@/components/(6) Hire/Hire";
+import HireComponent from "@/components/(6) Hire";
 
 // Meta data
 export const metadata: Metadata = {
