@@ -36,7 +36,7 @@ export default function HireComponent(): JSX.Element {
             {...({ className: "scroll-mt-24" } as HTMLMotionProps<"li">)}
           >
             <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#FFFF00]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#FFFF00]/80 shadow-[#1793D1]/50">
-              {/* Project title */}
+              {/* Plan title */}
               <div className="flex">
                 <Link
                   href={`#${allHirePlanData.type}`}
@@ -48,7 +48,7 @@ export default function HireComponent(): JSX.Element {
                 </Link>
               </div>
 
-              {/* Project Description */}
+              {/* Plan Description */}
               <p className="md:text-base text-sm mb-3 text-[#AFB3C1]">
                 {allHirePlanData.description}
               </p>
@@ -59,7 +59,7 @@ export default function HireComponent(): JSX.Element {
                 className="text-semibold hover:scale-[1.1] transition-all md:text-base text-sm mr-auto outline-none"
               >
                 <span className="flex group/readMore py-[0.15rem] px-[1rem] border border-[#1793D1]/50 group-hover:border-[#FFFF00]/70 rounded-full bg-[#050607] hover:shadow-md shadow-sm hover:shadow-[#1793D1]/30 group-hover:shadow-[#FFFF00]/50 transition-all shadow-[#1793D1]/30">
-                  View Project
+                  View Plans
                   <FaEye className="my-auto ml-2 group-hover/readMore:scale-[1.1] transition-all" />
                 </span>
               </Link>

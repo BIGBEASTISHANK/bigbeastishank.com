@@ -40,11 +40,13 @@ export default function WebHireComponent(): JSX.Element {
           >
             <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#1793D1]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#1793D1]/80 shadow-[#1793D1]/50">
               {/* Plan Title */}
-              <Link href={`#${mainPlanData.id}`} className={"outline-none"}>
-                <h1 className="md:text-2xl text-xl font-semibold">
-                  {mainPlanData.name}
-                </h1>
-              </Link>
+              <div className="flex">
+                <Link href={`#${mainPlanData.id}`} className={"outline-none"}>
+                  <h1 className="md:text-2xl text-xl font-semibold">
+                    {mainPlanData.name}
+                  </h1>
+                </Link>
+              </div>
 
               {/* Plan Description */}
               <p className="md:text-base text-sm mb-3 mx-1 text-[#AFB3C1]">
