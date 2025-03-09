@@ -40,9 +40,11 @@ export default function WebHireComponent(): JSX.Element {
           >
             <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#1793D1]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#1793D1]/80 shadow-[#1793D1]/50">
               {/* Plan Title */}
-              <h1 className="md:text-2xl text-xl font-semibold">
-                {mainPlanData.name}
-              </h1>
+              <Link href={`#${mainPlanData.id}`} className={"outline-none"}>
+                <h1 className="md:text-2xl text-xl font-semibold">
+                  {mainPlanData.name}
+                </h1>
+              </Link>
 
               {/* Plan Description */}
               <p className="md:text-base text-sm mb-3 mx-1 text-[#AFB3C1]">
@@ -51,29 +53,27 @@ export default function WebHireComponent(): JSX.Element {
 
               {/* Features */}
               {webPlanFeatures.map((planFeaturesData, index) => (
-                <>
-                  <span className="flex" key={index}>
-                    {Array.isArray(mainPlanData.hasFeatures) &&
-                    mainPlanData.hasFeatures.includes(planFeaturesData) ? (
-                      <RxCheck
-                        style={{
-                          color: "#00FF00",
-                          marginTop: "auto",
-                          marginBottom: "auto",
-                        }}
-                      />
-                    ) : (
-                      <RxCross2
-                        style={{
-                          color: "#FF0000",
-                          marginTop: "auto",
-                          marginBottom: "auto",
-                        }}
-                      />
-                    )}
-                    {planFeaturesData}
-                  </span>
-                </>
+                <span className="flex" key={index}>
+                  {Array.isArray(mainPlanData.hasFeatures) &&
+                  mainPlanData.hasFeatures.includes(planFeaturesData) ? (
+                    <RxCheck
+                      style={{
+                        color: "#00FF00",
+                        marginTop: "auto",
+                        marginBottom: "auto",
+                      }}
+                    />
+                  ) : (
+                    <RxCross2
+                      style={{
+                        color: "#FF0000",
+                        marginTop: "auto",
+                        marginBottom: "auto",
+                      }}
+                    />
+                  )}
+                  {planFeaturesData}
+                </span>
               ))}
 
               <span className="my-2 md:text-base text-sm mx-1 text-[#AFB3C1]">
