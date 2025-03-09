@@ -97,7 +97,6 @@ export const webHire: HireData[] = [
       "Free Lifetime domain",
       "API Integration",
       "Web.dev Optimization",
-      "Maintenance & Updates (1 month)",
     ],
     price: currencyFormatter.format(3999),
     deliveryIn: "7 days",
@@ -125,7 +124,7 @@ export const webHire: HireData[] = [
       "Custom Domain (1 Year)",
       "Free Lifetime domain",
     ],
-    price: currencyFormatter.format(8999),
+    price: currencyFormatter.format(6999),
     deliveryIn: "14 days",
     numberOfRevision: "5",
     purchaseMail:
