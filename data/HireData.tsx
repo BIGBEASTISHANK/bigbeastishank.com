@@ -54,7 +54,7 @@ export const webHire: HireData[] = [
       "Free Lifetime domain",
       "SEO Optimization",
     ],
-    price: currencyFormatter.format(499),
+    price: currencyFormatter.format(799),
     deliveryIn: "3 days",
     numberOfRevision: "1",
     purchaseMail:
