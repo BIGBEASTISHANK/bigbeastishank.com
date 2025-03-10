@@ -6,24 +6,42 @@ interface HireData {
   name: string;
   description: string;
   hasFeatures: string[]; // Fixed type for hasFeatures to an array of strings
-  price: string;
+  originalPrice: string;
+  discountedPrice: string;
   deliveryIn: string;
   numberOfRevision: string;
   purchaseMail: string;
 }
 
+// Plan Price (per thing)
+// Static Page: 500
+// Responsive Design: 500
+// Free Lifetime domain: 0
+// SEO Optimization: 500
+// Dynamic Page: 3,000
+// Custom Design: 1,500
+// Advanced Animations / Interactions: 800
+// API Integration: 2,000
+// Web.dev Optimization: 500
+// Maintenance & Updates: 1,000
+// Priority Support: 1,500
+// Custom Domain (1 Year): 550
+// Minor Revision: 200
+// Major Revision: 2,000
+
 // Feature List
 // Webplan
 export const webPlanFeatures: string[] = [
-  "Basic Website (5-10 pages)",
+  "Static Page",
   "Responsive Design",
   "Free Lifetime domain",
   "SEO Optimization",
   "Custom Design",
-  "Advanced Animations/Interactions",
+  "Advanced Animations / Interactions",
+  "Dynamic Page",
   "API Integration",
   "Web.dev Optimization",
-  "Maintenance & Updates (1 month)",
+  "Maintenance & Updates",
   "Priority Support",
   "Custom Domain (1 Year)",
 ];
@@ -47,14 +65,15 @@ export const webHire: HireData[] = [
     id: "ironTier",
     name: "Iron Tier",
     description:
-      "Ideal for individuals who need a simple, affordable personal website.",
+      "Ideal for individuals who need a simple, affordable personal website. (Note: Price may vary depending on your needs.)",
     hasFeatures: [
-      "Basic Website (5-10 pages)",
+      "Static Page",
       "Responsive Design",
       "Free Lifetime domain",
       "SEO Optimization",
     ],
-    price: currencyFormatter.format(799),
+    originalPrice: currencyFormatter.format(1500),
+    discountedPrice: currencyFormatter.format(799),
     deliveryIn: "3 days",
     numberOfRevision: "1",
     purchaseMail:
@@ -66,16 +85,17 @@ export const webHire: HireData[] = [
     id: "bronzeTier",
     name: "Bronze Tier",
     description:
-      "Perfect for small businesses looking for a website to increase their traffic.",
+      "Perfect for small businesses looking for a website to increase their traffic. (Note: Price may vary depending on your needs.)",
     hasFeatures: [
-      "Basic Website (5-10 pages)",
+      "Static Page",
       "Responsive Design",
       "Custom Design",
       "SEO Optimization",
       "Free Lifetime domain",
-      "Advanced Animations/Interactions",
+      "Advanced Animations / Interactions",
     ],
-    price: currencyFormatter.format(1499),
+    originalPrice: currencyFormatter.format(3800),
+    discountedPrice: currencyFormatter.format(1499),
     deliveryIn: "5 days",
     numberOfRevision: "2",
     purchaseMail:
@@ -87,18 +107,20 @@ export const webHire: HireData[] = [
     id: "silverTier",
     name: "Silver Tier",
     description:
-      "For medium-sized businesses seeking a more feature-rich website functionality and optimization.",
+      "For medium-sized businesses seeking a more feature-rich website functionality and optimization. (Note: Price may vary depending on your needs.)",
     hasFeatures: [
-      "Basic Website (5-10 pages)",
+      "Static Page",
       "Responsive Design",
       "Custom Design",
       "SEO Optimization",
-      "Advanced Animations/Interactions",
+      "Advanced Animations / Interactions",
       "Free Lifetime domain",
       "API Integration",
       "Web.dev Optimization",
+      "Dynamic Page",
     ],
-    price: currencyFormatter.format(3999),
+    originalPrice: currencyFormatter.format(9300),
+    discountedPrice: currencyFormatter.format(3999),
     deliveryIn: "7 days",
     numberOfRevision: "3",
     purchaseMail:
@@ -110,21 +132,23 @@ export const webHire: HireData[] = [
     id: "goldTier",
     name: "Gold Tier",
     description:
-      "For large-scale projects requiring extensive customization, performance optimization, and backend support.",
+      "For large-scale projects requiring extensive customization, performance optimization, and backend support. (Note: Price may vary depending on your needs.)",
     hasFeatures: [
-      "Basic Website (5-10 pages)",
+      "Static Page",
       "Responsive Design",
       "Custom Design",
       "SEO Optimization",
-      "Advanced Animations/Interactions",
+      "Advanced Animations / Interactions",
       "API Integration",
       "Web.dev Optimization",
-      "Maintenance & Updates (1 month)",
+      "Maintenance & Updates",
       "Priority Support",
       "Custom Domain (1 Year)",
       "Free Lifetime domain",
+      "Dynamic Page",
     ],
-    price: currencyFormatter.format(6999),
+    originalPrice: currencyFormatter.format(12350),
+    discountedPrice: currencyFormatter.format(6999),
     deliveryIn: "14 days",
     numberOfRevision: "5",
     purchaseMail:

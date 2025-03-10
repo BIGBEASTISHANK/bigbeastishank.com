@@ -97,7 +97,7 @@ export default function WebHireComponent(): JSX.Element {
                     "md:text-lg text-base py-1 px-3 border border-[#1793D1] rounded-full bg-[#0A0C0E] group-hover/chm:shadow-lg shadow-md group-hover/chm:shadow-[#1793D1]/50 shadow-[#1793D1]/50 transition-all"
                   }
                 >
-                  Purchase: {mainPlanData.price}
+                  Purchase: <i><s>{mainPlanData.originalPrice}</s></i> <span className="text-red-600">-&gt;</span> {mainPlanData.discountedPrice}
                 </button>
               </Link>
             </div>
