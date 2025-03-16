@@ -123,6 +123,13 @@ export const websiteProjects: ProjectData[] = [
 //
 // Other Projects
 export const otherProjects: ProjectData[] = [
+  // Passforge
+  {
+    title: "Passforge",
+    description:
+      "A secure password manager built in Rust with CLI and GUI support, allowing you to store, manage, and generate passwords with encryption.",
+    projectUrl: "https://github.com/BIGBEASTISHANK/Passforge",
+  },
   // Rescue Relay
   {
     title: "Rescue Relay",
