@@ -149,7 +149,7 @@ export const otherProjects: ProjectData[] = [
   {
     title: "Dotfiles",
     description:
-      "This is my dotfiles (config) for my Arch Linux window managers, mainly BSPWM, Polybar, Rofi, etc.",
+      "A script that allows users to copy the dotfiles and software setup from the BIGBEASTISHANK GitHub repository to an Arch Linux system. Quickly replicate his custom system configuration with this easy-to-use setup tool",
     projectUrl: "https://github.com/BIGBEASTISHANK/dotfiles",
   },
 
