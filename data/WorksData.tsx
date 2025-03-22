@@ -50,6 +50,12 @@ export const gameProjects: ProjectData[] = [
 //
 // Websites
 export const websiteProjects: ProjectData[] = [
+  // HackathonPPTSubWeb
+  {
+    title: "HackathonPPTSubWeb",
+    description: "A web app for hackathon PPT submissions. Stores participant details in MongoDB and uploads PPTs to Google Drive.",
+    projectUrl: "https://github.com/BIGBEASTISHANK/HackathonPPTSubWeb",
+  },
   // bigbeastishank.com V5
   {
     title: "bigbeastishank.com V5",
