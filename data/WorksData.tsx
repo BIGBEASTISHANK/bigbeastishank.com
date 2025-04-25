@@ -50,10 +50,18 @@ export const gameProjects: ProjectData[] = [
 //
 // Websites
 export const websiteProjects: ProjectData[] = [
+  // MUJ Tasks
+  {
+    title: "MUJ Tasks",
+    description:
+      "A centralized platform for MUJ students to request and receive assistance with assignments, lab manuals & CSE Projects.",
+    projectUrl: "https://github.com/BIGBEASTISHANK/MUJTasks",
+  },
   // HackathonPPTSubWeb
   {
     title: "HackathonPPTSubWeb",
-    description: "A web app for hackathon PPT submissions. Stores participant details in MongoDB and uploads PPTs to Google Drive.",
+    description:
+      "A web app for hackathon PPT submissions. Stores participant details in MongoDB and uploads PPTs to Google Drive.",
     projectUrl: "https://github.com/BIGBEASTISHANK/HackathonPPTSubWeb",
   },
   // bigbeastishank.com V5
