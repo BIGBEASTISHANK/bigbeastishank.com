@@ -1,0 +1,63 @@
+---
+title: "What is a REST API?"
+description: "A beginner-friendly explanation of REST APIs and why they're essential in modern web development."
+date: "2025-05-21"
+minuteRead: 3
+tags: ["REST API", "Web Development", "APIs"]
+---
+
+If you've spent any time around web development, you've probably heard the term **REST API**. But what exactly is it?
+
+A REST API (Representational State Transfer Application Programming Interface) allows different software systems to communicate with each other over the internet using HTTP methods.
+
+It's one of the most common ways for frontend applications to interact with a backend server.
+
+## Code Example
+
+Here's how you might fetch data from a REST API using JavaScript:
+
+```js
+// Using fetch to call a REST API
+fetch('https://api.example.com/users')
+  .then(response => response.json())
+  .then(data => console.log(data));
+```
+
+The server responds with data (usually in JSON format), which you can use in your application.
+
+## Key Concepts
+
+- **Resources**: Data or objects (like `users`, `posts`, etc.) the API manages.
+- **Endpoints**: URLs that represent resources, e.g., `/api/users`.
+- **HTTP Methods**: Define the type of action you want to perform:
+  - `GET`: Retrieve data
+  - `POST`: Create new data
+  - `PUT`: Update existing data
+  - `DELETE`: Remove data
+
+## Example API Structure
+
+Let's say we're building a blog. The API might look like this:
+
+- `GET /posts` - Fetch all blog posts
+- `GET /posts/1` - Fetch post with ID 1
+- `POST /posts` - Create a new post
+- `PUT /posts/1` - Update post with ID 1
+- `DELETE /posts/1` - Delete post with ID 1
+
+## Why REST APIs Matter
+
+- **Separation of Concerns**: Frontend and backend work independently.
+- **Scalability**: Easy to manage and extend.
+- **Platform Independence**: Any device or app can use the API.
+- **Data Standardization**: JSON format makes it easy to parse and use.
+
+## Features
+
+- **Stateless**: Each request is independent and contains all necessary info.
+- **Resource-Oriented**: Everything is treated as a resource with a unique URL.
+- **Standard Methods**: Uses HTTP verbs consistently.
+
+## Next Steps
+
+Try creating a simple REST API using Express.js or connect to a public API like `https://jsonplaceholder.typicode.com` to experiment. Once you understand REST, you're one step closer to mastering backend development!

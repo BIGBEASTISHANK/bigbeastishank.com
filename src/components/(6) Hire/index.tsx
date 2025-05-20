@@ -24,6 +24,9 @@ export default function HireComponent(): JSX.Element {
         }
       />
 
+      {/* Short Divider */}
+      <div className="w-[50%] h-[.125rem] my-7 bg-[#1793D1] z-10" />
+
       {/* Hire me card */}
       <ul className="px-2 my-10">
         {allHirePlan.map((allHirePlanData, index) => (

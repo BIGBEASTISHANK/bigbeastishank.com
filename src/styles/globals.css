@@ -1,7 +1,5 @@
 /* Tailwinds import */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* changing scroll bar */
 ::-webkit-scrollbar {

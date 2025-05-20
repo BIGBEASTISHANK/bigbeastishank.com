@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/(1) Layout/Navbar";
 import Footer from "@/components/(1) Layout/Footer";
-import ScrollProgressBar from "../utility/ScrollProgressBar";
+import ScrollProgressBar from "@/utility/ScrollProgressBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }): JSX.Element {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" className="!scroll-smooth" suppressHydrationWarning={true}>
       <head>
         <script
           src="https://cdn.counter.dev/script.js"
