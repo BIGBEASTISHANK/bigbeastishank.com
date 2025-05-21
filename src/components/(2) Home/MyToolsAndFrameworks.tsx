@@ -33,7 +33,7 @@ export default function MyToolsAndFramework(): JSX.Element {
             transition={{ delay: 5.55 + (index * 0.3) / 2 }}
             {...({ className: "group/chm" } as HTMLMotionProps<"li">)}
           >
-            <div className="group bg-[#050607] border border-[#1793D1]/70 hover:border-[#00FF00]/70 flex flex-col overflow-auto h-[8rem] md:w-[8rem] w-[6rem] rounded-2xl hover:scale-[1.1] transition-all hover:shadow-xl shadow-md hover:shadow-[#00FF00]/80 shadow-[#1793D1]/50">
+            <div className="group bg-[#1A1E23] border border-[#1793D1]/70 hover:border-[#00FF00]/70 flex flex-col overflow-auto h-[8rem] md:w-[8rem] w-[6rem] rounded-2xl hover:scale-[1.1] transition-all hover:shadow-xl shadow-md hover:shadow-[#00FF00]/80 shadow-[#1793D1]/50">
               {/* Icons */}
               <div className="p-5">
                 <data.icon className="m-auto md:text-5xl text-4xl" />
@@ -44,7 +44,7 @@ export default function MyToolsAndFramework(): JSX.Element {
 
               {/* Name */}
               <a
-                className="md:text-base text-sm px-1 bg-[#1A1E23] h-[90%] content-center"
+                className="md:text-base text-sm px-1 bg-[#0A0C0E] h-[90%] content-center"
                 href={data.learningLink}
                 target="_blank"
               >

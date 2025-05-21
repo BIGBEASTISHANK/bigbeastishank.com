@@ -5,6 +5,7 @@ import { FaEye } from "react-icons/fa";
 import { allHirePlan } from "@@/data/HireData";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { HTMLMotionProps, motion } from "framer-motion";
+import { ShortDivider } from "@/utility/Dividers";
 
 export default function HireComponent(): JSX.Element {
   return (
@@ -25,7 +26,7 @@ export default function HireComponent(): JSX.Element {
       />
 
       {/* Short Divider */}
-      <div className="w-[50%] h-[.125rem] my-7 bg-[#1793D1] z-10" />
+      <ShortDivider delay={0.55}/>
 
       {/* Hire me card */}
       <ul className="px-2 my-10">

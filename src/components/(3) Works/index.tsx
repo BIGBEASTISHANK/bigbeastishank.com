@@ -9,6 +9,7 @@ import { JSX, useState } from "react";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { FaEye, FaSearch } from "react-icons/fa";
 import { motion, HTMLMotionProps } from "framer-motion";
+import { ShortDivider } from "@/utility/Dividers";
 
 export default function WorksComponent(): JSX.Element {
   return (
@@ -79,7 +80,7 @@ function ProjectList({
   return (
     <>
       {/* Short Divider */}
-      <div className="w-[50%] h-[.125rem] my-7 bg-[#1793D1] z-10" />
+      <ShortDivider delay={0.5} />
 
       {/* Project Heading */}
       <motion.h1

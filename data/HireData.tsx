@@ -51,7 +51,7 @@ export const allHirePlan: [
   { type: string; description: string; link: string }
 ] = [
   {
-    type: "Web Develoment",
+    type: "Web Development",
     description:
       "Explore affordable and high-quality web development services tailored to meet your needs. Our team specializes in building innovative, responsive, and scalable websites using the latest technologies.",
     link: "/hire/web",

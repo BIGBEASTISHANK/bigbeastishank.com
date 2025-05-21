@@ -5,6 +5,7 @@ import HeadingBasic from "@/utility/HeadingBasic";
 import { RxCheck, RxCross2 } from "react-icons/rx";
 import { HTMLMotionProps, motion } from "framer-motion";
 import { webHire, webPlanFeatures } from "@@/data/HireData";
+import { ShortDivider } from "@/utility/Dividers";
 
 export default function WebHireComponent(): JSX.Element {
   return (
@@ -26,6 +27,9 @@ export default function WebHireComponent(): JSX.Element {
           </>
         }
       />
+
+      {/* Short Divider */}
+      <ShortDivider delay={0.55}/>
 
       {/* Hire me card */}
       <ul className="px-2 my-10">
@@ -84,7 +88,7 @@ export default function WebHireComponent(): JSX.Element {
               </span>
 
               {/* Short Divider */}
-              <div className="w-[45%] h-[.125rem] mt-2 mb-4 bg-[#1793D1] z-10" />
+              <ShortDivider />
 
               {/* Plan Price */}
               <Link
@@ -97,7 +101,12 @@ export default function WebHireComponent(): JSX.Element {
                     "md:text-lg text-base py-1 px-3 border border-[#1793D1] rounded-full bg-[#0A0C0E] group-hover/chm:shadow-lg shadow-md group-hover/chm:shadow-[#1793D1]/50 shadow-[#1793D1]/50 transition-all"
                   }
                 >
-                  Purchase: <i><s>{mainPlanData.originalPrice}</s></i> <span className="text-red-600">-&gt;</span> {mainPlanData.discountedPrice}
+                  Purchase:{" "}
+                  <i>
+                    <s>{mainPlanData.originalPrice}</s>
+                  </i>{" "}
+                  <span className="text-red-600">-&gt;</span>{" "}
+                  {mainPlanData.discountedPrice}
                 </button>
               </Link>
             </div>

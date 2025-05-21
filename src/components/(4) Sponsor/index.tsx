@@ -9,6 +9,7 @@ import { JSX } from "react";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { currencyFormatter } from "@/utility/CurrencyFormatter";
+import { FullDivider, ShortDivider } from "@/utility/Dividers";
 
 export default function SponsorComponent(): JSX.Element {
   return (
@@ -58,7 +59,7 @@ export default function SponsorComponent(): JSX.Element {
       />
 
       {/* Short Divider */}
-      <div className="w-[50%] h-[.125rem] my-7 bg-[#1793D1] z-10" />
+      <ShortDivider />
 
       {/* Note */}
       {/* <HeadingBasic
@@ -93,7 +94,7 @@ export default function SponsorComponent(): JSX.Element {
         />
 
         {/* Divider */}
-        <div className="w-full h-[.125rem] my-12 bg-[#1793D1]" />
+        <FullDivider />
 
         {/* Non UPI Transaction */}
         <HeadingBasic
@@ -116,7 +117,7 @@ export default function SponsorComponent(): JSX.Element {
       </div>
 
       {/* Divider */}
-      <div className="w-full h-[.125rem] my-12 bg-[#1793D1]" />
+      <FullDivider />
 
       {/* Monthly goal */}
       <motion.div

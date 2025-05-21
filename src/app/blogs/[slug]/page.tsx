@@ -9,6 +9,7 @@ import Link from "next/link";
 import { FaArrowLeft, FaTag } from "react-icons/fa";
 import GoToButton from "@/utility/GoToButton";
 import { Metadata } from "next";
+import { ShortDivider } from "@/utility/Dividers";
 
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "posts");
@@ -156,7 +157,7 @@ export default async function BlogPost({
         </div>
 
         {/* Short Divider */}
-        <div className="w-[45%] h-[.125rem] my-4 bg-[#1793D1] z-10" />
+        <ShortDivider />
 
         {/* Blog content */}
         <div className="prose prose-invert max-w-none">
@@ -164,7 +165,7 @@ export default async function BlogPost({
         </div>
 
         {/* Short Divider */}
-        <div className="w-[45%] h-[.125rem] mt-6 bg-[#1793D1] z-10" />
+        <ShortDivider />
 
         {/* Go Back button */}
         <GoToButton title={"Back to Blogs"} link="/blogs" customCSS="mt-0" />

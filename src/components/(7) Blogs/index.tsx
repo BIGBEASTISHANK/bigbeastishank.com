@@ -4,6 +4,7 @@ import Link from "next/link";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { FaEye, FaSearch, FaTag } from "react-icons/fa";
 import { motion, HTMLMotionProps } from "framer-motion";
+import { ShortDivider } from "@/utility/Dividers";
 
 interface Post {
   slug: string;
@@ -50,10 +51,15 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
       />
 
       {/* Short Divider */}
-      <div className="w-[50%] h-[.125rem] my-7 bg-[#1793D1] z-10" />
+      <ShortDivider delay={0.55} />
 
       {/* Search bar */}
-      <div className="flex bg-[#050607] border border-[#1793D1] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto mb-5">
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.7 }}
+        className="flex bg-[#050607] border border-[#1793D1] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto mb-5"
+      >
         <FaSearch className="my-auto mr-2" />
         <input
           className="bg-transparent outline-none w-full h-10"
@@ -62,7 +68,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
             setSearchTerm(e.target.value);
           }}
         />
-      </div>
+      </motion.div>
 
       {/* Blog Posts */}
       <ul className="px-2 my-10">
@@ -72,7 +78,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
               key={post.slug}
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 + (index * 0.3) / 2 }}
+              transition={{ delay: 0.9 + (index * 0.3) / 2 }}
               {...({ className: "scroll-mt-24" } as HTMLMotionProps<"li">)}
             >
               <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#1793D1]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#1793D1]/80 shadow-[#1793D1]/50">
@@ -116,7 +122,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
                 </div>
 
                 {/* Short Divider */}
-                <div className="w-[30%] h-[.125rem] bg-[#1793D1] z-10 my-4" />
+                <ShortDivider />
 
                 {/* Read more link */}
                 <Link

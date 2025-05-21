@@ -31,10 +31,12 @@
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "react-syntax-highlighter": "^15.6.1",
+    "react-tsparticles": "^2.12.2",
     "react-typed": "^2.0.12",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
-    "sharp": "^0.34.1"
+    "sharp": "^0.34.1",
+    "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
     "@types/mdx": "^2.0.13",
