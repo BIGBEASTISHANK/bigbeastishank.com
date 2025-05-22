@@ -16,7 +16,7 @@ export default function WebHireComponent(): JSX.Element {
         url="#webHire"
         description={
           <>
-            <p>
+            <p className="text-justify">
               Looking for top-notch web development? As a freelance web
               developer, I specialize in crafting custom, high-performance
               websites tailored to your needs. Whether you're building from

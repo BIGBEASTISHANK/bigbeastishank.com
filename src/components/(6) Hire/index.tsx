@@ -16,7 +16,7 @@ export default function HireComponent(): JSX.Element {
         url="#hire"
         description={
           <>
-            <p>
+            <p className="text-justify">
               Have work to do? I'm always open to new opportunities. Hire me to
               do your work for you. I'm a freelancer with a passion for creating
               innovative solutions that make a difference.

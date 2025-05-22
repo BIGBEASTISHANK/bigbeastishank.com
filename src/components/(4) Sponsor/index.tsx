@@ -20,7 +20,7 @@ export default function SponsorComponent(): JSX.Element {
         url="#sponsorme"
         description={
           <>
-            <p>
+            <p className="text-justify">
               Hey there, I'm Ishank, a developer who loves making websites and
               video games. Right now, I'm exploring Unreal Engine after working
               with Unity. I use NextJS for websites, and I always share my

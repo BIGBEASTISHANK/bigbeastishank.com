@@ -99,6 +99,12 @@ export default async function BlogPost({
       h3: (props: any) => (
         <h3 className="text-xl font-bold mt-4 mb-2" {...props} />
       ),
+      a: (props: any) => (
+        <a
+          className="font-bold text-[#0088CC] hover:underline underline-offset-2 outline-none"
+          {...props}
+        />
+      ),
       p: (props: any) => <p className="my-4" {...props} />,
       ul: (props: any) => <ul className="list-disc pl-6 my-4" {...props} />,
       ol: (props: any) => <ol className="list-decimal pl-6 my-4" {...props} />,
@@ -132,15 +138,21 @@ export default async function BlogPost({
         </p>
 
         {/* Blog Metadata */}
-        <div className="flex justify-between text-xs text-[#AFB3C1] mt-4 mb-3">
-          <span>
+        <div className="flex gap-3 text-xs text-[#AFB3C1] mt-4 mb-3">
+          {/* Date */}
+          <p>
             {new Date(frontmatter.date).toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
               day: "numeric",
             })}
-          </span>
-          <span>{frontmatter.minuteRead} min read</span>
+          </p>
+
+          {/* Seprator */}
+          <p> | </p>
+
+          {/* Minute read */}
+          <p>{frontmatter.minuteRead} min read</p>
         </div>
 
         {/* Tags */}

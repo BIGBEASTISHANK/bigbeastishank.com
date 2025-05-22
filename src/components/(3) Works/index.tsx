@@ -20,13 +20,13 @@ export default function WorksComponent(): JSX.Element {
         url="/works"
         description={
           <>
-            <p>
+            <p className="text-justify">
               🌐 Explore a collection of my standout projects right here. For a
               comprehensive look at all my endeavors, visit my{" "}
               <a
                 href="/github"
                 target="_blank"
-                className="text-[#0088CC] hover:underline outline-none"
+                className="font-bold text-[#0088CC] hover:underline underline-offset-2 outline-none"
               >
                 <strong>GitHub</strong>
               </a>

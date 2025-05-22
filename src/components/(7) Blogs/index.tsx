@@ -40,11 +40,20 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
         url="/blogs"
         description={
           <>
-            <p>
+            <p className="text-justify">
               Explore a collection of my blogs covering a variety of topics,
               including web development, game development, and much more. Dive
               in to discover practical tips, insightful experiences, and helpful
-              tricks that I've gathered along my journey.
+              tricks that I've gathered along my journey. If there's a specific
+              topic you'd like me to cover, feel free to contact me via the
+              email provided on the{" "}
+              <Link
+                href="/"
+                className="text-[#0088CC] font-bold hover:underline underline-offset-2 outline-none"
+              >
+                home page
+              </Link>
+              .
             </p>
           </>
         }
@@ -97,15 +106,21 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
                 </p>
 
                 {/* Blog Metadata */}
-                <div className="flex justify-between text-xs text-[#AFB3C1] mt-4 mb-3">
-                  <span>
+                <div className="flex gap-3 text-xs text-[#AFB3C1] mt-4 mb-3">
+                  {/* Date */}
+                  <p>
                     {new Date(post.date).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
                     })}
-                  </span>
-                  <span>{post.minuteRead} min read</span>
+                  </p>
+
+                  {/* Seprator */}
+                  <p> | </p>
+
+                  {/* Minute Read */}
+                  <p>{post.minuteRead} min read</p>
                 </div>
 
                 {/* Tags */}

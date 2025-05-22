@@ -50,11 +50,12 @@ export default function Hero() {
       </motion.h1>
 
       {/* Text */}
-      <div className="md:text-base text-sm md:text-left text-justify flex flex-col md:gap-3 gap-2 text-[#AFB3C1]">
+      <div className="md:text-base text-sm md:text-left flex flex-col md:gap-3 gap-2 text-[#AFB3C1]">
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
+          className="text-justify"
         >
           An open-source game and web developer who also occasionally creates
           exclusive games. I used to produce games on Unity, but I'm also
@@ -64,6 +65,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
+          className="text-justify"
         >
           I not only work on creating websites & games, but I also explore the
           complexity of networking, servers & pentesting. I find joy in securing

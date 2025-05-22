@@ -24,10 +24,10 @@ export default function ParticlesBackground() {
               value: "#050607",
             },
           },
-          fpsLimit: 60,
+          fpsLimit: 400,
           interactivity: {
             events: {
-              onClick: { enable: true, mode: "push" },
+              onClick: { enable: false, mode: "push" },
               onHover: { enable: true, mode: "repulse" },
               resize: true,
             },
