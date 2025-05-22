@@ -2,6 +2,10 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "avoidEscape": true,
-    "allowTemplateLiterals": true
+    "allowTemplateLiterals": true,
+    "quotes": ["error", "double", { "avoidEscape": true }],
+    "semi": ["error", "always"],
+    "no-unused-vars": ["warn"],
+    "react/no-unescaped-entities": "off"
   }
 }

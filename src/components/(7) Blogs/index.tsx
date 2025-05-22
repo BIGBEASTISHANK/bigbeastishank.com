@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import HeadingBasic from "@/utility/HeadingBasic";
@@ -26,16 +26,17 @@ interface BlogComponentProps {
   posts: Post[];
 }
 
-export default function BlogComponent({ posts }: BlogComponentProps) {
+// BlogContent
+function BlogContent({ posts }: BlogComponentProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
   const postsPerPage = 5;
 
   const [cardAnimationDelay, setCardAnimationDelay] = useState(0.9);
-  const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(1 + (postsPerPage * 0.3) / 2) 
+  const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(1 + (postsPerPage * 0.3) / 2);
 
-  // Get current page from URL or default to 1
+  // Get current page
   const currentPageParam = searchParams.get("page");
   const [currentPage, setCurrentPage] = useState(
     currentPageParam ? parseInt(currentPageParam) : 1
@@ -65,7 +66,6 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
 
   // Change page
   const paginate = (pageNumber: number) => {
-    // Changing animation speed
     setCardAnimationDelay(0.15);
     setPageBtnAnimationDelay(0.3 + (postsPerPage * 0.3) / 2);
 
@@ -82,35 +82,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
   }
 
   return (
-    <div id="blogs" className="px-5 scroll-mt-24 min-h-[45vh]">
-      {/* Title */}
-      <HeadingBasic
-        heading="Blogs"
-        url="/blogs"
-        description={
-          <>
-            <p className="text-justify">
-              Explore a collection of my blogs covering a variety of topics,
-              including web development, game development, and much more. Dive
-              in to discover practical tips, insightful experiences, and helpful
-              tricks that I've gathered along my journey. If there's a specific
-              topic you'd like me to cover, feel free to contact me via the
-              email provided on the{" "}
-              <Link
-                href="/"
-                className="text-[#0088CC] font-bold hover:underline underline-offset-2 outline-none"
-              >
-                home page
-              </Link>
-              .
-            </p>
-          </>
-        }
-      />
-
-      {/* Short Divider */}
-      <ShortDivider delay={0.55} />
-
+    <>
       {/* Search bar */}
       <motion.div
         initial={{ scale: 0 }}
@@ -241,12 +213,11 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
             <FaChevronLeft />
           </button>
 
-          {/* Page numbers - show only 3 at a time */}
+          {/* Page numbers */}
           {(() => {
             let startPage = Math.max(1, currentPage - 1);
             let endPage = Math.min(totalPages, startPage + 2);
 
-            // Adjust start page if we're at the end
             if (endPage === totalPages) {
               startPage = Math.max(1, endPage - 2);
             }
@@ -284,6 +255,67 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
           </button>
         </motion.div>
       )}
+    </>
+  );
+}
+
+// Loading fallback component
+function BlogLoadingFallback() {
+  return (
+    <div className="px-2 my-10">
+      <div className="flex bg-[#050607] border border-[#1793D1] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto mb-5">
+        <FaSearch className="my-auto mr-2" />
+        <div className="bg-gray-700 h-6 w-full rounded animate-pulse"></div>
+      </div>
+      {[...Array(3)].map((_, index) => (
+        <div
+          key={index}
+          className="mb-5 bg-[#0A0C0E] border border-[#1793D1]/50 p-5 rounded-3xl"
+        >
+          <div className="h-6 bg-gray-700 rounded mb-3 animate-pulse"></div>
+          <div className="h-4 bg-gray-700 rounded mb-3 animate-pulse"></div>
+          <div className="h-4 bg-gray-700 rounded w-3/4 animate-pulse"></div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Main component
+export default function BlogComponent({ posts }: BlogComponentProps) {
+  return (
+    <div id="blogs" className="px-5 scroll-mt-24 min-h-[45vh]">
+      {/* Title */}
+      <HeadingBasic
+        heading="Blogs"
+        url="/blogs"
+        description={
+          <>
+            <p className="text-justify">
+              Explore a collection of my blogs covering a variety of topics,
+              including web development, game development, and much more. Dive
+              in to discover practical tips, insightful experiences, and helpful
+              tricks that I've gathered along my journey. If there's a specific
+              topic you'd like me to cover, feel free to contact me via the
+              email provided on the{" "}
+              <Link
+                href="/"
+                className="text-[#0088CC] font-bold hover:underline underline-offset-2 outline-none"
+              >
+                home page
+              </Link>
+              .
+            </p>
+          </>
+        }
+      />
+
+      {/* Short Divider */}
+      <ShortDivider delay={0.55} />
+
+      <Suspense fallback={<BlogLoadingFallback />}>
+        <BlogContent posts={posts} />
+      </Suspense>
     </div>
   );
 }
