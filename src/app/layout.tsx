@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
         ></script>
       </head>
       <body
-        className={`${inter.className} md:max-w-[45rem] max-w-[35rem] transition-all mx-auto md:pt-[7.5rem] pt-[5.5rem] text-[#F6F9FC] bg-[#050607] relative`}
+        className={`${inter.className} transition-all md:pt-[7.5rem] pt-[5.5rem] text-[#F6F9FC] bg-[#050607] relative`}
       >
         {/* Background */}
         <ParticlesBackground />
@@ -58,7 +58,6 @@ export default function RootLayout({ children }) {
         {children}
 
         {/* Footer */}
-        <FullDivider />
         <Footer />
       </body>
     </html>

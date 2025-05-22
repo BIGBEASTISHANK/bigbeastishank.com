@@ -6,7 +6,7 @@ import { FullDivider } from "@/utility/Dividers";
 
 export default function Home() {
   return (
-    <>
+    <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
       <Hero />
 
       {/* Divider */}
@@ -22,6 +22,6 @@ export default function Home() {
       <FullDivider delay={5.1}/>
 
       <MyToolsAndFramework />
-    </>
+    </div>
   );
 }

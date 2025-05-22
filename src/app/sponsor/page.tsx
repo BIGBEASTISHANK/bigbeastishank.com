@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 
 export default function Sponsor(): JSX.Element {
   return (
-    <>
+    <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
       <SponsorComponent />
-    </>
+    </div>
   );
 }

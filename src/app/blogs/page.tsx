@@ -50,5 +50,9 @@ export default function Blogs() {
     };
   });
 
-  return <BlogComponent posts={posts} />;
+  return (
+    <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
+      <BlogComponent posts={posts} />
+    </div>
+  );
 }

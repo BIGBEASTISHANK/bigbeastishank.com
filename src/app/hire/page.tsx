@@ -30,8 +30,8 @@ export const metadata: Metadata = {
 
 export default function Hire(): JSX.Element {
   return (
-    <>
+    <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
       <HireComponent />
-    </>
+    </div>
   );
 }

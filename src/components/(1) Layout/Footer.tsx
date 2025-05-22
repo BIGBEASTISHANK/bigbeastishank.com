@@ -1,9 +1,22 @@
+"use client";
 import Link from "next/link";
 import { socialMedia } from "@@/data/FooterData";
+import { FullDivider } from "@/utility/Dividers";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  // Checking path name
+  const pathName: string = usePathname().split("/blogs/")[1];
+
   return (
-    <footer className="text-center justify-center items-center my-5">
+    <footer
+      className={`text-center justify-center items-center my-5 ${
+        pathName != null ? "max-w-[70rem]" : "md:max-w-[45rem] max-w-[35rem]"
+      } mx-auto`}
+    >
+      {/* Divider */}
+      <FullDivider />
+
       {/* Credit */}
       <p className="md:text-base text-sm">
         Made with ❤️ by{" "}
@@ -20,7 +33,8 @@ export default function Footer() {
 
       {/* Note */}
       <p className="md:text-base text-sm text-gray-600">
-        Note: All the text has been written by Ishank and paraphrased by QuillBot.
+        Note: All the text has been written by Ishank and paraphrased by
+        QuillBot.
       </p>
 
       {/* Social Media Icons */}

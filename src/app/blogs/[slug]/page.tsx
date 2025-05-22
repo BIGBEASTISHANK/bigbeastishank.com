@@ -112,7 +112,7 @@ export default async function BlogPost({
     };
 
     return (
-      <div id="blogPost" className="px-5 scroll-mt-24">
+      <div id="blogPost" className="px-5 scroll-mt-24 max-w-[70rem] mx-auto">
         {/* GO Back arrow */}
         <Link
           href="/blogs"
@@ -168,7 +168,7 @@ export default async function BlogPost({
         <ShortDivider />
 
         {/* Go Back button */}
-        <GoToButton title={"Back to Blogs"} link="/blogs" customCSS="mt-0" />
+        <GoToButton title={"Back to Blogs"} link="/blogs" />
       </div>
     );
   } catch (error) {

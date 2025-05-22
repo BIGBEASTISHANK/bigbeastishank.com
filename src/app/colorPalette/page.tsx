@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 
 export default function ColorPalette(): JSX.Element {
   return (
-    <>
+    <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
       <ColorPalettePalette />
-    </>
+    </div>
   );
 }
