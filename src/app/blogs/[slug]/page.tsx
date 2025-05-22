@@ -87,7 +87,7 @@ export default async function BlogPost({
             {String(children).replace(/\n$/, "")}
           </SyntaxHighlighter>
         ) : (
-          <code className="bg-[#1A1E23] px-1 py-0.5 rounded">{children}</code>
+          <code className="bg-[#1A1E23] px-2 py-0.5 rounded">{children}</code>
         );
       },
       h1: (props: any) => (
@@ -102,10 +102,12 @@ export default async function BlogPost({
       a: (props: any) => (
         <a
           className="font-bold text-[#0088CC] hover:underline underline-offset-2 outline-none"
+          target="_blank"
           {...props}
         />
       ),
       p: (props: any) => <p className="my-4" {...props} />,
+      hr: (props: any) => <hr className="my-10 w-[90%] mx-auto text-[#1793D1]" {...props} />,
       ul: (props: any) => <ul className="list-disc pl-6 my-4" {...props} />,
       ol: (props: any) => <ol className="list-decimal pl-6 my-4" {...props} />,
       li: (props: any) => <li className="mb-1" {...props} />,

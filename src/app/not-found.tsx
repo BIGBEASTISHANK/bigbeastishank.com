@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function NotFound(): JSX.Element {
   return (
-    <div className="flex flex-col px-5 min-h-[60vh]">
+    <div className="flex flex-col px-5 min-h-[60vh] md:max-w-[45rem] max-w-[35rem] mx-auto">
       <div className="my-auto">
         {/* Title description */}
         <HeadingBasic
@@ -54,11 +54,11 @@ export default function NotFound(): JSX.Element {
 
         {/* Go to otherplace */}
         <div className="flex">
-          <GoToButton animationDelay={0.7} title={"Go To Home"} link={"/"} />
+          <GoToButton animationDelay={0.7} title={"Back to Home"} link={"/"} />
           <GoToButton
             animationDelay={0.7}
-            title={"View Work"}
-            link={"/works"}
+            title={"Read Blogs"}
+            link={"/blogs"}
             customCSS={"ml-3"}
           />
         </div>

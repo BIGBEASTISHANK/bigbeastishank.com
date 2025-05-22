@@ -1,0 +1,217 @@
+---
+title: "Arch Linux Installation Guide"
+description: "Master the process of installing Arch Linux with this step-by-step guide, covering everything from booting the ISO to configuring your system for daily use."
+date: "2025-05-22"
+minuteRead: 12
+tags:
+  [
+    "Arch Linux",
+    "Linux Installation",
+    "Operating Systems",
+    "System Setup",
+    "Beginner Friendly",
+  ]
+---
+
+Welcome to this step-by-step guide to installing Arch Linux. This guide walks you through installing Arch with a UEFI system, a swap partition, and GRUB as the bootloader. It will take you around 30 minutes to install.
+
+> **Note:** Make sure you're on a UEFI system and connected to the internet.
+
+---
+
+## 1. Boot into Arch ISO
+
+1. Download the latest Arch ISO from the [official website](https://archlinux.org/download/).
+2. Create a bootable USB using Rufus (Windows) or `dd` (Linux/macOS).
+3. Disable Secure Boot in UEFI settings.
+4. Boot into the USB and open the terminal.
+
+---
+
+## 2. Connect to the Internet
+
+### Ethernet
+
+You're likely already connected.
+
+### Wi-Fi
+
+Use `iwctl`:
+
+```bash
+iwctl
+device list
+station <device> scan
+station <device> get-networks
+station <device> connect <SSID>
+exit
+```
+
+Test the connection:
+
+```bash
+ping bigbeastishank.com
+```
+
+---
+
+## 3. Update the System Clock
+
+```bash
+timedatectl set-ntp true
+```
+
+---
+
+## 4. Partition the Disk
+
+Use `cfdisk` on your disk (replace `/dev/sdX`):
+
+```bash
+cfdisk /dev/sdX
+```
+
+Create the following partitions:
+
+- **EFI** - 512MiB (type: EFI System)
+- **Swap** - (RAM size + 0.5GiB)
+- **Root** - Remaining space
+
+---
+
+## 5. Format the Partitions
+
+```bash
+mkfs.fat -F32 /dev/sdX1          # EFI
+mkswap /dev/sdX2                 # Swap
+swapon /dev/sdX2
+mkfs.ext4 /dev/sdX3              # Root
+```
+
+---
+
+## 6. Mount the Filesystems
+
+```bash
+mount /dev/sdX3 /mnt
+mkdir -p /mnt/boot/EFI
+mount /dev/sdX1 /mnt/boot/EFI
+```
+
+---
+
+## 7. Install Base System
+
+```bash
+pacstrap -K /mnt base linux linux-firmware vim networkmanager grub efibootmgr osprober sudo git
+```
+
+---
+
+## 8. Generate fstab
+
+```bash
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+---
+
+## 9. Chroot into the System
+
+```bash
+arch-chroot /mnt
+```
+
+---
+
+## 10. Set Time Zone and Localization
+
+```bash
+ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+hwclock --systohc
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+```
+
+---
+
+## 11. Set Hostname and Hosts File
+
+```bash
+echo "MyLappy" > /etc/hostname
+```
+
+```bash
+cat <<EOF > /etc/hosts
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   MyLappy.localdomain MyLappy
+EOF
+```
+
+---
+
+## 12. Set Root Password
+
+```bash
+passwd
+```
+
+---
+
+## 13. Install GRUB (for UEFI)
+
+```bash
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id="Arch Linux"
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+---
+
+## 14. Enable NetworkManager
+
+```bash
+systemctl enable NetworkManager
+```
+
+---
+
+## 15. Create a New User with Sudo Privileges
+
+```bash
+useradd -m -G wheel yourusername
+passwd yourusername
+EDITOR=vim visudo
+```
+
+Inside the visudo file, uncomment this line:
+
+```text
+%wheel ALL=(ALL:ALL) ALL
+```
+
+---
+
+## 16. Exit and Reboot
+
+```bash
+exit
+umount -R /mnt
+reboot
+```
+
+---
+
+## Extra steps
+
+If you want to use my dotfile you can view my [dotfiles](https://github.com/bigbeastishank/dotfiles) repository.
+
+Or you can simply run these commands after login to rice you linux in my style.
+
+```bash
+git clone https://github.com/BIGBEASTISHANK/dotfiles
+cd dotfiles
+chmod +x ./syscopy.sh
+./syscopy.sh
+```
