@@ -31,7 +31,7 @@ function BlogContent({ posts }: BlogComponentProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
-  const postsPerPage = 5;
+  const postsPerPage = 2;
 
   const [cardAnimationDelay, setCardAnimationDelay] = useState(0.9);
   const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(1 + (postsPerPage * 0.3) / 2);
@@ -207,7 +207,7 @@ function BlogContent({ posts }: BlogComponentProps) {
             className={`flex items-center justify-center w-10 h-10 rounded-full border ${
               currentPage === 1
                 ? "border-[#1793D1]/30 text-gray-500 cursor-not-allowed"
-                : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all"
+                : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all cursor-pointer"
             }`}
           >
             <FaChevronLeft />
@@ -231,7 +231,7 @@ function BlogContent({ posts }: BlogComponentProps) {
                   className={`w-10 h-10 rounded-full border ${
                     currentPage === i
                       ? "bg-[#1793D1] text-white border-[#1793D1]"
-                      : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all"
+                      : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all cursor-pointer"
                   }`}
                 >
                   {i}
@@ -248,7 +248,7 @@ function BlogContent({ posts }: BlogComponentProps) {
             className={`flex items-center justify-center w-10 h-10 rounded-full border ${
               currentPage === totalPages
                 ? "border-[#1793D1]/30 text-gray-500 cursor-not-allowed"
-                : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all"
+                : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all cursor-pointer"
             }`}
           >
             <FaChevronRight />
