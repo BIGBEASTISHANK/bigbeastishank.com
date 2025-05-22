@@ -1,8 +1,15 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import HeadingBasic from "@/utility/HeadingBasic";
-import { FaEye, FaSearch, FaTag } from "react-icons/fa";
+import {
+  FaEye,
+  FaSearch,
+  FaTag,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { ShortDivider } from "@/utility/Dividers";
 
@@ -21,7 +28,25 @@ interface BlogComponentProps {
 
 export default function BlogComponent({ posts }: BlogComponentProps) {
   const [searchTerm, setSearchTerm] = useState("");
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const postsPerPage = 5;
 
+  const [cardAnimationDelay, setCardAnimationDelay] = useState(0.9);
+  const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(1 + (postsPerPage * 0.3) / 2) 
+
+  // Get current page from URL or default to 1
+  const currentPageParam = searchParams.get("page");
+  const [currentPage, setCurrentPage] = useState(
+    currentPageParam ? parseInt(currentPageParam) : 1
+  );
+
+  // Update URL when page changes
+  useEffect(() => {
+    router.push(`/blogs?page=${currentPage}`, { scroll: false });
+  }, [currentPage, router]);
+
+  // Filter posts based on search term
   const filteredPosts = posts
     .filter(
       (post) =>
@@ -31,6 +56,30 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
         )
     )
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Change page
+  const paginate = (pageNumber: number) => {
+    // Changing animation speed
+    setCardAnimationDelay(0.15);
+    setPageBtnAnimationDelay(0.3 + (postsPerPage * 0.3) / 2);
+
+    if (pageNumber > 0 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  // Generate page numbers
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <div id="blogs" className="px-5 scroll-mt-24 min-h-[45vh]">
@@ -74,20 +123,23 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
           className="bg-transparent outline-none w-full h-10"
           placeholder="Search by title or tags..."
           onChange={(e) => {
+            setCardAnimationDelay(0.15);
+            setPageBtnAnimationDelay(0.3 + (postsPerPage * 0.3) / 2);
             setSearchTerm(e.target.value);
+            setCurrentPage(1);
           }}
         />
       </motion.div>
 
       {/* Blog Posts */}
       <ul className="px-2 my-10">
-        {filteredPosts.length > 0 ? (
-          filteredPosts.map((post, index) => (
+        {currentPosts.length > 0 ? (
+          currentPosts.map((post, index) => (
             <motion.li
               key={post.slug}
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 + (index * 0.3) / 2 }}
+              transition={{ delay: cardAnimationDelay + (index * 0.3) / 2 }}
               {...({ className: "scroll-mt-24" } as HTMLMotionProps<"li">)}
             >
               <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#1793D1]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#1793D1]/80 shadow-[#1793D1]/50">
@@ -116,7 +168,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
                     })}
                   </p>
 
-                  {/* Seprator */}
+                  {/* Separator */}
                   <p> | </p>
 
                   {/* Minute Read */}
@@ -167,6 +219,71 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
           </div>
         )}
       </ul>
+
+      {/* Pagination */}
+      {filteredPosts.length > postsPerPage && (
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: pageBtnAnimationDelay }}
+          className="flex justify-center items-center gap-2 my-8"
+        >
+          {/* Previous button */}
+          <button
+            onClick={() => paginate(currentPage - 1)}
+            disabled={currentPage === 1}
+            className={`flex items-center justify-center w-10 h-10 rounded-full border ${
+              currentPage === 1
+                ? "border-[#1793D1]/30 text-gray-500 cursor-not-allowed"
+                : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all"
+            }`}
+          >
+            <FaChevronLeft />
+          </button>
+
+          {/* Page numbers - show only 3 at a time */}
+          {(() => {
+            let startPage = Math.max(1, currentPage - 1);
+            let endPage = Math.min(totalPages, startPage + 2);
+
+            // Adjust start page if we're at the end
+            if (endPage === totalPages) {
+              startPage = Math.max(1, endPage - 2);
+            }
+
+            const visiblePages = [];
+            for (let i = startPage; i <= endPage; i++) {
+              visiblePages.push(
+                <button
+                  key={i}
+                  onClick={() => paginate(i)}
+                  className={`w-10 h-10 rounded-full border ${
+                    currentPage === i
+                      ? "bg-[#1793D1] text-white border-[#1793D1]"
+                      : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all"
+                  }`}
+                >
+                  {i}
+                </button>
+              );
+            }
+            return visiblePages;
+          })()}
+
+          {/* Next button */}
+          <button
+            onClick={() => paginate(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className={`flex items-center justify-center w-10 h-10 rounded-full border ${
+              currentPage === totalPages
+                ? "border-[#1793D1]/30 text-gray-500 cursor-not-allowed"
+                : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all"
+            }`}
+          >
+            <FaChevronRight />
+          </button>
+        </motion.div>
+      )}
     </div>
   );
 }
