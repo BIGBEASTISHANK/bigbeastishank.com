@@ -386,7 +386,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
           Subscribe to my get notified when new blogs are published.
         </motion.p>
 
-        <form className="flex gap-5 mt-3 md:text-base text-sm" onSubmit={handleSubmit}>
+        <form className="flex gap-2 md:gap-5 mt-3 md:text-base text-sm flex-col md:flex-row" onSubmit={handleSubmit}>
           <motion.input
             initial={{ opacity: 0, width: "0%" }}
             animate={{ opacity: 1, width: "100%" }}
@@ -414,7 +414,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
             type="submit"
             className={`rounded-xl outline-none ${
               submitSuccess ? "bg-[#1d991d]" : "bg-[#1793D1]"
-            } px-4 py-2 w-[12rem] cursor-pointer ml-auto flex justify-center items-center`}
+            } px-4 py-2 md:w-[12rem] w-[8rem] cursor-pointer md:ml-auto flex justify-center items-center`}
           >
             {submitSuccess ? (
               <p className="flex gap-2 items-center justify-center">
