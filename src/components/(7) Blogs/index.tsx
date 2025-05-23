@@ -31,7 +31,7 @@ function BlogContent({ posts }: BlogComponentProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
-  const postsPerPage = 2;
+  const postsPerPage = 5;
 
   const [cardAnimationDelay, setCardAnimationDelay] = useState(0.9);
   const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(1 + (postsPerPage * 0.3) / 2);
