@@ -381,11 +381,12 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.1 }}
+          className="md:text-base text-sm"
         >
           Subscribe to my get notified when new blogs are published.
         </motion.p>
 
-        <form className="flex gap-5 mt-3" onSubmit={handleSubmit}>
+        <form className="flex gap-5 mt-3 md:text-base text-sm" onSubmit={handleSubmit}>
           <motion.input
             initial={{ opacity: 0, width: "0%" }}
             animate={{ opacity: 1, width: "100%" }}
