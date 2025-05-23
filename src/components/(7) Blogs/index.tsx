@@ -9,9 +9,11 @@ import {
   FaTag,
   FaChevronLeft,
   FaChevronRight,
+  FaCheck,
 } from "react-icons/fa";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { ShortDivider } from "@/utility/Dividers";
+import { PulseLoader } from "react-spinners";
 
 interface Post {
   slug: string;
@@ -33,8 +35,10 @@ function BlogContent({ posts }: BlogComponentProps) {
   const searchParams = useSearchParams();
   const postsPerPage = 5;
 
-  const [cardAnimationDelay, setCardAnimationDelay] = useState(0.9);
-  const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(1 + (postsPerPage * 0.3) / 2);
+  const [cardAnimationDelay, setCardAnimationDelay] = useState(1.4);
+  const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(
+    1.5 + (postsPerPage * 0.3) / 2
+  );
 
   // Get current page
   const currentPageParam = searchParams.get("page");
@@ -87,7 +91,7 @@ function BlogContent({ posts }: BlogComponentProps) {
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 0.7 }}
+        transition={{ delay: 1.1 }}
         className="flex bg-[#050607] border border-[#1793D1] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto mb-5"
       >
         <FaSearch className="my-auto mr-2" />
@@ -283,6 +287,65 @@ function BlogLoadingFallback() {
 
 // Main component
 export default function BlogComponent({ posts }: BlogComponentProps) {
+  // Variable
+  const [formData, setFormData] = useState({
+    email: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  // Handle input change
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Submit input
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const submitData = new FormData();
+      submitData.append("email", formData.email);
+
+      const response = await fetch("/api/blogSubscriber", {
+        method: "POST",
+        body: submitData,
+      });
+
+      // Log the response status for debugging
+      console.log("Response status:", response.status);
+
+      const result = await response.json();
+      console.log("Response data:", result);
+
+      if (!response.ok) {
+        throw new Error(
+          result.error || result.details || "Failed to submit form"
+        );
+      }
+
+      setSubmitSuccess(true);
+
+      setTimeout(() => {
+        setFormData({ email: "" });
+        setSubmitSuccess(false);
+      }, 5000);
+    } catch (error) {
+      console.error("Error submitting email:", error);
+      setSubmitError(
+        error instanceof Error ? error.message : "Failed to submit email"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div id="blogs" className="px-5 scroll-mt-24 min-h-[45vh]">
       {/* Title */}
@@ -312,6 +375,80 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
 
       {/* Short Divider */}
       <ShortDivider delay={0.55} />
+
+      <div>
+        <motion.p
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.1 }}
+        >
+          Subscribe to my get notified when new blogs are published.
+        </motion.p>
+
+        <form className="flex gap-5 mt-3" onSubmit={handleSubmit}>
+          <motion.input
+            initial={{ opacity: 0, width: "0%" }}
+            animate={{ opacity: 1, width: "100%" }}
+            transition={{ delay: 0.9, duration: 0.5 }}
+            className={`rounded-xl border-2 outline-none border-[#1793D1] px-4 py-2 ${
+              submitSuccess ? "w-0" : "w-full"
+            } ${
+              isSubmitting || submitSuccess
+                ? "cursor-not-allowed bg-[#1A1E23] border-[#1793D1]/40 text-[#515860]"
+                : ""
+            }`}
+            name="email"
+            value={formData.email}
+            disabled={isSubmitting || submitSuccess}
+            placeholder="Enter your email..."
+            type="email"
+            required
+            onChange={handleChange}
+          />
+
+          <motion.button
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.0, duration: 0.5 }}
+            type="submit"
+            className={`rounded-xl outline-none ${
+              submitSuccess ? "bg-[#1d991d]" : "bg-[#1793D1]"
+            } px-4 py-2 w-[12rem] cursor-pointer ml-auto flex justify-center items-center`}
+          >
+            {submitSuccess ? (
+              <p className="flex gap-2 items-center justify-center">
+                Subscribed <FaCheck />
+              </p>
+            ) : (
+              <>
+                {isSubmitting ? (
+                  <PulseLoader loading={true} size={15} color="white" />
+                ) : (
+                  "Subscribe"
+                )}
+              </>
+            )}
+          </motion.button>
+        </form>
+
+        {/* Error Message Display */}
+        {submitError && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="mt-3 p-3 bg-red-500/10 border border-red-500/30 rounded-xl"
+          >
+            <p className="text-red-400 text-sm flex items-center gap-2">
+              <span className="text-red-500">⚠️</span>
+              {submitError}
+            </p>
+          </motion.div>
+        )}
+      </div>
+
+      {/* Short Divider */}
+      <ShortDivider delay={1.1} />
 
       <Suspense fallback={<BlogLoadingFallback />}>
         <BlogContent posts={posts} />
