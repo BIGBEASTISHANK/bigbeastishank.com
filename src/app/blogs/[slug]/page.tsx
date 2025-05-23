@@ -48,8 +48,15 @@ export async function generateMetadata({
     };
   } catch (error) {
     return {
-      title: "Blog Post | BIGBEASTISHANK",
-      description: "Blog post not found",
+      title: "404 Not Found | BIGBEASTISHANK",
+      description:
+        "Lost in the digital maze! It appears you've stumbled upon a 404 Not Found - the elusive page seems to have slipped through the cracks. Fear not, intrepid explorer! While this page may be off the grid, our virtual compass is recalibrating to guide you back. Feel free to hit the back button, check the URL for typos, or visit our homepage to embark on a new adventure. We apologize for the inconvenience and appreciate your patience as we tidy up the virtual trail. Safe travels!",
+      openGraph: {
+        title: "404 Not Found | BIGBEASTISHANK",
+        description:
+          "Lost in the digital maze! It appears you've stumbled upon a 404 Not Found - the elusive page seems to have slipped through the cracks. Fear not, intrepid explorer! While this page may be off the grid, our virtual compass is recalibrating to guide you back. Feel free to hit the back button, check the URL for typos, or visit our homepage to embark on a new adventure. We apologize for the inconvenience and appreciate your patience as we tidy up the virtual trail. Safe travels!",
+        images: "/img/main/pfp.png",
+      },
     };
   }
 }
@@ -107,7 +114,9 @@ export default async function BlogPost({
         />
       ),
       p: (props: any) => <p className="my-4" {...props} />,
-      hr: (props: any) => <hr className="my-10 w-[90%] mx-auto text-[#1793D1]" {...props} />,
+      hr: (props: any) => (
+        <hr className="my-10 w-[90%] mx-auto text-[#1793D1]" {...props} />
+      ),
       ul: (props: any) => <ul className="list-disc pl-6 my-4" {...props} />,
       ol: (props: any) => <ol className="list-decimal pl-6 my-4" {...props} />,
       li: (props: any) => <li className="mb-1" {...props} />,
