@@ -1,10 +1,14 @@
 "use client";
-import { JSX } from "react";
+import { JSX, useState } from "react";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { paletteColors } from "@@/data/PaletteColors";
 import { HTMLMotionProps, motion } from "framer-motion";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { FaCheck } from "react-icons/fa";
 
-export default function ColorPalette():JSX.Element {
+export default function ColorPalette(): JSX.Element {
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+
   return (
     <div id="colorPalette" className="px-5 flex flex-col scroll-mt-24">
       {/* Heading */}
@@ -22,7 +26,9 @@ export default function ColorPalette():JSX.Element {
             animate={{ y: 0, scale: 1, opacity: 1 }}
             transition={{ delay: 0.6 + (index * 0.3) / 2 }}
             key={index}
-            {...({ className: "flex border-2 border-[#1793D1] rounded-xl my-1 p-2" } as HTMLMotionProps<"div">)}
+            {...({
+              className: "flex border-2 border-[#1793D1] rounded-xl my-1 p-2",
+            } as HTMLMotionProps<"div">)}
           >
             {/* Name */}
             <p className="my-auto pr-3 md:w-[45%] w-[80%] md:font-bold md:text-xl select-none">
@@ -33,9 +39,25 @@ export default function ColorPalette():JSX.Element {
               className="w-full h-11 my-auto outline outline-[#F6F9FC] rounded-md flex"
               style={{ background: data.hex }}
             >
-              <p className="bg-[#050607] border-2 border-[#F6F9FC] my-auto ml-2 mr-auto px-2 rounded-full">
-                {data.hex}
-              </p>
+              <CopyToClipboard
+                text={data.hex}
+                className="bg-[#050607] border-2 border-[#F6F9FC] my-auto ml-2 mr-auto px-2 rounded-full cursor-pointer select-none"
+                onCopy={() => {
+                  setCopiedIndex(index);
+                  setTimeout(() => setCopiedIndex(null), 2000);
+                }}
+              >
+                <div>
+                  {copiedIndex === index ? (
+                    <p className="flex gap-2 items-center justify-center">
+                      Copied!
+                      <FaCheck />
+                    </p>
+                  ) : (
+                    data.hex
+                  )}
+                </div>
+              </CopyToClipboard>
             </div>
           </motion.div>
         ))}

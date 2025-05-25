@@ -89,7 +89,7 @@ export default async function BlogPost({
             style={oneDark}
             language={match[1]}
             PreTag="div"
-            className="rounded-md my-4"
+            className="rounded-md my-4 copy-to-clipboard-button"
           >
             {String(children).replace(/\n$/, "")}
           </SyntaxHighlighter>
