@@ -28,12 +28,25 @@ interface BlogComponentProps {
   posts: Post[];
 }
 
+// Update URL when page changes
+function UpdatePageURL({ currentPage, pageChanged, currentPageParam }: { currentPage: number, pageChanged: boolean, currentPageParam: string }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    pageChanged || parseInt(currentPageParam) === 1
+      ? currentPage === 1
+        ? router.push(`/blogs`, { scroll: true })
+        : router.push(`/blogs?page=${currentPage}`, { scroll: true })
+      : null;
+  }, [currentPage, router]);
+}
+
 // BlogContent
 function BlogContent({ posts }: BlogComponentProps) {
   const [searchTerm, setSearchTerm] = useState("");
-  const router = useRouter();
   const searchParams = useSearchParams();
   const postsPerPage = 5;
+  const [pageChanged, setPageChanged] = useState(false);
 
   const [cardAnimationDelay, setCardAnimationDelay] = useState(1.4);
   const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(
@@ -46,10 +59,8 @@ function BlogContent({ posts }: BlogComponentProps) {
     currentPageParam ? parseInt(currentPageParam) : 1
   );
 
-  // Update URL when page changes
-  useEffect(() => {
-    router.push(`/blogs?page=${currentPage}`, { scroll: false });
-  }, [currentPage, router]);
+  // Update URL to display page
+  UpdatePageURL({ currentPage, pageChanged, currentPageParam });
 
   // Filter posts based on search term
   const filteredPosts = posts
@@ -75,6 +86,7 @@ function BlogContent({ posts }: BlogComponentProps) {
 
     if (pageNumber > 0 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
+      setPageChanged(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
@@ -91,7 +103,7 @@ function BlogContent({ posts }: BlogComponentProps) {
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 1.1 }}
+        transition={{ delay: 1.0 }}
         className="flex bg-[#050607] border border-[#1793D1] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto mb-5"
       >
         <FaSearch className="my-auto mr-2" />
@@ -263,30 +275,11 @@ function BlogContent({ posts }: BlogComponentProps) {
   );
 }
 
-// Loading fallback component
-function BlogLoadingFallback() {
-  return (
-    <div className="px-2 my-10">
-      <div className="flex bg-[#050607] border border-[#1793D1] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto mb-5">
-        <FaSearch className="my-auto mr-2" />
-        <div className="bg-gray-700 h-6 w-full rounded animate-pulse"></div>
-      </div>
-      {[...Array(3)].map((_, index) => (
-        <div
-          key={index}
-          className="mb-5 bg-[#0A0C0E] border border-[#1793D1]/50 p-5 rounded-3xl"
-        >
-          <div className="h-6 bg-gray-700 rounded mb-3 animate-pulse"></div>
-          <div className="h-4 bg-gray-700 rounded mb-3 animate-pulse"></div>
-          <div className="h-4 bg-gray-700 rounded w-3/4 animate-pulse"></div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 // Main component
 export default function BlogComponent({ posts }: BlogComponentProps) {
+  // Reset URL when loading
+  UpdatePageURL({ currentPage: 1, pageChanged: false, currentPageParam: "" });
+
   // Variable
   const [formData, setFormData] = useState({
     email: "",
@@ -386,7 +379,10 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
           Subscribe to my get notified when new blogs are published.
         </motion.p>
 
-        <form className="flex gap-2 md:gap-5 mt-3 md:text-base text-sm flex-col md:flex-row" onSubmit={handleSubmit}>
+        <form
+          className="flex gap-2 md:gap-5 mt-3 md:text-base text-sm flex-col md:flex-row"
+          onSubmit={handleSubmit}
+        >
           <motion.input
             initial={{ opacity: 0, width: "0%" }}
             animate={{ opacity: 1, width: "100%" }}
@@ -451,7 +447,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
       {/* Short Divider */}
       <ShortDivider delay={1.1} />
 
-      <Suspense fallback={<BlogLoadingFallback />}>
+      <Suspense>
         <BlogContent posts={posts} />
       </Suspense>
     </div>

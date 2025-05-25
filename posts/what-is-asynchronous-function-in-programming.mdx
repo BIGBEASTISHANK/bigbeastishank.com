@@ -1,0 +1,129 @@
+---
+title: "What is an Asynchronous Function in Programming?"
+description: "You will know about what is asynchronous function in programming. What is it and why we use it. You will also know how to use it in your code."
+date: "2025-05-25"
+minuteRead: 7
+tags: ["Web Development", "JavaScript", "Programming"]
+---
+
+An **asynchronous function** in programming refers to a function that operates **without blocking** the main execution thread. This means that while an asynchronous operation is in progress (like fetching data from an API or reading a file), the rest of the code continues to run. This non-blocking nature is especially important in environments like web browsers or servers, where responsiveness and performance are critical.
+
+## Why Use Asynchronous Functions?
+
+Synchronous functions execute one line at a time, and each step must complete before the next begins. This can lead to poor performance or freezing behavior in applications, particularly when dealing with tasks such as:
+
+- HTTP requests to servers  
+- File system access  
+- Database queries  
+- Timers or intervals  
+- Waiting for user input  
+
+Asynchronous programming allows your application to handle multiple tasks in parallel and improves overall responsiveness.
+
+## Key Concepts in JavaScript Asynchronous Programming
+
+JavaScript provides several ways to work with asynchronous behavior:
+
+### 1. Callbacks
+
+A callback is a function passed as an argument to another function. It’s executed after the outer function finishes its operation.
+
+```ts
+function fetchData(callback: () => void) {
+  setTimeout(() => {
+    console.log("Data fetched.");
+    callback();
+  }, 2000);
+}
+
+fetchData(() => {
+  console.log("Callback executed.");
+});
+```
+
+### 2. Promises
+
+A `Promise` represents a value that might not be available yet but will be resolved in the future.
+
+```ts
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise resolved");
+  }, 2000);
+});
+
+promise.then((message) => {
+  console.log(message);
+});
+```
+
+### 3. async / await
+
+Introduced in ES2017, `async` and `await` simplify working with Promises. They make asynchronous code look and behave more like synchronous code.
+
+```ts
+async function fetchMessage() {
+  const result = await new Promise<string>((resolve) => {
+    setTimeout(() => {
+      resolve("Async/Await resolved");
+    }, 2000);
+  });
+
+  console.log(result);
+}
+
+fetchMessage();
+```
+
+## Real-World Example: setTimeout
+
+One of the most basic examples of asynchronous behavior in JavaScript is the `setTimeout` function. This function allows you to delay execution of a piece of code without blocking the rest of the program.
+
+```ts
+// TypeScript example
+let x: number = 10;
+console.log("Value of x is " + x);
+
+callXAfterSec({ seconds: 5 });
+
+function callXAfterSec({ seconds }: { seconds: number }) {
+  setTimeout(() => {
+    console.log("Called X after " + seconds + " seconds" + " with value " + x);
+  }, seconds * 1000);
+}
+```
+
+### Output:
+
+```text
+Value of x is 10
+// (5 seconds later...)
+Called X after 5 seconds with value 10
+```
+
+In the above code:
+- The initial value of `x` is printed immediately.
+- The `callXAfterSec` function uses `setTimeout` to schedule another log after a 5-second delay.
+- Meanwhile, the program does **not** pause or freeze—it simply continues.
+
+## When Should You Use Asynchronous Functions?
+
+Use asynchronous functions when:
+- The task takes time (e.g., network or file system operations)  
+- You want to maintain responsiveness (e.g., in user interfaces)  
+- You're dealing with external dependencies (e.g., APIs, databases)  
+- You want to avoid blocking the event loop or main thread  
+
+## Benefits of Asynchronous Programming
+
+- **Improved Performance**: Non-blocking operations allow faster execution of concurrent tasks.  
+- **Responsive Applications**: UIs remain interactive even during long-running processes.  
+- **Efficient Resource Usage**: No unnecessary waiting or pausing in the application flow.  
+
+## Summary
+
+Asynchronous functions are fundamental for modern programming, particularly in environments like JavaScript where single-threaded execution can lead to performance bottlenecks. By leveraging callbacks, promises, or `async/await`, you can handle time-consuming operations without interrupting the flow of your application.
+
+Understanding and correctly implementing asynchronous programming patterns will help you write cleaner, more efficient, and more maintainable code.
+
+If you're building modern web applications, learning how to use asynchronous functions effectively is a must. Start with simple examples like `setTimeout`, then progress to working with Promises and async/await for better control and readability.

@@ -94,7 +94,7 @@ export default async function BlogPost({
             {String(children).replace(/\n$/, "")}
           </SyntaxHighlighter>
         ) : (
-          <code className="bg-[#1A1E23] px-2 py-0.5 rounded">{children}</code>
+          <code className="bg-[#1A1E23] px-[0.3rem] py-0.5 rounded">{children}</code>
         );
       },
       h1: (props: any) => (
