@@ -26,8 +26,7 @@ JavaScript provides several ways to work with asynchronous behavior:
 
 ### 1. Callbacks
 
-A callback is a function passed as an argument to another function. It’s executed after the outer function finishes its operation.
-
+A callback is a function passed as an argument to another function. It's executed after the outer function finishes its operation.
 
 ```ts
 function fetchData(callback: () => void) {
@@ -81,7 +80,6 @@ fetchMessage();
 One of the most basic examples of asynchronous behavior in JavaScript is the `setTimeout` function. This function allows you to delay execution of a piece of code without blocking the rest of the program.
 
 ```ts
-// TypeScript example
 let x: number = 10;
 console.log("Value of x is " + x);
 
@@ -96,7 +94,7 @@ function callXAfterSec({ seconds }: { seconds: number }) {
 
 ### Output:
 
-```text
+```bash
 Value of x is 10
 // (5 seconds later...)
 Called X after 5 seconds with value 10
@@ -106,6 +104,76 @@ In the above code:
 - The initial value of `x` is printed immediately.
 - The `callXAfterSec` function uses `setTimeout` to schedule another log after a 5-second delay.
 - Meanwhile, the program does **not** pause or freeze—it simply continues.
+
+## Comparing Asynchronous vs Synchronous Behavior
+
+Here's a clear example comparing non-blocking async behavior vs blocking synchronous code.
+
+### ✅ Asynchronous (Non-blocking) Version
+
+```js
+function doOtherThings() {
+  console.log("Doing other things while waiting...");
+}
+
+// Simulate a slow network call using async/await
+async function fetchData() {
+  console.log("Start fetching data...");
+  await new Promise(resolve => setTimeout(resolve, 3000)); // 3-second delay
+  console.log("Data fetched!");
+}
+
+async function main() {
+  fetchData(); // starts the async function
+  doOtherThings(); // runs immediately, doesn't wait for fetchData to finish
+}
+
+main();
+```
+
+**Output:**
+
+```bash
+Start fetching data...
+Doing other things while waiting...
+(wait 3 seconds...)
+Data fetched!
+```
+
+### ❌ Synchronous (Blocking) Version
+
+```js
+function fetchData() {
+  console.log("Start fetching data...");
+  const start = Date.now();
+  while (Date.now() - start < 3000) {
+    // do nothing — just block
+  }
+  console.log("Data fetched!");
+}
+
+function doOtherThings() {
+  console.log("Doing other things...");
+}
+
+function main() {
+  fetchData();
+  doOtherThings(); // this will only run after fetchData finishes
+}
+
+main();
+```
+
+**Output:**
+
+```bash
+Start fetching data...
+(wait 3 seconds...)
+Data fetched!
+Doing other things...
+```
+
+As you can see, in the blocking version, the whole program pauses during the delay. The asynchronous version allows other parts of the code to run while waiting.
 
 ## When Should You Use Asynchronous Functions?
 
