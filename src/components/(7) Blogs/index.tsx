@@ -236,9 +236,6 @@ function BlogContent({ posts }: BlogComponentProps) {
   const [pageChanged, setPageChanged] = useState(false);
 
   const [cardAnimationDelay, setCardAnimationDelay] = useState(1.4);
-  const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(
-    1.5 + (postsPerPage * 0.3) / 2
-  );
 
   // Get current page
   const currentPageParam = searchParams.get("page");
@@ -265,6 +262,11 @@ function BlogContent({ posts }: BlogComponentProps) {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+  
+  // Calculate delays for page button
+  const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(
+    1.5 + (currentPosts.length * 0.3) / 2
+  );
 
   // Change page
   const paginate = (pageNumber: number) => {
