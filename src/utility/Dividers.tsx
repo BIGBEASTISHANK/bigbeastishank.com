@@ -12,13 +12,13 @@ export function ShortDivider({ delay = 0 }: { delay?: number }) {
   );
 }
 
-export function FullDivider({ delay = 0 }: { delay?: number }) {
+export function FullDivider({ delay = 0}: { delay?: number }) {
     return (
       <motion.div
         initial={{ width: "0%" }}
         animate={{ width: "100%" }}
         transition={{ duration: 1, delay: delay }}
-        className="h-[.125rem] my-12 mx-auto bg-[#1793D1] z-10"
+        className="h-[.125rem] my-12 mx-auto bg-[#1793D1] z-10" 
       />
     );
   }

@@ -1,10 +1,12 @@
 import Link from "next/link";
-import { FaArrowLeft, FaTag } from "react-icons/fa";
+import { FaArrowLeft, FaCheck, FaTag } from "react-icons/fa";
 import { ShortDivider } from "@/utility/Dividers";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import GoToButton from "@/utility/GoToButton";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { getLanguageDisplayName } from "@@/data/BlogsCoreData";
+import ClickToCopyCode from "@/utility/ClickToCopyCode";
 
 export function BlogPostComponent({
   frontmatter,
@@ -15,6 +17,7 @@ export function BlogPostComponent({
 }) {
   // Define custom components for MDX
   const components = {
+    Link,
     code: ({
       className,
       children,
@@ -24,14 +27,37 @@ export function BlogPostComponent({
     }) => {
       const match = /language-(\w+)/.exec(className || "");
       return match ? (
-        <SyntaxHighlighter
-          style={oneDark}
-          language={match[1]}
-          PreTag="div"
-          className="rounded-md my-4 copy-to-clipboard-button"
-        >
-          {String(children).replace(/\n$/, "")}
-        </SyntaxHighlighter>
+        <div className="bg-[#282C34] flex flex-col justify-center px-3 rounded-xl">
+          {/* Language and click to copy */}
+          <div className="flex my-2 mx-4 justify-between items-center">
+            {/* Language name */}
+            <h1
+              className={`select-none ${
+                className === "language-output" ? "text-[#00FF00]" : null
+              } rounded-full font-bold`}
+            >
+              {getLanguageDisplayName(match[1])}
+            </h1>
+
+            {/* Click to copy */}
+            {className === "language-output" ? null : (
+              <ClickToCopyCode children={String(children).replace(/\n$/, "")} />
+            )}
+          </div>
+
+          {/* Divider */}
+          <div className="h-[.125rem] mx-auto bg-[#515860] z-10 w-full" />
+
+          {/* Code */}
+          <SyntaxHighlighter
+            style={oneDark}
+            language={match[1]}
+            PreTag="div"
+            className="rounded-md mt-2"
+          >
+            {String(children).replace(/\n$/, "")}
+          </SyntaxHighlighter>
+        </div>
       ) : (
         <code className="bg-[#1A1E23] px-[0.3rem] py-0.5 rounded">
           {children}
