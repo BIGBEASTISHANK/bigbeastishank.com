@@ -1,0 +1,19 @@
+// Language mapping for display names
+export const getLanguageDisplayName = (lang: string): string => {
+  const languageMap: { [key: string]: string } = {
+    ts: "TypeScript",
+    tsx: "TypeScript",
+    typescript: "TypeScript",
+    js: "JavaScript",
+    jsx: "JavaScript",
+    javascript: "JavaScript",
+    bash: "Bash",
+    html: "HTML",
+    css: "CSS",
+    python: "Python",
+    sql: "SQL",
+    output: "$Terminal",
+  };
+
+  return languageMap[lang.toLowerCase()] || lang.toUpperCase();
+};
