@@ -27,7 +27,7 @@ export function BlogPostComponent({
     }) => {
       const match = /language-(\w+)/.exec(className || "");
       return match ? (
-        <div className="bg-[#282C34] flex flex-col justify-center px-3 rounded-xl">
+        <div className="bg-[#282C34] flex flex-col justify-center px-3 rounded-xl my-5">
           {/* Language and click to copy */}
           <div className="flex my-2 mx-4 justify-between items-center">
             {/* Language name */}
