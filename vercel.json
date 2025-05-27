@@ -50,6 +50,10 @@
         {
             "source": "/license",
             "destination": "https://github.com/BIGBEASTISHANK/BBI-Licenses"
+        },
+        {
+            "source": "/matrix",
+            "destination": "https://matrix.to/#/@bbeastishank:matrix.org"
         }
     ]
 }

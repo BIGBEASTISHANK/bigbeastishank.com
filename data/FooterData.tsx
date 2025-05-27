@@ -6,7 +6,7 @@ import {
   FaMastodon,
   FaLinkedin,
 } from "react-icons/fa";
-import { SiSignal } from "react-icons/si";
+import { SiMatrix, SiSignal } from "react-icons/si";
 
 interface SocialMedia {
   label: string;
@@ -40,6 +40,11 @@ export const socialMedia: SocialMedia[] = [
     label: "Discord",
     icon: FaDiscord,
     link: "/discord",
+  },
+  {
+    label: "Matrix",
+    icon: SiMatrix,
+    link: "/matrix",
   },
   {
     label: "LinkedIn",
