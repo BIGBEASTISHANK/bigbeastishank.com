@@ -6,7 +6,7 @@ import { HTMLMotionProps, motion } from "framer-motion";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FaCheck } from "react-icons/fa";
 
-export default function ColorPalette(): JSX.Element {
+export default function ColorPalette() {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
   return (
@@ -24,7 +24,7 @@ export default function ColorPalette(): JSX.Element {
           <motion.div
             initial={{ y: -50, scale: 0.4, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
-            transition={{ delay: 0.6 + (index * 0.3) / 2 }}
+            transition={{ delay: 0.6 + (index * 0.3) / 2, duration: 0.5, type: "spring" }}
             key={index}
             {...({
               className: "flex border-2 border-[#1793D1] rounded-xl my-1 p-2",

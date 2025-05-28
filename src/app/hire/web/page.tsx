@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import { Metadata } from "next";
 import WebHireComponent from "@/components/(6) Hire/Web";
 
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 /////////////////////////////
 
-export default function WebHire(): JSX.Element {
+export default function WebHire() {
   return (
     <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
       <WebHireComponent />

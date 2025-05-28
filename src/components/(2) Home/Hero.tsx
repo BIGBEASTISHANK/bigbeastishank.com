@@ -12,7 +12,7 @@ export default function Hero() {
       <motion.a
         initial={{ opacity: 0, scale: 0.4 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.3, duration: 0.5, type: "spring" }}
         {...({ href: logo.src, target: "_blank" } as any)}
         className="md:h-[120px] md:w-[120px] h-[100px] w-[100px] md:mb-7 mb-5 z-10 outline-none"
       >
@@ -27,7 +27,7 @@ export default function Hero() {
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
         {...({
           className: "font-bold md:text-xl text-lg md:mb-7 mb-4",
         } as HTMLMotionProps<"h1">)}
@@ -54,7 +54,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.6, duration: 0.5, type: "spring" }}
           className="text-justify"
         >
           An open-source game and web developer who also occasionally creates
@@ -64,7 +64,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
           className="text-justify"
         >
           I not only work on creating websites & games, but I also explore the
@@ -84,7 +84,7 @@ export default function Hero() {
         <motion.button
           initial={{ opacity: 0, scale: 0.4, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ delay: 1 }}
+          transition={{ delay: 1 , duration: 0.5, type: "spring"}}
           {...({ className: "outline-none" } as HTMLMotionProps<"button">)}
         >
           <p className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border border-[#1793D1] rounded-full bg-[#0A0C0E] group-hover/chm:shadow-lg shadow-md group-hover/chm:shadow-[#1793D1]/50 shadow-[#1793D1]/50 transition-all">

@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import { Metadata } from "next";
 import GoToButton from "@/utility/GoToButton";
 import HeadingBasic from "@/utility/HeadingBasic";
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
 };
 //////////////////////////////
 
-export default function NotFound(): JSX.Element {
+export default function NotFound() {
   return (
     <div className="flex flex-col px-5 min-h-[60vh] md:max-w-[45rem] max-w-[35rem] mx-auto">
       <div className="my-auto">

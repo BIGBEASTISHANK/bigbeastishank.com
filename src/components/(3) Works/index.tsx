@@ -5,13 +5,13 @@ import {
   websiteProjects,
 } from "@@/data/WorksData";
 import Link from "next/link";
-import { JSX, useState } from "react";
+import { useState } from "react";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { FaEye, FaSearch } from "react-icons/fa";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { ShortDivider } from "@/utility/Dividers";
 
-export default function WorksComponent(): JSX.Element {
+export default function WorksComponent() {
   return (
     <div id="works" className="px-5 scroll-mt-24">
       {/* Title */}
@@ -67,7 +67,7 @@ function ProjectList({
   id?: string;
   name?: string;
   projectData?: any[];
-}): JSX.Element {
+}) {
   // Searchbar variables
   const [sortedData, sortData]: [storedData: string, setData: any] =
     useState("");
@@ -87,7 +87,7 @@ function ProjectList({
         {...({ id } as HTMLMotionProps<"h1">)}
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7 }}
+        transition={{ delay: 0.7, duration: 0.5, type: "spring" }}
         {...({
           className:
             "font-bold md:text-2xl text-xl md:mb-7 mb-5 scroll-mt-24 flex outline-none",
@@ -131,7 +131,11 @@ function ProjectList({
               key={index}
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: listAnimationDelay + (index * 0.3) / 2 }}
+              transition={{
+                delay: listAnimationDelay + (index * 0.3) / 2,
+                duration: 0.5,
+                type: "spring",
+              }}
               {...({ className: "scroll-mt-24" } as HTMLMotionProps<"li">)}
             >
               <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#FF3333]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#FF3333]/80 shadow-[#1793D1]/50">
@@ -172,6 +176,7 @@ function ProjectList({
             <motion.li
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, type: "spring" }}
               {...({
                 className:
                   "px-5 py-2 bg-[#0A0C0E] border border-[#1793D1]/20 rounded-full text-red-500 md:text-base text-sm mx-auto text-center",

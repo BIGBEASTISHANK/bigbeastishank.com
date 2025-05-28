@@ -1,5 +1,4 @@
 "use client";
-import { JSX } from "react";
 import Link from "next/link";
 import { FaEye } from "react-icons/fa";
 import { allHirePlan } from "@@/data/HireData";
@@ -7,7 +6,7 @@ import HeadingBasic from "@/utility/HeadingBasic";
 import { HTMLMotionProps, motion } from "framer-motion";
 import { ShortDivider } from "@/utility/Dividers";
 
-export default function HireComponent(): JSX.Element {
+export default function HireComponent() {
   return (
     <div id="hire" className="px-5 scroll-mt-24 min-h-[45vh]">
       {/* Title */}
@@ -36,7 +35,7 @@ export default function HireComponent(): JSX.Element {
             key={index}
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 + (index * 0.3) / 2 }}
+            transition={{ delay: 0.7 + (index * 0.3) / 2, duration: 0.5, type: "spring" }}
             {...({ className: "scroll-mt-24" } as HTMLMotionProps<"li">)}
           >
             <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#FFFF00]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#FFFF00]/80 shadow-[#1793D1]/50">

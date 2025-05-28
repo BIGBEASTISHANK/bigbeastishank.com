@@ -1,11 +1,10 @@
 "use client";
-import { JSX } from "react";
 import Image from "next/image";
 import pfp from "@@/public/img/main/pfp.png";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { motion, HTMLMotionProps } from "framer-motion";
 
-export default function About(): JSX.Element {
+export default function About() {
   return (
     <div id="about" className="px-5 scroll-mt-24 flex flex-col">
       {/* Title */}
@@ -15,7 +14,7 @@ export default function About(): JSX.Element {
       <motion.a
         initial={{ opacity: 0, scale: 0.4 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.4 }}
+        transition={{ delay: 1.4, duration: 0.5, type: "spring" }}
         {...({ href: pfp.src, target: "_blank" } as HTMLMotionProps<"a">)}
         {...({
           className:
@@ -34,14 +33,14 @@ export default function About(): JSX.Element {
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.6 }}
+          transition={{ delay: 1.6, duration: 0.5, type: "spring" }}
         >
           🚀 Hey there, I'm Ishank, but you can call me the BIG BEAST ISHANK! 👹
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.8 }}
+          transition={{ delay: 1.8, duration: 0.5, type: "spring" }}
         >
           🎮 Crafting games, coding websites, diving into networks, and breaking
           barriers with pentesting—yeah, that's my jam! 💻✨
@@ -49,7 +48,7 @@ export default function About(): JSX.Element {
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2 }}
+          transition={{ delay: 2, duration: 0.5, type: "spring" }}
         >
           Wondering about the "BIG BEAST ISHANK" title? Well, it's not just a
           name; it's a journey. I'm on the path to becoming a{" "}
@@ -60,7 +59,7 @@ export default function About(): JSX.Element {
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.2 }}
+          transition={{ delay: 2.2, duration: 0.5, type: "spring" }}
         >
           🎥 Curious about my adventures? I document them in thrilling devlogs
           over on my{" "}

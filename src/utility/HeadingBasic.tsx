@@ -15,7 +15,7 @@ export default function HeadingBasic({
   id?: string;
   description?: JSX.Element;
   animationDelay?: number;
-}): JSX.Element {
+}) {
   return (
     <>
       {/* Title */}
@@ -23,7 +23,7 @@ export default function HeadingBasic({
         <motion.h1
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: animationDelay }}
+          transition={{ delay: animationDelay, duration: 0.5, type: "spring" }}
           {...({
             className:
               "font-bold md:text-3xl text-2xl md:mb-8 mb-5 scroll-mt-24",

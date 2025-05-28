@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import { Metadata } from "next";
 import WorksComponent from "@/components/(3) Works";
 
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 /////////////////////////////
 
-export default function Works(): JSX.Element {
+export default function Works() {
   return (
     <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
       <WorksComponent />

@@ -1,0 +1,108 @@
+---
+title: "Understanding FOSS Licenses: A Developer's Guide"
+description: "Learn what FOSS licenses are, why they matter, and the differences between popular open-source licenses."
+date: "2025-05-28"
+minuteRead: 5
+tags: [FOSS, Open Source, Licensing, Development, Software Freedom]
+---
+
+If you're working with open-source software, you've probably come across terms like **FOSS**, **GPL**, **MIT**, or **Apache License**. But what do these licenses actually mean? How do they affect how you can use, modify, and distribute software?
+
+In this blog, we'll break down what a FOSS license is, explore the most common types, and help you choose the right one for your project.
+
+---
+
+## What is a FOSS License?
+
+**FOSS** stands for **Free and Open Source Software**. A FOSS license is a legal framework that allows users to:
+
+- Use the software for any purpose
+- Study how the software works
+- Modify the software
+- Distribute copies of the original or modified software
+
+These freedoms are designed to promote transparency, collaboration, and innovation.
+
+But "free" doesn't always mean "without restrictions." Different licenses impose different rules around what you must do when you share or modify the software.
+
+---
+
+## Categories of FOSS Licenses
+
+FOSS licenses generally fall into two main categories:
+
+### 1. **Permissive Licenses**
+
+These licenses have minimal requirements. You can use, modify, and redistribute the software with few obligations. You don't have to use the same license in your derivative work. They're ideal for maximum flexibility and are often business-friendly.
+
+**Popular permissive licenses include:**
+
+- MIT License
+- Apache License 2.0
+- BSD Licenses
+
+### 2. **Copyleft Licenses**
+
+These licenses ensure that derivative works are also distributed under the same license. If you modify and distribute the software, you must release the source code under the same terms.
+
+**Popular copyleft licenses include:**
+
+- GNU General Public License (GPL)
+- GNU Lesser General Public License (LGPL)
+- Affero General Public License (AGPL)
+
+---
+
+## Comparison of Common FOSS Licenses
+
+<PostsTable
+  fields={["License", "Type", "Key Requirement", "Usable in Proprietary Software?"]}
+  fieldsData={[
+    ["MIT", "Permissive", "Must include the original license", "Yes"],
+    ["Apache 2.0", "Permissive", "Include notice and do not use trademarks", "Yes"],
+    ["BSD", "Permissive", "Include copyright and disclaimer", "Yes"],
+    ["GPL", "Copyleft", "Must open source derivatives under same license", "No"],
+    ["LGPL", "Copyleft", "Less strict; allows dynamic linking", "Yes (with conditions)"],
+    ["AGPL", "Copyleft", "Must release source even if software runs as a service", "No"]
+  ]}
+/>
+
+---
+
+## Example: MIT License in Your Code
+
+Here's how you might include an MIT license header in a Python script:
+
+```py
+# sample.py
+"""
+MIT License
+
+Copyright (c) 2025 Your Name
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction...
+"""
+def greet(name):
+    print(f"Hello, {name}!")
+```
+
+---
+
+## Which FOSS License Should You Choose?
+
+Here are some general guidelines:
+
+- Use **MIT** or **Apache 2.0** if you want your code to be widely reused, including in proprietary projects.
+- Use **GPL** if you want all derivative works to remain open source.
+- Use **LGPL** for libraries you want used in both open and proprietary software.
+- Use **AGPL** if you're building server software and want to ensure all modifications are shared, even when run as a service.
+
+---
+
+## Conclusion
+
+FOSS licenses are more than just legal jargon—they shape how software is shared, improved, and commercialized. Whether you're an open-source maintainer, contributor, or user, understanding these licenses empowers you to make informed, ethical, and strategic decisions.
+
+Got a favorite FOSS license? Or a horror story about choosing the wrong one? Share your experience in the comments!

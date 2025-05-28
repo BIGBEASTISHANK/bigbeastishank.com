@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import { Metadata } from "next";
 import ColorPalettePalette from "@/components/(5) ColorPalette";
 
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
 };
 /////////////////////////////
 
-export default function ColorPalette(): JSX.Element {
+export default function ColorPalette() {
   return (
     <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
       <ColorPalettePalette />

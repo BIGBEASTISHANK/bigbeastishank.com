@@ -146,68 +146,23 @@ With this level of peer support, you're never left on your own—even with more 
 
 ## Final Comparison: Linux vs. Windows and macOS
 
-<div
-  className="overflow-x-auto mt-4"
-  style={{ WebkitOverflowScrolling: "touch" }}
->
-  <table className="w-full min-w-[600px] border-separate border-spacing-0 text-[#F6F9FC] font-sans rounded-lg overflow-hidden">
-    <thead>
-      <tr className="bg-[#1A1E23]">
-        <th className="md:w-48 w-32 border border-[#1793D1] p-3 text-left font-bold whitespace-nowrap rounded-tl-lg">
-          Feature
-        </th>
-        <th className="md:w-48 w-32 border-t border-b border-r border-[#1793D1] p-3 text-left whitespace-nowrap">
-          Linux
-        </th>
-        <th className="md:w-48 w-32 border-t border-b border-r border-[#1793D1] p-3 text-left whitespace-nowrap">
-          Windows
-        </th>
-        <th className="md:w-48 w-32 border-t border-b border-r border-[#1793D1] p-3 text-left whitespace-nowrap rounded-tr-lg">
-          macOS
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      {[
-        ["Cost", "Free", "License required", "Hardware required"],
-        ["Open Source", "Yes", "No", "No"],
-        ["System Requirements", "Low", "High", "Moderate"],
-        [
-          "Development Tools",
-          "Native support",
-          "Requires setup",
-          "Partial support",
-        ],
-        ["Customization", "Extensive", "Limited", "Very limited"],
-        ["Privacy", "User-controlled", "Limited", "Limited"],
-        ["Security", "Strong, configurable", "Moderate", "Strong, controlled"],
-      ].map((row, i) => (
-        <tr
-          key={row[0]}
-          className={i % 2 === 1 ? "bg-[#0A0C0E]" : "bg-[#050607]"}
-        >
-          <td
-            className={`md:w-48 w-32 border-l border-b border-r border-[#1793D1] p-3 whitespace-nowrap
-              ${i === 6 ? "rounded-bl-lg" : ""}
-            `}
-          >
-            {row[0]}
-          </td>
-          {row.slice(1).map((cell, j) => (
-            <td
-              key={j}
-              className={`md:w-48 w-32 border-b border-r border-[#1793D1] p-3 ${
-                i === 6 && j === 2 ? "rounded-br-lg" : ""
-              }`}
-            >
-              {cell}
-            </td>
-          ))}
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
+<PostsTable
+  fields={["Feature", "Linux", "Windows", "macOS"]}
+  fieldsData={[
+    ["Cost", "Free", "License required", "Hardware required"],
+    ["Open Source", "Yes", "No", "No"],
+    ["System Requirements", "Low", "High", "Moderate"],
+    [
+      "Development Tools",
+      "Native support",
+      "Requires setup",
+      "Partial support",
+    ],
+    ["Customization", "Extensive", "Limited", "Very limited"],
+    ["Privacy", "User-controlled", "Limited", "Limited"],
+    ["Security", "Strong, configurable", "Moderate", "Strong, controlled"],
+  ]}
+/>
 
 ---
 

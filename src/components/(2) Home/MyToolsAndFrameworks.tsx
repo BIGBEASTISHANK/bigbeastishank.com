@@ -1,10 +1,9 @@
 "use client";
-import { JSX } from "react";
 import { myToolsAndFramework } from "@@/data/MySkillsData";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { motion, HTMLMotionProps } from "framer-motion";
 
-export default function MyToolsAndFramework(): JSX.Element {
+export default function MyToolsAndFramework() {
   return (
     <div id="myToolsAndFramework" className="px-5 scroll-mt-24">
       {/* Headings */}
@@ -30,7 +29,7 @@ export default function MyToolsAndFramework(): JSX.Element {
             key={index}
             initial={{ y: 50, scale: 0.4, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
-            transition={{ delay: 5.55 + (index * 0.3) / 2 }}
+            transition={{ delay: 5.55 + (index * 0.3) / 2, duration: 0.5, type: "spring" }}
             {...({ className: "group/chm" } as HTMLMotionProps<"li">)}
           >
             <div className="group bg-[#1A1E23] border border-[#1793D1]/70 hover:border-[#00FF00]/70 flex flex-col overflow-auto h-[8rem] md:w-[8rem] w-[6rem] rounded-2xl hover:scale-[1.1] transition-all hover:shadow-xl shadow-md hover:shadow-[#00FF00]/80 shadow-[#1793D1]/50">

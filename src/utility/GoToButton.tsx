@@ -24,7 +24,7 @@ export default function GoToButton({
         <motion.button
           initial={{ opacity: 0, scale: 0.4, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ delay: animationDelay }}
+          transition={{ delay: animationDelay, duration: 0.5, type: "spring" }}
           className="outline-none"
         >
           <p className="cursor-pointer flex justify-center items-center md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border border-[#1793D1] rounded-full bg-[#0A0C0E] group-hover/chm:shadow-lg shadow-md group-hover/chm:shadow-[#1793D1]/50 shadow-[#1793D1]/50 transition-all">

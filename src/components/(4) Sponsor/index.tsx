@@ -5,13 +5,12 @@ import {
   barPercentage,
   sponsorGoalAmount,
 } from "@@/data/SponsorData";
-import { JSX } from "react";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { currencyFormatter } from "@/utility/CurrencyFormatter";
 import { FullDivider, ShortDivider } from "@/utility/Dividers";
 
-export default function SponsorComponent(): JSX.Element {
+export default function SponsorComponent() {
   return (
     <div id="sponsorme" className="px-5 scroll-mt-24">
       {/* Main Heading */}
@@ -122,9 +121,9 @@ export default function SponsorComponent(): JSX.Element {
       {/* Monthly goal */}
       <motion.div
         {...({ className: "px-8 flex flex-col" } as HTMLMotionProps<"div">)}
-        // initial={{ y: -50, opacity: 0 }}
-        // animate={{ y: 0, opacity: 1 }}
-        // transition={{ delay: 2.7 }}
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1.9, duration: 0.5, type: "spring" }}
         {...({ id: "sponsorGoal" } as HTMLMotionProps<"div">)}
       >
         {/* Text */}

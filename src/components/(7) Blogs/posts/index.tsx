@@ -1,12 +1,11 @@
-import Link from "next/link";
-import { FaArrowLeft, FaCheck, FaTag } from "react-icons/fa";
-import { ShortDivider } from "@/utility/Dividers";
+import UseClientIndex from "@/components/(7) Blogs/posts/UseClientIndex";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import GoToButton from "@/utility/GoToButton";
+import PostsTable from "@/components/(7) Blogs/posts/components/Table";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { getLanguageDisplayName } from "@@/data/BlogsCoreData";
-import ClickToCopyCode from "@/utility/ClickToCopyCode";
+import { ClickToCopyCode } from "@/components/(7) Blogs/posts/UseClientIndex";
+import Link from "next/link";
 
 export function BlogPostComponent({
   frontmatter,
@@ -17,7 +16,6 @@ export function BlogPostComponent({
 }) {
   // Define custom components for MDX
   const components = {
-    Link,
     code: ({
       className,
       children,
@@ -41,7 +39,7 @@ export function BlogPostComponent({
 
             {/* Click to copy */}
             {className === "language-output" ? null : (
-              <ClickToCopyCode children={String(children).replace(/\n$/, "")} />
+              <ClickToCopyCode children={children} />
             )}
           </div>
 
@@ -93,72 +91,14 @@ export function BlogPostComponent({
         {...props}
       />
     ),
+    PostsTable,
+    Link,
   };
 
   return (
-    <div id="blogPost" className="px-5 scroll-mt-24 max-w-[70rem] mx-auto">
-      {/* GO Back arrow */}
-      <Link
-        href="/blogs"
-        className="flex text-[#1793D1] hover:text-[#FF3333] transition-colors mb-2"
-      >
-        <FaArrowLeft />
-      </Link>
-
-      {/* Title */}
-      <h1 className="flex items-center font-bold md:text-3xl text-2xl mb-5">
-        ~/ {frontmatter.title}
-      </h1>
-
-      {/* Blog Description */}
-      <p className="md:text-base text-sm mb-3 text-[#AFB3C1]">
-        {frontmatter.description}
-      </p>
-
-      {/* Blog Metadata */}
-      <div className="flex gap-3 text-xs text-[#AFB3C1] mt-4 mb-3">
-        {/* Date */}
-        <p>
-          {new Date(frontmatter.date).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </p>
-
-        {/* Seprator */}
-        <p> | </p>
-
-        {/* Minute read */}
-        <p>{frontmatter.minuteRead} min read</p>
-      </div>
-
-      {/* Tags */}
-      <div className="flex flex-wrap gap-2 items-center">
-        {frontmatter.tags.map((tag, index) => (
-          <div
-            key={index}
-            className="flex justify-center items-center border border-[#1793D1]/70 rounded-full px-4 py-1 select-none font-normal text-sm my-auto"
-          >
-            <FaTag className="my-auto mr-2" />
-            {tag}
-          </div>
-        ))}
-      </div>
-
-      {/* Short Divider */}
-      <ShortDivider />
-
-      {/* Blog content */}
-      <div className="prose prose-invert max-w-none">
-        <MDXRemote source={content} components={components} />
-      </div>
-
-      {/* Short Divider */}
-      <ShortDivider />
-
-      {/* Go Back button */}
-      <GoToButton title={"Back to Blogs"} link="/blogs" />
-    </div>
+    <UseClientIndex
+      frontmatter={frontmatter}
+      MDXRemote={<MDXRemote source={content} components={components} />}
+    />
   );
 }

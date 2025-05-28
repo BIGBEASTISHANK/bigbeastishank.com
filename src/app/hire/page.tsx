@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import { Metadata } from "next";
 import HireComponent from "@/components/(6) Hire";
 
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 /////////////////////////////
 
-export default function Hire(): JSX.Element {
+export default function Hire() {
   return (
     <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
       <HireComponent />

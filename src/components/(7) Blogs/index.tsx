@@ -147,7 +147,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
         <motion.p
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.1 }}
+          transition={{ delay: 0.6, duration: 0.5, type: "spring" }}
           className="md:text-base text-sm"
         >
           Subscribe to my get notified when new blogs are published.
@@ -160,7 +160,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
           <motion.input
             initial={{ opacity: 0, width: "0%" }}
             animate={{ opacity: 1, width: "100%" }}
-            transition={{ delay: 0.9, duration: 0.5 }}
+            transition={{ delay: 0.9, duration: 0.5, type: "spring" }}
             className={`rounded-xl border-2 outline-none border-[#1793D1] px-4 py-2 ${
               submitSuccess ? "w-0" : "w-full"
             } ${
@@ -180,7 +180,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
           <motion.button
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.0, duration: 0.5 }}
+            transition={{ delay: 1.0, duration: 0.5, type: "spring" }}
             type="submit"
             className={`rounded-xl outline-none ${
               submitSuccess ? "bg-[#1d991d]" : "bg-[#1793D1]"
@@ -207,7 +207,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.5, type: "spring"  }}
             className="mt-3 p-3 bg-red-500/10 border border-red-500/30 rounded-xl"
           >
             <p className="text-red-400 text-sm flex items-center gap-2">
@@ -292,7 +292,7 @@ function BlogContent({ posts }: BlogComponentProps) {
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 1.0 }}
+        transition={{ delay: 1.0, duration: 0.5, type: "spring" }}
         className="flex bg-[#050607] border border-[#1793D1] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto mb-5"
       >
         <FaSearch className="my-auto mr-2" />
@@ -316,7 +316,7 @@ function BlogContent({ posts }: BlogComponentProps) {
               key={post.slug}
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: cardAnimationDelay + (index * 0.3) / 2 }}
+              transition={{ delay: cardAnimationDelay + (index * 0.3) / 2, duration: 0.5, type: "spring" }}
               {...({ className: "scroll-mt-24" } as HTMLMotionProps<"li">)}
             >
               <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#1793D1]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#1793D1]/80 shadow-[#1793D1]/50">
@@ -386,6 +386,7 @@ function BlogContent({ posts }: BlogComponentProps) {
             <motion.li
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, type: "spring" }}
               {...({
                 className:
                   "px-5 py-2 bg-[#0A0C0E] border border-[#1793D1]/20 rounded-full text-red-500 md:text-base text-sm mx-auto text-center",
@@ -402,7 +403,7 @@ function BlogContent({ posts }: BlogComponentProps) {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: pageBtnAnimationDelay }}
+          transition={{ delay: pageBtnAnimationDelay, duration: 0.5, type: "spring" }}
           className="flex justify-center items-center gap-2 my-8"
         >
           {/* Previous button */}

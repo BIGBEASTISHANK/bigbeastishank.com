@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import { Metadata } from "next";
 import SponsorComponent from "@/components/(4) Sponsor";
 
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Sponsor(): JSX.Element {
+export default function Sponsor() {
   return (
     <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
       <SponsorComponent />
