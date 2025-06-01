@@ -1,0 +1,99 @@
+---
+title: "Setup Huion Tablet on Arch Linux Window Manager (XOrg)"
+description: "Setting up the Huion graphic tablet on Arch Linux with a window manager with the help of xsetwacom, as the Huion tablet package from the AUR repo is not working correctly."
+date: "2025-06-01"
+minuteRead: 5
+tags: [Arch Linux, Huion, Tablet, Window Manager, Linux, AUR]
+---
+
+I am using Huion H1060P Drawing tablet for a while now, I was facing issue setting up the physical button on pad and stylus. Using [AUR's official package](https://aur.archlinux.org/packages/huiontablet) have some glitches, major one was that when I draw it will flicker the cursor and push it to top left corner of screen and bring back in milliseconds. To fix this issue I use `xsetwacom` and it was also a challenge in it self for my tablet, lets fix the issue.
+
+## Installing the required packages
+
+> Note: Make sure you have any AUR helper installed.
+
+```bash
+paru -Syu digimend-kernel-drivers-dkms-git xf86-input-wacom
+```
+
+---
+
+## Find the ID & name for your device
+
+```bash
+xinput list
+```
+
+**My Sample Output**
+
+```output
+⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+⎜   ↳ HUION HUION Tablet_H1060P Dial pad      	id=17	[slave  pointer  (2)]
+⎜   ↳ HUION HUION Tablet_H1060P Pen stylus    	id=18	[slave  pointer  (2)]
+⎜   ↳ SINOWEALTH 2.4G Wireless Receiver       	id=12	[slave  pointer  (2)]
+⎜   ↳ HUION HUION Tablet_H1060P stylus        	id=21	[slave  pointer  (2)]
+⎜   ↳ HUION HUION Tablet_H1060P eraser        	id=22	[slave  pointer  (2)]
+⎜   ↳ HUION HUION Tablet_H1060P Pad pad       	id=20	[slave  pointer  (2)]
+⎜   ↳ HUION HUION Tablet_H1060P Touch Strip pad	id=19	[slave  pointer  (2)]
+⎜   ↳ HUION HUION Tablet_H1060P Group Buttons pad	id=23	[slave  pointer  (2)]
+⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+    ↳ Power Button                            	id=6	[slave  keyboard (3)]
+    ↳ Asus Wireless Radio Control             	id=7	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=8	[slave  keyboard (3)]
+    ↳ Sleep Button                            	id=11	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=9	[slave  keyboard (3)]
+    ↳ Power Button                            	id=10	[slave  keyboard (3)]
+    ↳ SINOWEALTH 2.4G Wireless Receiver Keyboard	id=13	[slave  keyboard (3)]
+    ↳ C-Media Electronics Inc. USB Audio Device	id=14	[slave  keyboard (3)]
+    ↳ Asus WMI hotkeys                        	id=15	[slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard            	id=16	[slave  keyboard (3)]
+```
+
+Now you need to test which device is the stylus and which is the pad.
+
+```bash
+xinput test 18
+```
+
+Now if you get any output, then it's your stylus. See, I put `18`, which corresponds to the `HUION HUION Tablet_H1060P Pen stylus`. So now I know it is my pen. If you don't see any output, then try changing the test ID.
+
+Similarly, do it for the tablet, look for the keyword, such as tablet, pad, etc. In my case, it's `HUION HUION Tablet_H1060P Pad pad` with ID 20, so I will again test it with `xinput test 20` and then press the button on the tablet. If I get output, I am right, else, change the ID to something else from the list.
+
+---
+
+## Now set the stylus and pad button to keys
+
+Create a bash file to update the keys for pad and stylus. I will call it `huionKeySetup.sh`.
+
+```bash
+# huionKeySetup.sh
+
+##----------------------##
+## Drawing Tablet setup ##
+##----------------------##
+# Stylus
+xsetwacom set "HUION HUION Tablet_H1060P Pen stylus" Button 1 "button +1"
+xsetwacom set "HUION HUION Tablet_H1060P Pen stylus" Button 2 "button +2"
+xsetwacom set "HUION HUION Tablet_H1060P Pen stylus" Button 3 "button +3"
+xsetwacom set "HUION HUION Tablet_H1060P Pen stylus" PressureCurve 100 0 100 0
+
+# Tablet
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 1 "key h"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 2 "key k"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 3 "key 1"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 8 "key 2"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 9 "key 3"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 10 "key 4"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 11 "key 5"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 12 "key 6"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 13 "key 7"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 14 "key 0"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 15 "key ctrl z"
+xsetwacom set "HUION HUION Tablet_H1060P Pad pad" Button 16 "key ctrl shift z"
+```
+
+Here you can see how I have set the key combination and buttons. `Button 1` is your mouse primary click, `Button 2` is your middle click and `Button 3` is your right click. 
+
+Now you need to run this bash file at startup and all set. Thank you for reading.

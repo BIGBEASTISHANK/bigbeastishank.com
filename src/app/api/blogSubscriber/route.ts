@@ -1,5 +1,5 @@
 import { dbConnect } from "@/lib/db/mongoose";
-import Blog_Subscribers from "@/lib/models/Blog_Subscribers";
+import Blog_Subscribers, { IBlog_Subscriber } from "@/lib/models/Blog_Subscribers";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -8,8 +8,8 @@ export async function POST(req: Request) {
     await dbConnect();
 
     // Getting email
-    const formData = await req.formData();
-    const email = formData.get("email") as string;
+    const formData: FormData = await req.formData();
+    const email: string = formData.get("email") as string;
 
     // Check if email is empty
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
@@ -19,14 +19,14 @@ export async function POST(req: Request) {
       );
 
     // Checking if it exists
-    const subscriber = await Blog_Subscribers.find(
+    const subscriber: IBlog_Subscriber[] = await Blog_Subscribers.find(
       { email: email },
       { email: 1, _id: 0 }
     );
 
     if (subscriber.length <= 0) {
       // Saving new subscriber
-      const newSubscriber = new Blog_Subscribers({
+      const newSubscriber: IBlog_Subscriber = new Blog_Subscribers({
         email: email,
       });
       newSubscriber.save();

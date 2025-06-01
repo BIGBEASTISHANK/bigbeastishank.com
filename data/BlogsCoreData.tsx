@@ -15,5 +15,5 @@ export const getLanguageDisplayName = (lang: string): string => {
     output: "$Terminal",
   };
 
-  return languageMap[lang.toLowerCase()] || lang.toUpperCase();
+  return languageMap[lang.toLowerCase()] || (lang.charAt(0).toUpperCase() + lang.slice(1));
 };

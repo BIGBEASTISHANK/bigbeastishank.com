@@ -1,7 +1,7 @@
 import mongoose, { Document, Model } from "mongoose";
 
 // Interface
-interface IBlog_Subscriber extends Document {
+export interface IBlog_Subscriber extends Document {
   email: string;
 }
 
