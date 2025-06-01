@@ -3,12 +3,15 @@ import Link from "next/link";
 import { FaArrowLeft, FaTag, FaCheck, FaClipboard } from "react-icons/fa";
 import { ShortDivider } from "@/utility/Dividers";
 import GoToButton from "@/utility/GoToButton";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { motion } from "framer-motion";
 
 export function ClickToCopyCode({ children }: { children: React.ReactNode }) {
-  const [copiedCode, setCopiedCode] = useState(false);
+  const [copiedCode, setCopiedCode]: [
+    copiedCode: boolean,
+    setCopiedCode: Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
 
   return (
     <CopyToClipboard
@@ -135,20 +138,23 @@ export default function UseClientIndex({
       </div>
 
       {/* Short Divider */}
-      <ShortDivider delay={1.3}/>
+      <ShortDivider delay={1.3} />
 
       {/* Blog content */}
       <motion.div
-      initial={{ opacity: 0, y: 500 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1.5, type: "spring", duration: 0.5 }}
-      className="prose prose-invert max-w-none">{MDXRemote}</motion.div>
+        initial={{ opacity: 0, y: 500 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, type: "spring", duration: 0.5 }}
+        className="prose prose-invert max-w-none"
+      >
+        {MDXRemote}
+      </motion.div>
 
       {/* Short Divider */}
       <ShortDivider delay={1.7} />
 
       {/* Go Back button */}
-      <GoToButton title={"Back to Blogs"} link="/blogs" animationDelay={1.9}/>
+      <GoToButton title={"Back to Blogs"} link="/blogs" animationDelay={1.9} />
     </div>
   );
 }

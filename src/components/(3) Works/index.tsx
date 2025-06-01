@@ -5,7 +5,7 @@ import {
   websiteProjects,
 } from "@@/data/WorksData";
 import Link from "next/link";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { FaEye, FaSearch } from "react-icons/fa";
 import { motion, HTMLMotionProps } from "framer-motion";
@@ -64,18 +64,20 @@ function ProjectList({
   name,
   projectData,
 }: {
-  id?: string;
-  name?: string;
-  projectData?: any[];
+  id: string;
+  name: string;
+  projectData: any[];
 }) {
   // Searchbar variables
-  const [sortedData, sortData]: [storedData: string, setData: any] =
-    useState("");
+  const [sortedData, sortData]: [
+    storedData: String,
+    setData: Dispatch<SetStateAction<string>>
+  ] = useState<string>("");
   // List variable
   const [listAnimationDelay, setListAnimationDelay]: [
     storedData: number,
-    setData: any
-  ] = useState(1);
+    setData: Dispatch<SetStateAction<number>>
+  ] = useState<number>(1);
 
   return (
     <>

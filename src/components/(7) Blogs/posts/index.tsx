@@ -15,7 +15,7 @@ export function BlogPostComponent({
   content: string;
 }) {
   // Define custom components for MDX
-  const components = {
+  const components: any = {
     code: ({
       className,
       children,

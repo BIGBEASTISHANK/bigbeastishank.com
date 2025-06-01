@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import BlogComponent from "@/components/(7) Blogs";
+import { number } from "framer-motion";
 
 // Meta data
 export const metadata: Metadata = {
@@ -31,14 +32,21 @@ export const metadata: Metadata = {
 
 export default function Blogs() {
   // Get all blog posts with their frontmatter
-  const postsDirectory = path.join(process.cwd(), "posts");
-  const filenames = fs.readdirSync(postsDirectory);
+  const postsDirectory: string = path.join(process.cwd(), "posts");
+  const filenames: string[] = fs.readdirSync(postsDirectory);
 
-  const posts = filenames.map((filename) => {
+  const posts: {
+    slug: string;
+    title: string;
+    description: string;
+    date: string;
+    minuteRead: number;
+    tags: string[];
+  }[] = filenames.map((filename) => {
     const slug = filename.replace(/\.mdx$/, "");
     const filePath = path.join(postsDirectory, filename);
     const fileContents = fs.readFileSync(filePath, "utf8");
-    const { data } = matter(fileContents);
+    const { data }: { data: { [key: string]: any } } = matter(fileContents);
 
     return {
       slug,

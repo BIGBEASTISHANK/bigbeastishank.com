@@ -5,12 +5,17 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
 export default function ParticlesBackground() {
-  const particlesInit = useCallback(async (engine) => {
-    await loadSlim(engine);
-  }, []);
+  const particlesInit: (engine: any) => Promise<void> = useCallback(
+    async (engine) => {
+      await loadSlim(engine);
+    },
+    []
+  );
 
-  const particlesLoaded = useCallback(async (container) => {
-  }, []);
+  const particlesLoaded: (engine: any) => Promise<void> = useCallback(
+    async (container) => {},
+    []
+  );
 
   return (
     <div className="fixed top-0 left-0 w-full h-full -z-10">
@@ -37,7 +42,7 @@ export default function ParticlesBackground() {
             },
           },
           particles: {
-            color: { 
+            color: {
               value: [
                 "#3AB1F5",
                 "#515860",
@@ -48,8 +53,8 @@ export default function ParticlesBackground() {
                 "#00FF00",
                 "#FFFF00",
                 "#9900FF",
-                "#FF69B4"
-              ] 
+                "#FF69B4",
+              ],
             },
             links: {
               color: "#1793D1",

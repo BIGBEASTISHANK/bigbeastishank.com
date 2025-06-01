@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import HeadingBasic from "@/utility/HeadingBasic";
@@ -14,6 +14,7 @@ import {
 import { motion, HTMLMotionProps } from "framer-motion";
 import { ShortDivider } from "@/utility/Dividers";
 import { PulseLoader } from "react-spinners";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 interface Post {
   slug: string;
@@ -38,7 +39,7 @@ function UpdatePageURL({
   pageChanged: boolean;
   currentPageParam: string;
 }) {
-  const router = useRouter();
+  const router: AppRouterInstance = useRouter();
 
   useEffect(() => {
     pageChanged || parseInt(currentPageParam) === 1
@@ -55,42 +56,54 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
   UpdatePageURL({ currentPage: 1, pageChanged: false, currentPageParam: "" });
 
   // Variable
-  const [formData, setFormData] = useState({
-    email: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState("");
+  const [formData, setFormData]: [
+    formData: { email: string },
+    setFormData: Dispatch<SetStateAction<{ email: string }>>
+  ] = useState<{ email: string }>({ email: "" });
+  const [isSubmitting, setIsSubmitting]: [
+    isSubmitting: boolean,
+    setIsSubmitting: Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
+  const [submitSuccess, setSubmitSuccess]: [
+    submitSuccess: boolean,
+    setSubmitSuccess: Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
+  const [submitError, setSubmitError]: [
+    submitError: string,
+    setSubmitError: Dispatch<SetStateAction<string>>
+  ] = useState<string>("");
 
   // Handle input change
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
+  const handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const { name, value }: { name: string; value: string } = event.target;
 
     setFormData({ ...formData, [name]: value });
   };
 
   // Submit input
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit: (
+    event: React.FormEvent<HTMLFormElement>
+  ) => Promise<void> = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     setIsSubmitting(true);
     setSubmitError("");
 
     try {
-      const submitData = new FormData();
+      const submitData: FormData = new FormData();
       submitData.append("email", formData.email);
 
-      const response = await fetch("/api/blogSubscriber", {
+      const response: Response = await fetch("/api/blogSubscriber", {
         method: "POST",
         body: submitData,
-      });
+      } as RequestInit);
 
-      const result = await response.json();
-
-      console.log(response.status);
+      const error: { error: string } = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error);
+        throw new Error(error.error);
       }
 
       setSubmitSuccess(true);
@@ -230,24 +243,34 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
 
 // BlogContent
 function BlogContent({ posts }: BlogComponentProps) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const searchParams = useSearchParams();
-  const postsPerPage = 5;
-  const [pageChanged, setPageChanged] = useState(false);
+  const [searchTerm, setSearchTerm]: [
+    searchTerm: string,
+    setSearchTerm: Dispatch<SetStateAction<string>>
+  ] = useState<string>("");
+  const searchParams: URLSearchParams = useSearchParams();
+  const postsPerPage: number = 5;
+  const [pageChanged, setPageChanged]: [
+    pageChanged: boolean,
+    setPageChanged: Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
 
-  const [cardAnimationDelay, setCardAnimationDelay] = useState(1.4);
+  const [cardAnimationDelay, setCardAnimationDelay]: [
+    cardAnimationDelay: GLfloat,
+    setCardAnimationDelay: Dispatch<SetStateAction<GLfloat>>
+  ] = useState<GLfloat>(1.4);
 
   // Get current page
-  const currentPageParam = searchParams.get("page");
-  const [currentPage, setCurrentPage] = useState(
-    currentPageParam ? parseInt(currentPageParam) : 1
-  );
+  const currentPageParam: string = searchParams.get("page");
+  const [currentPage, setCurrentPage]: [
+    currentPage: number,
+    setCurrentPage: Dispatch<SetStateAction<number>>
+  ] = useState<number>(currentPageParam ? parseInt(currentPageParam) : 1);
 
   // Update URL to display page
   UpdatePageURL({ currentPage, pageChanged, currentPageParam });
 
   // Filter posts based on search term
-  const filteredPosts = posts
+  const filteredPosts: Post[] = posts
     .filter(
       (post) =>
         post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -258,18 +281,22 @@ function BlogContent({ posts }: BlogComponentProps) {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   // Calculate pagination
-  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
-
-  // Calculate delays for page button
-  const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(
-    1.5 + (currentPosts.length * 0.3) / 2
+  const totalPages: number = Math.ceil(filteredPosts.length / postsPerPage);
+  const indexOfLastPost: number = currentPage * postsPerPage;
+  const indexOfFirstPost: number = indexOfLastPost - postsPerPage;
+  const currentPosts: Post[] = filteredPosts.slice(
+    indexOfFirstPost,
+    indexOfLastPost
   );
 
+  // Calculate delays for page button
+  const [pageBtnAnimationDelay, setPageBtnAnimationDelay]: [
+    pageBtnAnimationDelay: GLfloat,
+    setPageBtnAnimationDelay: Dispatch<SetStateAction<GLfloat>>
+  ] = useState<GLfloat>(1.5 + (currentPosts.length * 0.3) / 2);
+
   // Change page
-  const paginate = (pageNumber: number) => {
+  const paginate: (pageNumber: number) => void = (pageNumber: number) => {
     setCardAnimationDelay(0.15);
     setPageBtnAnimationDelay(0.3 + (postsPerPage * 0.3) / 2);
 
@@ -281,7 +308,7 @@ function BlogContent({ posts }: BlogComponentProps) {
   };
 
   // Generate page numbers
-  const pageNumbers = [];
+  const pageNumbers: number[] = [];
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }

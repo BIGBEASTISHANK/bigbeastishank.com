@@ -1,4 +1,4 @@
 // Varibale
-export const goalReached = 0;
-export const sponsorGoalAmount = 15000;
-export const barPercentage = ((goalReached / sponsorGoalAmount) * 100) <= 100 ? ((goalReached / sponsorGoalAmount) * 100) : 100
+export const goalReached: number = 0;
+export const sponsorGoalAmount: number = 15000;
+export const barPercentage: number = ((goalReached / sponsorGoalAmount) * 100) <= 100 ? ((goalReached / sponsorGoalAmount) * 100) : 100

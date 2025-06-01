@@ -5,9 +5,9 @@ import Navbar from "@/components/(1) Layout/Navbar";
 import Footer from "@/components/(1) Layout/Footer";
 import ScrollProgressBar from "@/utility/ScrollProgressBar";
 import ParticlesBackground from "@/components/(1) Layout/ParticlesBackground";
-import { FullDivider } from "@/utility/Dividers";
+import { NextFont } from "next/dist/compiled/@next/font";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter: NextFont = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Home | BIGBEASTISHANK",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children } : {children: React.ReactNode}) {
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning={true}>
       <head>

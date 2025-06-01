@@ -1,13 +1,13 @@
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
+import matter, { GrayMatterFile } from "gray-matter";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { BlogPostComponent } from "@/components/(7) Blogs/posts";
 
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), "posts");
-  const filenames = fs.readdirSync(postsDirectory);
+  const postsDirectory: string = path.join(process.cwd(), "posts");
+  const filenames: string[] = fs.readdirSync(postsDirectory);
 
   return filenames.map((filename) => ({
     slug: filename.replace(/\.mdx$/, ""),
@@ -19,13 +19,14 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const postsDirectory = path.join(process.cwd(), "posts");
-  const filePath = path.join(postsDirectory, `${slug}.mdx`);
+  const { slug }: { slug: string } = await params;
+  const postsDirectory: string = path.join(process.cwd(), "posts");
+  const filePath: string = path.join(postsDirectory, `${slug}.mdx`);
 
   try {
-    const fileContents = fs.readFileSync(filePath, "utf8");
-    const { data: frontmatter } = matter(fileContents);
+    const fileContents: string = fs.readFileSync(filePath, "utf8");
+    const { data: frontmatter }: { data: { [key: string]: any } } =
+      matter(fileContents);
 
     return {
       title: `${frontmatter.title} | BIGBEASTISHANK`,
@@ -61,13 +62,13 @@ export default async function BlogPost({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const postsDirectory = path.join(process.cwd(), "posts");
-  const filePath = path.join(postsDirectory, `${slug}.mdx`);
+  const { slug } : {slug: string} = await params;
+  const postsDirectory: string = path.join(process.cwd(), "posts");
+  const filePath: string = path.join(postsDirectory, `${slug}.mdx`);
 
   try {
-    const fileContents = fs.readFileSync(filePath, "utf8");
-    const { data: frontmatter, content } = matter(fileContents);
+    const fileContents: string = fs.readFileSync(filePath, "utf8");
+    const { data: frontmatter, content }: { data: { [key: string]: any }, content: string } = matter(fileContents);
 
     return BlogPostComponent({ frontmatter, content });
   } catch (error) {
