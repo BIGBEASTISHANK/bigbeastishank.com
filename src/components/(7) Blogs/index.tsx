@@ -172,7 +172,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
             value={formData.email}
             disabled={isSubmitting || submitSuccess}
             placeholder="Enter your email..."
-            type="name"
+            type="email"
             required
             onChange={handleChange}
           />
