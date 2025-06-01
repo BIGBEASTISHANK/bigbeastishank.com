@@ -1,4 +1,9 @@
-import mongoose from "mongoose";
+import mongoose, { Document, Model } from "mongoose";
+
+// Interface
+interface IBlog_Subscriber extends Document {
+  email: string;
+}
 
 // Define the schema
 const Blog_SubscriberSchema = new mongoose.Schema(
@@ -15,8 +20,8 @@ const Blog_SubscriberSchema = new mongoose.Schema(
 );
 
 // Check if model already exists to prevent model overwrite errors
-const Blog_Subscribers = 
-  mongoose.models.Blog_Subscribers || 
-  mongoose.model("Blog_Subscribers", Blog_SubscriberSchema);
+const Blog_Subscribers: Model<IBlog_Subscriber> =
+  (mongoose.models.Blog_Subscribers as Model<IBlog_Subscriber>) ||
+  mongoose.model<IBlog_Subscriber>("Blog_Subscribers", Blog_SubscriberSchema);
 
 export default Blog_Subscribers;

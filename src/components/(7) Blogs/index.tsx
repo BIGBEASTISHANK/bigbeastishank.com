@@ -85,16 +85,12 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
         body: submitData,
       });
 
-      // Log the response status for debugging
-      console.log("Response status:", response.status);
-
       const result = await response.json();
-      console.log("Response data:", result);
+
+      console.log(response.status);
 
       if (!response.ok) {
-        throw new Error(
-          result.error || result.details || "Failed to submit form"
-        );
+        throw new Error(result.error);
       }
 
       setSubmitSuccess(true);
@@ -104,10 +100,14 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
         setSubmitSuccess(false);
       }, 5000);
     } catch (error) {
-      console.error("Error submitting email:", error);
-      setSubmitError(
-        error instanceof Error ? error.message : "Failed to submit email"
-      );
+      // Setting formdata and error message
+      setSubmitError(String(error));
+      setFormData({ email: "" });
+
+      // Waiting for error message to disappear
+      setTimeout(() => {
+        setSubmitError("");
+      }, 5000);
     } finally {
       setIsSubmitting(false);
     }
@@ -172,7 +172,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
             value={formData.email}
             disabled={isSubmitting || submitSuccess}
             placeholder="Enter your email..."
-            type="email"
+            type="name"
             required
             onChange={handleChange}
           />
@@ -207,7 +207,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, type: "spring"  }}
+            transition={{ duration: 0.5, type: "spring" }}
             className="mt-3 p-3 bg-red-500/10 border border-red-500/30 rounded-xl"
           >
             <p className="text-red-400 text-sm flex items-center gap-2">
@@ -262,7 +262,7 @@ function BlogContent({ posts }: BlogComponentProps) {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
-  
+
   // Calculate delays for page button
   const [pageBtnAnimationDelay, setPageBtnAnimationDelay] = useState(
     1.5 + (currentPosts.length * 0.3) / 2
@@ -316,7 +316,11 @@ function BlogContent({ posts }: BlogComponentProps) {
               key={post.slug}
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: cardAnimationDelay + (index * 0.3) / 2, duration: 0.5, type: "spring" }}
+              transition={{
+                delay: cardAnimationDelay + (index * 0.3) / 2,
+                duration: 0.5,
+                type: "spring",
+              }}
               {...({ className: "scroll-mt-24" } as HTMLMotionProps<"li">)}
             >
               <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#1793D1]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#1793D1]/80 shadow-[#1793D1]/50">
@@ -403,7 +407,11 @@ function BlogContent({ posts }: BlogComponentProps) {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: pageBtnAnimationDelay, duration: 0.5, type: "spring" }}
+          transition={{
+            delay: pageBtnAnimationDelay,
+            duration: 0.5,
+            type: "spring",
+          }}
           className="flex justify-center items-center gap-2 my-8"
         >
           {/* Previous button */}
