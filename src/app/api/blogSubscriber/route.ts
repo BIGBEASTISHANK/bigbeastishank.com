@@ -24,28 +24,24 @@ export async function POST(req: Request) {
       { email: 1, _id: 0 }
     );
 
-    if (subscriber.length < 0) {
+    if (subscriber.length <= 0) {
       // Saving new subscriber
       const newSubscriber = new Blog_Subscribers({
         email: email,
       });
       newSubscriber.save();
-    } else {
-      // Wait for 1.5 seconds
-      await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      // Return response
+      // Wait for 1.5 seconds and return response
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      return NextResponse.json({ status: 200 });
+    } else {
+      // Wait for 1.5 seconds and return response
+      await new Promise((resolve) => setTimeout(resolve, 1500));
       return NextResponse.json(
         { error: "Email already exist in database!" },
         { status: 400 }
       );
     }
-
-    // Wait for 1.5 seconds
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    // Return Response
-    return NextResponse.json({ status: 200 });
   } catch (err) {
     return NextResponse.json(
       { error: err instanceof Error ? err.message : String(err) },
