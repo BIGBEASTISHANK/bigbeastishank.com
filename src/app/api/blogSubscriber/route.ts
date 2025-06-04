@@ -1,5 +1,7 @@
 import { dbConnect } from "@/lib/db/mongoose";
-import Blog_Subscribers, { IBlog_Subscriber } from "@/lib/models/Blog_Subscribers";
+import Blog_Subscribers, {
+  IBlog_Subscriber,
+} from "@/lib/models/Blog_Subscribers";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -39,7 +41,7 @@ export async function POST(req: Request) {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       return NextResponse.json(
         { error: "Email already exist in database!" },
-        { status: 400 }
+        { status: 401 }
       );
     }
   } catch (err) {

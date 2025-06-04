@@ -66,46 +66,17 @@ export const websiteProjects: ProjectData[] = [
   },
   // bigbeastishank.com V5
   {
-    title: "bigbeastishank.com V5",
+    title: "bigbeastishank.com",
     description:
-      "This portfolio site was created just for fun and learning. It is one of my fav websites I have ever build.",
-    projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V5",
-  },
-
-  // bigbeastishank.com v4
-  {
-    title: "bigbeastishank.com V4",
-    description: "The website where I showcased my projects in center format.",
-    projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V4",
-  },
-
-  // bigbeastishank.com v3
-  {
-    title: "bigbeastishank.com V3",
-    description:
-      "This website was mainly for blogs but also contain my projects.",
-    projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V3",
-  },
-
-  // bigbeastishank.com v2
-  {
-    title: "bigbeastishank.com V2",
-    description:
-      "I created this site very long ago, it was only consisting of my projects & skills.",
-    projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V2",
-  },
-
-  // bigbeastishank.com v1
-  {
-    title: "bigbeastishank.com V1",
-    description: "My First proper portfolio site with my blogs and skills.",
-    projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V1",
+      "Some of the versions contain a blog component, and others have alternative styles. Every version has its own branch. Although they all seem very different, they all have the same purpose of showcasing my work.",
+    projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/",
   },
 
   // Python website flask
   {
     title: "Python website",
-    description: "Python-powered website for a seamless online experience.",
+    description:
+      "Python-based Flask-powered webpage.  It's a straightforward website designed to highlight my work and expertise.  used JavaScript, HTML, and CSS to build the website's front end.",
     projectUrl: "https://github.com/BIGBEASTISHANK/Initial-Websites/tree/flask",
   },
 
@@ -113,7 +84,7 @@ export const websiteProjects: ProjectData[] = [
   {
     title: "Initial React Site",
     description:
-      "This was the website that I first made on React, and it was also my first step to becoming a great web developer.",
+      "I made this website while I was still learning web development and began experimenting with ReactJS.  It serves as a benchmark to show how far I've come in my life.",
     projectUrl: "https://github.com/BIGBEASTISHANK/Initial-Websites/tree/react",
   },
 
