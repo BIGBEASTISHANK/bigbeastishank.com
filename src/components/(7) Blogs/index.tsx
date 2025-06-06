@@ -97,6 +97,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
 
       const response: Response = await fetch("/api/blogSubscriber", {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: submitData,
       } as RequestInit);
 
