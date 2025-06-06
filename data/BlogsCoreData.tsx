@@ -12,6 +12,8 @@ export const getLanguageDisplayName = (lang: string): string => {
     css: "CSS",
     python: "Python",
     sql: "SQL",
+    cpp: "C++",
+    text: "Plain Text",
     output: "$Terminal",
   };
 

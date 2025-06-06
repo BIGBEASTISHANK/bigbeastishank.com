@@ -1,0 +1,157 @@
+---
+title: "What is a Linked List? Explained with C++ Examples"
+description: "Learn the fundamentals of linked lists, how they work, and how to implement them in C++ with clear code samples and diagrams."
+date: "2025-06-06"
+minuteRead: 6
+tags: ["Data Structures", "C++", "Linked List", "Beginners", "Algorithms"]
+---
+
+A **linked list** is a linear data structure where elements (called **nodes**) are stored in memory in a non-contiguous fashion. Each node holds two parts: the actual data and a pointer to the next node.
+
+Unlike arrays, linked lists are dynamic in nature, making them ideal for scenarios where the size of the dataset changes frequently.
+
+---
+
+### 🧠 Why Use Linked Lists?
+
+Arrays have fixed sizes and can be inefficient for frequent insertions or deletions. Linked lists:
+
+- Use **dynamic memory allocation**
+- Allow **fast insertion/deletion** (especially in the middle)
+- Avoid shifting elements like arrays require
+
+---
+
+### 🔗 Basic Structure of a Singly Linked List
+
+A typical **singly linked list** node contains:
+
+- `data`: The value you want to store
+- `next`: A pointer to the next node
+
+**Visual Representation:**
+
+```text
+[ data | next ] → [ data | next ] → [ data | NULL ]
+```
+
+---
+
+### 💻 Implementation: Singly Linked List in C++
+
+Here's a basic implementation of a singly linked list in C++:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int val) {
+        data = val;
+        next = nullptr;
+    }
+};
+
+class LinkedList {
+private:
+    Node* head;
+
+public:
+    LinkedList() {
+        head = nullptr;
+    }
+
+    void insertAtEnd(int val) {
+        Node* newNode = new Node(val);
+
+        if (head == nullptr) {
+            head = newNode;
+            return;
+        }
+
+        Node* temp = head;
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+
+        temp->next = newNode;
+    }
+
+    void display() {
+        Node* temp = head;
+        while (temp != nullptr) {
+            cout << temp->data << " → ";
+            temp = temp->next;
+        }
+        cout << "NULL" << endl;
+    }
+};
+
+int main() {
+    LinkedList list;
+
+    list.insertAtEnd(10);
+    list.insertAtEnd(20);
+    list.insertAtEnd(30);
+
+    list.display();  // Output: 10 → 20 → 30 → NULL
+
+    return 0;
+}
+```
+
+---
+
+### 🧩 Types of Linked Lists
+
+<PostsTable
+  fields={["Type", "Structure", "Use Case", "Direction"]}
+  fieldsData={[
+    ["Singly Linked List", "Each node points to the next", "Simple traversal", "One-way"],
+    ["Doubly Linked List", "Each node points to next and previous", "Bidirectional traversal", "Two-way"],
+    ["Circular Linked List", "Last node points to the head", "Looped list structures", "Circular"]
+  ]}
+/>
+
+---
+
+### ⚙️ Operations on a Linked List
+
+Some common operations you can perform:
+
+```text
+- Insertion (at beginning, middle, or end)
+- Deletion (by value or position)
+- Searching for an element
+- Reversing the list
+- Finding the length
+```
+
+All these can be implemented by adjusting pointers carefully to avoid memory leaks or segmentation faults.
+
+---
+
+### 🧠 Linked List vs Array
+
+<PostsTable
+  fields={["Feature", "Linked List", "Array"]}
+  fieldsData={[
+    ["Memory", "Dynamic (no size limit)", "Static or dynamic (fixed size)"],
+    ["Access", "Sequential (O(n))", "Direct access (O(1))"],
+    ["Insertion/Deletion", "Fast (O(1) at head)", "Slow (requires shifting)"],
+    ["Cache locality", "Poor", "Excellent"],
+    ["Extra Memory", "Requires pointer for each node", "No extra space needed"]
+  ]}
+/>
+
+---
+
+### ✅ Conclusion
+
+Linked lists are essential for understanding how memory, pointers, and dynamic data structures work in computer science. While arrays are faster for indexed access, linked lists are ideal when your data structure needs frequent insertion, deletion, and flexible sizing.
+
+Start by building a simple singly linked list in C++, then explore **doubly linked** and **circular** variations to deepen your understanding.

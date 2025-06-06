@@ -38,7 +38,7 @@ export function BlogPostComponent({
             </h1>
 
             {/* Click to copy */}
-            {className === "language-output" ? null : (
+            {className === "language-output" || className === "language-text" ? null : (
               <ClickToCopyCode children={children} />
             )}
           </div>
