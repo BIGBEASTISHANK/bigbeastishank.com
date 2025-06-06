@@ -142,9 +142,9 @@ export default function UseClientIndex({
 
       {/* Blog content */}
       <motion.div
-        initial={{ opacity: 0, y: 500 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, type: "spring", duration: 0.5 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 2 }}
         className="prose prose-invert max-w-none"
       >
         {MDXRemote}

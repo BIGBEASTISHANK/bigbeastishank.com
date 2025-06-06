@@ -6,6 +6,7 @@ import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { getLanguageDisplayName } from "@@/data/BlogsCoreData";
 import { ClickToCopyCode } from "@/components/(7) Blogs/posts/UseClientIndex";
 import Link from "next/link";
+import { FaLink } from "react-icons/fa";
 
 export function BlogPostComponent({
   frontmatter,
@@ -38,7 +39,8 @@ export function BlogPostComponent({
             </h1>
 
             {/* Click to copy */}
-            {className === "language-output" || className === "language-text" ? null : (
+            {className === "language-output" ||
+            className === "language-text" ? null : (
               <ClickToCopyCode children={children} />
             )}
           </div>
@@ -63,14 +65,48 @@ export function BlogPostComponent({
       );
     },
     h1: (props: any) => (
-      <h1 className="text-3xl font-bold mt-8 mb-4" {...props} />
+      <h1
+        className="text-3xl font-bold mt-8 mb-4 scroll-mt-24 w-auto flex"
+        id={props.children}
+        {...props}
+      >
+        <div className="group">
+          <Link href={`#${props.children}`} className="flex items-center gap-2">
+            <FaLink className="group-hover:block hidden" />
+            {props.children}
+          </Link>
+        </div>
+      </h1>
     ),
     h2: (props: any) => (
-      <h2 className="text-2xl font-bold mt-6 mb-3" {...props} />
+      <h2
+        className="text-2xl font-bold mt-6 mb-3 scroll-mt-24 w-auto flex"
+        id={props.children}
+        {...props}
+      >
+        <div className="group">
+          <Link href={`#${props.children}`} className="flex items-center gap-2">
+            <FaLink className="group-hover:block hidden" />
+            {props.children}
+          </Link>
+        </div>
+      </h2>
     ),
     h3: (props: any) => (
-      <h3 className="text-xl font-bold mt-4 mb-2" {...props} />
+      <h3
+        className="text-xl font-bold mt-4 mb-2 scroll-mt-24 w-auto flex"
+        id={props.children}
+        {...props}
+      >
+        <div className="group">
+          <Link href={`#${props.children}`} className="flex items-center gap-2">
+            <FaLink className="group-hover:block hidden" />
+            {props.children}
+          </Link>
+        </div>
+      </h3>
     ),
+
     a: (props: any) => (
       <a
         className="font-bold text-[#0088CC] hover:underline underline-offset-2 outline-none"
