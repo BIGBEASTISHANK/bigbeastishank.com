@@ -56,10 +56,10 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
   UpdatePageURL({ currentPage: 1, pageChanged: false, currentPageParam: "" });
 
   // Variable
-  const [formData, setFormData]: [
-    formData: { email: string },
-    setFormData: Dispatch<SetStateAction<{ email: string }>>
-  ] = useState<{ email: string }>({ email: "" });
+  const [userEmail, setUserEmail]: [
+    userEmail: string,
+    setUserEmail: Dispatch<SetStateAction<string>>
+  ] = useState<string>("");
   const [isSubmitting, setIsSubmitting]: [
     isSubmitting: boolean,
     setIsSubmitting: Dispatch<SetStateAction<boolean>>
@@ -73,15 +73,6 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
     setSubmitError: Dispatch<SetStateAction<string>>
   ] = useState<string>("");
 
-  // Handle input change
-  const handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const { name, value }: { name: string; value: string } = event.target;
-
-    setFormData({ ...formData, [name]: value });
-  };
-
   // Submit input
   const handleSubmit: (
     event: React.FormEvent<HTMLFormElement>
@@ -92,12 +83,14 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
     setSubmitError("");
 
     try {
-      const submitData: FormData = new FormData();
-      submitData.append("email", formData.email);
-
       const response: Response = await fetch("/api/blogSubscriber", {
         method: "POST",
-        body: submitData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: userEmail,
+        }),
       } as RequestInit);
 
       const error: { error: string } = await response.json();
@@ -109,13 +102,13 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
       setSubmitSuccess(true);
 
       setTimeout(() => {
-        setFormData({ email: "" });
+        setUserEmail("");
         setSubmitSuccess(false);
       }, 5000);
     } catch (error) {
       // Setting formdata and error message
       setSubmitError(String(error));
-      setFormData({ email: "" });
+      setUserEmail("");
 
       // Waiting for error message to disappear
       setTimeout(() => {
@@ -182,12 +175,12 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
                 : ""
             }`}
             name="email"
-            value={formData.email}
+            value={userEmail}
             disabled={isSubmitting || submitSuccess}
             placeholder="Enter your email..."
             type="email"
             required
-            onChange={handleChange}
+            onChange={(e) => setUserEmail(e.target.value)}
           />
 
           <motion.button

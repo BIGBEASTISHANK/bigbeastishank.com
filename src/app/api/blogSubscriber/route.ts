@@ -10,11 +10,10 @@ export async function POST(req: Request) {
     await dbConnect();
 
     // Getting email
-    const formData: FormData = await req.formData();
-    const email: string = formData.get("email") as string;
+    const email = await req.json();
 
     // Check if email is empty
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+    if (!email.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.email))
       return NextResponse.json(
         { error: "Invalid email recived by API!" },
         { status: 400 }
@@ -22,14 +21,14 @@ export async function POST(req: Request) {
 
     // Checking if it exists
     const subscriber: IBlog_Subscriber[] = await Blog_Subscribers.find(
-      { email: email },
+      { email: email.email },
       { email: 1, _id: 0 }
     );
 
     if (subscriber.length <= 0) {
       // Saving new subscriber
       const newSubscriber: IBlog_Subscriber = new Blog_Subscribers({
-        email: email,
+        email: email.email,
       });
       newSubscriber.save();
 
@@ -45,8 +44,12 @@ export async function POST(req: Request) {
       );
     }
   } catch (err) {
+    // Loging error
+    console.error(err instanceof Error ? err.message : String(err));
+
+    // Sending server errorresponse
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : String(err) },
+      { error: "Internal Server error!" },
       { status: 500 }
     );
   }
