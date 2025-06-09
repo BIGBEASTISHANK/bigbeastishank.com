@@ -1,0 +1,82 @@
+---
+title: "Types of Naming Conventions in Programming"
+description: "A practical guide to naming conventions like camelCase, PascalCase, snake_case, and others — with examples and when to use them."
+date: "2025-06-09"
+minuteRead: 3
+tags: ["Naming Conventions", "Best Practices", "Code Style", "Programming"]  
+---
+
+Writing clean, consistent code isn't just about logic—naming plays a big part. Whether you're working solo or on a team, using clear naming conventions makes your code easier to read, maintain, and scale.
+
+Below are the most widely used naming conventions across programming languages, with code examples and when to use each.
+
+## camelCase
+
+In camelCase, the first word is lowercase, and each subsequent word starts with a capital letter. This is commonly used for variables, functions, and object properties in JavaScript and many other languages.
+
+```javascript
+let userName = "johndoe";
+function getUserProfile() {
+  // ...
+}
+```
+
+## PascalCase
+
+PascalCase is similar to camelCase, except the first word also starts with a capital letter. It's often used for classes and constructors.
+
+```typescript
+class UserProfile {
+  constructor(public userName: string) {}
+}
+```
+
+## snake_case
+
+snake_case uses all lowercase letters with underscores between words. It's the convention of choice in Python for function names, variable names, and sometimes file names.
+
+```python
+def get_user_profile():
+    pass
+
+user_name = "johndoe"
+```
+
+## kebab-case
+
+kebab-case uses lowercase words separated by hyphens. Since hyphens aren't allowed in variable names in most languages, it's primarily used for CSS classes, file names, and URLs.
+
+```text
+user-profile-card
+main-header-style
+```
+
+## SCREAMING_SNAKE_CASE
+
+This style uses all uppercase letters with underscores, and it's commonly used for constants and configuration keys.
+
+```javascript
+const MAX_LOGIN_ATTEMPTS = 5;
+const API_ENDPOINT = "https://api.example.com";
+```
+
+## Summary
+
+Here's a quick reference comparing each naming convention and when to use it:
+
+<PostsTable
+  fields={["Convention", "Example", "Used For"]}
+  fieldsData={[
+    ["camelCase", "getUserName", "Variables, functions, object keys"],
+    ["PascalCase", "UserProfile", "Classes, constructors, components"],
+    ["snake_case", "get_user_profile", "Python code, file names, DB fields"],
+    ["kebab-case", "main-header", "CSS classes, URLs, filenames"],
+    ["SCREAMING_SNAKE_CASE", "MAX_RETRIES", "Constants, env variables"],
+  ]}
+/>
+
+---
+
+### Final Thoughts
+
+While there's no one-size-fits-all rule, sticking to the standard naming conventions of your language or framework helps reduce confusion and makes collaboration smoother. The goal is clarity—pick a convention that's readable and consistent, and your future self (and teammates) will thank you.
