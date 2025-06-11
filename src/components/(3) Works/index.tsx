@@ -151,7 +151,7 @@ function ProjectList({
                 </div>
 
                 {/* Project Description */}
-                <p className="md:text-base text-sm mb-3 text-[#AFB3C1]">
+                <p className="md:text-base text-sm mb-3 text-[#F6F9FC]/75">
                   {data.description}
                 </p>
 

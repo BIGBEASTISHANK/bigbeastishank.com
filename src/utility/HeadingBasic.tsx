@@ -47,7 +47,7 @@ export default function HeadingBasic({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: animationDelay + 0.2 }}
           {...({
-            className: "text-[#AFB3C1] md:text-base text-sm",
+            className: "text-[#F6F9FC]/75 md:text-base text-sm",
           } as HTMLMotionProps<"div">)}
         >
           {description}

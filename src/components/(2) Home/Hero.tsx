@@ -50,7 +50,7 @@ export default function Hero() {
       </motion.h1>
 
       {/* Text */}
-      <div className="md:text-base text-sm md:text-left flex flex-col md:gap-3 gap-2 text-[#AFB3C1]">
+      <div className="md:text-base text-sm md:text-left flex flex-col md:gap-3 gap-2 text-[#F6F9FC]/75">
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}

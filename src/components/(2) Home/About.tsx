@@ -29,7 +29,7 @@ export default function About() {
       </motion.a>
 
       {/* About me */}
-      <div className="text-center md:text-base text-sm flex flex-col md:gap-4 gap-3 text-[#AFB3C1]">
+      <div className="text-center md:text-base text-sm flex flex-col md:gap-4 gap-3 text-[#F6F9FC]/75">
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}

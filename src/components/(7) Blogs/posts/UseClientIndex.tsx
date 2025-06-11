@@ -77,13 +77,13 @@ export default function UseClientIndex({
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7, type: "spring", duration: 0.5 }}
-        className="md:text-base text-sm mb-3 text-[#AFB3C1]"
+        className="md:text-base text-sm mb-3 text-[#F6F9FC]/75"
       >
         {frontmatter.description}
       </motion.p>
 
       {/* Blog Metadata */}
-      <div className="flex gap-3 text-xs text-[#AFB3C1] mt-4 mb-3">
+      <div className="flex gap-3 text-xs text-[#F6F9FC]/75 mt-4 mb-3">
         {/* Date */}
         <motion.p
           initial={{ opacity: 0, x: -50 }}

@@ -52,7 +52,7 @@ export default function WebHireComponent() {
               </div>
 
               {/* Plan Description */}
-              <p className="md:text-base text-sm mb-3 mx-1 text-[#AFB3C1]">
+              <p className="md:text-base text-sm mb-3 mx-1 text-[#F6F9FC]/75">
                 {mainPlanData.description}
               </p>
 
@@ -81,7 +81,7 @@ export default function WebHireComponent() {
                 </span>
               ))}
 
-              <span className="my-2 md:text-base text-sm mx-1 text-[#AFB3C1]">
+              <span className="my-2 md:text-base text-sm mx-1 text-[#F6F9FC]/75">
                 Delivery in: {mainPlanData.deliveryIn} / No. of Revisions:{" "}
                 {mainPlanData.numberOfRevision}
               </span>

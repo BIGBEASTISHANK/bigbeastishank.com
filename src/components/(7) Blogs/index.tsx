@@ -354,12 +354,12 @@ function BlogContent({ posts }: BlogComponentProps) {
                 </div>
 
                 {/* Blog Description */}
-                <p className="md:text-base text-sm mb-3 text-[#AFB3C1]">
+                <p className="md:text-base text-sm mb-3 text-[#F6F9FC]/75">
                   {post.description}
                 </p>
 
                 {/* Blog Metadata */}
-                <div className="flex gap-3 text-xs text-[#AFB3C1] mt-4 mb-3">
+                <div className="flex gap-3 text-xs text-[#F6F9FC]/75 mt-4 mb-3">
                   {/* Date */}
                   <p>
                     {new Date(post.date).toLocaleDateString("en-US", {

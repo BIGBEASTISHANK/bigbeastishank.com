@@ -66,12 +66,12 @@ export function BlogPostComponent({
     },
     h1: (props: any) => (
       <h1
-        className="text-3xl font-bold mt-8 mb-4 scroll-mt-24 w-auto flex"
+        className="text-3xl font-black mt-8 mb-4 scroll-mt-24 w-auto flex"
         id={props.children}
         {...props}
       >
         <div className="group">
-          <Link href={`#${props.children}`} className="flex items-center gap-2">
+          <Link href={`#${props.children}`} className="flex items-center gap-2 underline underline-offset-3">
             <FaLink className="group-hover:block hidden" />
             {props.children}
           </Link>
@@ -80,12 +80,12 @@ export function BlogPostComponent({
     ),
     h2: (props: any) => (
       <h2
-        className="text-2xl font-bold mt-6 mb-3 scroll-mt-24 w-auto flex"
+        className="text-2xl font-black mt-6 mb-3 scroll-mt-24 w-auto flex"
         id={props.children}
         {...props}
       >
         <div className="group">
-          <Link href={`#${props.children}`} className="flex items-center gap-2">
+          <Link href={`#${props.children}`} className="flex items-center gap-2 underline underline-offset-3">
             <FaLink className="group-hover:block hidden" />
             {props.children}
           </Link>
@@ -114,13 +114,13 @@ export function BlogPostComponent({
         {...props}
       />
     ),
-    p: (props: any) => <p className="my-4" {...props} />,
+    p: (props: any) => <p className="my-4 text-[#F6F9FC]/75" {...props} />,
     hr: (props: any) => (
       <hr className="my-10 w-[90%] mx-auto text-[#1793D1]" {...props} />
     ),
-    ul: (props: any) => <ul className="list-disc pl-6 my-4" {...props} />,
-    ol: (props: any) => <ol className="list-decimal pl-6 my-4" {...props} />,
-    li: (props: any) => <li className="mb-1" {...props} />,
+    ul: (props: any) => <ul className="list-disc pl-6 my-4 text-[#F6F9FC]/75" {...props} />,
+    ol: (props: any) => <ol className="list-decimal pl-6 my-4 text-[#F6F9FC]/75" {...props} />,
+    li: (props: any) => <li className="mb-1 text-[#F6F9FC]/75" {...props} />,
     blockquote: (props: any) => (
       <blockquote
         className="border-l-4 border-[#1793D1] pl-4 italic my-4"

@@ -1,0 +1,87 @@
+---
+title: "What was Rescue Relay"
+description: "This is the story about what was the vision behind rescue relay and why I LEFT development on it."
+date: "2025-06-11"
+minuteRead: 7
+tags: ["Rescue Relay", "Flutter", "Dart", "Android Development"]
+---
+
+**Rescue Relay** was an app idea which I, with my friends at [**Manipal University Jaipur**](https://www.linkedin.com/school/manipal-university-jaipur/), have discussed. It would be a **disaster management** platform which would help many people. This idea first came into existence at [**MUJ HackX 2.0**](https://unstop.com/hackathons/muj-hackx-20-manipal-university-mu-jaipur-1068307), in which I had participated with my colleague. After that the idea kind of died in the dark, but the concept came back after our classes started in semester 1. There was a subject of Creativity & Innovation. In that class we need to come up with some project idea. I changed the idea a little bit and presented it with the new team (all people links will be given at the end). Many students in that CAI team were there just for marks, but I decided to make it an app. I tried working on it, but I don't have much motivation to do android development & due to some technical issue (Arch Linux Flutter package corruption), I left working on the app. I started working on the app after almost 6 and a half months. Now it's the time I am writing this blog, I don't want to work on the project. **I don't want to explore a new domain, which is app development, I want to get deeper into stuff I already know.** I am closing the development on the app, deleting its already non-existent codebase from my GitHub. The app idea is provided in the link to preserve it for the future.
+
+---
+
+## Once used to be the repo of Rescue Relay
+
+<div className="flex">
+  <div className="mx-auto">
+    ![RescueRelayGithub](/img/blogs/what-was-rescue-relay/RescueRelayGithub.png)
+  </div>
+</div>
+
+---
+
+## Idea of Rescue Relay
+
+### Title: Rescue Relay: Crowed Sourced Reporting Tool
+
+### Purpose:
+
+The purpose of Rescue Relay is to facilitate rapid coordination and efficient response during emergencies, such as road mishaps or natural disasters. By enabling emergency services to receive real-time information and updates, and involving nearby residents and commuters, the platform optimizes rescue operations and reduces chaos at the incident site. The software ensures emergency services can act quickly while civilians are kept informed, promoting safety and awareness.
+
+### Target Audience:
+
+    - **Emergency Services:** Fire departments, hospitals, police, etc., will be able to coordinate efforts and respond swiftly to emergencies.
+    - **On-road Vehicles:** Commuters, including truck drivers, taxi drivers, and civilians, will be able to avoid impacted routes, reducing congestion and clearing pathways for emergency responders.
+    - **Residents Near Incident Areas:** Nearby residents can contribute to the situation by volunteering, providing updates, and assisting in the rescue efforts, if possible.
+
+### Scope:
+
+Rescue Relay aims to integrate multiple stakeholders during an emergency:
+
+    - **Incident Reporting by Emergency Services:** When an incident is reported, emergency services (such as the police) will create a detailed post on the platform, tagging relevant departments (e.g., fire, hospitals).
+    - **Live Updates from Volunteers:** Nearby users will be notified of the incident. Volunteers can update the situation as it evolves, adding real-time context for the responders.
+    - **Route and Traffic Management for Commuters:** Users traveling near the incident area will receive route recommendations to avoid delays and prevent unnecessary traffic build-up.
+    - **Situational Awareness for Emergency Services:** Emergency services can monitor live updates on the incident to assess the situation (e.g., number of victims, severity of the damage) and determine their next course of action.
+
+### Key Features:
+
+    - **Incident-Specific Chat Boxes:** Each incident will have its own dedicated chat box for real-time communication between emergency responders, volunteers, and civilians.
+    - **Real-Time Mapping:** Users can view the exact location of the incident on an interactive map. Emergency services and volunteers can track the progress of the rescue.
+    - **Actionable Insights for Emergency Services:** A simple action button will allow emergency services to get real-time suggestions for the next steps based on incident updates (e.g., number of injured, fire status, etc.).
+    - **Civilian Notifications:** Civilians will be notified of incidents nearby and will receive alternative route suggestions to bypass affected areas.
+    - **Volunteer Contributions:** Residents in the vicinity of the incident can provide valuable insights into the current situation by continuously updating the status of victims, fire levels, or structural damage.
+
+### Security:
+
+    - **Real-Time Location Tracking:** The app will track the real-time location of users, but it will not store any personal location data. Only the incident location data will be stored to facilitate situational awareness and improve response coordination. This ensures privacy while enabling accurate tracking for volunteer validation and routing.
+    - **Account Banning/Suspension:** Any user who violates platform rules will be subject to account suspension or permanent banning to maintain a safe, efficient environment.
+    - **Location Privacy:** User location information will be securely protected, and sharing of location for volunteers or commuters will be restricted to appropriate levels.
+    - **Location-Based Volunteer Validation:** When a volunteer shares updates, their GPS location will be checked to ensure they are within a reasonable distance from the incident. If they are within range, they can post updates; otherwise, they will be in "read-only" mode. This prevents fake updates and ensures only those near the incident can contribute, with GPS validation ensuring VPNs or spoofing can't bypass this check.
+
+### Use Case Example (Jaipur-Ajmer Expressway Truck Fire):
+
+    - **Incident Detection:** A truck catches fire on the Jaipur-Ajmer Expressway. A nearby citizen calls the police, who promptly create an incident post on Rescue Relay.
+    - **Department Involvement:** The police add the fire department and local hospitals to the post.
+    - **Real-Time Updates:** Volunteers in the vicinity update the situation, reporting the severity of the fire, the number of trapped people, and any hazardous conditions.
+    - **Emergency Services' Actions:** The fire department assesses the situation and, based on volunteer updates, decides to dispatch additional fire trucks and ambulances. The hospital prepares resources accordingly.
+    - **Civilians' Actions:** Civilians within a 5 km radius receive push notifications to avoid the affected route. Those beyond the 5 km radius receive updates as they approach the area.
+    - **Routing for Drivers:** Truck drivers and commuters receive alternate routes through real-time notifications to avoid the affected expressway, clearing space for emergency vehicles.
+    - **Summary and Action Button for Emergency Services:** After gathering sufficient information, the hospitals and fire departments click on a "Summarize" button to receive a concise action plan based on current updates (e.g., send more ambulances, assess if the fire can be controlled with fewer units).
+
+### Additional Notes:
+
+    - The platform is designed to handle high-traffic incidents and can scale as more users join.
+    - By crowd-sourcing real-time updates from the vicinity of the disaster, the app allows responders to be more informed, responsive, and flexible in their actions.
+    - The system will help save lives by reducing delays and improving the flow of information to all parties involved.
+
+---
+
+## People associated with Rescue Relay
+
+### Hackathon
+
+[HB Singh Choudhary](https://github.com/M4yh3m-dev) / [Angad Singh](https://github.com/RealAngadSingh) / [Hriday](https://github.com/DCypherHriday)
+
+### CAI class
+
+[Sanket](https://github.com/HarshGandash/) / [Devguru Pandey](https://www.linkedin.com/in/devguru-pandey-4589a8322/) / [Samichha Singh](https://www.linkedin.com/in/samichha-singh-5b3405282/) / [Mahak Dewangan](https://github.com/MahakDewangan)

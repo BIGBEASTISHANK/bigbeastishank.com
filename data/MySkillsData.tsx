@@ -2,7 +2,6 @@
 import {
   SiC,
   SiGit,
-  SiDart,
   SiSass,
   SiRust,
   SiCss3,
@@ -15,7 +14,6 @@ import {
   SiGithub,
   SiPython,
   SiAnytype,
-  SiFlutter,
   SiMongodb,
   SiGnubash,
   SiMarkdown,
@@ -79,11 +77,6 @@ export const myLangs: ToolsLayout[] = [
     learningLink: "https://www.w3schools.com/sass/",
   },
   {
-    name: "Dart",
-    icon: SiDart,
-    learningLink: "https://dart.dev/guides",
-  },
-  {
     name: "JavaScript",
     icon: SiJavascript,
     learningLink: "https://www.w3schools.com/js",
@@ -121,11 +114,6 @@ export const myToolsAndFramework: ToolsLayout[] = [
     name: "React.js",
     icon: SiReact,
     learningLink: "https://reactjs.org/docs/getting-started.html",
-  },
-  {
-    name: "Flutter",
-    icon: SiFlutter,
-    learningLink: "https://flutter.dev/docs",
   },
   {
     name: "TailWind CSS",
