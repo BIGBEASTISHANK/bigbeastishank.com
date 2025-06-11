@@ -14,7 +14,7 @@ export default function Navbar(){
       transition={{duration: 0.5, type: "spring"}}
       {...({
         className:
-          "fixed top-0 left-0 right-0 flex justify-center items-center md:my-10 my-5 z-50",
+          "fixed top-0 left-0 right-0 flex justify-center items-center md:my-10 my-5 z-50 w-min mx-auto",
       } as HTMLMotionProps<"nav">)}
     >
       <div className="border border-[#1793D1] bg-[#1A1C23]/50 backdrop-blur-md rounded-xl p-1 shadow-md shadow-[#1793D1]/50">
