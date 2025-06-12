@@ -41,12 +41,49 @@ export function ClickToCopyCode({ children }: { children: React.ReactNode }) {
 export default function UseClientIndex({
   frontmatter,
   MDXRemote,
+  TOCData,
 }: {
   frontmatter: { [key: string]: any };
   MDXRemote: React.ReactNode;
+  TOCData: { level: number; content: string }[];
 }) {
   return (
     <div id="blogPost" className="px-5 scroll-mt-24 max-w-[70rem] mx-auto">
+      {/* Table of content */}
+      <div className="h-min hidden">
+        {/* Heading */}
+        <h1 className="font-bold text-lg">Table of Content</h1>
+
+        {/* Divider */}
+        <ShortDivider delay={0.3} customCSS="my-2" />
+
+        {/* Headings */}
+        {TOCData.map((data, index) => {
+          switch (data.level) {
+            case 1:
+              return (
+                <h1 key={index} className="text-gray-400">
+                  <a href={`#${data.content}`}>{data.content}</a>
+                </h1>
+              );
+            case 2:
+              return (
+                <h2 key={index} className="text-gray-400 ml-4">
+                  <a href={`#${data.content}`}>{data.content}</a>
+                </h2>
+              );
+            case 3:
+              return (
+                <h3 key={index} className="text-gray-400 ml-8">
+                  <a href={`#${data.content}`}>{data.content}</a>
+                </h3>
+              );
+            default:
+              return null;
+          }
+        })}
+      </div>
+
       {/* GO Back arrow */}
       <motion.div
         initial={{ scale: 0 }}

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import HeadingBasic from "@/utility/HeadingBasic";
 import {
-  FaEye,
   FaSearch,
   FaTag,
   FaChevronLeft,

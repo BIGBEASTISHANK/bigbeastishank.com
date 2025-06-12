@@ -71,7 +71,10 @@ export function BlogPostComponent({
         {...props}
       >
         <div className="group">
-          <Link href={`#${props.children}`} className="flex items-center gap-2 underline underline-offset-3">
+          <Link
+            href={`#${props.children}`}
+            className="flex items-center gap-2 underline underline-offset-3"
+          >
             <FaLink className="group-hover:block hidden" />
             {props.children}
           </Link>
@@ -85,7 +88,10 @@ export function BlogPostComponent({
         {...props}
       >
         <div className="group">
-          <Link href={`#${props.children}`} className="flex items-center gap-2 underline underline-offset-3">
+          <Link
+            href={`#${props.children}`}
+            className="flex items-center gap-2 underline underline-offset-3"
+          >
             <FaLink className="group-hover:block hidden" />
             {props.children}
           </Link>
@@ -118,8 +124,12 @@ export function BlogPostComponent({
     hr: (props: any) => (
       <hr className="my-10 w-[90%] mx-auto text-[#1793D1]" {...props} />
     ),
-    ul: (props: any) => <ul className="list-disc pl-6 my-4 text-[#F6F9FC]/75" {...props} />,
-    ol: (props: any) => <ol className="list-decimal pl-6 my-4 text-[#F6F9FC]/75" {...props} />,
+    ul: (props: any) => (
+      <ul className="list-disc pl-6 my-4 text-[#F6F9FC]/75" {...props} />
+    ),
+    ol: (props: any) => (
+      <ol className="list-decimal pl-6 my-4 text-[#F6F9FC]/75" {...props} />
+    ),
     li: (props: any) => <li className="mb-1 text-[#F6F9FC]/75" {...props} />,
     blockquote: (props: any) => (
       <blockquote
@@ -131,10 +141,33 @@ export function BlogPostComponent({
     Link,
   };
 
+  function TOCData() {
+    // Variable
+    const heading: [{ level: number; content: string }] = [
+      { level: 1, content: frontmatter.title },
+    ];
+
+    const lines = content.split("\n");
+
+    // Getting data in an array
+    for (const line of lines) {
+      if (line.startsWith("#")) {
+        const match = line.match(/^(#+)\s*(.+)$/);
+        if (match) {
+          const headingLevel = match[1].length;
+          const headingText = match[2].trim();
+          heading.push({ level: headingLevel, content: headingText });
+        }
+      }
+    }
+
+    return heading;
+  }
   return (
     <UseClientIndex
       frontmatter={frontmatter}
       MDXRemote={<MDXRemote source={content} components={components} />}
+      TOCData={TOCData()}
     />
   );
 }

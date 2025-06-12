@@ -1,7 +1,7 @@
 "use client";
 import { ShortDivider } from "@/utility/Dividers";
 import HeadingBasic from "@/utility/HeadingBasic";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FaCheck } from "react-icons/fa";
@@ -9,18 +9,42 @@ import { TbMail } from "react-icons/tb";
 
 export default function AdminComponent() {
   // Variables
-  const [username, setUsername] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [totp, setTotp] = useState<number>();
+  const [username, setUsername]: [
+    userEmail: string,
+    setUserEmail: Dispatch<SetStateAction<string>>
+  ] = useState<string>("");
+  const [password, setPassword]: [
+    userEmail: string,
+    setUserEmail: Dispatch<SetStateAction<string>>
+  ] = useState<string>("");
+  const [totp, setTotp]: [
+    submitSuccess: number,
+    setSubmitSuccess: Dispatch<SetStateAction<number>>
+  ] = useState<number>();
 
-  const [error, setError] = useState<string>("");
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [error, setError]: [
+    userEmail: string,
+    setUserEmail: Dispatch<SetStateAction<string>>
+  ] = useState<string>("");
+  const [isLoggedIn, setIsLoggedIn]: [
+    submitSuccess: boolean,
+    setSubmitSuccess: Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
 
-  const [allEmail, setAllEmail] = useState<{ email: string }[]>([]);
+  const [allEmail, setAllEmail]: [
+    submitSuccess: { email: string }[],
+    setSubmitSuccess: Dispatch<SetStateAction<{ email: string }[]>>
+  ] = useState<{ email: string }[]>([]);
 
-  const [copied, setCopied] = useState<boolean>(false);
+  const [copied, setCopied]: [
+    submitSuccess: boolean,
+    setSubmitSuccess: Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
 
-  const [showEmail, setShowEmail] = useState<boolean>(false);
+  const [showEmail, setShowEmail]: [
+    submitSuccess: boolean,
+    setSubmitSuccess: Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
 
   // Handle submit function
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
