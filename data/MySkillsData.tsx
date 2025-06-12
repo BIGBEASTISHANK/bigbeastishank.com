@@ -92,7 +92,7 @@ export const myLangs: ToolsLayout[] = [
     learningLink: "https://www.javatpoint.com/bash",
   },
   {
-    name: "MySQL",
+    name: "SQL",
     icon: SiMysql,
     learningLink: "https://www.w3schools.com/mysql/default.asp",
   },

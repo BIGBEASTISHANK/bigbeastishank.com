@@ -22,7 +22,7 @@ export default function MyLangs() {
       />
 
       {/* Section content */}
-      <ul className="justify-between items-center text-center mt-5 flex flex-wrap gap-x-8 gap-y-5 min-[439px]:gap-[0.3rem] min-[477px]:gap-[0.9rem] min-[520px]:gap-[1.5rem] min-[540px]:gap-[0.3rem] min-[563px]:gap-[0.62rem]">
+      <ul className="justify-center items-center text-center mt-5 flex flex-wrap gap-x-8 gap-y-5 min-[439px]:gap-[0.3rem] min-[477px]:gap-[0.9rem] min-[520px]:gap-[1.5rem] min-[540px]:gap-[0.3rem] min-[563px]:gap-[0.62rem]">
         {/* My Langs card */}
         {myLangs.map((data, index) => (
           <motion.li
