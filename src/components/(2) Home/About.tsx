@@ -43,7 +43,7 @@ export default function About() {
           transition={{ delay: 1.8, duration: 0.5, type: "spring" }}
         >
           🎮 Crafting games, coding websites, diving into networks, and breaking
-          barriers with pentesting—yeah, that's my jam! 💻✨
+          barriers with pentesting-yeah, that's my jam! 💻✨
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 100 }}

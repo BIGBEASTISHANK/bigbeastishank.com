@@ -10,6 +10,8 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaCheck,
+  FaAngleDoubleLeft,
+  FaAngleDoubleRight,
 } from "react-icons/fa";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { ShortDivider } from "@/utility/Dividers";
@@ -388,20 +390,6 @@ function BlogContent({ posts }: BlogComponentProps) {
                     </div>
                   ))}
                 </div>
-
-                {/* Short Divider */}
-                <ShortDivider />
-
-                {/* Read more link */}
-                <Link
-                  href={`/blogs/${post.slug}`}
-                  className="text-semibold hover:scale-[1.1] transition-all md:text-base text-sm mr-auto outline-none"
-                >
-                  <span className="flex group/readMore py-[0.15rem] px-[1rem] border border-[#1793D1]/50 group-hover:border-[#1793D1]/70 rounded-full bg-[#050607] hover:shadow-md shadow-sm hover:shadow-[#1793D1]/30 group-hover:shadow-[#1793D1]/50 transition-all shadow-[#1793D1]/30">
-                    Read More
-                    <FaEye className="my-auto ml-2 group-hover/readMore:scale-[1.1] transition-all" />
-                  </span>
-                </Link>
               </div>
             </motion.li>
           ))
@@ -434,6 +422,19 @@ function BlogContent({ posts }: BlogComponentProps) {
           }}
           className="flex justify-center items-center gap-2 my-8"
         >
+          {/* Complete Left button */}
+          <button
+            onClick={() => paginate(1)}
+            disabled={currentPage === 1}
+            className={`flex items-center justify-center w-10 h-10 rounded-full border ${
+              currentPage === 1
+                ? "border-[#1793D1]/30 text-gray-500 cursor-not-allowed"
+                : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all cursor-pointer"
+            }`}
+          >
+            <FaAngleDoubleLeft />
+          </button>
+
           {/* Previous button */}
           <button
             onClick={() => paginate(currentPage - 1)}
@@ -446,6 +447,9 @@ function BlogContent({ posts }: BlogComponentProps) {
           >
             <FaChevronLeft />
           </button>
+
+          {/* Small Vertical divider  */}
+          <div className="h-[2rem] w-[0.1rem] bg-[#515860]" />
 
           {/* Page numbers */}
           {(() => {
@@ -475,6 +479,9 @@ function BlogContent({ posts }: BlogComponentProps) {
             return visiblePages;
           })()}
 
+          {/* Small Vertical divider  */}
+          <div className="h-[2rem] w-[0.1rem] bg-[#515860]" />
+
           {/* Next button */}
           <button
             onClick={() => paginate(currentPage + 1)}
@@ -486,6 +493,19 @@ function BlogContent({ posts }: BlogComponentProps) {
             }`}
           >
             <FaChevronRight />
+          </button>
+
+          {/* Complete Right button */}
+          <button
+            onClick={() => paginate(totalPages)}
+            disabled={currentPage === totalPages}
+            className={`flex items-center justify-center w-10 h-10 rounded-full border ${
+              currentPage === totalPages
+                ? "border-[#1793D1]/30 text-gray-500 cursor-not-allowed"
+                : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all cursor-pointer"
+            }`}
+          >
+            <FaAngleDoubleRight />
           </button>
         </motion.div>
       )}

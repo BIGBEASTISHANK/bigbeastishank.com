@@ -103,7 +103,7 @@ Called X after 5 seconds with value 10
 In the above code:
 - The initial value of `x` is printed immediately.
 - The `callXAfterSec` function uses `setTimeout` to schedule another log after a 5-second delay.
-- Meanwhile, the program does **not** pause or freeze—it simply continues.
+- Meanwhile, the program does **not** pause or freeze-it simply continues.
 
 ## Comparing Asynchronous vs Synchronous Behavior
 
@@ -147,7 +147,7 @@ function fetchData() {
   console.log("Start fetching data...");
   const start = Date.now();
   while (Date.now() - start < 3000) {
-    // do nothing — just block
+    // do nothing - just block
   }
   console.log("Data fetched!");
 }
