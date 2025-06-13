@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer
       className={`text-center justify-center items-center my-5 ${
-        pathName != null ? "max-w-[70rem]" : "md:max-w-[45rem] max-w-[35rem]"
+        pathName != null ? "max-w-[110rem]" : "md:max-w-[45rem] max-w-[35rem]"
       } mx-auto`}
     >
       {/* Divider */}
@@ -34,7 +34,14 @@ export default function Footer() {
       {/* Note */}
       <p className="md:text-base text-sm text-gray-600">
         Note: All the text has been written by Ishank and paraphrased by
-        QuillBot.
+        {" "}
+        <a
+          href="https://quillbot.com/"
+          target="_blank"
+          className="text-[#0088CC] font-bold hover:underline underline-offset-2 outline-none"
+        >
+          QuillBot
+        </a>
       </p>
 
       {/* Social Media Icons */}
