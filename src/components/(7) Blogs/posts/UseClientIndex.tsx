@@ -52,7 +52,7 @@ function DropdownTOC({
   TOCData: { level: number; content: string }[];
 }) {
   const [openLevel1, setOpenLevel1] = useState<number>(0);
-  const [openLevel2, setOpenLevel2] = useState<number | null>(null);
+  const [openLevel2, setOpenLevel2] = useState<Set<string>>(new Set());
 
   // Get level 1 items
   const level1Items = TOCData.filter((item) => item.level === 1);
@@ -93,6 +93,19 @@ function DropdownTOC({
     );
   };
 
+  // Toggle level 2 section
+  const toggleLevel2 = (level2Content: string) => {
+    setOpenLevel2(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(level2Content)) {
+        newSet.delete(level2Content);
+      } else {
+        newSet.add(level2Content);
+      }
+      return newSet;
+    });
+  };
+
   return (
     <div className="flex flex-col gap-2">
       {level1Items.map((level1, i) => (
@@ -105,7 +118,6 @@ function DropdownTOC({
                   className="text-xs"
                   onClick={() => {
                     setOpenLevel1(openLevel1 === i ? -1 : i);
-                    setOpenLevel2(null);
                   }}
                 />
               ) : (
@@ -113,7 +125,6 @@ function DropdownTOC({
                   className="text-xs"
                   onClick={() => {
                     setOpenLevel1(openLevel1 === i ? -1 : i);
-                    setOpenLevel2(null);
                   }}
                 />
               ))}
@@ -129,28 +140,24 @@ function DropdownTOC({
                 <div key={j} className="mb-1">
                   <div className="cursor-pointer text-gray-400 flex items-center gap-2 hover:text-gray-300 transition-colors">
                     {getLevel3Items(level2, i).length > 0 &&
-                      (openLevel2 === j ? (
+                      (openLevel2.has(level2.content) ? (
                         <FaChevronDown
                           className="text-xs"
-                          onClick={() =>
-                            setOpenLevel2(openLevel2 === j ? null : j)
-                          }
+                          onClick={() => toggleLevel2(level2.content)}
                         />
                       ) : (
                         <FaChevronRight
                           className="text-xs"
-                          onClick={() =>
-                            setOpenLevel2(openLevel2 === j ? null : j)
-                          }
+                          onClick={() => toggleLevel2(level2.content)}
                         />
                       ))}
                     <a href={`#${level2.content}`} className="hover:underline">
                       {level2.content}
                     </a>
                   </div>
-
+                  
                   {/* Level 3 Items */}
-                  {openLevel2 === j && (
+                  {openLevel2.has(level2.content) && (
                     <div className="ml-6 mt-1">
                       {getLevel3Items(level2, i).map((level3, k) => (
                         <div
@@ -177,6 +184,7 @@ function DropdownTOC({
   );
 }
 
+
 export default function UseClientIndex({
   frontmatter,
   MDXRemote,
@@ -187,23 +195,11 @@ export default function UseClientIndex({
   TOCData: { level: number; content: string }[];
 }) {
   return (
-    <div className="flex flex-row-reverse px-5">
-      {/* Table of content */}
-      <div className="h-full sticky top-24 min-[1531px]:block hidden px-5 select-none mx-auto">
-        {/* Heading */}
-        <h1 className="font-bold text-lg">Table of Content</h1>
-
-        {/* Divider */}
-        <ShortDivider delay={0.3} customCSS="my-2" />
-
-        {/* Dropdown TOC */}
-        <DropdownTOC TOCData={TOCData} />
-      </div>
-
+    <div className="flex min-[1531px]:px-20 px-0">
       {/* Main content */}
       <div
         id="blogPost"
-        className="px-5 scroll-mt-24 max-w-[70rem] mx-auto overflow-x-zauto"
+        className="px-5 scroll-mt-24 max-w-[70rem] mx-auto overflow-x-auto min-[1531px]:basis-2/3"
       >
         {/* GO Back arrow */}
         <motion.div
@@ -317,6 +313,20 @@ export default function UseClientIndex({
           link="/blogs"
           animationDelay={1.9}
         />
+      </div>
+
+      {/* Table of content */}
+      <div className="h-[80vh] sticky top-24 min-[1531px]:flex hidden px-5 pb-10 select-none basis-1/3 min-[1531px]:flex-col">
+        {/* Heading */}
+        <h1 className="font-bold text-lg">Table of Content</h1>
+
+        {/* Divider */}
+        <ShortDivider delay={0.3} customCSS="my-2" />
+
+        {/* Scrollable TOC Container */}
+        <div className="flex-1 overflow-y-auto">
+          <DropdownTOC TOCData={TOCData} />
+        </div>
       </div>
     </div>
   );
