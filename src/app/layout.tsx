@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/(1) Layout/Navbar";
 import Footer from "@/components/(1) Layout/Footer";
 import ScrollProgressBar from "@/utility/ScrollProgressBar";
-import ParticlesBackground from "@/components/(1) Layout/ParticlesBackground";
+import ParticlesBackground from "@/utility/ParticlesBackground";
 import { NextFont } from "next/dist/compiled/@next/font";
 
 const inter: NextFont = Inter({ subsets: ["latin"] });

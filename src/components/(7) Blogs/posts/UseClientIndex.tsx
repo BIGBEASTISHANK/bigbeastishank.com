@@ -57,7 +57,7 @@ function DropdownTOC({
   // Get level 1 items
   const level1Items = TOCData.filter((item) => item.level === 1);
 
-  // Get level 2 items for a specific level 1 item
+  // Get level 2
   const getLevel2Items = (level1Index: number) => {
     const currentLevel1 = level1Items[level1Index];
     const nextLevel1 = level1Items[level1Index + 1];
@@ -72,7 +72,22 @@ function DropdownTOC({
     );
   };
 
-  // Get level 3 items for a specific level 2 item
+  // Get direct level 3
+  const getDirectLevel3Items = (level1Index: number) => {
+    const currentLevel1 = level1Items[level1Index];
+    const nextLevel1 = level1Items[level1Index + 1];
+
+    const startIndex = TOCData.findIndex((item) => item === currentLevel1);
+    const endIndex = nextLevel1
+      ? TOCData.findIndex((item) => item === nextLevel1)
+      : TOCData.length;
+
+    return TOCData.slice(startIndex + 1, endIndex).filter(
+      (item) => item.level === 3
+    );
+  };
+
+  // Get level 3
   const getLevel3Items = (
     level2Item: { level: number; content: string },
     level1Index: number
@@ -95,7 +110,7 @@ function DropdownTOC({
 
   // Toggle level 2 section
   const toggleLevel2 = (level2Content: string) => {
-    setOpenLevel2(prev => {
+    setOpenLevel2((prev) => {
       const newSet = new Set(prev);
       if (newSet.has(level2Content)) {
         newSet.delete(level2Content);
@@ -108,83 +123,113 @@ function DropdownTOC({
 
   return (
     <div className="flex flex-col gap-2">
-      {level1Items.map((level1, i) => (
-        <div key={i}>
-          {/* Level 1 Item */}
-          <div className="cursor-pointer text-gray-400 flex items-center gap-2 hover:text-gray-300 transition-colors">
-            {getLevel2Items(i).length > 0 &&
-              (openLevel1 === i ? (
-                <FaChevronDown
-                  className="text-xs"
-                  onClick={() => {
-                    setOpenLevel1(openLevel1 === i ? -1 : i);
-                  }}
-                />
-              ) : (
-                <FaChevronRight
-                  className="text-xs"
-                  onClick={() => {
-                    setOpenLevel1(openLevel1 === i ? -1 : i);
-                  }}
-                />
-              ))}
-            <a href={`#`} className="hover:underline">
-              {level1.content}
-            </a>
-          </div>
+      {level1Items.map((level1, i) => {
+        const level2Items = getLevel2Items(i);
+        const directLevel3Items = getDirectLevel3Items(i);
+        const hasLevel2 = level2Items.length > 0;
+        const hasDirectLevel3 = directLevel3Items.length > 0;
 
-          {/* Level 2 Items */}
-          {openLevel1 === i && (
-            <div className="ml-6 mt-1">
-              {getLevel2Items(i).map((level2, j) => (
-                <div key={j} className="mb-1">
-                  <div className="cursor-pointer text-gray-400 flex items-center gap-2 hover:text-gray-300 transition-colors">
-                    {getLevel3Items(level2, i).length > 0 &&
-                      (openLevel2.has(level2.content) ? (
-                        <FaChevronDown
-                          className="text-xs"
-                          onClick={() => toggleLevel2(level2.content)}
-                        />
-                      ) : (
-                        <FaChevronRight
-                          className="text-xs"
-                          onClick={() => toggleLevel2(level2.content)}
-                        />
-                      ))}
-                    <a href={`#${level2.content}`} className="hover:underline">
-                      {level2.content}
-                    </a>
-                  </div>
-                  
-                  {/* Level 3 Items */}
-                  {openLevel2.has(level2.content) && (
-                    <div className="ml-6 mt-1">
-                      {getLevel3Items(level2, i).map((level3, k) => (
-                        <div
-                          key={k}
-                          className="text-gray-400 hover:text-gray-300 transition-colors"
-                        >
-                          <a
-                            href={`#${level3.content}`}
-                            className="hover:underline"
-                          >
-                            {level3.content}
-                          </a>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+        return (
+          <div key={i}>
+            {/* Level 1 Item */}
+            <div className="cursor-pointer text-gray-400 flex items-center gap-2 hover:text-gray-300 transition-colors">
+              {(hasLevel2 || hasDirectLevel3) &&
+                (openLevel1 === i ? (
+                  <FaChevronDown
+                    className="text-xs"
+                    onClick={() => {
+                      setOpenLevel1(openLevel1 === i ? -1 : i);
+                    }}
+                  />
+                ) : (
+                  <FaChevronRight
+                    className="text-xs"
+                    onClick={() => {
+                      setOpenLevel1(openLevel1 === i ? -1 : i);
+                    }}
+                  />
+                ))}
+              <a href={`#`} className="hover:underline">
+                {level1.content}
+              </a>
             </div>
-          )}
-        </div>
-      ))}
+
+            {openLevel1 === i && (
+              <div className="ml-6 mt-1">
+                {/* Level 2 Items (if they exist) */}
+                {hasLevel2 &&
+                  level2Items.map((level2, j) => (
+                    <div key={j} className="mb-1">
+                      <div className="cursor-pointer text-gray-400 flex items-center gap-2 hover:text-gray-300 transition-colors">
+                        {getLevel3Items(level2, i).length > 0 &&
+                          (openLevel2.has(level2.content) ? (
+                            <FaChevronDown
+                              className="text-xs"
+                              onClick={() => toggleLevel2(level2.content)}
+                            />
+                          ) : (
+                            <FaChevronRight
+                              className="text-xs"
+                              onClick={() => toggleLevel2(level2.content)}
+                            />
+                          ))}
+                        <a
+                          href={`#${level2.content}`}
+                          className="hover:underline"
+                        >
+                          {level2.content}
+                        </a>
+                      </div>
+
+                      {/* Level 3 Items under Level 2 */}
+                      {openLevel2.has(level2.content) && (
+                        <div className="ml-6 mt-1">
+                          {getLevel3Items(level2, i).map((level3, k) => (
+                            <div
+                              key={k}
+                              className="text-gray-400 hover:text-gray-300 transition-colors"
+                            >
+                              <a
+                                href={`#${level3.content}`}
+                                className="hover:underline"
+                              >
+                                {level3.content}
+                              </a>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+
+                {/* Direct Level 3 Items (when no Level 2 exists) */}
+                {!hasLevel2 && hasDirectLevel3 && (
+                  <div className="ml-3">
+                    {directLevel3Items.map((level3, k) => (
+                      <div
+                        key={k}
+                        className="text-gray-400 hover:text-gray-300 transition-colors mb-1"
+                      >
+                        <a
+                          href={`#${level3.content}`}
+                          className="hover:underline"
+                        >
+                          {level3.content}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
 
-
+// Main component
 export default function UseClientIndex({
   frontmatter,
   MDXRemote,
@@ -199,7 +244,7 @@ export default function UseClientIndex({
       {/* Main content */}
       <div
         id="blogPost"
-        className="px-5 scroll-mt-24 max-w-[70rem] mx-auto overflow-x-auto min-[1531px]:basis-2/3"
+        className="px-5 max-w-[70rem] mx-auto overflow-x-auto min-[1531px]:basis-2/3 overflow-y-hidden"
       >
         {/* GO Back arrow */}
         <motion.div
@@ -316,7 +361,12 @@ export default function UseClientIndex({
       </div>
 
       {/* Table of content */}
-      <div className="h-[80vh] sticky top-24 min-[1531px]:flex hidden px-5 pb-10 select-none basis-1/3 min-[1531px]:flex-col">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 2 }}
+        className="h-[80vh] sticky top-24 min-[1531px]:flex hidden px-5 pb-10 select-none basis-1/3 min-[1531px]:flex-col"
+      >
         {/* Heading */}
         <h1 className="font-bold text-lg">Table of Content</h1>
 
@@ -327,7 +377,7 @@ export default function UseClientIndex({
         <div className="flex-1 overflow-y-auto">
           <DropdownTOC TOCData={TOCData} />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
