@@ -141,28 +141,36 @@ export function BlogPostComponent({
     Link,
   };
 
+  // Extracting Table of content
   function TOCData() {
-    // Variable
-    const heading: [{ level: number; content: string }] = [
-      { level: 1, content: frontmatter.title },
-    ];
+  const heading: { level: number; content: string }[] = [
+    { level: 1, content: frontmatter.title },
+  ];
 
-    const lines = content.split("\n");
+  const lines = content.split("\n");
+  let insideCodeBlock = false;
 
-    // Getting data in an array
-    for (const line of lines) {
-      if (line.startsWith("#")) {
-        const match = line.match(/^(#+)\s*(.+)$/);
-        if (match) {
-          const headingLevel = match[1].length;
-          const headingText = match[2].trim();
-          heading.push({ level: headingLevel, content: headingText });
-        }
-      }
+  for (const line of lines) {
+    // Toggle code block state
+    if (line.startsWith('```')) {
+      insideCodeBlock = !insideCodeBlock;
+      continue;
     }
 
-    return heading;
+    // Skip processing if inside code block
+    if (!insideCodeBlock && line.startsWith('#')) {
+      const match = line.match(/^(#+)\s*(.+)$/);
+      if (match) {
+        const headingLevel = match[1].length;
+        const headingText = match[2].trim();
+        heading.push({ level: headingLevel, content: headingText });
+      }
+    }
   }
+
+  return heading;
+}
+
   return (
     <UseClientIndex
       frontmatter={frontmatter}
