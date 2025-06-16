@@ -4,11 +4,11 @@ import HeadingBasic from "@/utility/HeadingBasic";
 import { RxCheck, RxCross2 } from "react-icons/rx";
 import { HTMLMotionProps, motion } from "framer-motion";
 import { webHire, webPlanFeatures } from "@@/data/HireData";
-import { ShortDivider } from "@/utility/Dividers";
+import { FullDivider, ShortDivider } from "@/utility/Dividers";
 
 export default function WebHireComponent() {
   return (
-    <div id="webHire" className="px-5 scroll-mt-24">
+    <div id="webHire" className="px-5 scroll-mt-28">
       {/* Title */}
       <HeadingBasic
         heading="Web Development"
@@ -28,7 +28,7 @@ export default function WebHireComponent() {
       />
 
       {/* Short Divider */}
-      <ShortDivider delay={0.55}/>
+      <ShortDivider delay={0.55} />
 
       {/* Hire me card */}
       <ul className="px-2 my-10">
@@ -38,8 +38,12 @@ export default function WebHireComponent() {
             {...({ id: mainPlanData.id } as HTMLMotionProps<"li">)}
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 + (index * 0.3) / 2, duration: 0.5, type: "spring" }}
-            {...({ className: "scroll-mt-24" } as HTMLMotionProps<"li">)}
+            transition={{
+              delay: 0.7 + (index * 0.3) / 2,
+              duration: 0.5,
+              type: "spring",
+            }}
+            {...({ className: "scroll-mt-28" } as HTMLMotionProps<"li">)}
           >
             <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#1793D1]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#1793D1]/80 shadow-[#1793D1]/50">
               {/* Plan Title */}
@@ -114,7 +118,7 @@ export default function WebHireComponent() {
       </ul>
 
       {/* Divider */}
-      <div className="w-full h-[.125rem] mb-8 bg-[#1793D1]" />
+      <FullDivider delay={1.5} />
 
       {/* Custom Order */}
       <div id={"customorder"} />
@@ -126,9 +130,24 @@ export default function WebHireComponent() {
           <>
             <p>
               Looking for something specific? I'm always open to custom orders.
-              You can contact me through the contact form on the main page. We
-              can come up with a plan that suits your needs.
+              You can contact me via mail. We can come up with a plan that suits
+              your needs.
             </p>
+
+            {/* Contact button */}
+            <Link
+              href={
+                "mailto:business@bigbeastishank.com?subject=%5BHire%20Web%5D%20Inquiry%20about%20custom%20Plan%20%5Bbigbeastishank.com%2Fhire%2Fweb%5D&body=Hello%2C%20I%20am%20interested%20in%20the%20custom%20plan.%20Please%20provide%20more%20details%20about%20the%20features%20and%20how%20to%20proceed."
+              }
+              className="mr-auto group/chm select-none outline-none"
+              target="_blank"
+            >
+              <button className="outline-none cursor-pointer transition-all hover:scale-[1.1]">
+                <p className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border border-[#1793D1] rounded-full bg-[#0A0C0E] group-hover/chm:shadow-lg shadow-md group-hover/chm:shadow-[#1793D1]/50 shadow-[#1793D1]/50 transition-all">
+                  Contact for custom order
+                </p>
+              </button>
+            </Link>
           </>
         }
       />

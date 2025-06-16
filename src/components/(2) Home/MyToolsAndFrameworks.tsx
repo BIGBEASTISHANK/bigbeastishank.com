@@ -5,7 +5,7 @@ import { motion, HTMLMotionProps } from "framer-motion";
 
 export default function MyToolsAndFramework() {
   return (
-    <div id="myToolsAndFramework" className="px-5 scroll-mt-24">
+    <div id="myToolsAndFramework" className="px-5 scroll-mt-28">
       {/* Headings */}
       <HeadingBasic
         heading="My Tools & Framework"

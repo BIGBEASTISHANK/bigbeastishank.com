@@ -66,7 +66,7 @@ export function BlogPostComponent({
     },
     h1: (props: any) => (
       <h1
-        className="text-3xl font-black mt-8 mb-4 scroll-mt-24 w-auto flex"
+        className="text-3xl font-black mt-8 mb-4 scroll-mt-28 w-auto flex"
         id={props.children}
         {...props}
       >
@@ -83,7 +83,7 @@ export function BlogPostComponent({
     ),
     h2: (props: any) => (
       <h2
-        className="text-2xl font-black mt-6 mb-3 scroll-mt-24 w-auto flex"
+        className="text-2xl font-black mt-6 mb-3 scroll-mt-28 w-auto flex"
         id={props.children}
         {...props}
       >
@@ -100,7 +100,7 @@ export function BlogPostComponent({
     ),
     h3: (props: any) => (
       <h3
-        className="text-xl font-bold mt-4 mb-2 scroll-mt-24 w-auto flex"
+        className="text-xl font-bold mt-4 mb-2 scroll-mt-28 w-auto flex"
         id={props.children}
         {...props}
       >

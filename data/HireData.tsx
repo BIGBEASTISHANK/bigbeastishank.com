@@ -17,7 +17,7 @@ interface HireData {
 // Static Page: 500
 // Responsive Design: 500
 // Free Lifetime domain: 0
-// SEO Optimization: 500
+// SEO Optimization (On Page): 500
 // Dynamic Page: 3,000
 // Custom Design: 1,500
 // Advanced Animations / Interactions: 800
@@ -35,7 +35,7 @@ export const webPlanFeatures: string[] = [
   "Static Page",
   "Responsive Design",
   "Free Lifetime domain",
-  "SEO Optimization",
+  "SEO Optimization (On Page)",
   "Custom Design",
   "Advanced Animations / Interactions",
   "Dynamic Page",
@@ -70,7 +70,7 @@ export const webHire: HireData[] = [
       "Static Page",
       "Responsive Design",
       "Free Lifetime domain",
-      "SEO Optimization",
+      "SEO Optimization (On Page)",
     ],
     originalPrice: currencyFormatter.format(1500),
     discountedPrice: currencyFormatter.format(799),
@@ -90,7 +90,7 @@ export const webHire: HireData[] = [
       "Static Page",
       "Responsive Design",
       "Custom Design",
-      "SEO Optimization",
+      "SEO Optimization (On Page)",
       "Free Lifetime domain",
       "Advanced Animations / Interactions",
     ],
@@ -112,7 +112,7 @@ export const webHire: HireData[] = [
       "Static Page",
       "Responsive Design",
       "Custom Design",
-      "SEO Optimization",
+      "SEO Optimization (On Page)",
       "Advanced Animations / Interactions",
       "Free Lifetime domain",
       "API Integration",
@@ -137,7 +137,7 @@ export const webHire: HireData[] = [
       "Static Page",
       "Responsive Design",
       "Custom Design",
-      "SEO Optimization",
+      "SEO Optimization (On Page)",
       "Advanced Animations / Interactions",
       "API Integration",
       "Web.dev Optimization",

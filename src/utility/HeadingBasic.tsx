@@ -26,7 +26,7 @@ export default function HeadingBasic({
           transition={{ delay: animationDelay, duration: 0.5, type: "spring" }}
           {...({
             className:
-              "font-bold md:text-3xl text-2xl md:mb-8 mb-5 scroll-mt-24",
+              "font-bold md:text-3xl text-2xl md:mb-8 mb-5 scroll-mt-28",
           } as HTMLMotionProps<"div">)}
           {...({ id } as HTMLMotionProps<"h1">)}
         >

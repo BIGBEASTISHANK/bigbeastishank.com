@@ -6,7 +6,7 @@ import { motion, HTMLMotionProps } from "framer-motion";
 
 export default function About() {
   return (
-    <div id="about" className="px-5 scroll-mt-24 flex flex-col">
+    <div id="about" className="px-5 scroll-mt-28 flex flex-col">
       {/* Title */}
       <HeadingBasic heading="About" url="/#about" animationDelay={1.2} />
 

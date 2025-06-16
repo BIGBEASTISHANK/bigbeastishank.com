@@ -13,7 +13,7 @@ import { ShortDivider } from "@/utility/Dividers";
 
 export default function WorksComponent() {
   return (
-    <div id="works" className="px-5 scroll-mt-24">
+    <div id="works" className="px-5 scroll-mt-28">
       {/* Title */}
       <HeadingBasic
         heading="Works"
@@ -92,7 +92,7 @@ function ProjectList({
         transition={{ delay: 0.7, duration: 0.5, type: "spring" }}
         {...({
           className:
-            "font-bold md:text-2xl text-xl md:mb-7 mb-5 scroll-mt-24 flex outline-none",
+            "font-bold md:text-2xl text-xl md:mb-7 mb-5 scroll-mt-28 flex outline-none",
         } as HTMLMotionProps<"h1">)}
       >
         {/* Heading */}
@@ -138,7 +138,7 @@ function ProjectList({
                 duration: 0.5,
                 type: "spring",
               }}
-              {...({ className: "scroll-mt-24" } as HTMLMotionProps<"li">)}
+              {...({ className: "scroll-mt-28" } as HTMLMotionProps<"li">)}
             >
               <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#FF3333]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#FF3333]/80 shadow-[#1793D1]/50">
                 {/* Project title */}

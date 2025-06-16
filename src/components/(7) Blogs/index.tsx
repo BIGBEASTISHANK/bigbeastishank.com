@@ -121,7 +121,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
   };
 
   return (
-    <div id="blogs" className="px-5 scroll-mt-24 min-h-[45vh]">
+    <div id="blogs" className="px-5 scroll-mt-28 min-h-[45vh]">
       {/* Title */}
       <HeadingBasic
         heading="Blogs"
@@ -342,7 +342,7 @@ function BlogContent({ posts }: BlogComponentProps) {
                 duration: 0.5,
                 type: "spring",
               }}
-              {...({ className: "scroll-mt-24" } as HTMLMotionProps<"li">)}
+              {...({ className: "scroll-mt-28" } as HTMLMotionProps<"li">)}
             >
               <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#1793D1]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#1793D1]/80 shadow-[#1793D1]/50">
                 {/* Blog title */}

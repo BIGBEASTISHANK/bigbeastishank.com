@@ -13,7 +13,7 @@ export default function ColorPalette() {
   ] = useState<number | null>(null);
 
   return (
-    <div id="colorPalette" className="px-5 flex flex-col scroll-mt-24">
+    <div id="colorPalette" className="px-5 flex flex-col scroll-mt-28">
       {/* Heading */}
       <HeadingBasic
         heading="Color Palette"

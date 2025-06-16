@@ -12,7 +12,7 @@ import { FullDivider, ShortDivider } from "@/utility/Dividers";
 
 export default function SponsorComponent() {
   return (
-    <div id="sponsorme" className="px-5 scroll-mt-24">
+    <div id="sponsorme" className="px-5 scroll-mt-28">
       {/* Main Heading */}
       <HeadingBasic
         heading="Sponsor Me"

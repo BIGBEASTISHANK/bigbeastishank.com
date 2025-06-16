@@ -240,7 +240,7 @@ export default function UseClientIndex({
   TOCData: { level: number; content: string }[];
 }) {
   return (
-    <div className="flex min-[1531px]:px-20 px-0">
+    <div className="flex min-[1531px]:px-20 px-0 scroll-mt-28">
       {/* Main content */}
       <div
         id="blogPost"

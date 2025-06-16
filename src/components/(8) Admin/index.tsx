@@ -75,7 +75,7 @@ export default function AdminComponent() {
   }
 
   return (
-    <div id="admin" className="px-5 scroll-mt-24">
+    <div id="admin" className="px-5 scroll-mt-28">
       {/* Title */}
       <HeadingBasic
         heading="Admin Panel"
