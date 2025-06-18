@@ -5,7 +5,7 @@ interface HireData {
   id: string;
   name: string;
   description: string;
-  hasFeatures: string[]; // Fixed type for hasFeatures to an array of strings
+  hasFeatures: string[];
   originalPrice: string;
   discountedPrice: string;
   deliveryIn: string;
