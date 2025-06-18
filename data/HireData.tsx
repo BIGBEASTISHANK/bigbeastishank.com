@@ -25,7 +25,7 @@ interface HireData {
 // Web.dev Optimization: 500
 // Maintenance & Updates: 1,000
 // Priority Support: 1,500
-// Custom Domain (1 Year): 550
+// Custom Domain (1 Year): 1110
 // Minor Revision: 200
 // Major Revision: 2,000
 
@@ -73,7 +73,7 @@ export const webHire: HireData[] = [
       "SEO Optimization (On Page)",
     ],
     originalPrice: currencyFormatter.format(1500),
-    discountedPrice: currencyFormatter.format(799),
+    discountedPrice: currencyFormatter.format(899),
     deliveryIn: "3 days",
     numberOfRevision: "1",
     purchaseMail:
@@ -93,9 +93,10 @@ export const webHire: HireData[] = [
       "SEO Optimization (On Page)",
       "Free Lifetime domain",
       "Advanced Animations / Interactions",
+      "Custom Domain (1 Year)",
     ],
     originalPrice: currencyFormatter.format(4000),
-    discountedPrice: currencyFormatter.format(1499),
+    discountedPrice: currencyFormatter.format(3099),
     deliveryIn: "5 days",
     numberOfRevision: "2",
     purchaseMail:
@@ -120,7 +121,7 @@ export const webHire: HireData[] = [
       "Dynamic Page",
     ],
     originalPrice: currencyFormatter.format(9700),
-    discountedPrice: currencyFormatter.format(3999),
+    discountedPrice: currencyFormatter.format(5899),
     deliveryIn: "7 days",
     numberOfRevision: "3",
     purchaseMail:
@@ -147,8 +148,8 @@ export const webHire: HireData[] = [
       "Free Lifetime domain",
       "Dynamic Page",
     ],
-    originalPrice: currencyFormatter.format(13150),
-    discountedPrice: currencyFormatter.format(6999),
+    originalPrice: currencyFormatter.format(13710),
+    discountedPrice: currencyFormatter.format(8299),
     deliveryIn: "14 days",
     numberOfRevision: "5",
     purchaseMail:
