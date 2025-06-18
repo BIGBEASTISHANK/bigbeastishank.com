@@ -28,6 +28,7 @@ interface HireData {
 // Custom Domain (1 Year): 1110
 // Minor Revision: 200
 // Major Revision: 2,000
+// Admin Panel: 3000
 
 // Feature List
 // Webplan
@@ -41,6 +42,7 @@ export const webPlanFeatures: string[] = [
   "Dynamic Page",
   "API Integration",
   "Web.dev Optimization",
+  "Admin Panel",
   "Maintenance & Updates",
   "Priority Support",
   "Custom Domain (1 Year)",
@@ -146,10 +148,11 @@ export const webHire: HireData[] = [
       "Priority Support",
       "Custom Domain (1 Year)",
       "Free Lifetime domain",
+      "Admin Panel",
       "Dynamic Page",
     ],
-    originalPrice: currencyFormatter.format(13710),
-    discountedPrice: currencyFormatter.format(8299),
+    originalPrice: currencyFormatter.format(16710),
+    discountedPrice: currencyFormatter.format(10099),
     deliveryIn: "14 days",
     numberOfRevision: "5",
     purchaseMail:
