@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FaCheck } from "react-icons/fa";
 import { TbMail } from "react-icons/tb";
+import { PulseLoader } from "react-spinners";
 
 export default function AdminComponent() {
   // Variables
@@ -46,31 +47,51 @@ export default function AdminComponent() {
     setSubmitSuccess: Dispatch<SetStateAction<boolean>>
   ] = useState<boolean>(false);
 
+  const [isLoggingIn, setIsLoggingIn]: [
+    isSubmitting: boolean,
+    setIsSubmitting: Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
+
   // Handle submit function
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const response = await fetch("/api/adminLogin", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: username,
-        password: password,
-        totpCode: totp,
-      }),
-    });
+    setIsLoggingIn(true);
 
-    const data = await response.json();
-    console.log(data);
-    if (!response.ok) {
-      setError(data.error);
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-      setError("");
-    } else {
-      setIsLoggedIn(true);
-      setAllEmail(data.response);
+    try {
+      const response = await fetch("/api/adminLogin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+          totpCode: totp,
+        }),
+      });
+
+      const data = await response.json();
+      console.log(data);
+      if (!response.ok) {
+        setError(data.error);
+        await new Promise((resolve) => setTimeout(resolve, 5000));
+        setError("");
+      } else {
+        setIsLoggedIn(true);
+        setAllEmail(data.response);
+      }
+    } catch (error) {
+      // Setting formdata and error message
+      setError("Internal server error");
+      console.log(String(error));
+
+      // Waiting for error message to disappear
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    } finally {
+      setIsLoggingIn(false);
     }
   }
 
@@ -140,7 +161,11 @@ export default function AdminComponent() {
                 className="w-min"
               >
                 <p className="bg-[#1793D1] text-white px-4 py-2 outline-none rounded-full cursor-pointer hover:scale-[1.1] transition-all w-min">
-                  Login
+                  {isLoggingIn ? (
+                  <PulseLoader loading={true} size={15} color="white" />
+                ) : (
+                  "Login"
+                )}
                 </p>
               </motion.button>
 
