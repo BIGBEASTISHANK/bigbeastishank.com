@@ -1,7 +1,7 @@
 "use client";
 import { ShortDivider } from "@/utility/Dividers";
 import HeadingBasic from "@/utility/HeadingBasic";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FaCheck } from "react-icons/fa";
@@ -95,6 +95,26 @@ export default function AdminComponent() {
     }
   }
 
+  useEffect(() => {
+    // Verify If is logged in
+    adminLoginVerify();
+  }, []);
+
+  // Admin login verify function
+  async function adminLoginVerify() {
+    const response = await fetch("/api/adminLoginVerify", {
+      method: "GET",
+      credentials: "include",
+    });
+
+    const allEmailData = await response.json();
+
+    if (response.ok) {
+      setIsLoggedIn(true);
+      setAllEmail(allEmailData.response);
+    }
+  }
+
   return (
     <div id="admin" className="px-5 scroll-mt-28">
       {/* Title */}
@@ -161,10 +181,10 @@ export default function AdminComponent() {
               >
                 <p className="bg-[#1793D1] text-white outline-none border-none rounded-full cursor-pointer hover:scale-[1.1] transition-all w-[6rem] flex justify-center items-center h-[2.5rem]">
                   {isLoggingIn ? (
-                  <PulseLoader loading={true} size={15} color="white"/>
-                ) : (
-                  "Login"
-                )}
+                    <PulseLoader loading={true} size={15} color="white" />
+                  ) : (
+                    "Login"
+                  )}
                 </p>
               </motion.button>
 

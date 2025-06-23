@@ -1,9 +1,10 @@
 import { dbConnect } from "@/lib/db/mongoose";
 import Blog_Subscribers from "@/lib/models/Blog_Subscribers";
-import { NextResponse } from "next/server";
-import speakeasy from 'speakeasy';
+import { NextRequest, NextResponse } from "next/server";
+import speakeasy from "speakeasy";
+import jwt from "jsonwebtoken";
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
     // Getting username, password, and TOTP code
     const { username, password, totpCode } = await req.json();
@@ -31,7 +32,7 @@ export async function POST(req: Request) {
       // Verify TOTP code
       const verified = speakeasy.totp.verify({
         secret: process.env.TOTP_SECRET,
-        encoding: 'base32',
+        encoding: "base32",
         token: totpCode,
       });
 
@@ -42,13 +43,37 @@ export async function POST(req: Request) {
         );
       }
 
-      // If all checks pass, return the data
-      await dbConnect(); // Connecting to db
+      // Creating jwt token
+      const token = jwt.sign(
+        { alreadyLoggedIn: true },
+        process.env.JWT_SECRET,
+        { expiresIn: "7d" }
+      );
+
+      // Fetching userdata
+      await dbConnect(); // Connect to db
       const allUserEmail = await Blog_Subscribers.find(
         { email: { $exists: true } },
         { email: 1, _id: 0 }
       );
-      return NextResponse.json({ response: allUserEmail }, { status: 200 });
+
+      // Return response with cookie
+      const response = NextResponse.json(
+        { response: allUserEmail },
+        { status: 200 }
+      );
+
+      // Setting cookie
+      response.cookies.set("token", token, {
+        httpOnly: true,
+        sameSite: "strict",
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+        secure: process.env.NODE_ENV === "production",
+        path: "/",
+      });
+
+      // Returning response
+      return response;
     } else {
       return NextResponse.json(
         { error: "Invalid username or password!" },
