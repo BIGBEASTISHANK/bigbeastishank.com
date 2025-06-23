@@ -108,8 +108,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
       }, 5000);
     } catch (error) {
       // Setting formdata and error message
-      setSubmitError("Internal server error");
-      console.log(String(error));
+      setSubmitError(String(error));
       setUserEmail("");
 
       // Waiting for error message to disappear

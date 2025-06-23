@@ -6,9 +6,6 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
-    // Connect to MongoDB
-    await dbConnect();
-
     // Getting email
     const email = await req.json();
 
@@ -20,6 +17,7 @@ export async function POST(req: Request) {
       );
 
     // Checking if it exists
+    await dbConnect(); // Connecting to db
     const subscriber: IBlog_Subscriber[] = await Blog_Subscribers.find(
       { email: email.email },
       { email: 1, _id: 0 }

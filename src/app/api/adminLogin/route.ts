@@ -5,9 +5,6 @@ import speakeasy from 'speakeasy';
 
 export async function POST(req: Request) {
   try {
-    // Connect to MongoDB
-    await dbConnect();
-
     // Getting username, password, and TOTP code
     const { username, password, totpCode } = await req.json();
 
@@ -46,6 +43,7 @@ export async function POST(req: Request) {
       }
 
       // If all checks pass, return the data
+      await dbConnect(); // Connecting to db
       const allUserEmail = await Blog_Subscribers.find(
         { email: { $exists: true } },
         { email: 1, _id: 0 }
