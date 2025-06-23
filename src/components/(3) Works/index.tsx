@@ -21,8 +21,9 @@ export default function WorksComponent() {
         description={
           <>
             <p className="text-justify">
-              🌐 Explore a collection of my standout projects right here. For a
-              comprehensive look at all my endeavors, visit my{" "}
+              Below you'll find a selection of my key projects showcasing my
+              work in web development, game development, and other areas.
+              For my complete portfolio and source code, check out my{" "}
               <a
                 href="/github"
                 target="_blank"

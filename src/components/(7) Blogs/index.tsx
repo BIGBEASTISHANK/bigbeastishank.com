@@ -129,19 +129,22 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
         description={
           <>
             <p className="text-justify">
-              Explore a collection of my blogs covering a variety of topics,
-              including web development, game development, and much more. Dive
-              in to discover practical tips, insightful experiences, and helpful
-              tricks that I've gathered along my journey. If there's a specific
-              topic you'd like me to cover, feel free to contact me via the
-              email provided on the{" "}
+              Welcome to my technical blog where I share insights from my
+              development journey. You'll find articles spanning web
+              development, mobile app creation with Flutter, machine learning
+              experiments, and the occasional deep dive into game development.
+              Each post reflects real-world challenges I've tackled and the
+              solutions I've discovered along the way. Looking for content on a
+              particular technology or facing a specific development challenge?
+              Drop me a line using the contact information on the{" "}
               <Link
                 href="/"
                 className="text-[#0088CC] font-bold hover:underline underline-offset-2 outline-none"
               >
                 home page
-              </Link>
-              .
+              </Link>{" "}
+              - I'm always open to exploring new topics that could help fellow
+              developers.
             </p>
           </>
         }

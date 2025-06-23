@@ -5,7 +5,7 @@ import WorksComponent from "@/components/(3) Works";
 export const metadata: Metadata = {
   title: "Works | BIGBEASTISHANK",
   description:
-    "Explore a showcase of my latest creative endeavors on this page, featuring a diverse array of projects I've passionately crafted. From innovative designs to impactful solutions, discover the essence of my work and the dedication poured into each project. Immerse yourself in a visual journey that reflects my skills, expertise, and commitment to excellence. Welcome to a space where ideas come to life and projects speak volumes.",
+    "Below you'll find a selection of my key projects showcasing my work in web development, game development, and other areas. For my complete portfolio and source code, check out my GitHub.",
   metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
   keywords: [
     "Next.js",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Works | BIGBEASTISHANK",
     description:
-      "Explore a showcase of my latest creative endeavors on this page, featuring a diverse array of projects I've passionately crafted. From innovative designs to impactful solutions, discover the essence of my work and the dedication poured into each project. Immerse yourself in a visual journey that reflects my skills, expertise, and commitment to excellence. Welcome to a space where ideas come to life and projects speak volumes.",
+      "Below you'll find a selection of my key projects showcasing my work in web development, game development, and other areas. For my complete portfolio and source code, check out my GitHub.",
     images: "/img/metadata/work.png",
   },
 };

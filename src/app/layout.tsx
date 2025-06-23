@@ -12,7 +12,7 @@ const inter: NextFont = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Home | BIGBEASTISHANK",
   description:
-    "A Web & Game Developer with a passion to create immersive experiences. Skilled in Unity and currently expanding knowledge with Unreal Engine. I not only work on creating websites & games, but I also explore the complexity of networking and penetration testing. I find joy in securing computer systems & networks. I use Arch BTW!",
+    "An open-source game and web developer who also occasionally creates exclusive games. I used to produce games on Unity, but I'm also learning about the Unreal Engine. I create my website using NextJS. Currently diving into AI/ML fundamentals and practicing data structures and algorithms with Rust. I not only work on creating websites & games, but I also explore the complexity of networking, servers & pentesting. I find joy in securing computer systems & networks. I use Arch BTW!",
   metadataBase: new URL(
     `https://${process.env.VERCEL_URL || "https://yourdomain.com"}`
   ),
@@ -29,12 +29,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Home | BIGBEASTISHANK",
     description:
-      "A Web & Game Developer with a passion to create immersive experiences. Skilled in Unity and currently expanding knowledge with Unreal Engine. I not only work on creating websites & games, but I also explore the complexity of networking and penetration testing. I find joy in securing computer systems & networks. I use Arch BTW!",
+      "An open-source game and web developer who also occasionally creates exclusive games. I used to produce games on Unity, but I'm also learning about the Unreal Engine. I create my website using NextJS. Currently diving into AI/ML fundamentals and practicing data structures and algorithms with Rust. I not only work on creating websites & games, but I also explore the complexity of networking, servers & pentesting. I find joy in securing computer systems & networks. I use Arch BTW!",
     images: "/img/metadata/home.png",
   },
 };
 
-export default function RootLayout({ children } : {children: React.ReactNode}) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning={true}>
       <head>

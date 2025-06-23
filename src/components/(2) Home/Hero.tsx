@@ -59,6 +59,8 @@ export default function Hero() {
           An open-source game and web developer who also occasionally creates
           exclusive games. I used to produce games on Unity, but I'm also
           learning about the Unreal Engine. I create my website using NextJS.
+          Currently diving into AI/ML fundamentals and practicing data
+          structures and algorithms with Rust.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 100 }}

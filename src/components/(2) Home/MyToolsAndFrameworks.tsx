@@ -14,8 +14,10 @@ export default function MyToolsAndFramework() {
         description={
           <>
             <p>
-              All the languages I know and I have worked with in the past. You
-              can click on the card title to open docs.
+              Below you'll find the key frameworks and tools I rely on for my
+              development work. Feel free to click on any card title to read
+              their documentation and learn more about how these technologies
+              works.
             </p>
           </>
         }
@@ -29,7 +31,11 @@ export default function MyToolsAndFramework() {
             key={index}
             initial={{ y: 50, scale: 0.4, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
-            transition={{ delay: 5.55 + (index * 0.3) / 2, duration: 0.5, type: "spring" }}
+            transition={{
+              delay: 5.55 + (index * 0.3) / 2,
+              duration: 0.5,
+              type: "spring",
+            }}
             {...({ className: "group/chm" } as HTMLMotionProps<"li">)}
           >
             <div className="group bg-[#1A1E23] border border-[#1793D1]/70 hover:border-[#00FF00]/70 flex flex-col overflow-auto h-[8rem] md:w-[8rem] w-[6rem] rounded-2xl hover:scale-[1.1] transition-all hover:shadow-xl shadow-md hover:shadow-[#00FF00]/80 shadow-[#1793D1]/50">

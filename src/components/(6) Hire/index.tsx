@@ -25,7 +25,7 @@ export default function HireComponent() {
       />
 
       {/* Short Divider */}
-      <ShortDivider delay={0.55}/>
+      <ShortDivider delay={0.55} />
 
       {/* Hire me card */}
       <ul className="px-2 my-10">
@@ -35,7 +35,11 @@ export default function HireComponent() {
             key={index}
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 + (index * 0.3) / 2, duration: 0.5, type: "spring" }}
+            transition={{
+              delay: 0.7 + (index * 0.3) / 2,
+              duration: 0.5,
+              type: "spring",
+            }}
             {...({ className: "scroll-mt-28" } as HTMLMotionProps<"li">)}
           >
             <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#FFFF00]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#FFFF00]/80 shadow-[#1793D1]/50">

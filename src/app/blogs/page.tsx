@@ -9,7 +9,7 @@ import { number } from "framer-motion";
 export const metadata: Metadata = {
   title: "Blogs | BIGBEASTISHANK",
   description:
-    "Explore a collection of my blogs covering a variety of topics, including web development, game development, and much more. Dive in to discover practical tips, insightful experiences, and helpful tricks that I've gathered along my journey.",
+    "Welcome to my technical blog where I share insights from my development journey. You'll find articles spanning web development, mobile app creation with Flutter, machine learning experiments, and the occasional deep dive into game development. Each post reflects real-world challenges I've tackled and the solutions I've discovered along the way. Looking for content on a particular technology or facing a specific development challenge? Drop me a line using the contact information on the home page - I'm always open to exploring new topics that could help fellow developers.",
   metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
   keywords: [
     "Next.js",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blogs | BIGBEASTISHANK",
     description:
-      "Explore a collection of my blogs covering a variety of topics, including web development, game development, and much more. Dive in to discover practical tips, insightful experiences, and helpful tricks that I've gathered along my journey.",
+      "Welcome to my technical blog where I share insights from my development journey. You'll find articles spanning web development, mobile app creation with Flutter, machine learning experiments, and the occasional deep dive into game development. Each post reflects real-world challenges I've tackled and the solutions I've discovered along the way. Looking for content on a particular technology or facing a specific development challenge? Drop me a line using the contact information on the home page - I'm always open to exploring new topics that could help fellow developers.",
     images: "/img/metadata/blogs.png",
   },
 };
