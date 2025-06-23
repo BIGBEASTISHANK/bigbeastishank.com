@@ -35,11 +35,10 @@ export default function Hero() {
         I'm Ishank ~{" "}
         <ReactTyped
           strings={[
-            "Web Developer",
+            "Full-Stack Web Developer",
             "Game Developer",
-            "Networking Enthusiast",
+            "Network and Server Administrator",
             "Pentester",
-            "Server Administrator",
           ]}
           typeSpeed={60}
           backSpeed={40}
