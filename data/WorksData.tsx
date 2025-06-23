@@ -84,7 +84,7 @@ export const websiteProjects: ProjectData[] = [
   {
     title: "Initial React Site",
     description:
-      "I made this website while I was still learning web development and began experimenting with ReactJS.  It serves as a benchmark to show how far I've come in my life.",
+      "- I made this website while I was still learning web development and began experimenting with ReactJS. It taught me different aspect of web development.",
     projectUrl: "https://github.com/BIGBEASTISHANK/Initial-Websites/tree/react",
   },
 
@@ -135,7 +135,7 @@ export const otherProjects: ProjectData[] = [
   {
     title: "BBeast Discord Bot",
     description:
-      "This is my Discord bot, 'BBeast'. Sadly it had been shutdown.",
+      "My discord bot which helps users to get engaged with the platform and it also helps moderator to keep the community safe & well organised.",
     projectUrl: "https://github.com/BIGBEASTISHANK/BBeast-Discord-Bot",
   },
 ];
