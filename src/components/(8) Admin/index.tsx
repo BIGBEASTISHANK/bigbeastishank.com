@@ -75,6 +75,7 @@ export default function AdminComponent() {
       console.log(data);
       if (!response.ok) {
         setError(data.error);
+        setIsLoggingIn(false);
         await new Promise((resolve) => setTimeout(resolve, 5000));
         setError("");
       } else {
@@ -84,14 +85,13 @@ export default function AdminComponent() {
     } catch (error) {
       // Setting formdata and error message
       setError("Internal server error");
+      setIsLoggingIn(false);
       console.log(String(error));
 
       // Waiting for error message to disappear
       setTimeout(() => {
         setError("");
       }, 5000);
-    } finally {
-      setIsLoggingIn(false);
     }
   }
 
@@ -158,11 +158,10 @@ export default function AdminComponent() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.5, type: "spring" }}
                 type="submit"
-                className="w-min"
               >
-                <p className="bg-[#1793D1] text-white px-4 py-2 outline-none rounded-full cursor-pointer hover:scale-[1.1] transition-all w-min">
+                <p className="bg-[#1793D1] text-white outline-none border-none rounded-full cursor-pointer hover:scale-[1.1] transition-all w-[6rem] flex justify-center items-center h-[2.5rem]">
                   {isLoggingIn ? (
-                  <PulseLoader loading={true} size={15} color="white" />
+                  <PulseLoader loading={true} size={15} color="white"/>
                 ) : (
                   "Login"
                 )}
