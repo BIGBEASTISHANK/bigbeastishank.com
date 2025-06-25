@@ -3,6 +3,7 @@
 html {
   background-color: CP.getColor(background, primary);
   color: CP.getColor(text, primary);
+  scroll-behavior: smooth;
 }
 
 .navItemIsActive {

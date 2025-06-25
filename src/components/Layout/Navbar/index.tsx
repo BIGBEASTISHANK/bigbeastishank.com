@@ -9,6 +9,7 @@ export default function NavbarComponent() {
   // Getting pathname
   const currentPath: string = usePathname();
 
+  // Returning different nav if on other page
   return <nav>{currentPath === "/" ? null : <OtherPageNavbarComponent />}</nav>;
 }
 
@@ -16,21 +17,49 @@ export default function NavbarComponent() {
 export function RootNavbarComponent() {
   // Variables
   const currentPath: string = usePathname();
-  const [activePath, setActivePath] = useState(currentPath);
-  const [heroSectionViewPercent, setHeroSectionViewPercent] = useState(0.0);
+  const [isFixed, setIsFixed] = useState(false);
+
+  // Use effect to run functions
+  useEffect(() => {
+    // Hero in viewport checking
+    function heroInViewport() {
+      // Variables
+      let sectionViewport = 0;
+      const heroElement = document.getElementById("hero");
+
+      if (heroElement) {
+        // Getting Rect
+        const rect: DOMRect = heroElement.getBoundingClientRect();
+        sectionViewport = (rect.bottom/rect.height)*100;
+      }
+
+      // Setting navbar should be fixed
+      if(sectionViewport < 10.7) setIsFixed(true);
+      else setIsFixed(false);
+    }
+
+    // Initializing functions
+    heroInViewport();
+
+    // Added scroll event listner
+    window.addEventListener("scroll", heroInViewport);
+
+    // Removing event listner
+    return () => window.removeEventListener("scroll", heroInViewport);
+  }, [isFixed]);
 
   return (
     <nav
       className={`${
-        heroSectionViewPercent < 10.7 ? "fixed top-0" : "relative"
-      } flex justify-center items-center gap-5 rounded-full my-[1rem] w-min px-3 py-3 backdrop-blur-xl border`}
+        isFixed ? "fixed top-0" : "relative"
+      } flex justify-center items-center md:gap-5 rounded-full my-[1rem] w-min px-3 py-3 backdrop-blur-xl border`}
       style={{ borderColor: CP.border.emphasis.hex }}
     >
       {NavbarData.map((data, index) => (
         <p
           key={index}
           className={`px-3 py-1 rounded-full select-none ${
-            activePath === data.link ? "navItemIsActive" : ""
+            currentPath === data.link ? "navItemIsActive" : ""
           }`}
         >
           <Link href={data.link}>{data.name}</Link>
