@@ -21,11 +21,13 @@ export function RootNavbarComponent() {
 
   // Use effect to run functions
   useEffect(() => {
+    // Variables
+    const heroElement = document.getElementById("hero");
+    
     // Hero in viewport checking
     function heroInViewport() {
       // Variables
       let sectionViewport = 0;
-      const heroElement = document.getElementById("hero");
 
       if (heroElement) {
         // Getting Rect
@@ -46,7 +48,7 @@ export function RootNavbarComponent() {
 
     // Removing event listner
     return () => window.removeEventListener("scroll", heroInViewport);
-  }, [isFixed]);
+  }, []);
 
   return (
     <nav
