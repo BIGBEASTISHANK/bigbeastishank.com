@@ -1,0 +1,10 @@
+@use "ColorPalette" as CP;
+
+html {
+  background-color: CP.getColor(background, primary);
+  color: CP.getColor(text, primary);
+}
+
+.navItemIsActive {
+  background-color: CP.getColor(primary);
+}

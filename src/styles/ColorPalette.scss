@@ -1,0 +1,58 @@
+@use "sass:map";
+
+$ColorPalette: (
+  // Background Colors
+  background: (
+    primary: #0D1117,
+    secondary: #161B22,
+    elevated: #21262D,
+  ),
+
+  // Surface Colors
+  surface: (
+    low: #1C2128,
+    medium: #2D333B,
+    high: #373E47,
+  ),
+
+  // Primary Color
+  primary: #1793D1,
+
+  // Secondary Colors
+  secondary: #0F5F8A,
+  accent: #4DB8E8,
+
+  // Text Colors
+  text: (
+    primary: #FFFFFF,
+    secondary: #C9D1D9,
+    tertiary: #8B949E,
+  ),
+
+  // Border Colors
+  border: (
+    subtle: #30363D,
+    emphasis: #484F58,
+  ),
+
+  // Neutral Colors
+  neutral: (
+    dark: #2C3E50,
+    medium: #7F8C8D,
+    light: #F8F9FA,
+  ),
+
+  // Supporting Colors
+  success: #27AE60,
+  warning: #F39C12,
+  error: #E74C3C
+);
+
+// getcolor function
+@function getColor($category, $variant: null) {
+  @if $variant {
+    @return map.get(map.get($ColorPalette, $category), $variant);
+  } @else {
+    @return map.get($ColorPalette, $category);
+  }
+}
