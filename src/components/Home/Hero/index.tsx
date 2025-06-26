@@ -12,9 +12,9 @@ export default function HeroComponent() {
     >
       {/* Main hero content */}
       <div className="flex-auto">
-        <div className="h-full w-full flex px-20">
+        <div className="h-full w-full flex px-60">
           {/* Name & basic info */}
-          <div className="order-1 h-full w-full flex flex-col justify-center items-center">
+          <div className="h-full w-full flex flex-col justify-center items-start">
             <div className="flex flex-col">
               {/* Hello & Name */}
               <h3 className="ml-1" style={{ color: CP.text.secondary.hex }}>
@@ -28,14 +28,39 @@ export default function HeroComponent() {
                   Student | Developer | Open Source & Linux lover
                 </h2>
               </div>
+
+              {/* Buttons */}
+              <div className="flex gap-5 text-sm mt-5 ml-1">
+                {/* Contact me code */}
+                <motion.a
+                target="_blank"
+                href={"mailto:business@bigbeastishank.com"}
+                  whileTap={{ scale: 0.8 }}
+                  whileHover={{ scale: 1.2 }}
+                  style={{ backgroundColor: CP.primary.hex }}
+                  className="px-3 py-2 rounded-full outline-none cursor-pointer select-none"
+                >
+                  Contact Me
+                </motion.a>
+
+                {/* Download resume */}
+                <motion.a
+                  target="_blank"
+                  href={"/documents/CV.pdf"}
+                  whileTap={{ scale: 0.8 }}
+                  whileHover={{ scale: 1.2 }}
+                  style={{ backgroundColor: CP.secondary.hex }}
+                  className="px-3 py-2 rounded-full outline-none cursor-pointer select-none"
+                >
+                  Read CV
+                </motion.a>
+              </div>
             </div>
           </div>
 
-          {/* Seprator */}
-          <div className="order-2 h-full w-full" />
-
           {/* Intro Code */}
-          <div className="order-3 h-full w-full flex flex-col justify-center items-center">
+          <div className="h-full w-full flex flex-col justify-center items-end">
+            {/* Code */}
             <IntroCodeComponent />
           </div>
         </div>

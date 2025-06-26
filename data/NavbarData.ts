@@ -4,6 +4,10 @@ export const NavbarData = [
     link: "/#hero",
   },
   {
+    name: "About",
+    link: "/#about"
+  },
+  {
     name: "Skills",
     link: "/#skills"
   },

@@ -24,17 +24,17 @@ export function RootNavbarComponent() {
   // Use effect to run functions
   useEffect(() => {
     // Variables
-    const heroElement = document.getElementById("hero");
-    const skillsElement = document.getElementById("skills");
+    const allSections = ["about", "skills", "works"];
 
     // Hero in viewport checking
     function heroInViewport() {
+      const element = document.getElementById("hero");
       // Variables
       let sectionViewport = 0;
 
-      if (heroElement) {
+      if (element) {
         // Getting Rect
-        const rect: DOMRect = heroElement.getBoundingClientRect();
+        const rect: DOMRect = element.getBoundingClientRect();
         sectionViewport = (rect.bottom / rect.height) * 100;
       }
 
@@ -46,28 +46,31 @@ export function RootNavbarComponent() {
     }
 
     // Skills in viewport checking
-    function skillsInViewport() {
-      // Variables
-      let sectionViewport = 0;
+    function otherSectionInViewport() {
+      allSections.map((ele) => {
+        // Variables
+        let sectionViewport = 0;
+        const element = document.getElementById(ele);
 
-      if (skillsElement) {
-        // Getting Rect
-        const rect: DOMRect = skillsElement.getBoundingClientRect();
-        sectionViewport = (rect.top / rect.height) * 100;
-      }
+        if (element) {
+          // Getting Rect
+          const rect: DOMRect = element.getBoundingClientRect();
+          sectionViewport = (rect.top / rect.height) * 100;
+        }
 
-      // Changing path
-      if (sectionViewport < 49) setActivePath("/#skills");
+        // Changing path
+        if (sectionViewport < 49) setActivePath(`/#${ele}`);
+      });
     }
 
-    // Initializing functions
-    heroInViewport();
-    skillsInViewport();
-
+    // Scroll handler function
     const scrollHandler = () => {
       heroInViewport();
-      skillsInViewport();
+      otherSectionInViewport();
     };
+
+    // Initializing all function
+    scrollHandler();
 
     // Added scroll event listner
     window.addEventListener("scroll", scrollHandler);

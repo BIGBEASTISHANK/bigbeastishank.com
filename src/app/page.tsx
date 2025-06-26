@@ -1,5 +1,7 @@
+import AboutComponent from "@/components/Home/About";
 import HeroComponent from "@/components/Home/Hero";
 import SkillsComponent from "@/components/Home/Skills";
+import WorksComponent from "@/components/Home/Works";
 import Image from "next/image";
 
 export default function Home() {
@@ -12,9 +14,18 @@ export default function Home() {
         width={1200}
         alt="blueSquare"
       />
+
+      {/* Hero */}
       <HeroComponent />
 
+      {/* About */}
+      <AboutComponent />
+
+      {/* Skills */}
       <SkillsComponent />
+
+      {/* Works */}
+      <WorksComponent />
 
       <div className="h-screen" id={"jiasd"} />
     </div>
