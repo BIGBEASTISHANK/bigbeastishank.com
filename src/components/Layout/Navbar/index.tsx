@@ -1,9 +1,10 @@
 "use client";
-import { ColorPalette as CP } from "@@/data/ColorPaletteData";
-import { NavbarData } from "@@/data/NavbarData";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { NavbarData } from "@@/data/NavbarData";
+import { ColorPalette as CP } from "@@/data/ColorPaletteData";
 
 export default function NavbarComponent() {
   // Getting pathname
@@ -17,13 +18,15 @@ export default function NavbarComponent() {
 export function RootNavbarComponent() {
   // Variables
   const currentPath: string = usePathname();
+  const [activePath, setActivePath] = useState(currentPath + "#hero");
   const [isFixed, setIsFixed] = useState(false);
 
   // Use effect to run functions
   useEffect(() => {
     // Variables
     const heroElement = document.getElementById("hero");
-    
+    const skillsElement = document.getElementById("skills");
+
     // Hero in viewport checking
     function heroInViewport() {
       // Variables
@@ -32,40 +35,81 @@ export function RootNavbarComponent() {
       if (heroElement) {
         // Getting Rect
         const rect: DOMRect = heroElement.getBoundingClientRect();
-        sectionViewport = (rect.bottom/rect.height)*100;
+        sectionViewport = (rect.bottom / rect.height) * 100;
       }
 
       // Setting navbar should be fixed
-      if(sectionViewport < 10.7) setIsFixed(true);
+      if (sectionViewport < 10.7) setIsFixed(true);
       else setIsFixed(false);
+
+      if (sectionViewport > 49) setActivePath("/#hero");
+    }
+
+    // Skills in viewport checking
+    function skillsInViewport() {
+      // Variables
+      let sectionViewport = 0;
+
+      if (skillsElement) {
+        // Getting Rect
+        const rect: DOMRect = skillsElement.getBoundingClientRect();
+        sectionViewport = (rect.top / rect.height) * 100;
+      }
+
+      // Changing path
+      if (sectionViewport < 49) setActivePath("/#skills");
     }
 
     // Initializing functions
     heroInViewport();
+    skillsInViewport();
+
+    const scrollHandler = () => {
+      heroInViewport();
+      skillsInViewport();
+    };
 
     // Added scroll event listner
-    window.addEventListener("scroll", heroInViewport);
+    window.addEventListener("scroll", scrollHandler);
 
     // Removing event listner
-    return () => window.removeEventListener("scroll", heroInViewport);
+    return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
   return (
     <nav
       className={`${
         isFixed ? "fixed top-0" : "relative"
-      } flex justify-center items-center md:gap-5 rounded-full my-[1rem] w-min px-3 py-3 backdrop-blur-xl border`}
+      } flex justify-center items-center md:gap-5 rounded-full my-[1rem] w-min px-3 py-3 backdrop-blur-xl border overflow-hidden z-50`}
       style={{ borderColor: CP.border.emphasis.hex }}
     >
       {NavbarData.map((data, index) => (
-        <p
+        <motion.div
           key={index}
-          className={`px-3 py-1 rounded-full select-none ${
-            currentPath === data.link ? "navItemIsActive" : ""
-          }`}
+          className={`rounded-full select-none flex relative`}
         >
-          <Link href={data.link}>{data.name}</Link>
-        </p>
+          {/* Active background color */}
+          {activePath === data.link && (
+            <motion.div
+              layoutId={`navbarBgActive-${isFixed ? "fixed" : "relative"}`}
+              className="absolute inset-0 rounded-full"
+              style={{ backgroundColor: CP.primary.hex }}
+              transition={{
+                type: "spring",
+                stiffness: 1000,
+                damping: 60,
+                restDelta: 0.02,
+              }}
+              initial={false}
+              animate={{ x: 0, y: 0 }}
+            />
+          )}
+
+          {/* Text */}
+          <Link href={data.link} className="relative z-10 px-3 py-1">
+            {data.name}
+          </Link>
+        </motion.div>
       ))}
     </nav>
   );

@@ -1,7 +1,11 @@
 export const NavbarData = [
   {
     name: "Home",
-    link: "/",
+    link: "/#hero",
+  },
+  {
+    name: "Skills",
+    link: "/#skills"
   },
   {
     name: "Works",

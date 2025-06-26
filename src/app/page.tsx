@@ -8,7 +8,7 @@ export default function Home() {
 
       <SkillsComponent />
 
-      <div className="h-screen" id={'ji'}/>
+      <div className="h-screen" id={'jiasd'}/>
     </>
   );
 }
