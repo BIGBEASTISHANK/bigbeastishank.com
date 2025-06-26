@@ -94,7 +94,7 @@ export function RootNavbarComponent() {
           {/* Active background color */}
           {activePath === data.link && (
             <motion.div
-              layoutId={`navbarBgActive-${isFixed ? "fixed" : "relative"}`}
+              layoutId={"navbarBgActive"}
               className="absolute inset-0 rounded-full"
               style={{ backgroundColor: CP.primary.hex }}
               transition={{
