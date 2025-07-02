@@ -2,7 +2,7 @@
 import { motion } from "motion/react";
 import { ColorPalette as CP } from "@@/data/ColorPaletteData";
 import { RootNavbarComponent } from "@/components/Layout/Navbar";
-import IntroCodeComponent from "./IntroCode";
+import IntroCodeComponent from "@/components/Home/Hero/IntroCode";
 
 export default function HeroComponent() {
   return (
@@ -17,28 +17,49 @@ export default function HeroComponent() {
           <div className="h-full w-full flex flex-col justify-center xl:items-start items-center">
             <div className="flex flex-col">
               {/* Hello & Name */}
-              <h3
+              <motion.h3
+                initial={{ opacity: 0, y: -100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
                 className="ml-1 sm:text-base text-sm"
                 style={{ color: CP.text.secondary.hex }}
               >
                 Hello I'm
-              </h3>
-              <h1 className="md:text-6xl sm:text-5xl text-4xl font-bold">
+              </motion.h3>
+
+              <motion.h1
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="md:text-6xl sm:text-5xl text-4xl font-bold"
+              >
                 BIG BEAST ISHANK
-              </h1>
+              </motion.h1>
 
               {/* Minor text */}
               <div className="flex flex-col">
-                <h2
+                <motion.h2
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
                   className="ml-1 sm:text-base text-sm"
                   style={{ color: CP.text.secondary.hex }}
                 >
                   Student | Developer | Linux & Open Source lover
-                </h2>
+                </motion.h2>
               </div>
 
               {/* Buttons */}
-              <div className="flex gap-5 sm:text-sm text-xs mt-5 ml-1">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 1 }}
+                className="flex gap-5 sm:text-sm text-xs mt-5 ml-1"
+              >
                 {/* Contact me code */}
                 <motion.a
                   target="_blank"
@@ -68,7 +89,7 @@ export default function HeroComponent() {
                 >
                   Read CV
                 </motion.a>
-              </div>
+              </motion.div>
             </div>
           </div>
 

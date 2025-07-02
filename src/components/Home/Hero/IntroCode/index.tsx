@@ -1,8 +1,14 @@
+"use client";
+import { motion } from "motion/react";
 import { ColorPalette as CP } from "@@/data/ColorPaletteData";
 
 export default function IntroCodeComponent() {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, scale: 0 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.2 }}
       className="rounded-3xl pl-5 sm:pr-30 pr-10 py-5 font-mono md:text-sm text-xs overflow-auto backdrop-blur-3xl"
       style={{
         backgroundColor: `${CP.surface.low.hex}D1`,
@@ -194,6 +200,6 @@ export default function IntroCodeComponent() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -14,7 +14,7 @@ export default function AboutComponent() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="min-h-full lg:w-2/5 flex items-center justify-center lg:pt-0 pt-25 lg:pb-0 pb-10"
+        className="min-h-full lg:w-2/5 flex items-center justify-center lg:mt-0 mt-25 lg:mb-0 mb-10"
       >
         <img
           src="/image/main/pfp.png"
