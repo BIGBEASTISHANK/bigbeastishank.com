@@ -15,7 +15,7 @@ export default function HeroComponent() {
         <div className="h-full w-full flex xl:flex-row flex-col 2xl:px-30 xl:px-10 px-5 justify-center">
           {/* Name & basic info */}
           <div className="h-full w-full flex flex-col justify-center xl:items-start items-center">
-            <div className="flex flex-col">
+            <div className="flex flex-col backdrop-blur-md p-5 rounded-3xl select-none" style={{ border: `1px solid ${CP.border.subtle.hex}` }}>
               {/* Hello & Name */}
               <motion.h3
                 initial={{ opacity: 0, y: -100 }}
@@ -70,7 +70,7 @@ export default function HeroComponent() {
                     backgroundColor: CP.primary.hex,
                     border: `1px solid ${CP.background.primary.hex}`,
                   }}
-                  className="px-3 py-2 rounded-full outline-none cursor-pointer select-none"
+                  className="px-3 py-2 rounded-full outline-none cursor-pointer"
                 >
                   Contact Me
                 </motion.a>
@@ -85,7 +85,7 @@ export default function HeroComponent() {
                     backgroundColor: CP.secondary.hex,
                     border: `1px solid ${CP.background.primary.hex}`,
                   }}
-                  className="px-3 py-2 rounded-full outline-none cursor-pointer select-none"
+                  className="px-3 py-2 rounded-full outline-none cursor-pointer"
                 >
                   Read CV
                 </motion.a>

@@ -83,7 +83,7 @@ export function RootNavbarComponent() {
     <nav
       className={`${
         isFixed ? "fixed top-0" : "relative"
-      } flex justify-center items-center md:gap-5 gap-2 rounded-full my-[1rem] w-min px-2 md:px-3 py-2 md:py-3 backdrop-blur-xl border overflow-hidden z-50 text-[0.775rem] sm:text-sm md:text-base`}
+      } flex justify-center items-center md:gap-5 gap-2 rounded-full my-[1rem] w-min px-2 md:px-3 py-2 md:py-3 backdrop-blur-xl border overflow-hidden z-50 text-[0.75rem] sm:text-sm md:text-base`}
       style={{ borderColor: CP.border.emphasis.hex }}
     >
       {NavbarData.map((data, index) => (
@@ -94,8 +94,8 @@ export function RootNavbarComponent() {
           {activePath === data.link && (
             <motion.div
               layoutId={"navbarBgActive"}
-              className="absolute inset-0 rounded-full"
-              style={{ backgroundColor: CP.primary.hex }}
+              className="absolute inset-0 rounded-full blur-xs"
+              style={{ backgroundColor: CP.primary.hex, border: `1px solid ${CP.border.emphasis.hex}` }}
               transition={{
                 type: "spring",
                 stiffness: 1000,

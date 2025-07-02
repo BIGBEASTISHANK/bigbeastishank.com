@@ -6,7 +6,7 @@ export default function AboutComponent() {
   return (
     <div
       id="about"
-      className="min-h-[100dvh] flex lg:flex-row-reverse flex-col px-5 items-center justify-center"
+      className="min-h-[100dvh] flex lg:flex-row-reverse flex-col px-5 items-center justify-center scroll-mt-20"
     >
       {/* Image Section */}
       <motion.div
@@ -16,12 +16,17 @@ export default function AboutComponent() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="lg:w-2/5 flex items-center justify-center lg:mb-0 mb-10"
       >
-        <img
-          src="/image/main/pfp.png"
-          alt="PFP"
-          className="rounded-2xl object-cover border-4 2xl:h-[30rem] 2xl:w-[30rem] md:h-[20rem] md:w-[20rem] sm:h-[15rem] sm:w-[15rem] h-[10rem] w-[10rem]"
-          style={{ borderColor: CP.primary.hex }}
-        />
+        <div
+          className="p-[1.062rem] backdrop-blur-md rounded-3xl"
+          style={{ border: `1px solid ${CP.border.subtle.hex}` }}
+        >
+          <img
+            src="/image/main/pfp.png"
+            alt="PFP"
+            className="rounded-2xl object-cover border-4 2xl:h-[30rem] 2xl:w-[30rem] md:h-[20rem] md:w-[20rem] sm:h-[15rem] sm:w-[15rem] h-[12rem] w-[12rem]"
+            style={{ borderColor: CP.primary.hex }}
+          />
+        </div>
       </motion.div>
 
       {/* Text Section */}
@@ -32,7 +37,10 @@ export default function AboutComponent() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="lg:w-3/5 flex flex-col items-center justify-center"
       >
-        <div className="max-w-[55rem] flex flex-col gap-8">
+        <div
+          className="max-w-[55rem] flex flex-col gap-8 backdrop-blur-md p-5 rounded-3xl"
+          style={{ border: `1px solid ${CP.border.subtle.hex}` }}
+        >
           {/* Heading */}
           <h1
             className="text-3xl md:text-5xl sm:text-4xl font-bold"
