@@ -15,12 +15,12 @@ export const NavbarData = [
     name: "Works",
     link: "/#works",
   },
-  {
-    name: "Blogs",
-    link: "/blogs",
-  },
-  {
-    name: "Hire",
-    link: "/hire",
-  },
+  // {
+  //   name: "Blogs",
+  //   link: "/blogs",
+  // },
+  // {
+  //   name: "Hire",
+  //   link: "/hire",
+  // },
 ];
