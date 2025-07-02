@@ -12,32 +12,43 @@ export default function HeroComponent() {
     >
       {/* Main hero content */}
       <div className="flex-auto">
-        <div className="h-full w-full flex px-60">
+        <div className="h-full w-full flex xl:flex-row flex-col 2xl:px-30 xl:px-10 px-5 justify-center">
           {/* Name & basic info */}
-          <div className="h-full w-full flex flex-col justify-center items-start">
+          <div className="h-full w-full flex flex-col justify-center xl:items-start items-center">
             <div className="flex flex-col">
               {/* Hello & Name */}
-              <h3 className="ml-1" style={{ color: CP.text.secondary.hex }}>
+              <h3
+                className="ml-1 sm:text-base text-sm"
+                style={{ color: CP.text.secondary.hex }}
+              >
                 Hello I'm
               </h3>
-              <h1 className="text-6xl font-bold">BIG BEAST ISHANK</h1>
+              <h1 className="md:text-6xl sm:text-5xl text-4xl font-bold">
+                BIG BEAST ISHANK
+              </h1>
 
               {/* Minor text */}
               <div className="flex flex-col">
-                <h2 className="ml-1" style={{ color: CP.text.secondary.hex }}>
-                  Student | Developer | Open Source & Linux lover
+                <h2
+                  className="ml-1 sm:text-base text-sm"
+                  style={{ color: CP.text.secondary.hex }}
+                >
+                  Student | Developer | Linux & Open Source lover
                 </h2>
               </div>
 
               {/* Buttons */}
-              <div className="flex gap-5 text-sm mt-5 ml-1">
+              <div className="flex gap-5 sm:text-sm text-xs mt-5 ml-1">
                 {/* Contact me code */}
                 <motion.a
-                target="_blank"
-                href={"mailto:business@bigbeastishank.com"}
+                  target="_blank"
+                  href={"mailto:business@bigbeastishank.com"}
                   whileTap={{ scale: 0.8 }}
                   whileHover={{ scale: 1.2 }}
-                  style={{ backgroundColor: CP.primary.hex }}
+                  style={{
+                    backgroundColor: CP.primary.hex,
+                    border: `1px solid ${CP.background.primary.hex}`,
+                  }}
                   className="px-3 py-2 rounded-full outline-none cursor-pointer select-none"
                 >
                   Contact Me
@@ -49,7 +60,10 @@ export default function HeroComponent() {
                   href={"/documents/CV.pdf"}
                   whileTap={{ scale: 0.8 }}
                   whileHover={{ scale: 1.2 }}
-                  style={{ backgroundColor: CP.secondary.hex }}
+                  style={{
+                    backgroundColor: CP.secondary.hex,
+                    border: `1px solid ${CP.background.primary.hex}`,
+                  }}
                   className="px-3 py-2 rounded-full outline-none cursor-pointer select-none"
                 >
                   Read CV
@@ -59,7 +73,7 @@ export default function HeroComponent() {
           </div>
 
           {/* Intro Code */}
-          <div className="h-full w-full flex flex-col justify-center items-end">
+          <div className="h-full w-full flex flex-col justify-center xl:items-end items-center">
             {/* Code */}
             <IntroCodeComponent />
           </div>

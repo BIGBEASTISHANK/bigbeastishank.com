@@ -8,7 +8,7 @@ export default function ProgressBar() {
   return (
     <motion.div
       style={{ scaleX: scrollYProgress, background: CP.primary.hex }}
-      className="fixed top-0 h-1 w-full rounded-full"
+      className="fixed top-0 h-1 w-full rounded-full z-100"
     />
   );
 }

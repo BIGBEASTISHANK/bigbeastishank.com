@@ -83,15 +83,14 @@ export function RootNavbarComponent() {
     <nav
       className={`${
         isFixed ? "fixed top-0" : "relative"
-      } flex justify-center items-center md:gap-5 rounded-full my-[1rem] w-min px-3 py-3 backdrop-blur-xl border overflow-hidden z-50`}
+      } flex justify-center items-center md:gap-5 gap-2 rounded-full my-[1rem] w-min px-2 md:px-3 py-2 md:py-3 backdrop-blur-xl border overflow-hidden z-50 text-[0.775rem] sm:text-sm md:text-base`}
       style={{ borderColor: CP.border.emphasis.hex }}
     >
       {NavbarData.map((data, index) => (
         <motion.div
           key={index}
-          className={`rounded-full select-none flex relative`}
+          className="rounded-full select-none flex relative"
         >
-          {/* Active background color */}
           {activePath === data.link && (
             <motion.div
               layoutId={"navbarBgActive"}
@@ -107,9 +106,7 @@ export function RootNavbarComponent() {
               animate={{ x: 0, y: 0 }}
             />
           )}
-
-          {/* Text */}
-          <Link href={data.link} className="relative z-10 px-3 py-1">
+          <Link href={data.link} className="relative z-10 px-2 md:px-3 py-1">
             {data.name}
           </Link>
         </motion.div>

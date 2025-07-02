@@ -3,8 +3,11 @@ import { ColorPalette as CP } from "@@/data/ColorPaletteData";
 export default function IntroCodeComponent() {
   return (
     <div
-      className="rounded-3xl pl-5 pr-20 py-10 font-mono text-sm overflow-auto"
-      style={{ backgroundColor: CP.surface.low.hex }}
+      className="rounded-3xl pl-5 sm:pr-30 pr-10 py-5 font-mono md:text-sm text-xs overflow-auto backdrop-blur-3xl"
+      style={{
+        backgroundColor: `${CP.surface.low.hex}D1`,
+        border: `1px solid ${CP.surface.low.hex}`,
+      }}
     >
       <div className="flex">
         {/* Line numbers */}
@@ -12,7 +15,7 @@ export default function IntroCodeComponent() {
           className="pr-4 select-none flex flex-col gap-1"
           style={{ color: CP.text.tertiary.hex }}
         >
-          {Array.from({ length: 11 }, (_, i) => (
+          {Array.from({ length: 12 }, (_, i) => (
             <div key={i + 1} className="leading-relaxed">
               {i + 1}.
             </div>
@@ -22,6 +25,7 @@ export default function IntroCodeComponent() {
         {/* Code content */}
         <div className="flex flex-col gap-1">
           <div className="leading-relaxed">
+            {/* 1 - Class */}
             <span className="font-bold" style={{ color: CP.accent.hex }}>
               class
             </span>{" "}
@@ -36,6 +40,7 @@ export default function IntroCodeComponent() {
             </span>
           </div>
 
+          {/* 2 - Public */}
           <div className="leading-relaxed ml-4">
             <span className="font-bold" style={{ color: CP.error.hex }}>
               public
@@ -43,6 +48,7 @@ export default function IntroCodeComponent() {
             <span style={{ color: CP.text.secondary.hex }}>:</span>
           </div>
 
+          {/* 3 - Name */}
           <div className="leading-relaxed ml-8">
             <span className="font-bold" style={{ color: CP.accent.hex }}>
               string
@@ -71,6 +77,7 @@ export default function IntroCodeComponent() {
             <span style={{ color: CP.text.secondary.hex }}>;</span>
           </div>
 
+          {/* 4 - Age */}
           <div className="leading-relaxed ml-8">
             <span className="font-bold" style={{ color: CP.accent.hex }}>
               int
@@ -99,6 +106,7 @@ export default function IntroCodeComponent() {
             <span style={{ color: CP.text.secondary.hex }}>;</span>
           </div>
 
+          {/* 5 - Professions */}
           <div className="leading-relaxed ml-8">
             <span className="font-bold" style={{ color: CP.accent.hex }}>
               string
@@ -107,7 +115,7 @@ export default function IntroCodeComponent() {
               className="font-semibold"
               style={{ color: CP.text.primary.hex }}
             >
-              traits
+              professions
             </span>
             <span
               className="font-bold"
@@ -126,6 +134,7 @@ export default function IntroCodeComponent() {
             </span>
           </div>
 
+          {/* 6 - Game Developer */}
           <div className="leading-relaxed ml-12">
             <span className="font-medium" style={{ color: CP.success.hex }}>
               "Game developer"
@@ -133,6 +142,7 @@ export default function IntroCodeComponent() {
             <span style={{ color: CP.text.secondary.hex }}>,</span>
           </div>
 
+          {/* 7 - Fullstack Web Developer */}
           <div className="leading-relaxed ml-12">
             <span className="font-medium" style={{ color: CP.success.hex }}>
               "Fullstack Web developer"
@@ -140,13 +150,22 @@ export default function IntroCodeComponent() {
             <span style={{ color: CP.text.secondary.hex }}>,</span>
           </div>
 
+          {/* 8 - Network Administrator */}
           <div className="leading-relaxed ml-12">
             <span className="font-medium" style={{ color: CP.success.hex }}>
-              "Network &amp; Server Administrator"
+              "Network Administrator"
+            </span>
+            <span style={{ color: CP.text.secondary.hex }}>,</span>
+          </div>
+          {/* 9 - Server Administrator */}
+          <div className="leading-relaxed ml-12">
+            <span className="font-medium" style={{ color: CP.success.hex }}>
+              "Server Administrator"
             </span>
             <span style={{ color: CP.text.secondary.hex }}>,</span>
           </div>
 
+          {/* 10 - Pentester */}
           <div className="leading-relaxed ml-12">
             <span className="font-medium" style={{ color: CP.success.hex }}>
               "Pentester"
@@ -154,6 +173,7 @@ export default function IntroCodeComponent() {
             <span style={{ color: CP.text.secondary.hex }}>,</span>
           </div>
 
+          {/* 11 - Closing */}
           <div className="leading-relaxed ml-8">
             <span
               className="font-bold"
@@ -163,6 +183,7 @@ export default function IntroCodeComponent() {
             </span>
           </div>
 
+          {/* 12 - Closing */}
           <div className="leading-relaxed">
             <span
               className="font-bold"
