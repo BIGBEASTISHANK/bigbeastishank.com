@@ -21,8 +21,6 @@ export default function Home() {
 
       {/* Works */}
       <WorksComponent />
-
-      <div className="h-screen" id={"jiasd"} />
     </div>
   );
 }

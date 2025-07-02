@@ -6,7 +6,7 @@ export default function AboutComponent() {
   return (
     <div
       id="about"
-      className="min-h-[100dvh] flex lg:flex-row-reverse flex-col px-5 items-center"
+      className="min-h-[100dvh] flex lg:flex-row-reverse flex-col px-5 items-center justify-center"
     >
       {/* Image Section */}
       <motion.div
@@ -14,7 +14,7 @@ export default function AboutComponent() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="min-h-full lg:w-2/5 flex items-center justify-center lg:mt-0 mt-25 lg:mb-0 mb-10"
+        className="lg:w-2/5 flex items-center justify-center lg:mb-0 mb-10"
       >
         <img
           src="/image/main/pfp.png"
@@ -30,7 +30,7 @@ export default function AboutComponent() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="min-h-full lg:w-3/5 flex flex-col items-center justify-center"
+        className="lg:w-3/5 flex flex-col items-center justify-center"
       >
         <div className="max-w-[55rem] flex flex-col gap-8">
           {/* Heading */}

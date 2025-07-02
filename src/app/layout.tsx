@@ -5,6 +5,7 @@ import { Noto_Sans } from "next/font/google";
 import ProgressBar from "@/utility/ProgressBar";
 import NavbarComponent from "@/components/Layout/Navbar";
 import { NextFont } from "next/dist/compiled/@next/font";
+import LayoutBackground from "@/utility/LayoutBackground";
 
 // Variables
 const notoSans: NextFont = Noto_Sans({ subsets: ["latin"] });
@@ -23,9 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={`${notoSans.className} antialiased`}>
+        {/* Layout background */}
+        <LayoutBackground />
+        {/* Progress bar */}
         <ProgressBar />
         {/* Navbar */}
         <NavbarComponent />
+
         {children}
       </body>
     </html>
