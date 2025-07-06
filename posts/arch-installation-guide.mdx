@@ -66,6 +66,8 @@ timedatectl set-ntp true
 
 ## 4. Partition the Disk
 
+Use `lsblk` to get the disk name:
+
 Use `cfdisk` on your disk (replace `/dev/sdX`):
 
 ```bash
@@ -104,7 +106,7 @@ mount /dev/sdX1 /mnt/boot/EFI
 ## 7. Install Base System
 
 ```bash
-pacstrap -K /mnt base linux linux-firmware vim networkmanager grub efibootmgr osprober sudo git
+pacstrap -K /mnt base linux linux-firmware vim networkmanager grub efibootmgr os-prober sudo git
 ```
 
 ---
