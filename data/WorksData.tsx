@@ -50,6 +50,13 @@ export const gameProjects: ProjectData[] = [
 //
 // Websites
 export const websiteProjects: ProjectData[] = [
+  // Crisis Compass
+  {
+    title: "Crisis Compass",
+    description:
+      "AI-powered disaster response coordination system that optimizes rescue operations through ML-based severity prediction, intelligent resource allocation, and real-time multi-agency coordination with a centralized communication section.",
+    projectUrl: "https://github.com/BIGBEASTISHANK/CrisisCompass",
+  },
   // MUJ Tasks
   {
     title: "MUJ Tasks",
