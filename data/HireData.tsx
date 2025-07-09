@@ -95,7 +95,6 @@ export const webHire: HireData[] = [
       "SEO Optimization (On Page)",
       "Free Lifetime domain",
       "Advanced Animations / Interactions",
-      "Custom Domain (1 Year)",
     ],
     originalPrice: currencyFormatter.format(4000),
     discountedPrice: currencyFormatter.format(3099),
