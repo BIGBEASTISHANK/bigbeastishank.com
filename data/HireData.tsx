@@ -23,9 +23,9 @@ interface HireData {
 // Advanced Animations / Interactions: 800
 // API Integration: 2,000
 // Web.dev Optimization: 500
+// Custom Domain (1 Year): 1110
 // Maintenance & Updates: 1,000
 // Priority Support: 1,500
-// Custom Domain (1 Year): 1110
 // Minor Revision: 200
 // Major Revision: 2,000
 // Admin Panel: 3000
@@ -42,10 +42,10 @@ export const webPlanFeatures: string[] = [
   "Dynamic Page",
   "API Integration",
   "Web.dev Optimization",
+  "Custom Domain (1 Year)",
   "Admin Panel",
   "Maintenance & Updates",
   "Priority Support",
-  "Custom Domain (1 Year)",
 ];
 
 // All hire plan
