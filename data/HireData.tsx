@@ -120,6 +120,7 @@ export const webHire: HireData[] = [
       "API Integration",
       "Web.dev Optimization",
       "Dynamic Page",
+      "Custom Domain (1 Year)",
     ],
     originalPrice: currencyFormatter.format(9700),
     discountedPrice: currencyFormatter.format(5899),
