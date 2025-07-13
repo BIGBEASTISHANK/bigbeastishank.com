@@ -6,7 +6,7 @@ export default function AboutComponent() {
   return (
     <div
       id="about"
-      className="min-h-[100dvh] flex lg:flex-row-reverse flex-col px-5 items-center justify-center scroll-mt-20"
+      className="min-h-[100vh] flex lg:flex-row-reverse flex-col px-5 items-center justify-center scroll-mt-20"
     >
       {/* Image Section */}
       <motion.div
@@ -14,7 +14,7 @@ export default function AboutComponent() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="lg:w-2/5 flex items-center justify-center lg:mb-0 mb-10"
+        className="lg:w-2/5 flex items-center justify-center lg:mb-0 mb-10 select-none"
       >
         <div
           className="p-[1.062rem] backdrop-blur-md rounded-3xl"
@@ -43,7 +43,7 @@ export default function AboutComponent() {
         >
           {/* Heading */}
           <h1
-            className="text-3xl md:text-5xl sm:text-4xl font-bold"
+            className="text-3xl md:text-5xl sm:text-4xl font-bold select-none"
             style={{ color: CP.accent.hex }}
           >
             About Me

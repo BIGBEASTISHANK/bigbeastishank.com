@@ -8,20 +8,27 @@ export default function HeroComponent() {
   return (
     <div
       id="hero"
-      className="h-[100dvh] flex flex-col relative overflow-hidden"
+      className="min-h-[100vh] flex flex-col relative overflow-hidden"
     >
       {/* Main hero content */}
-      <div className="flex-auto">
-        <div className="h-full w-full flex xl:flex-row flex-col 2xl:px-30 xl:px-10 px-5 justify-center">
+      <div className="flex flex-auto justify-between">
+        <div className="flex-auto flex xl:flex-row flex-col 2xl:px-30 xl:px-10 px-5">
           {/* Name & basic info */}
-          <div className="h-full w-full flex flex-col justify-center xl:items-start items-center">
-            <div className="flex flex-col backdrop-blur-md p-5 rounded-3xl select-none" style={{ border: `1px solid ${CP.border.subtle.hex}` }}>
+          <div className="flex-auto flex flex-col justify-center xl:items-start items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex flex-col backdrop-blur-md p-5 rounded-3xl select-none"
+              style={{ border: `1px solid ${CP.border.subtle.hex}` }}
+            >
               {/* Hello & Name */}
               <motion.h3
                 initial={{ opacity: 0, y: -100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
                 className="ml-1 sm:text-base text-sm"
                 style={{ color: CP.text.secondary.hex }}
               >
@@ -32,8 +39,8 @@ export default function HeroComponent() {
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="md:text-6xl sm:text-5xl text-4xl font-bold"
+                transition={{ duration: 0.5, delay: 1 }}
+                className="md:text-6xl sm:text-5xl text-3xl font-bold"
               >
                 BIG BEAST ISHANK
               </motion.h1>
@@ -44,7 +51,7 @@ export default function HeroComponent() {
                   initial={{ opacity: 0, x: -100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.7 }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
                   className="ml-1 sm:text-base text-sm"
                   style={{ color: CP.text.secondary.hex }}
                 >
@@ -57,7 +64,7 @@ export default function HeroComponent() {
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 1 }}
+                transition={{ duration: 0.5, delay: 1.5 }}
                 className="flex gap-5 sm:text-sm text-xs mt-5 ml-1"
               >
                 {/* Contact me code */}
@@ -90,11 +97,11 @@ export default function HeroComponent() {
                   Read CV
                 </motion.a>
               </motion.div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Intro Code */}
-          <div className="h-full w-full flex flex-col justify-center xl:items-end items-center">
+          <div className="flex-auto flex flex-col justify-center xl:items-end items-center">
             {/* Code */}
             <IntroCodeComponent />
           </div>
