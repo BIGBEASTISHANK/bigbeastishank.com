@@ -1,9 +1,10 @@
 "use client";
 import { ColorPalette as CP } from "@@/data/ColorPaletteData";
-import { motion, useScroll } from "motion/react";
+import { motion, MotionValue, useScroll } from "motion/react";
 
 export default function ProgressBar() {
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress }: { scrollYProgress: MotionValue<number> } =
+    useScroll();
 
   return (
     <motion.div

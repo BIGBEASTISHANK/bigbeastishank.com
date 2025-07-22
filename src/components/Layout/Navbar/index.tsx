@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { NavbarData } from "@@/data/NavbarData";
+import { ActivateStateVar } from "@@/data/ActiveStateData";
 import { ColorPalette as CP } from "@@/data/ColorPaletteData";
 
 export default function NavbarComponent() {
@@ -18,8 +19,8 @@ export default function NavbarComponent() {
 export function RootNavbarComponent() {
   // Variables
   const currentPath: string = usePathname();
-  const [activePath, setActivePath] = useState(currentPath + "#hero");
-  const [isFixed, setIsFixed] = useState(false);
+  const [activePath, setActivePath] = useState<string>(currentPath + "#hero");
+  const [isFixed, setIsFixed] = useState<boolean>(false);
 
   // Use effect to run functions
   useEffect(() => {
@@ -93,9 +94,12 @@ export function RootNavbarComponent() {
         >
           {activePath === data.link && (
             <motion.div
-              layoutId={"navbarBgActive"}
+              layoutId={ActivateStateVar.navbar}
               className="absolute inset-0 rounded-full blur-xs"
-              style={{ backgroundColor: CP.primary.hex, border: `1px solid ${CP.border.emphasis.hex}` }}
+              style={{
+                backgroundColor: CP.primary.hex,
+                border: `1px solid ${CP.border.emphasis.hex}`,
+              }}
               transition={{
                 type: "spring",
                 stiffness: 1000,
@@ -116,7 +120,6 @@ export function RootNavbarComponent() {
 }
 
 // Other page navbar component
-
 function OtherPageNavbarComponent() {
-  return <>hi</>;
+  return <>Navbar for other page</>;
 }
