@@ -2,7 +2,7 @@
 import { motion } from "motion/react";
 import { ColorPalette as CP } from "@@/data/ColorPaletteData";
 import { RootNavbarComponent } from "@/components/Layout/Navbar";
-import IntroCodeComponent from "@/components/Home/Hero/IntroCode";
+import IntroCodeComponent from "@/components/Home/(1) Hero/IntroCode";
 
 export default function HeroComponent() {
   return (

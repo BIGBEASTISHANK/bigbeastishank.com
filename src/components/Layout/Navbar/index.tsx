@@ -24,7 +24,7 @@ export function RootNavbarComponent() {
   // Use effect to run functions
   useEffect(() => {
     // Variables
-    const allSections = ["about", "skills", "works"];
+    const allSections = ["about", "works"];
 
     // Hero in viewport checking
     function heroInViewport() {

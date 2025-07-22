@@ -1,6 +1,6 @@
-import AboutComponent from "@/components/Home/About";
-import HeroComponent from "@/components/Home/Hero";
-import WorksComponent from "@/components/Home/Works";
+import HeroComponent from "@/components/Home/(1) Hero";
+import AboutComponent from "@/components/Home/(2) About";
+import WorksComponent from "@/components/Home/(3) Works";
 import HeroBackground from "@/utility/HeroBackground";
 
 export default function Home() {
