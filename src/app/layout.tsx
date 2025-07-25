@@ -29,7 +29,9 @@ export default function RootLayout({
         {/* Progress bar */}
         <ProgressBar />
         {/* Navbar */}
-        <NavbarComponent />
+        <div className="w-full flex justify-center items-center">
+          <NavbarComponent />
+        </div>
 
         {children}
       </body>

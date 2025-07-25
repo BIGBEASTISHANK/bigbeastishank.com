@@ -1,4 +1,4 @@
-interface ProjectData {
+export interface ProjectData {
   image: string;
   title: string;
   description: string;
@@ -60,7 +60,7 @@ export const websiteProjects: ProjectData[] = [
     image: "https://placehold.co/600x400",
     title: "Crisis Compass",
     description:
-      "AI-powered disaster response coordination system that optimizes rescue operations through ML-based severity prediction, intelligent resource allocation, and real-time multi-agency coordination with a centralized communication section.",
+      "AI disaster response system with ML-based severity prediction, smart resource allocation, and real-time coordination.",
     projectUrl: "https://github.com/BIGBEASTISHANK/CrisisCompass",
   },
   // MUJ Tasks
@@ -84,7 +84,7 @@ export const websiteProjects: ProjectData[] = [
     image: "https://placehold.co/600x400",
     title: "bigbeastishank.com",
     description:
-      "Some of the versions contain a blog component, and others have alternative styles. Every version has its own branch. Although they all seem very different, they all have the same purpose of showcasing my work.",
+      "Each version lives in its own branch, with variations like blogs or styling, but all share the same goal: showcasing my work.",
     projectUrl: "https://github.com/BIGBEASTISHANK/bigbeastishank.com/",
   },
 
@@ -93,7 +93,7 @@ export const websiteProjects: ProjectData[] = [
     image: "https://placehold.co/600x400",
     title: "Python website",
     description:
-      "Python-based Flask-powered webpage.  It's a straightforward website designed to highlight my work and expertise.  used JavaScript, HTML, and CSS to build the website's front end.",
+      "A Python-based Flask web app showcasing my work and expertise, with a front end built using JavaScript, HTML, and CSS.",
     projectUrl: "https://github.com/BIGBEASTISHANK/Initial-Websites/tree/flask",
   },
 
@@ -102,11 +102,18 @@ export const websiteProjects: ProjectData[] = [
     image: "https://placehold.co/600x400",
     title: "Initial React Site",
     description:
-      "- I made this website while I was still learning web development and began experimenting with ReactJS. It taught me different aspect of web development.",
+      "I made this website while I was still learning web development and began experimenting with ReactJS. It taught me different aspect of web development.",
     projectUrl: "https://github.com/BIGBEASTISHANK/Initial-Websites/tree/react",
   },
 
   // Initial HTML website
+  {
+    image: "https://placehold.co/600x400",
+    title: "Initial HTML Website",
+    description:
+      "With this website, I got into Web-Development. All thanks to this site that sparked the curiosity in me.",
+    projectUrl: "https://github.com/BIGBEASTISHANK/Initial-Websites/tree/html",
+  },
   {
     image: "https://placehold.co/600x400",
     title: "Initial HTML Website",
@@ -149,7 +156,7 @@ export const otherProjects: ProjectData[] = [
     image: "https://placehold.co/600x400",
     title: "Dotfiles",
     description:
-      "A script that allows users to copy the dotfiles and software setup from the BIGBEASTISHANK GitHub repository to an Arch Linux system. Quickly replicate his custom system configuration with this easy-to-use setup tool",
+      "A simple script to clone BIGBEASTISHANK's Arch Linux dotfiles and software setup, enabling quick and easy system replication.",
     projectUrl: "https://github.com/BIGBEASTISHANK/dotfiles",
   },
 

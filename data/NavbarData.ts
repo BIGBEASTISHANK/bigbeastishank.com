@@ -8,7 +8,7 @@ export const NavbarData = [
     link: "/#about",
   },
   {
-    name: "Works",
-    link: "/#works",
+    name: "Projects",
+    link: "/#projects",
   },
 ];

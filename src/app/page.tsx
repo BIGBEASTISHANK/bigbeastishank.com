@@ -1,6 +1,6 @@
 import HeroComponent from "@/components/Home/(1) Hero";
 import AboutComponent from "@/components/Home/(2) About";
-import WorksComponent from "@/components/Home/(3) Works";
+import ProjectsComponent from "@/components/Home/(3) Projects";
 import HeroBackground from "@/utility/HeroBackground";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <AboutComponent />
 
       {/* Works */}
-      <WorksComponent />
+      <ProjectsComponent />
     </div>
   );
 }
