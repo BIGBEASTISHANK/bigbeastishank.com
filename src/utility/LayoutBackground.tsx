@@ -18,7 +18,7 @@ export default function LayoutBackground() {
   );
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full -z-10 blur-xs">
+    <div className="fixed top-0 left-0 w-full h-full -z-10">
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -70,10 +70,10 @@ export default function LayoutBackground() {
               speed: 1.5,
               straight: false,
             },
-            number: { density: { enable: true, area: 800 }, value: 50 },
+            number: { density: { enable: true, area: 800 }, value: 25 },
             opacity: { value: 1 },
             shape: { type: "circle" },
-            size: { value: { min: 6, max: 10 } }, 
+            size: { value: { min: 6, max: 7 } }, 
           },
           detectRetina: true,
         }}

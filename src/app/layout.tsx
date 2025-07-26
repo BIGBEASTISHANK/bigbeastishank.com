@@ -6,6 +6,7 @@ import ProgressBar from "@/utility/ProgressBar";
 import NavbarComponent from "@/components/Layout/Navbar";
 import { NextFont } from "next/dist/compiled/@next/font";
 import LayoutBackground from "@/utility/LayoutBackground";
+import FooterComponent from "@/components/Layout/Footer";
 
 // Variables
 const notoSans: NextFont = Noto_Sans({ subsets: ["latin"] });
@@ -33,7 +34,11 @@ export default function RootLayout({
           <NavbarComponent />
         </div>
 
+        {/* Main body */}
         {children}
+
+        {/* Footer */}
+        <FooterComponent />
       </body>
     </html>
   );

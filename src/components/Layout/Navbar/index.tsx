@@ -87,7 +87,10 @@ export function RootNavbarComponent() {
   }, []);
 
   return (
-    <nav
+    <motion.nav
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, delay: 0.1, type: "spring" }}
       className={`${
         isFixed ? "fixed top-0" : "relative"
       } flex justify-center items-center md:gap-5 gap-2 rounded-full my-[1rem] w-min px-2 md:px-3 py-2 md:py-3 backdrop-blur-xl border overflow-hidden z-50 text-[0.75rem] sm:text-sm md:text-base`}
@@ -121,15 +124,20 @@ export function RootNavbarComponent() {
           </Link>
         </motion.div>
       ))}
-    </nav>
+    </motion.nav>
   );
 }
 
 // Other page navbar component
 function OtherPageNavbarComponent({ path }: { path: string }) {
   return (
-    <nav
-      className={"relative flex justify-center items-center md:gap-5 gap-2 rounded-full my-[1rem] w-min px-2 md:px-3 py-2 md:py-3 backdrop-blur-xl border overflow-hidden z-50 text-[0.75rem] sm:text-sm md:text-base"}
+    <motion.nav
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, delay: 0.1, type: "spring" }}
+      className={
+        "relative flex justify-center items-center md:gap-5 gap-2 rounded-full my-[1rem] w-fit px-2 md:px-3 py-2 md:py-3 backdrop-blur-xl border overflow-hidden z-50 text-[0.75rem] sm:text-sm md:text-base"
+      }
       style={{ borderColor: CP.border.emphasis.hex }}
     >
       {NavbarData.map((data, index) => (
@@ -160,6 +168,6 @@ function OtherPageNavbarComponent({ path }: { path: string }) {
           </Link>
         </motion.div>
       ))}
-    </nav>
+    </motion.nav>
   );
 }

@@ -1,0 +1,59 @@
+{
+    "redirects": [{
+            "source": "/email",
+            "destination": "mailto:ishank@bigbeastishank.com"
+        },
+        {
+            "source": "/github",
+            "destination": "https://github.com/bigbeastishank"
+        },
+        {
+            "source": "/fiverr",
+            "destination": "https://www.fiverr.com/bbeastishank"
+        },
+        {
+            "source": "/mastodon",
+            "destination": "https://mastodon.gamedev.place/@bigbeastishank"
+        },
+        {
+            "source": "/signal",
+            "destination": "https://signal.me/#eu/mpUcMlGPvkXC-1dLHtRGoWnDxKiq4ir4T__OW43cj-AhAgKyJFJPbrbj4ENm5wMC"
+        },
+        {
+            "source": "/linkedin",
+            "destination": "https://www.linkedin.com/in/bigbeastishank/"
+        },
+        {
+            "source": "/spotify",
+            "destination": "https://open.spotify.com/user/n37h63t5acey8z9kqu3dwjp1l"
+        },
+        {
+            "source": "/discord",
+            "destination": "https://discord.gg/WdeHDmwKFn"
+        },
+        {
+            "source": "/steam",
+            "destination": "https://steamcommunity.com/id/bigbeastishank"
+        },
+        {
+            "source": "/youtube",
+            "destination": "https://www.youtube.com/c/BIGBEASTISHANK"
+        },
+        {
+            "source": "/sourcecode",
+            "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V6"
+        },
+        {
+            "source": "/sc",
+            "destination": "https://github.com/BIGBEASTISHANK/bigbeastishank.com/tree/V6"
+        },
+        {
+            "source": "/license",
+            "destination": "https://github.com/BIGBEASTISHANK/BBI-Licenses"
+        },
+        {
+            "source": "/matrix",
+            "destination": "https://matrix.to/#/@bbeastishank:matrix.org"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { ActivateStateVar } from "@@/data/ActiveStateData";
 import { ColorPalette as CP } from "@@/data/ColorPaletteData";
 import {
@@ -14,7 +14,9 @@ import { FaLink } from "react-icons/fa";
 
 export default function ProjectsComponent() {
   const sections: String[] = ["Games", "Website", "Others"];
-  const [currentSection, setCurrentSection] = useState<String>("Games");
+  const [currentSection, setCurrentSection] = useState<String>(
+    sections.find((ele) => ele === "Website") as String
+  );
   const [initialCardAnimDelay, setInitialCardAnimDelay] = useState<number>(0.5);
 
   return (
@@ -49,7 +51,7 @@ export default function ProjectsComponent() {
           {sections.map((name, index) => (
             <button
               key={index}
-              className="relative text-sm sm:text-base md:text-md lg:text-lg cursor-pointer outline-none px-3 py-1"
+              className="relative text-sm sm:text-base md:text-md lg:text-lg cursor-pointer outline-none px-3 py-1 select-none"
               onClick={() => {
                 setCurrentSection(name.toString());
                 setInitialCardAnimDelay(0.1);
@@ -82,9 +84,9 @@ export default function ProjectsComponent() {
       {/* Card Data */}
       <div className="flex flex-1 items-center justify-center">
         <ProjectCardsComponents
-        currentSection={currentSection}
-        initialCardAnimDelay={initialCardAnimDelay}
-      />
+          currentSection={currentSection}
+          initialCardAnimDelay={initialCardAnimDelay}
+        />
       </div>
     </div>
   );
@@ -98,10 +100,6 @@ function ProjectCardsComponents({
   initialCardAnimDelay: number;
 }) {
   let cardData: ProjectData[] = [];
-  const [isHovered, setIsHovered] = useState<{ yes: boolean; index: number }>({
-    yes: false,
-    index: -1,
-  });
   const [animateCards, setAnimateCards] = useState<boolean>(false);
 
   switch (currentSection) {
@@ -118,19 +116,19 @@ function ProjectCardsComponents({
 
   return (
     <motion.div
-      className="xl:px-20 sm:px-10 px-5 flex flex-wrap 2xl:gap-x-20 xl:gap-x-15 lg:gap-x-40 md:gap-x-12 gap-x-5 md:gap-y-10 gap-y-5 justify-center items-center"
+      className="xl:px-20 sm:px-10 px-5 flex flex-wrap 2xl:gap-x-20 xl:gap-x-15 lg:gap-x-40 md:gap-x-12 gap-x-5 md:gap-y-10 gap-y-5 justify-center items-center mb-10"
       onViewportEnter={() => setAnimateCards(true)}
-      viewport={{ once: true }}
     >
       {cardData.map((project, index) => (
         <motion.div
           key={`${currentSection}-${index}`}
           initial={{ scale: 0 }}
-          animate={animateCards ? { scale: 1 } : { scale: 0 }}
+          animate={
+            animateCards ? { scale: [0, 1.2, 1], rotateY: 360 } : { scale: 0 }
+          }
           transition={{
             duration: 0.5,
             delay: initialCardAnimDelay + (index * 0.3) / 2,
-            type: "spring",
           }}
         >
           <motion.div
@@ -145,29 +143,27 @@ function ProjectCardsComponents({
                 alt={project.title}
                 width={300}
                 height={200}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover select-none"
               />
             </div>
 
             {/* Text content */}
             <div className="flex flex-col gap-2">
-                {/* Title */}
-                <a
-                  href={project.projectUrl}
-                  target="_blank"
-                  className="text-base sm:text-md md:text-xl font-bold line-clamp-2 flex items-center gap-2 group transition-all w-fit"
-                  style={{
-                    color: isHovered.index === index && isHovered.yes ? CP.primary.hex : "",
-                  }}
-                  onMouseEnter={() => setIsHovered({yes: true, index})}
-                  onMouseLeave={() => setIsHovered({yes: false, index})}
-                >
-                  {/* Text */}
-                  {project.title}
+              {/* Title */}
+              <motion.a
+                href={project.projectUrl}
+                target="_blank"
+                className="text-base sm:text-md md:text-xl font-bold line-clamp-2 flex items-center gap-2 group w-fit"
+                whileHover={{color: CP.primary.hex}}
+                whileTap={{scale: 0.75}}
+                transition={{duration: 0.15}}
+              >
+                {/* Text */}
+                {project.title}
 
-                  {/* Link icon */}
-                  <FaLink className="text-xl sm:text-md md:text-lg scale-0 group-hover:scale-75 transition-all ease-in-out duration-300" />
-                </a>
+                {/* Link icon */}
+                <FaLink className="text-xl sm:text-md md:text-lg scale-0 group-hover:scale-75 transition-all ease-in-out duration-300" />
+              </motion.a>
 
               {/* Description */}
               <p
