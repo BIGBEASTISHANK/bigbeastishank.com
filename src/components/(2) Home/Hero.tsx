@@ -29,7 +29,8 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
         {...({
-          className: "font-bold md:text-xl text-lg md:mb-7 mb-4 border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3 w-fit",
+          className:
+            "font-bold md:text-xl text-lg md:mb-7 mb-4 border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3 w-fit",
         } as HTMLMotionProps<"h1">)}
       >
         I'm Ishank ~{" "}
@@ -56,11 +57,13 @@ export default function Hero() {
           transition={{ delay: 0.6, duration: 0.5, type: "spring" }}
           className="text-justify"
         >
-          An open-source game and web developer who also occasionally creates
-          exclusive games. I used to produce games on Unity, but I'm also
-          learning about the Unreal Engine. I create my website using NextJS.
-          Currently diving into AI/ML fundamentals and practicing data
-          structures and algorithms with Rust.
+          A <strong>fullstack web developer</strong> specializing in modern web
+          technologies and scalable applications. I build comprehensive web
+          solutions using <strong>NextJS</strong> for frontend development and{" "}
+          <strong>Python</strong> for backend with <strong>MongoDB</strong>{" "}
+          databases. I also work as a <strong>server administrator</strong>{" "}
+          and <strong>network administrator</strong>, ensuring robust
+          infrastructure and optimal system performance.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 100 }}
@@ -68,9 +71,13 @@ export default function Hero() {
           transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
           className="text-justify"
         >
-          I not only work on creating websites & games, but I also explore the
-          complexity of networking, servers & pentesting. I find joy in securing
-          computer systems & networks. I use Arch BTW!
+          Currently expanding my expertise in{" "}
+          <strong>AI/ML fundamentals</strong> and strengthening my foundation
+          with <strong>data structures and algorithms</strong>. I also create{" "}
+          <strong>open-source games</strong> using Unity and exploring Unreal
+          Engine. Additionally, I explore <strong>cybersecurity</strong> through
+          penetration testing, finding satisfaction in securing computer systems
+          and networks. I use <strong>Arch BTW</strong>!
         </motion.p>
       </div>
 

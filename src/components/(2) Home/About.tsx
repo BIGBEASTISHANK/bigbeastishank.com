@@ -44,9 +44,11 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8, duration: 0.5, type: "spring" }}
           >
-            I build games, develop websites, work with networks, and explore
-            cybersecurity through penetration testing. It's what I love doing
-            every day.
+            I'm a <strong>fullstack web developer</strong> who specializes in
+            building scalable applications with NextJS and Python. I also work
+            as a <strong>server administrator</strong> and{" "}
+            <strong>network administrator</strong>, create games, and explore
+            cybersecurity through penetration testing.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 100 }}
@@ -56,14 +58,14 @@ export default function About() {
             The "BIG BEAST ISHANK" name represents my commitment to mastering{" "}
             <strong>Technologies</strong>, <strong>Programming</strong> &{" "}
             <strong>Development</strong>. It's about pushing boundaries and
-            constantly improving my craft.
+            constantly improving my craft across all domains.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.2, duration: 0.5, type: "spring" }}
           >
-            I share my game development journey through devlogs on my{" "}
+            I share my development journey through content on my{" "}
             <a
               href="/youtube"
               target="_blank"
@@ -71,8 +73,9 @@ export default function About() {
             >
               <strong>YouTube</strong>
             </a>{" "}
-            channel, where I also stream live gaming sessions. Feel free to
-            subscribe and follow along as I tackle new projects and challenges.
+            channel, covering web development, server management, and game
+            development. Feel free to subscribe and follow along as I tackle new
+            projects and challenges.
           </motion.p>
         </div>
       </div>
