@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "motion/react";
+import { PiHandWavingFill } from "react-icons/pi";
 import { ColorPalette as CP } from "@@/data/ColorPaletteData";
 import { RootNavbarComponent } from "@/components/Layout/Navbar";
 import IntroCodeComponent from "@/components/Home/(1) Hero/IntroCode";
@@ -14,7 +15,7 @@ export default function HeroComponent() {
       <div className="flex flex-auto justify-between">
         <div className="flex-auto flex xl:flex-row flex-col 2xl:px-30 xl:px-10 px-5">
           {/* Name & basic info */}
-          <div className="flex-auto flex flex-col justify-center xl:items-start items-center">
+          <div className="flex-auto flex flex-col justify-center xl:items-start items-center my-2">
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -29,10 +30,10 @@ export default function HeroComponent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="ml-1 sm:text-base text-sm"
+                className="ml-1 sm:text-base text-sm flex items-center gap-1"
                 style={{ color: CP.text.secondary.hex }}
               >
-                Hello I'm
+                Hello I'm <span className="sm:text-sm text-xs">👋🏻</span>
               </motion.h3>
 
               <motion.h1
@@ -101,7 +102,7 @@ export default function HeroComponent() {
           </div>
 
           {/* Intro Code */}
-          <div className="flex-auto flex flex-col justify-center xl:items-end items-center">
+          <div className="flex-auto flex flex-col justify-center xl:items-end items-center my-2">
             {/* Code */}
             <IntroCodeComponent />
           </div>
