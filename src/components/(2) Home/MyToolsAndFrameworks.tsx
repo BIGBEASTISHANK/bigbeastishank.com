@@ -13,7 +13,7 @@ export default function MyToolsAndFramework() {
         animationDelay={5.15}
         description={
           <>
-            <p>
+            <p className="border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
               Below you'll find the key frameworks and tools I rely on for my
               development work. Feel free to click on any card title to read
               their documentation and learn more about how these technologies
@@ -24,7 +24,7 @@ export default function MyToolsAndFramework() {
       />
 
       {/* Section content */}
-      <ul className="justify-between items-center text-center mt-5 flex flex-wrap gap-x-8 gap-y-5 min-[439px]:gap-[0.3rem] min-[477px]:gap-[0.9rem] min-[520px]:gap-[1.5rem] min-[540px]:gap-[0.3rem] min-[563px]:gap-[0.62rem]">
+      <ul className="justify-between items-center text-center mt-5 flex flex-wrap gap-x-8 gap-y-5 min-[439px]:gap-[0.3rem] min-[477px]:gap-[0.9rem] min-[520px]:gap-[1.5rem] min-[540px]:gap-[0.3rem] min-[563px]:gap-[0.62rem] border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
         {/* My Langs card */}
         {myToolsAndFramework.map((data, index) => (
           <motion.li

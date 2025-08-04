@@ -128,7 +128,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
         url="/blogs"
         description={
           <>
-            <p className="text-justify">
+            <p className="text-justify border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
               Welcome to my technical blog where I share insights from my
               development journey. You'll find articles spanning web
               development, mobile app creation with Flutter, machine learning
@@ -153,7 +153,7 @@ export default function BlogComponent({ posts }: BlogComponentProps) {
       {/* Short Divider */}
       <ShortDivider delay={0.55} />
 
-      <div>
+      <div className="border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
         <motion.p
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -317,7 +317,7 @@ function BlogContent({ posts }: BlogComponentProps) {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 1.0, duration: 0.5, type: "spring" }}
-        className="flex bg-[#050607] border border-[#1793D1] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto mb-5"
+        className="flex bg-[#050607]/10 backdrop-blur-md border border-[#1793D1] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto mb-5"
       >
         <FaSearch className="my-auto mr-2" />
         <input
@@ -347,7 +347,7 @@ function BlogContent({ posts }: BlogComponentProps) {
               }}
               {...({ className: "scroll-mt-28" } as HTMLMotionProps<"li">)}
             >
-              <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#1793D1]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#1793D1]/80 shadow-[#1793D1]/50">
+              <div className="group mb-5 flex flex-col bg-[#0A0C0E]/10 backdrop-blur-md border border-[#1793D1]/50 hover:border-[#1793D1]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#1793D1]/80 shadow-[#1793D1]/50">
                 {/* Blog title */}
                 <div className="flex">
                   <Link href={`/blogs/${post.slug}`} className="outline-none">
@@ -428,7 +428,7 @@ function BlogContent({ posts }: BlogComponentProps) {
           <button
             onClick={() => paginate(1)}
             disabled={currentPage === 1}
-            className={`flex items-center justify-center w-10 h-10 rounded-full border ${
+            className={`flex items-center justify-center w-10 h-10 rounded-full border backdrop-blur-md ${
               currentPage === 1
                 ? "border-[#1793D1]/30 text-gray-500 cursor-not-allowed"
                 : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all cursor-pointer"
@@ -441,7 +441,7 @@ function BlogContent({ posts }: BlogComponentProps) {
           <button
             onClick={() => paginate(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`flex items-center justify-center w-10 h-10 rounded-full border ${
+            className={`flex items-center justify-center w-10 h-10 rounded-full border backdrop-blur-md ${
               currentPage === 1
                 ? "border-[#1793D1]/30 text-gray-500 cursor-not-allowed"
                 : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all cursor-pointer"
@@ -468,7 +468,7 @@ function BlogContent({ posts }: BlogComponentProps) {
                 <button
                   key={i}
                   onClick={() => paginate(i)}
-                  className={`w-10 h-10 rounded-full border ${
+                  className={`w-10 h-10 rounded-full border backdrop-blur-md ${
                     currentPage === i
                       ? "bg-[#1793D1] text-white border-[#1793D1]"
                       : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all cursor-pointer"
@@ -488,7 +488,7 @@ function BlogContent({ posts }: BlogComponentProps) {
           <button
             onClick={() => paginate(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className={`flex items-center justify-center w-10 h-10 rounded-full border ${
+            className={`flex items-center justify-center w-10 h-10 rounded-full border backdrop-blur-md ${
               currentPage === totalPages
                 ? "border-[#1793D1]/30 text-gray-500 cursor-not-allowed"
                 : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all cursor-pointer"
@@ -501,7 +501,7 @@ function BlogContent({ posts }: BlogComponentProps) {
           <button
             onClick={() => paginate(totalPages)}
             disabled={currentPage === totalPages}
-            className={`flex items-center justify-center w-10 h-10 rounded-full border ${
+            className={`flex items-center justify-center w-10 h-10 rounded-full border backdrop-blur-md ${
               currentPage === totalPages
                 ? "border-[#1793D1]/30 text-gray-500 cursor-not-allowed"
                 : "border-[#1793D1] hover:bg-[#1793D1]/10 hover:scale-110 transition-all cursor-pointer"

@@ -130,7 +130,10 @@ function DropdownTOC({
         const hasDirectLevel3 = directLevel3Items.length > 0;
 
         return (
-          <div key={i}>
+          <div
+            key={i}
+            className="border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3"
+          >
             {/* Level 1 Item */}
             <div className="cursor-pointer text-gray-400 flex items-center gap-2 hover:text-gray-300 transition-colors">
               {(hasLevel2 || hasDirectLevel3) &&
@@ -246,94 +249,97 @@ export default function UseClientIndex({
         id="blogPost"
         className="px-5 max-w-[70rem] mx-auto overflow-x-auto min-[1531px]:basis-2/3 overflow-y-hidden"
       >
-        {/* GO Back arrow */}
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.3, type: "spring", duration: 0.5 }}
-          className="flex w-min"
-        >
-          <Link
-            href="/blogs"
-            className="text-[#1793D1] hover:text-[#fdf3f3] transition-colors mb-2"
+        {/* Header */}
+        <div className="border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
+          {/* GO Back arrow */}
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.3, type: "spring", duration: 0.5 }}
+            className="flex w-min"
           >
-            <FaArrowLeft />
-          </Link>
-        </motion.div>
+            <Link
+              href="/blogs"
+              className="text-[#1793D1] hover:text-[#fdf3f3] transition-colors mb-2"
+            >
+              <FaArrowLeft />
+            </Link>
+          </motion.div>
 
-        {/* Title */}
-        <motion.h1
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5, type: "spring", duration: 0.5 }}
-          className="flex items-center font-bold md:text-3xl text-2xl mb-5"
-        >
-          ~/ {frontmatter.title}
-        </motion.h1>
-
-        {/* Blog Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, type: "spring", duration: 0.5 }}
-          className="md:text-base text-sm mb-3 text-[#F6F9FC]/75"
-        >
-          {frontmatter.description}
-        </motion.p>
-
-        {/* Blog Metadata */}
-        <div className="flex gap-3 text-xs text-[#F6F9FC]/75 mt-4 mb-3">
-          {/* Date */}
-          <motion.p
-            initial={{ opacity: 0, x: -50 }}
+          {/* Title */}
+          <motion.h1
+            initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.9, type: "spring", duration: 0.5 }}
+            transition={{ delay: 0.5, type: "spring", duration: 0.5 }}
+            className="flex items-center font-bold md:text-3xl text-2xl mb-5"
           >
-            {new Date(frontmatter.date).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </motion.p>
+            ~/ {frontmatter.title}
+          </motion.h1>
 
-          {/* Seprator */}
+          {/* Blog Description */}
           <motion.p
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.9, type: "spring", duration: 0.5 }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, type: "spring", duration: 0.5 }}
+            className="md:text-base text-sm mb-3 text-[#F6F9FC]/75"
           >
-            {" "}
-            |{" "}
+            {frontmatter.description}
           </motion.p>
 
-          {/* Minute read */}
-          <motion.p
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.9, type: "spring", duration: 0.5 }}
-          >
-            {frontmatter.minuteRead} min read
-          </motion.p>
-        </div>
+          {/* Blog Metadata */}
+          <div className="flex gap-3 text-xs text-[#F6F9FC]/75 mt-4 mb-3">
+            {/* Date */}
+            <motion.p
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.9, type: "spring", duration: 0.5 }}
+            >
+              {new Date(frontmatter.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </motion.p>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 items-center">
-          {frontmatter.tags.map((tag, index) => (
-            <motion.div
-              key={index}
+            {/* Seprator */}
+            <motion.p
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                delay: 1.1 + (index * 0.3) / 2,
-                type: "spring",
-                duration: 0.5,
-              }}
-              className="flex justify-center items-center border border-[#1793D1]/70 rounded-full px-4 py-1 select-none font-normal text-sm my-auto"
+              transition={{ delay: 0.9, type: "spring", duration: 0.5 }}
             >
-              <FaTag className="my-auto mr-2" />
-              {tag}
-            </motion.div>
-          ))}
+              {" "}
+              |{" "}
+            </motion.p>
+
+            {/* Minute read */}
+            <motion.p
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.9, type: "spring", duration: 0.5 }}
+            >
+              {frontmatter.minuteRead} min read
+            </motion.p>
+          </div>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 items-center">
+            {frontmatter.tags.map((tag, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 1.1 + (index * 0.3) / 2,
+                  type: "spring",
+                  duration: 0.5,
+                }}
+                className="flex justify-center items-center border border-[#1793D1]/70 rounded-full px-4 py-1 select-none font-normal text-sm my-auto"
+              >
+                <FaTag className="my-auto mr-2" />
+                {tag}
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Short Divider */}
@@ -344,7 +350,7 @@ export default function UseClientIndex({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 2 }}
-          className="prose prose-invert max-w-none"
+          className="prose prose-invert max-w-none border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3"
         >
           {MDXRemote}
         </motion.div>
@@ -368,10 +374,10 @@ export default function UseClientIndex({
         className="h-[80vh] sticky top-24 min-[1531px]:flex hidden px-5 pb-10 select-none basis-1/3 min-[1531px]:flex-col"
       >
         {/* Heading */}
-        <h1 className="font-bold text-lg">Table of Content</h1>
+        <h1 className="font-bold text-lg mx-5 sm:mx-3">Table of Content</h1>
 
         {/* Divider */}
-        <ShortDivider delay={0.3} customCSS="my-2" />
+        <ShortDivider delay={0.3} customCSS="my-2 mx-5 sm:mx-3" />
 
         {/* Scrollable TOC Container */}
         <div className="flex-1 overflow-y-auto">

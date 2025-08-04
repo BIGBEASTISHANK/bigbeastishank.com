@@ -19,7 +19,7 @@ export default function Hero() {
         <Image
           src={logo}
           alt={"logo"}
-          className="select-none rounded-2xl border-2 border-[#1793D1] hover:scale-[1.1] transition-all hover:shadow-xl shadow-lg hover:shadow-[#1793D1]/50 shadow-[#1793D1]/50"
+          className="select-none rounded-2xl border-2 border-[#1793D1] hover:scale-[1.1] transition-all hover:shadow-xl shadow-lg hover:shadow-[#1793D1]/50 shadow-[#1793D1]/50 sm:mx-5 mx-3"
         />
       </motion.a>
 
@@ -29,7 +29,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
         {...({
-          className: "font-bold md:text-xl text-lg md:mb-7 mb-4",
+          className: "font-bold md:text-xl text-lg md:mb-7 mb-4 border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3 w-fit",
         } as HTMLMotionProps<"h1">)}
       >
         I'm Ishank ~{" "}
@@ -49,7 +49,7 @@ export default function Hero() {
       </motion.h1>
 
       {/* Text */}
-      <div className="md:text-base text-sm md:text-left flex flex-col md:gap-3 gap-2 text-[#F6F9FC]/75">
+      <div className="md:text-base text-sm md:text-left flex flex-col md:gap-3 gap-2 text-[#F6F9FC]/75 border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ export default function Hero() {
         href={
           "mailto:business@bigbeastishank.com?subject=%5BGeneral%20Contact%5D%20Regarding%20%5Byour%20inquiry%5D&body=Hey%20Ishank%2C%0AI'm%20%5Byour%20name%5D.%20%5Byour%20request%5D"
         }
-        className="mr-auto group/chm hover:scale-[1.1] transition-all select-none outline-none"
+        className="group/chm hover:scale-[1.1] transition-all select-none outline-none sm:mx-5 mx-3 w-fit"
         target="_blank"
       >
         <motion.button

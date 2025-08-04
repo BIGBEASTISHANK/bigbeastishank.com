@@ -20,7 +20,7 @@ export default function WorksComponent() {
         url="/works"
         description={
           <>
-            <p className="text-justify">
+            <p className="text-justify border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
               Below you'll find a selection of my key projects showcasing my
               work in web development, game development, and other areas.
               For my complete portfolio and source code, check out my{" "}
@@ -102,7 +102,7 @@ function ProjectList({
         </Link>
 
         {/* Search bar */}
-        <div className="flex bg-[#050607] border border-[#1793D1] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto">
+        <div className="flex bg-[#050607]/10 backdrop-blur-sm border border-[#1793D1] rounded-full px-4 md:mr-7 select-none font-normal md:text-base text-sm my-auto">
           <FaSearch className="my-auto mr-2" />
           {/* Input area */}
           <input
@@ -141,7 +141,7 @@ function ProjectList({
               }}
               {...({ className: "scroll-mt-28" } as HTMLMotionProps<"li">)}
             >
-              <div className="group mb-5 flex flex-col bg-[#0A0C0E] border border-[#1793D1]/50 hover:border-[#FF3333]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#FF3333]/80 shadow-[#1793D1]/50">
+              <div className="group mb-5 flex flex-col bg-[#0A0C0E]/10 backdrop-blur-md border border-[#1793D1]/50 hover:border-[#FF3333]/80 p-5 rounded-3xl hover:scale-[1.03] transition-all hover:shadow-lg shadow-md hover:shadow-[#FF3333]/80 shadow-[#1793D1]/50">
                 {/* Project title */}
                 <div className="flex">
                   <Link href={`#${data.title}`} className={"outline-none"}>
