@@ -116,16 +116,35 @@ export default function WebHireComponent() {
           </motion.li>
         ))}
       </ul>
-
+      
       {/* Divider */}
       <FullDivider delay={1.5} />
+      
+      {/* Price Change note */}
+      <div id={"noteaboutprice"} />
+      <HeadingBasic
+        heading="Note about price"
+        url="#noteaboutprice"
+        animationDelay={1.6}
+        description={
+          <>
+            <p>
+        	The prices provided are estimates and may vary depending on the 
+        	complexity and specific requirements of the website.
+            </p>
+          </>
+        }
+      />
+
+      {/* Divider */}
+      <FullDivider delay={1.9} />
 
       {/* Custom Order */}
       <div id={"customorder"} />
       <HeadingBasic
         heading="Custom Order"
         url="#customorder"
-        animationDelay={1.6}
+        animationDelay={2}
         description={
           <>
             <p>
