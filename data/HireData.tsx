@@ -1,5 +1,24 @@
 import { currencyFormatter } from "@/utility/CurrencyFormatter";
 
+// Updated Plan Price (per feature)
+const planPricing = {
+  "Static Page": 1000,
+  "Responsive Design": 1000,
+  "Free Lifetime domain": 0,
+  "SEO Optimization (On Page)": 800,
+  "Dynamic Page": 3000,
+  "Custom Design": 2000,
+  "Advanced Animations / Interactions": 1200,
+  "API Integration": 1500,
+  "Web.dev Optimization": 1000,
+  "Custom Domain (1 Year)": 1200,
+  "Maintenance & Updates": 1500,
+  "Priority Support": 1500,
+  "Minor Revision": 300,
+  "Major Revision": 2000,
+  "Admin Panel": 4000,
+};
+
 // Type defining
 interface HireData {
   id: string;
@@ -13,25 +32,7 @@ interface HireData {
   purchaseMail: string;
 }
 
-// Plan Price (per thing)
-// Static Page: 500
-// Responsive Design: 500
-// Free Lifetime domain: 0
-// SEO Optimization (On Page): 500
-// Dynamic Page: 3,000
-// Custom Design: 1,500
-// Advanced Animations / Interactions: 800
-// API Integration: 2,000
-// Web.dev Optimization: 500
-// Custom Domain (1 Year): 1110
-// Maintenance & Updates: 1,000
-// Priority Support: 1,500
-// Minor Revision: 200
-// Major Revision: 2,000
-// Admin Panel: 3000
-
 // Feature List
-// Webplan
 export const webPlanFeatures: string[] = [
   "Static Page",
   "Responsive Design",
@@ -62,32 +63,32 @@ export const allHirePlan: [
 
 // Web hire
 export const webHire: HireData[] = [
-  // Iron Tier
+  // Starter Tier
   {
-    id: "ironTier",
-    name: "Iron Tier",
+    id: "starterTier",
+    name: "Starter Tier",
     description:
-      "Ideal for individuals who need a simple, affordable personal website. (Note: Price may vary depending on your needs.)",
+      "Best for individuals or personal projects needing a professional online presence. Includes all essentials to get started.",
     hasFeatures: [
       "Static Page",
       "Responsive Design",
       "Free Lifetime domain",
       "SEO Optimization (On Page)",
     ],
-    originalPrice: currencyFormatter.format(1500),
-    discountedPrice: currencyFormatter.format(899),
+    originalPrice: currencyFormatter.format(2800),
+    discountedPrice: currencyFormatter.format(1799),
     deliveryIn: "3 days",
     numberOfRevision: "1",
     purchaseMail:
-      "mailto:business@bigbeastishank.com?subject=[Hire Web] Inquiry about Iron Tier Plan [bigbeastishank.com/hire/web]&body=Hello, I am interested in the Iron Tier plan. Please provide more details about the features and how to proceed.",
+      "mailto:business@bigbeastishank.com?subject=[Hire Web] Inquiry about Starter Tier Plan [bigbeastishank.com/hire/web]&body=Hello, I am interested in the Starter Tier plan. Please provide more details about the features and how to proceed.",
   },
 
-  // Bronze Tier
+  // Growth Tier
   {
-    id: "bronzeTier",
-    name: "Bronze Tier",
+    id: "growthTier",
+    name: "Growth Tier",
     description:
-      "Perfect for small businesses looking for a website to increase their traffic. (Note: Price may vary depending on your needs.)",
+      "Great for small businesses or professionals looking to showcase their services online with custom design and engaging visuals.",
     hasFeatures: [
       "Static Page",
       "Responsive Design",
@@ -96,20 +97,20 @@ export const webHire: HireData[] = [
       "Free Lifetime domain",
       "Advanced Animations / Interactions",
     ],
-    originalPrice: currencyFormatter.format(4000),
-    discountedPrice: currencyFormatter.format(3099),
+    originalPrice: currencyFormatter.format(6000),
+    discountedPrice: currencyFormatter.format(3899),
     deliveryIn: "5 days",
     numberOfRevision: "2",
     purchaseMail:
-      "mailto:business@bigbeastishank.com?subject=[Hire Web] Inquiry about Bronze Tier Plan [bigbeastishank.com/hire/web]&body=Hello, I am interested in the Bronze Tier plan. Please provide more details about the features and how to proceed.",
+      "mailto:business@bigbeastishank.com?subject=[Hire Web] Inquiry about Growth Tier Plan [bigbeastishank.com/hire/web]&body=Hello, I am interested in the Growth Tier plan. Please provide more details about the features and how to proceed.",
   },
 
-  // Silver Tier
+  // Pro Tier
   {
-    id: "silverTier",
-    name: "Silver Tier",
+    id: "proTier",
+    name: "Pro Tier",
     description:
-      "For medium-sized businesses seeking a more feature-rich website functionality and optimization. (Note: Price may vary depending on your needs.)",
+      "Ideal for growing businesses that require functional backend, dynamic content, and performance optimization.",
     hasFeatures: [
       "Static Page",
       "Responsive Design",
@@ -122,20 +123,20 @@ export const webHire: HireData[] = [
       "Dynamic Page",
       "Custom Domain (1 Year)",
     ],
-    originalPrice: currencyFormatter.format(9700),
-    discountedPrice: currencyFormatter.format(5899),
+    originalPrice: currencyFormatter.format(12700),
+    discountedPrice: currencyFormatter.format(8499),
     deliveryIn: "7 days",
     numberOfRevision: "3",
     purchaseMail:
-      "mailto:business@bigbeastishank.com?subject=[Hire Web] Inquiry about Silver Tier Plan [bigbeastishank.com/hire/web]&body=Hello, I am interested in the Silver Tier plan. Please provide more details about the features and how to proceed.",
+      "mailto:business@bigbeastishank.com?subject=[Hire Web] Inquiry about Pro Tier Plan [bigbeastishank.com/hire/web]&body=Hello, I am interested in the Pro Tier plan. Please provide more details about the features and how to proceed.",
   },
 
-  // Gold Tier
+  // Business Elite Tier
   {
-    id: "goldTier",
-    name: "Gold Tier",
+    id: "eliteTier",
+    name: "Business Elite Tier",
     description:
-      "For large-scale projects requiring extensive customization, performance optimization, and backend support. (Note: Price may vary depending on your needs.)",
+      "Complete solution for advanced web apps - includes admin panel, full backend integration, optimizations, and premium support.",
     hasFeatures: [
       "Static Page",
       "Responsive Design",
@@ -151,11 +152,12 @@ export const webHire: HireData[] = [
       "Admin Panel",
       "Dynamic Page",
     ],
-    originalPrice: currencyFormatter.format(16710),
-    discountedPrice: currencyFormatter.format(10099),
+    originalPrice: currencyFormatter.format(19700),
+    discountedPrice: currencyFormatter.format(12999),
     deliveryIn: "14 days",
     numberOfRevision: "5",
     purchaseMail:
-      "mailto:business@bigbeastishank.com?subject=[Hire Web] Inquiry about Gold Tier Plan [bigbeastishank.com/hire/web]&body=Hello, I am interested in the Gold Tier plan. Please provide more details about the features and how to proceed.",
+      "mailto:business@bigbeastishank.com?subject=[Hire Web] Inquiry about Business Elite Tier Plan [bigbeastishank.com/hire/web]&body=Hello, I am interested in the Business Elite Tier plan. Please provide more details about the features and how to proceed.",
   },
 ];
+

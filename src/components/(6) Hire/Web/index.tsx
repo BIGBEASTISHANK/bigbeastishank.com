@@ -129,8 +129,8 @@ export default function WebHireComponent() {
         description={
           <>
             <p>
-        	The prices provided are estimates and may vary depending on the 
-        	complexity and specific requirements of the website.
+        	These prices are for basic setups and may increase depending on 
+        	how complex or custom your project is.
             </p>
           </>
         }
