@@ -115,6 +115,12 @@ export const websiteProjects: ProjectData[] = [
 //
 // Other Projects
 export const otherProjects: ProjectData[] = [
+  // ORGVault
+  {
+    title: "ORGVault",
+    description: "Secure, cross-platform desktop app for encrypted document storage, sharing, and syncing over LAN with offline access, audit logs, and ransomware protection.",
+    projectUrl: "https://github.com/BIGBEASTISHANK/ORGVault",
+  },
   // Passforge
   {
     title: "Passforge",
