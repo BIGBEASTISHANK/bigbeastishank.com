@@ -1,0 +1,182 @@
+---
+title: "Sending Emails with Node.js and Mailtrap"
+description: "Learn how to send test emails using Node.js and Mailtrap with a real-world example and step-by-step guide."
+date: "2025-10-22"
+minuteRead: 7
+tags: ["Node.js", "Email", "Mailtrap", "Web Development", "Backend"]
+---
+
+Sending emails is a core feature in almost every modern web application. Whether you're building a signup flow, a notification system, or a contact form, email functionality is essential.
+
+In this tutorial, we'll explore **how to send emails using Node.js** with the help of **Mailtrap**-a developer-friendly tool for testing and sending emails.
+
+> **Note**: This guide assumes you have some basic knowledge of Node.js and NPM. If you're new to Node, check out [this beginner guide to Node.js](https://nodejs.dev/learn).
+
+---
+
+## What is Mailtrap?
+
+**Mailtrap** is a complete email delivery platform built for developers. It offers two main services:
+
+- 🧪 **Email Testing (Sandbox)** - A fake SMTP server for safely testing and inspecting emails during development.
+- 📤 **Email Sending (Production)** - A real SMTP and Email API service for sending emails to actual users in staging or live environments.
+
+### Why Use Mailtrap?
+
+- No risk of spamming real users during development
+- Send real emails in production using the same platform
+- Inspect headers, HTML content, and raw messages
+- Access email logs and analytics
+- Easy SMTP and API integrations
+- Share environments and inboxes with your team
+
+---
+
+## Step 1: Set Up a Node.js Project
+
+First, initialize a Node project:
+
+```bash
+mkdir email-sender
+cd email-sender
+npm init -y
+```
+
+Then install **Nodemailer**, the popular Node.js library for sending emails:
+
+```bash
+npm install nodemailer
+```
+
+---
+
+## Step 2: Get Mailtrap SMTP Credentials
+
+1. Go to [Mailtrap.io](https://mailtrap.io/) and sign up.
+2. Navigate to your **Inbox** under the Email Testing tab.
+3. Copy the SMTP credentials:
+    - Host
+    - Port
+    - Username
+    - Password
+
+These are for the **sandbox environment**. If you want to send real emails, go to **Email Sending** and generate production credentials instead.
+
+---
+
+## Step 3: Write the Email Sender Script
+
+Create a file named `sendEmail.js`:
+
+```javascript
+const nodemailer = require("nodemailer");
+
+// Replace with your Mailtrap credentials (testing or production)
+const transporter = nodemailer.createTransport({
+    host: "smtp.mailtrap.io", // Use send.mailtrap.io for production sending
+    port: 587,
+    auth: {
+        user: "your_mailtrap_username",
+        pass: "your_mailtrap_password",
+    },
+});
+
+const mailOptions = {
+    from: '"Node Mailer" <from@example.com>',
+    to: "to@example.com",
+    subject: "Test Email from Node.js",
+    text: "This is a plain text body",
+    html: "<h1>This is an HTML body</h1>",
+};
+
+transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+        return console.log("Error:", error);
+    }
+    console.log("Email sent successfully!", info.messageId);
+});
+```
+
+Replace the credentials with either your **sandbox** or **production** Mailtrap details, depending on your use case.
+
+---
+
+## Step 4: Run the Script
+
+```bash
+node sendEmail.js
+```
+
+You should see:
+
+```bash
+Email sent successfully! <message-id>
+```
+
+If you're using the sandbox, the email will appear in your Mailtrap inbox. For production, the message will be delivered to the recipient's real inbox.
+
+---
+
+## Customizing the Email
+
+You can customize:
+
+- **Recipients**: Add multiple email addresses separated by commas
+- **Attachments**:
+
+```javascript
+attachments: [
+    {
+        filename: "test.txt",
+        content: "Hello, this is a test file!",
+    },
+];
+```
+
+- **HTML Templates**: Use Handlebars, EJS, or MJML for dynamic and styled emails.
+
+---
+
+## Real-World Use Cases
+
+### Contact Form Submissions
+
+- **Why**: Collect user inquiries and send them to your support team.
+- **How**: Trigger this script on form submission using Express.js or any server logic.
+
+### Signup Verification
+
+- **Why**: Ensure users verify their email before getting full access.
+- **How**: Generate a token and include a verification link in the email.
+
+### Admin Notifications
+
+- **Why**: Alert admins of key events like new signups or system errors.
+- **How**: Hook into backend workflows and send alert emails.
+
+---
+
+## Common Errors & Fixes
+
+<PostsTable
+    fields={["Issue", "Fix"]}
+    fieldsData={[
+        ["`ECONNECTION` error", "Check if you're behind a VPN or firewall"],
+        ["Auth failed", "Double-check your Mailtrap credentials"],
+        ["Timeout", "Try using port 2525 instead of 587"],
+    ]}
+/>
+
+---
+
+## Final Thoughts
+
+Mailtrap isn't just for testing - it's a full-stack solution for handling email in development and production.
+
+- Use the **Email Testing sandbox** to preview and debug your emails.
+- Move to **Mailtrap Email Sending** when you're ready to go live, using either SMTP or their RESTful API.
+- Keep everything in one platform - from dev to staging to production.
+
+If you prefer working with APIs instead of SMTP, Mailtrap also offers a **powerful Email Sending API**.
+
+Let me know if you'd like an example using Mailtrap's Email API instead of Nodemailer - happy to include that too!
