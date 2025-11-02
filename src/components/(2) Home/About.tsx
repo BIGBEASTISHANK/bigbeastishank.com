@@ -48,7 +48,7 @@ export default function About() {
             building scalable applications with NextJS and Python. I also work
             as a <strong>server administrator</strong> and{" "}
             <strong>network administrator</strong>, create games, and explore
-            cybersecurity through penetration testing.
+            cybersecurity through penetration testing. Also 2X Hackathon winner.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 100 }}
