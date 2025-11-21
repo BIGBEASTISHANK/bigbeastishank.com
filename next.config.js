@@ -5,7 +5,7 @@ import remarkFrontmatter from "remark-frontmatter";
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm, remarkFrontmatter],
+    remarkPlugins: ["remarkGfm", "remarkFrontmatter"],
     rehypePlugins: [],
   },
 });

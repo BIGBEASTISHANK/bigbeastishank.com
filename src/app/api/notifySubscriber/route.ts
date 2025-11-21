@@ -5,8 +5,38 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
     try {
-        const { title, description, tags, minuteRead, link, TOKEN } =
-            await req.json();
+        // Verifying Login
+        const cookieHeader = req.headers.get("cookie");
+
+        if (!cookieHeader) {
+            return NextResponse.json(
+                { error: "No authentication credentials found!" },
+                { status: 401 }
+            );
+        }
+
+        const verifyLogin = await fetch(
+            `${process.env.NEXT_PUBLIC_BASE_URL}/api/adminLoginVerify`,
+            {
+                method: "GET",
+                headers: {
+                    Cookie: cookieHeader,
+                },
+            }
+        );
+
+        if (!verifyLogin.ok) {
+            return NextResponse.json(
+                { error: "Authentication failed" },
+                { status: 401 }
+            );
+        }
+
+        const { response: blogSubscribers } = await verifyLogin.json();
+
+        // Getting Blog inputs
+        const { title, description, tags, minuteRead, link } = await req.json();
+        const TOKEN = process.env.MAILTRAP_TOKEN as string;
 
         // Validate required fields
         if (!title || !description || !link) {
@@ -26,31 +56,11 @@ export async function POST(req: NextRequest) {
             );
         }
 
-        // Validate token
-        if (
-            !TOKEN ||
-            TOKEN !== (process.env.NEXT_PUBLIC_MAILTRAP_TOKEN as string)
-        ) {
-            console.error("Unauthorized access to NotifyBlogSubscribers API");
-            return NextResponse.json(
-                { error: "Unauthorized access to NotifyBlogSubscribers API" },
-                { status: 401 }
-            );
-        }
-
         const client = new MailtrapClient({ token: TOKEN });
         const sender = {
             email: "blogs@bigbeastishank.com",
             name: "BBI Blogs",
         };
-
-        // Connect to DB and get subscriber emails with names
-        await dbConnect();
-
-        const blogSubscribers = await Blog_Subscribers.find(
-            {},
-            { email: 1, _id: 0 }
-        );
 
         if (!blogSubscribers.length) {
             console.warn("No blog subscribers found");

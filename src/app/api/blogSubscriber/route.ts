@@ -68,7 +68,7 @@ export async function POST(req: Request) {
 
 // Function to send welcome email
 async function sendWelcomeEmail(subscriberEmail: string) {
-  const TOKEN = process.env.NEXT_PUBLIC_MAILTRAP_TOKEN as string;
+  const TOKEN = process.env.MAILTRAP_TOKEN as string;
   
   if (!TOKEN) {
     throw new Error("Mailtrap token not configured");

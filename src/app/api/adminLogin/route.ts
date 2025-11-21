@@ -22,12 +22,12 @@ export async function POST(req: NextRequest) {
       password === process.env.ADMIN_PASSWORD
     ) {
       // Check if TOTP code is provided
-      if (!totpCode) {
-        return NextResponse.json(
-          { error: "2FA code is required!", requiresTwoFactor: true },
-          { status: 401 }
-        );
-      }
+      // if (!totpCode) {
+      //   return NextResponse.json(
+      //     { error: "2FA code is required!", requiresTwoFactor: true },
+      //     { status: 401 }
+      //   );
+      // }
 
       // Verify TOTP code
       const verified = speakeasy.totp.verify({
@@ -36,18 +36,18 @@ export async function POST(req: NextRequest) {
         token: totpCode,
       });
 
-      if (!verified) {
-        return NextResponse.json(
-          { error: "Invalid 2FA code!" },
-          { status: 401 }
-        );
-      }
+      // if (!verified) {
+      //   return NextResponse.json(
+      //     { error: "Invalid 2FA code!" },
+      //     { status: 401 }
+      //   );
+      // }
 
       // Creating jwt token
       const token = jwt.sign(
         { alreadyLoggedIn: true },
         process.env.JWT_SECRET,
-        { expiresIn: "7d" }
+        { expiresIn: "5s" }
       );
 
       // Fetching userdata

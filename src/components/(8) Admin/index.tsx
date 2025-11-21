@@ -4,10 +4,9 @@ import HeadingBasic from "@/utility/HeadingBasic";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { FaCalendarAlt, FaCheck, FaClock, FaLink, FaTag } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 import { TbMail } from "react-icons/tb";
 import { PulseLoader } from "react-spinners";
-import Link from "next/link";
 import { Post } from "@/app/blogs/page";
 
 export default function AdminComponent() {
@@ -88,7 +87,7 @@ export default function AdminComponent() {
             });
 
             const data = await response.json();
-            console.log(data);
+
             if (!response.ok) {
                 setError(data.error);
                 setIsLoggingIn(false);
@@ -111,32 +110,15 @@ export default function AdminComponent() {
         }
     }
 
-    useEffect(() => {
-        // Verify If is logged in
-        adminLoginVerify();
-
-        // Fetching blog posts
-        fetch("/api/getBlogPost")
-            .then((response) => response.json())
-            .then((data) => {
-                setPosts(
-                    data.posts.sort(
-                        (a, b) =>
-                            new Date(b.date).getTime() -
-                            new Date(a.date).getTime()
-                    )
-                );
-            });
-    }, []);
-
     // Admin login verify function
     async function adminLoginVerify() {
         const response = await fetch("/api/adminLoginVerify", {
             method: "GET",
             credentials: "include",
-        });
+        })
 
         const allEmailData = await response.json();
+        console.log(response.status)
 
         if (response.ok) {
             setIsLoggedIn(true);
@@ -144,8 +126,6 @@ export default function AdminComponent() {
         }
 
         setVerifyLoggingIn(false);
-
-        return;
     }
 
     // Updated: Notify subscriber function with loading state
@@ -166,13 +146,13 @@ export default function AdminComponent() {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: "include",
                 body: JSON.stringify({
                     title,
                     description,
                     tags,
                     minuteRead,
                     link,
-                    TOKEN: process.env.NEXT_PUBLIC_MAILTRAP_TOKEN as string,
                 }),
             });
 
@@ -208,6 +188,24 @@ export default function AdminComponent() {
             }, 3000);
         }
     }
+
+    useEffect(() => {
+        // Verify If is logged in
+        adminLoginVerify();
+
+        // Fetching blog posts
+        fetch("/api/getBlogPost")
+            .then((response) => response.json())
+            .then((data) => {
+                setPosts(
+                    data.posts.sort(
+                        (a, b) =>
+                            new Date(b.date).getTime() -
+                            new Date(a.date).getTime()
+                    )
+                );
+            });
+    }, []);
 
     return (
         <div id="admin" className="px-5 scroll-mt-28">
