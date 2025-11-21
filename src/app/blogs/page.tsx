@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import BlogComponent from "@/components/(7) Blogs";
-import { useState } from "react";
 
 // Meta data
 export const metadata: Metadata = {
