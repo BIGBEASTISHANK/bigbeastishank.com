@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer
       className={`text-center justify-center items-center my-5 ${
-        pathName != null ? "max-w-[110rem]" : "md:max-w-[45rem] max-w-[35rem]"
+        pathName != null ? "max-w-[110rem] sm:p-5 p-3" : "md:max-w-[45rem] max-w-[35rem]"
       } mx-auto`}
     >
       {/* Divider */}

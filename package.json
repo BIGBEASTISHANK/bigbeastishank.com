@@ -2,7 +2,6 @@
   "name": "bigbeastishank.com",
   "version": "V6",
   "private": false,
-  "type": "module",
   "licenses": [
     {
       "type": "GPL-3.0-only",
@@ -37,6 +36,7 @@
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
+    "react-json-view": "^1.21.3",
     "react-spinners": "^0.17.0",
     "react-syntax-highlighter": "^16.1.0",
     "react-tsparticles": "^2.12.2",

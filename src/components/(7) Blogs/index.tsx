@@ -304,6 +304,12 @@ function BlogContent({ posts }: BlogComponentProps) {
         indexOfLastPost
     );
 
+    // Blog loading state
+    const [initiallyLoaded, setInitiallyLoaded] = useState<boolean>(false);
+    useEffect(() => {
+        if (currentPosts.length > 0) setInitiallyLoaded(true);
+    }, [currentPosts]);
+
     // Calculate delays for page button
     const [pageBtnAnimationDelay, setPageBtnAnimationDelay]: [
         pageBtnAnimationDelay: GLfloat,
@@ -429,12 +435,20 @@ function BlogContent({ posts }: BlogComponentProps) {
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.5, type: "spring" }}
+                            style={{
+                                color:
+                                    initiallyLoaded && currentPosts.length < 1
+                                        ? "#fb2c36"
+                                        : "",
+                            }}
                             {...({
                                 className:
-                                    "px-5 py-2 bg-[#0A0C0E] border border-[#1793D1]/20 rounded-full text-red-500 md:text-base text-sm mx-auto text-center",
+                                    "px-5 py-2 bg-[#0A0C0E] border border-[#1793D1]/20 rounded-full md:text-base text-sm mx-auto text-center",
                             } as HTMLMotionProps<"li">)}
                         >
-                            Oops! No blogs found with that title or tag.
+                            {initiallyLoaded && currentPosts.length < 1
+                                ? "Oops! No blogs found with that title or tag."
+                                : "Please wait loading blogs..."}
                         </motion.li>
                     </div>
                 )}
