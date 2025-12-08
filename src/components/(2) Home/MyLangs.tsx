@@ -13,7 +13,7 @@ export default function MyLangs() {
         animationDelay={2.5}
         description={
           <>
-            <p className="border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
+            <p>
               Here's an overview of the programming languages I've mastered
               through hands-on experience in various projects. Click on any card
               title to access the official documentation and dive deeper into

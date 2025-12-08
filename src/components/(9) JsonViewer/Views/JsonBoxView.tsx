@@ -1,5 +1,6 @@
 "use client";
 import { useState, JSX } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { paletteColors } from "@@/data/PaletteColors";
 import { CopyButton } from "@/components/(9) JsonViewer/CopyButton";
 
@@ -21,13 +22,17 @@ export function JsonBoxView({ data }: { data: any }) {
     const renderValue = (
         value: any,
         path: string = "",
-        keyName?: string
+        keyName?: string,
+        index: number = 0
     ): JSX.Element => {
         const isCollapsed = collapsed.has(path);
 
         if (value === null) {
             return (
-                <div
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
                     className="backdrop-blur-md border rounded-lg p-3"
                     style={{
                         backgroundColor: `${paletteColors[2].hex}80`,
@@ -48,13 +53,16 @@ export function JsonBoxView({ data }: { data: any }) {
                     >
                         null
                     </span>
-                </div>
+                </motion.div>
             );
         }
 
         if (typeof value === "boolean") {
             return (
-                <div
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
                     className="backdrop-blur-md border rounded-lg p-3"
                     style={{
                         backgroundColor: `${paletteColors[11].hex}20`,
@@ -75,13 +83,16 @@ export function JsonBoxView({ data }: { data: any }) {
                     >
                         {value.toString()}
                     </span>
-                </div>
+                </motion.div>
             );
         }
 
         if (typeof value === "number") {
             return (
-                <div
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
                     className="backdrop-blur-md border rounded-lg p-3"
                     style={{
                         backgroundColor: `${paletteColors[6].hex}20`,
@@ -102,13 +113,16 @@ export function JsonBoxView({ data }: { data: any }) {
                     >
                         {value}
                     </span>
-                </div>
+                </motion.div>
             );
         }
 
         if (typeof value === "string") {
             return (
-                <div
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
                     className="backdrop-blur-md border rounded-lg p-3"
                     style={{
                         backgroundColor: `${paletteColors[9].hex}20`,
@@ -129,14 +143,17 @@ export function JsonBoxView({ data }: { data: any }) {
                     >
                         "{value}"
                     </span>
-                </div>
+                </motion.div>
             );
         }
 
         if (Array.isArray(value)) {
             if (value.length === 0) {
                 return (
-                    <div
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.05, duration: 0.3 }}
                         className="backdrop-blur-md border rounded-lg p-3"
                         style={{
                             backgroundColor: `${paletteColors[2].hex}80`,
@@ -157,12 +174,15 @@ export function JsonBoxView({ data }: { data: any }) {
                         >
                             [ empty array ]
                         </span>
-                    </div>
+                    </motion.div>
                 );
             }
 
             return (
-                <div
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
                     className="backdrop-blur-md border-2 rounded-lg p-4"
                     style={{
                         backgroundColor: `${paletteColors[10].hex}10`,
@@ -171,13 +191,15 @@ export function JsonBoxView({ data }: { data: any }) {
                 >
                     <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
-                            <button
+                            <motion.button
                                 onClick={() => toggleCollapse(path)}
                                 className="transition-colors text-lg cursor-pointer select-none"
                                 style={{ color: paletteColors[10].hex }}
+                                whileHover={{ scale: 1.2 }}
+                                whileTap={{ scale: 0.9 }}
                             >
                                 {isCollapsed ? "▶" : "▼"}
-                            </button>
+                            </motion.button>
                             <div>
                                 {keyName && (
                                     <div
@@ -201,25 +223,32 @@ export function JsonBoxView({ data }: { data: any }) {
                             style={{ color: paletteColors[9].hex }}
                         />
                     </div>
-                    {!isCollapsed && (
-                        <div
-                            className="space-y-3 pl-4 border-l-4"
-                            style={{
-                                borderColor: `${paletteColors[10].hex}50`,
-                            }}
-                        >
-                            {value.map((item, index) => (
-                                <div key={index}>
-                                    {renderValue(
-                                        item,
-                                        `${path}[${index}]`,
-                                        `[${index}]`
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </div>
+                    <AnimatePresence>
+                        {!isCollapsed && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="space-y-3 pl-4 border-l-4 overflow-hidden"
+                                style={{
+                                    borderColor: `${paletteColors[10].hex}50`,
+                                }}
+                            >
+                                {value.map((item, idx) => (
+                                    <div key={idx}>
+                                        {renderValue(
+                                            item,
+                                            `${path}[${idx}]`,
+                                            `[${idx}]`,
+                                            idx
+                                        )}
+                                    </div>
+                                ))}
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
             );
         }
 
@@ -227,7 +256,10 @@ export function JsonBoxView({ data }: { data: any }) {
             const keys = Object.keys(value);
             if (keys.length === 0) {
                 return (
-                    <div
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.05, duration: 0.3 }}
                         className="backdrop-blur-md border rounded-lg p-3"
                         style={{
                             backgroundColor: `${paletteColors[2].hex}80`,
@@ -248,12 +280,15 @@ export function JsonBoxView({ data }: { data: any }) {
                         >
                             {"{ empty object }"}
                         </span>
-                    </div>
+                    </motion.div>
                 );
             }
 
             return (
-                <div
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
                     className="backdrop-blur-md border-2 rounded-lg p-4"
                     style={{
                         backgroundColor: `${paletteColors[7].hex}10`,
@@ -262,13 +297,15 @@ export function JsonBoxView({ data }: { data: any }) {
                 >
                     <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
-                            <button
+                            <motion.button
                                 onClick={() => toggleCollapse(path)}
                                 className="transition-colors text-lg cursor-pointer select-none"
                                 style={{ color: paletteColors[7].hex }}
+                                whileHover={{ scale: 1.2 }}
+                                whileTap={{ scale: 0.9 }}
                             >
                                 {isCollapsed ? "▶" : "▼"}
-                            </button>
+                            </motion.button>
                             <div>
                                 {keyName && (
                                     <div
@@ -294,30 +331,40 @@ export function JsonBoxView({ data }: { data: any }) {
                             style={{ color: paletteColors[9].hex }}
                         />
                     </div>
-                    {!isCollapsed && (
-                        <div
-                            className="space-y-3 pl-4 border-l-4"
-                            style={{
-                                borderColor: `${paletteColors[7].hex}50`,
-                            }}
-                        >
-                            {keys.map((key) => (
-                                <div key={key}>
-                                    {renderValue(
-                                        value[key],
-                                        `${path}.${key}`,
-                                        key
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </div>
+                    <AnimatePresence>
+                        {!isCollapsed && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="space-y-3 pl-4 border-l-4 overflow-hidden"
+                                style={{
+                                    borderColor: `${paletteColors[7].hex}50`,
+                                }}
+                            >
+                                {keys.map((key, idx) => (
+                                    <div key={key}>
+                                        {renderValue(
+                                            value[key],
+                                            `${path}.${key}`,
+                                            key,
+                                            idx
+                                        )}
+                                    </div>
+                                ))}
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
             );
         }
 
         return (
-            <div
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
                 className="backdrop-blur-md border rounded-lg p-3"
                 style={{
                     backgroundColor: `${paletteColors[2].hex}80`,
@@ -335,12 +382,15 @@ export function JsonBoxView({ data }: { data: any }) {
                 <span style={{ color: paletteColors[4].hex }}>
                     {String(value)}
                 </span>
-            </div>
+            </motion.div>
         );
     };
 
     return (
-        <div
+        <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
             className="backdrop-blur-md border rounded-lg p-4 overflow-auto"
             style={{
                 backgroundColor: `${paletteColors[1].hex}80`,
@@ -348,6 +398,6 @@ export function JsonBoxView({ data }: { data: any }) {
             }}
         >
             {renderValue(data)}
-        </div>
+        </motion.div>
     );
 }

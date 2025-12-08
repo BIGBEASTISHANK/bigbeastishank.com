@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import JsonViewer from "@/components/(9) JsonViewer";
+import JsonViewerComponent from "@/components/(9) JsonViewer";
 
 // Meta data
 export const metadata: Metadata = {
@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     },
 };
 
-export default function JsonViewerPage() {
+export default function JsonViewer() {
     return (
         <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
-            <JsonViewer />
+            <JsonViewerComponent />
         </div>
     );
 }

@@ -13,7 +13,7 @@ export default function MyToolsAndFramework() {
         animationDelay={5.15}
         description={
           <>
-            <p className="border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
+            <p>
               Below you'll find the key frameworks and tools I rely on for my
               development work. Feel free to click on any card title to read
               their documentation and learn more about how these technologies

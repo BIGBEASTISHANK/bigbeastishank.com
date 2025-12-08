@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { paletteColors } from "@@/data/PaletteColors";
 import { CopyButton } from "@/components/(9) JsonViewer/CopyButton";
 
@@ -69,14 +70,22 @@ export function JsonTableView({ data }: { data: any }) {
     };
 
     return (
-        <div
+        <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
             className="backdrop-blur-md border rounded-lg p-4 overflow-auto"
             style={{
                 backgroundColor: `${paletteColors[1].hex}80`,
                 borderColor: paletteColors[2].hex,
             }}
         >
-            <div className="flex items-center justify-between mb-3">
+            <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+                className="flex items-center justify-between mb-3"
+            >
                 <span
                     style={{ color: paletteColors[5].hex }}
                     className="font-semibold select-none"
@@ -87,10 +96,14 @@ export function JsonTableView({ data }: { data: any }) {
                     value={data}
                     style={{ color: paletteColors[9].hex }}
                 />
-            </div>
+            </motion.div>
             <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                    <thead>
+                    <motion.thead
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
+                    >
                         <tr
                             style={{
                                 backgroundColor: paletteColors[2].hex,
@@ -116,11 +129,17 @@ export function JsonTableView({ data }: { data: any }) {
                                 Type
                             </th>
                         </tr>
-                    </thead>
+                    </motion.thead>
                     <tbody>
                         {rows.map((row, index) => (
-                            <tr
+                            <motion.tr
                                 key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{
+                                    delay: 0.4 + index * 0.02,
+                                    duration: 0.3,
+                                }}
                                 style={{
                                     backgroundColor:
                                         index % 2 === 0
@@ -155,11 +174,11 @@ export function JsonTableView({ data }: { data: any }) {
                                 >
                                     {row.type}
                                 </td>
-                            </tr>
+                            </motion.tr>
                         ))}
                     </tbody>
                 </table>
             </div>
-        </div>
+        </motion.div>
     );
 }

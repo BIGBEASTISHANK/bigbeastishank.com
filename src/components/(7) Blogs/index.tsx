@@ -130,7 +130,7 @@ export default function BlogComponent() {
                 url="/blogs"
                 description={
                     <>
-                        <p className="text-justify border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
+                        <p>
                             Welcome to my technical blog where I share insights
                             from my development journey. You'll find articles
                             spanning web development, mobile app creation with

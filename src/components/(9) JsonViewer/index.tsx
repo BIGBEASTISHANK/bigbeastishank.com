@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { paletteColors } from "@@/data/PaletteColors";
 import { JsonLineView } from "@/components/(9) JsonViewer/Views/JsonLineView";
 import { JsonBoxView } from "@/components/(9) JsonViewer/Views/JsonBoxView";
@@ -138,8 +139,15 @@ export default function JsonViewer() {
     return (
         <div className="flex flex-col w-full md:max-w-[45rem] max-w-[35rem] mx-auto p-4 gap-4">
             {/* Mode Toggle */}
-            <div className="flex gap-2 p-1 w-fit">
-                <button
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex gap-2 p-1 w-fit"
+            >
+                <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     onClick={() => setMode("json")}
                     className="px-4 py-2 rounded-full transition-colors cursor-pointer select-none border-2"
                     style={{
@@ -155,8 +163,10 @@ export default function JsonViewer() {
                     }}
                 >
                     JSON Code
-                </button>
-                <button
+                </motion.button>
+                <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     onClick={() => setMode("api")}
                     className="px-4 py-2 rounded-full transition-colors cursor-pointer select-none border-2"
                     style={{
@@ -172,268 +182,312 @@ export default function JsonViewer() {
                     }}
                 >
                     API Call
-                </button>
-            </div>
+                </motion.button>
+            </motion.div>
 
             {/* JSON Mode */}
-            {mode === "json" && (
-                <div className="flex flex-col gap-4">
-                    <textarea
-                        value={jsonInput}
-                        onChange={(e) => setJsonInput(e.target.value)}
-                        className="w-full h-64 p-3 backdrop-blur-md border rounded-lg font-mono text-sm resize-y outline-none"
-                        style={{
-                            backgroundColor: `${paletteColors[1].hex}80`,
-                            borderColor: paletteColors[4].hex,
-                            color: paletteColors[5].hex,
-                        }}
-                        placeholder="Enter JSON here..."
-                    />
-                    <button
-                        onClick={handleJsonSubmit}
-                        className="px-6 py-2 rounded-lg transition-colors w-fit cursor-pointer select-none"
-                        style={{
-                            backgroundColor: paletteColors[7].hex,
-                            color: paletteColors[5].hex,
-                        }}
+            <AnimatePresence mode="wait">
+                {mode === "json" && (
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex flex-col gap-4"
                     >
-                        Parse JSON
-                    </button>
-                </div>
-            )}
+                        <motion.textarea
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1, duration: 0.3 }}
+                            value={jsonInput}
+                            onChange={(e) => setJsonInput(e.target.value)}
+                            className="w-full h-64 p-3 backdrop-blur-md border rounded-lg font-mono text-sm resize-y outline-none"
+                            style={{
+                                backgroundColor: `${paletteColors[1].hex}80`,
+                                borderColor: paletteColors[4].hex,
+                                color: paletteColors[5].hex,
+                            }}
+                            placeholder="Enter JSON here..."
+                        />
+                        <motion.button
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2, duration: 0.3 }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={handleJsonSubmit}
+                            className="px-6 py-2 rounded-lg transition-colors w-fit cursor-pointer select-none"
+                            style={{
+                                backgroundColor: paletteColors[7].hex,
+                                color: paletteColors[5].hex,
+                            }}
+                        >
+                            Parse JSON
+                        </motion.button>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             {/* API Mode */}
-            {mode === "api" && (
-                <div className="flex flex-col gap-4">
-                    {/* HTTP Method Toggle */}
-                    <div
-                        className="flex gap-2 p-1 backdrop-blur-md border outline-none rounded-lg w-fit"
-                        style={{
-                            backgroundColor: `${paletteColors[1].hex}80`,
-                            borderColor: paletteColors[4].hex,
-                        }}
+            <AnimatePresence mode="wait">
+                {mode === "api" && (
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex flex-col gap-4"
                     >
-                        <button
-                            onClick={() => setHttpMethod("GET")}
-                            className="px-4 py-2 rounded-md transition-colors cursor-pointer select-none"
-                            style={{
-                                backgroundColor:
-                                    httpMethod === "GET"
-                                        ? paletteColors[9].hex
-                                        : "transparent",
-                                color:
-                                    httpMethod === "GET"
-                                        ? paletteColors[0].hex
-                                        : paletteColors[4].hex,
-                            }}
-                        >
-                            GET
-                        </button>
-                        <button
-                            onClick={() => setHttpMethod("POST")}
-                            className="px-4 py-2 rounded-md transition-colors cursor-pointer select-none"
-                            style={{
-                                backgroundColor:
-                                    httpMethod === "POST"
-                                        ? paletteColors[10].hex
-                                        : "transparent",
-                                color:
-                                    httpMethod === "POST"
-                                        ? paletteColors[0].hex
-                                        : paletteColors[4].hex,
-                            }}
-                        >
-                            POST
-                        </button>
-                    </div>
-
-                    {/* URL Input */}
-                    <input
-                        type="text"
-                        value={url}
-                        onChange={(e) => setUrl(e.target.value)}
-                        placeholder="Enter API URL..."
-                        className="w-full p-3 backdrop-blur-md border outline-none rounded-lg"
-                        style={{
-                            backgroundColor: `${paletteColors[1].hex}80`,
-                            borderColor: paletteColors[4].hex,
-                            color: paletteColors[5].hex,
-                        }}
-                    />
-
-                    {/* POST Content Type & Body */}
-                    {httpMethod === "POST" && (
-                        <>
-                            <div className="flex gap-2 flex-wrap">
-                                {(
-                                    [
-                                        "json",
-                                        "form-data",
-                                        "plain-text",
-                                    ] as PostContentType[]
-                                ).map((type) => (
-                                    <button
-                                        key={type}
-                                        onClick={() => setContentType(type)}
-                                        className="px-3 py-1.5 rounded-md text-sm transition-colors backdrop-blur-md border outline-none cursor-pointer select-none"
-                                        style={{
-                                            backgroundColor:
-                                                contentType === type
-                                                    ? paletteColors[11].hex
-                                                    : `${paletteColors[1].hex}80`,
-                                            color:
-                                                contentType === type
-                                                    ? paletteColors[5].hex
-                                                    : paletteColors[4].hex,
-                                            borderColor: paletteColors[4].hex,
-                                        }}
-                                    >
-                                        {type}
-                                    </button>
-                                ))}
-                            </div>
-
-                            <textarea
-                                value={postBody}
-                                onChange={(e) => setPostBody(e.target.value)}
-                                className="w-full h-32 p-3 backdrop-blur-md border outline-none rounded-lg font-mono text-sm resize-y"
-                                style={{
-                                    backgroundColor: `${paletteColors[1].hex}80`,
-                                    borderColor: paletteColors[4].hex,
-                                    color: paletteColors[5].hex,
-                                }}
-                                placeholder={
-                                    contentType === "form-data"
-                                        ? "key1=value1\nkey2=value2"
-                                        : contentType === "json"
-                                        ? '{"key": "value"}'
-                                        : "Plain text body"
-                                }
-                            />
-                        </>
-                    )}
-
-                    <button
-                        onClick={handleApiCall}
-                        disabled={loading || !url}
-                        className="px-6 py-2 rounded-lg transition-colors w-fit select-none"
-                        style={{
-                            backgroundColor:
-                                loading || !url
-                                    ? paletteColors[4].hex
-                                    : paletteColors[7].hex,
-                            color: paletteColors[5].hex,
-                            cursor: loading || !url ? "not-allowed" : "pointer",
-                        }}
-                    >
-                        {loading ? "Loading..." : "Send Request"}
-                    </button>
-                </div>
-            )}
-
-            {/* Error Display */}
-            {error && (
-                <div
-                    className="p-4 border rounded-lg select-none"
-                    style={{
-                        backgroundColor: `${paletteColors[8].hex}30`,
-                        borderColor: paletteColors[8].hex,
-                        color: paletteColors[12].hex,
-                    }}
-                >
-                    {error}
-                </div>
-            )}
-
-            {/* JSON Output */}
-            {output && (
-                <div className="mt-4">
-                    <div className="flex items-center justify-between mb-3">
-                        <h3
-                            className="text-lg font-semibold select-none"
-                            style={{ color: paletteColors[5].hex }}
-                        >
-                            Output:
-                        </h3>
-
-                        {/* View Mode Toggle */}
-                        <div
-                            className="flex gap-2 p-1 backdrop-blur-md border rounded-lg flex-wrap"
+                        {/* HTTP Method Toggle */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1, duration: 0.3 }}
+                            className="flex gap-2 p-1 backdrop-blur-md border outline-none rounded-lg w-fit"
                             style={{
                                 backgroundColor: `${paletteColors[1].hex}80`,
                                 borderColor: paletteColors[4].hex,
                             }}
                         >
-                            <button
-                                onClick={() => setViewMode("line")}
-                                className="px-3 py-1.5 rounded-md text-sm transition-colors cursor-pointer select-none"
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => setHttpMethod("GET")}
+                                className="px-4 py-2 rounded-md transition-colors cursor-pointer select-none"
                                 style={{
                                     backgroundColor:
-                                        viewMode === "line"
-                                            ? paletteColors[7].hex
+                                        httpMethod === "GET"
+                                            ? paletteColors[9].hex
                                             : "transparent",
                                     color:
-                                        viewMode === "line"
-                                            ? paletteColors[5].hex
+                                        httpMethod === "GET"
+                                            ? paletteColors[0].hex
                                             : paletteColors[4].hex,
                                 }}
                             >
-                                Line
-                            </button>
-                            <button
-                                onClick={() => setViewMode("box")}
-                                className="px-3 py-1.5 rounded-md text-sm transition-colors cursor-pointer select-none"
+                                GET
+                            </motion.button>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => setHttpMethod("POST")}
+                                className="px-4 py-2 rounded-md transition-colors cursor-pointer select-none"
                                 style={{
                                     backgroundColor:
-                                        viewMode === "box"
-                                            ? paletteColors[7].hex
+                                        httpMethod === "POST"
+                                            ? paletteColors[10].hex
                                             : "transparent",
                                     color:
-                                        viewMode === "box"
-                                            ? paletteColors[5].hex
+                                        httpMethod === "POST"
+                                            ? paletteColors[0].hex
                                             : paletteColors[4].hex,
                                 }}
                             >
-                                Box
-                            </button>
-                            <button
-                                onClick={() => setViewMode("table")}
-                                className="px-3 py-1.5 rounded-md text-sm transition-colors cursor-pointer select-none"
-                                style={{
-                                    backgroundColor:
-                                        viewMode === "table"
-                                            ? paletteColors[7].hex
-                                            : "transparent",
-                                    color:
-                                        viewMode === "table"
-                                            ? paletteColors[5].hex
-                                            : paletteColors[4].hex,
-                                }}
-                            >
-                                Table
-                            </button>
-                            <button
-                                onClick={() => setViewMode("raw")}
-                                className="px-3 py-1.5 rounded-md text-sm transition-colors cursor-pointer select-none"
-                                style={{
-                                    backgroundColor:
-                                        viewMode === "raw"
-                                            ? paletteColors[7].hex
-                                            : "transparent",
-                                    color:
-                                        viewMode === "raw"
-                                            ? paletteColors[5].hex
-                                            : paletteColors[4].hex,
-                                }}
-                            >
-                                Raw
-                            </button>
-                        </div>
-                    </div>
+                                POST
+                            </motion.button>
+                        </motion.div>
 
-                    {renderView()}
-                </div>
-            )}
+                        {/* URL Input */}
+                        <motion.input
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2, duration: 0.3 }}
+                            type="text"
+                            value={url}
+                            onChange={(e) => setUrl(e.target.value)}
+                            placeholder="Enter API URL..."
+                            className="w-full p-3 backdrop-blur-md border outline-none rounded-lg"
+                            style={{
+                                backgroundColor: `${paletteColors[1].hex}80`,
+                                borderColor: paletteColors[4].hex,
+                                color: paletteColors[5].hex,
+                            }}
+                        />
+
+                        {/* POST Content Type & Body */}
+                        <AnimatePresence>
+                            {httpMethod === "POST" && (
+                                <motion.div
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: "auto" }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="flex flex-col gap-4 overflow-hidden"
+                                >
+                                    <div className="flex gap-2 flex-wrap">
+                                        {(
+                                            [
+                                                "json",
+                                                "form-data",
+                                                "plain-text",
+                                            ] as PostContentType[]
+                                        ).map((type, index) => (
+                                            <motion.button
+                                                key={type}
+                                                initial={{ opacity: 0, scale: 0.8 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                transition={{ delay: index * 0.1, duration: 0.2 }}
+                                                whileHover={{ scale: 1.05 }}
+                                                whileTap={{ scale: 0.95 }}
+                                                onClick={() => setContentType(type)}
+                                                className="px-3 py-1.5 rounded-md text-sm transition-colors backdrop-blur-md border outline-none cursor-pointer select-none"
+                                                style={{
+                                                    backgroundColor:
+                                                        contentType === type
+                                                            ? paletteColors[11].hex
+                                                            : `${paletteColors[1].hex}80`,
+                                                    color:
+                                                        contentType === type
+                                                            ? paletteColors[5].hex
+                                                            : paletteColors[4].hex,
+                                                    borderColor: paletteColors[4].hex,
+                                                }}
+                                            >
+                                                {type}
+                                            </motion.button>
+                                        ))}
+                                    </div>
+
+                                    <motion.textarea
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.2, duration: 0.3 }}
+                                        value={postBody}
+                                        onChange={(e) => setPostBody(e.target.value)}
+                                        className="w-full h-32 p-3 backdrop-blur-md border outline-none rounded-lg font-mono text-sm resize-y"
+                                        style={{
+                                            backgroundColor: `${paletteColors[1].hex}80`,
+                                            borderColor: paletteColors[4].hex,
+                                            color: paletteColors[5].hex,
+                                        }}
+                                        placeholder={
+                                            contentType === "form-data"
+                                                ? "key1=value1\nkey2=value2"
+                                                : contentType === "json"
+                                                ? '{"key": "value"}'
+                                                : "Plain text body"
+                                        }
+                                    />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
+                        <motion.button
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3, duration: 0.3 }}
+                            whileHover={{ scale: loading || !url ? 1 : 1.05 }}
+                            whileTap={{ scale: loading || !url ? 1 : 0.95 }}
+                            onClick={handleApiCall}
+                            disabled={loading || !url}
+                            className="px-6 py-2 rounded-lg transition-colors w-fit select-none"
+                            style={{
+                                backgroundColor:
+                                    loading || !url
+                                        ? paletteColors[4].hex
+                                        : paletteColors[7].hex,
+                                color: paletteColors[5].hex,
+                                cursor: loading || !url ? "not-allowed" : "pointer",
+                            }}
+                        >
+                            {loading ? "Loading..." : "Send Request"}
+                        </motion.button>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Error Display */}
+            <AnimatePresence>
+                {error && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                        className="p-4 border rounded-lg select-none"
+                        style={{
+                            backgroundColor: `${paletteColors[8].hex}30`,
+                            borderColor: paletteColors[8].hex,
+                            color: paletteColors[12].hex,
+                        }}
+                    >
+                        {error}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* JSON Output */}
+            <AnimatePresence>
+                {output && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 20 }}
+                        transition={{ duration: 0.4 }}
+                        className="mt-4"
+                    >
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2, duration: 0.3 }}
+                            className="flex items-center justify-between mb-3"
+                        >
+                            <h3
+                                className="text-lg font-semibold select-none"
+                                style={{ color: paletteColors[5].hex }}
+                            >
+                                Output:
+                            </h3>
+
+                            {/* View Mode Toggle */}
+                            <div
+                                className="flex gap-2 p-1 backdrop-blur-md border rounded-lg flex-wrap"
+                                style={{
+                                    backgroundColor: `${paletteColors[1].hex}80`,
+                                    borderColor: paletteColors[4].hex,
+                                }}
+                            >
+                                {(["line", "box", "table", "raw"] as ViewMode[]).map((view, index) => (
+                                    <motion.button
+                                        key={view}
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ delay: 0.3 + index * 0.05, duration: 0.2 }}
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        onClick={() => setViewMode(view)}
+                                        className="px-3 py-1.5 rounded-md text-sm transition-colors cursor-pointer select-none"
+                                        style={{
+                                            backgroundColor:
+                                                viewMode === view
+                                                    ? paletteColors[7].hex
+                                                    : "transparent",
+                                            color:
+                                                viewMode === view
+                                                    ? paletteColors[5].hex
+                                                    : paletteColors[4].hex,
+                                        }}
+                                    >
+                                        {view.charAt(0).toUpperCase() + view.slice(1)}
+                                    </motion.button>
+                                ))}
+                            </div>
+                        </motion.div>
+
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={viewMode}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.95 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                {renderView()}
+                            </motion.div>
+                        </AnimatePresence>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }

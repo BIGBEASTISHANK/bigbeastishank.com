@@ -20,7 +20,7 @@ export default function WorksComponent() {
         url="/works"
         description={
           <>
-            <p className="text-justify border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
+            <p>
               Below you'll find a selection of my key projects showcasing my
               work in web development, game development, and other areas.
               For my complete portfolio and source code, check out my{" "}
