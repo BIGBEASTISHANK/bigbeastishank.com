@@ -22,7 +22,7 @@ export default function ColorPalette() {
       />
 
       {/* Table */}
-      <div className="overflow-x-auto flex flex-col">
+      <div className="overflow-x-visiable flex flex-col">
         {paletteColors.map((data, index) => (
           <motion.div
             initial={{ y: -50, scale: 0.4, opacity: 0 }}

@@ -1,10 +1,153 @@
 "use client";
 import { useState } from "react";
-import ReactJson from "react-json-view";
+import { JSX } from "react";
 
 type InputMode = "json" | "api";
 type HttpMethod = "GET" | "POST";
 type PostContentType = "json" | "form-data" | "plain-text";
+
+// Custom JSON Viewer Component
+function CustomJsonViewer({ data }: { data: any }) {
+    const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
+
+    const toggleCollapse = (path: string) => {
+        setCollapsed((prev) => {
+            const next = new Set(prev);
+            if (next.has(path)) {
+                next.delete(path);
+            } else {
+                next.add(path);
+            }
+            return next;
+        });
+    };
+
+    const copyToClipboard = (value: any) => {
+        navigator.clipboard.writeText(JSON.stringify(value, null, 2));
+    };
+
+    const renderValue = (value: any, path: string = "", depth: number = 0): JSX.Element => {
+        const isCollapsed = collapsed.has(path);
+
+        // Null
+        if (value === null) {
+            return <span className="text-gray-400">null</span>;
+        }
+
+        // Boolean
+        if (typeof value === "boolean") {
+            return <span className="text-purple-400">{value.toString()}</span>;
+        }
+
+        // Number
+        if (typeof value === "number") {
+            return <span className="text-blue-400">{value}</span>;
+        }
+
+        // String
+        if (typeof value === "string") {
+            return <span className="text-green-400">"{value}"</span>;
+        }
+
+        // Array
+        if (Array.isArray(value)) {
+            if (value.length === 0) {
+                return <span className="text-gray-400">[]</span>;
+            }
+
+            return (
+                <div className="inline-block w-full">
+                    <div className="flex items-center gap-2">
+                        <button
+                            onClick={() => toggleCollapse(path)}
+                            className="text-gray-400 hover:text-white transition-colors"
+                        >
+                            {isCollapsed ? "▶" : "▼"}
+                        </button>
+                        <span className="text-gray-400">
+                            [{value.length} {value.length === 1 ? "item" : "items"}]
+                        </span>
+                        <button
+                            onClick={() => copyToClipboard(value)}
+                            className="text-xs text-gray-500 hover:text-blue-400 transition-colors"
+                            title="Copy to clipboard"
+                        >
+                            📋
+                        </button>
+                    </div>
+                    {!isCollapsed && (
+                        <div className="ml-6 mt-1 border-l-2 border-gray-700 pl-4">
+                            {value.map((item, index) => (
+                                <div key={index} className="my-1 flex gap-2">
+                                    <span className="text-gray-500 flex-shrink-0">{index}:</span>
+                                    <div className="flex-1">
+                                        {renderValue(item, `${path}.${index}`, depth + 1)}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        // Object
+        if (typeof value === "object") {
+            const keys = Object.keys(value);
+            if (keys.length === 0) {
+                return <span className="text-gray-400">{"{}"}</span>;
+            }
+
+            return (
+                <div className="inline-block w-full">
+                    <div className="flex items-center gap-2">
+                        <button
+                            onClick={() => toggleCollapse(path)}
+                            className="text-gray-400 hover:text-white transition-colors"
+                        >
+                            {isCollapsed ? "▶" : "▼"}
+                        </button>
+                        <span className="text-gray-400">
+                            {"{"}
+                            {keys.length} {keys.length === 1 ? "key" : "keys"}
+                            {"}"}
+                        </span>
+                        <button
+                            onClick={() => copyToClipboard(value)}
+                            className="text-xs text-gray-500 hover:text-blue-400 transition-colors"
+                            title="Copy to clipboard"
+                        >
+                            📋
+                        </button>
+                    </div>
+                    {!isCollapsed && (
+                        <div className="ml-6 mt-1 border-l-2 border-gray-700 pl-4">
+                            {keys.map((key) => (
+                                <div key={key} className="my-1 flex gap-2">
+                                    <div className="flex gap-1 flex-shrink-0">
+                                        <span className="text-cyan-400">"{key}"</span>
+                                        <span className="text-gray-500">:</span>
+                                    </div>
+                                    <div className="flex-1">
+                                        {renderValue(value[key], `${path}.${key}`, depth + 1)}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        return <span className="text-gray-400">{String(value)}</span>;
+    };
+
+    return (
+        <div className="backdrop-blur-md bg-gray-900/50 border border-gray-700 rounded-lg p-4 font-mono text-sm overflow-auto">
+            {renderValue(data)}
+        </div>
+    );
+}
 
 export default function JsonViewer() {
     const [mode, setMode] = useState<InputMode>("json");
@@ -86,7 +229,6 @@ export default function JsonViewer() {
                     options.headers = { "Content-Type": "application/json" };
                     options.body = postBody;
                 } else if (contentType === "form-data") {
-                    // Parse form data from textarea (expects key=value pairs, one per line)
                     const formData = new FormData();
                     postBody.split("\n").forEach((line) => {
                         const [key, ...valueParts] = line.split("=");
@@ -118,23 +260,23 @@ export default function JsonViewer() {
     return (
         <div className="flex flex-col w-full md:max-w-[45rem] max-w-[35rem] mx-auto p-4 gap-4">
             {/* Mode Toggle */}
-            <div className="flex gap-2 p-1 bg-gray-800 rounded-lg w-fit">
+            <div className="flex gap-2 p-1 w-fit">
                 <button
                     onClick={() => setMode("json")}
-                    className={`px-4 py-2 rounded-md transition-colors ${
+                    className={`px-4 py-2 rounded-full transition-colors cursor-pointer ${
                         mode === "json"
                             ? "bg-[#1793D1] text-white"
-                            : "text-gray-400 hover:text-white"
+                            : "text-gray-400 hover:text-white border-2 border-[#1793D1]"
                     }`}
                 >
                     JSON Code
                 </button>
                 <button
                     onClick={() => setMode("api")}
-                    className={`px-4 py-2 rounded-md transition-colors ${
+                    className={`px-4 py-2 rounded-full transition-colors cursor-pointer ${
                         mode === "api"
                             ? "bg-[#1793D1] text-white"
-                            : "text-gray-400 hover:text-white"
+                            : "text-gray-400 hover:text-white border-2 border-[#1793D1]"
                     }`}
                 >
                     API Call
@@ -147,7 +289,7 @@ export default function JsonViewer() {
                     <textarea
                         value={jsonInput}
                         onChange={(e) => setJsonInput(e.target.value)}
-                        className="w-full h-64 p-3 bg-gray-800 text-white rounded-lg font-mono text-sm resize-y"
+                        className="w-full h-64 p-3 backdrop-blur-md bg-gray-900/50 border border-gray-600 text-white rounded-lg font-mono text-sm resize-y outline-none"
                         placeholder="Enter JSON here..."
                     />
                     <button
@@ -163,7 +305,7 @@ export default function JsonViewer() {
             {mode === "api" && (
                 <div className="flex flex-col gap-4">
                     {/* HTTP Method Toggle */}
-                    <div className="flex gap-2 p-1 bg-gray-800 rounded-lg w-fit">
+                    <div className="flex gap-2 p-1 backdrop-blur-md bg-gray-900/50 border border-gray-600 outline-none rounded-lg w-fit">
                         <button
                             onClick={() => setHttpMethod("GET")}
                             className={`px-4 py-2 rounded-md transition-colors ${
@@ -192,7 +334,7 @@ export default function JsonViewer() {
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
                         placeholder="Enter API URL..."
-                        className="w-full p-3 bg-gray-800 text-white rounded-lg"
+                        className="w-full p-3 backdrop-blur-md bg-gray-900/50 border border-gray-600 outline-none text-white rounded-lg"
                     />
 
                     {/* POST Content Type & Body */}
@@ -212,7 +354,7 @@ export default function JsonViewer() {
                                         className={`px-3 py-1.5 rounded-md text-sm transition-colors ${
                                             contentType === type
                                                 ? "bg-purple-600 text-white"
-                                                : "bg-gray-800 text-gray-400 hover:text-white"
+                                                : "backdrop-blur-md bg-gray-900/50 border border-gray-600 outline-none text-gray-400 hover:text-white"
                                         }`}
                                     >
                                         {type}
@@ -223,7 +365,7 @@ export default function JsonViewer() {
                             <textarea
                                 value={postBody}
                                 onChange={(e) => setPostBody(e.target.value)}
-                                className="w-full h-32 p-3 bg-gray-800 text-white rounded-lg font-mono text-sm resize-y"
+                                className="w-full h-32 p-3 backdrop-blur-md bg-gray-900/50 border border-gray-600 outline-none text-white rounded-lg font-mono text-sm resize-y"
                                 placeholder={
                                     contentType === "form-data"
                                         ? "key1=value1\nkey2=value2"
@@ -258,17 +400,7 @@ export default function JsonViewer() {
                     <h3 className="text-white text-lg font-semibold mb-2">
                         Output:
                     </h3>
-                    <div className="rounded-lg p-4">
-                        <ReactJson
-                            src={output}
-                            theme="harmonic"
-                            collapsed={false}
-                            displayDataTypes={false}
-                            displayObjectSize={true}
-                            enableClipboard={true}
-                            indentWidth={2}
-                        />
-                    </div>
+                    <CustomJsonViewer data={output} />
                 </div>
             )}
         </div>

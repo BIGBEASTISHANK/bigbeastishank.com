@@ -2,6 +2,7 @@
   "name": "bigbeastishank.com",
   "version": "V6",
   "private": false,
+  "type": "module",
   "licenses": [
     {
       "type": "GPL-3.0-only",
@@ -36,7 +37,6 @@
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
-    "react-json-view": "^1.21.3",
     "react-spinners": "^0.17.0",
     "react-syntax-highlighter": "^16.1.0",
     "react-tsparticles": "^2.12.2",
@@ -52,6 +52,7 @@
     "@types/node": "24.10.1",
     "@types/react-syntax-highlighter": "^15.5.13",
     "autoprefixer": "^10.4.22",
+    "baseline-browser-mapping": "^2.9.5",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.0.3",
     "postcss": "^8.5.6",
