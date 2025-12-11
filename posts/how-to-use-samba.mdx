@@ -1,0 +1,95 @@
+---
+title: "How to Use Samba"
+description: "A clear guide for understanding Samba, SMB, and simple setup steps for both Arch Linux and Windows."
+date: "2025-12-12"
+minuteRead: 5
+tags:
+  [
+    "Samba",
+    "Linux",
+    "Windows",
+    "File Sharing",
+    "Networking"
+  ]
+---
+
+Samba is an open source suite that enables file and print sharing across systems that follow the SMB protocol. It allows Unix like systems and Windows systems to interact in a shared network environment. With Samba active on your system you can share folders printers and authenticate users inside mixed platform networks.
+
+## What is SMB
+
+SMB stands for Server Message Block. It is a network communication protocol used for shared access to files printers and various network resources. Windows systems use SMB as a core part of network file sharing. Samba implements SMB so that Unix like systems can communicate with Windows systems using the same protocol.
+
+## Why to use Samba
+
+Samba solves real world problems in mixed networks.  
+It lets Linux systems share folders that Windows systems can mount.  
+It supports user authentication and access control across platforms.  
+It can act as a simple file server or integrate with complex directory services.  
+In short it gives consistent network file sharing for many operating systems inside one network.
+
+## Quick Samba setup on Arch Linux
+
+Here is a simple workflow for a basic share.
+
+Install Samba
+
+```bash
+sudo pacman -S samba
+```
+
+Enable and start the service
+
+```bash
+sudo systemctl enable smb nmb
+sudo systemctl start smb nmb
+```
+
+Create a share directory
+
+```bash
+sudo mkdir -p /srv/samba/share
+sudo chmod 777 /srv/samba/share
+```
+
+Edit the Samba config
+
+```bash
+sudo nano /etc/samba/smb.conf
+```
+
+Add the following at the bottom
+
+```bash
+[share]
+   path = /srv/samba/share
+   browseable = yes
+   read only = no
+   guest ok = yes
+```
+
+Restart Samba
+
+```bash
+sudo systemctl restart smb nmb
+```
+
+Your Linux system now provides a basic guest share that Windows can access.
+
+## Quick Samba setup on Windows
+
+Windows already supports SMB so setup is mainly about enabling sharing.
+
+1. Open File Explorer and choose any folder you want to share  
+2. Right click the folder and select Properties  
+3. Open the Sharing tab  
+4. Select Advanced Sharing  
+5. Enable Share this folder and set permissions  
+6. Confirm and apply  
+
+To connect to a Samba share from Windows open File Explorer and type the network path for example
+
+```text
+\\server_name\share
+```
+
+Windows will open the shared directory and request credentials if needed.
