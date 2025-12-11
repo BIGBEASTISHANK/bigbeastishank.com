@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import AllLinkComponent from "@/components/(10) AllLink";
+import AllLinksComponent from "@/components/(10) AllLinks";
 
 // Meta data
 export const metadata: Metadata = {
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     openGraph: {
         title: "All Link | BIGBEASTISHANK",
         description: "Comprehensive Link management tool with multiple view modes and organization features.",
-        images: "/img/metadata/allLink.png",
+        images: "/img/metadata/allLinks.png",
     },
 };
 
-export default function AllLink() {
+export default function AllLinks() {
     return (
         <div className="md:max-w-[45rem] max-w-[35rem] mx-auto px-5">
-            <AllLinkComponent />
+            <AllLinksComponent />
         </div>
     );
 }

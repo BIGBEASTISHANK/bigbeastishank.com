@@ -1,9 +1,9 @@
-interface AllLinkData {
+interface AllLinksData {
     name: string;
     link: string;
 }
 
-export const allLinkData: AllLinkData[] = [
+export const allLinksData: AllLinksData[] = [
     {
         name: "Home",
         link: "/",

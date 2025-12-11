@@ -3,7 +3,7 @@ import { ShortDivider } from "@/utility/Dividers";
 import HeadingBasic from "@/utility/HeadingBasic";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { allLinkData } from "@@/data/AllLinkData";
+import { allLinksData } from "@@/data/AllLinksData";
 
 const container = {
     hidden: { opacity: 0 },
@@ -20,7 +20,7 @@ const item = {
     show: { opacity: 1, scale: 1 },
 };
 
-export default function AllLinkComponent() {
+export default function AllLinksComponent() {
     return (
         <div>
             {/* Heading */}
@@ -41,7 +41,7 @@ export default function AllLinkComponent() {
                 animate="show"
                 className="mt-8 flex flex-wrap gap-4 justify-center"
             >
-                {allLinkData.map((linkItem, index) => (
+                {allLinksData.map((linkItem, index) => (
                     <motion.div
                         key={index}
                         variants={item}
