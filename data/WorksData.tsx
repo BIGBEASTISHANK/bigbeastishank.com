@@ -54,7 +54,7 @@ export const websiteProjects: ProjectData[] = [
     {
         title: "Crisis Compass",
         description:
-            "AI-powered disaster response coordination system that optimizes rescue operations through ML-based severity prediction, intelligent resource allocation, and real-time multi-agency coordination with a centralized communication section. Won 3rd place at MUJHackX3.0 2025 hackathon",
+            "AI-powered disaster response coordination system that optimizes rescue operations through ML-based severity prediction, intelligent resource allocation, and real-time multi-agency coordination with a centralized communication section.",
         projectUrl: "https://github.com/BIGBEASTISHANK/CrisisCompass",
     },
     // MUJ Tasks
@@ -64,6 +64,12 @@ export const websiteProjects: ProjectData[] = [
             "A centralized platform for MUJ students to request and receive assistance with assignments, lab manuals & CSE Projects.",
         projectUrl: "https://github.com/BIGBEASTISHANK/MUJTasks",
     },
+    // Cosmic Explorer
+    {
+        title: "Cosmic Explorer",
+        description: "Cosmic Explorer is an elegant, data-rich web dashboard that brings space exploration data to everyone. Whether you’re following the path of the International Space Station, checking Mars weather, tracking potentially hazardous asteroids, or viewing daily space highlights, Cosmic Explorer provides a seamless, real-time gateway to the universe.",
+        projectUrl: "https://github.com/BIGBEASTISHANK/CosmicExplorer",
+    },   
     // HackathonPPTSubWeb
     {
         title: "HackathonPPTSubWeb",
@@ -122,7 +128,7 @@ export const otherProjects: ProjectData[] = [
     {
         title: "SignifyAI",
         description:
-            "An AI-powered translator that converts spoken audio or video input into American Sign Language (ASL) gestures in real-time using deep learning and computer vision, featuring gesture animation, cloud accessibility, and support for multilingual rendering.",
+            "An AI-powered translator that converts spoken audio or video input into American Sign Language (ASL) gestures in real-time using deep learning and computer vision, featuring gesture animation, cloud accessibility, and support for multilingual rendering. Won 3rd place at MUJHackX3.0 2025 hackathon.",
         projectUrl: "https://github.com/BIGBEASTISHANK/SignifyAI",
     },
     // ORGVault
