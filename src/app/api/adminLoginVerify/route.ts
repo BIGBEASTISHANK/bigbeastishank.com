@@ -77,7 +77,7 @@ export async function GET(req: NextRequest) {
         }
 
         // Return successful response
-        return NextResponse.json({ response: allUserEmail }, { status: 200 });
+        return NextResponse.json({ subscriberEmails: allUserEmail }, { status: 200 });
     } catch (error: any) {
         return NextResponse.json(
             { error: "Internal server error!" },

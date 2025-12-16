@@ -1,5 +1,4 @@
 import mongoose, { Document, Model } from "mongoose";
-import { unique } from "next/dist/build/utils";
 
 // Interface
 export interface IBlog_Subscriber extends Document {
