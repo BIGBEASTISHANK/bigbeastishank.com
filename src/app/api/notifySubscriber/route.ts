@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
         }
 
         const verifyLogin = await fetch(
-            `${process.env.NEXT_PUBLIC_BASE_URL}/api/adminLoginVerify`,
+            `${req.nextUrl.origin}/api/adminLoginVerify`,
             {
                 method: "GET",
                 headers: {
