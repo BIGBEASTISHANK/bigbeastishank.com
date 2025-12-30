@@ -113,6 +113,7 @@ export default function NotifySubscriberComponent() {
                             }}
                             className="group flex items-center justify-between bg-[#0A0C0E]/10 backdrop-blur-md border border-[#1793D1]/50 hover:border-[#1793D1]/80 p-4 rounded-2xl hover:shadow-lg shadow-md hover:shadow-[#1793D1]/80 shadow-[#1793D1]/50"
                         >
+                            {/* Blog Details */}
                             <div className="flex-1">
                                 <h3 className="text-lg font-semibold mb-1 line-clamp-1">
                                     {post.title}
@@ -129,6 +130,7 @@ export default function NotifySubscriberComponent() {
                                 </p>
                             </div>
 
+                            {/* Notify Button */}
                             <motion.button
                                 whileHover={isDisabled ? {} : { scale: 1.05 }}
                                 whileTap={isDisabled ? {} : { scale: 0.95 }}
@@ -150,7 +152,7 @@ export default function NotifySubscriberComponent() {
                                         : buttonState === "error"
                                         ? "bg-red-500"
                                         : "bg-[#1793D1]"
-                                } px-4 py-2 cursor-pointer flex justify-center items-center text-sm font-medium transition-colors disabled:opacity-80 disabled:cursor-not-allowed min-w-[140px]`}
+                                } px-4 py-2 cursor-pointer flex justify-center items-center text-sm font-medium transition-colors disabled:opacity-80 disabled:cursor-not-allowed w-[180px] h-[40px]`}
                             >
                                 {buttonState === "loading" ? (
                                     <PulseLoader

@@ -270,7 +270,7 @@ function BlogContent({ posts }: BlogComponentProps) {
     const [cardAnimationDelay, setCardAnimationDelay]: [
         cardAnimationDelay: GLfloat,
         setCardAnimationDelay: Dispatch<SetStateAction<GLfloat>>
-    ] = useState<GLfloat>(1.4);
+    ] = useState<GLfloat>(0.15);
 
     // Get current page
     const currentPageParam: string = searchParams.get("page");
@@ -318,7 +318,6 @@ function BlogContent({ posts }: BlogComponentProps) {
 
     // Change page
     const paginate: (pageNumber: number) => void = (pageNumber: number) => {
-        setCardAnimationDelay(0.15);
         setPageBtnAnimationDelay(0.3 + (postsPerPage * 0.3) / 2);
 
         if (pageNumber > 0 && pageNumber <= totalPages) {
