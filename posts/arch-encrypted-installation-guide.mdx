@@ -1,0 +1,277 @@
+---
+title: "Arch Linux Encrypted Installation with Swap encryption & other partition Guide"
+description: "Understand the procedure of installing Arch Linux with LUKS and cryptsetup with auto unlocking other drives."
+date: "2025-12-31"
+minuteRead: 12
+tags:
+    [
+        "Arch Linux",
+        "Linux Installation",
+        "Operating Systems",
+        "System Setup",
+        "Beginner Friendly",
+        "LUKS",
+        "cryptsetup",
+    ]
+---
+
+Welcome to this guide (again). Unlike previous blog [blogs/arch-installation-guide](https://bigbeastishank.com/blogs/arch-installation-guide/), this time I'll be covering how to install Arch Linux with multiple drive encrypted using LUKS and cryptsetup.
+
+> **Note:** Make sure you're on a UEFI system and connected to the internet. <br/>
+> You can also refer the official [installation guide](https://wiki.archlinux.org/title/installation_guide) for more information.
+
+---
+
+## 1. Boot into Arch ISO
+
+1. Download the latest Arch ISO from the [official website](https://archlinux.org/download/).
+2. Create a bootable USB using Rufus (Windows) or `dd` (Linux/macOS).
+3. Disable Secure Boot in UEFI settings.
+4. Boot into the USB and open the terminal.
+
+---
+
+## 2. Connect to the Internet
+
+### Ethernet
+
+You're likely already connected.
+
+### Wi-Fi
+
+Use `iwctl`:
+
+```bash
+iwctl
+device list
+station <device> scan
+station <device> get-networks
+station <device> connect <SSID>
+exit
+```
+
+Test the connection:
+
+```bash
+ping bigbeastishank.com
+```
+
+---
+
+## 3. Update the System Clock
+
+```bash
+timedatectl set-ntp true
+```
+
+---
+
+## 4. Partition the Disk
+
+Use `lsblk` to get the disk name:
+
+Use `cfdisk` on your disk (replace `/dev/sdX`):
+
+```bash
+cfdisk /dev/sdX
+```
+
+Create the following partitions:
+
+-   **EFI** - 512MiB (type: EFI System)
+-   **Root** - Remaining space
+-   **Swap** - (RAM size + 0.5GiB)
+
+---
+
+## 5. Format the Partitions
+
+```bash
+mkfs.fat -F32 /dev/sdX1          # EFI
+```
+
+```bash
+cryptsetup luksFormat /dev/sdX2  # Encrypted root
+cryptsetup open /dev/sdX2 cryptroot
+mkfs.ext4 /dev/mapper/cryptroot
+```
+
+```bash
+cryptsetup luksFormat /dev/sdX3  # Encrypted swap
+cryptsetup open /dev/sdX3 cryptswap
+mkswap /dev/mapper/cryptswap
+swapon /dev/mapper/cryptswap
+```
+
+---
+
+## 6. Mount the Filesystems
+
+```bash
+mount /dev/mapper/cryptroot /mnt
+mkdir /mnt/boot
+mount /dev/sdX1 /mnt/boot
+```
+
+---
+
+## 7. Install Base System
+
+```bash
+pacstrap -K /mnt base linux linux-firmware vim networkmanager grub efibootmgr os-prober sudo git
+```
+
+---
+
+## 8. Generate fstab
+
+```bash
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+---
+
+## 9. Chroot into the System
+
+```bash
+arch-chroot /mnt
+```
+
+---
+
+## 10. Set Time Zone and Localization
+
+```bash
+ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+hwclock --systohc
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+```
+
+---
+
+## 11. Set Hostname and Hosts File
+
+```bash
+echo "MyLappy" > /etc/hostname
+```
+
+```bash
+cat <<EOF > /etc/hosts
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   MyLappy.localdomain MyLappy
+EOF
+```
+
+---
+
+## 12. Set Root Password (optional) [RECOMMENDED]
+
+```bash
+passwd
+```
+
+## 13. Add encryption key to `crypttab`
+
+```bash
+dd bs=512 count=4 if=/dev/random of=/etc/cryptkeyfile.bin iflag=fullblock
+chmod 000 /etc/cryptkeyfile.bin
+cryptsetup luksAddKey "/dev/sdX3" /etc/cryptkeyfile.bin
+echo "cryptswap UUID=$(blkid -s UUID -o value /dev/sdX3) /etc/cryptkeyfile.bin luks" >> /etc/crypttab
+```
+
+> Remember to follow the `luksAddkey` and `echo "crypt...` for other partitions too if you have created any.
+> Example
+>
+> ```bash
+> cryptsetup luksAddKey "/dev/sdX4" /etc/cryptkeyfile.bin
+> echo "crypthome UUID=$(blkid -s UUID -o value /dev/sdX4) /etc/cryptkeyfile.bin luks" >> /etc/crypttab
+> ```
+>
+> Remember to create partition before `genfstab`
+
+---
+
+## 14. Root encryption information in grub
+
+```bash
+echo 'GRUB_CMDLINE_LINUX="cryptdevice=UUID='$(blkid -s UUID -o value /dev/sdX2)':cryptroot root=/dev/mapper/cryptroot"' >> /etc/default/grub
+```
+
+> Note: After running this command remove the `GRUB_CMDLINE_LINUX` variable already in `/etc/default/grub` and shift your newly added variable to exactly that position
+
+---
+
+## 15. Hooks in `mkinitcpio.conf` & rebuilding initramfs
+
+Add `encrypt` hook before `filesystems` hook & `keyboard` must be before `encrypt` hook.
+
+```bash
+HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block encrypt filesystems fsck)
+```
+
+```bash
+mkinitcpio -p linux
+```
+
+> Note: We did not add the location of `/etc/cryptkeyfile.bin` in `FILES()` in `mkinitcpio.conf` because we are not auto-mounting root partition.
+
+---
+
+## 16. Install GRUB (for UEFI)
+
+```bash
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="Arch Linux"
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+---
+
+## 17. Enable NetworkManager
+
+```bash
+systemctl enable NetworkManager
+```
+
+---
+
+## 18. Create a New User with Sudo Privileges
+
+```bash
+useradd -mG wheel yourusername
+passwd yourusername
+visudo
+```
+
+Inside the visudo file, uncomment this line:
+
+```bash
+%wheel ALL=(ALL:ALL) ALL
+```
+
+---
+
+## 19. Exit and Reboot
+
+```bash
+exit
+umount -R /mnt
+reboot
+```
+
+---
+
+## Extra steps
+
+If you want to use my dotfile you can view my [dotfiles](https://github.com/bigbeastishank/dotfiles) repository.
+
+Or you can simply run these commands after login to rice you linux in my style.
+
+```bash
+git clone https://github.com/BIGBEASTISHANK/dotfiles
+cd dotfiles
+chmod +x ./syscopy.sh
+./syscopy.sh
+```
