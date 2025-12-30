@@ -6,7 +6,7 @@ export async function PUT(req: NextRequest) {
     try {
         // Get base url
         const baseUrl = req.nextUrl.origin;
-        if (baseUrl != "http://localhost:3000")
+        if (baseUrl != "https://bigbeastishank.com")
             return NextResponse.json(
                 { error: "Invalid base url" },
                 { status: 400 }
