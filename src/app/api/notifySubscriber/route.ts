@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
             );
         }
 
-        const {subscriberEmails: blogSubscribers} = await verifyLogin.json();
+        const { subscriberEmails: blogSubscribers } = await verifyLogin.json();
 
         // Getting Blog inputs
         const { title, description, tags, minuteRead, link } = await req.json();
@@ -67,8 +67,6 @@ export async function POST(req: NextRequest) {
                 { status: 200 }
             );
         }
-
-        return;
 
         // Format tags for display
         const tagsHtml = tags
