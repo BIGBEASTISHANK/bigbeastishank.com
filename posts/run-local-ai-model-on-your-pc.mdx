@@ -1,0 +1,200 @@
+---
+title: "Run Local AI Models on Your Bare-Metal: A Beginner's Guide"
+description: "Discover how to run AI models locally on bare-metal hardware, explore tools like LM Studio and Ollama, and understand key concepts like precision bits and VRAM requirements."
+date: "2026-02-13"
+minuteRead: "15"
+tags:
+  [
+    "AI",
+    "Local AI",
+    "Model Deployment",
+    "Quantization",
+    "VRAM Optimization",
+    "LM Studio",
+    "Ollama",
+    "Model Running",
+    "GPT"
+  ]
+---
+
+In an era where AI is becoming ubiquitous, the decision to run AI models locally on bare-metal hardware is gaining traction. This approach offers unparalleled control, privacy, and efficiency. In this blog, we'll explore **why** you should consider local AI, the tools that make it possible (like LM Studio and Ollama), and the technical nuances of running large models on your own hardware.
+
+## Why Use Local AI?
+
+Running AI models locally provides several advantages:
+
+### 1. Privacy & Security
+
+Local AI keeps your data on your device, eliminating the risk of data leaks or unauthorized access. This is critical for sensitive tasks like medical diagnosis, financial analysis, or personal productivity.
+
+### 2. Cost Efficiency
+
+Cloud-based AI services (e.g., Azure, AWS) can be expensive for heavy usage. Running models on bare-metal reduces dependency on cloud infrastructure, cutting costs.
+
+### 3. Customization & Control
+
+You can fine-tune models to your specific needs, integrate them with custom workflows, and avoid vendor lock-in.
+
+### 4. Latency & Reliability
+
+Local models respond faster, making them ideal for real-time applications like chatbots, translation, or creative writing.
+
+## What is LM Studio and Ollama?
+
+### LM Studio
+
+LM Studio is a user-friendly platform for running large language models (LLMs) locally. It provides a graphical interface (GUI) to load models, manage settings, and interact with them. It supports models like LLaMA, Phi-3, and more, and offers features like model quantization and GPU acceleration.
+
+### Ollama
+
+Ollama is a command-line tool that simplifies the deployment of LLMs on your machine. It focuses on ease of use and supports models like LLaMA, Mistral, and OpenChat. Ollama's lightweight design makes it ideal for developers who prefer terminal-based workflows.
+**Key Difference**:
+
+- **LM Studio** emphasizes accessibility and GUI for non-technical users.
+- **Ollama** prioritizes simplicity and integration for developers.
+
+---
+
+## What is the Difference Between an AI Model and LM Studio/Ollama?
+
+A **model** (e.g., GPT-3, LLaMA) is the AI algorithm itself, trained on vast datasets to generate text, code, or other outputs. **LM Studio** and **Ollama** are the **tools** that allow you to **run** these models on your hardware.
+Think of it like this:
+
+- **Model** = The engine (e.g., a car engine).
+- **LM Studio/Ollama** = The car (or the garage where the engine is installed).
+  Without tools like LM Studio or Ollama, you can't run the model on your computer.
+
+---
+
+## What Are Billion-Parameter Models?
+
+AI models are often described by the number of **parameters** they have. A **billion-parameter model** has 1 billion trainable weights, enabling it to capture complex patterns in data.
+
+### Key Points:
+
+- **Higher parameters = better performance**: These models can handle nuanced tasks like code generation or multi-language translation.
+- **Resource Intensity**: Billion-parameter models require significant computational power, which is why local deployment often involves optimizations like quantization.
+
+---
+
+## What Are Precision Bits?
+
+Precision bits determine how numbers are represented in a model's calculations. Common types include:
+
+### 1. FP16 (16-bit)
+
+- **Pros**: Faster computation, lower memory usage.
+- **Cons**: Less accurate than FP32.
+
+### 2. FP32 (32-bit)
+
+- **Pros**: Higher accuracy, better for training.
+- **Cons**: Slower, uses more memory.
+
+### 3. Int8/4-bit Quantization
+
+- **Pros**: Dramatically reduces VRAM usage, enables running on lower-end hardware.
+- **Cons**: Slight loss in performance, especially for complex tasks.
+
+---
+
+## How to Install Ollama and Run a Model (e.g., GPT-oss:20b) on Linux
+
+> This is only an example, you can install other models too.
+
+### Step 1: Install Ollama
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+### Step 2: Download the Model
+
+```bash
+ollama pull gpt-oss:20b
+```
+
+### Step 3: Run the Model
+
+```bash
+ollama run gpt-oss:20b
+```
+
+This will start the model and allow you to interact with it via the terminal.
+
+## Running Ollama on Windows
+
+If you want to use Ollama on Windows, you should use **WSL (Windows Subsystem for Linux)**. Follow these steps:
+
+1. Enable WSL in Windows Settings.
+2. Install a Linux distribution (e.g., Ubuntu).
+3. Install Ollama inside the Linux environment using the same commands as above.
+
+---
+
+## Web UI for Ollama
+
+If you prefer a graphical interface for interacting with Ollama, you can deploy a self-hosted Web UI like **Open WebUI**. This allows you to manage models, chat with them, and customize settings directly in your browser.
+
+### Step-by-Step Setup
+
+1. **Install Docker**  
+   If you don't have Docker installed, run:
+
+   ```bash
+    sudo apt install docker.io
+    sudo pacman -S docker
+    sudo dnf install docker
+   ```
+
+2. **Grant Docker Permissions**  
+   Add your user to the `docker` group to avoid using `sudo` for Docker commands:
+
+   ```bash
+    sudo usermod -aG docker $USER
+   ```
+
+   Log out and back in for the changes to take effect.
+
+3. **Run the Web UI Container**  
+   Execute this command to launch the Web UI:
+
+   ```bash
+    docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+   ```
+
+   - `--network=host`: Uses the host's network for faster communication with Ollama.
+   - `-v open-webui:/app/backend/data`: Persists user data (e.g., chat history).
+   - `OLLAMA_BASE_URL`: Points to Ollama's default port (`11434`).
+
+4. **Access the Web UI**  
+   Open your browser and navigate to: [http://localhost:8080](http://localhost:8080)
+
+You'll see a dashboard where you can:
+
+- Select your model (e.g., `gpt-oss:20b`).
+- Chat with the model directly.
+- Customize settings like temperature, max tokens, and more.
+
+---
+
+## What is Offloading?
+
+**Offloading** refers to transferring parts of a model's computation from the GPU to the CPU to save VRAM.
+
+### Types of Offloading:
+
+1. **Model Offloading**: Move parts of the model to CPU memory.
+2. **Gradient Offloading** (used in training): Transfer gradients to CPU to reduce GPU memory usage.
+
+### When to Use Offloading:
+
+- When VRAM is insufficient for the full model.
+- For models like LLaMA-65B, offloading is essential for running on consumer-grade GPUs.
+
+---
+
+## Conclusion
+
+Running AI models locally on bare-metal hardware is a powerful way to balance performance, privacy, and cost. Tools like LM Studio and Ollama make this accessible, while understanding concepts like precision bits and VRAM requirements ensures you can scale effectively. Whether you're a developer or a privacy-conscious user, local AI is a game-changer.
+Start today by downloading LM Studio or Ollama and experimenting with your favorite models!
