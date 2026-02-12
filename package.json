@@ -31,7 +31,7 @@
     "mailtrap": "^4.3.0",
     "mongoose": "^9.0.0",
     "next": "^16.0.7",
-    "next-mdx-remote": "^5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "react": "^19.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^19.2.0",
