@@ -7,6 +7,7 @@ import { getLanguageDisplayName } from "@@/data/BlogsCoreData";
 import { ClickToCopyCode } from "@/components/(7) Blogs/posts/UseClientIndex";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
+import { serialize } from "v8";
 
 export function BlogPostComponent({
   frontmatter,
@@ -143,38 +144,44 @@ export function BlogPostComponent({
 
   // Extracting Table of content
   function TOCData() {
-  const heading: { level: number; content: string }[] = [
-    { level: 1, content: frontmatter.title },
-  ];
+    const heading: { level: number; content: string }[] = [
+      { level: 1, content: frontmatter.title },
+    ];
 
-  const lines = content.split("\n");
-  let insideCodeBlock = false;
+    const lines = content.split("\n");
+    let insideCodeBlock = false;
 
-  for (const line of lines) {
-    // Toggle code block state
-    if (line.startsWith('```')) {
-      insideCodeBlock = !insideCodeBlock;
-      continue;
-    }
+    for (const line of lines) {
+      // Toggle code block state
+      if (line.startsWith("```")) {
+        insideCodeBlock = !insideCodeBlock;
+        continue;
+      }
 
-    // Skip processing if inside code block
-    if (!insideCodeBlock && line.startsWith('#')) {
-      const match = line.match(/^(#+)\s*(.+)$/);
-      if (match) {
-        const headingLevel = match[1].length;
-        const headingText = match[2].trim();
-        heading.push({ level: headingLevel, content: headingText });
+      // Skip processing if inside code block
+      if (!insideCodeBlock && line.startsWith("#")) {
+        const match = line.match(/^(#+)\s*(.+)$/);
+        if (match) {
+          const headingLevel = match[1].length;
+          const headingText = match[2].trim();
+          heading.push({ level: headingLevel, content: headingText });
+        }
       }
     }
-  }
 
-  return heading;
-}
+    return heading;
+  }
 
   return (
     <UseClientIndex
       frontmatter={frontmatter}
-      MDXRemote={<MDXRemote source={content} components={components} />}
+      MDXRemote={
+        <MDXRemote
+          source={content}
+          components={components}
+          options={{ blockJS: false, blockDangerousJS: true }}
+        />
+      }
       TOCData={TOCData()}
     />
   );
