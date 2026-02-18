@@ -1,7 +1,7 @@
 ---
 title: "Run Local AI Models on Your Bare-Metal: A Beginner's Guide"
 description: "Discover how to run AI models locally on bare-metal hardware, explore tools like LM Studio and Ollama, and understand key concepts like precision bits and VRAM requirements."
-date: "2026-02-13"
+date: "2026-02-18"
 minuteRead: "15"
 tags:
   [
@@ -13,7 +13,8 @@ tags:
     "LM Studio",
     "Ollama",
     "Model Running",
-    "GPT"
+    "GPT",
+    "SearXNG",
   ]
 ---
 
@@ -175,6 +176,24 @@ You'll see a dashboard where you can:
 - Select your model (e.g., `gpt-oss:20b`).
 - Chat with the model directly.
 - Customize settings like temperature, max tokens, and more.
+
+---
+
+## Integrating Web Search with Your Local AI
+
+One of the most exciting capabilities of local AI is the ability to augment its knowledge with real-time information from the web. This prevents models from being limited to their training data and allows for more accurate and up-to-date responses. There are several ways to achieve this:
+
+**1. Retrieval-Augmented Generation (RAG) Frameworks:** Tools like LangChain and LlamaIndex provide sophisticated frameworks for connecting your local models to external data sources, including search APIs. These often involve indexing web content and using it to provide context to the LLM. This is a more complex setup but offers maximum flexibility.
+
+**2. Direct API Integration (Less Common):** Some LLMs have built-in support for external API calls, allowing them to directly query search engines. However, this is less frequently supported and may require significant customization.
+
+**3. Simple Web Search with Open WebUI and SearxNG (Recommended for Beginners):** The easiest and often most effective approach for many users is to combine Open WebUI with a self-hosted search engine like SearxNG.
+
+- **Why SearxNG?** SearxNG is a free, open-source metasearch engine that aggregates results from various sources (Google, Bing, DuckDuckGo, etc.) without tracking your searches. This aligns perfectly with the privacy-focused ethos of local AI.
+
+- **How it works:** Open WebUI can be configured to send search queries to SearxNG, and then inject the results into the LLM's prompt. This allows the model to consider up-to-date information when generating its responses.
+
+- **Setup Instructions (Brief):** Setting up SearxNG involves installing it on a server (or even a local machine). Open WebUI can then be configured with the SearxNG instance's URL. Detailed setup guides are available online for both tools. Search for "Open WebUI SearxNG setup" for specific tutorials.
 
 ---
 
