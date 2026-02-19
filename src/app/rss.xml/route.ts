@@ -47,7 +47,7 @@ export async function GET() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const siteUrl = process.env.VERCEL_URL 
-    ? `https://${process.env.VERCEL_URL}`
+    ? `https://bigbeastishank`
     : 'http://localhost:3000';
 
   const feed = new RSS({
@@ -63,7 +63,7 @@ export async function GET() {
     feed.item({
       title: post.title,
       description: post.description,
-      url: `${siteUrl}/blog/${post.slug}`,
+      url: `${siteUrl}/blogs/${post.slug}`,
       date: post.date,
       categories: post.tags,
     });
