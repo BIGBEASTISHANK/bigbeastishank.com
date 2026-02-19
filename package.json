@@ -42,6 +42,7 @@
     "react-typed": "^2.0.12",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
+    "rss": "^1.2.2",
     "sharp": "^0.34.5",
     "speakeasy": "^2.0.0",
     "tsparticles-slim": "^2.12.0"
