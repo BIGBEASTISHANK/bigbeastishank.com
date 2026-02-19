@@ -23,7 +23,7 @@ export default function CustomNotificationComponent() {
     setSendState("loading");
 
     try {
-      const response = await fetch("/api/customEmailToSubscriber", {
+      const response = await fetch("/api/customNotificationToSub", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

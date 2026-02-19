@@ -195,7 +195,7 @@ export async function POST(req: NextRequest) {
                 successCount++;
                 console.log(`Email sent to: ${subscriber.email}`);
 
-                // Optional: Add small delay to avoid rate limiting (adjust as needed)
+                // Add small delay to avoid rate limiting
                 await new Promise((resolve) => setTimeout(resolve, 100));
             } catch (emailError) {
                 console.error(

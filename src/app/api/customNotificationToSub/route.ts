@@ -69,11 +69,17 @@ export async function POST(req: NextRequest) {
       try {
         await client.send({
           from: sender,
-          to: [{ email: subscriber }],
+          to: [{ email: subscriber.email }],
           subject: subject,
           html: htmlBody,
+          category: "General Notification",
         });
         successCount++;
+
+        console.log(`Email sent to: ${subscriber.email}`);
+
+        //  Add small delay to avoid rate limiting
+        await new Promise((resolve) => setTimeout(resolve, 100));
       } catch (err) {
         console.error(`Failed to send to ${subscriber}:`, err);
         failedEmails.push(subscriber);
