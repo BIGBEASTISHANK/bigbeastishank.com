@@ -46,9 +46,7 @@ export async function GET() {
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  const siteUrl = process.env.VERCEL_URL 
-    ? `https://bigbeastishank`
-    : 'http://localhost:3000';
+  const siteUrl = "https://bigbeastishank.com"
 
   const feed = new RSS({
     title: 'BIGBEASTISHANK Blogs',
