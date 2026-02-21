@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 export function ClickToCopyCode({ children }: { children: React.ReactNode }) {
   const [copiedCode, setCopiedCode]: [
     copiedCode: boolean,
-    setCopiedCode: Dispatch<SetStateAction<boolean>>
+    setCopiedCode: Dispatch<SetStateAction<boolean>>,
   ] = useState<boolean>(false);
 
   return (
@@ -68,7 +68,7 @@ function DropdownTOC({
       : TOCData.length;
 
     return TOCData.slice(startIndex + 1, endIndex).filter(
-      (item) => item.level === 2
+      (item) => item.level === 2,
     );
   };
 
@@ -83,14 +83,14 @@ function DropdownTOC({
       : TOCData.length;
 
     return TOCData.slice(startIndex + 1, endIndex).filter(
-      (item) => item.level === 3
+      (item) => item.level === 3,
     );
   };
 
   // Get level 3
   const getLevel3Items = (
     level2Item: { level: number; content: string },
-    level1Index: number
+    level1Index: number,
   ) => {
     const level2Items = getLevel2Items(level1Index);
     const level2Index = level2Items.findIndex((item) => item === level2Item);
@@ -100,11 +100,11 @@ function DropdownTOC({
     const endIndex = nextLevel2
       ? TOCData.findIndex((item) => item === nextLevel2)
       : level1Items[level1Index + 1]
-      ? TOCData.findIndex((item) => item === level1Items[level1Index + 1])
-      : TOCData.length;
+        ? TOCData.findIndex((item) => item === level1Items[level1Index + 1])
+        : TOCData.length;
 
     return TOCData.slice(startIndex + 1, endIndex).filter(
-      (item) => item.level === 3
+      (item) => item.level === 3,
     );
   };
 
@@ -344,6 +344,20 @@ export default function UseClientIndex({
 
         {/* Short Divider */}
         <ShortDivider delay={1.3} />
+
+        {/* Inline Table of content */}
+        <div className="min-[1531px]:hidden">
+          {/* Heading */}
+          <h1 className="font-bold text-2xl mx-5 sm:mx-3 mb-2">
+            Table of Content
+          </h1>
+
+          {/* TOC */}
+          <DropdownTOC TOCData={TOCData} />
+
+          {/* Short Divider */}
+          <ShortDivider delay={1.3} />
+        </div>
 
         {/* Blog content */}
         <motion.div
