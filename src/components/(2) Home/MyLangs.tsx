@@ -4,13 +4,15 @@ import HeadingBasic from "@/utility/HeadingBasic";
 import { motion, HTMLMotionProps } from "framer-motion";
 
 export default function MyLangs() {
+  const baseDelay = 3.2;
+
   return (
     <div id="myLangs" className="px-5 scroll-mt-28">
       {/* Headings */}
       <HeadingBasic
         heading="My Langs"
         url="#myLangs"
-        animationDelay={2.5}
+        animationDelay={baseDelay}
         description={
           <>
             <p>
@@ -32,7 +34,7 @@ export default function MyLangs() {
             initial={{ y: 50, scale: 0.4, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
             transition={{
-              delay: 3 + (index * 0.3) / 2,
+              delay: baseDelay + (index * 0.3) / 2,
               duration: 0.5,
               type: "spring",
             }}

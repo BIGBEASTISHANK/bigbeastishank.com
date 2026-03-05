@@ -5,10 +5,12 @@ import HeadingBasic from "@/utility/HeadingBasic";
 import { motion, HTMLMotionProps } from "framer-motion";
 
 export default function About() {
+  const baseDelay = 2.0;
+
   return (
     <div id="about" className="px-5 scroll-mt-28 flex flex-col">
       {/* Title */}
-      <HeadingBasic heading="About" url="/#about" animationDelay={1.2} />
+      <HeadingBasic heading="About" url="/#about" animationDelay={baseDelay} />
 
       {/* Content body */}
       <div className="flex flex-col border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
@@ -16,7 +18,7 @@ export default function About() {
         <motion.a
           initial={{ opacity: 0, scale: 0.4 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.4, duration: 0.5, type: "spring" }}
+          transition={{ delay: baseDelay + 0.2, duration: 0.5, type: "spring" }}
           {...({ href: pfp.src, target: "_blank" } as HTMLMotionProps<"a">)}
           {...({
             className:
@@ -25,7 +27,7 @@ export default function About() {
         >
           <Image
             src={pfp}
-            alt={"pfp"}
+            alt="pfp"
             className="select-none rounded-full border-2 border-[#1793D1] hover:scale-[1.1] transition-all hover:shadow-xl shadow-lg hover:shadow-[#1793D1]/50 shadow-[#1793D1]/50"
           />
         </motion.a>
@@ -35,14 +37,23 @@ export default function About() {
           <motion.p
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.6, duration: 0.5, type: "spring" }}
+            transition={{
+              delay: baseDelay + 0.4,
+              duration: 0.5,
+              type: "spring",
+            }}
           >
-            👋 Hi, I'm Ishank-though my friends know me as the BIG BEAST ISHANK!
+            👋 Hi, I'm Ishank—though my friends know me as the BIG BEAST ISHANK!
           </motion.p>
+
           <motion.p
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.8, duration: 0.5, type: "spring" }}
+            transition={{
+              delay: baseDelay + 0.6,
+              duration: 0.5,
+              type: "spring",
+            }}
           >
             I'm a <strong>fullstack web developer</strong> who specializes in
             building scalable applications with NextJS and Python. I also work
@@ -50,20 +61,30 @@ export default function About() {
             <strong>network administrator</strong>, create games, and explore
             cybersecurity through penetration testing. Also 2X Hackathon winner.
           </motion.p>
+
           <motion.p
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 0.5, type: "spring" }}
+            transition={{
+              delay: baseDelay + 0.8,
+              duration: 0.5,
+              type: "spring",
+            }}
           >
             The "BIG BEAST ISHANK" name represents my commitment to mastering{" "}
             <strong>Technologies</strong>, <strong>Programming</strong> &{" "}
             <strong>Development</strong>. It's about pushing boundaries and
             constantly improving my craft across all domains.
           </motion.p>
+
           <motion.p
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.2, duration: 0.5, type: "spring" }}
+            transition={{
+              delay: baseDelay + 1.0,
+              duration: 0.5,
+              type: "spring",
+            }}
           >
             I share my development journey through content on my{" "}
             <a

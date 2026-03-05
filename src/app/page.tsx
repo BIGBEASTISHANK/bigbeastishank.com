@@ -3,6 +3,7 @@ import About from "@/components/(2) Home/About";
 import MyLangs from "@/components/(2) Home/MyLangs";
 import MyToolsAndFramework from "@/components/(2) Home/MyToolsAndFrameworks";
 import { FullDivider } from "@/utility/Dividers";
+import GPGFingerprint from "@/components/(2) Home/GPGFingerprint";
 
 export default function Home() {
   return (
@@ -10,16 +11,21 @@ export default function Home() {
       <Hero />
 
       {/* Divider */}
-      <FullDivider delay={1.2}/>
+      <FullDivider delay={1.2} />
+
+      <GPGFingerprint />
+
+      {/* Divider */}
+      <FullDivider delay={1.8}/>
 
       <About />
 
       {/* Divider */}
-      <FullDivider delay={2.35}/>
+      <FullDivider delay={3.2} />
 
       <MyLangs />
 
-      <FullDivider delay={5.1}/>
+      <FullDivider delay={5.1} />
 
       <MyToolsAndFramework />
     </div>

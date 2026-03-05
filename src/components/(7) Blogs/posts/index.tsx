@@ -7,7 +7,6 @@ import { getLanguageDisplayName } from "@@/data/BlogsCoreData";
 import { ClickToCopyCode } from "@/components/(7) Blogs/posts/UseClientIndex";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
-import { serialize } from "v8";
 
 export function BlogPostComponent({
   frontmatter,
