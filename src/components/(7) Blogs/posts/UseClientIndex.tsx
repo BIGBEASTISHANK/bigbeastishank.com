@@ -134,8 +134,8 @@ function DropdownTOC({
             key={i}
             className="border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3"
           >
-            {/* Level 1 Item */}
-            <div className="cursor-pointer text-gray-400 flex items-center gap-2 hover:text-gray-300 transition-colors">
+            {/* Heading (LVL 1) Item */}
+            {/* <div className="cursor-pointer text-gray-400 flex items-center gap-2 hover:text-gray-300 transition-colors">
               {(hasLevel2 || hasDirectLevel3) &&
                 (openLevel1 === i ? (
                   <FaChevronDown
@@ -155,7 +155,7 @@ function DropdownTOC({
               <a href={`#`} className="hover:underline">
                 {level1.content}
               </a>
-            </div>
+            </div> */}
 
             {openLevel1 === i && (
               <div className="ml-6 mt-1">

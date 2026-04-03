@@ -1,0 +1,352 @@
+---
+title: "How LLM processes text in backend"
+description: "Everyone uses ChatGPT today to generate text, understand how it works and how it processes text."
+date: "2026-04-02"
+minuteRead: 12
+tags:
+  [
+    "AI",
+    "LLM",
+    "ChatGPT",
+    "Generative AI",
+    "Natural Language Processing",
+    "Text Processing",
+    "Machine Learning",
+    "Deep Learning",
+  ]
+---
+
+## What is a Token?
+
+Before a Large Language Model (LLM) can understand or generate text, it first needs to break it down into smaller units called **tokens**.
+
+A **token** is not always a word. It can be:
+- A full word (`apple`)
+- A subword (`app` + `le`)
+- A character (`a`, `p`, `p`, `l`, `e`)
+- Even punctuation (`.` `,` `!`)
+
+### Example
+
+```text
+Input: "ChatGPT is amazing!"
+Tokens: ["Chat", "G", "PT", " is", " amazing", "!"]
+```
+
+Different models tokenize differently depending on their tokenizer.
+
+---
+
+## How Words Are Tokenized
+
+Tokenization is the process of converting raw text into tokens. Most modern LLMs use **subword tokenization** techniques like:
+
+- Byte Pair Encoding (BPE)
+- WordPiece
+- SentencePiece
+
+### Why Subwords?
+
+Because:
+- It reduces vocabulary size
+- Handles unknown words better
+- Works across multiple languages
+
+### Example with Subwords
+
+```text
+Word: "unbelievable"
+
+Tokenized:
+["un", "believ", "able"]
+```
+
+### Behind the Scenes
+
+1. Text is normalized (lowercase, remove extra spaces)
+2. Tokenizer matches known patterns
+3. Splits into smallest meaningful units
+
+---
+
+## What is Token Training?
+
+Token training refers to how models learn relationships between tokens during training.
+
+### Key Idea
+
+The model is trained to **predict the next token** given previous tokens.
+
+### Example
+
+```text
+Input: "The sky is"
+Target: "blue"
+```
+
+During training:
+- Input tokens → model
+- Model predicts probability distribution
+- Loss is calculated (difference from actual token)
+- Weights are updated using backpropagation
+
+This process is repeated over **billions of tokens**.
+
+---
+
+## What is PyTorch and TensorFlow?
+
+These are the two most popular deep learning frameworks used to build LLMs.
+
+### PyTorch
+
+- Developed by Facebook (Meta)
+- Dynamic computation graph
+- Easy debugging
+- Widely used in research
+
+### TensorFlow
+
+- Developed by Google
+- Static + dynamic graphs
+- Production-ready tools
+- Strong deployment ecosystem
+
+### Example (PyTorch)
+
+```python
+import torch
+import torch.nn as nn
+
+linear = nn.Linear(10, 5)
+input = torch.randn(1, 10)
+output = linear(input)
+print(output)
+```
+
+---
+
+## Parts of a Transformer
+
+Transformers are the core architecture behind LLMs.
+
+Main components:
+1. Token Embedding
+2. Positional Encoding
+3. Multi-Head Attention
+4. Feed Forward Network
+5. Transformer Block (stacked layers)
+
+---
+
+## Token Embedding
+
+Tokens are integers. Models cannot understand integers directly.
+
+So we convert tokens into **vectors**.
+
+### Example
+
+```text
+Token ID: 101 → [0.21, -0.33, 0.89, ..., 0.12]
+```
+
+This vector:
+- Captures meaning
+- Places similar words closer in vector space
+
+---
+
+## Positional Encoding
+
+Transformers do not understand order naturally.
+
+So we add positional information.
+
+### Why?
+
+```text
+"dog bites man" ≠ "man bites dog"
+```
+
+### Solution
+
+Add positional encoding to embeddings.
+
+```text
+Final Input = Token Embedding + Positional Encoding
+```
+
+This helps model understand sequence order.
+
+---
+
+## Multi-Head Attention
+
+This is the most important part of transformers.
+
+### Core Idea
+
+Each token looks at other tokens to understand context.
+
+### Example
+
+```text
+Sentence: "The bank of the river"
+
+"bank" attends to "river" → meaning = river bank
+```
+
+### How It Works
+
+1. Create Query (Q), Key (K), Value (V)
+2. Compute attention scores:
+
+```text
+Attention(Q, K, V) = softmax(QK^T / sqrt(d)) V
+```
+
+3. Multiple heads → multiple perspectives
+
+---
+
+## Feed Forward Network (FFN)
+
+After attention, data passes through a neural network.
+
+### Structure
+
+```text
+FFN(x) = max(0, xW1 + b1)W2 + b2
+```
+
+- Applies non-linearity
+- Helps model learn complex patterns
+
+---
+
+## Transformer Block
+
+A transformer block combines:
+
+1. Multi-head attention
+2. Add & Norm
+3. Feed Forward
+4. Add & Norm
+
+### Flow
+
+```text
+Input
+  ↓
+Multi-Head Attention
+  ↓
+Add & Normalize
+  ↓
+Feed Forward
+  ↓
+Add & Normalize
+  ↓
+Output
+```
+
+LLMs stack **dozens or hundreds** of these blocks.
+
+---
+
+## How Generation Works
+
+Now the most exciting part: **text generation**
+
+### Step-by-Step
+
+#### 1. Input Prompt
+
+```text
+"Once upon a time"
+```
+
+#### 2. Tokenization
+
+```text
+["Once", " upon", " a", " time"]
+```
+
+#### 3. Forward Pass
+
+- Tokens → embeddings
+- Pass through transformer layers
+- Output = probability distribution over vocabulary
+
+#### 4. Next Token Prediction
+
+```text
+Possible outputs:
+"there" → 40%
+"was" → 35%
+"a" → 10%
+```
+
+#### 5. Sampling Strategy
+
+- Greedy (pick highest)
+- Top-k
+- Top-p (nucleus sampling)
+- Temperature scaling
+
+#### 6. Append Token
+
+```text
+"Once upon a time there"
+```
+
+#### 7. Repeat
+
+This loop continues until:
+- End token is reached
+- Max length is hit
+
+---
+
+## Example Generation Loop
+
+```python
+tokens = tokenizer("Once upon a time")
+
+for _ in range(max_length):
+    logits = model(tokens)
+    next_token = sample(logits)
+    tokens.append(next_token)
+
+text = tokenizer.decode(tokens)
+```
+
+---
+
+## Key Insight
+
+LLMs **do not "think" like humans**.
+
+They:
+- Predict next tokens
+- Based on patterns
+- Learned from massive data
+
+Yet, this simple mechanism leads to:
+- Conversations
+- Code generation
+- Creativity
+
+---
+
+## Final Thoughts
+
+Understanding LLM internals reveals:
+
+- It's all math + probability
+- Transformers enable context understanding
+- Token prediction powers everything
+
+From a simple next-token prediction system emerges something that feels intelligent.
+
+And that is the beauty of modern AI.
