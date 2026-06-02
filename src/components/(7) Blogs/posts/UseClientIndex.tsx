@@ -206,11 +206,11 @@ export default function UseClientIndex({
     TOCData: { level: number; content: string }[];
 }) {
     return (
-        <div className="flex min-[1531px]:px-20 px-0 scroll-mt-28">
+        <div className="flex min-[1531px]:px-20 px-0 scroll-mt-28 overflow-hidden">
             {/* Main content */}
             <div
                 id="blogPost"
-                className="px-5 max-w-[70rem] mx-auto overflow-x-auto min-[1531px]:basis-2/3 overflow-y-hidden"
+                className="px-5 max-w-[70rem] mx-auto overflow-x-auto min-[1531px]:basis-2/3 overflow-hidden"
             >
                 {/* Header */}
                 <div className="border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
@@ -335,8 +335,8 @@ export default function UseClientIndex({
 
                 {/* Comments */}
                 <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1.8, duration: 0.5 }}
                 >
                     <GiscusComments />

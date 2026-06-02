@@ -5,9 +5,9 @@ import { ShortDivider } from "./Dividers";
 
 export default function GiscusComments() {
   return (
-    <section className="border border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3">
+    <section className="border border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3 scroll-mt-28" id="comments">
       <div className="mb-4">
-        <h2 className="font-bold text-2xl">Discussion</h2>
+        <h2 className="font-bold text-2xl">Comments</h2>
         <p className="text-sm text-[#F6F9FC]/75">
           Ask questions, share feedback, or continue the conversation on GitHub.
         </p>
