@@ -90,7 +90,7 @@ export function BlogPostComponent({
         <div className="group">
           <Link
             href={`#${props.children}`}
-            className="flex items-center gap-2 underline underline-offset-3"
+            className="items-center gap-2 underline underline-offset-3"
           >
             <FaLink className="group-hover:block hidden" />
             {props.children}
