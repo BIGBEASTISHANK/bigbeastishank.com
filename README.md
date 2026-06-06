@@ -12,6 +12,8 @@ The site is built with performance, animations, and scalability in mind while ke
   <img src="https://simpleskill.icons.workers.dev/svg?i=next.js,mongodb,tailwindcss,mailtrap,giscus" height="40" />
   &nbsp;
   <img src="/public/img/motion.svg" height="40" />
+  &nbsp;
+  <img src="/public/img/giscus.svg" height="40" />
 </p>
 
 ---
