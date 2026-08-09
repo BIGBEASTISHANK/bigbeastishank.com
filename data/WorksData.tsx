@@ -124,6 +124,12 @@ export const websiteProjects: ProjectData[] = [
 //
 // Other Projects
 export const otherProjects: ProjectData[] = [
+    // BixSync
+    {
+        title: "BixSync",
+        description: "It's a file sync system, that syncs a folder to all the devices connected to the same network.",
+        projectUrl: "https://github.com/BIGBEASTISHANK/BixSync",
+    },
     // SignifyAI
     {
         title: "SignifyAI",
