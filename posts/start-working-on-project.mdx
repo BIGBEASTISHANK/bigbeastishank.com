@@ -1,0 +1,203 @@
+---
+title: "Right way to start working on a project"
+description: "This blog will help you get started on your project, which will help you avoid burnout."
+date: "2026-09-22"
+minuteRead: 4
+tags: ["Project Management", "Productivity", "Time Management"]
+---
+
+Starting a new project can be exciting, but it can also become confusing very quickly.
+
+If you start working without a clear plan, you may keep changing things, forget important tasks, or spend too much time trying to figure out what to do next. This can make the project stressful and can eventually lead to burnout.
+
+A simple planning process can make things much easier.
+
+Here are the steps I follow when starting a project.
+
+## 1. Think About What You Want to Make
+
+Before writing code or doing any major work, first understand what you want to build.
+
+Take a pen and paper and draw your idea. It does not need to look perfect. Draw any kind of stuff, write in short or gibberish. The goal is simply to get the idea out of your head.
+
+You can also use drawing and note-taking tools like [Excalidraw](https://excalidraw.com/) or [Xournal++](https://xournalpp.github.io/).
+
+Try to answer questions like:
+
+- What am I building?
+- What problem does it solve?
+- Who will use it?
+- What are the main parts of the project?
+- What should the final result look like?
+
+At this stage, do not worry too much about implementation. Focus on understanding the idea.
+
+## 2. Draw the Architecture or Pipeline
+
+Once you have a basic idea, think about how everything will work together.
+
+Create an architecture or pipeline diagram that shows how data will flow through your project.
+
+You can draw it on paper or use a tool like [draw.io](https://app.diagrams.net/).
+
+For example, a simple data processing system could look like this:
+
+```text
+Input
+  |
+  v
+Validation
+  |
+  v
+Processing
+  |
+  v
+Storage
+  |
+  v
+Output
+```
+
+The diagram does not have to be complicated. It should help you understand how different parts of your project communicate with each other.
+
+It can also help you find problems before you start implementing them. Also it has to be proper and accurate, this is the most important part of the project.
+
+## 3. Create Documentation for the Workflow
+
+After understanding the architecture, write down how the project will work.
+
+You can use [LibreOffice Writer](https://www.libreoffice.org/discover/writer/) or any other document editor you prefer.
+
+Write the workflow properly, but do not make it unnecessarily long.
+
+Your documentation should explain enough for you to understand the project when you come back to it later.
+
+You can document things like:
+
+- What happens when the system starts
+- What data comes into the system
+- How the data is processed
+- Where the data is stored
+- What happens when something fails
+- What the expected output is
+
+Think of this document as instructions for your future self.
+
+If you come back to the project after a few weeks, you should be able to read the document and quickly understand how the system works.
+
+## 4. Create a Todo List
+
+Now that you understand the project, break the work into smaller tasks.
+
+Avoid creating one huge task such as:
+
+`Build the entire sync system`
+
+This does not tell you what you should actually work on.
+
+Instead, divide the big task into smaller chunks.
+
+For example, if you are building a **Sync System**, you can divide it into:
+
+- Manifest requesting
+- Manifest sending
+- Manifest comparison
+- Transferring data based on comparison
+
+Now each task has a clear purpose.
+
+### Use a Kanban Board
+
+You can put these tasks into a Kanban board.
+
+For example, my personal Kanban board can have these sections:
+
+<PostsTable
+  fields={["Not Started", "In Progress", "Completed", "Bugs", "Fixed", "Notes"]}
+  fieldsData={[
+    [
+      "Tasks that have not been started",
+      "Tasks currently being worked on",
+      "Tasks that are finished",
+      "Problems found during development",
+      "Bugs that have been fixed",
+      "Ideas, findings, and things to remember",
+    ],
+  ]}
+/>
+
+When you start a task, move it from **Not Started** to **In Progress**.
+
+When you finish it, move it to **Completed**.
+
+If you find a problem, create a bug and put it in **Bugs**. Once you fix it, move it to **Fixed**.
+
+The **Notes** section can be used for ideas, findings, or things you want to remember later.
+
+### Break Big Tasks Into Small Tasks
+
+Breaking down tasks is one of the most useful parts of this process.
+
+For example, instead of having:
+
+`Sync System`
+
+You can break it down into:
+
+```text
+Sync System
+    |
+    +-- Manifest requesting
+    |
+    +-- Manifest sending
+    |
+    +-- Manifest comparison
+    |
+    +-- Data transfer based on comparison
+```
+
+Now you have smaller tasks that you can work on one at a time.
+
+If one of these tasks is still too large, break it down again.
+
+The goal is to make each task small enough that you clearly understand what needs to be done.
+
+### Why This Helps
+
+The main goal of this process is to reduce confusion while working.
+
+Instead of opening your editor and thinking:
+
+> "What should I do now?"
+
+You already have a plan.
+
+You know:
+
+- What you are building
+- How the system works
+- How data flows
+- What the workflow looks like
+- What tasks need to be completed
+- What you should work on next
+
+This also makes large projects feel smaller.
+
+A large project can feel overwhelming when you look at it as one huge task. When you divide it into smaller tasks, you can focus on one thing at a time.
+
+## Conclusion
+
+You do not need a perfect plan before starting a project.
+
+The goal is not to predict everything that will happen. Projects change as you learn more.
+
+The goal is to have a clear starting point and a simple system that helps you keep moving.
+
+A simple process is:
+
+1. Think about what you want to build.
+2. Draw the architecture or data flow.
+3. Document the workflow.
+4. Break the project into small tasks.
+5. Track those tasks using a Kanban board.
+6. Work on one small task at a time.
