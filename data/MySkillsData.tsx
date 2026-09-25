@@ -4,7 +4,7 @@ import {
   SiGit,
   SiSass,
   SiRust,
-  SiCss3,
+  SiCss,
   SiHtml5,
   SiMysql,
   SiLinux,
@@ -68,7 +68,7 @@ export const myLangs: ToolsLayout[] = [
   },
   {
     name: "CSS",
-    icon: SiCss3,
+    icon: SiCss,
     learningLink: "https://www.w3schools.com/css",
   },
   {
