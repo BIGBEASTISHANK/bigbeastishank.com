@@ -26,7 +26,6 @@ const Raw_ShareSchema = new Schema<IRaw_Share>(
 		expireAt: {
 			type: Date,
 			required: [true, "Expiration time is required"],
-			index: true,
 		},
 	},
 
