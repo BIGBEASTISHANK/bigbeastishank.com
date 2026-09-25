@@ -17,7 +17,7 @@ export const allLinksData: AllLinksData[] = [
     },
     {
         name: "Color Palette",
-        link: "/colorPalette",
+        link: "/colorpalette",
         description: "Color palette of this website or for general use.",
     },
     {
@@ -27,7 +27,7 @@ export const allLinksData: AllLinksData[] = [
     },
     {
         name: "Json Viewer",
-        link: "/jsonViewer",
+        link: "/jsonviewer",
         description: "View JSON data in a more readable format.",
     },
     {
