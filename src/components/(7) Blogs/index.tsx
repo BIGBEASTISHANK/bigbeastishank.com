@@ -100,7 +100,7 @@ export default function BlogComponent() {
       const error: { error: string } = await response.json();
 
       if (!response.ok) {
-        throw new Error(error.error);
+        console.log(error.error);
       }
 
       setSubmitSuccess(true);

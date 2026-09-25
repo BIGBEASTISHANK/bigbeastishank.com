@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     await dbConnect(); // Connecting to db
     const subscriber: IBlog_Subscriber[] = await Blog_Subscribers.find(
       { email: email.email },
-      { email: 1, _id: 0 }
+      { email: 1 }
     );
 
     if (subscriber.length <= 0) {
