@@ -10,99 +10,94 @@ import { FaRss } from "react-icons/fa";
 const forbidenPathsForVisitorCount = ["/admin"];
 
 export default function Footer() {
-  const pathName: string = usePathname().split("/blogs/")[1];
-  const currentPath = usePathname();
-  const [nthvisitor, setNthvisitor] = useState<number>();
+	const pathName: string = usePathname().split("/blogs/")[1];
+	const currentPath = usePathname();
+	const [nthvisitor, setNthvisitor] = useState<number>();
 
-  useEffect(() => {
-    const isForbiddenPath = forbidenPathsForVisitorCount.some((path) =>
-      currentPath.startsWith(path),
-    );
+	useEffect(() => {
+		const isForbiddenPath = forbidenPathsForVisitorCount.some((path) => currentPath.startsWith(path));
 
-    async function handleVisitorCount() {
-      try {
-        const method = isForbiddenPath ? "GET" : "PUT";
-        const response = await fetch("/api/visitorCount", {
-          method: method,
-        });
+		async function handleVisitorCount() {
+			try {
+				const method = isForbiddenPath ? "GET" : "PUT";
+				const response = await fetch("/api/visitorCount", {
+					method: method,
+				});
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
 
-        const data = await response.json();
-        setNthvisitor(data.nthvisitor);
-      } catch (error) {
-        console.error("Failed to fetch visitor count:", error);
-      }
-    }
+				const data = await response.json();
+				setNthvisitor(data.nthvisitor);
+			} catch (error) {
+				console.error("Failed to fetch visitor count:", error);
+			}
+		}
 
-    handleVisitorCount();
-  }, []);
+		handleVisitorCount();
+	}, []);
 
-  return (
-    <footer
-      className={`text-center justify-center items-center my-5 ${
-        pathName != null
-          ? "max-w-[110rem] sm:p-5 p-3"
-          : "md:max-w-[45rem] max-w-[35rem]"
-      } mx-auto`}
-    >
-      <FullDivider />
+	return (
+		<footer
+			className={`text-center justify-center items-center my-5 ${
+				pathName != null ? "max-w-[110rem] sm:p-5 p-3" : "md:max-w-[45rem] max-w-[35rem]"
+			} mx-auto`}
+		>
+			<FullDivider />
 
-      <div className="flex flex-col border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3 justify-center items-center">
-        {nthvisitor && (
-          <motion.p
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            className="px-3 py-2 border border-[#0088CC] shadow-sm shadow-[#0088CC] rounded-3xl text-center text-sm text-[#0088CC] w-fit mb-3 select-none"
-          >
-            You are {nthvisitor.toLocaleString("en-IN")}th Visitor.
-          </motion.p>
-        )}
+			<div className="flex flex-col border-1 border-gray-600 rounded-3xl backdrop-blur-md sm:p-5 p-3 justify-center items-center">
+				{nthvisitor && (
+					<motion.p
+						initial={{ scale: 0 }}
+						animate={{ scale: 1 }}
+						className="px-3 py-2 border border-[#0088CC] shadow-sm shadow-[#0088CC] rounded-3xl text-center text-sm text-[#0088CC] w-fit mb-3 select-none"
+					>
+						You are {nthvisitor.toLocaleString("en-IN")}th Visitor.
+					</motion.p>
+				)}
 
-        <p className="md:text-base text-sm">
-          Made with ❤️ by{" "}
-          <strong>
-            <a
-              href="/github"
-              target="_blank"
-              className="text-[#0088CC] hover:underline outline-none"
-            >
-              BIGBEASTISHANK
-            </a>
-          </strong>
-        </p>
+				<p className="md:text-base text-sm">
+					Made with ❤️ by{" "}
+					<strong>
+						<a href="/github" target="_blank" className="text-[#0088CC] hover:underline outline-none">
+							BIGBEASTISHANK
+						</a>
+					</strong>
+				</p>
 
-        <ShortDivider customCSS="my-2" />
+				{/* Divider */}
+				<ShortDivider customCSS="my-2" />
 
-        <div className="mt-3 md:text-2xl text-xl flex flex-wrap gap-5 justify-center items-center mx-10">
-          {/* Social media link */}
-          {socialMedia.map((data, index) => (
-            <Link
-              key={index}
-              aria-label={data.label}
-              href={data.link}
-              target="_blank"
-              className={"outline-none"}
-            >
-              <data.icon />
-            </Link>
-          ))}
+				{/* RSS */}
+				<div className="md:text-base text-sm flex flex-wrap justify-center items-center">
+					{/* Text */}
+					<p>Subscribe to <strong>RSS</strong> feed for blogs</p>
 
-          {/* Divider */}
-          <p className="text-[#1793D1] select-none">|</p>
+					{/* Icon */}
+					<Link aria-label="rss" href="/rss.xml" className="outline-none ml-2">
+						<FaRss />
+					</Link>
+				</div>
 
-          {/* RSS */}
-          <Link
-            aria-label="rss"
-            href="/rss.xml"
-            className="outline-none flex items-center gap-2 text-[1.3rem]"
-          >
-            <FaRss />
-          </Link>
-        </div>
-      </div>
-    </footer>
-  );
+				{/* Divider */}
+				<ShortDivider customCSS="my-2" />
+
+				<div className="mt-3 md:text-2xl text-xl flex flex-wrap gap-5 justify-center items-center mx-10">
+					{/* Social media link */}
+					{socialMedia.map((data, index) => (
+						<Link
+							key={index}
+							aria-label={data.label}
+							href={data.link}
+							target="_blank"
+							className={"outline-none"}
+						>
+							<data.icon />
+						</Link>
+					))}
+				</div>
+			</div>
+		</footer>
+	);
 }
