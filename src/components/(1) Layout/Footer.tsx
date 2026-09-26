@@ -10,7 +10,8 @@ import { FaRss } from "react-icons/fa";
 const forbidenPathsForVisitorCount = ["/admin"];
 
 export default function Footer() {
-	const pathName: string = usePathname().split("/blogs/" || "/rawshare/")[0];
+	const pathname = usePathname();
+	const isWideFooter = pathname.includes("/blogs/") || pathname.includes("/rawshare");
 	const currentPath = usePathname();
 	const [nthvisitor, setNthvisitor] = useState<number>();
 
@@ -41,7 +42,7 @@ export default function Footer() {
 	return (
 		<footer
 			className={`text-center justify-center items-center my-5 ${
-				pathName != null ? "max-w-[110rem] sm:p-5 p-3" : "md:max-w-[45rem] max-w-[35rem]"
+				isWideFooter ? "max-w-[110rem] sm:p-5 p-3" : "md:max-w-[45rem] max-w-[35rem]"
 			} mx-auto`}
 		>
 			<FullDivider />
@@ -72,7 +73,9 @@ export default function Footer() {
 				{/* RSS */}
 				<div className="md:text-base text-sm flex flex-wrap justify-center items-center">
 					{/* Text */}
-					<p>Subscribe to <strong>RSS</strong> feed for blogs</p>
+					<p>
+						Subscribe to <strong>RSS</strong> feed for blogs
+					</p>
 
 					{/* Icon */}
 					<Link aria-label="rss" href="/rss.xml" className="outline-none ml-2">
