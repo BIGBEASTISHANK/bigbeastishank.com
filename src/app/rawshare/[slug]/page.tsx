@@ -21,7 +21,7 @@ export default async function RawShareContent({ params }: { params: Promise<{ sl
 	const { slug } = await params;
 
 	return (
-		<div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
+		<div className="md:max-w-[65rem] max-w-[55rem] mx-auto">
 			<RawShareContentComponent slug={slug} />
 		</div>
 	);

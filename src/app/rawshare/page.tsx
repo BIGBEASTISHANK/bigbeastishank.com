@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function RawShare() {
 	return (
-		<div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
+		<div className="md:max-w-[65rem] max-w-[55rem] mx-auto">
 			<RawShareComponent />
 		</div>
 	);

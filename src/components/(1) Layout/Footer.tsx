@@ -10,7 +10,7 @@ import { FaRss } from "react-icons/fa";
 const forbidenPathsForVisitorCount = ["/admin"];
 
 export default function Footer() {
-	const pathName: string = usePathname().split("/blogs/")[1];
+	const pathName: string = usePathname().split("/blogs/" || "/rawshare/")[0];
 	const currentPath = usePathname();
 	const [nthvisitor, setNthvisitor] = useState<number>();
 

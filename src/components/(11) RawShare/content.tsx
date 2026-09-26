@@ -97,7 +97,7 @@ export default function RawShareContentComponent({ slug }: RawShareContentCompon
 					<FullDivider customCSS="mt-3 mb-5" />
 
 					{/* Text */}
-					<pre className="whitespace-pre-wrap break-words font-mono">{text}</pre>
+					<pre className="font-mono overflow-auto">{text}</pre>
 				</div>
 			)}
 
