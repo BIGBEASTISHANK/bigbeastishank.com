@@ -6,6 +6,20 @@ body {
 	background: #0a141e;
 }
 
+.navbar {
+	.active-text {
+		background: $secondary;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-shadow: 0 0 10px $secondary;
+	}
+
+	.inactive-text {
+		text-shadow: 0 0 20px gray;
+	}
+}
+
 .hero {
 	.text-gradient {
 		background: linear-gradient(to bottom, $primary 0%, $secondary 100%);
