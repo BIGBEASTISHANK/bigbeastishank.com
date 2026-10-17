@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function HeroComponent() {
 	return (
-		<div className="relative flex flex-col hero">
+		<div id="home" className="relative flex flex-col hero">
 			<Image
 				src="/images/heroBackground.png"
 				alt="heroBackground"
@@ -31,7 +31,10 @@ export default function HeroComponent() {
 				{/* Buitton */}
 				<div className="flex gap-5 my-10 font-bold select-none">
 					{/* Projects */}
-					<Link href="" className="px-8 py-4 rounded-2xl flex justify-center items-center text-xl button-glow">
+					<Link
+						href=""
+						className="px-8 py-4 rounded-2xl flex justify-center items-center text-xl button-glow"
+					>
 						View My Projects <FaArrowRight className="font-thin" />
 					</Link>
 

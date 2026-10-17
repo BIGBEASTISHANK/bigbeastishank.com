@@ -30,7 +30,7 @@ export const SocialLink = [
 	},
 	{
 		name: "Mastodon",
-		link: "//mastodon",
+		link: "/mastodon",
 		icon: FaMastodon,
 	},
 	{
