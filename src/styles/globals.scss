@@ -1,0 +1,21 @@
+$primary: #33aadd;
+$secondary: #019bfb;
+
+body {
+	color: white;
+	background: #0a141e;
+}
+
+.hero {
+	.text-gradient {
+		background: linear-gradient(to bottom, $primary 0%, $secondary 100%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.button-glow {
+		background: $secondary;
+		box-shadow: 0 0 15px $secondary;
+	}
+}

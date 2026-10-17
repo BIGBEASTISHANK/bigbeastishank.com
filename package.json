@@ -8,9 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "framer-motion": "^14.3.0",
     "next": "16.4.2",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "react-icons": "^5.7.0",
+    "sass": "^1.105.2"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
