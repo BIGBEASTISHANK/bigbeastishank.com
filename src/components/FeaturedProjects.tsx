@@ -9,7 +9,7 @@ export default function FeaturedProjects() {
 	);
 
 	return (
-		<div id="featured-projects" className="bg-[#020D15] px-4 py-10 sm:px-8 lg:px-20 xl:px-40 featuredProjects">
+		<section id="featured-projects" className="bg-[#020D15] px-4 py-10 sm:px-8 lg:px-20 xl:px-40 featuredProjects">
 			<SectionTitleComponent title="Featured Projects" />
 
 			<div className="flex flex-col gap-1 text-3xl font-bold">
@@ -79,6 +79,6 @@ export default function FeaturedProjects() {
 					);
 				})}
 			</div>
-		</div>
+		</section>
 	);
 }

@@ -47,6 +47,7 @@ body {
 	}
 
 	.github-button {
-		background: linear-gradient(to right bottom, $primary 0%, #006bc2 100%);
+		box-shadow: 0 0 15px $secondary;
+		background: linear-gradient(to right bottom, $primary 0%, $secondary 100%);
 	}
 }

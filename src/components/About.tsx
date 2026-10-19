@@ -11,7 +11,7 @@ export default function AboutComponent() {
 	const [currentTechStack, setCurrentTechStack] = useState<Section>(drfaultCurrectTechStack);
 
 	return (
-		<div id="about" className="bg-[#040E18] px-40 py-10 border-y-2 border-gray-800 flex">
+		<section id="about" className="bg-[#040E18] px-40 py-10 border-y-2 border-gray-800 flex">
 			{/* Left half */}
 			<div className="flex flex-col w-1/2 pr-10">
 				{/* Section title */}
@@ -197,6 +197,6 @@ export default function AboutComponent() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }

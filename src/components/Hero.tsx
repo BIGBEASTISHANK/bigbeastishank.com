@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function HeroComponent() {
 	return (
-		<div id="home" className="relative flex flex-col hero">
+		<section id="home" className="relative flex flex-col hero">
 			<Image
 				src="/images/heroBackground.png"
 				alt="heroBackground"
@@ -56,6 +56,6 @@ export default function HeroComponent() {
 					))}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
