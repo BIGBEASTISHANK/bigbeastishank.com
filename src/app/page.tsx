@@ -5,9 +5,9 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 export default function Home() {
 	return (
 		<div>
-			<HeroComponent />
+			{/* <HeroComponent /> */}
 			<AboutComponent />
-			<FeaturedProjects />
+			{/* <FeaturedProjects /> */}
 		</div>
 	);
 }

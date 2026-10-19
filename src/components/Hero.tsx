@@ -14,7 +14,7 @@ export default function HeroComponent() {
 				className="object-cover object-top select-none -z-10"
 			/>
 
-			<div className="px-40 py-10 w-full h-full flex flex-col pt-35">
+			<div className="2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 w-full h-full flex flex-col pt-35">
 				{/* Headings */}
 				<div className="flex flex-col gap-3">
 					<p className="text-xl font-medium text-gray-300">

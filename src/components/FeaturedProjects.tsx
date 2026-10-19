@@ -9,7 +9,7 @@ export default function FeaturedProjects() {
 	);
 
 	return (
-		<section id="featured-projects" className="bg-[#020D15] px-4 py-10 sm:px-8 lg:px-20 xl:px-40 featuredProjects">
+		<section id="featured-projects" className="bg-[#020D15] px-4 py-10 sm:px-8 lg:px-20 xl:2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 featuredProjects">
 			<SectionTitleComponent title="Featured Projects" />
 
 			<div className="flex flex-col gap-1 text-3xl font-bold">

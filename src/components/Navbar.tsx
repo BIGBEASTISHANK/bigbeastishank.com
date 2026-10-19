@@ -10,7 +10,7 @@ export default function NavbarComponent() {
 	return (
 		<>
 			<SectionMouseTracker currentSection={setActiveSection} />
-			<nav className="navbar fixed top-0 left-0 flex w-full px-40 py-5 border-2 border-gray-800 bg-[#060E19]/40 z-100 backdrop-blur-xs">
+			<nav className="navbar fixed top-0 left-0 flex w-full 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-5 border-2 border-gray-800 bg-[#060E19]/40 z-100 backdrop-blur-xs">
 				{/* Logo */}
 				<img src="/images/BBILogo.png" draggable={false} alt="logo" className="h-10 select-none my-auto" />
 
