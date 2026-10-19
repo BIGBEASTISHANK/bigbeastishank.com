@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "@/styles/tailwindimport.css";
 import "@/styles/globals.scss";
 import NavbarComponent from "@/components/Navbar";
 
 const inter = Inter({
 	subsets: ["latin"],
-	variable: "--font-inter",
 });
 
 export const metadata: Metadata = {

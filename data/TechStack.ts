@@ -50,7 +50,7 @@ export const TechStack: Record<Section, Tech[]> = {
 	[Section.System]: [
 		{ name: "Rust", icon: FaRust },
 		{ name: "C++", icon: SiCplusplus },
-		{ name: "C", icon: SiC },
+		{ name: "C Lang", icon: SiC },
 		{ name: "Bash", icon: SiGnubash },
 		{ name: "Linux", icon: FaLinux },
 	],

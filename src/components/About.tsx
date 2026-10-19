@@ -6,22 +6,24 @@ import { useState } from "react";
 
 export default function AboutComponent() {
 	const tabCharacter = "\t";
-	const [currentTechStack, setCurrentTechStack] = useState<Section>(Section.System);
+
+	const drfaultCurrectTechStack = Section.WebDev;
+	const [currentTechStack, setCurrentTechStack] = useState<Section>(drfaultCurrectTechStack);
 
 	return (
-		<div id="about" className="bg-[#040E18] px-70 py-10 border-y-2 border-gray-800 flex">
+		<div id="about" className="bg-[#040E18] px-40 py-10 border-y-2 border-gray-800 flex">
 			{/* Left half */}
-			<div className="flex flex-col w-2/3 pr-10">
+			<div className="flex flex-col w-1/2 pr-10">
 				{/* Section title */}
 				<SectionTitleComponent title="About me" />
 
 				{/* Content */}
-				<div className="text-5xl font-bold flex flex-col gap-2">
+				<div className="text-3xl font-bold flex flex-col gap-1">
 					<p>I'm a Rust Developer</p>
 					<p>who loves building cool systems.</p>
 				</div>
 
-				<p className="flex flex-col gap-2 text-2xl text-gray-400 max-w-250 my-7">
+				<p className="flex flex-col gap-2 text-md text-gray-400 max-w-180 my-3">
 					I enjoy building efficient systems with Rust and Linux, working on everything from low-level
 					programming and server administration to fullstack development with Next.js, Python, and MongoDB.
 					Outside of development, I work on open-source projects, games, explore cybersecurity and penetration
@@ -30,14 +32,15 @@ export default function AboutComponent() {
 					that solve real-world problems. I use Arch BTW!
 				</p>
 
-				<div className="flex justify-between items-center mb-5 max-w-250">
+				<div className="flex justify-between items-center mb-5 max-w-180">
 					{/* Sub section title */}
 					<SectionTitleComponent title="Tech Stack" />
 
 					<div className="relative w-fit mb-5">
 						<select
 							onChange={(e) => setCurrentTechStack(e.target.value as Section)}
-							className="w-full cursor-pointer appearance-none rounded-2xl border-2 border-[#1B2937] bg-[#040E17] py-3 pl-5 pr-12 text-xl text-white outline-none select-none"
+							defaultValue={drfaultCurrectTechStack}
+							className="w-full cursor-pointer appearance-none rounded-2xl border-2 border-[#1B2937] bg-[#040E17] py-2 pl-4 pr-10 text-md text-white outline-none select-none"
 						>
 							{Object.values(Section).map((data) => (
 								<option key={data} value={data}>
@@ -50,13 +53,13 @@ export default function AboutComponent() {
 					</div>
 				</div>
 
-				<div className="flex gap-5 flex-wrap select-none">
+				<div className="flex gap-x-8 gap-y-5 flex-wrap select-none max-w-180">
 					{TechStack[currentTechStack].map((data, index) => (
 						<div
 							key={index}
-							className={`flex gap-5 text-2xl items-center px-5 py-2 text-[#019BFB] border-2 border-[#019BFB] rounded-2xl ${index % 2 === 0 ? "rotate-2" : "-rotate-2"}`}
+							className={`flex gap-3 text-xl items-center px-3 py-2 text-[#019BFB] border-2 border-[#019BFB] rounded-xl ${index % 2 === 0 ? "rotate-2" : "-rotate-2"}`}
 						>
-							<data.icon className="text-3xl" />
+							<data.icon className="text-xl" />
 							<p>{data.name}</p>
 						</div>
 					))}
@@ -68,17 +71,17 @@ export default function AboutComponent() {
 				{/* Code section */}
 				<div className="flex flex-col overflow-hidden rounded-xl border-2 border-[#1B2937] bg-[#040E17]">
 					{/* Title Bar */}
-					<div className="flex items-center justify-between border-b border-[#101D2A] bg-[#0A1420] px-4 py-2.5">
+					<div className="flex items-center justify-between border-b border-[#101D2A] bg-[#0A1420] px-4 py-1.5">
 						<div className="flex items-center gap-1.5">
-							<div className="h-3.5 w-3.5 rounded-full bg-[#FF5F57]" />
-							<div className="h-3.5 w-3.5 rounded-full bg-[#FEBC2E]" />
-							<div className="h-3.5 w-3.5 rounded-full bg-[#28C840]" />
+							<div className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
+							<div className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
+							<div className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
 						</div>
 						<p className="text-sm font-medium text-gray-400 select-none">main.rs</p>
 					</div>
 
 					{/* Code */}
-					<div className="overflow-x-auto px-4 py-3 font-mono text-[15px] leading-6">
+					<div className="overflow-x-auto px-4 py-3 font-mono text-[13px] leading-6">
 						<div className="min-w-max" style={{ tabSize: 4 }}>
 							{[
 								<>
@@ -183,7 +186,7 @@ export default function AboutComponent() {
 								</>,
 								<>{"}"}</>,
 							].map((line, i) => (
-								<div key={i} className="flex h-6 whitespace-pre">
+								<div key={i} className="flex h-[1.3rem] whitespace-pre">
 									<span className="w-9 shrink-0 select-none pr-5 text-right text-[#64748B]">
 										{i + 1}
 									</span>
