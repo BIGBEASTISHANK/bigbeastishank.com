@@ -1,5 +1,5 @@
-$primary: #059CF8;
-$secondary: #019BFB;
+$primary: #019BFB;
+$secondary: #006bc2;
 
 body {
 	color: white;
@@ -29,7 +29,24 @@ body {
 	}
 
 	.button-glow {
+		background: $primary;
+		box-shadow: 0 0 15px $primary;
+	}
+}
+
+.featuredProjects {
+	.dot-glow {
 		background: $secondary;
 		box-shadow: 0 0 15px $secondary;
+	}
+
+	.card-glow:hover {
+		background: $secondary;
+		box-shadow: 0 0 15px $secondary;
+		border: 3px solid $primary;
+	}
+
+	.github-button {
+		background: linear-gradient(to right bottom, $primary 0%, #006bc2 100%);
 	}
 }

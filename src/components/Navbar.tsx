@@ -7,7 +7,7 @@ export default function NavbarComponent() {
 	const [activeSection, setActiveSection] = useState<string>("Home");
 
 	return (
-		<nav className="navbar fixed top-0 left-0 flex w-full px-40 py-5 border-2 border-gray-800 bg-[#060E19]/40 z-100">
+		<nav className="navbar fixed top-0 left-0 flex w-full px-40 py-5 border-2 border-gray-800 bg-[#060E19]/40 z-100 backdrop-blur-xs">
 			{/* Logo */}
 			<img src="/images/BBILogo.png" draggable={false} alt="logo" className="h-10 select-none my-auto" />
 

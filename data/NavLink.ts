@@ -1,4 +1,9 @@
-export const NavLink = [
+interface INavLink {
+	name: string;
+	link: string;
+}
+
+export const NavLink: INavLink[] = [
 	{
 		name: "Home",
 		link: "/",
@@ -11,8 +16,8 @@ export const NavLink = [
 		name: "Projects",
 		link: "/projects",
 	},
-    {
-        name: "Blogs",
-        link: "/blogs"
-    },
+	{
+		name: "Blogs",
+		link: "/blogs",
+	},
 ];

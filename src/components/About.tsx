@@ -1,6 +1,6 @@
 "use client";
 import { Section, TechStack } from "@@/data/TechStack";
-import SectionTitleComponent from "./inner/SectionTitle";
+import SectionTitleComponent from "@/components/inner/SectionTitle";
 import { BiDownArrow } from "react-icons/bi";
 import { useState } from "react";
 
@@ -57,9 +57,9 @@ export default function AboutComponent() {
 					{TechStack[currentTechStack].map((data, index) => (
 						<div
 							key={index}
-							className={`flex gap-3 text-xl items-center px-3 py-2 text-[#019BFB] border-2 border-[#019BFB] rounded-xl ${index % 2 === 0 ? "rotate-2" : "-rotate-2"}`}
+							className={`flex gap-3 text-lg items-center px-3 py-1.5 text-[#019BFB] border-2 border-[#019BFB] rounded-xl ${index % 2 === 0 ? "rotate-2" : "-rotate-2"}`}
 						>
-							<data.icon className="text-xl" />
+							<data.icon className="text-lg" />
 							<p>{data.name}</p>
 						</div>
 					))}

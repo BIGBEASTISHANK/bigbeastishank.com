@@ -33,7 +33,7 @@ export default function HeroComponent() {
 					{/* Projects */}
 					<Link
 						href=""
-						className="px-4 py-2 rounded-2xl flex justify-center items-center text-md button-glow"
+						className="px-4 py-2 rounded-2xl flex gap-3 justify-center items-center text-md button-glow"
 					>
 						View My Projects <FaArrowRight className="font-thin" />
 					</Link>

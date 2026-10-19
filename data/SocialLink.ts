@@ -2,7 +2,13 @@ import { FaDiscord, FaGithub, FaLinkedin, FaMastodon, FaYoutube } from "react-ic
 import { FaSignalMessenger } from "react-icons/fa6";
 import { TbBrandMatrix } from "react-icons/tb";
 
-export const SocialLink = [
+interface ISocialLink {
+	name: string;
+	link: string;
+	icon: any;
+}
+
+export const SocialLink: ISocialLink[] = [
 	{
 		name: "Github",
 		link: "/github",
