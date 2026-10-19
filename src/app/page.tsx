@@ -7,7 +7,7 @@ export default function Home() {
 		<div>
 			<HeroComponent />
 			<AboutComponent />
-			{/* <FeaturedProjects /> */}
+			<FeaturedProjects />
 		</div>
 	);
 }

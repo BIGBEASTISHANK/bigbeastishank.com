@@ -9,51 +9,66 @@ export default function FeaturedProjects() {
 	);
 
 	return (
-		<section id="featured-projects" className="bg-[#020D15] px-4 py-10 sm:px-8 lg:px-20 xl:2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 featuredProjects">
+		<section
+			id="featured-projects"
+			className="featuredProjects bg-[#020D15] py-10 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10"
+		>
 			<SectionTitleComponent title="Featured Projects" />
 
-			<div className="flex flex-col gap-1 text-3xl font-bold">
+			{/* Subtitle */}
+			<div className="flex flex-col gap-1 text-xl font-bold sm:text-2xl md:text-3xl">
 				<p>Some work that deserves a second look.</p>
 			</div>
 
-			<div className="grid grid-cols-3 gap-5 mt-10">
+			{/* Responsive project grid */}
+			<div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
 				{featuredProjects.map((data, index) => {
 					return (
 						<div
 							key={index}
-							className="border-3 border-gray-800 rounded-xl text-sm flex flex-col hover:scale-[1.025] card-glow transition-all"
+							className="card-glow flex min-w-0 flex-col rounded-xl border-3 border-gray-800 text-sm transition-all hover:scale-[1.025]"
 						>
 							{/* Title bar */}
-							<div className="flex items-center gap-2 px-5 py-3 rounded-t-xl bg-[#0A1420] border-b-3 border-gray-800">
+							<div className="flex items-center gap-2 rounded-t-xl border-b-3 border-gray-800 bg-[#0A1420] px-3 py-3 sm:px-5">
 								{/* Dot */}
-								<div className="h-2.5 w-2.5 rounded-full dot-glow" />
-								{/* Terminal Icon */}
-								<TbTerminal className="text-[#28C840] text-xl" />
-								<p className="text-[#6A744D] font-bold">{String(index + 1).padStart(2, "0")}</p>
-								<p className="text-gray-400 font-bold">/</p>
-								{/* Project Catagory */}
-								<p className="text-gray-300">{data.category}</p>
+								<div className="dot-glow h-2.5 w-2.5 shrink-0 rounded-full" />
+
+								{/* Terminal icon */}
+								<TbTerminal className="shrink-0 text-xl text-[#28C840]" />
+
+								{/* Project number */}
+								<p className="shrink-0 font-bold text-[#6A744D]">
+									{String(index + 1).padStart(2, "0")}
+								</p>
+
+								<p className="shrink-0 font-bold text-gray-400">/</p>
+
+								{/* Project category */}
+								<p className="min-w-0 truncate text-xs text-gray-300 sm:text-sm">{data.category}</p>
 							</div>
 
 							{/* Content */}
-							<div className="flex flex-col h-full gap-1 py-5 rounded-b-xl bg-[#000C15]">
-								{/* Main Content */}
-								<div className="px-5">
+							<div className="flex h-full flex-col gap-1 rounded-b-xl bg-[#000C15] py-5">
+								{/* Main content */}
+								<div className="px-3 sm:px-5">
 									{/* Title */}
-									<p className="text-xl font-bold">{data.title}</p>
+									<p className="text-lg font-bold sm:text-xl">{data.title}</p>
+
 									{/* Description */}
-									<p className="text-gray-400 text-md">{data.description}</p>
+									<p className="text-sm text-gray-400 sm:text-base">{data.description}</p>
+
 									{/* Tags */}
-									<div className="flex flex-wrap gap-2 text-gray-400 pt-4 py-6">
-										{data.tags.map((tag, index) => {
+									<div className="flex flex-wrap gap-2 pt-4 pb-6 text-gray-400">
+										{data.tags.map((tag, tagIndex) => {
 											const TagIcon = tag[0];
 											const TagName = tag[1];
+
 											return (
 												<div
-													key={index}
-													className={`flex gap-3 text-sm items-center px-3 py-1.5 text-[#019BFB] border-2 border-[#019BFB] rounded-xl`}
+													key={tagIndex}
+													className="flex items-center gap-2 rounded-xl border-2 border-[#019BFB] px-2 py-1.5 text-xs text-[#019BFB] sm:gap-3 sm:px-3 sm:text-sm"
 												>
-													<TagIcon className="text-sm" />
+													<TagIcon className="shrink-0 text-sm" />
 													<p>{TagName}</p>
 												</div>
 											);
@@ -61,17 +76,19 @@ export default function FeaturedProjects() {
 									</div>
 								</div>
 
-								{/* Github Button */}
-								<div className="mx-5 mt-auto h-18 pt-5 border-t-3 border-gray-800">
+								{/* GitHub button */}
+								<div className="mx-3 mt-auto min-h-18 border-t-3 border-gray-800 pt-5 sm:mx-5">
 									<a
 										href={data.projectUrl}
 										target="_blank"
-										className="flex items-center h-full github-button px-3 gap-2 rounded-lg hover:scale-[1.025] transition-all"
+										rel="noopener noreferrer"
+										className="github-button flex h-full items-center gap-2 rounded-lg px-3 transition-all hover:scale-[1.025]"
 									>
-										<FaGithub className="text-2xl" />
-										<p className="text-md font-semibold">View on GitHub</p>
+										<FaGithub className="shrink-0 text-2xl" />
 
-										<FaArrowRight className="font-thin ml-auto" />
+										<p className="text-sm font-semibold sm:text-base">View on GitHub</p>
+
+										<FaArrowRight className="ml-auto shrink-0 font-thin" />
 									</a>
 								</div>
 							</div>

@@ -39,9 +39,9 @@ export default function AboutComponent() {
 
 					<div className="relative w-fit sm:mb-5 mb-1">
 						<select
+							value={currentTechStack}
 							onChange={(e) => setCurrentTechStack(e.target.value as Section)}
-							defaultValue={drfaultCurrectTechStack}
-							className="w-full cursor-pointer appearance-none rounded-2xl border-2 border-[#1B2937] bg-[#040E17] py-2 pl-4 pr-10 text-sm sm:text-base md:text-md text-white outline-none select-none"
+							className="w-full z-10 cursor-pointer appearance-none rounded-2xl border-2 border-[#1B2937] bg-[#040E17] py-2 pl-4 pr-10 text-sm sm:text-base md:text-md text-white outline-none select-none"
 						>
 							{Object.values(Section).map((data) => (
 								<option key={data} value={data}>
