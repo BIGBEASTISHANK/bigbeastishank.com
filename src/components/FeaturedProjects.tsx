@@ -1,7 +1,5 @@
 import SectionTitleComponent from "@/components/inner/SectionTitle";
 import { gameProjects, otherProjects, websiteProjects } from "@@/data/Projects";
-import { FaArrowRight, FaGithub } from "react-icons/fa";
-import { TbTerminal } from "react-icons/tb";
 import ProjectCardComponent from "./inner/ProjectCard";
 
 export default function FeaturedProjects() {

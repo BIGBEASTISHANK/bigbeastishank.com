@@ -1,7 +1,7 @@
 "use client";
 import { Section, TechStack } from "@@/data/TechStack";
 import SectionTitleComponent from "@/components/inner/SectionTitle";
-import { BiDownArrow } from "react-icons/bi";
+import { BiDownArrow, BiTerminal } from "react-icons/bi";
 import { useState } from "react";
 
 export default function AboutComponent() {
@@ -78,7 +78,10 @@ export default function AboutComponent() {
 							<div className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
 							<div className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
 						</div>
-						<p className="text-xs sm:text-sm font-medium text-gray-400 select-none">main.rs</p>
+						<div className="font-medium text-gray-400 select-none flex items-center gap-2">
+							<BiTerminal className="text-base" />
+							<p className="text-xs sm:text-sm">main.rs</p>
+						</div>
 					</div>
 
 					{/* Code */}

@@ -6,6 +6,11 @@ body {
 	background: #0a141e;
 }
 
+.button-glow {
+	background: $primary;
+	box-shadow: 0 0 15px $primary;
+}
+
 .navbar {
 	.navbar-items:hover {
 		border: 2px solid $primary;
@@ -19,11 +24,6 @@ body {
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
-	}
-
-	.button-glow {
-		background: $primary;
-		box-shadow: 0 0 15px $primary;
 	}
 }
 
