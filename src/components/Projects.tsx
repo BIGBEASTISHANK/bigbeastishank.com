@@ -77,7 +77,7 @@ export default function ProjectsComponent() {
 			{/* Projects grid */}
 			<div className="bg-[#020D15] 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10">
 				{/* Searchbar */}
-				<div className="flex gap-3 items-center px-3 search-bar mx-30 h-10 bg-[#0A1420] rounded-lg">
+				<div className="flex gap-3 items-center px-3 search-bar mx-30 h-13 bg-[#0A1420] rounded-2xl">
 					<FaSearch />
 					<input
 						ref={searchInputRef}
