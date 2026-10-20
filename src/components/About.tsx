@@ -1,7 +1,7 @@
 "use client";
 import { Section, TechStack } from "@@/data/TechStack";
 import SectionTitleComponent from "@/components/inner/SectionTitle";
-import { BiDownArrow, BiTerminal } from "react-icons/bi";
+import { BiDownArrow } from "react-icons/bi";
 import { useState } from "react";
 import CodeTerminal from "./inner/CodeTerminal";
 

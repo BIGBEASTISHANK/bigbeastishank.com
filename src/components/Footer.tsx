@@ -9,7 +9,7 @@ export default function FooterComponent() {
 	const [showSecret, setShowSecret] = useState(false);
 
 	return (
-		<footer className="border-t-2 border-gray-800 bg-[#040E18] px-6 py-8 sm:px-10 lg:px-20 2xl:px-40">
+		<footer className="border-t-2 border-gray-800 bg-[#030A12] px-6 py-8 sm:px-10 lg:px-20 2xl:px-40">
 			<div className="mx-auto max-w-[1800px]">
 				{/* Terminal Easter egg */}
 				<div className="group flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">

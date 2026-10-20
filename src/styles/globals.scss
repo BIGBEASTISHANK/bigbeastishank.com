@@ -27,6 +27,27 @@ body {
 	}
 }
 
+.projects {
+	.text-gradient {
+		background: linear-gradient(to bottom, $primary 0%, $secondary 100%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.search-bar {
+		border: 2px solid $primary;
+		box-shadow: 0 0 2px $primary;
+		transition:
+			box-shadow 0.2s ease,
+			border-color 0.2s ease;
+
+		&:focus-within {
+			box-shadow: 0 0 12px $primary;
+		}
+	}
+}
+
 .project-card-glow {
 	.dot-glow {
 		background: $secondary;

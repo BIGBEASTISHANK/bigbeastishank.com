@@ -1,9 +1,8 @@
 "use client";
-
 import CodeTerminal from "@/components/inner/CodeTerminal";
 import Link from "next/link";
 import { useState } from "react";
-import { BiTerminal, BiArrowBack, BiHomeAlt2 } from "react-icons/bi";
+import { BiArrowBack, BiHomeAlt2 } from "react-icons/bi";
 import { FaRust } from "react-icons/fa";
 
 export default function notfound() {
