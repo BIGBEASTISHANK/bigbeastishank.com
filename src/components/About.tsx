@@ -3,10 +3,12 @@ import { Section, TechStack } from "@@/data/TechStack";
 import SectionTitleComponent from "@/components/inner/SectionTitle";
 import { BiDownArrow, BiTerminal } from "react-icons/bi";
 import { useState } from "react";
+import CodeTerminal from "./inner/CodeTerminal";
 
 export default function AboutComponent() {
 	const drfaultCurrectTechStack = Section.WebDev;
 	const [currentTechStack, setCurrentTechStack] = useState<Section>(drfaultCurrectTechStack);
+	const tabCharacter = "\t";
 
 	return (
 		<section
@@ -70,146 +72,128 @@ export default function AboutComponent() {
 			{/* Right */}
 			<div className="flex flex-col 2xl:w-1/2">
 				{/* Code section */}
-				<div className="flex flex-col overflow-hidden rounded-xl border-2 border-[#1B2937] bg-[#040E17]">
-					{/* Title Bar */}
-					<div className="flex items-center justify-between border-b border-[#101D2A] bg-[#0A1420] px-4 py-1.5">
-						<div className="flex items-center gap-1.5">
-							<div className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
-							<div className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
-							<div className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
+				<CodeTerminal
+					data={
+						<div className="min-w-max" style={{ tabSize: 4 }}>
+							{[
+								<>
+									<span className="text-[#FF7B72]">use</span>{" "}
+									<span className="text-[#79C0FF]">std::bigbeastishank::speciality</span>;
+								</>,
+								<>
+									<span className="text-[#FF7B72]">use</span>{" "}
+									<span className="text-[#79C0FF]">std::ishank::load</span>;
+								</>,
+								<>
+									<span className="text-[#FF7B72]">use</span>{" "}
+									<span className="text-[#79C0FF]">std::io::Result</span>;
+								</>,
+								<></>,
+								<>
+									<span className="text-[#FF7B72]">fn</span>{" "}
+									<span className="text-[#D2A8FF]">main</span>() -&gt;{" "}
+									<span className="text-[#79C0FF]">Result</span>&lt;()&gt; {"{"}
+								</>,
+								<>
+									{tabCharacter}
+									<span className="text-[#D2A8FF]">initializeEnvironment</span>(
+								</>,
+								<>
+									{tabCharacter}
+									{tabCharacter}
+									<span className="text-[#79C0FF]">vec!</span>[
+								</>,
+								<>
+									{tabCharacter}
+									{tabCharacter}
+									{tabCharacter}
+									speciality::<span className="text-[#7EE787]">FULL_STACK_DEVELOPER</span>,
+								</>,
+								<>
+									{tabCharacter}
+									{tabCharacter}
+									{tabCharacter}
+									speciality::<span className="text-[#7EE787]">GAMES_DEVELOPER</span>,
+								</>,
+								<>
+									{tabCharacter}
+									{tabCharacter}
+									{tabCharacter}
+									speciality::<span className="text-[#7EE787]">SERVER_ADMINISTRATOR</span>,
+								</>,
+								<>
+									{tabCharacter}
+									{tabCharacter}
+									{tabCharacter}
+									speciality::<span className="text-[#7EE787]">NETWORK_ADMINISTRATOR</span>,
+								</>,
+								<>
+									{tabCharacter}
+									{tabCharacter}
+									{tabCharacter}
+									speciality::<span className="text-[#7EE787]">PENTESTER</span>,
+								</>,
+								<>
+									{tabCharacter}
+									{tabCharacter}
+									{tabCharacter}
+									speciality::<span className="text-[#7EE787]">SOFTWARE_ENGINEER</span>,
+								</>,
+								<>
+									{tabCharacter}
+									{tabCharacter}]
+								</>,
+								<>{tabCharacter})?;</>,
+								<></>,
+								<>
+									{tabCharacter}
+									<span className="text-[#79C0FF]">println!</span>(
+									<span className="text-[#A5D6FF]">"[OK] All systems operational."</span>);
+								</>,
+								<>
+									{tabCharacter}
+									<span className="text-[#FF7B72]">Ok</span>(())
+								</>,
+								<>{"}"}</>,
+								<></>,
+								<>
+									<span className="text-[#FF7B72]">fn</span>{" "}
+									<span className="text-[#D2A8FF]">initializeEnvironment</span>(core:{" "}
+									<span className="text-[#79C0FF]">Vec</span>&lt;
+									<span className="text-[#79C0FF]">speciality</span>&gt;) -&gt;{" "}
+									<span className="text-[#79C0FF]">Result</span>&lt;()&gt; {"{"}
+								</>,
+								<>
+									{tabCharacter}
+									<span className="text-[#FF7B72]">for</span> module{" "}
+									<span className="text-[#FF7B72]">in</span> core {"{"}
+								</>,
+								<>
+									{tabCharacter}
+									{tabCharacter}ishank::load(module);
+								</>,
+								<>
+									{tabCharacter}
+									{"}"}
+								</>,
+								<>
+									{tabCharacter}
+									<span className="text-[#FF7B72]">Ok</span>(())
+								</>,
+								<>{"}"}</>,
+							].map((line, i) => (
+								<div key={i} className="flex h-[1.3rem] whitespace-pre">
+									<span className="w-9 shrink-0 select-none pr-5 text-right text-[#64748B]">
+										{i + 1}
+									</span>
+									<span className="text-[#D4D4D4]">{line}</span>
+								</div>
+							))}
 						</div>
-						<div className="font-medium text-gray-400 select-none flex items-center gap-2">
-							<BiTerminal className="text-base" />
-							<p className="text-xs sm:text-sm">main.rs</p>
-						</div>
-					</div>
-
-					{/* Code */}
-					<CodeSnippet />
-				</div>
+					}
+					title="main.rs"
+				/>
 			</div>
 		</section>
-	);
-}
-
-function CodeSnippet() {
-	const tabCharacter = "\t";
-
-	return (
-		<div className="overflow-x-auto px-4 py-3 font-mono text-[10px] sm:text-[11px] md:text-[13px] leading-6">
-			<div className="min-w-max" style={{ tabSize: 4 }}>
-				{[
-					<>
-						<span className="text-[#FF7B72]">use</span>{" "}
-						<span className="text-[#79C0FF]">std::bigbeastishank::speciality</span>;
-					</>,
-					<>
-						<span className="text-[#FF7B72]">use</span>{" "}
-						<span className="text-[#79C0FF]">std::ishank::load</span>;
-					</>,
-					<>
-						<span className="text-[#FF7B72]">use</span>{" "}
-						<span className="text-[#79C0FF]">std::io::Result</span>;
-					</>,
-					<></>,
-					<>
-						<span className="text-[#FF7B72]">fn</span> <span className="text-[#D2A8FF]">main</span>() -&gt;{" "}
-						<span className="text-[#79C0FF]">Result</span>&lt;()&gt; {"{"}
-					</>,
-					<>
-						{tabCharacter}
-						<span className="text-[#D2A8FF]">initializeEnvironment</span>(
-					</>,
-					<>
-						{tabCharacter}
-						{tabCharacter}
-						<span className="text-[#79C0FF]">vec!</span>[
-					</>,
-					<>
-						{tabCharacter}
-						{tabCharacter}
-						{tabCharacter}
-						speciality::<span className="text-[#7EE787]">FULL_STACK_DEVELOPER</span>,
-					</>,
-					<>
-						{tabCharacter}
-						{tabCharacter}
-						{tabCharacter}
-						speciality::<span className="text-[#7EE787]">GAMES_DEVELOPER</span>,
-					</>,
-					<>
-						{tabCharacter}
-						{tabCharacter}
-						{tabCharacter}
-						speciality::<span className="text-[#7EE787]">SERVER_ADMINISTRATOR</span>,
-					</>,
-					<>
-						{tabCharacter}
-						{tabCharacter}
-						{tabCharacter}
-						speciality::<span className="text-[#7EE787]">NETWORK_ADMINISTRATOR</span>,
-					</>,
-					<>
-						{tabCharacter}
-						{tabCharacter}
-						{tabCharacter}
-						speciality::<span className="text-[#7EE787]">PENTESTER</span>,
-					</>,
-					<>
-						{tabCharacter}
-						{tabCharacter}
-						{tabCharacter}
-						speciality::<span className="text-[#7EE787]">SOFTWARE_ENGINEER</span>,
-					</>,
-					<>
-						{tabCharacter}
-						{tabCharacter}]
-					</>,
-					<>{tabCharacter})?;</>,
-					<></>,
-					<>
-						{tabCharacter}
-						<span className="text-[#79C0FF]">println!</span>(
-						<span className="text-[#A5D6FF]">"[OK] All systems operational."</span>);
-					</>,
-					<>
-						{tabCharacter}
-						<span className="text-[#FF7B72]">Ok</span>(())
-					</>,
-					<>{"}"}</>,
-					<></>,
-					<>
-						<span className="text-[#FF7B72]">fn</span>{" "}
-						<span className="text-[#D2A8FF]">initializeEnvironment</span>(core:{" "}
-						<span className="text-[#79C0FF]">Vec</span>&lt;
-						<span className="text-[#79C0FF]">speciality</span>&gt;) -&gt;{" "}
-						<span className="text-[#79C0FF]">Result</span>&lt;()&gt; {"{"}
-					</>,
-					<>
-						{tabCharacter}
-						<span className="text-[#FF7B72]">for</span> module <span className="text-[#FF7B72]">in</span>{" "}
-						core {"{"}
-					</>,
-					<>
-						{tabCharacter}
-						{tabCharacter}ishank::load(module);
-					</>,
-					<>
-						{tabCharacter}
-						{"}"}
-					</>,
-					<>
-						{tabCharacter}
-						<span className="text-[#FF7B72]">Ok</span>(())
-					</>,
-					<>{"}"}</>,
-				].map((line, i) => (
-					<div key={i} className="flex h-[1.3rem] whitespace-pre">
-						<span className="w-9 shrink-0 select-none pr-5 text-right text-[#64748B]">{i + 1}</span>
-						<span className="text-[#D4D4D4]">{line}</span>
-					</div>
-				))}
-			</div>
-		</div>
 	);
 }

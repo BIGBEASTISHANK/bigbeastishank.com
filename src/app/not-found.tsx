@@ -1,5 +1,6 @@
 "use client";
 
+import CodeTerminal from "@/components/inner/CodeTerminal";
 import Link from "next/link";
 import { useState } from "react";
 import { BiTerminal, BiArrowBack, BiHomeAlt2 } from "react-icons/bi";
@@ -15,50 +16,38 @@ export default function notfound() {
 
 			<div className="relative w-full max-w-2xl">
 				{/* Terminal window */}
-				<div className="overflow-hidden rounded-xl border-2 border-[#1B2937] bg-[#040E17] shadow-2xl shadow-black/20">
-					{/* Title bar */}
-					<div className="flex items-center justify-between border-b border-[#1B2937] bg-[#0A1420] px-4 py-3">
-						<div className="flex items-center gap-2">
-							<span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
-							<span className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
-							<span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
+				<CodeTerminal
+					data={
+						<div className="font-mono text-xs leading-7 sm:p-3 sm:text-sm">
+							<p className="text-gray-500">
+								<span className="text-[#019BFB]">ishank@bbi</span>
+								:~$ ./find_page.sh
+							</p>
+
+							<p className="mt-3 text-gray-400">Searching requested route...</p>
+
+							<p className="text-[#FF7B72]">[ERROR] Page not found (exit code 404)</p>
+
+							<p className="text-gray-400">[INFO] Checking available routes...</p>
+
+							<p className="text-[#7EE787]">[OK] Your next destination is available.</p>
+
+							{showSecret && <p className="mt-2 text-[#D2A8FF]">// Even Rust can't unwrap this route.</p>}
+
+							<button
+								type="button"
+								onClick={() => setShowSecret(!showSecret)}
+								className="mt-2 text-gray-400 transition-colors hover:text-[#019BFB] cursor-pointer"
+								aria-label="Reveal a developer joke"
+							>
+								<span className="text-[#019BFB]">&gt;</span>{" "}
+								{showSecret ? "hide_secret()" : "reveal_secret()"}
+								<span className="ml-1 animate-pulse text-[#019BFB]">▋</span>
+							</button>
 						</div>
-
-						<div className="flex items-center gap-2 text-xs text-gray-500 select-none">
-							<BiTerminal className="text-base" />
-							<span>404.rs</span>
-						</div>
-					</div>
-
-					{/* Terminal content */}
-					<div className="p-5 font-mono text-xs leading-7 sm:p-8 sm:text-sm">
-						<p className="text-gray-500">
-							<span className="text-[#019BFB]">ishank@bbi</span>
-							:~$ ./find_page.sh
-						</p>
-
-						<p className="mt-3 text-gray-400">Searching requested route...</p>
-
-						<p className="text-[#FF7B72]">[ERROR] Page not found (exit code 404)</p>
-
-						<p className="text-gray-400">[INFO] Checking available routes...</p>
-
-						<p className="text-[#7EE787]">[OK] Your next destination is available.</p>
-
-						{showSecret && <p className="mt-2 text-[#D2A8FF]">// Even Rust can't unwrap this route.</p>}
-
-						<button
-							type="button"
-							onClick={() => setShowSecret(!showSecret)}
-							className="mt-2 text-gray-400 transition-colors hover:text-[#019BFB] cursor-pointer"
-							aria-label="Reveal a developer joke"
-						>
-							<span className="text-[#019BFB]">&gt;</span>{" "}
-							{showSecret ? "hide_secret()" : "reveal_secret()"}
-							<span className="ml-1 animate-pulse text-[#019BFB]">▋</span>
-						</button>
-					</div>
-				</div>
+					}
+					title="404.rs"
+				/>
 
 				{/* 404 message */}
 				<div className="mt-8 text-center">
