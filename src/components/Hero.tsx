@@ -52,7 +52,7 @@ export default function HeroComponent() {
 				</div>
 
 				{/* Social Link */}
-				<div className="flex gap-5">
+				<div className="flex flex-wrap gap-5">
 					{SocialLink.map((data, index) => (
 						<a href={data.link} key={index} className="items-center text-gray-400">
 							<data.icon className="text-xl sm:text-2xl" />

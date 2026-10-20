@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "@/styles/tailwindimport.css";
 import "@/styles/globals.scss";
 import NavbarComponent from "@/components/Navbar";
+import FooterComponent from "@/components/Footer";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 			<body className="min-h-full flex flex-col">
 				<NavbarComponent />
 				{children}
+				<FooterComponent />
 			</body>
 		</html>
 	);
