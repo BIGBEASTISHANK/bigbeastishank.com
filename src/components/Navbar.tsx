@@ -19,7 +19,7 @@ export default function NavbarComponent() {
     <>
       <SectionMouseTracker currentSection={setActiveSection} />
 
-      <nav className="navbar fixed top-0 left-0 z-100 w-full border-2 border-gray-800 bg-[#060E19]/90 px-4 py-4 backdrop-blur-xs sm:px-8 sm:py-5 md:px-12 lg:px-20 xl:px-35 2xl:px-40">
+      <nav className="navbar fixed top-0 left-0 z-100 w-full border-b-2 border-gray-800 bg-[#060E19]/90 px-4 py-4 backdrop-blur-xs sm:px-8 sm:py-5 md:px-12 lg:px-20 xl:px-35 2xl:px-40">
         <div className="flex w-full items-center justify-between">
           {/* Logo */}
           <Link href="/" onClick={() => setIsMenuOpen(false)}>
