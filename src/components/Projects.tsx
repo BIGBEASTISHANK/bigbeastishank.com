@@ -77,15 +77,17 @@ export default function ProjectsComponent() {
 			{/* Projects grid */}
 			<div className="bg-[#020D15] 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10">
 				{/* Searchbar */}
-				<div className="flex gap-3 items-center px-3 search-bar mx-30 h-13 bg-[#0A1420] rounded-2xl">
-					<FaSearch />
+				<div className="flex w-full max-w-4xl mx-auto items-center gap-2 sm:gap-3 px-3 sm:px-4 h-12 sm:h-13 bg-[#0A1420] rounded-xl sm:rounded-2xl search-bar">
+					<FaSearch className="shrink-0 text-gray-400" />
+
 					<input
 						ref={searchInputRef}
 						type="text"
 						placeholder="Search projects..."
-						className="text-sm text-white outline-none w-full h-full py-3"
+						className="min-w-0 flex-1 bg-transparent text-sm text-white placeholder:text-gray-500 outline-none h-full py-3"
 					/>
-					<kbd className="shrink-0 flex items-center gap-1 px-2 py-0.5 text-xs text-gray-400 bg-[#152231] border border-gray-700 rounded-md select-none">
+
+					<kbd className="hidden sm:flex shrink-0 items-center gap-1 px-2 py-0.5 text-xs text-gray-400 bg-[#152231] border border-gray-700 rounded-md select-none">
 						<span>Ctrl</span>
 						<span className="text-gray-500">+</span>
 						<span>K</span>
