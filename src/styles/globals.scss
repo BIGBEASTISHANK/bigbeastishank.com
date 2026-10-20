@@ -27,20 +27,20 @@ body {
 	}
 }
 
-.featuredProjects {
+.project-card-glow {
 	.dot-glow {
 		background: $secondary;
 		box-shadow: 0 0 15px $secondary;
 	}
 
-	.card-glow:hover {
-		background: $secondary;
-		box-shadow: 0 0 15px $secondary;
-		border: 3px solid $primary;
-	}
-
 	.github-button {
 		box-shadow: 0 0 15px $secondary;
 		background: linear-gradient(to right bottom, $primary 0%, $secondary 100%);
+	}
+
+	&:hover {
+		background: $secondary;
+		box-shadow: 0 0 15px $secondary;
+		border: 3px solid $primary;
 	}
 }
