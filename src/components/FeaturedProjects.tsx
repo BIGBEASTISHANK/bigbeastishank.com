@@ -11,7 +11,7 @@ export default function FeaturedProjects() {
 	return (
 		<section
 			id="featured-projects"
-			className="featuredProjects bg-[#020D15] py-10 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10"
+			className="featuredProjects bg-[#020D15] py-10 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 scroll-mt-20"
 		>
 			<SectionTitleComponent title="Featured Projects" />
 

@@ -1,4 +1,4 @@
-$primary: #019BFB;
+$primary: #019bfb;
 $secondary: #006bc2;
 
 body {
@@ -7,16 +7,9 @@ body {
 }
 
 .navbar {
-	.active-text {
-		background: $secondary;
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		text-shadow: 0 0 10px $secondary;
-	}
-
-	.inactive-text {
-		text-shadow: 0 0 20px gray;
+	.navbar-items:hover {
+		border: 2px solid $primary;
+		box-shadow: 0 0 7px $primary;
 	}
 }
 

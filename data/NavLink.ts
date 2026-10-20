@@ -6,7 +6,7 @@ interface INavLink {
 export const NavLink: INavLink[] = [
 	{
 		name: "Home",
-		link: "/#home",
+		link: "/",
 	},
 	{
 		name: "About",

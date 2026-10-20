@@ -11,7 +11,7 @@ export default function AboutComponent() {
 	return (
 		<section
 			id="about"
-			className="bg-[#040E18] 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 border-y-2 border-gray-800 flex flex-col 2xl:flex-row 2xl:gap-0 gap-10"
+			className="bg-[#040E18] 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 border-y-2 border-gray-800 flex flex-col 2xl:flex-row 2xl:gap-0 gap-10 scroll-mt-20"
 		>
 			{/* Left half */}
 			<div className="flex flex-col 2xl:w-1/2 2xl:pr-10">
