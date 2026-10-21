@@ -4,7 +4,7 @@ import { FaArrowRight, FaCalendarAlt, FaClock, FaSearch } from "react-icons/fa";
 import CodeTerminal from "./inner/CodeTerminal";
 import SectionTitleComponent from "./inner/SectionTitle";
 import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { Post } from "@/app/blogs/page";
 import Link from "next/link";
 
@@ -64,6 +64,55 @@ export default function BlogsComponent() {
 		};
 	}, []);
 
+	const [subscriberEmail, setSubscriberEmail] = useState("");
+	const [subscriptionLoading, setSubscriptionLoading] = useState(false);
+	const [subscriptionMessage, setSubscriptionMessage] = useState("");
+	const [subscriptionSuccess, setSubscriptionSuccess] = useState(false);
+
+	async function handleSubscriptionSubmit(event: FormEvent<HTMLFormElement>) {
+		event.preventDefault();
+
+		if (subscriptionLoading) return;
+
+		const email = subscriberEmail.trim();
+
+		if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+			setSubscriptionSuccess(false);
+			setSubscriptionMessage("[ERROR] Please enter a valid email address.");
+			return;
+		}
+
+		try {
+			setSubscriptionLoading(true);
+			setSubscriptionMessage("[INFO] Connecting to subscription server...");
+
+			const response = await fetch("/api/blogSubscriber", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ email }),
+			});
+
+			const data = await response.json();
+
+			if (!response.ok) {
+				throw new Error(data.error || "Subscription failed.");
+			}
+
+			setSubscriptionSuccess(true);
+			setSubscriptionMessage(`[OK] ${data.message || "Successfully subscribed!"}`);
+			setSubscriberEmail("");
+		} catch (error) {
+			setSubscriptionSuccess(false);
+			setSubscriptionMessage(
+				`[ERROR] ${error instanceof Error ? error.message : "Unable to subscribe. Please try again."}`,
+			);
+		} finally {
+			setSubscriptionLoading(false);
+		}
+	}
+
 	return (
 		<section id="blogs" className="blogs scroll-mt-20">
 			{/* Intro section */}
@@ -84,9 +133,11 @@ export default function BlogsComponent() {
 						</p>
 					</div>
 
-					<p className="flex flex-col gap-2 text-sm sm:text-base md:text-md text-gray-400 2xl:max-w-180 my-3 lg:text-left text-justify">
-						Articles about Linux, development, AI, security, Rust, and the things I've learned while
-						building real projects.
+					<p className="flex flex-col gap-2 text-sm sm:text-base md:text-md text-gray-400 2xl:max-w-180 my-3 lg:text-left text-justify leading-7">
+						Explore my journey through software development, Linux, artificial intelligence, cybersecurity,
+						and systems engineering. From practical tutorials and backend architecture to Rust experiments,
+						self-hosted infrastructure, and hands-on project builds, these articles document the things I
+						learn, the problems I solve, and the ideas I explore along the way.
 					</p>
 				</motion.div>
 
@@ -106,24 +157,61 @@ export default function BlogsComponent() {
 				>
 					<CodeTerminal
 						data={
-							<div className="font-mono text-sm leading-6">
+							<div className="font-mono text-xs leading-6 sm:p-2 sm:text-sm">
 								<p>
 									<span className="text-[#019BFB]">ishank@bbi</span>
-									<span className="text-gray-400">:~$ </span>
-									<span className="text-white">ls ./blogs</span>
+									:~$ cargo run --subscribe
 								</p>
 
-								<div className="mt-1">
-									{blogPosts.slice(0, 3).map((post, index) => (
-										<div key={post.slug} className="grid grid-cols-[30px_1fr]">
-											<span className="text-[#79C0FF]">{index}</span>
-											<span className="text-gray-500">{post.slug}.mdx</span>
-										</div>
-									))}
-								</div>
+								<p className="text-[#7EE787] mt-3">[INFO] Subscribe to blog mail list.</p>
+
+								<form onSubmit={handleSubscriptionSubmit} className="flex flex-col gap-2">
+									<div className="flex items-center gap-2 border-b border-[#1B2937] pb-1 focus-within:border-[#019BFB]">
+										<span className="text-[#019BFB]">&gt;</span>
+
+										<input
+											type="email"
+											name="email"
+											value={subscriberEmail}
+											onChange={(event) => {
+												setSubscriberEmail(event.target.value);
+												setSubscriptionMessage("");
+											}}
+											placeholder="Enter your email..."
+											autoComplete="email"
+											required
+											disabled={subscriptionLoading}
+											className="min-w-0 flex-1 bg-transparent py-1 text-white outline-none placeholder:text-gray-500 disabled:opacity-50"
+										/>
+									</div>
+
+									<button
+										type="submit"
+										disabled={subscriptionLoading}
+										className="w-fit cursor-pointer text-gray-400 transition-colors hover:text-[#019BFB] disabled:opacity-50"
+									>
+										<span className="text-[#019BFB]">&gt;</span>{" "}
+										{subscriptionLoading ? "subscribing()" : "subscribe()"}
+										<span className="ml-1 animate-pulse text-[#019BFB]">▋</span>
+									</button>
+								</form>
+
+								{subscriptionMessage && (
+									<p
+										role="status"
+										aria-live="polite"
+										className={`mt-2 break-words ${
+											subscriptionSuccess ? "text-[#7EE787]" : "text-[#FF7B72]"
+										}`}
+									>
+										{subscriptionMessage}
+									</p>
+								)}
+
+								<p className="mt-1 text-gray-600">// New posts & latest insights. No spam.</p>
 							</div>
 						}
-						title="blogs.sh"
+						title="blog_subscribe.rs"
 					/>
 				</motion.div>
 			</div>

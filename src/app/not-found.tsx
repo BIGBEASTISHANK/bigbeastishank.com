@@ -18,7 +18,7 @@ export default function notfound() {
 				<CodeTerminal
 					data={
 						<div className="font-mono text-xs leading-7 sm:p-3 sm:text-sm">
-							<p className="text-gray-500">
+							<p>
 								<span className="text-[#019BFB]">ishank@bbi</span>
 								:~$ ./find_page.sh
 							</p>
