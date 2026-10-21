@@ -16,6 +16,8 @@ export default function BlogsComponent() {
 	const [blogPostGetterLoading, setBlogPostGetterLoading] = useState<boolean>(true);
 	const [blogPostGetterError, setBlogPostGetterError] = useState<string | null>(null);
 
+	const [initialBlogAnimDelay, setInitialBlogAnimDelay] = useState<number>(0.4);
+
 	// Filter blog posts
 	const normalizedQuery = searchQuery.trim().toLowerCase();
 
@@ -190,7 +192,13 @@ export default function BlogsComponent() {
 						className="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3"
 					>
 						{filteredPosts.map((post, index) => (
-							<BlogCardComponent key={post.slug} post={post} index={index} initialDelay={0.4} />
+							<BlogCardComponent
+								key={post.slug}
+								post={post}
+								index={index}
+								initialDelay={initialBlogAnimDelay}
+								onFirstAnimationComplete={() => setInitialBlogAnimDelay(0)}
+							/>
 						))}
 					</motion.div>
 				) : (
@@ -204,7 +212,17 @@ export default function BlogsComponent() {
 	);
 }
 
-function BlogCardComponent({ post, index, initialDelay }: { post: Post; initialDelay: number; index: number }) {
+function BlogCardComponent({
+	post,
+	index,
+	initialDelay,
+	onFirstAnimationComplete,
+}: {
+	post: Post;
+	initialDelay: number;
+	index: number;
+	onFirstAnimationComplete: () => void;
+}) {
 	return (
 		<motion.div
 			variants={{
@@ -216,6 +234,7 @@ function BlogCardComponent({ post, index, initialDelay }: { post: Post; initialD
 				delay: initialDelay + index * 0.2,
 				ease: "easeOut",
 			}}
+			onAnimationComplete={onFirstAnimationComplete}
 			className="project-card-glow flex min-w-0 flex-col rounded-xl border-3 border-gray-800 text-sm transition-all hover:scale-[1.025]"
 		>
 			{/* Title bar */}
