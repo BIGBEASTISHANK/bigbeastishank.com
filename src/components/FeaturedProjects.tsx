@@ -1,6 +1,6 @@
 import SectionTitleComponent from "@/components/inner/SectionTitle";
 import { gameProjects, otherProjects, websiteProjects } from "@@/data/Projects";
-import ProjectCardComponent from "./inner/ProjectCard";
+import ProjectCardComponent from "@/components/inner/ProjectCard";
 
 export default function FeaturedProjects() {
 	const featuredProjects = [...gameProjects, ...websiteProjects, ...otherProjects].filter(
@@ -20,7 +20,7 @@ export default function FeaturedProjects() {
 			</div>
 
 			{/* Responsive project grid */}
-			<div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+			<div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-2 2xl:grid-cols-3">
 				{featuredProjects.map((data, index) => {
 					return <ProjectCardComponent key={index} data={data} index={index} />;
 				})}

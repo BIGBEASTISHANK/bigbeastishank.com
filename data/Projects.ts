@@ -22,7 +22,10 @@ import {
 	FaLock,
 	FaRobot,
 	FaServer,
+	FaCarAlt,
 } from "react-icons/fa";
+import { FaGun } from "react-icons/fa6";
+import { GiPlatform } from "react-icons/gi";
 import {
 	SiTypescript,
 	SiNextdotjs,
@@ -56,18 +59,20 @@ export const gameProjects: ProjectData[] = [
 		tags: [
 			[FaUnity, "Unity"],
 			[FaCode, "C#"],
+			[FaCarAlt, "Racer"],
 		],
-		category: "PC Game",
+		category: "Racing Game",
 	},
 	{
 		title: "Shimrun Dash",
 		description: "A high-speed obstacle-dodging game with challenging gameplay, inspired by Geometry Dash.",
 		projectUrl: "https://github.com/BIGBEASTISHANK/Shimrun-Dash",
 		tags: [
+			[GiPlatform, "Platformer"],
 			[FaUnity, "Unity"],
 			[FaCode, "C#"],
 		],
-		category: "PC Game",
+		category: "Platform Game",
 	},
 	{
 		title: "Sussy Shooter",
@@ -75,10 +80,12 @@ export const gameProjects: ProjectData[] = [
 			"Vanquish enemies, discover hidden spots, and reach the final target in this action-packed game with strategic twists.",
 		projectUrl: "https://github.com/BIGBEASTISHANK/Sussy-Shooter",
 		tags: [
+			[FaGun, "Shooter"],
+			[GiPlatform, "Platformer"],
 			[FaUnity, "Unity"],
 			[FaCode, "C#"],
 		],
-		category: "PC Game",
+		category: "FPS Shooter",
 	},
 	{
 		title: "Beast Race",
@@ -88,8 +95,9 @@ export const gameProjects: ProjectData[] = [
 		tags: [
 			[FaUnity, "Unity"],
 			[FaCode, "C#"],
+			[FaCarAlt, "Racer"],
 		],
-		category: "PC Game",
+		category: "Racing Game",
 	},
 ];
 
@@ -220,7 +228,7 @@ export const otherProjects: ProjectData[] = [
 		featured: true,
 	},
 	{
-		title: "DumbotronArtificialUnintelligence",
+		title: "Dumbotron Artificial Unintelligence",
 		description:
 			"A small Transformer-based large language model built from scratch using PyTorch to explore the internal architecture and core components of LLMs.",
 		projectUrl: "https://github.com/BIGBEASTISHANK/DumbotronArtificialUnintelligence",

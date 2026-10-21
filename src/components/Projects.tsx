@@ -1,8 +1,11 @@
 "use client";
-import { FaSearch } from "react-icons/fa";
-import CodeTerminal from "./inner/CodeTerminal";
-import SectionTitleComponent from "./inner/SectionTitle";
+import { FaCode, FaGamepad, FaGlobe, FaSearch } from "react-icons/fa";
+import CodeTerminal from "@/components/inner/CodeTerminal";
+import SectionTitleComponent from "@/components/inner/SectionTitle";
 import { useEffect, useRef } from "react";
+import { IconType } from "react-icons";
+import { ProjectData, gameProjects, otherProjects, websiteProjects } from "@@/data/Projects";
+import ProjectCardComponent from "./inner/ProjectCard";
 
 export default function ProjectsComponent() {
 	const searchInputRef = useRef<HTMLInputElement>(null);
@@ -25,7 +28,7 @@ export default function ProjectsComponent() {
 	return (
 		<section id="projects" className="projects">
 			{/* Intro section */}
-			<div className="flex flex-col 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 2xl:flex-row 2xl:gap-0 gap-10 bg-[#040E18] border-2 border-gray-800">
+			<div className="flex flex-col 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 2xl:flex-row 2xl:gap-0 gap-10 bg-[#040E18] border-b-2 border-gray-800">
 				{/* Left */}
 				<div className="flex flex-col 2xl:w-1/2 2xl:pr-10">
 					{/* Subtitle */}
@@ -77,7 +80,7 @@ export default function ProjectsComponent() {
 			{/* Projects grid */}
 			<div className="bg-[#020D15] 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10">
 				{/* Searchbar */}
-				<div className="flex w-full max-w-4xl mx-auto items-center gap-2 sm:gap-3 px-3 sm:px-4 h-12 sm:h-13 bg-[#0A1420] rounded-xl sm:rounded-2xl search-bar">
+				<div className="flex w-full max-w-4xl mx-auto items-center gap-2 sm:gap-3 px-3 sm:px-4 h-12 sm:h-13 bg-[#0A1420] rounded-xl sm:rounded-2xl search-bar mb-10">
 					<FaSearch className="shrink-0 text-gray-400" />
 
 					<input
@@ -93,7 +96,90 @@ export default function ProjectsComponent() {
 						<span>K</span>
 					</kbd>
 				</div>
+
+				{/* Project grid */}
+				<div className="flex flex-col gap-15">
+					{gameProjects.length > 0 && (
+						<ProjectGridSection
+							Icon={FaGamepad}
+							listNum={1}
+							title="Games"
+							teaserDesc="Fun experiments and playable projects"
+							projectData={gameProjects}
+						/>
+					)}
+
+					{websiteProjects.length > 0 && (
+						<ProjectGridSection
+							Icon={FaGlobe}
+							listNum={2}
+							title="Websites"
+							teaserDesc="Fullstack web apps and platforms"
+							projectData={websiteProjects}
+						/>
+					)}
+
+					{otherProjects.length > 0 && (
+						<ProjectGridSection
+							Icon={FaCode}
+							listNum={3}
+							title="Other"
+							teaserDesc="Tools, scripts and random stuff"
+							projectData={otherProjects}
+						/>
+					)}
+				</div>
 			</div>
 		</section>
+	);
+}
+
+function ProjectGridSection({
+	Icon,
+	listNum,
+	title,
+	teaserDesc,
+	projectData,
+}: {
+	Icon: IconType;
+	listNum: number;
+	title: string;
+	teaserDesc: string;
+	projectData: ProjectData[];
+}) {
+	return (
+		<div id={`${title}-projects`} className="project-grid">
+			{/* Header */}
+			<div className="flex lg:flex-row flex-col gap-3 lg:items-center mb-5">
+				<div className="flex items-center gap-3">
+					<Icon className="md:text-3xl text-2xl text-[#019BFB]" />
+					<p className="shrink-0 md:text-xl text-lg font-bold text-[#019BFB]">
+						{listNum.toString().padStart(2, "0")}
+					</p>
+					<p className="shrink-0 md:text-xl text-lg font-bold text-gray-500">/</p>
+					<p className="shrink-0 md:text-xl text-lg font-bold">{title}</p>
+				</div>
+
+				{/* Divider */}
+				<div className="flex items-center gap-2 flex-1">
+					<div className="w-10 sm:w-14 md:w-20 h-0.5 bg-[#019BFB] rounded-full" />
+					<div className="w-full h-0.5 bg-gray-600 rounded-full" />
+				</div>
+
+				<div className="flex items-center gap-3">
+					<p className="shrink-0 text-sm text-gray-300">{teaserDesc}</p>
+					<p className="shrink-0 px-2 bg-[#152231] rounded-md border-2 border-gray-700">
+						{projectData.length}
+					</p>
+				</div>
+			</div>
+
+			{/* Project cards */}
+			<div className="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3">
+				{projectData.map((data, index) => {
+					return <ProjectCardComponent key={index} data={data} index={index} />;
+				})}
+			</div>
+		</div>
 	);
 }

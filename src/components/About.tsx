@@ -3,7 +3,7 @@ import { Section, TechStack } from "@@/data/TechStack";
 import SectionTitleComponent from "@/components/inner/SectionTitle";
 import { BiDownArrow } from "react-icons/bi";
 import { useState } from "react";
-import CodeTerminal from "./inner/CodeTerminal";
+import CodeTerminal from "@/components/inner/CodeTerminal";
 
 export default function AboutComponent() {
 	const drfaultCurrectTechStack = Section.WebDev;

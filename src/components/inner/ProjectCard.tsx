@@ -23,9 +23,9 @@ export default function ProjectCardComponent({ data, index }: { data: ProjectDat
 			</div>
 
 			{/* Content */}
-			<div className="flex h-full flex-col gap-1 rounded-b-xl bg-[#000C15] py-5">
+			<div className="flex flex-1 flex-col gap-1 rounded-b-xl bg-[#000C15] py-5">
 				{/* Main content */}
-				<div className="px-3 sm:px-5">
+				<div className="px-3 sm:px-5 h-full flex flex-col">
 					{/* Title */}
 					<p className="text-lg font-bold sm:text-xl">{data.title}</p>
 
@@ -33,7 +33,7 @@ export default function ProjectCardComponent({ data, index }: { data: ProjectDat
 					<p className="text-sm text-gray-400 sm:text-base">{data.description}</p>
 
 					{/* Tags */}
-					<div className="flex flex-wrap gap-2 pt-4 pb-6 text-gray-400">
+					<div className="flex flex-wrap gap-2 pt-4 pb-6 text-gray-400 mt-auto">
 						{data.tags.map((tag, tagIndex) => {
 							const TagIcon = tag[0];
 							const TagName = tag[1];
