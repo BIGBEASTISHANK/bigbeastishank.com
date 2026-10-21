@@ -224,7 +224,7 @@ export const otherProjects: ProjectData[] = [
 			[FaServer, "File Synchronization"],
 			[FaLinux, "Linux"],
 		],
-		category: "Security & Networking",
+		category: "Networking",
 		featured: true,
 	},
 	{
