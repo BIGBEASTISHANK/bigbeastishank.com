@@ -226,13 +226,24 @@ function ProjectGridSection({
 			</motion.div>
 
 			{/* Project cards */}
-			<div className="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3">
+			<motion.div
+				variants={{
+					hidden: {},
+					visible: {
+						transition: {
+							staggerChildren: 0,
+						},
+					},
+				}}
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.15 }}
+				className="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3"
+			>
 				{projectData.map((data, index) => {
-					return (
-						<ProjectCardComponent key={index} data={data} index={index} initialDelay={0.2 + index * 0.12} />
-					);
+					return <ProjectCardComponent key={index} data={data} index={index} initialDelay={0.2} />;
 				})}
-			</div>
+			</motion.div>
 		</div>
 	);
 }

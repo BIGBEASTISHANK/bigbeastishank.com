@@ -4,15 +4,24 @@ import { FaArrowRight, FaGithub } from "react-icons/fa";
 import { TbTerminal } from "react-icons/tb";
 import { motion } from "motion/react";
 
-export default function ProjectCardComponent({ data, index, initialDelay }: { data: ProjectData; index: number; initialDelay: number }) {
+export default function ProjectCardComponent({
+	data,
+	index,
+	initialDelay,
+}: {
+	data: ProjectData;
+	index: number;
+	initialDelay: number;
+}) {
 	return (
 		<motion.div
-			initial={{ opacity: 0, y: 25 }}
-			animate={{ opacity: 1, y: 0 }}
-			viewport={{ once: true, amount: 0.15 }}
+			variants={{
+				hidden: { opacity: 0, y: 25 },
+				visible: { opacity: 1, y: 0 },
+			}}
 			transition={{
 				duration: 0.3,
-				delay: initialDelay + index * 0.12,
+				delay: initialDelay + index * 0.2,
 				ease: "easeOut",
 			}}
 			className="project-card-glow flex min-w-0 flex-col rounded-xl border-3 border-gray-800 text-sm transition-all hover:scale-[1.025]"

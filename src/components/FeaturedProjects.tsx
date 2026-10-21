@@ -28,11 +28,24 @@ export default function FeaturedProjects() {
 			</motion.div>
 
 			{/* Responsive project grid */}
-			<div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-2 2xl:grid-cols-3">
+			<motion.div
+				variants={{
+					hidden: {},
+					visible: {
+						transition: {
+							staggerChildren: 0,
+						},
+					},
+				}}
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.15 }}
+				className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-2 2xl:grid-cols-3"
+			>
 				{featuredProjects.map((data, index) => {
-					return <ProjectCardComponent key={index} data={data} index={index} initialDelay={0.4} />;
+					return <ProjectCardComponent key={index} data={data} index={index} initialDelay={0.2} />;
 				})}
-			</div>
+			</motion.div>
 		</section>
 	);
 }
