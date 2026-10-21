@@ -1,10 +1,22 @@
+"use client";
 import { ProjectData } from "@@/data/Projects";
 import { FaArrowRight, FaGithub } from "react-icons/fa";
 import { TbTerminal } from "react-icons/tb";
+import { motion } from "motion/react";
 
-export default function ProjectCardComponent({ data, index }: { data: ProjectData; index: number }) {
+export default function ProjectCardComponent({ data, index, initialDelay }: { data: ProjectData; index: number; initialDelay: number }) {
 	return (
-		<div className="project-card-glow flex min-w-0 flex-col rounded-xl border-3 border-gray-800 text-sm transition-all hover:scale-[1.025]">
+		<motion.div
+			initial={{ opacity: 0, y: 25 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, amount: 0.15 }}
+			transition={{
+				duration: 0.5,
+				delay: initialDelay + index * 0.12,
+				ease: "easeOut",
+			}}
+			className="project-card-glow flex min-w-0 flex-col rounded-xl border-3 border-gray-800 text-sm transition-all hover:scale-[1.025]"
+		>
 			{/* Title bar */}
 			<div className="flex items-center gap-2 rounded-t-xl border-b-3 border-gray-800 bg-[#0A1420] px-3 py-3 sm:px-5">
 				{/* Dot */}
@@ -67,6 +79,6 @@ export default function ProjectCardComponent({ data, index }: { data: ProjectDat
 					</a>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 }
