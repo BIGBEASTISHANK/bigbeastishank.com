@@ -7,10 +7,11 @@ import { motion } from "motion/react";
 
 export default function HeroComponent() {
 	return (
-		<section id="home" className="relative flex flex-col hero">
+		<section id="home" className="relative flex flex-col hero overflow-hidden">
 			<motion.div
 				initial={{ opacity: 0, scale: 1.03 }}
 				animate={{ opacity: 1, scale: 1 }}
+				viewport={{ once: true }}
 				transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
 				className="absolute inset-0 -z-10"
 			>
@@ -26,6 +27,7 @@ export default function HeroComponent() {
 			<motion.div
 				initial="hidden"
 				animate="visible"
+				viewport={{ once: true }}
 				className="2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 w-full h-full flex flex-col pt-35"
 			>
 				{/* Headings */}
@@ -33,7 +35,8 @@ export default function HeroComponent() {
 					<motion.p
 						initial={{ opacity: 0, x: -10 }}
 						animate={{ opacity: 1, x: 0 }}
-						transition={{ duration: 0.5, delay: 0.2 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.3, delay: 0.2 }}
 						className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-300"
 					>
 						Hi, I'm <span className="text-gradient">Ishank</span>
@@ -42,7 +45,8 @@ export default function HeroComponent() {
 					<motion.h1
 						initial={{ opacity: 0, x: -10 }}
 						animate={{ opacity: 1, x: 0 }}
-						transition={{ duration: 0.6, delay: 0.35 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.3, delay: 0.4 }}
 						className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gradient"
 					>
 						BIGBEASTISHANK
@@ -51,7 +55,8 @@ export default function HeroComponent() {
 					<motion.p
 						initial={{ opacity: 0, y: 12 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6, delay: 0.5 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.3, delay: 0.6 }}
 						className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-300"
 					>
 						Building fast, reliable and scalable software
@@ -64,7 +69,8 @@ export default function HeroComponent() {
 				<motion.div
 					initial={{ opacity: 0, y: 12 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.65 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.3, delay: 0.8 }}
 					className="flex sm:flex-row flex-col h-fit w-fit gap-5 my-8 font-bold select-none"
 				>
 					{/* Projects */}
@@ -102,7 +108,8 @@ export default function HeroComponent() {
 						<motion.a
 							initial={{ opacity: 0, y: 12 }}
 							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.3, delay: 1 + index * 0.1 }}
 							whileHover={{ y: -4, scale: 1.12 }}
 							whileTap={{ scale: 0.92 }}
 							href={data.link}

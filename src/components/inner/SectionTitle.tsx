@@ -8,7 +8,7 @@ export default function SectionTitleComponent({ title, animDelay }: { title: str
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
 				viewport={{ once: true }}
-				transition={{ duration: 0.5, delay: animDelay }}
+				transition={{ duration: 0.9, delay: animDelay }}
 				className="capitalize text-sm sm:text-base md:text-lg text-[#019BFB] select-none"
 			>
 				{title}
