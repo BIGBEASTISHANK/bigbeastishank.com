@@ -41,9 +41,9 @@ export default function ProjectsComponent() {
 	}, []);
 
 	return (
-		<section id="projects" className="projects">
+		<section id="projects" className="projects scroll-mt-20">
 			{/* Intro section */}
-			<div className="flex flex-col 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 2xl:flex-row 2xl:gap-0 gap-10 bg-[#040E18] border-b-2 border-gray-800 scroll-mt-20">
+			<div className="flex flex-col 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 2xl:flex-row 2xl:gap-0 gap-10 bg-[#040E18] border-b-2 border-gray-800">
 				{/* Left */}
 				<motion.div
 					initial={{ opacity: 0, x: -30 }}
