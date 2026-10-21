@@ -27,7 +27,7 @@ body {
 	}
 }
 
-.projects {
+.projects, .blogs {
 	.text-gradient {
 		background: linear-gradient(to bottom, $primary 0%, $secondary 100%);
 		-webkit-background-clip: text;
@@ -50,8 +50,8 @@ body {
 
 .project-card-glow {
 	.dot-glow {
-		background: $secondary;
-		box-shadow: 0 0 15px $secondary;
+		background: $primary;
+		box-shadow: 0 0 15px $primary;
 	}
 
 	.github-button {
@@ -60,7 +60,6 @@ body {
 	}
 
 	&:hover {
-		background: $secondary;
 		box-shadow: 0 0 15px $secondary;
 		border: 3px solid $primary;
 	}

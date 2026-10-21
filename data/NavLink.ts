@@ -18,6 +18,6 @@ export const NavLink: INavLink[] = [
 	},
 	{
 		name: "Blogs",
-		link: "/blogs",
+		link: "/blogs#blogs",
 	},
 ];
