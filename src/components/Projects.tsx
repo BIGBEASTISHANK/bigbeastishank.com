@@ -2,7 +2,7 @@
 import { FaCode, FaGamepad, FaGlobe, FaSearch } from "react-icons/fa";
 import CodeTerminal from "@/components/inner/CodeTerminal";
 import SectionTitleComponent from "@/components/inner/SectionTitle";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IconType } from "react-icons";
 import { ProjectData, gameProjects, otherProjects, websiteProjects } from "@@/data/Projects";
 import ProjectCardComponent from "@/components/inner/ProjectCard";
@@ -10,6 +10,20 @@ import { motion } from "motion/react";
 
 export default function ProjectsComponent() {
 	const searchInputRef = useRef<HTMLInputElement>(null);
+	const [searchQuery, setSearchQuery] = useState<string>("");
+
+	const normalizedQuery = searchQuery.trim().toLowerCase();
+
+	// Filter projects
+	const filteredGameProjects = gameProjects.filter((project: ProjectData) =>
+		project.title.toLowerCase().includes(normalizedQuery),
+	);
+	const filteredWebsiteProjects = websiteProjects.filter((project: ProjectData) =>
+		project.title.toLowerCase().includes(normalizedQuery),
+	);
+	const filteredOtherProjects = otherProjects.filter((project: ProjectData) =>
+		project.title.toLowerCase().includes(normalizedQuery),
+	);
 
 	useEffect(() => {
 		const handleKeyDown = (event: any) => {
@@ -105,6 +119,8 @@ export default function ProjectsComponent() {
 					<input
 						ref={searchInputRef}
 						type="text"
+						value={searchQuery}
+						onChange={(event) => setSearchQuery(event.target.value)}
 						placeholder="Search projects..."
 						className="min-w-0 flex-1 bg-transparent text-sm text-white placeholder:text-gray-500 outline-none h-full py-3"
 					/>
@@ -118,36 +134,46 @@ export default function ProjectsComponent() {
 
 				{/* Project grid */}
 				<div className="flex flex-col gap-15">
-					{gameProjects.length > 0 && (
+					{filteredGameProjects.length > 0 && (
 						<ProjectGridSection
 							Icon={FaGamepad}
 							listNum={1}
 							title="Games"
 							teaserDesc="Fun experiments and playable projects"
-							projectData={gameProjects}
+							projectData={filteredGameProjects}
 						/>
 					)}
 
-					{websiteProjects.length > 0 && (
+					{filteredWebsiteProjects.length > 0 && (
 						<ProjectGridSection
 							Icon={FaGlobe}
 							listNum={2}
 							title="Websites"
 							teaserDesc="Fullstack web apps and platforms"
-							projectData={websiteProjects}
+							projectData={filteredWebsiteProjects}
 						/>
 					)}
 
-					{otherProjects.length > 0 && (
+					{filteredOtherProjects.length > 0 && (
 						<ProjectGridSection
 							Icon={FaCode}
 							listNum={3}
 							title="Other"
 							teaserDesc="Tools, scripts and random stuff"
-							projectData={otherProjects}
+							projectData={filteredOtherProjects}
 						/>
 					)}
 				</div>
+
+				{/* No projects */}
+				{filteredGameProjects.length === 0 &&
+					filteredWebsiteProjects.length === 0 &&
+					filteredOtherProjects.length === 0 && (
+						<div className="flex flex-col gap-7 text-center">
+							<p className="text-gray-400 text-xl font-bold">No projects found</p>
+							<p className="text-gray-500">Try searching for something else or clear the search bar.</p>
+						</div>
+					)}
 			</div>
 		</section>
 	);
