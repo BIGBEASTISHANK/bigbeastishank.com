@@ -43,7 +43,7 @@ export default function ProjectsComponent() {
 	return (
 		<section id="projects" className="projects">
 			{/* Intro section */}
-			<div className="flex flex-col 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 2xl:flex-row 2xl:gap-0 gap-10 bg-[#040E18] border-b-2 border-gray-800">
+			<div className="flex flex-col 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 2xl:flex-row 2xl:gap-0 gap-10 bg-[#040E18] border-b-2 border-gray-800 scroll-mt-20">
 				{/* Left */}
 				<motion.div
 					initial={{ opacity: 0, x: -30 }}
@@ -237,7 +237,7 @@ function ProjectGridSection({
 				}}
 				initial="hidden"
 				whileInView="visible"
-				viewport={{ once: true, amount: 0.15 }}
+				viewport={{ once: true, amount: 0.05 }}
 				className="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3"
 			>
 				{projectData.map((data, index) => {
