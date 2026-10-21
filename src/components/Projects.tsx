@@ -81,7 +81,7 @@ export default function ProjectsComponent() {
 							<div className="font-mono text-sm leading-6">
 								<p>
 									<span className="text-[#019BFB]">ishank@bbi</span>
-									<span className="text-gray-400">:~$</span>
+									<span className="text-gray-400">:~$ </span>
 									<span className="text-white">ls ./projects</span>
 								</p>
 
@@ -95,8 +95,6 @@ export default function ProjectsComponent() {
 									<span className="text-[#79C0FF]">others/</span>
 									<span className="text-gray-500"># Tools, scripts and random stuff</span>
 								</div>
-
-								<p className="mt-1 animate-pulse text-[#A5D6FF]">▋</p>
 							</div>
 						}
 						title="projects.sh"

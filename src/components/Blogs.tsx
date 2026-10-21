@@ -85,11 +85,18 @@ export default function BlogsComponent() {
 							<div className="font-mono text-sm leading-6">
 								<p>
 									<span className="text-[#019BFB]">ishank@bbi</span>
-									<span className="text-gray-400">:~$</span>
+									<span className="text-gray-400">:~$ </span>
 									<span className="text-white">ls ./blogs</span>
 								</p>
 
-								<p className="mt-1 animate-pulse text-[#A5D6FF]">▋</p>
+								<div className="mt-1">
+									{blogPosts.slice(0, 3).map((post, index) => (
+										<div key={index} className="grid grid-cols-[30px_1fr]">
+											<span className="text-[#79C0FF]">{index}</span>
+											<span className="text-gray-500">{post.slug}.mdx</span>
+										</div>
+									))}
+								</div>
 							</div>
 						}
 						title="blogs.sh"
