@@ -1,11 +1,11 @@
 "use client";
-import { FaArrowRight, FaCalendarAlt, FaClock, FaGithub, FaSearch } from "react-icons/fa";
+
+import { FaArrowRight, FaCalendarAlt, FaClock, FaSearch } from "react-icons/fa";
 import CodeTerminal from "./inner/CodeTerminal";
 import SectionTitleComponent from "./inner/SectionTitle";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { Post } from "@/app/blogs/page";
-import { TbTerminal } from "react-icons/tb";
 import Link from "next/link";
 
 export default function BlogsComponent() {
@@ -14,23 +14,41 @@ export default function BlogsComponent() {
 
 	const [blogPosts, setBlogPosts] = useState<Post[]>([]);
 	const [blogPostGetterLoading, setBlogPostGetterLoading] = useState<boolean>(true);
+	const [blogPostGetterError, setBlogPostGetterError] = useState<string | null>(null);
 
-	// Blog post getter
+	// Filter blog posts
+	const normalizedQuery = searchQuery.trim().toLowerCase();
+
+	const filteredPosts = normalizedQuery
+		? blogPosts.filter((post: Post) => post.title.toLowerCase().includes(normalizedQuery))
+		: blogPosts;
+
+	// Fetch blog posts
 	useEffect(() => {
 		async function fetchBlogPosts() {
-			const response = await fetch("/api/getBlogPosts");
-			const data = await response.json();
+			try {
+				const response = await fetch("/api/getBlogPosts");
 
-			setBlogPosts(data.posts);
-			setBlogPostGetterLoading(false);
+				if (!response.ok) {
+					throw new Error("Failed to fetch blog posts.");
+				}
+
+				const data = await response.json();
+				setBlogPosts(data.posts ?? []);
+			} catch (error) {
+				console.error("Error fetching blog posts:", error);
+				setBlogPostGetterError("Unable to load blog posts. Please try again later.");
+			} finally {
+				setBlogPostGetterLoading(false);
+			}
 		}
 
 		fetchBlogPosts();
 	}, []);
 
-	// Searchbar shortcut
+	// Searchbar shortcut: Ctrl + K / Cmd + K
 	useEffect(() => {
-		const handleKeyDown = (event: any) => {
+		const handleKeyDown = (event: KeyboardEvent) => {
 			if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
 				event.preventDefault();
 				searchInputRef.current?.focus();
@@ -56,10 +74,8 @@ export default function BlogsComponent() {
 					transition={{ duration: 0.6, ease: "easeOut" }}
 					className="flex flex-col 2xl:w-1/2 2xl:pr-10"
 				>
-					{/* Subtitle */}
 					<SectionTitleComponent title="Blogs" />
 
-					{/* Content */}
 					<div className="text-xl sm:text-2xl md:text-3xl font-bold flex flex-col gap-1">
 						<p>
 							Thoughts, tutorials & <span className="text-gradient">experiments.</span>
@@ -77,7 +93,13 @@ export default function BlogsComponent() {
 					initial={{ opacity: 0, x: 20 }}
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true, amount: 0.2 }}
-					transition={{ duration: 1, delay: 0.2, type: "spring", stiffness: 350, damping: 20 }}
+					transition={{
+						duration: 1,
+						delay: 0.2,
+						type: "spring",
+						stiffness: 350,
+						damping: 20,
+					}}
 					className="flex flex-col 2xl:w-1/2"
 				>
 					<CodeTerminal
@@ -91,7 +113,7 @@ export default function BlogsComponent() {
 
 								<div className="mt-1">
 									{blogPosts.slice(0, 3).map((post, index) => (
-										<div key={index} className="grid grid-cols-[30px_1fr]">
+										<div key={post.slug} className="grid grid-cols-[30px_1fr]">
 											<span className="text-[#79C0FF]">{index}</span>
 											<span className="text-gray-500">{post.slug}.mdx</span>
 										</div>
@@ -132,11 +154,11 @@ export default function BlogsComponent() {
 					</kbd>
 				</motion.div>
 
-				{/* Blogs grid */}
+				{/* Loading, error, empty state, or blog grid */}
 				{blogPostGetterLoading ? (
 					<div className="flex flex-col items-center justify-center gap-4 py-12">
 						<div className="relative flex h-14 w-14 items-center justify-center">
-							{/* Subtle background ring */}
+							{/* Background ring */}
 							<div className="absolute inset-0 rounded-full border-[3px] border-[#019bfb]/15" />
 
 							{/* Animated loading ring */}
@@ -148,8 +170,13 @@ export default function BlogsComponent() {
 
 						<p className="animate-pulse text-sm font-medium tracking-wider text-[#019bfb]/80">Loading...</p>
 					</div>
-				) : (
+				) : blogPostGetterError ? (
+					<div className="py-12 text-center">
+						<p className="text-xl font-bold text-gray-400">{blogPostGetterError}</p>
+					</div>
+				) : filteredPosts.length > 0 ? (
 					<motion.div
+						key={normalizedQuery || "all-blogs"}
 						variants={{
 							hidden: {},
 							visible: {
@@ -159,14 +186,18 @@ export default function BlogsComponent() {
 							},
 						}}
 						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true, amount: 0.05 }}
+						animate="visible"
 						className="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3"
 					>
-						{blogPosts.map((post, index) => {
-							return <BlogCardComponent key={index} post={post} index={index} initialDelay={0.4} />;
-						})}
+						{filteredPosts.map((post, index) => (
+							<BlogCardComponent key={post.slug} post={post} index={index} initialDelay={0.4} />
+						))}
 					</motion.div>
+				) : (
+					<div className="flex flex-col gap-7 py-8 text-center">
+						<p className="text-xl font-bold text-gray-400">No blogs found</p>
+						<p className="text-gray-500">Try searching for something else or clear the search bar.</p>
+					</div>
 				)}
 			</div>
 		</section>
@@ -191,7 +222,6 @@ function BlogCardComponent({ post, index, initialDelay }: { post: Post; initialD
 			<div className="flex items-center gap-2 rounded-t-xl border-b-3 border-gray-800 bg-[#0A1420] px-3 py-3 sm:px-5">
 				<FaCalendarAlt className="shrink-0 text-md text-[#019BFB]" />
 
-				{/* Date */}
 				<p className="shrink-0 font-bold text-gray-400">
 					{new Date(post.date).toLocaleDateString("en-US", {
 						month: "long",
@@ -202,19 +232,16 @@ function BlogCardComponent({ post, index, initialDelay }: { post: Post; initialD
 
 				<div className="dot-glow h-1 w-1 shrink-0 rounded-full" />
 
-				{/* Project category */}
 				<FaClock className="shrink-0 text-md text-[#019BFB]" />
+
 				<p className="min-w-0 truncate text-xs text-gray-400 sm:text-sm">{post.minuteRead} min read</p>
 			</div>
 
 			{/* Content */}
 			<div className="flex flex-1 flex-col gap-1 rounded-b-xl bg-[#000C15] py-5">
-				{/* Main content */}
-				<div className="px-3 sm:px-5 h-full flex flex-col">
-					{/* Title */}
-					<p className="text-lg font-bold sm:text-xl mb-3">{post.title}</p>
+				<div className="px-3 sm:px-5 flex h-full flex-col">
+					<p className="mb-3 text-lg font-bold sm:text-xl">{post.title}</p>
 
-					{/* Description */}
 					<p className="text-sm text-gray-400 sm:text-base">
 						{post.description.split(" ").length > 15
 							? post.description.split(" ").slice(0, 15).join(" ") + "..."
@@ -222,32 +249,31 @@ function BlogCardComponent({ post, index, initialDelay }: { post: Post; initialD
 					</p>
 
 					{/* Tags */}
-					<div className="flex flex-wrap gap-2 pt-4 pb-6 text-gray-400 mt-auto">
+					<div className="mt-auto flex flex-wrap gap-2 pt-4 pb-6 text-gray-400">
 						{post.tags.slice(0, 3).map((tag, index) => (
 							<div
-								key={index}
-								className="flex items-center gap-2 rounded-xl border-2 border-[#019BFB] px-2 py-1.5 text-xs text-[#019BFB] sm:gap-3 sm:px-3 sm:text-sm select-none"
+								key={tag}
+								className="flex select-none items-center gap-2 rounded-xl border-2 border-[#019BFB] px-2 py-1.5 text-xs text-[#019BFB] sm:gap-3 sm:px-3 sm:text-sm"
 							>
 								<p>{tag}</p>
 							</div>
 						))}
 
 						{post.tags.length > 3 && (
-							<div className="flex items-center text-xl px-2 text-gray-400 select-none">
+							<div className="flex select-none items-center px-2 text-xl text-gray-400">
 								<p>+{post.tags.length - 3}</p>
 							</div>
 						)}
 					</div>
 				</div>
 
-				{/* GitHub button */}
+				{/* Read article button */}
 				<div className="mx-3 mt-auto min-h-18 border-t-3 border-gray-800 pt-5 sm:mx-5">
 					<Link
 						href={`/blogs/${post.slug}`}
-						rel="noopener noreferrer"
 						className="github-button flex h-full items-center gap-2 rounded-lg px-3 transition-all hover:scale-[1.025]"
 					>
-						<p className="text-sm font-semibold sm:text-base select-none">Read this article</p>
+						<p className="select-none text-sm font-semibold sm:text-base">Read this article</p>
 
 						<FaArrowRight className="ml-auto shrink-0 font-thin" />
 					</Link>
