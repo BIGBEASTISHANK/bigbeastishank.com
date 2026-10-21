@@ -5,7 +5,8 @@ import SectionTitleComponent from "@/components/inner/SectionTitle";
 import { useEffect, useRef } from "react";
 import { IconType } from "react-icons";
 import { ProjectData, gameProjects, otherProjects, websiteProjects } from "@@/data/Projects";
-import ProjectCardComponent from "./inner/ProjectCard";
+import ProjectCardComponent from "@/components/inner/ProjectCard";
+import { motion } from "motion/react";
 
 export default function ProjectsComponent() {
 	const searchInputRef = useRef<HTMLInputElement>(null);
@@ -30,7 +31,13 @@ export default function ProjectsComponent() {
 			{/* Intro section */}
 			<div className="flex flex-col 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 2xl:flex-row 2xl:gap-0 gap-10 bg-[#040E18] border-b-2 border-gray-800">
 				{/* Left */}
-				<div className="flex flex-col 2xl:w-1/2 2xl:pr-10">
+				<motion.div
+					initial={{ opacity: 0, x: -30 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.2 }}
+					transition={{ duration: 0.6, ease: "easeOut" }}
+					className="flex flex-col 2xl:w-1/2 2xl:pr-10"
+				>
 					{/* Subtitle */}
 					<SectionTitleComponent title="Projects" />
 
@@ -45,10 +52,16 @@ export default function ProjectsComponent() {
 						A collection of projects, experiments, and open source work that I've built over time. From
 						games to web apps and random tools, each project represents a unique learning experience.
 					</p>
-				</div>
+				</motion.div>
 
 				{/* Right */}
-				<div className="flex flex-col 2xl:w-1/2">
+				<motion.div
+					initial={{ opacity: 0, x: 20 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.2 }}
+					transition={{ duration: 1, delay: 0.2, type: "spring", stiffness: 350, damping: 20 }}
+					className="flex flex-col 2xl:w-1/2"
+				>
 					<CodeTerminal
 						data={
 							<div className="font-mono text-sm leading-6">
@@ -74,13 +87,19 @@ export default function ProjectsComponent() {
 						}
 						title="projects.sh"
 					/>
-				</div>
+				</motion.div>
 			</div>
 
 			{/* Projects grid */}
 			<div className="bg-[#020D15] 2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10">
 				{/* Searchbar */}
-				<div className="flex w-full max-w-4xl mx-auto items-center gap-2 sm:gap-3 px-3 sm:px-4 h-12 sm:h-13 bg-[#0A1420] rounded-xl sm:rounded-2xl search-bar mb-10">
+				<motion.div
+					initial={{ opacity: 0, scaleX: 0 }}
+					whileInView={{ opacity: 1, scaleX: 1 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+					className="flex w-full max-w-4xl mx-auto items-center gap-2 sm:gap-3 px-3 sm:px-4 h-12 sm:h-13 bg-[#0A1420] rounded-xl sm:rounded-2xl search-bar mb-10"
+				>
 					<FaSearch className="shrink-0 text-gray-400" />
 
 					<input
@@ -95,7 +114,7 @@ export default function ProjectsComponent() {
 						<span className="text-gray-500">+</span>
 						<span>K</span>
 					</kbd>
-				</div>
+				</motion.div>
 
 				{/* Project grid */}
 				<div className="flex flex-col gap-15">
@@ -150,7 +169,13 @@ function ProjectGridSection({
 	return (
 		<div id={`${title}-projects`} className="project-grid">
 			{/* Header */}
-			<div className="flex lg:flex-row flex-col gap-3 lg:items-center mb-5">
+			<motion.div
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.3 }}
+				transition={{ duration: 0.5, ease: "easeOut" }}
+				className="flex lg:flex-row flex-col gap-3 lg:items-center mb-5"
+			>
 				<div className="flex items-center gap-3">
 					<Icon className="md:text-3xl text-2xl text-[#019BFB]" />
 					<p className="shrink-0 md:text-xl text-lg font-bold text-[#019BFB]">
@@ -172,12 +197,14 @@ function ProjectGridSection({
 						{projectData.length}
 					</p>
 				</div>
-			</div>
+			</motion.div>
 
 			{/* Project cards */}
 			<div className="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3">
 				{projectData.map((data, index) => {
-					return <ProjectCardComponent key={index} data={data} index={index} />;
+					return (
+						<ProjectCardComponent key={index} data={data} index={index} initialDelay={0.2 + index * 0.12} />
+					);
 				})}
 			</div>
 		</div>
