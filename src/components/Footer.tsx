@@ -50,7 +50,7 @@ export default function FooterComponent() {
 							className="mb-2 flex items-center gap-2 text-gray-400"
 						>
 							<motion.span
-								animate={{ rotate: [0, -8, 8, 0] }}
+								whileInView={{ rotate: [0, -8, 8, 0] }}
 								transition={{
 									duration: 1.2,
 									repeat: Infinity,
@@ -97,7 +97,7 @@ export default function FooterComponent() {
 						<p className="text-[#A5D6FF]">
 							<span className="text-[#019BFB]">&gt;</span> {displayedText}
 							<motion.span
-								animate={{ opacity: [1, 0, 1] }}
+								whileInView={{ opacity: [1, 0, 1] }}
 								transition={{
 									duration: 0.8,
 									repeat: Infinity,
@@ -113,7 +113,7 @@ export default function FooterComponent() {
 										key="crab"
 										type="button"
 										initial={{ opacity: 0, scale: 0.3, rotate: -30 }}
-										animate={{ opacity: 1, scale: 1, rotate: 0 }}
+										whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
 										exit={{ opacity: 0, scale: 0.3 }}
 										whileHover={{ scale: 1.3, rotate: 12 }}
 										whileTap={{ scale: 0.9 }}
@@ -134,20 +134,20 @@ export default function FooterComponent() {
 								<motion.p
 									key="success"
 									initial={{ opacity: 0, y: 10, height: 0 }}
-									animate={{ opacity: 1, y: 0, height: "auto" }}
+									whileInView={{ opacity: 1, y: 0, height: "auto" }}
 									exit={{ opacity: 0, y: 5, height: 0 }}
 									transition={{ duration: 0.4, ease: "easeOut" }}
 									className="overflow-hidden text-[#7EE787]"
 								>
 									<motion.span
 										initial={{ opacity: 0 }}
-										animate={{ opacity: 1 }}
+										whileInView={{ opacity: 1 }}
 										transition={{ delay: 0.2 }}
 									>
 										[OK] All systems operational.
 									</motion.span>{" "}
 									<motion.span
-										animate={{ opacity: [1, 0, 1] }}
+										whileInView={{ opacity: [1, 0, 1] }}
 										transition={{ duration: 0.8, repeat: Infinity }}
 									>
 										▋
@@ -181,7 +181,7 @@ export default function FooterComponent() {
 						<span className="text-gray-700">|</span>
 						<span>Love and Rust in heart</span>
 						<motion.span
-							animate={{ rotate: [0, -8, 8, 0] }}
+							whileInView={{ rotate: [0, -8, 8, 0] }}
 							transition={{
 								duration: 1,
 								repeat: Infinity,
