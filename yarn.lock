@@ -540,12 +540,12 @@ enhanced-resolve@^5.24.1:
     graceful-fs "^4.2.4"
     tapable "^2.3.3"
 
-framer-motion@^14.3.0:
-  version "14.3.0"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-14.3.0.tgz#acb331971ebe747cc44ded35a9c5c41bb9b3c89e"
-  integrity sha512-d8WCrU0ZQn7ukKMykCsDyIOwb/taZeDqqrDBK0du5GO0AO/ynz8fdR/LIIz9Pyy3n3tGwrneR+n0egyrrLa3fw==
+framer-motion@14.5.0:
+  version "14.5.0"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-14.5.0.tgz#2231205611f65bdf9d33fd8a3e592f72b35549dd"
+  integrity sha512-pXIj1m9JX//3XExUgQIpS0f5iWcjenO14ekdg9S++Rr0VzfnAaveoNzonigRarD/+AM3umTGS3K/RANGQJitCQ==
   dependencies:
-    motion-dom "14.3.0"
+    motion-dom "14.5.0"
     motion-utils "14.1.1"
     tslib "^2.4.0"
 
@@ -657,10 +657,10 @@ magic-string@^0.30.21:
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.5.5"
 
-motion-dom@14.3.0:
-  version "14.3.0"
-  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-14.3.0.tgz#8c3d8fe2b9b3bb305def1be1a2e0a10be55d18fb"
-  integrity sha512-rcKO4aEJzAqDEsrH6qFzhLZxs7bNqZpiUEuEATz9LaRwt6dG7hZEbcFUSHNR8NECaKYM0Iuw6Iv6NpWEGXDI+w==
+motion-dom@14.5.0:
+  version "14.5.0"
+  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-14.5.0.tgz#d8137544e8dec3c2a4b91136dd1e53b2678580d6"
+  integrity sha512-GAdnk1AgdtyrD3I09ZxEpV+Nt5QgwUsxN55qQV8mfk082dFQpcoT07wXkQAHRZjvZWUEBYhBVNeoXvtkYdL8jA==
   dependencies:
     motion-utils "14.1.1"
 
@@ -668,6 +668,14 @@ motion-utils@14.1.1:
   version "14.1.1"
   resolved "https://registry.yarnpkg.com/motion-utils/-/motion-utils-14.1.1.tgz#aa34a30a91da308178b60e98fbf3d06590773470"
   integrity sha512-3VvN5Uvf8B6qG+OfOui6Nht5EWp+vLuU3IqcAj7ItZGKqtmTjCebl5sGZF7/08gEHRnEl1AP/fIwbcEyVrcQGQ==
+
+motion@^14.5.0:
+  version "14.5.0"
+  resolved "https://registry.yarnpkg.com/motion/-/motion-14.5.0.tgz#b1569d659b06f550e3933414cc7a1f065823b6d6"
+  integrity sha512-A0MinYYhYU12CHELw4+9jKPVreI43yDOprC4kAATHhF1rLfMFMhfpBR0GvdRR/IWEuKsHDnVn4fT+R2gQRyulw==
+  dependencies:
+    framer-motion "14.5.0"
+    tslib "^2.4.0"
 
 nanoid@^3.3.16:
   version "3.3.20"
