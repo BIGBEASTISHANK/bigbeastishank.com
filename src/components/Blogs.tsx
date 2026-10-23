@@ -134,10 +134,10 @@ export default function BlogsComponent() {
 					</div>
 
 					<p className="flex flex-col gap-2 text-sm sm:text-base md:text-md text-gray-400 2xl:max-w-180 my-3 lg:text-left text-justify leading-7">
-						Explore my journey through software development, Linux, artificial intelligence, cybersecurity,
-						and systems engineering. From practical tutorials and backend architecture to Rust experiments,
-						self-hosted infrastructure, and hands-on project builds, these articles document the things I
-						learn, the problems I solve, and the ideas I explore along the way.
+						Review and understand my journey through software development, Linux, artificial intelligence,
+						cybersecurity, and systems engineering. From practical tutorials and backend architecture to
+						Rust experiments, self-hosted infrastructure, and hands-on project builds, these articles
+						document the things I learn, the problems I solve, and the ideas I explore along the way.
 					</p>
 				</motion.div>
 
