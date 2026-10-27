@@ -27,7 +27,8 @@ body {
 	}
 }
 
-.projects, .blogs {
+.projects,
+.blogs {
 	.text-gradient {
 		background: linear-gradient(to bottom, $primary 0%, $secondary 100%);
 		-webkit-background-clip: text;
@@ -44,6 +45,23 @@ body {
 
 		&:focus-within {
 			box-shadow: 0 0 12px $primary;
+		}
+	}
+}
+
+.blogs {
+	.goBack {
+		gap: calc(var(--spacing) * 2);
+		transition: gap 150ms ease-in-out, scale 150ms ease-in-out;
+
+		&:hover {
+			gap: calc(var(--spacing) * 3);
+			scale: 1.05;
+		}
+
+		&:active{
+			gap: calc(var(--spacing) * 1);
+			scale: 0.95;
 		}
 	}
 }

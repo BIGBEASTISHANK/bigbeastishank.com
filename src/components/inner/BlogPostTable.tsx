@@ -1,4 +1,4 @@
-export default function PostsTable({ fields, fieldsData }: { fields: string[]; fieldsData: string[][] }) {
+export default function BlogPostsTable({ fields, fieldsData }: { fields: string[]; fieldsData: string[][] }) {
 	return (
 		<div className="overflow-x-auto mt-4" style={{ WebkitOverflowScrolling: "touch" }}>
 			<table className="w-full min-w-[600px] border-separate border-spacing-0 text-[#F6F9FC] font-sans rounded-lg overflow-hidden">

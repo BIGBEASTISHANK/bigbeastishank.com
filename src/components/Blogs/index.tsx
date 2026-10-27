@@ -1,8 +1,8 @@
 "use client";
 
 import { FaArrowRight, FaCalendarAlt, FaClock, FaSearch } from "react-icons/fa";
-import CodeTerminal from "./inner/CodeTerminal";
-import SectionTitleComponent from "./inner/SectionTitle";
+import CodeTerminal from "@/components/inner/CodeTerminal";
+import SectionTitleComponent from "@/components/inner/SectionTitle";
 import { motion } from "motion/react";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Post } from "@/app/blogs/page";
