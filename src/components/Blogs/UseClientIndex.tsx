@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "motion/react";
 import Link from "next/link";
 import { FaBackward, FaCheck, FaChevronDown, FaChevronRight, FaClipboard } from "react-icons/fa";
@@ -15,52 +16,61 @@ export default function UseClientIndexBlogPost({
 	TOCData: { level: number; content: string }[];
 }) {
 	return (
-		<div className="blogs scroll-mt-20 mt-20">
-			<div className="2xl:px-40 xl:px-35 lg:px-30 md:px-25 sm:px-20 px-10 py-10 bg-[#040E18] flex gap-5">
-				<div className="flex-1">
-					{/* Intro section */}
-					<div className="flex flex-col">
-						<Link href="/blogs" className="w-fit">
-							<div className="flex items-center mb-3 w-fit goBack">
-								<FaBackward className="text-[#019BFB]" />
-								<motion.p
-									initial={{ opacity: 0 }}
-									whileInView={{ opacity: 1 }}
-									viewport={{ once: true }}
-									transition={{ duration: 0.9 }}
-									className="capitalize text-sm sm:text-base md:text-lg text-[#019BFB] select-none"
-								>
-									Go Back
-								</motion.p>
-							</div>
-						</Link>
+		<div className="blogs mt-20 scroll-mt-20">
+			<div className="bg-[#040E18] px-4 py-10 sm:px-6 md:px-8 lg:px-10 xl:px-16 2xl:px-24">
+				<div className="mx-auto grid max-w-[1600px] grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_300px] xl:grid-cols-[minmax(0,1fr)_340px] xl:gap-10">
+					{/* Blog content */}
+					<main className="min-w-0 w-full">
+						{/* Intro section */}
+						<div className="flex flex-col p-5 bg-[#019bfb]/10 border-2 border-[#006bc2] rounded-3xl">
+							<Link href="/blogs" className="w-fit">
+								<div className="goBack mb-3 flex w-fit items-center gap-2">
+									<FaBackward className="text-[#019BFB]" />
 
-						<motion.div
-							initial={{ opacity: 0, y: 15 }}
-							animate={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.3, delay: 0.4 }}
-							className="text-xl sm:text-2xl md:text-3xl font-bold flex flex-col gap-1"
-						>
-							<p>{frontmatter.title}</p>
-						</motion.div>
+									<motion.p
+										initial={{ opacity: 0 }}
+										whileInView={{ opacity: 1 }}
+										viewport={{ once: true }}
+										transition={{ duration: 0.9 }}
+										className="select-none text-sm capitalize text-[#019BFB] sm:text-base md:text-lg"
+									>
+										Go Back
+									</motion.p>
+								</div>
+							</Link>
 
-						<motion.p
-							initial={{ opacity: 0, y: 12 }}
-							animate={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.3, delay: 0.6 }}
-							className="flex flex-col gap-2 text-sm sm:text-base md:text-md text-gray-400 2xl:max-w-180 my-3 lg:text-left text-justify"
-						>
-							{frontmatter.description}
-						</motion.p>
-					</div>
-					{/* Content */}
-					<div>{MDXRemote}</div>
-				</div>
+							<motion.div
+								initial={{ opacity: 0, y: 15 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.3, delay: 0.4 }}
+								className="flex flex-col gap-1 text-xl font-bold sm:text-2xl md:text-3xl"
+							>
+								<p className="scroll-mt-20">{frontmatter.title}</p>
+							</motion.div>
 
-				<div className="shrink-0">
-					<DropdownTOC TOCData={TOCData} />
+							<motion.p
+								initial={{ opacity: 0, y: 12 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.3, delay: 0.6 }}
+								className="my-3 flex flex-col gap-2 text-justify text-sm text-gray-400 sm:text-base md:text-md lg:text-left 2xl:max-w-180"
+							>
+								{frontmatter.description}
+							</motion.p>
+						</div>
+
+						{/* Mobile and tablet TOC */}
+						<div className="mt-8 min-w-0 w-full lg:hidden">
+							<DropdownTOC TOCData={TOCData} />
+						</div>
+
+						{/* Article content */}
+						<div className="min-w-0 max-w-full px-5 mt-8">{MDXRemote}</div>
+					</main>
+
+					{/* Desktop TOC */}
+					<aside className="hidden min-w-0 w-full self-start lg:sticky lg:top-24 lg:block lg:max-h-[calc(100vh-7rem)]">
+						<DropdownTOC TOCData={TOCData} />
+					</aside>
 				</div>
 			</div>
 		</div>
@@ -81,14 +91,19 @@ export function ClickToCopyCode({ children }: { children: React.ReactNode }) {
 		>
 			<div>
 				{copiedCode ? (
-					<p className="flex my-auto gap-2 items-center justify-center text-[#00FF00] font-bold">
+					<p className="my-auto flex items-center justify-center gap-2 font-bold text-[#00FF00]">
 						Copied!
 						<FaCheck className="text-base" />
 					</p>
 				) : (
-					<a title="Click to copy!" className="cursor-pointer select-none">
+					<button
+						type="button"
+						title="Click to copy!"
+						aria-label="Copy code to clipboard"
+						className="cursor-pointer select-none"
+					>
 						<FaClipboard />
-					</a>
+					</button>
 				)}
 			</div>
 		</CopyToClipboard>
@@ -96,47 +111,9 @@ export function ClickToCopyCode({ children }: { children: React.ReactNode }) {
 }
 
 // Dropdown TOC
+
 function DropdownTOC({ TOCData }: { TOCData: { level: number; content: string }[] }) {
-	const [openLevel1, setOpenLevel1] = useState<number>(0);
-	const [openLevel2, setOpenLevel2] = useState<Set<string>>(new Set());
-	const [activeItem, setActiveItem] = useState("What is a Token?");
-
-	const level1Items = TOCData.filter((item) => item.level === 1);
-
-	const getSectionItems = (level1Index: number) => {
-		const current = level1Items[level1Index];
-		const next = level1Items[level1Index + 1];
-
-		const start = TOCData.indexOf(current);
-		const end = next ? TOCData.indexOf(next) : TOCData.length;
-
-		return TOCData.slice(start + 1, end);
-	};
-
-	const getLevel3Items = (level2Item: { level: number; content: string }, level1Index: number) => {
-		const sectionItems = getSectionItems(level1Index);
-		const start = sectionItems.indexOf(level2Item);
-
-		const nextLevel2Index = sectionItems.findIndex((item, index) => index > start && item.level === 2);
-
-		const end = nextLevel2Index === -1 ? sectionItems.length : nextLevel2Index;
-
-		return sectionItems.slice(start + 1, end).filter((item) => item.level === 3);
-	};
-
-	const toggleLevel2 = (content: string) => {
-		setOpenLevel2((previous) => {
-			const updated = new Set(previous);
-
-			if (updated.has(content)) {
-				updated.delete(content);
-			} else {
-				updated.add(content);
-			}
-
-			return updated;
-		});
-	};
+	const [activeItem, setActiveItem] = useState("");
 
 	const slugify = (content: string) =>
 		content
@@ -146,165 +123,49 @@ function DropdownTOC({ TOCData }: { TOCData: { level: number; content: string }[
 			.replace(/\s+/g, "-");
 
 	const linkClass = (content: string) =>
-		`transition-colors duration-200 hover:text-[#00BFFF] ${
-			activeItem === content ? "text-[#00BFFF] font-medium" : "text-[#C3CFDE]"
+		`flex min-h-8 items-center rounded-lg border-l-[3px] px-2 py-1.5
+		transition-all duration-200 ${
+			activeItem === content
+				? "border-[#00BFFF] bg-[#05253A] text-[#00BFFF]"
+				: "border-transparent text-[#C3CFDE] hover:bg-[#041D2D] hover:text-[#00BFFF]"
 		}`;
 
 	return (
 		<div
-			className="w-full min-w-0 rounded-xl border border-[#075078]
-			bg-[#00101B] p-4 text-sm shadow-[0_0_20px_rgba(0,0,0,0.15)]
-			sm:p-5"
+			className="w-full min-w-0 max-w-full overflow-hidden rounded-xl
+			border border-[#075078] bg-[#00101B] p-4 text-sm
+			shadow-[0_0_20px_rgba(0,0,0,0.15)] sm:p-5"
 		>
 			{/* Title */}
 			<div className="mb-3">
 				<h2 className="text-base font-bold tracking-tight text-[#F1F5F9]">Table of Contents</h2>
-
 				<div className="mt-2 h-[2px] w-48 max-w-full bg-[#00BFFF]" />
 			</div>
 
-			{/* Inner TOC panel */}
+			{/* TOC */}
 			<nav
 				aria-label="Table of Contents"
-				className="rounded-xl border border-[#10425E] bg-[#000C15]/80 p-2 sm:p-2"
+				className="max-h-[calc(100vh-12rem)] overflow-y-auto
+				overscroll-contain rounded-xl border border-[#10425E]
+				bg-[#000C15]/80 p-2"
 			>
 				<div className="flex flex-col gap-0.5">
-					{level1Items.map((level1, i) => {
-						const sectionItems = getSectionItems(i);
-						const level2Items = sectionItems.filter((item) => item.level === 2);
-						const directLevel3Items = sectionItems.filter((item) => item.level === 3);
-
-						const hasChildren = sectionItems.length > 0;
-						const isOpen = openLevel1 === i;
-
-						return (
-							<div key={level1.content}>
-								{/* Level 1 */}
-								<div
-									className={`flex min-h-8 items-center gap-2 rounded-lg
-										border-l-[3px] transition-all duration-200 ${
-											activeItem === level1.content
-												? "border-[#00BFFF] bg-[#05253A] text-[#00BFFF]"
-												: "border-transparent hover:bg-[#041D2D]"
-										}`}
-								>
-									{hasChildren ? (
-										<button
-											type="button"
-											aria-label={`${isOpen ? "Collapse" : "Expand"} ${level1.content}`}
-											aria-expanded={isOpen}
-											onClick={() => setOpenLevel1(isOpen ? -1 : i)}
-											className="flex h-8 w-7 shrink-0 items-center cursor-pointer
-												justify-center text-[#C3CFDE]
-												transition-colors hover:text-[#00BFFF]"
-										>
-											{isOpen ? (
-												<FaChevronDown className="text-[11px]" />
-											) : (
-												<FaChevronRight className="text-[11px]" />
-											)}
-										</button>
-									) : (
-										<span className="w-2 shrink-0" />
-									)}
-
-									<a
-										href={`#${slugify(level1.content)}`}
-										onClick={() => {
-											setActiveItem(level1.content);
-											if (hasChildren) {
-												setOpenLevel1(i);
-											}
-										}}
-										className={`flex-1 py-1.5 pr-2 text-[13px]
-											sm:text-sm ${linkClass(level1.content)}`}
-									>
-										{level1.content}
-									</a>
-								</div>
-
-								{/* Nested section */}
-								{isOpen && (
-									<div className="ml-4 mt-1 border-l border-[#12364B] pl-3">
-										{/* Level 2 items */}
-										{level2Items.map((level2) => {
-											const children = getLevel3Items(level2, i);
-											const hasLevel3 = children.length > 0;
-											const expanded = openLevel2.has(level2.content);
-
-											return (
-												<div key={level2.content} className="mb-0.5">
-													<div className="flex min-h-7 items-center gap-2">
-														{hasLevel3 ? (
-															<button
-																type="button"
-																aria-label={`${
-																	expanded ? "Collapse" : "Expand"
-																} ${level2.content}`}
-																aria-expanded={expanded}
-																onClick={() => toggleLevel2(level2.content)}
-																className="flex h-7 w-3 shrink-0
-																	items-center justify-center
-																	text-[#C3CFDE] hover:text-[#00BFFF]"
-															>
-																{expanded ? (
-																	<FaChevronDown className="text-[10px]" />
-																) : (
-																	<FaChevronRight className="text-[10px]" />
-																)}
-															</button>
-														) : (
-															<FaChevronRight className="shrink-0 text-[10px] text-[#C3CFDE]" />
-														)}
-
-														<a
-															href={`#${slugify(level2.content)}`}
-															onClick={() => setActiveItem(level2.content)}
-															className={`py-1 text-[13px]
-																sm:text-sm ${linkClass(level2.content)}`}
-														>
-															{level2.content}
-														</a>
-													</div>
-
-													{/* Level 3 items */}
-													{expanded && hasLevel3 && (
-														<div className="ml-4 mt-0.5 border-l border-[#12364B] pl-3">
-															{children.map((level3) => (
-																<a
-																	key={level3.content}
-																	href={`#${slugify(level3.content)}`}
-																	onClick={() => setActiveItem(level3.content)}
-																	className={`block py-1 text-[12px]
-																		sm:text-[13px] ${linkClass(level3.content)}`}
-																>
-																	{level3.content}
-																</a>
-															))}
-														</div>
-													)}
-												</div>
-											);
-										})}
-
-										{/* Direct Level 3 items */}
-										{level2Items.length === 0 &&
-											directLevel3Items.map((level3) => (
-												<a
-													key={level3.content}
-													href={`#${slugify(level3.content)}`}
-													onClick={() => setActiveItem(level3.content)}
-													className={`block py-1 text-[13px]
-														sm:text-sm ${linkClass(level3.content)}`}
-												>
-													{level3.content}
-												</a>
-											))}
-									</div>
-								)}
-							</div>
-						);
-					})}
+					{TOCData.map((item, index) => (
+						<a
+							key={`${item.content}-${index}`}
+							href={`#${item.content}`}
+							onClick={() => setActiveItem(item.content)}
+							className={`${linkClass(item.content)} ${
+								item.level === 1
+									? "text-sm font-semibold"
+									: item.level === 2
+										? "ml-4 text-[13px] sm:text-sm"
+										: "ml-8 text-[12px] sm:text-[13px]"
+							}`}
+						>
+							{item.content}
+						</a>
+					))}
 				</div>
 			</nav>
 		</div>
