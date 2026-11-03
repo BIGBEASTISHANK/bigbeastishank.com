@@ -6,6 +6,22 @@ body {
 	background: #0a141e;
 }
 
+/* changing scroll bar */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 3.5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+// Content
 .button-glow {
 	background: $primary;
 	box-shadow: 0 0 15px $primary;

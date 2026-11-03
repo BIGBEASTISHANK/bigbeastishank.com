@@ -7,6 +7,14 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { FaLink } from "react-icons/fa";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
+// Convert heading text into a URL-friendly ID
+const slugify = (text: string) =>
+	text
+		.toLowerCase()
+		.trim()
+		.replace(/[^\w\s-]/g, "")
+		.replace(/\s+/g, "-");
+
 export default function BlogPostComponent({
 	frontmatter,
 	content,
@@ -14,17 +22,20 @@ export default function BlogPostComponent({
 	frontmatter: { [key: string]: any };
 	content: string;
 }) {
+	// Track the current h2 heading for hierarchical h3 IDs
+	let currentH2Id = "";
+
 	const components: any = {
 		code: ({ className, children }: { className?: string; children: React.ReactNode }) => {
 			const match = /language-(\w+)/.exec(className || "");
+
 			return match ? (
 				<div className="bg-[#282C34] flex flex-col justify-center px-3 rounded-xl my-5">
 					{/* Language and click to copy */}
 					<div className="flex my-2 mx-4 justify-between items-center">
-						{/* Language name */}
 						<h1
 							className={`select-none ${
-								className === "language-output" ? "text-[#00FF00]" : null
+								className === "language-output" ? "text-[#00FF00]" : ""
 							} rounded-full font-bold`}
 						>
 							{getLanguageDisplayName(match[1])}
@@ -48,36 +59,53 @@ export default function BlogPostComponent({
 				<code className="bg-[#1A1E23] px-[0.3rem] py-0.5 rounded">{children}</code>
 			);
 		},
-		h1: (props: any) => (
-			<h1 className="text-3xl font-black mt-8 mb-4 scroll-mt-28 w-auto flex" id={props.children} {...props}>
-				<div className="group">
-					<Link href={`#${props.children}`} className="flex items-center gap-2 underline underline-offset-3">
-						<FaLink className="group-hover:block hidden" />
-						{props.children}
-					</Link>
-				</div>
-			</h1>
-		),
-		h2: (props: any) => (
-			<h2 className="text-2xl font-black mt-6 mb-3 scroll-mt-28 w-auto flex" id={props.children} {...props}>
-				<div className="group">
-					<Link href={`#${props.children}`} className="flex items-center gap-2 underline underline-offset-3">
-						<FaLink className="group-hover:block hidden" />
-						{props.children}
-					</Link>
-				</div>
-			</h2>
-		),
-		h3: (props: any) => (
-			<h3 className="text-xl font-bold mt-4 mb-2 scroll-mt-28 w-auto flex" id={props.children} {...props}>
-				<div className="group">
-					<Link href={`#${props.children}`} className="flex items-center gap-2">
-						<FaLink className="group-hover:block hidden" />
-						{props.children}
-					</Link>
-				</div>
-			</h3>
-		),
+
+		h1: (props: any) => {
+			const id = slugify(String(props.children));
+
+			return (
+				<h1 className="text-3xl font-black mt-8 mb-4 scroll-mt-28 w-auto flex" id={id} {...props}>
+					<div className="group">
+						<Link href={`#${id}`} className="flex items-center gap-2 underline underline-offset-3">
+							<FaLink className="group-hover:block hidden" />
+							{props.children}
+						</Link>
+					</div>
+				</h1>
+			);
+		},
+
+		h2: (props: any) => {
+			const id = slugify(String(props.children));
+
+			currentH2Id = id;
+
+			return (
+				<h2 className="text-2xl font-black mt-6 mb-3 scroll-mt-28 w-auto flex" id={id} {...props}>
+					<div className="group">
+						<Link href={`#${id}`} className="flex items-center gap-2 underline underline-offset-3">
+							<FaLink className="group-hover:block hidden" />
+							{props.children}
+						</Link>
+					</div>
+				</h2>
+			);
+		},
+
+		h3: (props: any) => {
+			const id = `${currentH2Id}_${slugify(String(props.children))}`;
+
+			return (
+				<h3 className="text-xl font-bold mt-4 mb-2 scroll-mt-28 w-auto flex" id={id} {...props}>
+					<div className="group">
+						<Link href={`#${id}`} className="flex items-center gap-2">
+							<FaLink className="group-hover:block hidden" />
+							{props.children}
+						</Link>
+					</div>
+				</h3>
+			);
+		},
 
 		a: (props: any) => (
 			<a
@@ -86,12 +114,19 @@ export default function BlogPostComponent({
 				{...props}
 			/>
 		),
+
 		p: (props: any) => <p className="my-4 text-[#F6F9FC]/75" {...props} />,
+
 		hr: (props: any) => <hr className="my-10 w-[90%] mx-auto text-[#1793D1]" {...props} />,
+
 		ul: (props: any) => <ul className="list-disc pl-6 my-4 text-[#F6F9FC]/75" {...props} />,
+
 		ol: (props: any) => <ol className="list-decimal pl-6 my-4 text-[#F6F9FC]/75" {...props} />,
+
 		li: (props: any) => <li className="mb-1 text-[#F6F9FC]/75" {...props} />,
+
 		blockquote: (props: any) => <blockquote className="border-l-4 border-[#1793D1] pl-4 italic my-4" {...props} />,
+
 		BlogPostsTable,
 		Link,
 	};
@@ -103,19 +138,22 @@ export default function BlogPostComponent({
 		let insideCodeBlock = false;
 
 		for (const line of lines) {
-			// Toggle code block state
 			if (line.startsWith("```")) {
 				insideCodeBlock = !insideCodeBlock;
 				continue;
 			}
 
-			// Skip processing if inside code block
 			if (!insideCodeBlock && line.startsWith("#")) {
 				const match = line.match(/^(#+)\s*(.+)$/);
+
 				if (match) {
 					const headingLevel = match[1].length;
 					const headingText = match[2].trim();
-					heading.push({ level: headingLevel, content: headingText });
+
+					heading.push({
+						level: headingLevel,
+						content: headingText,
+					});
 				}
 			}
 		}
@@ -130,7 +168,10 @@ export default function BlogPostComponent({
 				<MDXRemote
 					source={content}
 					components={components}
-					options={{ blockJS: false, blockDangerousJS: true }}
+					options={{
+						blockJS: false,
+						blockDangerousJS: true,
+					}}
 				/>
 			}
 			TOCData={TOCData()}

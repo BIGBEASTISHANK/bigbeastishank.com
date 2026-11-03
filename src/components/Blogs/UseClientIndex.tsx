@@ -4,7 +4,8 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { FaBackward, FaCheck, FaChevronDown, FaChevronRight, FaClipboard } from "react-icons/fa";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { FiChevronDown } from "react-icons/fi";
 
 export default function UseClientIndexBlogPost({
 	frontmatter,
@@ -111,10 +112,59 @@ export function ClickToCopyCode({ children }: { children: React.ReactNode }) {
 }
 
 // Dropdown TOC
+type TOCItem = {
+	level: number;
+	content: string;
+};
 
-function DropdownTOC({ TOCData }: { TOCData: { level: number; content: string }[] }) {
-	const [activeItem, setActiveItem] = useState("");
+function DropdownTOC({ TOCData }: { TOCData: TOCItem[] }) {
+	const level1Items = TOCData.filter((item) => item.level === 1);
 
+	const [activeItem, setActiveItem] = useState(level1Items[0]?.content ?? "");
+	const [expandedItems, setExpandedItems] = useState<string[]>([]);
+
+	// Sync active TOC item with URL hash
+	useEffect(() => {
+		const syncActiveFromHash = () => {
+			const hash = decodeURIComponent(window.location.hash.slice(1));
+
+			if (!hash) return;
+
+			// Find matching heading using generated IDs
+			const index = TOCData.findIndex((item, i) => {
+				return getHeadingId(i) === hash;
+			});
+
+			if (index !== -1) {
+				const item = TOCData[index];
+				setActiveItem(getHeadingId(index));
+
+				// Automatically expand the parent Level 2 for Level 3
+				if (item.level === 3) {
+					for (let i = index - 1; i >= 0; i--) {
+						if (TOCData[i].level === 2) {
+							setExpandedItems((prev) =>
+								prev.includes(TOCData[i].content) ? prev : [...prev, TOCData[i].content],
+							);
+							break;
+						}
+					}
+				}
+			}
+		};
+
+		// Initial URL hash
+		syncActiveFromHash();
+
+		// Listen for hash changes
+		window.addEventListener("hashchange", syncActiveFromHash);
+
+		return () => {
+			window.removeEventListener("hashchange", syncActiveFromHash);
+		};
+	}, [TOCData]);
+
+	// Generate matching heading IDs
 	const slugify = (content: string) =>
 		content
 			.toLowerCase()
@@ -122,50 +172,186 @@ function DropdownTOC({ TOCData }: { TOCData: { level: number; content: string }[
 			.trim()
 			.replace(/\s+/g, "-");
 
-	const linkClass = (content: string) =>
+	// Generate hierarchical IDs for headings
+	const getHeadingId = (index: number) => {
+		const item = TOCData[index];
+
+		if (item.level === 3) {
+			let parentH2 = "";
+
+			for (let i = index - 1; i >= 0; i--) {
+				if (TOCData[i].level === 2) {
+					parentH2 = slugify(TOCData[i].content);
+					break;
+				}
+			}
+
+			return `${parentH2}_${slugify(item.content)}`;
+		}
+
+		return slugify(item.content);
+	};
+
+	// Toggle Level 3 visibility
+	const toggleExpand = (content: string) => {
+		setExpandedItems((prev) =>
+			prev.includes(content) ? prev.filter((item) => item !== content) : [...prev, content],
+		);
+	};
+
+	// Active link styling
+	const linkClass = (id: string) =>
 		`flex min-h-8 items-center rounded-lg border-l-[3px] px-2 py-1.5
-		transition-all duration-200 ${
-			activeItem === content
-				? "border-[#00BFFF] bg-[#05253A] text-[#00BFFF]"
-				: "border-transparent text-[#C3CFDE] hover:bg-[#041D2D] hover:text-[#00BFFF]"
-		}`;
+	transition-all duration-200 ${
+		activeItem === id
+			? "border-[#019bfb] bg-[#05253A] text-[#019bfb]"
+			: "border-transparent text-[#C3CFDE] hover:bg-[#041D2D] hover:text-[#019bfb]"
+	}`;
+
+	// Level 1 navigation
+	const handleLevel1Click = (content: string) => {
+		setActiveItem(content);
+
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
+
+	// Level 2 and Level 3 navigation
+	const handleSectionClick = (id: string) => {
+		setActiveItem(id);
+
+		document.getElementById(id)?.scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+		});
+	};
+
+	// Get Level 3 children belonging to a Level 2 item
+	const getChildren = (index: number) => {
+		const children: { item: TOCItem; index: number }[] = [];
+
+		for (let i = index + 1; i < TOCData.length; i++) {
+			if (TOCData[i].level <= 2) break;
+
+			if (TOCData[i].level === 3) {
+				children.push({
+					item: TOCData[i],
+					index: i,
+				});
+			}
+		}
+
+		return children;
+	};
 
 	return (
 		<div
 			className="w-full min-w-0 max-w-full overflow-hidden rounded-xl
-			border border-[#075078] bg-[#00101B] p-4 text-sm
+			border border-[#019bfb]/50 bg-[#00101B] p-4 text-sm
 			shadow-[0_0_20px_rgba(0,0,0,0.15)] sm:p-5"
 		>
-			{/* Title */}
+			{/* TITLE */}
 			<div className="mb-3">
 				<h2 className="text-base font-bold tracking-tight text-[#F1F5F9]">Table of Contents</h2>
-				<div className="mt-2 h-[2px] w-48 max-w-full bg-[#00BFFF]" />
+
+				<div className="mt-2 h-[2px] w-48 max-w-full bg-[#019bfb]" />
 			</div>
 
-			{/* TOC */}
 			<nav
 				aria-label="Table of Contents"
 				className="max-h-[calc(100vh-12rem)] overflow-y-auto
-				overscroll-contain rounded-xl border border-[#10425E]
+				overscroll-contain rounded-xl border border-[#019bfb]/50
 				bg-[#000C15]/80 p-2"
 			>
+				{/* LEVEL 1 - ISOLATED */}
+				<div className="mb-3 border-b border-[#019bfb]/50 pb-3">
+					<div className="flex flex-col gap-0.5">
+						{level1Items.map((item, index) => (
+							<button
+								key={`${item.content}-${index}`}
+								onClick={() => {
+									setActiveItem(item.content);
+									handleLevel1Click(item.content);
+								}}
+								className={`${linkClass(item.content)} w-full text-left text-sm font-semibold select-none cursor-pointer`}
+							>
+								{item.content}
+							</button>
+						))}
+					</div>
+				</div>
+
+				{/* LEVEL 2 AND LEVEL 3 */}
 				<div className="flex flex-col gap-0.5">
-					{TOCData.map((item, index) => (
-						<a
-							key={`${item.content}-${index}`}
-							href={`#${item.content}`}
-							onClick={() => setActiveItem(item.content)}
-							className={`${linkClass(item.content)} ${
-								item.level === 1
-									? "text-sm font-semibold"
-									: item.level === 2
-										? "ml-4 text-[13px] sm:text-sm"
-										: "ml-8 text-[12px] sm:text-[13px]"
-							}`}
-						>
-							{item.content}
-						</a>
-					))}
+					{TOCData.map((item, index) => {
+						if (item.level !== 2) return null;
+
+						const children = getChildren(index);
+						const isExpanded = expandedItems.includes(item.content);
+						const headingId = getHeadingId(index);
+
+						return (
+							<div key={`${item.content}-${index}`}>
+								{/* LEVEL 2 */}
+								<div className="flex items-center select-none">
+									<a
+										href={`#${headingId}`}
+										onClick={() => {
+											handleSectionClick(headingId);
+
+											if (children.length > 0 && !isExpanded) {
+												toggleExpand(item.content);
+											}
+										}}
+										className={`${linkClass(headingId)} ml-2 flex-1 text-left text-[13px] font-medium sm:text-sm cursor-pointer`}
+									>
+										{item.content}
+									</a>
+
+									{/* EXPAND / COLLAPSE */}
+									{children.length > 0 && (
+										<button
+											type="button"
+											aria-label={
+												isExpanded ? `Collapse ${item.content}` : `Expand ${item.content}`
+											}
+											aria-expanded={isExpanded}
+											onClick={() => toggleExpand(item.content)}
+											className="rounded-md p-2 text-[#C3CFDE] transition hover:bg-[#041D2D] hover:text-[#019bfb] outline-none cursor-pointer"
+										>
+											<FiChevronDown
+												className={`h-4 w-4 transition-transform duration-200 ${
+													isExpanded ? "rotate-180" : ""
+												}`}
+											/>
+										</button>
+									)}
+								</div>
+
+								{/* LEVEL 3 - COLLAPSIBLE */}
+								{isExpanded && children.length > 0 && (
+									<div className="ml-6 mt-1 flex flex-col gap-0.5 border-l border-[#019bfb]/50 pl-2 select-none">
+										{children.map(({ item: child, index: childIndex }) => {
+											const childId = getHeadingId(childIndex);
+
+											return (
+												<a
+													href={`#${childId}`}
+													key={`${child.content}-${childIndex}`}
+													onClick={() => handleSectionClick(childId)}
+													className={`${linkClass(childId)} text-left text-[12px] sm:text-[13px] cursor-pointer`}
+												>
+													{child.content}
+												</a>
+											);
+										})}
+									</div>
+								)}
+							</div>
+						);
+					})}
 				</div>
 			</nav>
 		</div>
