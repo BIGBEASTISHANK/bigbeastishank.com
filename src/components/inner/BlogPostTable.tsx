@@ -3,13 +3,13 @@ export default function BlogPostsTable({ fields, fieldsData }: { fields: string[
 		<div className="overflow-x-auto mt-4" style={{ WebkitOverflowScrolling: "touch" }}>
 			<table className="w-full min-w-[600px] border-separate border-spacing-0 text-[#F6F9FC] font-sans rounded-lg overflow-hidden">
 				<thead>
-					<tr className="bg-[#1A1E23]">
+					<tr className="bg-[#0A1420]">
 						{fields.map((field, i) => (
 							<th
 								key={i}
 								className={`${
 									i === 0 ? "rounded-tl-lg" : i === fields.length - 1 ? "rounded-tr-lg" : ""
-								} md:w-48 w-32 border border-[#1793D1] p-3 text-left font-bold whitespace-nowrap`}
+								} md:w-48 w-32 border border-gray-800 p-3 text-left font-bold whitespace-nowrap`}
 							>
 								{field}
 							</th>
@@ -18,11 +18,11 @@ export default function BlogPostsTable({ fields, fieldsData }: { fields: string[
 				</thead>
 				<tbody>
 					{fieldsData.map((row, i) => (
-						<tr key={i} className={i % 2 === 1 ? "bg-[#0A0C0E]" : "bg-[#050607]"}>
+						<tr key={i} className={i % 2 === 1 ? "bg-[#040E17]" : "bg-[#010508]"}>
 							{row.map((cell, j) => (
 								<td
 									key={j}
-									className={`md:w-48 w-32 border-b border-r border-[#1793D1] p-3 whitespace-nowrap ${
+									className={`md:w-48 w-32 border-b border-r border-gray-800 p-3 whitespace-nowrap ${
 										j === 0 ? "border-l" : ""
 									} ${i === fieldsData.length - 1 && j === 0 ? "rounded-bl-lg" : ""} ${
 										i === fieldsData.length - 1 && j === row.length - 1 ? "rounded-br-lg" : ""

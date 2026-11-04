@@ -7,6 +7,7 @@ import { motion } from "motion/react";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Post } from "@/app/blogs/page";
 import Link from "next/link";
+import { FaTags } from "react-icons/fa6";
 
 export default function BlogsComponent() {
 	const searchInputRef = useRef<HTMLInputElement>(null);
@@ -357,11 +358,12 @@ function BlogCardComponent({
 
 					{/* Tags */}
 					<div className="mt-auto flex flex-wrap gap-2 pt-4 pb-6 text-gray-400">
-						{post.tags.slice(0, 3).map((tag, index) => (
+						{post.tags.slice(0, 3).map((tag) => (
 							<div
 								key={tag}
 								className="flex select-none items-center gap-2 rounded-xl border-2 border-[#019BFB] px-2 py-1.5 text-xs text-[#019BFB] sm:gap-3 sm:px-3 sm:text-sm"
 							>
+								<FaTags />
 								<p>{tag}</p>
 							</div>
 						))}

@@ -6,6 +6,7 @@ import { FaBackward, FaCheck, FaChevronDown, FaChevronRight, FaClipboard } from 
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useEffect, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import { FaTags } from "react-icons/fa6";
 
 export default function UseClientIndexBlogPost({
 	frontmatter,
@@ -19,13 +20,13 @@ export default function UseClientIndexBlogPost({
 	return (
 		<div className="blogs mt-20 scroll-mt-20">
 			<div className="bg-[#040E18] px-4 py-10 sm:px-6 md:px-8 lg:px-10 xl:px-16 2xl:px-24">
-				<div className="mx-auto grid max-w-[1600px] grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_300px] xl:grid-cols-[minmax(0,1fr)_340px] xl:gap-10">
+				<div className="mx-auto grid max-w-[1800px] grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_380px] xl:gap-10">
 					{/* Blog content */}
 					<main className="min-w-0 w-full">
 						{/* Intro section */}
-						<div className="flex flex-col p-5 bg-[#019bfb]/10 border-2 border-[#006bc2] rounded-3xl">
-							<Link href="/blogs" className="w-fit">
-								<div className="goBack mb-3 flex w-fit items-center gap-2">
+						<div className="flex flex-col p-5 bg-[#0A1420] border-3 border-gray-800 rounded-3xl">
+							<div className="goBack mb-3 w-fit">
+								<Link href="/blogs" className="flex items-center gap-2">
 									<FaBackward className="text-[#019BFB]" />
 
 									<motion.p
@@ -37,8 +38,8 @@ export default function UseClientIndexBlogPost({
 									>
 										Go Back
 									</motion.p>
-								</div>
-							</Link>
+								</Link>
+							</div>
 
 							<motion.div
 								initial={{ opacity: 0, y: 15 }}
@@ -53,10 +54,41 @@ export default function UseClientIndexBlogPost({
 								initial={{ opacity: 0, y: 12 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.3, delay: 0.6 }}
-								className="my-3 flex flex-col gap-2 text-justify text-sm text-gray-400 sm:text-base md:text-md lg:text-left 2xl:max-w-180"
+								className="my-3 flex flex-col gap-2 text-justify text-sm text-gray-400 sm:text-base md:text-md lg:text-left"
 							>
 								{frontmatter.description}
 							</motion.p>
+
+							<div className="flex flex-wrap gap-2 2xl:gap-4 md:gap-3">
+								{frontmatter.tags.map((tag: string, index: number) => (
+									<motion.div
+										key={tag}
+										initial={{ opacity: 0, y: 10 }}
+										animate={{ opacity: 1, y: 0 }}
+										viewport={{ once: true, amount: 0.3 }}
+										transition={{
+											type: "spring",
+											stiffness: 300,
+											damping: 15,
+											delay: 0.8 + index * 0.2,
+										}}
+										className="flex select-none items-center gap-2 rounded-xl border-2 border-[#019BFB] px-2 py-1.5 text-xs text-[#019BFB] sm:gap-3 sm:px-3 sm:text-sm"
+									>
+										<FaTags />
+										<p>{tag}</p>
+									</motion.div>
+								))}
+							</div>
+						</div>
+
+						{/* Mobile Divider */}
+						<div className="flex lg:hidden px-10 my-8">
+							<motion.div
+								initial={{ scaleX: 0 }}
+								animate={{ scaleX: 1 }}
+								transition={{ duration: 0.5, delay: 1 }}
+								className="h-1 w-full bg-[#019BFB] rounded-full"
+							/>
 						</div>
 
 						{/* Mobile and tablet TOC */}
@@ -64,8 +96,39 @@ export default function UseClientIndexBlogPost({
 							<DropdownTOC TOCData={TOCData} />
 						</div>
 
+						{/* Divider */}
+						<div className="flex px-10 my-8">
+							<motion.div
+								initial={{ scaleX: 0 }}
+								animate={{ scaleX: 1 }}
+								transition={{ duration: 0.5, delay: 1 }}
+								className="h-1 w-full bg-[#019BFB] rounded-full"
+							/>
+						</div>
+
 						{/* Article content */}
-						<div className="min-w-0 max-w-full px-5 mt-8">{MDXRemote}</div>
+						<motion.div
+							initial={{ opacity: 0, y: 10 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: 1.2 }}
+							className="min-w-0 max-w-full px-5"
+						>
+							{MDXRemote}
+						</motion.div>
+
+						{/* Go back */}
+						<div className="flex w-fit ml-5 mt-5">
+							<Link
+								href="/blogs"
+								className="flex items-center gap-2 border-t-3 border-b-3 border-[#019BFB] rounded-xl py-2 px-5 hover:scale-[1.1] transition-transform"
+							>
+								<FaBackward className="text-[#019BFB]" />
+
+								<p className="select-none text-sm capitalize text-[#019BFB] sm:text-base md:text-lg">
+									Go Back
+								</p>
+							</Link>
+						</div>
 					</main>
 
 					{/* Desktop TOC */}
@@ -75,39 +138,6 @@ export default function UseClientIndexBlogPost({
 				</div>
 			</div>
 		</div>
-	);
-}
-
-// Copy to clipboard
-export function ClickToCopyCode({ children }: { children: React.ReactNode }) {
-	const [copiedCode, setCopiedCode] = useState<boolean>(false);
-
-	return (
-		<CopyToClipboard
-			text={String(children).replace(/\n$/, "")}
-			onCopy={() => {
-				setCopiedCode(true);
-				setTimeout(() => setCopiedCode(false), 2000);
-			}}
-		>
-			<div>
-				{copiedCode ? (
-					<p className="my-auto flex items-center justify-center gap-2 font-bold text-[#00FF00]">
-						Copied!
-						<FaCheck className="text-base" />
-					</p>
-				) : (
-					<button
-						type="button"
-						title="Click to copy!"
-						aria-label="Copy code to clipboard"
-						className="cursor-pointer select-none"
-					>
-						<FaClipboard />
-					</button>
-				)}
-			</div>
-		</CopyToClipboard>
 	);
 }
 
@@ -204,7 +234,7 @@ function DropdownTOC({ TOCData }: { TOCData: TOCItem[] }) {
 		`flex min-h-8 items-center rounded-lg border-l-[3px] px-2 py-1.5
 	transition-all duration-200 ${
 		activeItem === id
-			? "border-[#019bfb] bg-[#05253A] text-[#019bfb]"
+			? "border-[#006bc2] bg-[#019bfb]/10 text-[#019bfb]"
 			: "border-transparent text-[#C3CFDE] hover:bg-[#041D2D] hover:text-[#019bfb]"
 	}`;
 
@@ -247,12 +277,8 @@ function DropdownTOC({ TOCData }: { TOCData: TOCItem[] }) {
 	};
 
 	return (
-		<div
-			className="w-full min-w-0 max-w-full overflow-hidden rounded-xl
-			border border-[#019bfb]/50 bg-[#00101B] p-4 text-sm
-			shadow-[0_0_20px_rgba(0,0,0,0.15)] sm:p-5"
-		>
-			{/* TITLE */}
+		<div className="w-full min-w-0 max-w-full overflow-hidden rounded-xl border-3 border-gray-800 bg-[#0A1420] p-4 text-sm sm:p-5">
+			{/* Title */}
 			<div className="mb-3">
 				<h2 className="text-base font-bold tracking-tight text-[#F1F5F9]">Table of Contents</h2>
 
@@ -261,12 +287,10 @@ function DropdownTOC({ TOCData }: { TOCData: TOCItem[] }) {
 
 			<nav
 				aria-label="Table of Contents"
-				className="max-h-[calc(100vh-12rem)] overflow-y-auto
-				overscroll-contain rounded-xl border border-[#019bfb]/50
-				bg-[#000C15]/80 p-2"
+				className="max-h-[calc(100vh-12rem)] overflow-y-auto overscroll-contain rounded-xl border-2 border-gray-800 bg-[#040E18] p-2"
 			>
-				{/* LEVEL 1 - ISOLATED */}
-				<div className="mb-3 border-b border-[#019bfb]/50 pb-3">
+				{/* Level 1 */}
+				<div className="mb-3 border-b border-[#006bc2] pb-3">
 					<div className="flex flex-col gap-0.5">
 						{level1Items.map((item, index) => (
 							<button
@@ -283,7 +307,7 @@ function DropdownTOC({ TOCData }: { TOCData: TOCItem[] }) {
 					</div>
 				</div>
 
-				{/* LEVEL 2 AND LEVEL 3 */}
+				{/* Inner levels */}
 				<div className="flex flex-col gap-0.5">
 					{TOCData.map((item, index) => {
 						if (item.level !== 2) return null;
@@ -294,7 +318,7 @@ function DropdownTOC({ TOCData }: { TOCData: TOCItem[] }) {
 
 						return (
 							<div key={`${item.content}-${index}`}>
-								{/* LEVEL 2 */}
+								{/* Level 2 */}
 								<div className="flex items-center select-none">
 									<a
 										href={`#${headingId}`}
@@ -310,7 +334,7 @@ function DropdownTOC({ TOCData }: { TOCData: TOCItem[] }) {
 										{item.content}
 									</a>
 
-									{/* EXPAND / COLLAPSE */}
+									{/* Expand toggle */}
 									{children.length > 0 && (
 										<button
 											type="button"
@@ -330,9 +354,9 @@ function DropdownTOC({ TOCData }: { TOCData: TOCItem[] }) {
 									)}
 								</div>
 
-								{/* LEVEL 3 - COLLAPSIBLE */}
+								{/* Level 3 */}
 								{isExpanded && children.length > 0 && (
-									<div className="ml-6 mt-1 flex flex-col gap-0.5 border-l border-[#019bfb]/50 pl-2 select-none">
+									<div className="ml-6 mt-1 flex flex-col gap-0.5 border-l border-[#006bc2] pl-2 select-none">
 										{children.map(({ item: child, index: childIndex }) => {
 											const childId = getHeadingId(childIndex);
 

@@ -1,4 +1,4 @@
-import UseClientIndexBlogPost, { ClickToCopyCode } from "./UseClientIndex";
+import UseClientIndexBlogPost from "./UseClientIndex";
 import BlogPostsTable from "@/components/inner/BlogPostTable";
 import { getLanguageDisplayName } from "@/utils/GetLanguageDisplayName";
 import Link from "next/link";
@@ -6,8 +6,9 @@ import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { FaLink } from "react-icons/fa";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import CodeTerminal from "../inner/CodeTerminal";
 
-// Convert heading text into a URL-friendly ID
+// Convert heading text into a URL friendly ID
 const slugify = (text: string) =>
 	text
 		.toLowerCase()
@@ -30,33 +31,31 @@ export default function BlogPostComponent({
 			const match = /language-(\w+)/.exec(className || "");
 
 			return match ? (
-				<div className="bg-[#282C34] flex flex-col justify-center px-3 rounded-xl my-5">
-					{/* Language and click to copy */}
-					<div className="flex my-2 mx-4 justify-between items-center">
-						<h1
-							className={`select-none ${
-								className === "language-output" ? "text-[#00FF00]" : ""
-							} rounded-full font-bold`}
+				<CodeTerminal
+					title={getLanguageDisplayName(match[1])}
+					data={
+						<SyntaxHighlighter
+							style={{
+								...oneDark,
+								'pre[class*="language-"]': {
+									background: "transparent",
+									backgroundColor: "transparent",
+								},
+								'code[class*="language-"]': {
+									background: "transparent",
+									backgroundColor: "transparent",
+								},
+							}}
+							language={match[1]}
+							PreTag="div"
+							className="text-sm xl:text-base"
 						>
-							{getLanguageDisplayName(match[1])}
-						</h1>
-
-						{/* Click to copy */}
-						{className === "language-output" || className === "language-text" ? null : (
-							<ClickToCopyCode children={children} />
-						)}
-					</div>
-
-					{/* Divider */}
-					<div className="h-[.125rem] mx-auto bg-[#515860] z-10 w-full" />
-
-					{/* Code */}
-					<SyntaxHighlighter style={oneDark} language={match[1]} PreTag="div" className="rounded-md mt-2">
-						{String(children).replace(/\n$/, "")}
-					</SyntaxHighlighter>
-				</div>
+							{String(children).replace(/\n$/, "")}
+						</SyntaxHighlighter>
+					}
+				/>
 			) : (
-				<code className="bg-[#1A1E23] px-[0.3rem] py-0.5 rounded">{children}</code>
+				<CodeTerminal title="unknown.rs" data={<>{children}</>} />
 			);
 		},
 
@@ -64,7 +63,7 @@ export default function BlogPostComponent({
 			const id = slugify(String(props.children));
 
 			return (
-				<h1 className="text-3xl font-black mt-8 mb-4 scroll-mt-28 w-auto flex" id={id} {...props}>
+				<h1 className="text-3xl font-black mt-8 mb-4 scroll-mt-24 w-auto flex" id={id} {...props}>
 					<div className="group">
 						<Link href={`#${id}`} className="flex items-center gap-2 underline underline-offset-3">
 							<FaLink className="group-hover:block hidden" />
@@ -81,7 +80,7 @@ export default function BlogPostComponent({
 			currentH2Id = id;
 
 			return (
-				<h2 className="text-2xl font-black mt-6 mb-3 scroll-mt-28 w-auto flex" id={id} {...props}>
+				<h2 className="text-2xl font-black mt-6 mb-3 scroll-mt-24 w-auto flex" id={id} {...props}>
 					<div className="group">
 						<Link href={`#${id}`} className="flex items-center gap-2 underline underline-offset-3">
 							<FaLink className="group-hover:block hidden" />
@@ -96,7 +95,7 @@ export default function BlogPostComponent({
 			const id = `${currentH2Id}_${slugify(String(props.children))}`;
 
 			return (
-				<h3 className="text-xl font-bold mt-4 mb-2 scroll-mt-28 w-auto flex" id={id} {...props}>
+				<h3 className="text-xl font-bold mt-4 mb-2 scroll-mt-24 w-auto flex" id={id} {...props}>
 					<div className="group">
 						<Link href={`#${id}`} className="flex items-center gap-2">
 							<FaLink className="group-hover:block hidden" />
@@ -115,7 +114,7 @@ export default function BlogPostComponent({
 			/>
 		),
 
-		p: (props: any) => <p className="my-4 text-[#F6F9FC]/75" {...props} />,
+		p: (props: any) => <div className="my-4 text-[#F6F9FC]/75" {...props} />,
 
 		hr: (props: any) => <hr className="my-10 w-[90%] mx-auto text-[#1793D1]" {...props} />,
 
