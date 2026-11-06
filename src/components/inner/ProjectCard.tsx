@@ -51,7 +51,7 @@ export default function ProjectCardComponent({
 					<p className="text-lg font-bold sm:text-xl">{data.title}</p>
 
 					{/* Description */}
-					<p className="text-sm text-gray-400 sm:text-base">{data.description}</p>
+					<p className="text-gray-400 text-sm sm:text-base md:text-md">{data.description}</p>
 
 					{/* Tags */}
 					<div className="flex flex-wrap gap-2 pt-4 pb-6 text-gray-400 mt-auto">

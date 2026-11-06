@@ -15,12 +15,14 @@ export default function NavbarComponent() {
 		<nav className="navbar fixed top-0 left-0 z-100 w-full border-b-2 border-gray-800 bg-[#060E19]/90 px-4 py-4 backdrop-blur-xs sm:px-8 sm:py-5 md:px-12 lg:px-20 xl:px-35 2xl:px-40">
 			<div className="flex w-full items-center justify-between">
 				{/* Logo */}
-				<img
-					src="/images/BBILogo.png"
-					draggable={false}
-					alt="logo"
-					className="my-auto h-8 select-none sm:h-10"
-				/>
+				<Link href="/">
+					<img
+						src="/images/BBILogo.png"
+						draggable={false}
+						alt="logo"
+						className="my-auto h-8 select-none sm:h-10"
+					/>
+				</Link>
 
 				{/* Desktop / Tablet Navigation */}
 				<div className="my-auto hidden items-center gap-5 text-lg font-bold sm:flex">

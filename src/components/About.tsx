@@ -8,8 +8,10 @@ import { motion } from "motion/react";
 
 export default function AboutComponent() {
 	const drfaultCurrectTechStack = Section.WebDev;
-	const [currentTechStack, setCurrentTechStack] = useState<Section>(drfaultCurrectTechStack);
 	const tabCharacter = "\t";
+
+	const [currentTechStack, setCurrentTechStack] = useState<Section>(drfaultCurrectTechStack);
+	const [techStackAnimDelay, setTechStackAnimDelay] = useState<number>(1);
 
 	return (
 		<section
@@ -78,16 +80,17 @@ export default function AboutComponent() {
 				<div className="flex gap-x-8 gap-y-5 flex-wrap select-none 2xl:max-w-180 sm:justify-start justify-center">
 					{TechStack[currentTechStack].map((data, index) => (
 						<motion.div
-							key={index}
+							key={`${currentTechStack}-${index}`}
 							initial={{ opacity: 0, y: 10 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{
 								duration: 0.3,
-								delay: 1 + index * 0.05,
+								delay: techStackAnimDelay + index * 0.05,
 								type: "spring",
 								stiffness: 350,
 								damping: 20,
 							}}
+							onAnimationComplete={() => setTechStackAnimDelay(0)}
 							className={`flex gap-3 text-sm sm:text-base md:text-lg items-center px-3 py-1.5 text-[#019BFB] border-2 border-[#019BFB] rounded-xl ${index % 2 === 0 ? "rotate-2" : "-rotate-2"}`}
 						>
 							<data.icon className="text-base sm:text-lg" />

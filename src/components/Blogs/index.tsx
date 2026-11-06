@@ -350,7 +350,7 @@ function BlogCardComponent({
 				<div className="px-3 sm:px-5 flex h-full flex-col">
 					<p className="mb-3 text-lg font-bold sm:text-xl">{post.title}</p>
 
-					<p className="text-sm text-gray-400 sm:text-base">
+					<p className="text-gray-400 text-sm sm:text-base md:text-md">
 						{post.description.split(" ").length > 15
 							? post.description.split(" ").slice(0, 15).join(" ") + "..."
 							: post.description}
@@ -358,7 +358,7 @@ function BlogCardComponent({
 
 					{/* Tags */}
 					<div className="mt-auto flex flex-wrap gap-2 pt-4 pb-6 text-gray-400">
-						{post.tags.slice(0, 3).map((tag) => (
+						{post.tags.slice(0, 2).map((tag) => (
 							<div
 								key={tag}
 								className="flex select-none items-center gap-2 rounded-xl border-2 border-[#019BFB] px-2 py-1.5 text-xs text-[#019BFB] sm:gap-3 sm:px-3 sm:text-sm"
@@ -368,11 +368,23 @@ function BlogCardComponent({
 							</div>
 						))}
 
-						{post.tags.length > 3 && (
-							<div className="flex select-none items-center px-2 text-xl text-gray-400">
-								<p>+{post.tags.length - 3}</p>
-							</div>
-						)}
+						<div className="flex gap-2">
+							{post.tags.slice(2, 3).map((tag) => (
+								<div
+									key={tag}
+									className="flex select-none items-center gap-2 rounded-xl border-2 border-[#019BFB] px-2 py-1.5 text-xs text-[#019BFB] sm:gap-3 sm:px-3 sm:text-sm"
+								>
+									<FaTags />
+									<p>{tag}</p>
+								</div>
+							))}
+
+							{post.tags.length > 3 && (
+								<div className="flex select-none items-center px-2 text-xl text-gray-400">
+									<p>+{post.tags.length - 3}</p>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 
