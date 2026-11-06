@@ -31,31 +31,35 @@ export default function BlogPostComponent({
 			const match = /language-(\w+)/.exec(className || "");
 
 			return match ? (
-				<CodeTerminal
-					title={getLanguageDisplayName(match[1])}
-					data={
-						<SyntaxHighlighter
-							style={{
-								...oneDark,
-								'pre[class*="language-"]': {
-									background: "transparent",
-									backgroundColor: "transparent",
-								},
-								'code[class*="language-"]': {
-									background: "transparent",
-									backgroundColor: "transparent",
-								},
-							}}
-							language={match[1]}
-							PreTag="div"
-							className="text-sm xl:text-base"
-						>
-							{String(children).replace(/\n$/, "")}
-						</SyntaxHighlighter>
-					}
-				/>
+				<div className="mb-5">
+					<CodeTerminal
+						title={getLanguageDisplayName(match[1])}
+						data={
+							<SyntaxHighlighter
+								style={{
+									...oneDark,
+									'pre[class*="language-"]': {
+										background: "transparent",
+										backgroundColor: "transparent",
+										overflow: "auto",
+									},
+									'code[class*="language-"]': {
+										background: "transparent",
+										backgroundColor: "transparent",
+										overflow: "auto",
+									},
+								}}
+								language={match[1]}
+								PreTag="div"
+								className="text-sm xl:text-base"
+							>
+								{String(children).replace(/\n$/, "")}
+							</SyntaxHighlighter>
+						}
+					/>
+				</div>
 			) : (
-				<CodeTerminal title="unknown.rs" data={<>{children}</>} />
+				<code className="bg-[#1A1E23] px-[0.3rem] py-0.5 rounded">{children}</code>
 			);
 		},
 
@@ -108,7 +112,7 @@ export default function BlogPostComponent({
 
 		a: (props: any) => (
 			<a
-				className="font-bold text-[#0088CC] hover:underline underline-offset-2 outline-none"
+				className="font-bold text-[#019BFB] hover:underline underline-offset-2 outline-none"
 				target="_blank"
 				{...props}
 			/>
@@ -116,7 +120,7 @@ export default function BlogPostComponent({
 
 		p: (props: any) => <div className="my-4 text-[#F6F9FC]/75" {...props} />,
 
-		hr: (props: any) => <hr className="my-10 w-[90%] mx-auto text-[#1793D1]" {...props} />,
+		hr: (props: any) => <div className="h-1 my-7 w-[90%] mx-auto bg-gray-600 rounded-full" {...props} />,
 
 		ul: (props: any) => <ul className="list-disc pl-6 my-4 text-[#F6F9FC]/75" {...props} />,
 
@@ -124,7 +128,7 @@ export default function BlogPostComponent({
 
 		li: (props: any) => <li className="mb-1 text-[#F6F9FC]/75" {...props} />,
 
-		blockquote: (props: any) => <blockquote className="border-l-4 border-[#1793D1] pl-4 italic my-4" {...props} />,
+		blockquote: (props: any) => <blockquote className="border-l-4 border-[#019BFB] pl-4 italic my-4" {...props} />,
 
 		BlogPostsTable,
 		Link,

@@ -82,7 +82,7 @@ export default function UseClientIndexBlogPost({
 						</div>
 
 						{/* Mobile Divider */}
-						<div className="flex lg:hidden px-10 my-8">
+						<div className="flex lg:hidden px-5 my-8">
 							<motion.div
 								initial={{ scaleX: 0 }}
 								animate={{ scaleX: 1 }}
@@ -97,7 +97,7 @@ export default function UseClientIndexBlogPost({
 						</div>
 
 						{/* Divider */}
-						<div className="flex px-10 my-8">
+						<div className="flex px-5 my-8">
 							<motion.div
 								initial={{ scaleX: 0 }}
 								animate={{ scaleX: 1 }}
@@ -116,11 +116,26 @@ export default function UseClientIndexBlogPost({
 							{MDXRemote}
 						</motion.div>
 
+						{/* Divider */}
+						<div className="flex px-5 my-8">
+							<motion.div
+								initial={{ scaleX: 0 }}
+								animate={{ scaleX: 1 }}
+								transition={{ duration: 0.5, delay: 1.4 }}
+								className="h-1 w-full bg-[#019BFB] rounded-full"
+							/>
+						</div>
+
 						{/* Go back */}
-						<div className="flex w-fit ml-5 mt-5">
+						<motion.div
+							initial={{ opacity: 0, y: 15 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.3, delay: 1.4 }}
+							className="flex w-fit ml-5 mt-5"
+						>
 							<Link
 								href="/blogs"
-								className="flex items-center gap-2 border-t-3 border-b-3 border-[#019BFB] rounded-xl py-2 px-5 hover:scale-[1.1] transition-transform"
+								className="flex items-center gap-2 border-2 border-[#019BFB] rounded-2xl py-2 px-4 hover:scale-[1.1] transition-transform"
 							>
 								<FaBackward className="text-[#019BFB]" />
 
@@ -128,7 +143,7 @@ export default function UseClientIndexBlogPost({
 									Go Back
 								</p>
 							</Link>
-						</div>
+						</motion.div>
 					</main>
 
 					{/* Desktop TOC */}
