@@ -162,7 +162,7 @@ export default function WebHireComponent() {
               target="_blank"
             >
               <button className="outline-none cursor-pointer transition-all hover:scale-[1.1]">
-                <p className="md:mt-7 mt-4 md:text-lg text-base py-1 px-3 border border-[#1793D1] rounded-full bg-[#0A0C0E] group-hover/chm:shadow-lg shadow-md group-hover/chm:shadow-[#1793D1]/50 shadow-[#1793D1]/50 transition-all">
+                <p className="md:mt-7 mt-4 md:text-lg text-base text-white py-1 px-3 border border-[#1793D1] rounded-full bg-[#0A0C0E] group-hover/chm:shadow-lg shadow-md group-hover/chm:shadow-[#1793D1]/50 shadow-[#1793D1]/50 transition-all">
                   Contact for custom order
                 </p>
               </button>
