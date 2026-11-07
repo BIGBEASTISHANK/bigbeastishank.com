@@ -15,7 +15,7 @@ export default function FeaturedProjects() {
 		<div id="myLangs" className="px-5 scroll-mt-28">
 			{/* Headings */}
 			<HeadingBasic
-				heading="Featued Projects"
+				heading="Featured Projects"
 				url="#myLangs"
 				animationDelay={baseDelay}
 				description={
