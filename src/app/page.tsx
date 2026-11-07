@@ -4,30 +4,33 @@ import MyLangs from "@/components/(2) Home/MyLangs";
 import MyToolsAndFramework from "@/components/(2) Home/MyToolsAndFrameworks";
 import { FullDivider } from "@/utility/Dividers";
 import GPGFingerprint from "@/components/(2) Home/GPGFingerprint";
+import FeaturedProjects from "@/components/(2) Home/FeaturedProjects";
 
 export default function Home() {
-  return (
-    <div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
-      <Hero />
+	return (
+		<div className="md:max-w-[45rem] max-w-[35rem] mx-auto">
+			<Hero />
 
-      {/* Divider */}
-      <FullDivider delay={1.2} />
+			{/* Divider */}
+			<FullDivider delay={1.2} />
 
-      <GPGFingerprint />
+			<GPGFingerprint />
 
-      {/* Divider */}
-      <FullDivider delay={1.8}/>
+			{/* Divider */}
+			<FullDivider delay={1.8} />
 
-      <About />
+			<About />
 
-      {/* Divider */}
-      <FullDivider delay={3.2} />
+			{/* Divider */}
+			<FullDivider delay={3.2} />
 
-      <MyLangs />
+			<FeaturedProjects />
+
+			{/* <MyLangs />
 
       <FullDivider delay={5.1} />
 
-      <MyToolsAndFramework />
-    </div>
-  );
+      <MyToolsAndFramework /> */}
+		</div>
+	);
 }

@@ -43,7 +43,7 @@ export default function About() {
               type: "spring",
             }}
           >
-            👋 Hi, I'm Ishank—though my friends know me as the BIG BEAST ISHANK!
+            👋 Hi, I'm Ishank - though my friends know me as the BBI!
           </motion.p>
 
           <motion.p
